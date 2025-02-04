@@ -139,7 +139,7 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50" data-startdeg="0" data-enddeg="-381.5" data-origin="50% 50%">
+                                <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50" data-startdeg="0" data-enddeg="-360" data-origin="50% 50%">
                                     <img src="assets/wetalk/taiyang.png" alt="" 
                                         data-ww="['410px','auto','auto','auto']"
                                         data-hh="['auto','auto','auto','auto']"
@@ -313,7 +313,7 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50" data-startdeg="0" data-enddeg="-381.5" data-origin="50% 50%">
+                                <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50" data-startdeg="0" data-enddeg="-360" data-origin="50% 50%">
                                     <img src="assets/wetalk/taiyang1.png" alt="" 
                                         data-ww="['410px','auto','auto','auto']"
                                         data-hh="['auto','auto','auto','auto']"
@@ -512,7 +512,7 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50" data-startdeg="0" data-enddeg="-381.5" data-origin="50% 50%">
+                                <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50" data-startdeg="0" data-enddeg="-360" data-origin="50% 50%">
                                     <img src="assets/wetalk/yuan.png" alt="" 
                                         data-ww="['824px','auto','auto','auto']"
                                         data-hh="['auto','auto','auto','auto']"
@@ -530,7 +530,7 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50" data-startdeg="0" data-enddeg="381.5" data-origin="50% 50%">
+                                <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50" data-startdeg="0" data-enddeg="360" data-origin="50% 50%">
                                     <img src="assets/wetalk/taiji.png" alt="" 
                                         data-ww="['260px','auto','auto','auto']"
                                         data-hh="['auto','auto','auto','auto']"
@@ -659,7 +659,7 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50" data-startdeg="0" data-enddeg="-381.5" data-origin="50% 50%">
+                                <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50" data-startdeg="0" data-enddeg="-360" data-origin="50% 50%">
                                     <img src="assets/wetalk/1.png" alt="" 
                                         data-ww="['2100px','auto','auto','auto']"
                                         data-hh="['auto','auto','auto','auto']"
@@ -1040,95 +1040,199 @@
                             </a>
 
                             <!-- LAYER NR. 7 -->
-                            <a class="tp-caption tp-static-layer tp-rs-menulink" 
-                                href="#courses" target="_self"            
-                                id="slide-3132-layer-7" 
+                            
+                            <div class="tp-caption tp-static-layer"
+                                id="dropdown-container-1"
                                 data-x="['center','center','left','right']" 
                                 data-hoffset="['-295','-87','1001','-155']" 
                                 data-y="['top','top','top','top']" 
-                                data-voffset="['30','0','219','92']" 
-                                data-fontsize="['18','15','13','13']"
-                                data-lineheight="['18','15','13','13']"
-                                data-width="none"
-                                data-height="none"
-                                data-whitespace="nowrap"
+                                data-voffset="['30','0','219','92']"
                                 data-visibility="['on','on','off','off']"
-                                
-                                data-startslide="0" 
-			                    data-endslide="9"
 
-                                data-type="text" 
+                                data-startslide="0" 
+                                data-endslide="9"
+                                data-type="group"
                                 data-actions='[
-                                    {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"courses-selection","delay":""}]'
+                                    {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"courses-selection","delay":""},
+                                    {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"courses-selection-2","delay":""},
+                                    {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"courses-shape","delay":""}]'
                                 data-basealign="slide" 
                                 data-responsive_offset="off" 
                                 data-responsive="off"
                                 data-frames='[
-                                    {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
-                                    {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
-                                    {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(240, 240, 240, 1.00);"}]'
-                                data-textAlign="['left','left','left','left']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                        {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
+                                        {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
+                                        {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(240, 240, 240, 1.00);"}]'
+                                style="z-index: 11;">
+                                <a class="tp-caption tp-static-layer tp-rs-menulink" 
+                                    href="#courses" target="_self"            
+                                    id="slide-3132-layer-7" 
+                                    data-x="['center','center','left','right']" 
+                                    data-hoffset="['0','-87','1001','-155']" 
+                                    data-y="['top','top','top','top']" 
+                                    data-voffset="['0','0','219','92']" 
+                                    data-fontsize="['18','15','13','13']"
+                                    data-lineheight="['18','15','13','13']"
+                                    data-width="none"
+                                    data-height="none"
+                                    data-whitespace="nowrap"
+                                    data-visibility="['on','on','off','off']"
+                                    
+                                    data-startslide="0" 
+                                    data-endslide="9"
 
-                                style="z-index: 11; white-space: nowrap; font-size: 18px; line-height: 19px; font-weight: normal; color: #f0f0f0;border-width:0px;cursor:pointer;text-decoration: none;">
-                                    WeTalk Courses<i class="material-icons">arrow_drop_down</i>
-                            </a>
-                            
-                            <div class="tp-caption tp-static-layer" id="courses-selection"
-                                data-x="['center','center','left','right']" 
-                                data-hoffset="['-285','0','985','-166']" 
-                                data-y="['top','top','top','top']" 
-                                data-voffset="['30','0','180','237']" 
-                                data-width="none" data-height="none"
-                                data-whitespace="nowrap" 
-                                data-basealign="slide" 
-                                data-responsive_offset="off"
+                                    data-type="text" 
+                                    data-actions='[
+                                        {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"courses-selection","delay":""}]'
+                                    data-basealign="slide" 
+                                    data-responsive_offset="off" 
+                                    data-responsive="off"
+                                    data-frames='[
+                                        {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
+                                        {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
+                                        {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(240, 240, 240, 1.00);"}]'
+                                    data-textAlign="['left','left','left','left']"
+                                    data-paddingtop="[0,0,0,0]"
+                                    data-paddingright="[0,0,0,0]"
+                                    data-paddingbottom="[0,0,0,0]"
+                                    data-paddingleft="[0,0,0,0]"
 
-                                data-startslide="0" 
-			                    data-endslide="9"
-                                
-                                data-actions='[
-                                    {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"courses-selection","delay":""}]'
-                                data-frames='[
-                                    {"delay":"bytrigger","speed":300,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},
-                                    {"delay":"bytrigger","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'                                    
-                                data-textAlign="['left','left','left','left']" 
-                                data-paddingtop="[50,0,0,0]"
-                                data-paddingright="[0,0,0,0]" 
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 12; white-space: nowrap;text-transform:left;background-color:#ff080800;">
-                                <div style="display: flex; flex-direction: column; gap: 20px;">
-                                    <a class="" 
-                                        href="https://wetalk.com/short-video/" target="_self"             
-                                        id="intelligent-database" 
-                                        style="z-index: 12; white-space: nowrap; 
-                                            font-size: 18px; line-height: 15px; font-weight: normal; 
-                                            color: #f0f0f0; border-width:0px; cursor:pointer;
-                                            text-decoration: none;">
-                                            Intelligent Database
-                                    </a>
-                                    <a class="" 
-                                        href="https://wetalk.com/recorded-courses/" target="_self"             
-                                        id="intelligent-database" 
-                                        style="z-index: 12; white-space: nowrap; 
-                                            font-size: 18px; line-height: 15px; font-weight: normal; 
-                                            color: #f0f0f0; border-width:0px; cursor:pointer;
-                                            text-decoration: none;">
-                                            Recording Course
-                                    </a>
-                                    <a class="" 
-                                        href="#courses" target="_self"             
-                                        id="intelligent-database" 
-                                        style="z-index: 12; white-space: nowrap; 
-                                            font-size: 18px; line-height: 15px; font-weight: normal; 
-                                            color: #f0f0f0; border-width:0px; cursor:pointer;
-                                            text-decoration: none;">
-                                            Course<i style="padding-left: 80px;" class="material-icons">arrow_right</i>
-                                    </a>
+                                    style="z-index: 11; white-space: nowrap; font-size: 18px; line-height: 19px; font-weight: normal; color: #f0f0f0;border-width:0px;cursor:pointer;text-decoration: none;">
+                                        WeTalk Courses<i class="material-icons">arrow_drop_down</i>
+                                </a>
+                                <div class="tp-caption tp-static-layer" id="courses-selection"
+                                    data-x="['center','center','left','right']" 
+                                    data-hoffset="['0','0','985','-166']" 
+                                    data-y="['top','top','top','top']" 
+                                    data-voffset="['0','0','180','237']" 
+                                    data-width="none" data-height="none"
+                                    data-whitespace="nowrap" 
+                                    data-basealign="slide" 
+                                    data-responsive_offset="off"
+
+                                    data-startslide="0" 
+                                    data-endslide="9"
+                                    
+                                    data-actions='[
+                                        {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"courses-shape","delay":""}]'
+                                    data-frames='[
+                                        {"delay":"bytrigger","speed":300,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                                        {"delay":"bytrigger","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'                                    
+                                    data-textAlign="['left','left','left','left']" 
+                                    data-paddingtop="[0,0,0,0]"
+                                    data-paddingright="[0,0,0,0]" 
+                                    data-paddingbottom="[0,0,0,0]"
+                                    data-paddingleft="[0,0,0,0]"
+                                    style="z-index: 12; white-space: nowrap;text-transform:left;">
+                                    <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 3rem; padding: 1.5rem; border-radius: 20px; background-color:#f0f0f0;">
+                                        <a class="" 
+                                            href="https://wetalk.com/short-video/" target="_self"             
+                                            id="intelligent-database" 
+                                            style="z-index: 12; white-space: nowrap; 
+                                                font-size: 18px; line-height: 15px; font-weight: normal; 
+                                                color: #7f7f7f; border-width:0px; cursor:pointer;
+                                                text-decoration: none;">
+                                                Intelligent Database
+                                        </a>
+                                        <a class="" 
+                                            href="https://wetalk.com/recorded-courses/" target="_self"             
+                                            id="recording-course" 
+                                            style="z-index: 12; white-space: nowrap; 
+                                                font-size: 18px; line-height: 15px; font-weight: normal; 
+                                                color: #7f7f7f; border-width:0px; cursor:pointer;
+                                                text-decoration: none;">
+                                                Recording Course
+                                        </a>
+                                        <a class=" " 
+                                            href="#courses" target="_self"             
+                                            id="course" 
+                                            style="z-index: 12; white-space: nowrap; 
+                                                font-size: 18px; line-height: 15px; font-weight: normal; 
+                                                color: #7f7f7f; border-width:0px; cursor:pointer;
+                                                text-decoration: none;">
+                                                Course<i style="padding-left: 80px;" class="material-icons">arrow_right</i>
+                                        </a>
+                                    </div>
+                                    <div class="tp-caption tp-shape tp-shapewrapper tp-static-layer" id="courses-shape"
+                                        data-x="['center','center','center','center']" 
+                                        data-hoffset="['-1027','0','0','0']"
+                                        data-y="['top','top','top','top']" 
+                                        data-voffset="['150','0','0','0']" 
+                                        data-width="300" data-height="40"
+                                        data-whitespace="nowrap" 
+                                        data-type="shape"
+                                        data-basealign="slide" 
+                                        data-responsive_offset="on"
+                                        
+                                        data-startslide="0" 
+                                        data-endslide="9"
+
+                                        data-actions='[
+                                            {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"courses-selection-2","delay":""}]'
+                                        data-frames='[
+                                            {"delay":"bytrigger","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                                            {"delay":"bytrigger","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]' 
+                                        data-textAlign="['left','left','left','left']" 
+                                        data-paddingtop="[0,0,0,0]"
+                                        data-paddingright="[0,0,0,0]" 
+                                        data-paddingbottom="[0,0,0,0]"
+                                        data-paddingleft="[0,0,0,0]"
+                                        style="z-index: 13;background-color:rgba(0, 0, 0, 0.50);border-color:rgba(0, 0, 0, 1.00);border-width:5px;">
+                                    </div>
+                                </div>
+
+                                <div class="tp-caption tp-static-layer" id="courses-selection-2"
+                                    data-x="['center','center','center','center']" 
+                                    data-hoffset="['180','0','0','0']" 
+                                    data-y="['top','top','top','top']" 
+                                    data-voffset="['50','0','0','0']" 
+                                    data-width="none" data-height="none"
+                                    data-whitespace="nowrap" 
+                                    data-basealign="slide" 
+                                    data-responsive_offset="off"
+
+                                    data-startslide="0" 
+                                    data-endslide="9"
+                                    
+                                    data-actions='[]'
+                                    data-frames='[
+                                        {"delay":"bytrigger","speed":300,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                                        {"delay":"bytrigger","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'                                    
+                                    data-textAlign="['left','left','left','left']" 
+                                    data-paddingtop="[0,0,0,0]"
+                                    data-paddingright="[0,0,0,0]" 
+                                    data-paddingbottom="[0,0,0,0]"
+                                    data-paddingleft="[0,0,0,0]"
+                                    style="z-index: 12; white-space: nowrap;text-transform:left;">
+                                    <div style="display: flex; flex-direction: column; gap: 20px; margin-left: 5rem; padding: 1.5rem; border-radius: 20px; background-color:#f0f0f0;">
+                                        <a class="" 
+                                            href="https://wetalk.com/chinese/" target="_self"             
+                                            id="linguistics" 
+                                            style="z-index: 12; white-space: nowrap; 
+                                                font-size: 18px; line-height: 15px; font-weight: normal; 
+                                                color: #7f7f7f; border-width:0px; cursor:pointer;
+                                                text-decoration: none;">
+                                                Linguistics
+                                        </a>
+                                        <a class="" 
+                                            href="https://wetalk.com/sinology/" target="_self"             
+                                            id="cc-learning" 
+                                            style="z-index: 12; white-space: nowrap; 
+                                                font-size: 18px; line-height: 15px; font-weight: normal; 
+                                                color: #7f7f7f; border-width:0px; cursor:pointer;
+                                                text-decoration: none;">
+                                                Chinese Culture Learning
+                                        </a>
+                                        <a class="" 
+                                            href="https://wetalk.com/science/" target="_self"             
+                                            id="science" 
+                                            style="z-index: 12; white-space: nowrap; 
+                                                font-size: 18px; line-height: 15px; font-weight: normal; 
+                                                color: #7f7f7f; border-width:0px; cursor:pointer;
+                                                text-decoration: none;">
+                                                Science
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
 
@@ -1279,41 +1383,120 @@
                                     Study Abroad 
                             </a>
 
-                            <a class="tp-caption  tp-static-layer  tp-rs-menulink" 
-                                href="#company" target="_self"          
-                                id="slide-3132-layer-12" 
+                            <div class="tp-caption tp-static-layer"
+                                id="dropdown-container-2"
                                 data-x="['center','center','left','right']" 
-                                data-hoffset="['339','206','936','-163']" 
+                                data-hoffset="['339','-87','1001','-155']" 
                                 data-y="['top','top','top','top']" 
-                                data-voffset="['30','0','84','128']" 
-                                data-fontsize="['18','15','13','13']"
-                                data-lineheight="['18','15','13','13']"
-                                data-width="none"
-                                data-height="none"
-                                data-whitespace="nowrap"
+                                data-voffset="['30','0','219','92']"
                                 data-visibility="['on','on','off','off']"
 
                                 data-startslide="0" 
-			                    data-endslide="9"
-
-                                data-type="text" 
-                                data-actions=''
+                                data-endslide="9"
+                                data-type="group"
+                                data-actions='[
+                                    {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"company-selection","delay":""}]'
                                 data-basealign="slide" 
                                 data-responsive_offset="off" 
                                 data-responsive="off"
                                 data-frames='[
-                                    {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
-                                    {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
-                                    {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(240, 240, 240, 1.00);br:0px 0px 0px 0px;"}]'
-                                data-textAlign="['left','left','left','left']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                        {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
+                                        {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
+                                        {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(240, 240, 240, 1.00);"}]'
+                                style="z-index: 11;">
+                                <a class="tp-caption  tp-static-layer  tp-rs-menulink" 
+                                    href="#company" target="_self"          
+                                    id="slide-3132-layer-12" 
+                                    data-x="['center','center','left','right']" 
+                                    data-hoffset="['0','206','936','-163']" 
+                                    data-y="['top','top','top','top']" 
+                                    data-voffset="['0','0','84','128']" 
+                                    data-fontsize="['18','15','13','13']"
+                                    data-lineheight="['18','15','13','13']"
+                                    data-width="none"
+                                    data-height="none"
+                                    data-whitespace="nowrap"
+                                    data-visibility="['on','on','off','off']"
 
-                                style="z-index: 14; white-space: nowrap; font-size: 15px; line-height: 15px; font-weight: normal; color: #f0f0f0;border-width:0px;cursor:pointer;text-decoration: none;">
-                                    Company<i class="material-icons">arrow_drop_down</i>
-                            </a>
+                                    data-startslide="0" 
+                                    data-endslide="9"
+
+                                    data-type="text" 
+                                    data-actions='[
+                                        {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"company-selection","delay":""}]'
+                                    data-basealign="slide" 
+                                    data-responsive_offset="off" 
+                                    data-responsive="off"
+                                    data-frames='[
+                                        {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
+                                        {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
+                                        {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(240, 240, 240, 1.00);br:0px 0px 0px 0px;"}]'
+                                    data-textAlign="['left','left','left','left']"
+                                    data-paddingtop="[0,0,0,0]"
+                                    data-paddingright="[0,0,0,0]"
+                                    data-paddingbottom="[0,0,0,0]"
+                                    data-paddingleft="[0,0,0,0]"
+
+                                    style="z-index: 14; white-space: nowrap; font-size: 15px; line-height: 15px; font-weight: normal; color: #f0f0f0;border-width:0px;cursor:pointer;text-decoration: none;">
+                                        Company<i class="material-icons">arrow_drop_down</i>
+                                </a>
+
+                                <div class="tp-caption tp-static-layer" id="company-selection"
+                                    data-x="['center','center','left','right']" 
+                                    data-hoffset="['0','0','985','-166']" 
+                                    data-y="['top','top','top','top']" 
+                                    data-voffset="['0','0','180','237']" 
+                                    data-width="none" data-height="none"
+                                    data-whitespace="nowrap" 
+                                    data-basealign="slide" 
+                                    data-responsive_offset="off"
+
+                                    data-startslide="0" 
+                                    data-endslide="9"
+                                    
+                                    data-type="group"
+                                    data-actions='[
+                                        {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"company-selection","delay":""}]'
+                                    data-frames='[
+                                        {"delay":"bytrigger","speed":300,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                                        {"delay":"bytrigger","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'                                    
+                                    data-textAlign="['left','left','left','left']" 
+                                    data-paddingtop="[0,0,0,0]"
+                                    data-paddingright="[0,0,0,0]" 
+                                    data-paddingbottom="[0,0,0,0]"
+                                    data-paddingleft="[0,0,0,0]"
+                                    style="z-index: 12; white-space: nowrap;text-transform:left;">
+                                    <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 3rem; padding: 1.5rem; border-radius: 20px; background-color:#f0f0f0;">
+                                        <a class="" 
+                                            href="https://wetalk.com/charity/" target="_self"             
+                                            id="charity" 
+                                            style="z-index: 12; white-space: nowrap; 
+                                                font-size: 18px; line-height: 15px; font-weight: normal; 
+                                                color: #7f7f7f; border-width:0px; cursor:pointer;
+                                                text-decoration: none;">
+                                                Charity
+                                        </a>
+                                        <a class="" 
+                                            href="https://wetalk.com/about-us/" target="_self"             
+                                            id="about-us" 
+                                            style="z-index: 12; white-space: nowrap; 
+                                                font-size: 18px; line-height: 15px; font-weight: normal; 
+                                                color: #7f7f7f; border-width:0px; cursor:pointer;
+                                                text-decoration: none;">
+                                                About Us
+                                        </a>
+                                        <a class="" 
+                                            href="https://wetalk.com/campus-philippines/" target="_self"             
+                                            id="campus" 
+                                            style="z-index: 12; white-space: nowrap; 
+                                                font-size: 18px; line-height: 15px; font-weight: normal; 
+                                                color: #7f7f7f; border-width:0px; cursor:pointer;
+                                                text-decoration: none;">
+                                                Campus
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
                             <a class="tp-caption  tp-static-layer  tp-rs-menulink" 
                                 href="https://wetalk.com/signin/" target="_self"          
