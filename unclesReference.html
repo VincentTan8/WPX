@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+		<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+		<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+		<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+		<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<title>animated-entry - Slider Revolution</title>
+			<meta name="description" content="Slider Revolution Example" />
+			<meta name="keywords" content="fullscreen image, grid layout, flexbox grid, transition" />
+			<meta name="author" content="ThemePunch" />
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+			<!-- LOAD JQUERY LIBRARY -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+			
+			<!-- LOADING FONTS AND ICONS -->
+			<link href="//fonts.googleapis.com/css?family=Roboto:400&display=swap" rel="stylesheet" property="stylesheet" media="all" type="text/css" >
+
+			
+			<link rel="stylesheet" type="text/css" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+			<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+			
+			<!-- REVOLUTION STYLE SHEETS -->
+			<link rel="stylesheet" type="text/css" href="css/rs6.css">
+			<!-- REVOLUTION LAYERS STYLES -->
+						<!-- REVOLUTION JS FILES -->
+			
+		<script>
+			window.RS_MODULES = window.RS_MODULES || {};
+			window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+			window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+			window.RS_MODULES.defered = true;
+			 			
+			window.RS_MODULES.waiting = window.RS_MODULES.waiting.concat([ "fluiddynamics","threejs","particlewave","threejs"]);
+			window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+			window.RS_MODULES.type = 'compiled';
+		</script>
+					<script src="js/rbtools.min.js"></script>
+							<script src="js/rs6.min.js"></script>
+							
+			<script>function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
+				try {
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
+					if(e.layout==="fullscreen" || e.l==="fullscreen")
+						newh = Math.max(e.mh,window.RSIH);
+					else{
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,
+							sl;
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}
+			//});
+		  };</script>
+
+			
+		</head>
+		
+		<body>
+		
+
+			<!-- START animatedentry REVOLUTION SLIDER 6.7.14 --><p class="rs-p-wp-fix"></p>
+			<rs-module-wrap id="rev_slider_4_1_wrapper" data-alias="watalk-main-11" data-source="gallery" style="visibility:hidden;background:rgba(12,3,2,0);padding:0;">
+				<rs-module id="rev_slider_4_1" class="rs-respect-topbar" data-version="6.7.14">
+					<rs-slides style="overflow: hidden; position: absolute;">
+						<!-- KONGZI -->
+						<rs-slide style="position: absolute;" data-key="rs-34" data-title="Slide" data-anim="f:nodelay;o:forceinout;" data-in="o:0;" data-out="a:false;">
+							<img src="assets/dummy.png" alt="Slide" title="back" width="1024" height="427" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/transparent.png" data-bg="c:#dbf6f9;" data-parallax="off" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-4-slide-34-layer-3" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:840px,640px,443px,231px;y:t,t,t,b;yo:122px,178px,328px,117px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:359px,275px,272px,199px;h:656px,503px,497px,364px;"
+								data-frame_1="e:power4.inOut;st:480;sp:1500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:7530;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:6;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="774" height="1415" data-lazyload="assets/kongzi.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-34-layer-4" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:358px,326px,407px,239px;y:t,t,t,b;yo:173px,93px,36px,491px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:298px,252px,260px,175px;h:363px,307px,317px,213px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:7500;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:8;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="246" height="300" data-lazyload="//wetalk.com/wp-content/uploads/2024/10/kongzizi-246x300-1.webp" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-34-layer-7" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:c;xo:-582px,-438px,-341px,-195px;yo:590px,413px,618px,418px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:59px,86px,70px,83px;h:136px,197px,160px,190px;"
+								data-frame_0="y:top;blu:10px;"
+								data-frame_1="x:-6px,-4px,-3px,-1px;y:-7px,-5px,-3px,-1px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:7600;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:7;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="148" height="339" data-lazyload="assets/zhongyu.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-34-layer-29" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="xo:-318px,-146px,-73px,1053px;y:t,t,t,b;yo:669px,608px,791px,0;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:2063px,1744px,1471px,1104px;h:620px,196px,186px,179px;"
+								data-frame_0="y:bottom;blu:10px;"
+								data-frame_1="x:-10px,-8px,-6px,-3px;y:-10px,-8px,-6px,-3px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:7600;"
+								data-loop_999="x:600px;sX:1.1;sY:1.1;sp:99999;e:default;yym:t;yys:t;"
+								style="z-index:12;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1920" height="592" data-lazyload="//wetalk.com/wp-content/uploads/2024/10/cloud-0-scaled.webp" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-34-layer-122" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:c;xo:-560px,-376px,-284px,-148px;yo:391px,202px,425px,215px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:138px,127px,164px,155px;h:236px,217px,280px,265px;"
+								data-frame_0="y:top;blu:10px;"
+								data-frame_1="x:-6px,-4px,-3px,-1px;y:-7px,-5px,-3px,-1px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:7600;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:3;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="317" height="542" data-lazyload="assets/zhong.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-34-layer-123" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:c;xo:-295px,-161px,-103px,-23px;yo:511px,452px,628px,466px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:185px,167px,179px,88px;h:222px,200px,215px,105px;"
+								data-frame_0="y:top;blu:10px;"
+								data-frame_1="x:-6px,-4px,-3px,-1px;y:-7px,-5px,-3px,-1px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:7600;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:5;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="277" height="332" data-lazyload="assets/guo.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-34-layer-127" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:394px,364px,151px,-361px;y:t,t,t,b;yo:-17px,24px,184px,104px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:1121px,745px,699px,556px;h:388px,258px,242px,297px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:7500;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:4;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="768" height="266" data-lazyload="//wetalk.com/wp-content/uploads/2024/10/beijing-768x266-1.webp" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-34-layer-128" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:-328px,-96px,189px,-361px;y:t,t,t,b;yo:614px,571px,774px,104px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:1091px,786px,620px,556px;h:403px,290px,229px,297px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:7500;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:8;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1024" height="378" data-lazyload="assets/yun-1024x378.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-34-layer-129" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:78px,94px,24px,38px;y:t,t,t,b;yo:127px,30px,123px,333px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:208px,210px,217px,161px;h:416px,419px,434px,322px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:7500;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:8;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="150" height="300" data-lazyload="assets/Screenshot-2024-09-07-at-5.10.41 PM-150x300.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-34-layer-130" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:592px,488px,399px,272px;yo:558px,460px,606px,406px;"
+								data-text="w:normal;s:20,16,15,9;l:25,20,15,9;"
+								data-dim="w:702px,479px,374px,194px;h:auto,auto,253px,auto;"
+								data-frame_1="e:power4.inOut;sp:1500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:7500;"
+								style="z-index:14;font-family:'Roboto';"
+							>Confucius, whose given name was Qiu and courtesy name was Zhongni, was  born in the State of Lu during the Spring and Autumn Period. He was hailed as the paragon of Chinese sages and is also one of the world-famous cultural figures. He founded a private school and upheld education for all, as he believed that "In teaching there should be no distinction of classes". <br />
+<br />
+He advocated benevolence, righteousness, propriety, wisdom, and trustworthiness and revised the six classics, namely the Book of Songs, the Book of Documents, the Book of Etiquette and Ceremonial, the Classic of Music, the Book of Changes, and the Spring and Autumn Annals. He was the founding father in the inheritance of primitive cultures. 
+							</rs-layer><!--
+-->					</rs-slide>
+					<!-- LAOZI -->
+						<rs-slide style="position: absolute;" data-key="rs-36" data-title="Slide" data-anim="f:nodelay;o:forceinout;" data-in="o:0;" data-out="a:false;">
+							<img src="assets/dummy.png" alt="Slide" title="back" width="1024" height="427" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/transparent.png" data-bg="c:#dbf6f9;" data-parallax="off" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-4-slide-36-layer-3" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:840px,627px,370px,195px;y:t,t,t,b;yo:122px,158px,313px,82px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:359px,288px,299px,222px;h:656px,527px,547px,406px;"
+								data-frame_1="e:power4.inOut;st:1170;sp:1500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:7;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="774" height="1415" data-lazyload="assets/renwu.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-36-layer-4" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:358px,322px,376px,221px;y:t,t,t,b;yo:173px,55px,2px,508px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:298px,277px,268px,156px;h:363px,337px,327px,190px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:10;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="246" height="300" data-lazyload="//wetalk.com/wp-content/uploads/2024/09/wenzi-1-246x300.webp" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-36-layer-7" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:c;xo:-588px,-449px,-331px,-189px;yo:587px,456px,589px,408px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:59px,100px,72px,75px;h:136px,229px,165px,172px;"
+								data-frame_0="y:top;blu:10px;"
+								data-frame_1="x:-6px,-4px,-3px,-1px;y:-7px,-5px,-3px,-1px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:8;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="131" height="300" data-lazyload="assets/zhongyu-131x300.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-36-layer-29" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="xo:-17px,-146px,14px,1053px;y:t,t,t,b;yo:691px,608px,798px,0;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:1787px,1744px,1471px,1104px;h:265px,196px,186px,179px;"
+								data-frame_0="y:bottom;blu:10px;"
+								data-frame_1="x:-10px,-8px,-6px,-3px;y:-10px,-8px,-6px,-3px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="x:600px;sX:1.1;sY:1.1;sp:99999;e:default;yym:t;yys:t;"
+								style="z-index:14;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1700" height="252" data-lazyload="assets/baiyun.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-36-layer-122" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:c;xo:-560px,-400px,-255px,-143px;yo:391px,220px,418px,247px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:138px,135px,165px,139px;h:236px,231px,282px,238px;"
+								data-basealign="slide"
+								data-frame_0="y:top;blu:10px;"
+								data-frame_1="x:-6px,-4px,-3px,-1px;y:-7px,-5px,-3px,-1px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:3;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="317" height="542" data-lazyload="assets/zhong.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-36-layer-123" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:c;xo:-295px,-164px,-22px,-4px;yo:511px,444px,599px,435px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:185px,160px,172px,136px;h:222px,192px,206px,163px;"
+								data-basealign="slide"
+								data-frame_0="y:top;blu:10px;"
+								data-frame_1="x:-6px,-4px,-3px,-1px;y:-7px,-5px,-3px,-1px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:6;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="277" height="332" data-lazyload="assets/guo.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-36-layer-127" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:394px,271px,240px,95px;y:t,t,t,b;yo:-17px,-49px,193px,457px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:1121px,807px,575px,400px;h:388px,279px,199px,138px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:4;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" data-lazyload="//wetalk.com/wp-content/uploads/2024/09/beijing-768x266.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-36-layer-129" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:78px,35px,48px,15px;y:t,t,t,b;yo:137px,2px,168px,379px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:264px,287px,282px,179px;h:413px,454px,375px,297px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:9;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="140" height="300" data-lazyload="//wetalk.com/wp-content/uploads/2024/09/minle-140x300.webp" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-36-layer-130" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:507px,464px,466px,323px;yo:559px,430px,533px,329px;"
+								data-text="w:normal;s:20,16,15,9;l:25,20,15,9;"
+								data-dim="w:702px,514px,290px,137px;"
+								data-frame_1="e:power4.inOut;sp:1500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								style="z-index:15;font-family:'Roboto';"
+							>Laozi, whose full name was Li Er and courtesy name was Dan, and who was once named Boyang, was an ancient Chinese philosopher in the late Spring and Autumn Period. </br><br />
+He is worshipped under the name "Supreme Old Lord" or Taishang Laojun. His thoughts are far-reaching in many disciplines and fields. Laozi proposed the highest philosophical concept Dao or the way and introduced profound dialectics thoughts to the development of Chinese philosophy. Confucius once asked him about propriety. Later, Laozi lived a seclusive life. He wrote Laozi or Tao Te Ching, which is a classic with about 5,000 Chinese characters. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-36-layer-131" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:-180px,7px,-7px,0;y:t,t,t,b;yo:528px,538px,672px,28px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:366px,229px,241px,168px;h:490px,306px,322px,225px;"
+								data-frame_1="e:power4.inOut;st:1170;sp:1500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:5;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="224" height="300" data-lazyload="//wetalk.com/wp-content/uploads/2024/09/hehua-224x300.webp" data-no-retina> 
+							</rs-layer><!--
+-->					</rs-slide>
+					<!-- MENGZI -->
+						<rs-slide style="position: absolute;" data-key="rs-35" data-title="Slide" data-anim="f:nodelay;o:forceinout;" data-in="o:0;" data-out="a:false;">
+							<img src="assets/dummy.png" alt="Slide" title="back" width="1024" height="427" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/transparent.png" data-bg="c:#dbf6f9;" data-parallax="off" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-4-slide-35-layer-3" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:830px,592px,406px,172px;y:t,t,t,b;yo:139px,182px,294px,24px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:421px,348px,292px,280px;h:659px,545px,457px,439px;"
+								data-frame_1="e:power4.inOut;st:1170;sp:1500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:6;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="899" height="1408" data-lazyload="assets/renwu-2.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-35-layer-4" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:308px,279px,415px,225px;y:t,t,t,b;yo:173px,106px,1px,471px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:298px,278px,271px,169px;h:363px,339px,330px,206px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:8;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="246" height="300" data-lazyload="assets/wenzi-246x300.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-35-layer-7" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:c;xo:-580px,-449px,-331px,-197px;yo:570px,427px,508px,492px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:59px,101px,88px,64px;h:136px,231px,202px,147px;"
+								data-frame_0="y:top;blu:10px;"
+								data-frame_1="x:-6px,-4px,-3px,-1px;y:-7px,-5px,-3px,-1px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:7;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="131" height="300" data-lazyload="assets/zhongyu-131x300.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-35-layer-29" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="xo:-123px,33px,117px,1053px;y:t,t,t,b;yo:673px,592px,780px,0;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:1787px,2123px,1818px,1104px;h:265px,196px,186px,179px;"
+								data-frame_0="y:bottom;blu:10px;"
+								data-frame_1="x:-10px,-8px,-6px,-3px;y:-10px,-8px,-6px,-3px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="x:600px;sX:1.1;sY:1.1;sp:99999;e:default;yym:t;yys:t;"
+								style="z-index:12;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1700" height="252" data-lazyload="assets/baiyun.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-35-layer-122" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:c;xo:-560px,-392px,-252px,-137px;yo:391px,217px,404px,335px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:138px,131px,96px,132px;h:236px,224px,164px,226px;"
+								data-basealign="slide"
+								data-frame_0="y:top;blu:10px;"
+								data-frame_1="x:-6px,-4px,-3px,-1px;y:-7px,-5px,-3px,-1px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:3;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="317" height="542" data-lazyload="assets/zhong.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-35-layer-123" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:c;xo:-295px,-137px,-83px,-4px;yo:511px,458px,559px,487px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:185px,141px,158px,158px;h:222px,169px,189px,189px;"
+								data-basealign="slide"
+								data-frame_0="y:top;blu:10px;"
+								data-frame_1="x:-6px,-4px,-3px,-1px;y:-7px,-5px,-3px,-1px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:5;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="277" height="332" data-lazyload="assets/guo.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-35-layer-127" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:394px,331px,120px,-57px;y:t,t,t,b;yo:-17px,-73px,45px,373px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:1121px,785px,730px,569px;h:388px,272px,253px,197px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:4;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" data-lazyload="//wetalk.com/wp-content/uploads/2024/09/beijing-768x266.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-35-layer-128" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:42px,221px,334px,-361px;y:t,t,t,b;yo:494px,425px,651px,104px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:285px,243px,203px,556px;h:381px,325px,272px,297px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:8;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="224" height="300" data-lazyload="//wetalk.com/wp-content/uploads/2024/09/hehuass-224x300.webp" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-35-layer-129" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:-23px,6px,-17px,-5px;y:t,t,t,b;yo:129px,46px,74px,298px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:291px,266px,307px,190px;h:405px,370px,427px,264px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:8;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="216" height="300" data-lazyload="assets/le-216x300.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-35-layer-130" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:528px,477px,400px,329px;yo:569px,473px,543px,427px;"
+								data-text="w:normal;s:20,16,15,9;l:25,20,15,9;"
+								data-dim="w:702px,520px,347px,127px;h:auto,auto,258px,auto;"
+								data-frame_1="e:power4.inOut;sp:1500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								style="z-index:14;font-family:'Roboto';"
+							>Mencius, whose given name was Ke and courtesy name was Ziyu, was born in the State of Zou during the Warring States Period. </br><br />
+He was a great Confucianist who had inherited and carried forward Confucius’ thoughts and brought Confucianism to a new level. He was the Confucianism representative after Confucius and before Xunzi. In China, Mencius and Confucius are collectively called "Kong Meng" (literally Confucius and Mencius). Mencius’ conversations and works are collected in the Mencius. <br />
+Intellectual Zhu Xi in the Song Dynasty selected the Mencius, the Analects, the Great Learning, and the Doctrine of the Mean as the Four Books illustrating the core value and belief systems of Confucianism.  
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-35-layer-131" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:709px,548px,297px,103px;y:t,t,t,b;yo:220px,45px,213px,291px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:134px,142px,148px,118px;h:245px,260px,271px,216px;"
+								data-vbility="f,f,f,f"
+								data-frame_1="e:power4.inOut;st:1170;sp:1500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:6;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" data-lazyload="//wetalk.com/wp-content/uploads/2024/09/renwuy-164x300.png" data-no-retina> 
+							</rs-layer><!--
+-->					</rs-slide>
+					<!-- ZHUANGZI -->
+						<rs-slide style="position: absolute;" data-key="rs-38" data-title="Slide" data-anim="f:nodelay;o:forceinout;" data-in="o:0;" data-out="a:false;">
+							<img src="assets/dummy.png" alt="Slide" title="back" width="1024" height="427" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/transparent.png" data-bg="c:#dbf6f9;" data-parallax="off" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-4-slide-38-layer-3" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:897px,651px,430px,221px;y:t,t,t,b;yo:195px,193px,262px,19px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:301px,265px,275px,224px;h:550px,484px,502px,410px;"
+								data-frame_1="e:power4.inOut;st:1170;sp:1500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:8;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="774" height="1415" data-lazyload="assets/renwu-1.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-38-layer-4" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:358px,285px,435px,157px;y:t,t,t,b;yo:173px,58px,8px,428px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:298px,317px,248px,243px;h:317px,338px,264px,259px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:11;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="282" height="300" data-lazyload="//wetalk.com/wp-content/uploads/2024/09/wenzi-2-282x300.webp" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-38-layer-7" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:c;xo:-582px,-448px,-323px,-207px;yo:548px,450px,489px,436px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:52px,92px,95px,59px;h:119px,211px,218px,135px;"
+								data-frame_0="y:top;blu:10px;"
+								data-frame_1="x:-6px,-4px,-3px,-1px;y:-7px,-5px,-3px,-1px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:9;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="131" height="300" data-lazyload="assets/zhongyu-131x300.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-38-layer-29" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="xo:-28px,-146px,-73px,1053px;y:t,t,t,b;yo:688px,608px,730px,0;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:1787px,1744px,1471px,1104px;h:265px,196px,186px,179px;"
+								data-frame_0="y:bottom;blu:10px;"
+								data-frame_1="x:-10px,-8px,-6px,-3px;y:-10px,-8px,-6px,-3px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="x:600px;sX:1.1;sY:1.1;sp:99999;e:default;yym:t;yys:t;"
+								style="z-index:15;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1700" height="252" data-lazyload="assets/baiyun.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-38-layer-122" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:c;xo:-554px,-386px,-289px,-171px;yo:391px,226px,341px,572px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:138px,129px,129px,91px;h:236px,221px,221px,156px;"
+								data-frame_0="y:top;blu:10px;"
+								data-frame_1="x:-6px,-4px,-3px,-1px;y:-7px,-5px,-3px,-1px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:3;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="317" height="542" data-lazyload="assets/zhong.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-38-layer-123" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:c;xo:-345px,-217px,-82px,-68px;yo:526px,476px,501px,583px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:185px,144px,145px,91px;h:222px,173px,174px,109px;"
+								data-frame_0="y:top;blu:10px;"
+								data-frame_1="x:-6px,-4px,-3px,-1px;y:-7px,-5px,-3px,-1px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:6;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="277" height="332" data-lazyload="assets/guo.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-38-layer-127" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:394px,364px,229px,18px;y:t,t,t,b;yo:-17px,-66px,188px,315px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:1121px,745px,650px,496px;h:388px,258px,225px,172px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:4;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" data-lazyload="//wetalk.com/wp-content/uploads/2024/09/beijing-768x266.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-38-layer-129" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:78px,22px,39px,18px;y:t,t,t,b;yo:137px,12px,25px,307px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:260px,267px,276px,132px;h:428px,419px,375px,263px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:10;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="125" height="300" data-lazyload="//wetalk.com/wp-content/uploads/2024/09/aaa-125x300.webp" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-38-layer-130" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:438px,549px,408px,259px;yo:551px,419px,415px,421px;"
+								data-text="w:normal;s:18,14,15,9;l:25,20,15,9;"
+								data-dim="w:799px,447px,339px,192px;"
+								data-frame_1="e:power4.inOut;sp:1500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								style="z-index:16;font-family:'Roboto';"
+							>Zhuang Zhou, commonly known as Zhuangzi, was born in the town of Meng in the State of Song during the Warring States Period. ”。 </br><br />
+Zhuang Zhou, commonly known as Zhuangzi, was born in the town of Meng in the State of Song during the Warring States Period. He and Laozi are collectively called "Lao Zhuang" (literally Laozi and Zhuangzi). Zhuangzi inherited and carried forward Taoism as well as created his unique philosophical thoughts and styles of learning and writing. His works are collected in the Zhuangzi, which was given the honorific title Scripture of Southern Florescence or Nanhuajing after the Han Dynasty, thus Zhuangzi is praised as "Nanhua Zhenren (Daoist spiritual master)". The Zhuangzi, Tao Te Ching, and the Book of Changes are collectively called Sanxuan or Three Mystic Learnings.  
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-38-layer-131" 
+								class="rs-noevents rs-pxl-2"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:560px,250px,135px,-60px;y:t,t,t,b;yo:678px,521px,654px,-43px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:535px,491px,408px,286px;h:393px,361px,300px,210px;"
+								data-frame_1="e:power4.inOut;st:1170;sp:1500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:5;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="300" height="221" data-lazyload="//wetalk.com/wp-content/uploads/2024/09/shu-300x221.webp" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-38-layer-133" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:902px,629px,368px,241px;y:t,t,t,b;yo:-127px,-51px,-29px,51px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:370px,298px,305px,189px;h:997px,803px,822px,510px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;"
+								data-loop_999="sX:1.05;sY:1.05;sp:9500;yys:t;"
+								style="z-index:7;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="111" height="300" data-lazyload="//wetalk.com/wp-content/uploads/2024/09/beijing-1-111x300.webp" data-no-retina> 
+							</rs-layer><!--
+-->					</rs-slide>
+					<!-- ALL -->
+						<rs-slide style="position: absolute;" data-key="rs-37" data-title="Slide" data-anim="f:nodelay;o:forceinout;" data-in="o:0;" data-out="a:false;">
+							<img src="assets/dummy.png" alt="Slide" title="back" width="1024" height="427" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/transparent.png" data-bg="c:#dbf6f9;" data-parallax="1" data-no-retina>
+<!--
+							--><rs-group
+								id="slider-4-slide-37-layer-147" 
+								data-type="group"
+								data-rsp_ch="on"
+								data-xy="x:c;xo:6px,-5px,11px,114px;yo:-129px,80px,27px,15px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:1370,1006px,759px,690px;h:764,632px,707px,572px;"
+								data-frame_0="x:0,0,0,0px;y:0,0,0,0px;rY:360deg;"
+								data-frame_1="x:0,0,0,0px;y:0,0,0,0px;e:back.out;sp:9000;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sA:9000;"
+								style="z-index:12;"
+							><!--
+								--><rs-layer
+									id="slider-4-slide-37-layer-140" 
+									class="rs-noevents rs-pxl-2"
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="x:l,r,r,r;xo:1158px,0,381px,219px;y:t,t,t,b;yo:371px,264px,450px,69px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:202,197px,185px,131px;h:215,210px,197px,139px;"
+									data-frame_1="e:power4.inOut;st:1170;sp:1500;sR:1170;"
+									data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:6330;"
+									style="z-index:18;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="282" height="300" data-lazyload="//wetalk.com/wp-content/uploads/2024/09/wenzi-2-282x300.webp" data-no-retina> 
+								</rs-layer><!--
+
+								--><rs-layer
+									id="slider-4-slide-37-layer-138" 
+									class="rs-noevents rs-pxl-2"
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="xo:836px,584px,493px,127px;yo:355px,263px,445px,387px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:202,172px,153px,123px;h:246,210px,186px,150px;"
+									data-frame_1="e:power4.inOut;st:1170;sp:1500;sR:1170;"
+									data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:6330;"
+									style="z-index:17;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="246" height="300" data-lazyload="assets/wenzi-246x300.png" data-no-retina> 
+								</rs-layer><!--
+
+								--><rs-layer
+									id="slider-4-slide-37-layer-137" 
+									class="rs-noevents rs-pxl-2"
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="x:r,r,l,l;xo:978px,715px,564px,87px;y:t,t,t,b;yo:361px,222px,156px,320px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:202,167px,139px,111px;h:246,203px,169px,135px;"
+									data-frame_1="e:power4.inOut;st:1170;sp:1500;sR:1170;"
+									data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:6330;"
+									style="z-index:16;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="246" height="300" data-lazyload="assets/kongzizi-246x300.png" data-no-retina> 
+								</rs-layer><!--
+
+								--><rs-layer
+									id="slider-4-slide-37-layer-139" 
+									class="rs-noevents rs-pxl-2"
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="x:l,r,l,l;xo:523px,477px,123px,337px;y:t,t,t,b;yo:356px,237px,170px,321px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:202,172px,152px,111px;h:246,210px,185px,135px;"
+									data-frame_1="e:power4.inOut;st:1170;sp:1500;sR:1170;"
+									data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:6330;"
+									style="z-index:15;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="246" height="300" data-lazyload="//wetalk.com/wp-content/uploads/2024/09/wenzi-1-246x300.webp" data-no-retina> 
+								</rs-layer><!--
+
+								--><rs-layer
+									id="slider-4-slide-37-layer-56" 
+									class="rs-noevents rs-pxl-2"
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="x:l,r,r,r;xo:707px,293px,123px,534px;y:t,t,t,b;yo:328px,226px,140px,330px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:269,223px,169px,119px;h:291,241px,182px,128px;"
+									data-frame_1="e:power4.inOut;st:1170;sp:1500;sR:1170;"
+									data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:6330;"
+									style="z-index:14;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="317" height="342" data-lazyload="assets/decoration.png" data-no-retina> 
+								</rs-layer><!--
+
+								--><rs-layer
+									id="slider-4-slide-37-layer-154" 
+									class="rs-noevents rs-pxl-2"
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="x:r;xo:83px,555px,555px,263px;y:t,t,t,b;yo:341px,232px,172px,59px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:269,209px,165px,161px;h:291,225px,178px,174px;"
+									data-frame_1="e:power4.inOut;st:1170;sp:1500;sR:1170;"
+									data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:6330;"
+									style="z-index:13;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="317" height="342" data-lazyload="assets/decoration.png" data-no-retina> 
+								</rs-layer><!--
+
+								--><rs-layer
+									id="slider-4-slide-37-layer-144" 
+									class="rs-noevents rs-pxl-2"
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="x:r;xo:84px,555px,555px,494px;y:t,t,t,b;yo:347px,232px,172px,54px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:269,209px,165px,161px;h:291,225px,178px,174px;"
+									data-frame_1="e:power4.inOut;st:1170;sp:1500;sR:1170;"
+									data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:6330;"
+									style="z-index:12;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="317" height="342" data-lazyload="assets/decoration.png" data-no-retina> 
+								</rs-layer><!--
+
+								--><rs-layer
+									id="slider-4-slide-37-layer-141" 
+									class="rs-noevents rs-pxl-2"
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="x:l,r,r,r;xo:390px,293px,123px,534px;y:t,t,t,b;yo:319px,226px,140px,330px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:269,223px,169px,119px;h:291,241px,182px,128px;"
+									data-frame_1="e:power4.inOut;st:1170;sp:1500;sR:1170;"
+									data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:6330;"
+									style="z-index:11;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="317" height="342" data-lazyload="assets/decoration.png" data-no-retina> 
+								</rs-layer><!--
+
+								--><rs-layer
+									id="slider-4-slide-37-layer-142" 
+									class="rs-noevents rs-pxl-2"
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="x:l,r,r,r;xo:79px,29px,476px,299px;y:t,t,t,b;yo:304px,244px,436px,330px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:269,246px,190px,111px;h:291,265px,205px,120px;"
+									data-frame_1="e:power4.inOut;st:1170;sp:1500;sR:1170;"
+									data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:6330;"
+									style="z-index:10;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="317" height="342" data-lazyload="assets/decoration.png" data-no-retina> 
+								</rs-layer><!--
+
+								--><rs-layer
+									id="slider-4-slide-37-layer-134" 
+									class="rs-noevents rs-pxl-2"
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="x:r,r,l,l;xo:311px,248px,409px,36px;y:t,t,t,b;yo:209px,124px,374px,21px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:347,245px,198px,156px;h:543px,384px,310px,244px;"
+									data-frame_1="e:power4.inOut;st:1170;sp:1500;sR:1170;"
+									data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:6330;"
+									style="z-index:9;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="899" height="1408" data-lazyload="assets/renwu-2.png" data-no-retina> 
+								</rs-layer><!--
+
+								--><rs-layer
+									id="slider-4-slide-37-layer-2" 
+									class="rs-noevents rs-pxl-2"
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="x:l,r,l,l;xo:82px,67px,50px,30px;y:t,t,t,b;yo:200px,165px,125px,77px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:304,209px,150px,129px;h:556px,382px,274px,236px;"
+									data-frame_1="e:power4.inOut;st:1170;sp:1500;sR:1170;"
+									data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:6330;"
+									style="z-index:8;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="774" height="1415" data-lazyload="assets/kongzi.png" data-no-retina> 
+								</rs-layer><!--
+
+								--><rs-layer
+									id="slider-4-slide-37-layer-135" 
+									class="rs-noevents rs-pxl-2"
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="x:r,r,l,l;xo:659px,507px,486px,274px;y:t,t,t,b;yo:205px,118px,68px,289px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:304,209px,150px,129px;h:556px,382px,274px,236px;"
+									data-frame_1="e:power4.inOut;st:1170;sp:1500;sR:1170;"
+									data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:6330;"
+									style="z-index:7;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="774" height="1415" data-lazyload="assets/renwu.png" data-no-retina> 
+								</rs-layer><!--
+
+								--><rs-layer
+									id="slider-4-slide-37-layer-136" 
+									class="rs-noevents rs-pxl-2"
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="x:r,r,l,l;xo:19px,21px,103px,279px;y:t,t,t,b;yo:200px,121px,377px,35px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:304,211px,170px,134px;h:556px,386px,311px,245px;"
+									data-frame_1="e:power4.inOut;st:1170;sp:1500;sR:1170;"
+									data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:6330;"
+									style="z-index:6;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="774" height="1415" data-lazyload="assets/renwu-1.png" data-no-retina> 
+								</rs-layer><!--
+							--></rs-group><!--
+
+							--><rs-group
+								id="slider-4-slide-37-layer-151" 
+								data-type="group"
+								data-rsp_ch="on"
+								data-xy="x:c,l,c,c;xo:-3px,395px,0,0;yo:777px,619px,807px,610px;"
+								data-pos="a"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;a:center;"
+								data-dim="w:198px,266px,202px,195px;h:121px,158px,120px,120px;"
+								data-actions='o:click;a:openmodal;modal:watalk-main-1;ms:rs-39;sp:1000;spin:13;spinc:#007aff;'
+								data-frame_0="y:100%;"
+								data-frame_0_mask="u:t;"
+								data-frame_1="y:-2px,-2px,-1px,0px;st:7500;sp:1200;sR:7500;"
+								data-frame_1_mask="u:t;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:300;sA:9000;"
+								data-frame_hover="sX:1.05;"
+								style="z-index:13;cursor:pointer;"
+							><!--
+								--><rs-layer
+									id="slider-4-slide-37-layer-153" 
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="xo:13px,14px,10px,7px;yo:2px,18px,13px,24px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:176px,232px,176px,177px;h:53px,69px,52px,54px;"
+									data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:8700;"
+									style="z-index:7;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="149" height="45" data-lazyload="assets/btn-bg.png" data-no-retina> 
+								</rs-layer><!--
+
+								--><rs-layer
+									id="slider-4-slide-37-layer-152" 
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="xo:-1px,0,0,9px;yo:0,0,0,27px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:195,258,196,177;h:59px,77px,58px,54px;"
+									data-actions='o:click;a:jumptoslide;slide:rs-28;'
+									data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:8700;"
+									style="z-index:6;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="299" height="90" data-lazyload="assets/tansuo-text-en-2.png" data-no-retina> 
+								</rs-layer><!--
+							--></rs-group><!--
+
+							--><rs-layer
+								id="slider-4-slide-37-layer-1" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="xo:376.0000305175781,310,235,144;y:t,t,t,b;yo:434.00696563720703,358,271,167;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:1823,1744px,1471px,1104px;h:270,196px,186px,179px;"
+								data-frame_0="y:bottom;blu:10px;"
+								data-frame_1="x:-7px,-5px,-3px,-1px;y:55px,45px,34px,20px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:7600;"
+								data-loop_999="x:600px;sX:1.1;sY:1.1;sp:99999;e:default;yym:t;yys:t;"
+								style="z-index:9;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1700" height="252" data-lazyload="assets/baiyun.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-37-layer-29" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="xo:-530px,-437px,-332px,-204px;y:t,t,t,b;yo:594px,490px,372px,229px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:1823,1744px,1471px,1104px;h:270,196px,186px,179px;"
+								data-frame_0="y:bottom;blu:10px;"
+								data-frame_1="x:-7px,-5px,-3px,-1px;y:55px,45px,34px,20px;e:power2.out;st:500;sp:900;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:7600;"
+								data-loop_999="x:600px;sX:1.1;sY:1.1;sp:99999;e:default;yym:t;yys:t;"
+								style="z-index:10;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1700" height="252" data-lazyload="assets/baiyun.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-37-layer-127" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:l,r,r,r;xo:-483px,399px,205px,-3px;y:t,t,t,b;yo:-86px,-19px,-62px,472px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:1143,740px,697px,556px;h:396,256px,241px,297px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:7500;"
+								style="z-index:11;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" data-lazyload="//wetalk.com/wp-content/uploads/2024/09/beijing-768x266.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-37-layer-132" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:836px,-178px,285px,-214px;y:t,t,t,b;yo:529px,543px,702px,-45px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:1121px,712px,671px,556px;h:414px,263px,248px,297px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:7500;"
+								style="z-index:4;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1024" height="378" data-lazyload="assets/yun-1024x378.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-37-layer-145" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:-638px,316px,-63px,174px;y:t,t,t,b;yo:513px,462px,725px,-24px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:1121px,804px,415px,460px;h:414px,297px,153px,170px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:7500;"
+								style="z-index:5;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1024" height="378" data-lazyload="assets/yun-1024x378.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-37-layer-146" 
+								class="rs-noevents rs-pxl-3"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:843px,503px,-127px,224px;y:t,t,t,b;yo:667px,562px,786px,-65px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:1121px,655px,456px,556px;h:414px,242px,168px,297px;"
+								data-frame_0="sX:0.9;sY:0.9;"
+								data-frame_1="x:1px,0px,0px,0px;st:500;sp:1000;sR:500;"
+								data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;sR:7500;"
+								style="z-index:3;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1024" height="378" data-lazyload="assets/yun-1024x378.png" data-no-retina> 
+							</rs-layer><!--
+-->					</rs-slide>
+
+					</rs-slides>
+					
+					<rs-static-layers>
+						<rs-group
+								id="slider-4-slide-4-layer-14" 
+								class="rs-layer-static"
+								data-type="group"
+								data-rsp_ch="on"
+								data-xy="x:l,l,l,r;xo:1856px,1532px,1163px,162px;yo:1310px,1081px,821px,77px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:1227,972px,738px,327px;h:375,298px,226px,682px;"
+								data-vbility="f,f,t,t"
+								data-actions='o:mouseleave;a:stoplayer;layer:slider-4-slide-4-layer-14;ch:true;'
+								data-basealign="slide"
+								data-onslides="s:1;"
+								data-border="bor:10px,10px,10px,10px;"
+								data-frame_0="o:1;"
+								data-frame_1="st:a;"
+								data-frame_999="y:-100%;o:0;st:a;sp:1200;sR:7800;sA:9000;"
+								data-frame_999_mask="u:t;"
+								style="z-index:6;background-color:#0c0c0c;"
+							><!--
+								--><rs-layer
+									id="slider-4-slide-4-layer-49" 
+									class="rs-layer-static"
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="xo:50px,41px,31px,166px;yo:234px,193px,146px,547px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:300px,247px,187px,115px;h:180px,148px,112px,114px;"
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;"
+									style="z-index:28;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="231" height="228" data-lazyload="assets/stroy-logo.png" data-no-retina> 
+								</rs-layer><!--
+
+								--><a
+									id="slider-4-slide-4-layer-65" 
+									class="rs-layer rs-layer-static"
+									href="/campus-philippines/" target="_self"
+									data-type="text"
+									data-color="#7f7f7f||#7f7f7f||#7f7f7f||#ffffff"
+									data-rsp_ch="on"
+									data-xy="xo:0,0,0,80px;yo:0,0,0,459px;"
+									data-pos="a"
+									data-text="w:normal;s:19,15,11,16;l:19,15,11,6;fw:500;"
+									data-dim="w:193px,159px,120px,74px;h:24,19,14,10px;"
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									data-frame_hover="c:#0c0c0c;bgc:rgba(239,239,239,0.89);sp:0ms;e:none;"
+									style="z-index:27;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								>Campus 
+								</a><!--
+
+								--><a
+									id="slider-4-slide-4-layer-64" 
+									class="rs-layer rs-layer-static"
+									href="/about-us/" target="_self"
+									data-type="text"
+									data-color="#7f7f7f||#7f7f7f||#7f7f7f||#fcfcfc"
+									data-rsp_ch="on"
+									data-xy="xo:0,0,0,81px;yo:0,0,0,488px;"
+									data-pos="a"
+									data-text="w:normal;s:19,15,11,16;l:19,15,11,8;fw:500;"
+									data-dim="w:193px,159px,120px,107px;h:24,19,14,10px;"
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									data-frame_hover="c:#0c0c0c;bgc:rgba(239,239,239,0.89);sp:0ms;e:none;"
+									style="z-index:26;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								>About Us 
+								</a><!--
+
+								--><a
+									id="slider-4-slide-4-layer-50" 
+									class="rs-layer rs-layer-static"
+									href="/charity/" target="_self"
+									data-type="text"
+									data-color="#7f7f7f||#7f7f7f||#7f7f7f||#ffffff"
+									data-rsp_ch="on"
+									data-xy="xo:0,0,0,82px;yo:0,0,0,519px;"
+									data-pos="a"
+									data-text="w:normal;s:19,15,11,16;l:19,15,11,6;fw:500;"
+									data-dim="w:193px,159px,120px,74px;h:24,19,14,8;"
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									data-frame_hover="c:#0c0c0c;bgc:rgba(239,239,239,0.89);sp:0ms;e:none;"
+									style="z-index:25;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								>Charity 
+								</a><!--
+
+								--><a
+									id="slider-4-slide-4-layer-119" 
+									class="rs-layer rs-layer-static"
+									href="/science/" target="_self"
+									data-type="text"
+									data-color="#7f7f7f||#7f7f7f||#7f7f7f||#ffffff"
+									data-rsp_ch="on"
+									data-xy="xo:0,0,0,78px;yo:0,0,0,228px;"
+									data-pos="a"
+									data-text="w:normal;s:19,15,11,16;l:20,16,12,11;fw:500;"
+									data-dim="w:234px,193px,146px,83px;h:24,19,14,13;"
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									data-frame_hover="c:#0c0c0c;bgc:rgba(239,239,239,0.89);sp:0ms;e:none;"
+									style="z-index:24;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								>Science 
+								</a><!--
+
+								--><a
+									id="slider-4-slide-4-layer-118" 
+									class="rs-layer rs-layer-static"
+									href="/sinology/" target="_self"
+									data-type="text"
+									data-color="#7f7f7f||#7f7f7f||#7f7f7f||#ffffff"
+									data-rsp_ch="on"
+									data-xy="xo:0,0,0,76px;yo:0,0,0,260px;"
+									data-pos="a"
+									data-text="w:normal;s:19,15,11,16;l:20,16,12,11;fw:500;"
+									data-dim="w:236px,194px,147px,230px;h:24,19,14,16px;"
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									data-frame_hover="c:#0c0c0c;bgc:rgba(239,239,239,0.89);sp:0ms;e:none;"
+									style="z-index:23;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								>Chinese Culture Learning 
+								</a><!--
+
+								--><a
+									id="slider-4-slide-4-layer-117" 
+									class="rs-layer rs-layer-static"
+									href="/chinese/" target="_self"
+									data-type="text"
+									data-color="#7f7f7f||#7f7f7f||#7f7f7f||#ffffff"
+									data-rsp_ch="on"
+									data-xy="xo:0,0,0,76px;yo:0,0,0,196px;"
+									data-pos="a"
+									data-text="w:normal;s:19,15,11,16;l:20,16,12,11;fw:500;"
+									data-dim="w:232px,191px,145px,97px;h:24,19,14,auto;"
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									data-frame_hover="c:#0c0c0c;bgc:rgba(239,239,239,0.89);sp:0ms;e:none;"
+									style="z-index:22;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								>Linguistics 
+								</a><!--
+
+								--><rs-layer
+									id="slider-4-slide-4-layer-100" 
+									class="rs-layer-static"
+									data-type="text"
+									data-color="#7f7f7f||#7f7f7f||#7f7f7f||#ffffff"
+									data-rsp_ch="on"
+									data-xy="xo:0,0,0,45px;yo:0,0,0,166px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,16;l:21,17,12,14;fw:500;"
+									data-dim="w:253px,208px,158px,155px;h:25,20,15,auto;"
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									data-frame_hover="c:#0c0c0c;bgc:rgba(239,239,239,0.89);sp:0ms;e:none;"
+									style="z-index:21;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								><i class="material-icons">laptop_chromebook</i> &nbsp; Course <i class="material-icons" style="float:right; font-size:14px">arrow_drop_down</i> 
+								</rs-layer><!--
+
+								--><a
+									id="slider-4-slide-4-layer-99" 
+									class="rs-layer rs-layer-static"
+									href="/recorded-courses/" target="_self"
+									data-type="text"
+									data-color="#7f7f7f||#7f7f7f||#7f7f7f||#ffffff"
+									data-rsp_ch="on"
+									data-xy="xo:0,0,0,75px;yo:0,0,0,133px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,16;l:21,17,12,12;fw:500;"
+									data-dim="w:250,206,156,221px;h:25,20,15,14px;"
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									data-frame_hover="c:#0c0c0c;bgc:rgba(239,239,239,0.89);sp:0ms;e:none;"
+									style="z-index:20;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								><i class="material-icons">photo_camera</i>&nbsp; Recording course  
+								</a><!--
+
+								--><a
+									id="slider-4-slide-4-layer-98" 
+									class="rs-layer rs-layer-static"
+									href="/short-video/" target="_self"
+									data-type="text"
+									data-color="#7f7f7f||#7f7f7f||#7f7f7f||#ffffff"
+									data-rsp_ch="on"
+									data-xy="xo:0,0,0,73px;yo:0,0,0,109px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,16;l:21,17,12,12;fw:500;"
+									data-dim="w:260px,214px,162px,231px;h:42,34,25,auto;"
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									data-frame_hover="c:#0c0c0c;bgc:rgba(239,239,239,0.89);sp:0ms;e:none;"
+									style="z-index:19;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								><i class="material-icons">highlight</i> &nbsp; Intelligent database   
+								</a><!--
+
+								--><rs-layer
+									id="slider-4-slide-4-layer-92" 
+									class="rs-layer-static"
+									data-type="text"
+									data-color="#ffffff||#ffffff||#ffffff||#0c0c0c"
+									data-rsp_ch="on"
+									data-xy="xo:0,0,0,45px;yo:0,0,0,32px;"
+									data-pos="a"
+									data-text="w:normal;s:20,15,11,16;l:23,17,12,22;ls:0,0px,0px,0px;a:center,center,center,left;"
+									data-dim="w:78,62px,47px,87px;h:25,20px,15px,28px;"
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									style="z-index:18;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								>Home 
+								</rs-layer><!--
+
+								--><a
+									id="slider-4-slide-4-layer-115" 
+									class="rs-layer rs-layer-static"
+									href="/signup/" target="_blank" rel="noopener"
+									data-type="text"
+									data-color="#ffffff||#ffffff||#ffffff||#0c0c0c"
+									data-rsp_ch="on"
+									data-xy="x:l,l,l,c;xo:1119px,890px,676px,70px;yo:0,0,0,638px;"
+									data-pos="a"
+									data-text="w:normal;s:17,13,9,16;l:23,17,12,7;ls:0,0px,0px,0px;a:center;"
+									data-dim="w:105,83px,63px,91px;h:25,20px,15px,16px;"
+									data-actions='o:click;a:openmodal;modal:landing-page-hero;ms:rs-59;sp:1;bg:rgba(0,0,0,0.5);'
+									data-onslides="s:1;"
+									data-border="bos:solid,solid,solid,none;boc:#0c0c0c;bow:1px,1px,1px,1px;bor:20px,20px,20px,20px;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									style="z-index:17;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								>Sign Up 
+								</a><!--
+
+								--><a
+									id="slider-4-slide-4-layer-114" 
+									class="rs-layer rs-layer-static"
+									href="/signin/" target="_blank" rel="noopener"
+									data-type="text"
+									data-color="#ffffff||#ffffff||#ffffff||#0c0c0c"
+									data-rsp_ch="on"
+									data-xy="x:l,l,l,c;xo:1037px,825px,626px,-43px;yo:0,0,0,638px;"
+									data-pos="a"
+									data-text="w:normal;s:17,13,9,16;l:23,17,12,9;ls:0,0px,0px,0px;a:center;"
+									data-dim="w:78,62px,47px,95px;h:25,20px,15px,18px;"
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									style="z-index:16;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								>Sign In 
+								</a><!--
+
+								--><rs-layer
+									id="slider-4-slide-4-layer-113" 
+									class="rs-layer-static"
+									data-type="text"
+									data-color="#ffffff||#ffffff||#ffffff||#0c0c0c"
+									data-rsp_ch="on"
+									data-xy="x:l,l,l,c;xo:999px,795px,604px,-42px;yo:0,0,0,593px;"
+									data-pos="a"
+									data-text="w:normal;s:24,18,13,23;l:24,18,13,23;"
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									style="z-index:15;font-family:'Roboto';cursor:pointer;"
+								><i class="material-icons">language</i> 
+								</rs-layer><!--
+
+								--><rs-layer
+									id="slider-4-slide-4-layer-111" 
+									class="rs-layer-static"
+									data-type="text"
+									data-color="#ffffff||#ffffff||#ffffff||#0c0c0c"
+									data-rsp_ch="on"
+									data-xy="x:l,l,l,c;xo:935px,743px,564px,66px;yo:0,0,0,605px;"
+									data-pos="a"
+									data-text="w:normal;s:20,15,11,23;l:24,18,13,8;"
+									data-dim="w:auto,auto,auto,32px;"
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									style="z-index:14;font-family:'Roboto';cursor:pointer;"
+								><i style="font-size:25px" class="material-icons">search</i> 
+								</rs-layer><!--
+
+								--><rs-layer
+									id="slider-4-slide-4-layer-94" 
+									class="rs-layer-static"
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="xo:446px,355px,269px,165px;yo:31px,24px,18px,11px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:49,39px,29px,17px;h:9,7px,5px,3px;"
+									data-onslides="s:1;"
+									data-frame_0="x:-175%;o:1;"
+									data-frame_0_mask="u:t;x:100%;"
+									data-frame_1="e:power3.out;sp:500;st:a;"
+									data-frame_1_mask="u:t;"
+									data-frame_999="o:0;st:a;sR:8500;"
+									style="z-index:13;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="47" height="9" data-lazyload="assets/menu_line.png" data-no-retina> 
+								</rs-layer><!--
+
+								--><rs-layer
+									id="slider-4-slide-4-layer-105" 
+									class="rs-layer-static"
+									data-type="text"
+									data-rsp_ch="on"
+									data-xy="x:l,l,l,c;xo:765px,608px,461px,-65px;yo:0,0,0,428px;"
+									data-pos="a"
+									data-text="w:normal;s:20,15,11,16;l:23,17,12,7;ls:0,0px,0px,0px;a:center,center,center,left;"
+									data-dim="w:160,127px,96px,104px;h:auto,auto,auto,15px;"
+									data-actions='o:mouseenter;a:stoplayer;layer:slider-4-slide-4-layer-39;ch:true;||o:mouseenter;a:stoplayer;layer:slider-4-slide-4-layer-94;ch:true;'
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									style="z-index:12;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								>Company   <i class="material-icons">arrow_drop_down</i> 
+								</rs-layer><!--
+
+								--><a
+									id="slider-4-slide-4-layer-103" 
+									class="rs-layer rs-layer-static"
+									href="/study-abroad/" target="_self"
+									data-type="text"
+									data-rsp_ch="on"
+									data-xy="x:l,l,l,c;xo:639px,509px,386px,-3px;yo:0,0,0,361px;"
+									data-pos="a"
+									data-text="w:normal;s:20,15,11,16;l:23,17,12,7;ls:0,0px,0px,0px;a:center,center,center,left;"
+									data-dim="w:121,96px,72px,230px;h:25,20px,15px,12px;"
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									style="z-index:11;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								>Study Abroad 
+								</a><!--
+
+								--><a
+									id="slider-4-slide-4-layer-96" 
+									class="rs-layer rs-layer-static"
+									href="/news/" target="_self"
+									data-type="text"
+									data-rsp_ch="on"
+									data-xy="xo:530px,422px,320px,46px;yo:0,0,0,396px;"
+									data-pos="a"
+									data-text="w:normal;s:20,15,11,16;l:23,17,12,7;ls:0,0px,0px,0px;a:center,center,center,left;"
+									data-dim="w:102,81px,61px,77px;h:25,20px,15px,9px;"
+									data-actions='o:mouseenter;a:stoplayer;layer:slider-4-slide-4-layer-94;ch:true;'
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									style="z-index:10;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								>News 
+								</a><!--
+
+								--><a
+									id="slider-4-slide-4-layer-93" 
+									class="rs-layer rs-layer-static"
+									href="/teacher/" target="_self"
+									data-type="text"
+									data-rsp_ch="on"
+									data-xy="xo:427px,339px,257px,45px;yo:0,0,0,332px;"
+									data-pos="a"
+									data-text="w:normal;s:20,15,11,16;l:23,17,12,7;ls:0,0px,0px,0px;a:center,center,center,left;"
+									data-dim="w:102,81px,61px,103px;h:25,20px,15px,9px;"
+									data-actions='o:mouseenter;a:togglelayer;ls:hidden;layer:slider-4-slide-4-layer-94;ch:true;||o:mouseleave;a:stoplayer;layer:slider-4-slide-4-layer-94;ch:true;'
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									style="z-index:9;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								>Teachers 
+								</a><!--
+
+								--><rs-layer
+									id="slider-4-slide-4-layer-39" 
+									class="rs-layer-static"
+									data-type="image"
+									data-rsp_ch="on"
+									data-xy="xo:330px,262px,199px,122px;yo:29px,22px,16px,9px;"
+									data-pos="a"
+									data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+									data-dim="w:54,43px,32px,19px;h:10,8px,6px,3px;"
+									data-onslides="s:1;"
+									data-frame_0="x:-175%;o:1;"
+									data-frame_0_mask="u:t;x:100%;"
+									data-frame_1="e:power3.out;sp:500;st:a;"
+									data-frame_1_mask="u:t;"
+									data-frame_999="o:0;st:a;sR:8500;"
+									style="z-index:8;"
+								><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="47" height="9" data-lazyload="assets/menu_line.png" data-no-retina> 
+								</rs-layer><!--
+
+								--><a
+									id="slider-4-slide-4-layer-15" 
+									class="rs-layer rs-layer-static"
+									href="/linguistic/" target="_self"
+									data-type="text"
+									data-color="#ffffff||#ffffff||#ffffff||#fcfcfc"
+									data-rsp_ch="on"
+									data-xy="xo:308px,245px,186px,45px;yo:0,0,0,299px;"
+									data-pos="a"
+									data-text="w:normal;s:20,15,11,16;l:23,17,12,7;ls:0,0px,0px,0px;a:center,center,center,left;"
+									data-dim="w:102,81px,61px,125px;h:25,20px,15px,10px;"
+									data-actions='o:mouseenter;a:togglelayer;ls:hidden;layer:slider-4-slide-4-layer-39;ch:true;||o:mouseleave;a:stoplayer;layer:slider-4-slide-4-layer-39;ch:true;||o:mouseenter;a:stoplayer;layer:slider-4-slide-4-layer-94;ch:true;'
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									style="z-index:7;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								>Linguistics 
+								</a><!--
+
+								--><rs-layer
+									id="slider-4-slide-4-layer-95" 
+									class="rs-layer-static"
+									data-type="text"
+									data-rsp_ch="on"
+									data-xy="xo:125px,99px,75px,45px;yo:0,0,0,68px;"
+									data-pos="a"
+									data-text="w:normal;s:20,15,11,16;l:23,17,12,20;ls:0,0px,0px,0px;a:center,center,center,left;"
+									data-dim="w:160,127px,96px,169px;"
+									data-actions='o:mouseenter;a:stoplayer;layer:slider-4-slide-4-layer-39;ch:true;||o:mouseenter;a:stoplayer;layer:slider-4-slide-4-layer-94;ch:true;'
+									data-onslides="s:1;"
+									data-frame_999="o:0;st:w;sR:8700;"
+									style="z-index:6;font-family:'Times New Roman', 'Times', 'serif';cursor:pointer;"
+								>WeTalk Courses  <i class="material-icons">arrow_drop_down</i> 
+								</rs-layer><!--
+							--></rs-group><!--
+
+							--><rs-layer
+								id="slider-4-slide-4-layer-0" 
+								class="rev-btn rev-hiddenicon rs-layer-static"
+								data-type="button"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:60px,49px,37px,48px;yo:43px,35px,26px,92px;"
+								data-text="w:normal;s:17,17,15,13;l:20,20,18,15;ls:1,0,0,0;"
+								data-dim="w:auto,111px,103px,91px;minh:0px,none,none,none;"
+								data-actions='o:click;a:openmodal;modal:watalk-main-1;ms:rs-39;spin:13;spinc:#007aff;'
+								data-basealign="slide"
+								data-onslides="s:1;"
+								data-padding="t:12,12,12,11;r:35,35,34,30;b:12,12,12,11;l:35,35,34,30;"
+								data-border="bor:30px,30px,30px,30px;"
+								data-frame_0="x:0,0px,0px,0px;y:0,0px,0px,0px;"
+								data-frame_1="x:0,0px,0px,0px;y:0,0px,0px,0px;"
+								data-frame_999="o:0;st:w;"
+								data-frame_hover="c:#000;bgc:#fff;bor:30px,30px,30px,30px;sp:200;"
+								style="z-index:11;background-color:rgba(0,0,0,0.75);font-family:'Roboto';text-transform:uppercase;"
+							>SKIP <i class="fa-chevron-right"></i> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-4-layer-18" 
+								class="rs-svg rs-layer-static"
+								data-type="svg"
+								data-rsp_ch="on"
+								data-xy="xo:1779px,1469px,1116px,-438px;yo:176px,145px,110px,229px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:60px,49px,40px,35px;h:60px,49px,40px,35px;"
+								data-vbility="f,f,f,f"
+								data-actions='o:click;a:jumptoslide;slide:rs-first;'
+								data-svg_src="assets/logo_4.svg"
+								data-svgi="c:#fcbf27;sall:1;"
+								data-svgh="c:#fcbf27;"
+								data-onslides="s:1;"
+								data-frame_0="x:0,0,0,0px;y:0,0,0,0px;"
+								data-frame_1="x:18px,14px,10px,0px;y:1px,0px,0px,0px;"
+								data-frame_999="o:0;st:w;sR:8700;"
+								data-frame_hover="rZ:45deg;"
+								style="z-index:7;font-family:'Roboto';cursor:pointer;"
+							> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-4-layer-25" 
+								class="rs-layer-static"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:l,l,l,r;xo:79px,38px,28px,38px;yo:17px,73px,55px,36px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:144px,118px,89px,110px;h:69px,56px,42px,40px;"
+								data-actions='o:click;a:openmodal;modal:watalk-main-1;ms:rs-39;spin:13;spinc:#007aff;'
+								data-basealign="slide"
+								data-onslides="s:1;"
+								data-frame_999="o:0;st:w;sR:8700;"
+								style="z-index:8;cursor:pointer;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="396" height="190" data-lazyload="assets/logo-black.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-4-layer-35" 
+								class="rs-layer-static"
+								data-type="text"
+								data-rsp_ch="on"
+								data-xy="xo:50px,41px,31px,25px;yo:50px,41px,31px,26px;"
+								data-text="w:normal;s:20,16,12,50;l:25,20,15,50;"
+								data-vbility="f,f,t,t"
+								data-actions='o:click;a:togglelayer;ls:hidden;layer:slider-4-slide-4-layer-14;ch:true;'
+								data-basealign="slide"
+								data-onslides="s:1;"
+								data-frame_999="o:0;st:w;"
+								style="z-index:10;font-family:'Roboto';"
+							><i class="material-icons">view_headline</i> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-4-slide-4-layer-41" 
+								class="rs-layer-static"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="xo:1396px,1152px,875px,422px;yo:812px,670px,509px,613px;"
+								data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+								data-dim="w:16px,13px,9px,11px;h:36px,29px,22px,24px;"
+								data-vbility="t,t,t,f"
+								data-actions='o:click;a:jumptoslide;slide:next;'
+								data-onslides="s:1;e:4;"
+								data-frame_0="y:-100%;"
+								data-frame_0_mask="u:t;"
+								data-frame_1="sp:1260;"
+								data-frame_1_mask="u:t;"
+								data-frame_999="o:0;st:w;sR:7740;"
+								data-tloop="t:frame_1;"
+								data-loop_999="e:default;yym:t;"
+								style="z-index:9;cursor:pointer;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="9" height="20" data-lazyload="assets/down-arrow.png" data-no-retina> 
+							</rs-layer><!--
+					--></rs-static-layers>
+				</rs-module>
+				<script>
+					
+				</script>
+<script>
+		if(typeof revslider_showDoubleJqueryError === "undefined") {function revslider_showDoubleJqueryError(sliderID) {console.log("You have some jquery.js library include that comes after the Slider Revolution files js inclusion.");console.log("To fix this, you can:");console.log("1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on");console.log("2. Find the double jQuery.js inclusion and remove it");return "Double Included jQuery Library";}}
+</script>
+			</rs-module-wrap>
+			<!-- END REVOLUTION SLIDER -->
+
+				<script>
+					var	tpj = jQuery;
+					if(window.RS_MODULES === undefined) window.RS_MODULES = {};
+					if(RS_MODULES.modules === undefined) RS_MODULES.modules = {};
+					RS_MODULES.modules["revslider41"] = {once: RS_MODULES.modules["revslider41"]!==undefined ? RS_MODULES.modules["revslider41"].once : undefined, init:function() {
+						window.revapi4 = window.revapi4===undefined || window.revapi4===null || window.revapi4.length===0  ? document.getElementById("rev_slider_4_1") : window.revapi4;
+						if(window.revapi4 === null || window.revapi4 === undefined || window.revapi4.length==0) { window.revapi4initTry = window.revapi4initTry ===undefined ? 0 : window.revapi4initTry+1; if (window.revapi4initTry<20) requestAnimationFrame(function() {RS_MODULES.modules["revslider41"].init()}); return;}
+						window.revapi4 = jQuery(window.revapi4);
+						if(window.revapi4.revolution==undefined){ revslider_showDoubleJqueryError("rev_slider_4_1"); return;}
+						revapi4.revolutionInit({
+								revapi:"revapi4",
+								DPR:"dpr",
+								sliderLayout:"fullscreen",
+								visibilityLevels:"1240,1024,778,480",
+								gridwidth:"1240,1024,778,480",
+								gridheight:"900,768,960,720",
+								lazyType:"smart",
+								spinner:"spinner13",
+								perspective:600,
+								perspectiveType:"global",
+								spinnerclr:"#007aff",
+								imgCrossOrigin:"anonymous",
+								onedpronmobile:true,
+								lazyOnBg:true,
+								editorheight:"900,768,960,720",
+								responsiveLevels:"1240,1024,778,480",
+								ignoreHeightChange:false,
+								fullScreenOffsetContainer:"#masthead",
+								stopAtSlide:1,
+								stopAfterLoops:0,
+								stopLoop:true,
+								ajaxUrl:"https://wetalk.com/wp-admin/admin-ajax.php",
+								progressBar:{disableProgressBar:true},
+								navigation: {
+									mouseScrollNavigation:"on",
+									wheelCallDelay:1000,
+									onHoverStop:false,
+									touch: {
+										touchenabled:true,
+										swipe_direction:"vertical"
+									}
+								},
+								parallax: {
+									levels:[-1,1,15,20,25,30,35,40,45,46,47,48,49,50,51,30],
+									type:"mousescroll",
+									origo:"slidercenter",
+									speed:0,
+									speedls:"300ms"
+								},
+								scrolleffect: {
+									set:true,
+									multiplicator:1.3,
+									multiplicator_layers:1.3
+								},
+								viewPort: {
+									global:false,
+									globalDist:"-200px",
+									enable:false,
+									outof:"pause"
+								},
+						});
+						
+						if (revapi4 !== undefined) jQuery.fn.revolution.fluidDynamicsInit(revapi4[0].id,  {url:"https://wetalk.com/wp-content/plugins/revslider-fluiddynamics-addon/"});
+
+						if (revapi4 !== undefined) jQuery.fn.revolution.particleWaveInit(revapi4[0].id,  {url:"https://wetalk.com/wp-content/plugins/revslider-particlewave-addon/"});
+
+					}} // End of RevInitScript
+					if (window.RS_MODULES.checkMinimal!==undefined) { window.RS_MODULES.checkMinimal();};
+				</script>
+
+
+
+<style>@font-face{font-family:'Material Icons'; font-style:normal; font-weight:400; src:url(//fonts.gstatic.com/s/materialicons/v41/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2')}rs-module .material-icons{font-family:'Material Icons'; font-weight:normal; font-style:normal;font-size:inherit; display:inline-block; text-transform:none; letter-spacing:normal; word-wrap:normal; white-space:nowrap; direction:ltr; vertical-align:top; line-height:inherit; font-feature-settings:'liga'; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; -moz-osx-font-smoothing:grayscale}</style>
+<script async="" defer="" src="js/revolution.addon.particlewave.min.js"></script><script async="" defer="" src="https://wetalk.com/wp-content/plugins/revslider/sr6/assets/js/libs/three.min.js"></script><script type="text/javascript">window.RVS ??= {}; window.RVS.ENV ??= {}; window.RVS.ENV.TRANSITIONPACK_URL = "https://wetalk.com/wp-content/plugins/revslider-transitionpack-addon/";</script>
+		</body>
+				</html>
+		
