@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -28,30 +28,30 @@
 
     <style>
         @font-face {
-			font-family: 'Material Icons';
-			font-style: normal;
-			font-weight: 400;
-			src: url(//fonts.gstatic.com/s/materialicons/v41/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2')
-		}
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            src: url(//fonts.gstatic.com/s/materialicons/v41/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2')
+        }
 
         .material-icons {
-			font-family: 'Material Icons';
-			font-weight: normal;
-			font-style: normal;
-			font-size: inherit;
-			display: inline-block;
-			text-transform: none;
-			letter-spacing: normal;
-			word-wrap: normal;
-			white-space: nowrap;
-			direction: ltr;
-			vertical-align: top;
-			line-height: inherit;
-			font-feature-settings: 'liga';
-			-webkit-font-smoothing: antialiased;
-			text-rendering: optimizeLegibility;
-			-moz-osx-font-smoothing: grayscale
-		}
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: inherit;
+            display: inline-block;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            vertical-align: top;
+            line-height: inherit;
+            font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            -moz-osx-font-smoothing: grayscale
+        }
     </style>
 
     <!-- REVOLUTION JS FILES -->
@@ -74,28 +74,27 @@
     <section class="example">
         <article class="content">
 
-            <div id="intro-slider_wrapper" class="rev_slider_wrapper fullscreen-container"
-                data-alias="" data-source="gallery" style="background-color:#cff1f9;padding:0px;">
+            <div id="intro-slider_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias=""
+                data-source="gallery" style="background-color:#cff1f9;padding:0px;">
                 <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
-                <div id="intro-slider" class="rev_slider fullscreenbanner" style="display:none;"
-                    data-version="5.4.1">
-                    <ul> 
+                <div id="intro-slider" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">
+                    <ul>
                         <!-- SLIDE 1 -->
-                        <li data-index="rs-2989" data-transition="fade" data-slotamount="7"
-                            data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default"
-                            data-easeout="default" data-masterspeed="500"
-                            data-thumb="" data-rotate="0" data-fstransition="fade"
+                        <li data-index="rs-2989" data-transition="fade" data-slotamount="7" data-hideafterloop="0"
+                            data-hideslideonmobile="off" data-easein="default" data-easeout="default"
+                            data-masterspeed="500" data-thumb="" data-rotate="0" data-fstransition="fade"
                             data-fsmasterspeed="500" data-fsslotamount="7" data-saveperformance="off"
                             data-title="Slide 1" data-param1="" data-param2="" data-param3="" data-param4=""
                             data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
                             data-description="">
-                            
+
                             <!-- LAYERS -->
                             <div class="tp-caption tp-resizeme" id="cloud-1-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['-500','-500','-500','-500']"
+                                data-x="['center','center','center','center']"
+                                data-hoffset="['-500','-500','-500','-500']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['320','320','320','320']"
-                                data-width="none" data-height="none"
-                                data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
+                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
+                                data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
                                     {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
@@ -103,19 +102,19 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5" data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/opening-sequence/cloud-1.webp" alt="" 
+                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
+                                    data-zoomstart="1" data-zoomend="1.05">
+                                    <img src="assets/opening-sequence/cloud-1.webp" alt=""
                                         data-ww="['640px','640px','640px','640px']"
-                                        data-hh="['auto','auto','auto','auto']"
-                                        data-no-retina> 
+                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="cloud-4-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['500','500','500','500']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['350','350','350','350']"
-                                data-width="none" data-height="none"
-                                data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
+                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
+                                data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
                                     {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
@@ -123,19 +122,19 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5" data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/opening-sequence/cloud-4.webp" alt="" 
+                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
+                                    data-zoomstart="1" data-zoomend="1.05">
+                                    <img src="assets/opening-sequence/cloud-4.webp" alt=""
                                         data-ww="['831px','831px','831px','831px']"
-                                        data-hh="['auto','auto','auto','auto']"
-                                        data-no-retina> 
+                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="cloud-0-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['450','450','450','450']"
-                                data-width="none" data-height="none"
-                                data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
+                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
+                                data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},
                                     {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
@@ -143,19 +142,19 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-slideloop" data-easing="Linear.easeNone" data-speed="50" data-xs="-400" data-ys="0" data-xe="400" data-ye="0" >
-                                    <img src="assets/opening-sequence/cloud-0-scaled-1.webp" alt="" 
+                                <div class="rs-looped rs-slideloop" data-easing="Linear.easeNone" data-speed="50"
+                                    data-xs="-400" data-ys="0" data-xe="400" data-ye="0">
+                                    <img src="assets/opening-sequence/cloud-0-scaled-1.webp" alt=""
                                         data-ww="['2773px','2090px','1821px','1516px']"
-                                        data-hh="['325px','325px','325px','225px']" 
-                                        data-no-retina> 
+                                        data-hh="['325px','325px','325px','225px']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="sign-off-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['420','320','220','130']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['250','250','230','330']"
-                                data-width="none" data-height="none"
-                                data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
+                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
+                                data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
                                     {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
@@ -163,19 +162,19 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5" data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/opening-sequence/sign-off.png" alt="" 
+                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
+                                    data-zoomstart="1" data-zoomend="1.05">
+                                    <img src="assets/opening-sequence/sign-off.png" alt=""
                                         data-ww="['248px','238px','228px','168px']"
-                                        data-hh="['auto','auto','auto','auto']"
-                                        data-no-retina> 
+                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="cr-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-50','-50']"
-                                data-width="none" data-height="none"
-                                data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
+                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
+                                data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
                                     {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
@@ -183,84 +182,75 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="3" data-zoomstart="1" data-zoomend="1.1">
-                                    <img src="assets/opening-sequence/cr.webp" alt="" 
+                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="3"
+                                    data-zoomstart="1" data-zoomend="1.1">
+                                    <img src="assets/opening-sequence/cr.webp" alt=""
                                         data-ww="['334px','334px','334px','334px']"
-                                        data-hh="['auto','auto','auto','auto']"
-                                        data-no-retina> 
+                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="open-button-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-50','-50']"
-                                data-width="none" data-height="none"
-                                data-whitespace="nowrap" data-type="button" data-responsive_offset="on"
+                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="button"
+                                data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
                                     {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
                                 data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 6; white-space:nowrap;">
-                                <a class="" 
-                                    href="philosophers.html" target="_self"             
-                                    id="open-link" 
-                                    style="z-index: 12; white-space: nowrap; 
+                                data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space:nowrap;">
+                                <a class="" href="philosophers.php" target="_self" id="open-link" style="z-index: 12; white-space: nowrap; 
                                         font-size: 18px; line-height: 15px; font-weight: 600;
                                         font-family:'Times New Roman', 'Times', 'serif'; 
                                         color: #0f0f0f; border-width:0px; cursor:pointer;
                                         text-decoration: none;">
-                                        Open Now <i class="material-icons">arrow_drop_down</i>
+                                    Open Now <i class="material-icons">arrow_drop_down</i>
                                 </a>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="skip-button-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['280','280','280','280']"
-                                data-width="none" data-height="none"
-                                data-whitespace="nowrap" data-type="button" data-responsive_offset="on"
+                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="button"
+                                data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
                                     {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
                                 data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 6; white-space:nowrap;">
-                                <a class="" 
-                                    href="main-page.html" target="_self"             
-                                    id="skip-link" 
-                                    style="z-index: 12; white-space: nowrap; 
+                                data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space:nowrap;">
+                                <a class="" href="main-page.php" target="_self" id="skip-link" style="z-index: 12; white-space: nowrap; 
                                         font-size: 15px; line-height: 16px; font-weight: normal;
                                         font-family:'Arial', 'Helvetica', 'sans-serif'; 
                                         color: #0f0f0f; border-width:0px; cursor:pointer;
                                         text-decoration: none;
                                         padding-top: 10px; padding-bottom: 10px; padding-right: 40px; padding-left: 40px;
                                         border: solid; border-color: #2b2b2b; border-width: 1px; border-radius: 25px;">
-                                        Skip
+                                    Skip
                                 </a>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="logo-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-390','-390','-390','-390']"
-                                data-width="none" data-height="none"
+                                data-y="['middle','middle','middle','middle']"
+                                data-voffset="['-390','-390','-390','-390']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
-                                    {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
+                                    {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]' data-textAlign="['left','left','left','left']"
+                                data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5" data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/opening-sequence/logo-black.png" alt="" 
+                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
+                                    data-zoomstart="1" data-zoomend="1.05">
+                                    <img src="assets/opening-sequence/logo-black.png" alt=""
                                         data-ww="['192px','192px','192px','172px']"
-                                        data-hh="['auto','auto','auto','auto']"
-                                        data-no-retina> 
+                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
-                            
+
                         </li>
 
                     </ul>
@@ -270,7 +260,7 @@
                     </div>
                 </div>
             </div><!-- END REVOLUTION SLIDER -->
-            
+
             <script type="text/javascript">
                 var tpj = jQuery;
 
@@ -305,10 +295,10 @@
                             gridheight: [868, 768, 960, 720],
                             lazyType: "none",
                             parallax: {
-                                type:"mouse",
-                                origo:"slidercenter",
-                                speed:400,
-                                levels:[1,2,3,4,5,10,-1,-2,-3,-4,-5,-10,49,50,51,55],
+                                type: "mouse",
+                                origo: "slidercenter",
+                                speed: 400,
+                                levels: [1, 2, 3, 4, 5, 10, -1, -2, -3, -4, -5, -10, 49, 50, 51, 55],
                                 disable_onmobile: 'on',
                             },
                             shadow: 0,
