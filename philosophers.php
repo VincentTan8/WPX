@@ -269,8 +269,8 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/philosophers/Screenshot-2024-09-07-at-5.10.41 PM-150x300.png"
-                                        alt="" data-ww="['208px','210px','217px','161px']"
+                                    <img src="assets/philosophers/vertical-text-1.png" alt=""
+                                        data-ww="['148px','150px','157px','101px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -487,8 +487,8 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/philosophers/minle-140x300.png" alt=""
-                                        data-ww="['208px','210px','217px','161px']"
+                                    <img src="assets/philosophers/vertical-text-2.png" alt=""
+                                        data-ww="['188px','190px','197px','141px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -705,8 +705,8 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/philosophers/le-216x300.png" alt=""
-                                        data-ww="['281px','256px','217px','181px']"
+                                    <img src="assets/philosophers/vertical-text-3.png" alt=""
+                                        data-ww="['221px','196px','157px','131px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -924,8 +924,8 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/philosophers/aaa-125x300.png" alt=""
-                                        data-ww="['188px','190px','197px','161px']"
+                                    <img src="assets/philosophers/vertical-text-4.png" alt=""
+                                        data-ww="['138px','140px','147px','121px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
