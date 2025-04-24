@@ -151,48 +151,6 @@
                                 </div>
                             </div>
 
-                            <div class="tp-caption tp-resizeme" id="zhong-layer"
-                                data-x="['center','center','center','center']"
-                                data-hoffset="['-560','-560','-550','-520']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['55','55','55','25']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="on"
-                                data-frames='[
-                                    {"delay":350,"speed":700,"frame":"0","from":"y:[-100%]z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
-                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
-                                    data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/philosophers/zhong.png" alt=""
-                                        data-ww="['138px','127px',164px','155px']"
-                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
-                                </div>
-                            </div>
-
-                            <div class="tp-caption tp-resizeme" id="guo-layer"
-                                data-x="['center','center','center','center']"
-                                data-hoffset="['-300','-300','-290','-280']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['150','150','150','140']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="on"
-                                data-frames='[
-                                    {"delay":350,"speed":700,"frame":"0","from":"y:[-100%]z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
-                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
-                                    data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/philosophers/guo.png" alt=""
-                                        data-ww="['185px','167px','179px','88px']"
-                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
-                                </div>
-                            </div>
-
                             <div class="tp-caption tp-resizeme" id="painting-layer"
                                 data-x="['center','center','center','center']"
                                 data-hoffset="['-580','-580','-570','-540']"
@@ -200,7 +158,7 @@
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
-                                    {"delay":350,"speed":700,"frame":"0","from":"y:[-100%]z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                                    {"delay":1050,"speed":1000,"frame":"0","from":"y:[-100%]z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
                                     {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
@@ -369,48 +327,6 @@
                                 </div>
                             </div>
 
-                            <div class="tp-caption tp-resizeme" id="zhong-layer"
-                                data-x="['center','center','center','center']"
-                                data-hoffset="['-560','-560','-550','-520']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['55','55','55','25']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="on"
-                                data-frames='[
-                                    {"delay":350,"speed":700,"frame":"0","from":"y:[-100%]z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
-                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
-                                    data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/philosophers/zhong.png" alt=""
-                                        data-ww="['138px','127px',164px','155px']"
-                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
-                                </div>
-                            </div>
-
-                            <div class="tp-caption tp-resizeme" id="guo-layer"
-                                data-x="['center','center','center','center']"
-                                data-hoffset="['-300','-300','-290','-280']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['150','150','150','140']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="on"
-                                data-frames='[
-                                    {"delay":350,"speed":700,"frame":"0","from":"y:[-100%]z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
-                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
-                                    data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/philosophers/guo.png" alt=""
-                                        data-ww="['185px','167px','179px','88px']"
-                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
-                                </div>
-                            </div>
-
                             <div class="tp-caption tp-resizeme" id="painting-layer"
                                 data-x="['center','center','center','center']"
                                 data-hoffset="['-580','-580','-570','-540']"
@@ -418,7 +334,7 @@
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
-                                    {"delay":350,"speed":700,"frame":"0","from":"y:[-100%]z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                                    {"delay":1050,"speed":1000,"frame":"0","from":"y:[-100%]z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
                                     {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
@@ -587,48 +503,6 @@
                                 </div>
                             </div>
 
-                            <div class="tp-caption tp-resizeme" id="zhong-layer"
-                                data-x="['center','center','center','center']"
-                                data-hoffset="['-560','-560','-550','-520']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['55','55','55','25']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="on"
-                                data-frames='[
-                                    {"delay":350,"speed":700,"frame":"0","from":"y:[-100%]z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
-                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
-                                    data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/philosophers/zhong.png" alt=""
-                                        data-ww="['138px','127px',164px','155px']"
-                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
-                                </div>
-                            </div>
-
-                            <div class="tp-caption tp-resizeme" id="guo-layer"
-                                data-x="['center','center','center','center']"
-                                data-hoffset="['-300','-300','-290','-280']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['150','150','150','140']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="on"
-                                data-frames='[
-                                    {"delay":350,"speed":700,"frame":"0","from":"y:[-100%]z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
-                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
-                                    data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/philosophers/guo.png" alt=""
-                                        data-ww="['185px','167px','179px','88px']"
-                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
-                                </div>
-                            </div>
-
                             <div class="tp-caption tp-resizeme" id="painting-layer"
                                 data-x="['center','center','center','center']"
                                 data-hoffset="['-580','-580','-570','-540']"
@@ -636,7 +510,7 @@
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
-                                    {"delay":350,"speed":700,"frame":"0","from":"y:[-100%]z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                                    {"delay":1050,"speed":1000,"frame":"0","from":"y:[-100%]z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
                                     {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
@@ -806,48 +680,6 @@
                                 </div>
                             </div>
 
-                            <div class="tp-caption tp-resizeme" id="zhong-layer"
-                                data-x="['center','center','center','center']"
-                                data-hoffset="['-560','-560','-550','-520']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['55','55','55','25']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="on"
-                                data-frames='[
-                                    {"delay":350,"speed":700,"frame":"0","from":"y:[-100%]z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
-                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
-                                    data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/philosophers/zhong.png" alt=""
-                                        data-ww="['138px','127px',164px','155px']"
-                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
-                                </div>
-                            </div>
-
-                            <div class="tp-caption tp-resizeme" id="guo-layer"
-                                data-x="['center','center','center','center']"
-                                data-hoffset="['-300','-300','-290','-280']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['150','150','150','140']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="on"
-                                data-frames='[
-                                    {"delay":350,"speed":700,"frame":"0","from":"y:[-100%]z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
-                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
-                                    data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/philosophers/guo.png" alt=""
-                                        data-ww="['185px','167px','179px','88px']"
-                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
-                                </div>
-                            </div>
-
                             <div class="tp-caption tp-resizeme" id="painting-layer"
                                 data-x="['center','center','center','center']"
                                 data-hoffset="['-580','-580','-570','-540']"
@@ -855,7 +687,7 @@
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
-                                    {"delay":350,"speed":700,"frame":"0","from":"y:[-100%]z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                                    {"delay":1050,"speed":1000,"frame":"0","from":"y:[-100%]z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
                                     {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
