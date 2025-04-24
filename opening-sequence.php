@@ -206,7 +206,7 @@
                                         font-family:'Times New Roman', 'Times', 'serif'; 
                                         color: #0f0f0f; border-width:0px; cursor:pointer;
                                         text-decoration: none;">
-                                    Open Now <i class="material-icons">arrow_drop_down</i>
+                                    Play Now <i class="material-icons">arrow_drop_down</i>
                                 </a>
                             </div>
 
