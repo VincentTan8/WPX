@@ -948,7 +948,7 @@
                         </div>
 
                         <!-- LAYER NR. 6 -->
-                        <a class="tp-caption tp-static-layer tp-rs-menulink" href="index.php" target="_self"
+                        <a class="tp-caption tp-static-layer tp-rs-menulink" href="opening-sequence.php" target="_self"
                             id="slide-3132-layer-6" data-x="['center','center','left','right']"
                             data-hoffset="['-432','-164','997','-128']" data-y="['top','top','top','top']"
                             data-voffset="['30','0','0','0']" data-fontsize="['18','15','13','15']"
@@ -1307,7 +1307,8 @@
                             data-x="['right','right','right','right']" data-hoffset="['14','14','14','14']"
                             data-y="['top','top','top','top']" data-voffset="['10','10','10','10']" data-width="60"
                             data-height="60" data-whitespace="nowrap" data-type="button"
-                            data-visibility="['off','on','on','on']" data-actions='[
+                            data-visibility="['off','on','on','on']"
+                            data-actions='[
                                 {"event":"click","action":"toggleclass","layer":"burger-menu","delay":"0","classname":"open"},
                                 {"event":"click","action":"togglelayer","layerstatus":"hidden","layer":"slider-1064-layer-5","delay":""},
                                 {"event":"click","action":"togglelayer","layerstatus":"hidden","layer":"slider-1064-layer-6","delay":""},
@@ -1316,8 +1317,9 @@
                             data-basealign="slide" d ata-responsive_offset="off" data-responsive="off"
                             data-startslide="0" data-endslide="9" data-frames='[
                                 {"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power1.easeInOut"},
-                                {"delay":"wait","speed":300,"ease":"nothing"}]' data-textAlign="['left','left','left','left']"
-                            data-paddingtop="[22,22,22,22]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
+                                {"delay":"wait","speed":300,"ease":"nothing"}]'
+                            data-textAlign="['left','left','left','left']" data-paddingtop="[22,22,22,22]"
+                            data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                             data-paddingleft="[14,14,14,14]" style="z-index: 54; min-width: 60px; max-width: 60px; 
                             max-width: 60px; max-width: 60px; white-space: nowrap; font-size: px; 
                             line-height: px; font-weight: 100;text-transform:left;
