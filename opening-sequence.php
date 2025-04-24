@@ -170,26 +170,6 @@
                                 </div>
                             </div>
 
-                            <div class="tp-caption tp-resizeme" id="cr-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-50','-50']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="on"
-                                data-frames='[
-                                    {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
-                                    {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="3"
-                                    data-zoomstart="1" data-zoomend="1.1">
-                                    <img src="assets/opening-sequence/cr.webp" alt=""
-                                        data-ww="['334px','334px','334px','334px']"
-                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
-                                </div>
-                            </div>
-
                             <div class="tp-caption tp-resizeme" id="open-button-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-50','-50']"
