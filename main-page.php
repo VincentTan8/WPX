@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>WeTalk - WeTalk International Education Pte. Ltd.</title>
+    <title>WeTalk - More than Language</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- LOAD JQUERY LIBRARY -->
@@ -954,8 +954,11 @@
                             data-voffset="['30','0','0','0']" data-fontsize="['18','15','13','15']"
                             data-lineheight="['18','15','13','15']" data-width="none" data-height="none"
                             data-whitespace="nowrap" data-visibility="['on','off','off','off']" data-startslide="0"
-                            data-endslide="9" data-type="text" data-actions='' data-basealign="slide"
-                            data-responsive_offset="off" data-responsive="off"
+                            data-endslide="9" data-type="text" data-basealign="slide" data-responsive_offset="off"
+                            data-responsive="off"
+                            data-actions='[
+                                {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"home-menu-line","delay":""},
+                                {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"home-menu-line","delay":""}]'
                             data-frames='[
                                 {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
                                 {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
@@ -965,6 +968,20 @@
                             style="z-index: 10; white-space: nowrap; font-size: 15px; line-height: 15px; font-weight: normal; color: rgb(240, 240, 240);border-width:0px;cursor:pointer;text-decoration: none;">
                             Home
                         </a>
+
+                        <!-- Home Menu line -->
+                        <div class="tp-caption  tp-static-layer" id="home-menu-line"
+                            data-x="['center','center','center','center']" data-hoffset="['-432','30','30','30']"
+                            data-y="['top', 'top', 'top', 'top']" data-voffset="['50','50','50','50']" data-width="none"
+                            data-height="none" data-whitespace="nowrap" data-startslide="0" data-endslide="9"
+                            data-type="image" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                            data-visibility="['on','off','off','off']"
+                            data-frames='[
+                                {"delay":"bytrigger","speed":300,"frame":"0","from":"x:-10px;opacity:0;","speed":500,"to":"o:1;","ease":"power3.inOut"},
+                                {"delay":"bytrigger","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]' style="z-index: 13;border-width:0px;">
+                            <img src="assets/wetalk/menu_line.png" alt="" data-ww="['47px','47px','47px','47px']"
+                                data-hh="['auto','auto','auto','auto']" data-no-retina="">
+                        </div>
 
                         <!-- LAYER NR. 7 -->
 
@@ -976,7 +993,8 @@
                             data-actions='[
                                 {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"courses-selection","delay":""},
                                 {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"courses-selection-2","delay":""},
-                                {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"courses-shape","delay":""}]'
+                                {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"courses-shape","delay":""},
+                                {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"wetalk-courses-menu-line","delay":""}]'
                             data-basealign="slide" data-responsive_offset="off" data-responsive="off"
                             data-frames='[
                                     {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
@@ -990,7 +1008,8 @@
                                 data-whitespace="nowrap" data-visibility="['on','off','off','off']" data-startslide="0"
                                 data-endslide="9" data-type="text"
                                 data-actions='[
-                                    {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"courses-selection","delay":""}]'
+                                    {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"courses-selection","delay":""},
+                                    {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"wetalk-courses-menu-line","delay":""}]'
                                 data-basealign="slide" data-responsive_offset="off" data-responsive="off"
                                 data-frames='[
                                     {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
@@ -1099,6 +1118,20 @@
                             </div>
                         </div>
 
+                        <!-- Wetalk Courses Menu line -->
+                        <div class="tp-caption  tp-static-layer" id="wetalk-courses-menu-line"
+                            data-x="['center','center','center','center']" data-hoffset="['-295','30','30','30']"
+                            data-y="['top', 'top', 'top', 'top']" data-voffset="['50','50','50','50']" data-width="none"
+                            data-height="none" data-whitespace="nowrap" data-startslide="0" data-endslide="9"
+                            data-type="image" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                            data-visibility="['on','off','off','off']"
+                            data-frames='[
+                                {"delay":"bytrigger","speed":300,"frame":"0","from":"x:-10px;opacity:0;","speed":500,"to":"o:1;","ease":"power3.inOut"},
+                                {"delay":"bytrigger","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]' style="z-index: 13;border-width:0px;">
+                            <img src="assets/wetalk/menu_line.png" alt="" data-ww="['47px','47px','47px','47px']"
+                                data-hh="['auto','auto','auto','auto']" data-no-retina="">
+                        </div>
+
                         <!-- LAYER NR. 8 -->
                         <a class="tp-caption  tp-static-layer  tp-rs-menulink" href="https://wetalk.com/linguistic/"
                             target="_self" id="slide-3132-layer-8" data-x="['center','center','left','right']"
@@ -1106,8 +1139,11 @@
                             data-voffset="['30','0','180','237']" data-fontsize="['18','15','13','13']"
                             data-lineheight="['18','15','13','13']" data-width="none" data-height="none"
                             data-whitespace="nowrap" data-visibility="['on','off','off','off']" data-startslide="0"
-                            data-endslide="9" data-type="text" data-actions='' data-basealign="slide"
-                            data-responsive_offset="off" data-responsive="off"
+                            data-endslide="9" data-type="text" data-basealign="slide" data-responsive_offset="off"
+                            data-responsive="off"
+                            data-actions='[
+                                {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"linguistics-menu-line","delay":""},
+                                {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"linguistics-menu-line","delay":""}]'
                             data-frames='[
                                 {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
                                 {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
@@ -1118,6 +1154,20 @@
                             Linguistics
                         </a>
 
+                        <!-- Linguistics Menu line -->
+                        <div class="tp-caption  tp-static-layer" id="linguistics-menu-line"
+                            data-x="['center','center','center','center']" data-hoffset="['-145','30','30','30']"
+                            data-y="['top', 'top', 'top', 'top']" data-voffset="['50','50','50','50']" data-width="none"
+                            data-height="none" data-whitespace="nowrap" data-startslide="0" data-endslide="9"
+                            data-type="image" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                            data-visibility="['on','off','off','off']"
+                            data-frames='[
+                                {"delay":"bytrigger","speed":300,"frame":"0","from":"x:-10px;opacity:0;","speed":500,"to":"o:1;","ease":"power3.inOut"},
+                                {"delay":"bytrigger","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]' style="z-index: 13;border-width:0px;">
+                            <img src="assets/wetalk/menu_line.png" alt="" data-ww="['47px','47px','47px','47px']"
+                                data-hh="['auto','auto','auto','auto']" data-no-retina="">
+                        </div>
+
                         <!-- LAYER NR. 9 -->
                         <a class="tp-caption  tp-static-layer  tp-rs-menulink" href="https://wetalk.com/teacher/"
                             target="_self" id="slide-3132-layer-9" data-x="['center','center','left','right']"
@@ -1125,8 +1175,11 @@
                             data-voffset="['30','0','134','179']" data-fontsize="['18','15','13','13']"
                             data-lineheight="['18','15','13','13']" data-width="none" data-height="none"
                             data-whitespace="nowrap" data-visibility="['on','off','off','off']" data-startslide="0"
-                            data-endslide="9" data-type="text" data-actions='' data-basealign="slide"
-                            data-responsive_offset="off" data-responsive="off"
+                            data-endslide="9" data-type="text" data-basealign="slide" data-responsive_offset="off"
+                            data-responsive="off"
+                            data-actions='[
+                                {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"teachers-menu-line","delay":""},
+                                {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"teachers-menu-line","delay":""}]'
                             data-frames='[
                                 {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
                                 {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
@@ -1137,6 +1190,20 @@
                             Teachers
                         </a>
 
+                        <!-- Teachers Menu line -->
+                        <div class="tp-caption  tp-static-layer" id="teachers-menu-line"
+                            data-x="['center','center','center','center']" data-hoffset="['-24','30','30','30']"
+                            data-y="['top', 'top', 'top', 'top']" data-voffset="['50','50','50','50']" data-width="none"
+                            data-height="none" data-whitespace="nowrap" data-startslide="0" data-endslide="9"
+                            data-type="image" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                            data-visibility="['on','off','off','off']"
+                            data-frames='[
+                                {"delay":"bytrigger","speed":300,"frame":"0","from":"x:-10px;opacity:0;","speed":500,"to":"o:1;","ease":"power3.inOut"},
+                                {"delay":"bytrigger","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]' style="z-index: 13;border-width:0px;">
+                            <img src="assets/wetalk/menu_line.png" alt="" data-ww="['47px','47px','47px','47px']"
+                                data-hh="['auto','auto','auto','auto']" data-no-retina="">
+                        </div>
+
                         <!-- LAYER NR. 10 -->
                         <a class="tp-caption tp-static-layer   tp-rs-menulink" href="https://wetalk.com/news/"
                             target="_self" id="slide-3132-layer-10" data-x="['center','center','left','right']"
@@ -1144,8 +1211,11 @@
                             data-voffset="['30','0','84','128']" data-fontsize="['18','15','13','13']"
                             data-lineheight="['18','15','13','13']" data-width="none" data-height="none"
                             data-whitespace="nowrap" data-visibility="['on','off','off','off']" data-startslide="0"
-                            data-endslide="9" data-type="text" data-actions='' data-basealign="slide"
-                            data-responsive_offset="off" data-responsive="off"
+                            data-endslide="9" data-type="text" data-basealign="slide" data-responsive_offset="off"
+                            data-responsive="off"
+                            data-actions='[
+                                {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"news-menu-line","delay":""},
+                                {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"news-menu-line","delay":""}]'
                             data-frames='[
                                 {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
                                 {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
@@ -1156,14 +1226,31 @@
                             News
                         </a>
 
+                        <!-- News Menu line -->
+                        <div class="tp-caption  tp-static-layer" id="news-menu-line"
+                            data-x="['center','center','center','center']" data-hoffset="['76','30','30','30']"
+                            data-y="['top', 'top', 'top', 'top']" data-voffset="['50','50','50','50']" data-width="none"
+                            data-height="none" data-whitespace="nowrap" data-startslide="0" data-endslide="9"
+                            data-type="image" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                            data-visibility="['on','off','off','off']"
+                            data-frames='[
+                                {"delay":"bytrigger","speed":300,"frame":"0","from":"x:-10px;opacity:0;","speed":500,"to":"o:1;","ease":"power3.inOut"},
+                                {"delay":"bytrigger","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]' style="z-index: 13;border-width:0px;">
+                            <img src="assets/wetalk/menu_line.png" alt="" data-ww="['47px','47px','47px','47px']"
+                                data-hh="['auto','auto','auto','auto']" data-no-retina="">
+                        </div>
+
                         <a class="tp-caption tp-static-layer   tp-rs-menulink" href="https://wetalk.com/study-abroad/"
                             target="_self" id="slide-3132-layer-11" data-x="['center','center','left','right']"
                             data-hoffset="['189','206','936','-163']" data-y="['top','top','top','top']"
                             data-voffset="['30','0','84','128']" data-fontsize="['18','15','13','13']"
                             data-lineheight="['18','15','13','13']" data-width="none" data-height="none"
                             data-whitespace="nowrap" data-visibility="['on','off','off','off']" data-startslide="0"
-                            data-endslide="9" data-type="text" data-actions='' data-basealign="slide"
-                            data-responsive_offset="off" data-responsive="off"
+                            data-endslide="9" data-type="text" data-basealign="slide" data-responsive_offset="off"
+                            data-responsive="off"
+                            data-actions='[
+                                {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"study-abroad-menu-line","delay":""},
+                                {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"study-abroad-menu-line","delay":""}]'
                             data-frames='[
                                 {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
                                 {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
@@ -1174,13 +1261,28 @@
                             Study Abroad
                         </a>
 
+                        <!-- Study Abroad Menu line -->
+                        <div class="tp-caption  tp-static-layer" id="study-abroad-menu-line"
+                            data-x="['center','center','center','center']" data-hoffset="['189','30','30','30']"
+                            data-y="['top', 'top', 'top', 'top']" data-voffset="['50','50','50','50']" data-width="none"
+                            data-height="none" data-whitespace="nowrap" data-startslide="0" data-endslide="9"
+                            data-type="image" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                            data-visibility="['on','off','off','off']"
+                            data-frames='[
+                                {"delay":"bytrigger","speed":300,"frame":"0","from":"x:-10px;opacity:0;","speed":500,"to":"o:1;","ease":"power3.inOut"},
+                                {"delay":"bytrigger","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]' style="z-index: 13;border-width:0px;">
+                            <img src="assets/wetalk/menu_line.png" alt="" data-ww="['47px','47px','47px','47px']"
+                                data-hh="['auto','auto','auto','auto']" data-no-retina="">
+                        </div>
+
                         <div class="tp-caption tp-static-layer" id="dropdown-container-2"
                             data-x="['center','center','left','right']" data-hoffset="['339','-87','1001','-155']"
                             data-y="['top','top','top','top']" data-voffset="['30','0','219','92']"
                             data-visibility="['on','off','off','off']" data-startslide="0" data-endslide="9"
                             data-type="group"
                             data-actions='[
-                                {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"company-selection","delay":""}]'
+                                {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"company-selection","delay":""},
+                                {"event":"mouseleave","action":"stoplayer","layerstatus":"hidden","layer":"company-menu-line","delay":""}]'
                             data-basealign="slide" data-responsive_offset="off" data-responsive="off"
                             data-frames='[
                                     {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
@@ -1194,7 +1296,8 @@
                                 data-whitespace="nowrap" data-visibility="['on','off','off','off']" data-startslide="0"
                                 data-endslide="9" data-type="text"
                                 data-actions='[
-                                    {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"company-selection","delay":""}]'
+                                    {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"company-selection","delay":""},
+                                    {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"company-menu-line","delay":""}]'
                                 data-basealign="slide" data-responsive_offset="off" data-responsive="off"
                                 data-frames='[
                                     {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
@@ -1245,6 +1348,20 @@
                                     </a>
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- Company Menu line -->
+                        <div class="tp-caption  tp-static-layer" id="company-menu-line"
+                            data-x="['center','center','center','center']" data-hoffset="['339','30','30','30']"
+                            data-y="['top', 'top', 'top', 'top']" data-voffset="['50','50','50','50']" data-width="none"
+                            data-height="none" data-whitespace="nowrap" data-startslide="0" data-endslide="9"
+                            data-type="image" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                            data-visibility="['on','off','off','off']"
+                            data-frames='[
+                                {"delay":"bytrigger","speed":300,"frame":"0","from":"x:-10px;opacity:0;","speed":500,"to":"o:1;","ease":"power3.inOut"},
+                                {"delay":"bytrigger","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]' style="z-index: 13;border-width:0px;">
+                            <img src="assets/wetalk/menu_line.png" alt="" data-ww="['47px','47px','47px','47px']"
+                                data-hh="['auto','auto','auto','auto']" data-no-retina="">
                         </div>
 
                         <a class="tp-caption  tp-static-layer  tp-rs-menulink" href="https://wetalk.com/signin/"
