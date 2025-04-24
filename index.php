@@ -1,1 +1,5 @@
-<?php include "opening-sequence.php" ?>
+<?php
+
+echo "<script>window.location = 'index/index.php'</script>";
+
+?>
