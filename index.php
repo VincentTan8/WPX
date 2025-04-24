@@ -1,5 +1,5 @@
 <?php
 
-echo "<script>window.location = 'index/index.php'</script>";
+echo "<script>window.location = 'opening-sequence.php'</script>";
 
 ?>

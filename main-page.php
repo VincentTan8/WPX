@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- LOAD JQUERY LIBRARY -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
 
     <!-- LOADING FONTS AND ICONS -->
-    <link href="http://fonts.googleapis.com/css?family=Raleway%3A300%2C100%2C600" rel="stylesheet" property="stylesheet"
-        type="text/css" media="all" />
-    <link href="http://fonts.googleapis.com/css?family=Roboto%3A700%2C300" rel="stylesheet" property="stylesheet"
+    <link href="https://fonts.googleapis.com/css?family=Raleway%3A300%2C100%2C600" rel="stylesheet"
+        property="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto%3A700%2C300" rel="stylesheet" property="stylesheet"
         type="text/css" media="all" />
 
     <link rel="stylesheet" type="text/css" href="revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
@@ -948,7 +948,7 @@
                         </div>
 
                         <!-- LAYER NR. 6 -->
-                        <a class="tp-caption tp-static-layer tp-rs-menulink" href="opening-sequence.php" target="_self"
+                        <a class="tp-caption tp-static-layer tp-rs-menulink" href="main-page.php" target="_self"
                             id="slide-3132-layer-6" data-x="['center','center','left','right']"
                             data-hoffset="['-432','-164','997','-128']" data-y="['top','top','top','top']"
                             data-voffset="['30','0','0','0']" data-fontsize="['18','15','13','15']"
