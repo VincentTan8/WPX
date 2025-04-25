@@ -205,7 +205,7 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/philosophers/kongzizi-246x300-1.webp" alt=""
+                                    <img src="assets/philosophers/caligraphy-1.png" alt=""
                                         data-ww="['298px','252px','260px','120px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
@@ -381,7 +381,7 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/philosophers/wenzi-1-246x300.png" alt=""
+                                    <img src="assets/philosophers/caligraphy-2.png" alt=""
                                         data-ww="['298px','252px','260px','120px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
@@ -557,7 +557,7 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/philosophers/wenzi-246x300.png" alt=""
+                                    <img src="assets/philosophers/caligraphy-3.png" alt=""
                                         data-ww="['298px','252px','260px','120px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
@@ -734,7 +734,7 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/philosophers/wenzi-2-282x300.png" alt=""
+                                    <img src="assets/philosophers/caligraphy-4.png" alt=""
                                         data-ww="['298px','252px','260px','120px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
