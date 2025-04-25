@@ -59,6 +59,85 @@
         .panelWrapper5 {
             transition: left 0.4s ease, opacity 0.4s ease;
         }
+
+        .responsive-panel-wrapper {
+            position: fixed;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+
+            z-index: 1000;
+            transition: left 0.4s ease, opacity 0.4s ease;
+            opacity: 0;
+            pointer-events: none;
+            box-sizing: border-box;
+
+        }
+
+        .responsive-panel-wrapper .panel-content {
+            font-size: 18px;
+        }
+
+        .responsive-panel-wrapper.visible {
+            left: 0;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Responsive tweak for smaller screens */
+        @media (max-width: 768px) {
+
+            .responsive-panel-wrapper {
+                width: 75vw;
+                /* only 40% of screen */
+                max-width: 75vw;
+                left: -75vw;
+            }
+
+            .responsive-panel-wrapper.visible {
+                left: 0;
+            }
+
+            .responsive-panel-wrapper .panel-content {
+                max-height: calc(100vh - 40px);
+
+                font-size: 12px;
+
+                padding-right: 10px;
+
+            }
+        }
+
+        /* Close button styling */
+        #closePanelBtn,
+        #closePanelBtn2,
+        #closePanelBtn3,
+        #closePanelBtn4,
+        #closePanelBtn5 {
+            position: absolute;
+            top: 50%;
+            right: 11px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+
+        }
+
+        /* Responsive tweak for smaller screens */
+        @media (max-width: 768px) {
+
+            #closePanelBtn,
+            #closePanelBtn2,
+            #closePanelBtn3,
+            #closePanelBtn4,
+            #closePanelBtn5 {
+                right: -10px;
+                opacity: 0;
+            }
+
+
+        }
     </style>
 
     <!-- REVOLUTION JS FILES -->
@@ -279,7 +358,7 @@
 
                             <div class="tp-caption tp-resizeme" id="slide-1-text"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['120','100','100','20']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['120','100','100','180']"
                                 data-lineheight="['37','37','37','30']" data-width="['650','492','500','450']"
                                 data-height="none" data-whitespace="normal" data-type="text" data-basealign="slide"
                                 data-responsive_offset="on"
@@ -303,7 +382,7 @@
                                           {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"none"}]'
                                 style="z-index: 26; text-transform: left; border-width: 0px; cursor: pointer;">
                                 <img src="assets/wetalk/button-allusion.png" alt="Open Allusion"
-                                    data-ww="['171px','171px','171px','171px']"
+                                    data-ww="['171px','171px','171px','120px']"
                                     data-hh="['auto','auto','auto','auto']" />
                             </div>
                         </li>
@@ -448,7 +527,7 @@
 
                             <div class="tp-caption tp-resizeme" id="slide-2-text"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['120','100','100','20']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['120','100','100','180']"
                                 data-lineheight="['37','37','37','30']" data-width="['650','492','500','450']"
                                 data-height="none" data-whitespace="normal" data-type="text" data-basealign="slide"
                                 data-responsive_offset="on"
@@ -472,7 +551,7 @@
                                           {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"none"}]'
                                 style="z-index: 26; text-transform: left; border-width: 0px; cursor: pointer;">
                                 <img src="assets/wetalk/button-allusion.png" alt="Open Allusion"
-                                    data-ww="['171px','171px','171px','171px']"
+                                    data-ww="['171px','171px','171px','120px']"
                                     data-hh="['auto','auto','auto','auto']" />
                             </div>
                         </li>
@@ -637,7 +716,7 @@
 
                             <div class="tp-caption tp-resizeme" id="slide-3-text"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['120','100','100','20']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['120','100','100','180']"
                                 data-lineheight="['37','37','37','30']" data-width="['650','492','500','450']"
                                 data-height="none" data-whitespace="normal" data-type="text" data-basealign="slide"
                                 data-responsive_offset="on"
@@ -661,7 +740,7 @@
                                           {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"none"}]'
                                 style="z-index: 26; text-transform: left; border-width: 0px; cursor: pointer;">
                                 <img src="assets/wetalk/button-allusion.png" alt="Open Allusion"
-                                    data-ww="['171px','171px','171px','171px']"
+                                    data-ww="['171px','171px','171px','120px']"
                                     data-hh="['auto','auto','auto','auto']" />
                             </div>
                         </li>
@@ -711,7 +790,7 @@
 
                             <div class="tp-caption tp-resizeme" id="slide-4-text"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['140','100','100','20']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['140','100','100','180']"
                                 data-lineheight="['37','37','37','30']" data-width="['650','492','500','450']"
                                 data-height="none" data-whitespace="normal" data-type="text" data-basealign="slide"
                                 data-responsive_offset="on"
@@ -770,7 +849,7 @@
                                           {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"none"}]'
                                 style="z-index: 26; text-transform: left; border-width: 0px; cursor: pointer;">
                                 <img src="assets/wetalk/button-allusion.png" alt="Open Allusion"
-                                    data-ww="['171px','171px','171px','171px']"
+                                    data-ww="['171px','171px','171px','120px']"
                                     data-hh="['auto','auto','auto','auto']" />
                             </div>
                         </li>
@@ -977,7 +1056,7 @@
                                           {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"none"}]'
                                 style="z-index: 26; text-transform: left; border-width: 0px; cursor: pointer;">
                                 <img src="assets/wetalk/button-allusion.png" alt="Open Allusion"
-                                    data-ww="['171px','171px','171px','171px']"
+                                    data-ww="['171px','171px','171px','120px']"
                                     data-hh="['auto','auto','auto','auto']" />
                             </div>
                         </li>
@@ -1273,13 +1352,13 @@
 
                         <!-- LAYER NR. 11 -->
                         <!-- Trigger Button -->
-                        <div id="panelWrapper"
+                        <div id="panelWrapper" class="responsive-panel-wrapper"
                             style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
                             <!-- Allusion Panel -->
                             <div id="allusionPanel"
-                                style="opacity: 0.9; width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                                style="width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
                                 <!-- Panel Content -->
-                                <div
+                                <div class="panel-content"
                                     style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
 
                                     <!-- First Image (Align left) -->
@@ -1288,7 +1367,7 @@
                                     </div>
 
                                     <!-- Text -->
-                                    <p style="font-size: 18px; text-align: left; color: white;">
+                                    <p style="text-align: left; color: white;">
                                         During the period of the Three Sovereigns and Five Emperors in ancient China,
                                         people became destitute and homeless due to frequent floods. Gun and his son Yu
                                         were appointed by Yao and Shun emperors to tame the flooding. Yu drew lessons
@@ -1312,8 +1391,7 @@
                             </div>
 
                             <!-- Close Button -->
-                            <div id="closePanelBtn"
-                                style="position: absolute; top: 50%; right: 11px; transform: translateY(-50%); cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
+                            <div id="closePanelBtn">
                                 <img src="assets/wetalk/close-btn.png" alt="Close" style="width: 130%;" />
                                 <span
                                     style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; color: white;">&#10006;</span>
@@ -1321,13 +1399,13 @@
                             </div>
                         </div>
 
-                        <div id="panelWrapper2"
+                        <div id="panelWrapper2" class="responsive-panel-wrapper"
                             style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
                             <!-- Allusion Panel -->
                             <div id="allusionPanelS2"
-                                style="opacity: 0.9; width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                                style="width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
                                 <!-- Panel Content -->
-                                <div
+                                <div class="panel-content"
                                     style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
 
                                     <!-- First Image (Align left) -->
@@ -1336,7 +1414,7 @@
                                     </div>
 
                                     <!-- Text -->
-                                    <p style="font-size: 18px; text-align: left; color: white;">
+                                    <p style=" text-align: left; color: white;">
                                         Fist-and-palm salute is a modest way to show respect for others.
                                         Usually, the right hand holds the fist inside and the left hand clenches the
                                         fist outside. Both of them are closed in front of the chest. As Zuo Zhuan (The
@@ -1360,8 +1438,7 @@
 
 
                             <!-- Close Button -->
-                            <div id="closePanelBtn2"
-                                style="position: absolute; top: 50%; right: 11px; transform: translateY(-50%); cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
+                            <div id="closePanelBtn2">
                                 <img src="assets/wetalk/close-btn.png" alt="Close" style="width: 130%;" />
                                 <span
                                     style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; color: white;">&#10006;</span>
@@ -1369,23 +1446,23 @@
                             </div>
                         </div>
 
-                        <div id="panelWrapper3"
+                        <div id="panelWrapper3" class="responsive-panel-wrapper"
                             style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
                             <!-- Allusion Panel -->
                             <div id="allusionPanel3"
-                                style="opacity: 0.9; width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                                style="width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
                                 <!-- Panel Content -->
-                                <div
+                                <div class="panel-content"
                                     style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
 
                                     <!-- First Image (Align left) -->
-                                    <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
+                                    <!-- <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
                                         <img src="assets/wetalk/SScreenshot-2024-05-06-180033.png"
                                             style="width: 40%;" />
-                                    </div>
+                                    </div> -->
 
                                     <!-- Text -->
-                                    <p style="font-size: 18px; text-align: left; color: white;">
+                                    <p style=" text-align: left; color: white;">
                                         It was earliest recorded in the Free and Easy Wandering, the first chapter of
                                         the Zhuangzi. "In the Northern Ocean there is a fish, the name of which is Kun I
                                         do not know how many li in size. It changes into a bird with the name of Peng,
@@ -1417,8 +1494,7 @@
                             </div>
 
                             <!-- Close Button -->
-                            <div id="closePanelBtn3"
-                                style="position: absolute; top: 50%; right: 11px; transform: translateY(-50%); cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
+                            <div id="closePanelBtn3">
                                 <img src="assets/wetalk/close-btn.png" alt="Close" style="width: 130%;" />
                                 <span
                                     style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; color: white;">&#10006;</span>
@@ -1426,13 +1502,13 @@
                             </div>
                         </div>
 
-                        <div id="panelWrapper4"
+                        <div id="panelWrapper4" class="responsive-panel-wrapper"
                             style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
                             <!-- Allusion Panel -->
                             <div id="allusionPanel4"
-                                style="opacity: 0.9; width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                                style="width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
                                 <!-- Panel Content -->
-                                <div
+                                <div class="panel-content"
                                     style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
 
                                     <!-- First Image (Align left) -->
@@ -1441,7 +1517,7 @@
                                     </div>
 
                                     <!-- Text -->
-                                    <p style="font-size: 18px; text-align: left; color: white;">
+                                    <p style=" text-align: left; color: white;">
                                         As a saying goes, "Past experience, if not forgotten, is a guide for the
                                         future." However, the premise is that we can get something new from
                                         • past experience. We gain new knowledge often by reviewing old knowledge.
@@ -1459,8 +1535,7 @@
                             </div>
 
                             <!-- Close Button -->
-                            <div id="closePanelBtn4"
-                                style="position: absolute; top: 50%; right: 11px; transform: translateY(-50%); cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
+                            <div id="closePanelBtn4">
                                 <img src="assets/wetalk/close-btn.png" alt="Close" style="width: 130%;" />
                                 <span
                                     style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; color: white;">&#10006;</span>
@@ -1468,13 +1543,13 @@
                             </div>
                         </div>
 
-                        <div id="panelWrapper5"
+                        <div id="panelWrapper5" class="responsive-panel-wrapper"
                             style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
                             <!-- Allusion Panel -->
                             <div id="allusionPanel5"
-                                style="opacity: 0.9; width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                                style="width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
                                 <!-- Panel Content -->
-                                <div
+                                <div class="panel-content"
                                     style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
 
                                     <!-- First Image (Align left) -->
@@ -1483,7 +1558,7 @@
                                     </div>
 
                                     <!-- Text -->
-                                    <p style="font-size: 18px; text-align: left; color: white;">
+                                    <p style=" text-align: left; color: white;">
                                         Learning is a lifelong cause. We live and learn. It is the most pleasant thing
                                         to open the door to various disciplines through Chinese culture learning. We can
                                         have a happy time in lyre playing, chess, calligraphy, and painting as well as
@@ -1501,8 +1576,7 @@
                             </div>
 
                             <!-- Close Button -->
-                            <div id="closePanelBtn5"
-                                style="position: absolute; top: 50%; right: 11px; transform: translateY(-50%); cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
+                            <div id="closePanelBtn5">
                                 <img src="assets/wetalk/close-btn.png" alt="Close" style="width: 130%;" />
                                 <span
                                     style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; color: white;">&#10006;</span>
