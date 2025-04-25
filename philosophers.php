@@ -961,7 +961,7 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <img src="assets/philosophers/kongzizi-246x300-1.webp" alt=""
+                                <img src="assets/philosophers/caligraphy-1.png" alt=""
                                     data-ww="['192px','157px','129px','60px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
@@ -1015,7 +1015,7 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <img src="assets/philosophers/wenzi-1-246x300.png" alt=""
+                                <img src="assets/philosophers/caligraphy-2.png" alt=""
                                     data-ww="['192px','157px','129px','60px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
@@ -1067,7 +1067,7 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <img src="assets/philosophers/wenzi-246x300.png" alt=""
+                                <img src="assets/philosophers/caligraphy-3.png" alt=""
                                     data-ww="['192px','157px','129px','60px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
@@ -1119,7 +1119,7 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <img src="assets/philosophers/wenzi-2-282x300.png" alt=""
+                                <img src="assets/philosophers/caligraphy-4.png" alt=""
                                     data-ww="['222px','187px','159px','80px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
