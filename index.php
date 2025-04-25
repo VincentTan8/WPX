@@ -1,3 +1,3 @@
 <?php
-header("Location: index/opening-sequence.php");
+header("Location: opening-sequence.php");
 exit;
