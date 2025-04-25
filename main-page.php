@@ -57,6 +57,14 @@
             text-rendering: optimizeLegibility;
             -moz-osx-font-smoothing: grayscale
         }
+
+        .panelWrapper,
+        .panelWrapper2,
+        .panelWrapper3,
+        .panelWrapper4,
+        .panelWrapper5 {
+            transition: left 0.4s ease, opacity 0.4s ease;
+        }
     </style>
 
     <!-- REVOLUTION JS FILES -->
@@ -291,6 +299,19 @@
                                 demonstrate its profound and extensive influence in a more youth-
                                 friendly, simpler and more popular way.
                             </div>
+
+                            <div class="tp-caption tp-resizeme" id="openAllusionbbtn"
+                                data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']"
+                                data-y="['center','center','center','center']" data-voffset="['-50','30','30','30']"
+                                data-width="none" data-height="none" data-whitespace="nowrap" data-startslide="0"
+                                data-endslide="9" data-type="image" data-basealign="slide" data-responsive_offset="off"
+                                data-responsive="off" data-frames='[{"delay":0,"speed":1,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"none"},
+                                          {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"none"}]'
+                                style="z-index: 26; text-transform: left; border-width: 0px; cursor: pointer;">
+                                <img src="assets/wetalk/button-allusion.png" alt="Open Allusion"
+                                    data-ww="['171px','171px','171px','171px']"
+                                    data-hh="['auto','auto','auto','auto']" />
+                            </div>
                         </li>
 
                         <!-- SLIDE 2 -->
@@ -446,6 +467,19 @@
                                 students by centering on Chinese culture and moral education. We also
                                 value family education and traditional education and will endeavor to
                                 advance their development.
+                            </div>
+
+                            <div class="tp-caption tp-resizeme" id="openAllusionS2"
+                                data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']"
+                                data-y="['center','center','center','center']" data-voffset="['-50','30','30','30']"
+                                data-width="none" data-height="none" data-whitespace="nowrap" data-startslide="0"
+                                data-endslide="9" data-type="image" data-basealign="slide" data-responsive_offset="off"
+                                data-responsive="off" data-frames='[{"delay":0,"speed":1,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"none"},
+                                          {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"none"}]'
+                                style="z-index: 26; text-transform: left; border-width: 0px; cursor: pointer;">
+                                <img src="assets/wetalk/button-allusion.png" alt="Open Allusion"
+                                    data-ww="['171px','171px','171px','171px']"
+                                    data-hh="['auto','auto','auto','auto']" />
                             </div>
                         </li>
 
@@ -623,6 +657,19 @@
                                 We also value family education and traditional education and will
                                 endeavor to advance their development.
                             </div>
+
+                            <div class="tp-caption tp-resizeme" id="openAllusionS3"
+                                data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']"
+                                data-y="['center','center','center','center']" data-voffset="['-50','30','30','30']"
+                                data-width="none" data-height="none" data-whitespace="nowrap" data-startslide="0"
+                                data-endslide="9" data-type="image" data-basealign="slide" data-responsive_offset="off"
+                                data-responsive="off" data-frames='[{"delay":0,"speed":1,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"none"},
+                                          {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"none"}]'
+                                style="z-index: 26; text-transform: left; border-width: 0px; cursor: pointer;">
+                                <img src="assets/wetalk/button-allusion.png" alt="Open Allusion"
+                                    data-ww="['171px','171px','171px','171px']"
+                                    data-hh="['auto','auto','auto','auto']" />
+                            </div>
                         </li>
 
                         <!-- SLIDE 4 -->
@@ -718,6 +765,19 @@
                                         data-ww="['3400px','3400px','3100px','3100px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
+                            </div>
+
+                            <div class="tp-caption tp-resizeme" id="openAllusionS4"
+                                data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']"
+                                data-y="['center','center','center','center']" data-voffset="['-50','30','30','30']"
+                                data-width="none" data-height="none" data-whitespace="nowrap" data-startslide="0"
+                                data-endslide="9" data-type="image" data-basealign="slide" data-responsive_offset="off"
+                                data-responsive="off" data-frames='[{"delay":0,"speed":1,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"none"},
+                                          {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"none"}]'
+                                style="z-index: 26; text-transform: left; border-width: 0px; cursor: pointer;">
+                                <img src="assets/wetalk/button-allusion.png" alt="Open Allusion"
+                                    data-ww="['171px','171px','171px','171px']"
+                                    data-hh="['auto','auto','auto','auto']" />
                             </div>
                         </li>
 
@@ -912,6 +972,19 @@
                                 <img src="assets/wetalk/xiaoniao2.png" alt=""
                                     data-ww="['231px','231px','231px','131px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
+                            </div>
+
+                            <div class="tp-caption tp-resizeme" id="openAllusionS5"
+                                data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']"
+                                data-y="['center','center','center','center']" data-voffset="['-50','30','30','30']"
+                                data-width="none" data-height="none" data-whitespace="nowrap" data-startslide="0"
+                                data-endslide="9" data-type="image" data-basealign="slide" data-responsive_offset="off"
+                                data-responsive="off" data-frames='[{"delay":0,"speed":1,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"none"},
+                                          {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"none"}]'
+                                style="z-index: 26; text-transform: left; border-width: 0px; cursor: pointer;">
+                                <img src="assets/wetalk/button-allusion.png" alt="Open Allusion"
+                                    data-ww="['171px','171px','171px','171px']"
+                                    data-hh="['auto','auto','auto','auto']" />
                             </div>
                         </li>
                     </ul>
@@ -1204,8 +1277,249 @@
                                 data-hh="['auto','auto','auto','auto']" data-no-retina="">
                         </div>
 
+                        <!-- LAYER NR. 11 -->
+                        <!-- Trigger Button -->
+                        <div id="panelWrapper"
+                            style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
+                            <!-- Allusion Panel -->
+                            <div id="allusionPanel"
+                                style="opacity: 0.9; width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                                <!-- Panel Content -->
+                                <div
+                                    style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
+
+                                    <!-- First Image (Align left) -->
+                                    <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
+                                        <img src="assets/wetalk/Screenshot-2024-05-04-234450.png" style="width: 40%;" />
+                                    </div>
+
+                                    <!-- Text -->
+                                    <p style="font-size: 18px; text-align: left; color: white;">
+                                        During the period of the Three Sovereigns and Five Emperors in ancient China,
+                                        people became destitute and homeless due to frequent floods. Gun and his son Yu
+                                        were appointed by Yao and Shun emperors to tame the flooding. Yu drew lessons
+                                        from his father's failure. Instead of directly damming the rivers' flow, Yu made
+                                        a system of irrigation canals that relieved floodwater into fields and dredged
+                                        the riverbeds. Respecting nature is the correct and reasonable application of
+                                        the law of nature.
+                                        After 13 years, he finally controlled the flooding. Later, temples and halls
+                                        were built to memorize his great deeds and he was worshiped as the God of Yu.
+                                        Nature has infinite power. Man as part of nature should live in harmony with
+                                        nature, rather than dominate it. This element highlights the relationship
+                                        between man and nature. "We are all ones sheltered by the same sky and we all
+                                        live on the same planet Earth."
+                                    </p>
+
+                                    <!-- Second Image (Align right) -->
+                                    <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+                                        <img src="assets/wetalk/stroy-logo.png" style="width: 30%;" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Close Button -->
+                            <div id="closePanelBtn"
+                                style="position: absolute; top: 50%; right: 11px; transform: translateY(-50%); cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
+                                <img src="assets/wetalk/close-btn.png" alt="Close" style="width: 130%;" />
+                                <span
+                                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; color: white;">&#10006;</span>
+
+                            </div>
+                        </div>
+
+                        <div id="panelWrapper2"
+                            style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
+                            <!-- Allusion Panel -->
+                            <div id="allusionPanelS2"
+                                style="opacity: 0.9; width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                                <!-- Panel Content -->
+                                <div
+                                    style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
+
+                                    <!-- First Image (Align left) -->
+                                    <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
+                                        <img src="assets/wetalk/Screenshot-2024-05-06-184118.png" style="width: 40%;" />
+                                    </div>
+
+                                    <!-- Text -->
+                                    <p style="font-size: 18px; text-align: left; color: white;">
+                                        Fist-and-palm salute is a modest way to show respect for others.
+                                        Usually, the right hand holds the fist inside and the left hand clenches the
+                                        fist outside. Both of them are closed in front of the chest. As Zuo Zhuan (The
+                                        Zuo Tradition) 18th Year of Duke Wen of Lu records, "The Rites of Zhou was
+                                        edited by the Duke of Zhou." The culture of rites and music of the Zhou Dynasty
+                                        is mainly recorded in three ancient ritual classics, namely the Rites of Zhou,
+                                        the Book of Etiquette and Rites, and the Bopk of Rites.
+                                        Confucius said, 'Do not do unto others what you do not want others do unto you'
+                                        This is the foundation and premise for the Great Unity. To achieve harmony with
+                                        nature, we must first live in harmony with others. Only by seeking harmony in
+                                        diversity and on
+                                        through mutual respect can we achieve coexistence and sustainable development.
+                                    </p>
+
+                                    <!-- Second Image (Align right) -->
+                                    <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+                                        <img src="assets/wetalk/stroy-logo.png" style="width: 30%;" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Close Button -->
+                            <div id="closePanelBtn2"
+                                style="position: absolute; top: 50%; right: 11px; transform: translateY(-50%); cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
+                                <img src="assets/wetalk/close-btn.png" alt="Close" style="width: 130%;" />
+                                <span
+                                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; color: white;">&#10006;</span>
+
+                            </div>
+                        </div>
+
+                        <div id="panelWrapper3"
+                            style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
+                            <!-- Allusion Panel -->
+                            <div id="allusionPanel3"
+                                style="opacity: 0.9; width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                                <!-- Panel Content -->
+                                <div
+                                    style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
+
+                                    <!-- First Image (Align left) -->
+                                    <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
+                                        <img src="assets/wetalk/SScreenshot-2024-05-06-180033.png"
+                                            style="width: 40%;" />
+                                    </div>
+
+                                    <!-- Text -->
+                                    <p style="font-size: 18px; text-align: left; color: white;">
+                                        It was earliest recorded in the Free and Easy Wandering, the first chapter of
+                                        the Zhuangzi. "In the Northern Ocean there is a fish, the name of which is Kun I
+                                        do not know how many li in size. It changes into a bird with the name of Peng,
+                                        the back of which is (also)—1 do not know how many li in extent.
+                                        When this bird rouses itself and flies, its wings are like clouds all around the
+                                        sky. When the sea is moved (so as to bear it along), it prepares to remove to
+                                        the Southern Ocean. The Southern Ocean is the Pool of Heaven."
+                                        The Northern Ocean stands for desire and motivation, while the Southern Ocean
+                                        represents wisdom and the Way of Heaven. Kun Peng flying from the Northern Ocean
+                                        to the Southern Ocean symbolizes the process that wisdom is on top of desire and
+                                        pushes people to pursue the Way of Heaven.
+                                        To put our family affairs in order, govern the country and bring peace to the
+                                        world, we must first cultivate ourselves. Only after we can get along with
+                                        ourselves, can we know how to get along with others and nature.
+                                        After 13 years, he finally controlled the flooding. Later, temples and halls
+                                        were built to memorize his great deeds and he was worshiped as the God of Yu.
+                                        Nature has infinite power. Man as part of nature should live in harmony with
+                                        nature, rather than dominate it. This element highlights the relationship
+                                        between man and nature. "We are all sheltered by the same sky and we all live on
+                                        the
+                                        same planet Earth"
+                                    </p>
+
+                                    <!-- Second Image (Align right) -->
+                                    <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+                                        <img src="assets/wetalk/stroy-logo.png" style="width: 30%;" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Close Button -->
+                            <div id="closePanelBtn3"
+                                style="position: absolute; top: 50%; right: 11px; transform: translateY(-50%); cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
+                                <img src="assets/wetalk/close-btn.png" alt="Close" style="width: 130%;" />
+                                <span
+                                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; color: white;">&#10006;</span>
+
+                            </div>
+                        </div>
+
+                        <div id="panelWrapper4"
+                            style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
+                            <!-- Allusion Panel -->
+                            <div id="allusionPanel4"
+                                style="opacity: 0.9; width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                                <!-- Panel Content -->
+                                <div
+                                    style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
+
+                                    <!-- First Image (Align left) -->
+                                    <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
+                                        <img src="assets/wetalk/Screenshot-2024-05-04-234450.png" style="width: 40%;" />
+                                    </div>
+
+                                    <!-- Text -->
+                                    <p style="font-size: 18px; text-align: left; color: white;">
+                                        As a saying goes, "Past experience, if not forgotten, is a guide for the
+                                        future." However, the premise is that we can get something new from
+                                        • past experience. We gain new knowledge often by reviewing old knowledge.
+                                        Alongside historical development and civilization advancement, significant
+                                        knowledge and experiences have been deposited to deal with the relationship
+                                        between man, society, and nature. To explore the future, it is the safest and
+                                        wisest way to learn from past experiences and acquire the new from the old.
+                                    </p>
+
+                                    <!-- Second Image (Align right) -->
+                                    <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+                                        <img src="assets/wetalk/stroy-logo.png" style="width: 30%;" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Close Button -->
+                            <div id="closePanelBtn4"
+                                style="position: absolute; top: 50%; right: 11px; transform: translateY(-50%); cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
+                                <img src="assets/wetalk/close-btn.png" alt="Close" style="width: 130%;" />
+                                <span
+                                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; color: white;">&#10006;</span>
+
+                            </div>
+                        </div>
+
+                        <div id="panelWrapper5"
+                            style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
+                            <!-- Allusion Panel -->
+                            <div id="allusionPanel5"
+                                style="opacity: 0.9; width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                                <!-- Panel Content -->
+                                <div
+                                    style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
+
+                                    <!-- First Image (Align left) -->
+                                    <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
+                                        <img src="assets/wetalk/Screenshot-2024-05-06-202034.png" style="width: 30%;" />
+                                    </div>
+
+                                    <!-- Text -->
+                                    <p style="font-size: 18px; text-align: left; color: white;">
+                                        Learning is a lifelong cause. We live and learn. It is the most pleasant thing
+                                        to open the door to various disciplines through Chinese culture learning. We can
+                                        have a happy time in lyre playing, chess, calligraphy, and painting as well as
+                                        in beautiful essays and poems. Learning is joyful. Why not do it? This module
+                                        encourages learning. Learning prompts individuals, families, and society to
+                                        improve and develop.
+                                        When everyone is well-educated and polite, the world must be harmonious.
+                                    </p>
+
+                                    <!-- Second Image (Align right) -->
+                                    <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+                                        <img src="assets/wetalk/stroy-logo.png" style="width: 30%;" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Close Button -->
+                            <div id="closePanelBtn5"
+                                style="position: absolute; top: 50%; right: 11px; transform: translateY(-50%); cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
+                                <img src="assets/wetalk/close-btn.png" alt="Close" style="width: 130%;" />
+                                <span
+                                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; color: white;">&#10006;</span>
+
+                            </div>
+                        </div>
+
+
+
                         <!-- LAYER NR. 10 -->
-                        <a class="tp-caption tp-static-layer   tp-rs-menulink" href="https://wetalk.com/news/"
+                        <a class=" tp-caption tp-static-layer tp-rs-menulink" href="https://wetalk.com/news/"
                             target="_self" id="slide-3132-layer-10" data-x="['center','center','left','right']"
                             data-hoffset="['76','206','936','-163']" data-y="['top','top','top','top']"
                             data-voffset="['30','0','84','128']" data-fontsize="['18','15','13','13']"
@@ -1516,6 +1830,54 @@
                             }
                         });
                     }
+
+                    const panelWrapper = document.getElementById("panelWrapper");
+                    const panelWrapper2 = document.getElementById("panelWrapper2");
+                    const panelWrapper3 = document.getElementById("panelWrapper3");
+                    const panelWrapper4 = document.getElementById("panelWrapper4");
+                    const panelWrapper5 = document.getElementById("panelWrapper5");
+                    const closePanelBtn = document.getElementById("closePanelBtn");
+                    const closePanelBtn2 = document.getElementById("closePanelBtn2");
+                    const closePanelBtn3 = document.getElementById("closePanelBtn3");
+                    const closePanelBtn4 = document.getElementById("closePanelBtn4");
+                    const closePanelBtn5 = document.getElementById("closePanelBtn5");
+                    const openBtn = document.getElementById("openAllusionbbtn");
+                    const openBtn2 = document.getElementById("openAllusionS2");
+                    const openBtn3 = document.getElementById("openAllusionS3");
+                    const openBtn4 = document.getElementById("openAllusionS4");
+                    const openBtn5 = document.getElementById("openAllusionS5");
+                    function setupPanelAnimation(openBtn, closeBtn, panelWrapper) {
+                        // Initialize panel hidden state
+                        panelWrapper.style.left = "-600px";
+                        panelWrapper.style.opacity = "0";
+                        panelWrapper.style.pointerEvents = "none";
+
+                        // Open panel with animation
+                        openBtn.addEventListener("click", () => {
+                            panelWrapper.style.display = "flex";
+                            requestAnimationFrame(() => {
+                                panelWrapper.style.left = "0";
+                                panelWrapper.style.opacity = "1";
+                                panelWrapper.style.pointerEvents = "auto";
+                                closeBtn.style.opacity = "1";
+                            });
+                        });
+
+                        // Close panel with animation
+                        closeBtn.addEventListener("click", () => {
+                            panelWrapper.style.left = "-600px";
+                            closeBtn.style.opacity = "0";
+
+                            setTimeout(() => {
+                                panelWrapper.style.display = "none";
+                            }, 400); // Match your CSS transition duration
+                        });
+                    }
+                    setupPanelAnimation(openBtn, closePanelBtn, panelWrapper);
+                    setupPanelAnimation(openBtn2, closePanelBtn2, panelWrapper2);
+                    setupPanelAnimation(openBtn3, closePanelBtn3, panelWrapper3);
+                    setupPanelAnimation(openBtn4, closePanelBtn4, panelWrapper4);
+                    setupPanelAnimation(openBtn5, closePanelBtn5, panelWrapper5);
                 });	/*ready*/
             </script>
         </article>
