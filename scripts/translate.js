@@ -20,19 +20,46 @@ export function initTranslateButton() {
 }
 
 //customize this according to the website's needs
-function setLanguage(lang) {
+async function setLanguage(lang) {
     // add translation logic here, such as:
-    if(lang === 'en') {
-        const link = document.getElementById("open-link");
-        const icon = link.querySelector("i");
-        link.innerHTML = "Play Now ";
-        link.appendChild(icon);
-    } else {
-        const link = document.getElementById("open-link");
-        const icon = link.querySelector("i");
-        link.innerHTML = "点击开始 ";
-        link.appendChild(icon);
+    // if(lang === 'en') {
+    //     const link = document.getElementById("open-link");
+    //     const icon = link.querySelector("i");
+    //     link.innerHTML = "Play Now ";
+    //     link.appendChild(icon);
+    // } else {
+    //     const link = document.getElementById("open-link");
+    //     const icon = link.querySelector("i");
+    //     link.innerHTML = "点击开始 ";
+    //     link.appendChild(icon);
+    // }
+
+    const selectedLanguage = lang;
+    try {
+        const response = await fetch("./scripts/fetch-language-set.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `language=${encodeURIComponent(selectedLanguage)}`
+        });
+        const data = await response.json();
+
+        const languageSet = data;
+        
+        translateElements(languageSet);
+    } catch (error) {
+        console.error("Error fetching language set:", error);
     }
+}
+
+function translateElements(languageSet) {
+    languageSet.forEach(set => {
+        const link = document.getElementById(set.element_id);
+        const icon = link.querySelector("i");
+        link.innerHTML = set.text + " ";
+        link.appendChild(icon);
+    })
 }
 
 
