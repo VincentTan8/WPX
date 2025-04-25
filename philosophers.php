@@ -62,7 +62,7 @@
     <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
 
     <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <!-- <script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
@@ -70,7 +70,7 @@
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script> -->
 </head>
 
 <body>
@@ -92,8 +92,8 @@
                             data-description="">
 
                             <div class="tp-caption tp-resizeme" id="yun-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['450','450','450','450']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['320','320','320','320']"
+                                data-x="['center','center','center','center']" data-hoffset="['450','450','450','50']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['320','320','320','340']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -109,8 +109,8 @@
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="cloud-0-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['550','550','550','550']"
+                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','-180']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['550','550','550','-190']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -118,21 +118,21 @@
                                     {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]" data-visibility="['on','off','off','off']"
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-slideloop" data-easing="Linear.easeNone" data-speed="50"
                                     data-xs="-400" data-ys="0" data-xe="400" data-ye="0">
                                     <img src="assets/philosophers/cloud-0-scaled.webp" alt=""
-                                        data-ww="['2773px','2090px','1821px','1516px']"
+                                        data-ww="['2773px','2090px','1821px','400px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="bg-layer-1"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-300','-300','-300','-300']"
+                                data-hoffset="['-300','-300','-300','-120']"
                                 data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-200','-200','-200','-190']" data-width="none" data-height="none"
+                                data-voffset="['-200','-200','-200','-210']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
@@ -144,15 +144,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/beijing-768x266-1.webp" alt=""
-                                        data-ww="['1121px','745px','699px','556px']"
+                                        data-ww="['1121px','745px','699px','356px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="painting-layer"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-580','-580','-570','-540']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['205','205','205','175']"
+                                data-hoffset="['-580','-580','-570','-190']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['205','205','205','-70']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -165,15 +165,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/zhongyu.png" alt=""
-                                        data-ww="['59px','86px',70px','83px']" data-hh="['auto','auto','auto','auto']"
+                                        data-ww="['59px','86px',70px','40px']" data-hh="['auto','auto','auto','auto']"
                                         data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="kongzi-layer"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-390','-390','-380','-350']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                                data-hoffset="['-390','-390','-380','-110']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','-140']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -186,15 +186,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/kongzi.png" alt=""
-                                        data-ww="['359px','275px','272px','199px']"
+                                        data-ww="['359px','275px','272px','150px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="kongzi-text-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['180','180','180','180']"
+                                data-x="['center','center','center','center']" data-hoffset="['180','180','180','40']"
                                 data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-130','-130','-130','-120']" data-width="none" data-height="none"
+                                data-voffset="['-130','-130','-130','-140']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
@@ -206,13 +206,13 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/kongzizi-246x300-1.webp" alt=""
-                                        data-ww="['298px','252px','260px','175px']"
+                                        data-ww="['298px','252px','260px','120px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="kongzi-side-text-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['460','460','460','460']"
+                                data-x="['center','center','center','center']" data-hoffset="['460','460','460','150']"
                                 data-y="['middle','middle','middle','middle']"
                                 data-voffset="['-150','-150','-150','-140']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
@@ -226,15 +226,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/vertical-text-1.png" alt=""
-                                        data-ww="['148px','150px','157px','101px']"
+                                        data-ww="['148px','150px','157px','80px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="slide-1-text"
-                                data-x="['center','center','center','center']" data-hoffset="['310','310','310','310']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['200','200','200','50']"
-                                data-lineheight="['23.5','23.5','23.5','23.5']" data-width="['690','532','540','590']"
+                                data-x="['center','center','center','center']" data-hoffset="['310','310','310','0']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['200','200','200','180']"
+                                data-lineheight="['23.5','23.5','23.5','23.5']" data-width="['690','532','540','450']"
                                 data-height="none" data-whitespace="normal" data-type="text" data-basealign="slide"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -268,8 +268,8 @@
                             data-description="">
 
                             <div class="tp-caption tp-resizeme" id="yun-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['450','450','450','450']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['320','320','320','320']"
+                                data-x="['center','center','center','center']" data-hoffset="['450','450','450','50']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['320','320','320','340']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -294,7 +294,7 @@
                                     {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]" data-visibility="['on','off','off','off']"
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-slideloop" data-easing="Linear.easeNone" data-speed="50"
                                     data-xs="-400" data-ys="0" data-xe="400" data-ye="0">
@@ -306,9 +306,9 @@
 
                             <div class="tp-caption tp-resizeme" id="bg-layer-1"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-300','-300','-300','-300']"
+                                data-hoffset="['-300','-300','-300','-120']"
                                 data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-200','-200','-200','-190']" data-width="none" data-height="none"
+                                data-voffset="['-200','-200','-200','-210']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
@@ -320,15 +320,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/beijing-768x266-1.webp" alt=""
-                                        data-ww="['1121px','745px','699px','556px']"
+                                        data-ww="['1121px','745px','699px','356px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="painting-layer"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-580','-580','-570','-540']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['205','205','205','175']"
+                                data-hoffset="['-580','-580','-570','-190']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['205','205','205','-70']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -341,15 +341,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/zhongyu.png" alt=""
-                                        data-ww="['59px','86px',70px','83px']" data-hh="['auto','auto','auto','auto']"
+                                        data-ww="['59px','86px',70px','40px']" data-hh="['auto','auto','auto','auto']"
                                         data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="laotzu-layer"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-390','-390','-380','-350']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                                data-hoffset="['-390','-390','-380','-100']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','-140']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -362,15 +362,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/renwu.png" alt=""
-                                        data-ww="['359px','275px','272px','199px']"
+                                        data-ww="['359px','275px','272px','150px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="laotzu-text-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['180','180','180','180']"
+                                data-x="['center','center','center','center']" data-hoffset="['180','180','180','40']"
                                 data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-130','-130','-130','-120']" data-width="none" data-height="none"
+                                data-voffset="['-130','-130','-130','-140']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
@@ -382,13 +382,13 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/wenzi-1-246x300.png" alt=""
-                                        data-ww="['298px','252px','260px','175px']"
+                                        data-ww="['298px','252px','260px','120px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="laotzu-side-text-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['440','440','430','420']"
+                                data-x="['center','center','center','center']" data-hoffset="['440','440','430','150']"
                                 data-y="['middle','middle','middle','middle']"
                                 data-voffset="['-150','-150','-150','-140']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
@@ -402,15 +402,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/vertical-text-2.png" alt=""
-                                        data-ww="['188px','190px','197px','141px']"
+                                        data-ww="['188px','190px','197px','100px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="slide-2-text"
-                                data-x="['center','center','center','center']" data-hoffset="['310','310','310','310']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['200','200','200','50']"
-                                data-lineheight="['23.5','23.5','23.5','23.5']" data-width="['690','532','540','590']"
+                                data-x="['center','center','center','center']" data-hoffset="['310','310','310','0']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['200','200','200','180']"
+                                data-lineheight="['23.5','23.5','23.5','23.5']" data-width="['690','532','540','450']"
                                 data-height="none" data-whitespace="normal" data-type="text" data-basealign="slide"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -444,8 +444,8 @@
                             data-description="">
 
                             <div class="tp-caption tp-resizeme" id="yun-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['450','450','450','450']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['320','320','320','320']"
+                                data-x="['center','center','center','center']" data-hoffset="['450','450','450','50']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['320','320','320','340']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -470,7 +470,7 @@
                                     {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]" data-visibility="['on','off','off','off']"
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-slideloop" data-easing="Linear.easeNone" data-speed="50"
                                     data-xs="-400" data-ys="0" data-xe="400" data-ye="0">
@@ -482,9 +482,9 @@
 
                             <div class="tp-caption tp-resizeme" id="bg-layer-1"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-300','-300','-300','-300']"
+                                data-hoffset="['-300','-300','-300','-120']"
                                 data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-200','-200','-200','-190']" data-width="none" data-height="none"
+                                data-voffset="['-200','-200','-200','-210']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
@@ -496,15 +496,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/beijing-768x266-1.webp" alt=""
-                                        data-ww="['1121px','745px','699px','556px']"
+                                        data-ww="['1121px','745px','699px','356px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="painting-layer"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-580','-580','-570','-540']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['205','205','205','175']"
+                                data-hoffset="['-580','-580','-570','-190']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['205','205','205','-70']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -517,15 +517,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/zhongyu.png" alt=""
-                                        data-ww="['59px','86px',70px','83px']" data-hh="['auto','auto','auto','auto']"
+                                        data-ww="['59px','86px',70px','40px']" data-hh="['auto','auto','auto','auto']"
                                         data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="mengzi-layer"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-390','-390','-380','-350']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                                data-hoffset="['-390','-390','-380','-100']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','-140']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -538,15 +538,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/renwu-2.png" alt=""
-                                        data-ww="['359px','275px','272px','199px']"
+                                        data-ww="['359px','275px','272px','160px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="mengzi-text-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['180','180','180','180']"
+                                data-x="['center','center','center','center']" data-hoffset="['180','180','180','50']"
                                 data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-130','-130','-130','-120']" data-width="none" data-height="none"
+                                data-voffset="['-130','-130','-130','-140']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
@@ -558,15 +558,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/wenzi-246x300.png" alt=""
-                                        data-ww="['298px','252px','260px','175px']"
+                                        data-ww="['298px','252px','260px','120px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="mengzi-side-text-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['470','470','460','460']"
+                                data-x="['center','center','center','center']" data-hoffset="['470','470','460','160']"
                                 data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-150','-150','-150','-140']" data-width="none" data-height="none"
+                                data-voffset="['-150','-150','-150','-170']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
@@ -578,15 +578,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/vertical-text-3.png" alt=""
-                                        data-ww="['221px','196px','157px','131px']"
+                                        data-ww="['221px','196px','157px','80px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="slide-3-text"
-                                data-x="['center','center','center','center']" data-hoffset="['310','310','310','310']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['200','200','200','50']"
-                                data-lineheight="['23.5','23.5','23.5','23.5']" data-width="['690','532','540','590']"
+                                data-x="['center','center','center','center']" data-hoffset="['310','310','310','0']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['200','200','200','180']"
+                                data-lineheight="['23.5','23.5','23.5','23.5']" data-width="['690','532','540','450']"
                                 data-height="none" data-whitespace="normal" data-type="text" data-basealign="slide"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -621,8 +621,8 @@
                             data-description="">
 
                             <div class="tp-caption tp-resizeme" id="yun-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['450','450','450','450']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['320','320','320','320']"
+                                data-x="['center','center','center','center']" data-hoffset="['450','450','450','50']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['320','320','320','340']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -647,7 +647,7 @@
                                     {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]" data-visibility="['on','off','off','off']"
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-slideloop" data-easing="Linear.easeNone" data-speed="50"
                                     data-xs="-400" data-ys="0" data-xe="400" data-ye="0">
@@ -659,9 +659,9 @@
 
                             <div class="tp-caption tp-resizeme" id="bg-layer-1"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-300','-300','-300','-300']"
+                                data-hoffset="['-300','-300','-300','-120']"
                                 data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-200','-200','-200','-190']" data-width="none" data-height="none"
+                                data-voffset="['-200','-200','-200','-210']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
@@ -673,15 +673,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/beijing-768x266-1.webp" alt=""
-                                        data-ww="['1121px','745px','699px','556px']"
+                                        data-ww="['1121px','745px','699px','356px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="painting-layer"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-580','-580','-570','-540']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['205','205','205','175']"
+                                data-hoffset="['-580','-580','-570','-190']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['205','205','205','-70']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -694,15 +694,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/zhongyu.png" alt=""
-                                        data-ww="['59px','86px',70px','83px']" data-hh="['auto','auto','auto','auto']"
+                                        data-ww="['59px','86px',70px','40px']" data-hh="['auto','auto','auto','auto']"
                                         data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="zhuangzi-layer"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-390','-390','-380','-350']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                                data-hoffset="['-390','-390','-380','-110']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','-150']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -715,15 +715,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/renwu-1.png" alt=""
-                                        data-ww="['359px','275px','272px','199px']"
+                                        data-ww="['359px','275px','272px','150px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="zhuangzi-text-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['180','180','180','180']"
+                                data-x="['center','center','center','center']" data-hoffset="['180','180','180','40']"
                                 data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-130','-130','-130','-120']" data-width="none" data-height="none"
+                                data-voffset="['-130','-130','-130','-140']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
@@ -735,13 +735,13 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/wenzi-2-282x300.png" alt=""
-                                        data-ww="['298px','252px','260px','175px']"
+                                        data-ww="['298px','252px','260px','120px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="zhuangzi-side-text-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['460','460','460','460']"
+                                data-x="['center','center','center','center']" data-hoffset="['460','460','460','150']"
                                 data-y="['middle','middle','middle','middle']"
                                 data-voffset="['-150','-150','-150','-140']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
@@ -755,15 +755,15 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/philosophers/vertical-text-4.png" alt=""
-                                        data-ww="['138px','140px','147px','121px']"
+                                        data-ww="['138px','140px','147px','80px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="slide-4-text"
-                                data-x="['center','center','center','center']" data-hoffset="['310','310','310','310']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['200','200','200','50']"
-                                data-lineheight="['23.5','23.5','23.5','23.5']" data-width="['690','532','540','590']"
+                                data-x="['center','center','center','center']" data-hoffset="['310','310','310','0']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['200','200','200','200']"
+                                data-lineheight="['23.5','23.5','23.5','23.5']" data-width="['690','532','540','450']"
                                 data-height="none" data-whitespace="normal" data-type="text" data-basealign="slide"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -819,8 +819,8 @@
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="yun-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['650','650','650','650']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['250','250','250','250']"
+                                data-x="['center','center','center','center']" data-hoffset="['650','650','650','140']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['250','250','250','340']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -831,14 +831,14 @@
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <img src="assets/philosophers/yun-1024x378.png" alt=""
-                                    data-ww="['1091px','786px','620px','556px']" data-hh="['auto','auto','auto','auto']"
+                                    data-ww="['1091px','786px','620px','300px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="yun-layer"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-680','-680','-680','-680']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['250','250','250','250']"
+                                data-hoffset="['-680','-680','-680','-140']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['250','250','250','340']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -849,7 +849,7 @@
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <img src="assets/philosophers/yun-1024x378.png" alt=""
-                                    data-ww="['1091px','786px','620px','556px']" data-hh="['auto','auto','auto','auto']"
+                                    data-ww="['1091px','786px','620px','300px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
 
@@ -863,7 +863,7 @@
                                     {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]" data-visibility="['on','off','off','off']"
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-slideloop" data-easing="Linear.easeNone" data-speed="50"
                                     data-xs="-200" data-ys="0" data-xe="450" data-ye="0">
@@ -914,7 +914,7 @@
                             <!-- KONGZI -->
                             <div class="tp-caption tp-resizeme" id="kongzi-layer"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-440','-440','-430','-400']"
+                                data-hoffset="['-440','-440','-430','-180']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['-60','-60','-60','-50']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
@@ -932,8 +932,8 @@
 
                             <div class="tp-caption tp-resizeme" id="decoration-layer"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-460','-460','-450','-420']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-90','-90','-90','-80']"
+                                data-hoffset="['-460','-460','-450','-180']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-90','-90','-90','-50']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -944,14 +944,14 @@
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <img src="assets/philosophers/decoration.png" alt=""
-                                    data-ww="['259px','213px','159px','109px']" data-hh="['auto','auto','auto','auto']"
+                                    data-ww="['259px','213px','159px','100px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="kongzi-text-layer"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-385','-385','-385','-385']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-80','-80','-80','-70']"
+                                data-hoffset="['-385','-385','-385','-160']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-80','-80','-80','-50']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -962,14 +962,14 @@
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <img src="assets/philosophers/kongzizi-246x300-1.webp" alt=""
-                                    data-ww="['192px','157px','129px','101px']" data-hh="['auto','auto','auto','auto']"
+                                    data-ww="['192px','157px','129px','60px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
 
                             <!-- LAOTZU -->
                             <div class="tp-caption tp-resizeme" id="laotzu-layer"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-150','-150','-140','-110']"
+                                data-hoffset="['-150','-150','-140','-50']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['-60','-60','-60','-50']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
@@ -987,8 +987,8 @@
 
                             <div class="tp-caption tp-resizeme" id="decoration-layer"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-180','-180','-170','-140']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-80','-80','-80','-70']"
+                                data-hoffset="['-180','-180','-170','-50']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-80','-80','-80','-50']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -999,13 +999,13 @@
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <img src="assets/philosophers/decoration.png" alt=""
-                                    data-ww="['259px','213px','159px','109px']" data-hh="['auto','auto','auto','auto']"
+                                    data-ww="['259px','213px','159px','100px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="laotzu-text-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['-95','-95','-95','-95']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-80','-80','-80','-70']"
+                                data-x="['center','center','center','center']" data-hoffset="['-95','-95','-95','-30']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-80','-80','-80','-50']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -1016,13 +1016,13 @@
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <img src="assets/philosophers/wenzi-1-246x300.png" alt=""
-                                    data-ww="['192px','157px','129px','101px']" data-hh="['auto','auto','auto','auto']"
+                                    data-ww="['192px','157px','129px','60px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
 
                             <!-- MENGZI -->
                             <div class="tp-caption tp-resizeme" id="mengzi-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['140','140','130','100']"
+                                data-x="['center','center','center','center']" data-hoffset="['140','140','130','80']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['-60','-60','-60','-50']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
@@ -1034,13 +1034,13 @@
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <img src="assets/philosophers/renwu-2.png" alt=""
-                                    data-ww="['337px','235px','188px','146px']" data-hh="['auto','auto','auto','auto']"
+                                    data-ww="['337px','235px','188px','135px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="decoration-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['90','90','80','50']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-90','-90','-90','-80']"
+                                data-x="['center','center','center','center']" data-hoffset="['90','90','80','70']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-90','-90','-90','-50']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -1051,13 +1051,13 @@
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <img src="assets/philosophers/decoration.png" alt=""
-                                    data-ww="['259px','213px','159px','109px']" data-hh="['auto','auto','auto','auto']"
+                                    data-ww="['259px','213px','159px','100px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="mengzi-text-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['185','185','185','185']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-80','-80','-80','-70']"
+                                data-x="['center','center','center','center']" data-hoffset="['185','185','185','90']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-80','-80','-80','-40']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -1068,13 +1068,13 @@
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <img src="assets/philosophers/wenzi-246x300.png" alt=""
-                                    data-ww="['192px','157px','129px','101px']" data-hh="['auto','auto','auto','auto']"
+                                    data-ww="['192px','157px','129px','60px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
 
                             <!-- ZHUANGZI -->
                             <div class="tp-caption tp-resizeme" id="zhuangzi-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['440','440','430','400']"
+                                data-x="['center','center','center','center']" data-hoffset="['440','440','430','200']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['-60','-60','-60','-50']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
@@ -1086,13 +1086,13 @@
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <img src="assets/philosophers/renwu-1.png" alt=""
-                                    data-ww="['294px','199px','140px','119px']" data-hh="['auto','auto','auto','auto']"
+                                    data-ww="['294px','199px','140px','110px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="decoration-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['400','400','390','370']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-70','-60']"
+                                data-x="['center','center','center','center']" data-hoffset="['400','400','390','190']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-70','-50']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -1103,13 +1103,13 @@
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <img src="assets/philosophers/decoration.png" alt=""
-                                    data-ww="['259px','213px','159px','109px']" data-hh="['auto','auto','auto','auto']"
+                                    data-ww="['259px','213px','159px','100px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="zhuangzi-text-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['485','485','485','485']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-80','-80','-80','-70']"
+                                data-x="['center','center','center','center']" data-hoffset="['485','485','485','200']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-80','-80','-80','-50']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -1120,7 +1120,7 @@
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <img src="assets/philosophers/wenzi-2-282x300.png" alt=""
-                                    data-ww="['222px','187px','159px','131px']" data-hh="['auto','auto','auto','auto']"
+                                    data-ww="['222px','187px','159px','80px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
                         </li>
