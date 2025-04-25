@@ -20,6 +20,8 @@
     <!-- REVOLUTION NAVIGATION STYLES -->
     <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
 
+    <link rel="stylesheet" type="text/css" href="styles/translate.css">
+
     <style>
         @font-face {
             font-family: 'Material Icons';
@@ -67,7 +69,6 @@
 <body>
     <section class="example">
         <article class="content">
-
             <div id="intro-slider_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias=""
                 data-source="gallery" style="background-color:#cff1f9;padding:0px;">
                 <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
@@ -234,7 +235,6 @@
                     </div>
                 </div>
             </div><!-- END REVOLUTION SLIDER -->
-
             <script type="text/javascript">
                 var tpj = jQuery;
 
@@ -304,6 +304,9 @@
         </article>
     </section>
 
+    <?php include "translate-button.php" ?>
+
+    <script type="module" src="scripts/translate.js"></script>
     <script type="text/javascript" src="assets/warning.js"></script>
 </body>
 
