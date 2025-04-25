@@ -1,5 +1,3 @@
 <?php
-
-echo "<script>window.location = 'opening-sequence.php'</script>";
-
-?>
+header("Location: index/opening-sequence.php");
+exit;
