@@ -10,12 +10,6 @@
     <!-- LOAD JQUERY LIBRARY -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
 
-    <!-- LOADING FONTS AND ICONS -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway%3A300%2C100%2C600" rel="stylesheet"
-        property="stylesheet" type="text/css" media="all" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto%3A700%2C300" rel="stylesheet" property="stylesheet"
-        type="text/css" media="all" />
-
     <link rel="stylesheet" type="text/css" href="revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
     <link rel="stylesheet" type="text/css" href="revolution/fonts/font-awesome/css/font-awesome.css">
 
