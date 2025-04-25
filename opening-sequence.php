@@ -53,7 +53,7 @@
     <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
 
     <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <!-- <script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
@@ -61,7 +61,7 @@
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script> -->
 </head>
 
 <body>
@@ -85,8 +85,8 @@
                             <!-- LAYERS -->
                             <div class="tp-caption tp-resizeme" id="cloud-1-layer"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-500','-500','-500','-500']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['320','320','320','320']"
+                                data-hoffset="['-500','-500','-500','-230']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['320','320','320','350']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -99,14 +99,14 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/opening-sequence/cloud-1.webp" alt=""
-                                        data-ww="['640px','640px','640px','640px']"
+                                        data-ww="['640px','640px','640px','480px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="cloud-4-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['500','500','500','500']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['350','350','350','350']"
+                                data-x="['center','center','center','center']" data-hoffset="['500','500','500','180']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['350','350','350','330']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -119,7 +119,7 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/opening-sequence/cloud-4.webp" alt=""
-                                        data-ww="['831px','831px','831px','831px']"
+                                        data-ww="['831px','831px','831px','480px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -146,7 +146,7 @@
 
                             <div class="tp-caption tp-resizeme" id="sign-off-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['420','320','220','130']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['250','250','230','330']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['250','250','230','280']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -186,7 +186,7 @@
 
                             <div class="tp-caption tp-resizeme" id="skip-button-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['280','280','280','280']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['280','280','280','140']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="button"
                                 data-responsive_offset="on"
                                 data-frames='[
@@ -209,7 +209,7 @@
                             <div class="tp-caption tp-resizeme" id="logo-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                 data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-390','-390','-390','-390']" data-width="none" data-height="none"
+                                data-voffset="['-390','-390','-390','-230']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
