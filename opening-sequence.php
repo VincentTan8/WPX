@@ -198,7 +198,7 @@
                                 <a class="" href="main-page.php" target="_self" id="skip-link" style="z-index: 12; white-space: nowrap; 
                                         font-size: 15px; line-height: 16px; font-weight: normal;
                                         font-family:'Arial', 'Helvetica', 'sans-serif'; 
-                                        color: #0f0f0f; border-width:0px; cursor:pointer;
+                                        color: #0f0f0f; cursor:pointer;
                                         text-decoration: none;
                                         padding-top: 10px; padding-bottom: 10px; padding-right: 40px; padding-left: 40px;
                                         border: solid; border-color: #2b2b2b; border-width: 1px; border-radius: 25px;">
