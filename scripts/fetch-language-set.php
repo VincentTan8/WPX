@@ -1,5 +1,6 @@
 <?php
-//  Fetch all text given a language
+// Fetch all text given a language
+// todo fetch only for a given page
 include "../config/conf.php";
 
 $language = $_POST['language'];  //en, cn, kr, jp
