@@ -1774,7 +1774,7 @@
 
                         <!-- First Image (Align left) -->
                         <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
-                            <img src="assets/wetalk/Screenshot-2024-05-06-184118.png" style="width: 40%;" />
+                            <img src="assets/wetalk/Screenshot-2024-05-06-184118.png" style="width: 30%;" />
                         </div>
 
                         <!-- Text -->
@@ -1877,7 +1877,7 @@
 
                         <!-- First Image (Align left) -->
                         <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
-                            <img src="assets/wetalk/Screenshot-2024-05-04-234450.png" style="width: 40%;" />
+                            <img src="assets/wetalk/Screenshot-2024-05-04-234450.png" style="width: 37%;" />
                         </div>
 
                         <!-- Text -->
@@ -1918,7 +1918,7 @@
 
                         <!-- First Image (Align left) -->
                         <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
-                            <img src="assets/wetalk/Screenshot-2024-05-06-202034.png" style="width: 30%;" />
+                            <img src="assets/wetalk/Screenshot-2024-05-06-202034.png" style="width: 26%;" />
                         </div>
 
                         <!-- Text -->
