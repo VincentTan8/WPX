@@ -56,8 +56,12 @@ async function setLanguage(lang) {
 function translateElements(languageSet) {
     languageSet.forEach(set => {
         const link = document.getElementById(set.element_id);
+        //some text have accompanying icons
         const icon = link.querySelector("i");
-        link.innerHTML = set.text + " ";
+        if(icon)
+            link.innerHTML = set.text + " ";
+        else
+            link.innerHTML = set.text;
         link.appendChild(icon);
     })
 }
