@@ -20,6 +20,8 @@
     <!-- REVOLUTION NAVIGATION STYLES -->
     <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
 
+    <link rel="stylesheet" type="text/css" href="styles/translate.css">
+
     <style>
         html,
         body {
@@ -251,7 +253,6 @@
 <body>
     <section class="example">
         <article class="content">
-
             <div id="rev_slider_1064_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias=""
                 data-source="gallery" style="background-color:transparent;padding:0px;">
                 <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
@@ -1210,7 +1211,7 @@
 
                         <!-- LAYER NR. 6 -->
                         <a class="tp-caption tp-static-layer tp-rs-menulink" href="main-page.php" target="_self"
-                            id="slide-3132-layer-6" data-x="['center','center','left','right']"
+                            id="sr-nav-home" data-x="['center','center','left','right']"
                             data-hoffset="['-432','-164','997','-128']" data-y="['top','top','top','top']"
                             data-voffset="['30','0','0','0']" data-fontsize="['18','15','13','15']"
                             data-lineheight="['18','15','13','15']" data-width="none" data-height="none"
@@ -1262,7 +1263,7 @@
                                     {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
                                     {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(240, 240, 240, 1.00);"}]' style="z-index: 11;">
                             <a class="tp-caption tp-static-layer tp-rs-menulink" href="#courses" target="_self"
-                                id="slide-3132-layer-7" data-x="['center','center','left','right']"
+                                id="sr-nav-wetalk-courses" data-x="['center','center','left','right']"
                                 data-hoffset="['0','-87','1001','-155']" data-y="['top','top','top','top']"
                                 data-voffset="['0','0','219','92']" data-fontsize="['18','15','13','13']"
                                 data-lineheight="['18','15','13','13']" data-width="none" data-height="none"
@@ -1300,20 +1301,20 @@
                                 <div
                                     style="display: flex; flex-direction: column; gap: 20px; margin-top: 3rem; padding: 1.5rem; border-radius: 20px; background-color:#f0f0f0;">
                                     <a class="" href="https://wetalk.com/short-video/" target="_self"
-                                        id="intelligent-database" style="z-index: 12; white-space: nowrap; 
+                                        id="sr-nav-intelligent-database" style="z-index: 12; white-space: nowrap; 
                                             font-size: 18px; line-height: 15px; font-weight: normal; 
                                             color: #7f7f7f; border-width:0px; cursor:pointer;
                                             text-decoration: none;">
                                         Intelligent Database
                                     </a>
                                     <a class="" href="https://wetalk.com/recorded-courses/" target="_self"
-                                        id="recording-course" style="z-index: 12; white-space: nowrap; 
+                                        id="sr-nav-recording-course" style="z-index: 12; white-space: nowrap; 
                                             font-size: 18px; line-height: 15px; font-weight: normal; 
                                             color: #7f7f7f; border-width:0px; cursor:pointer;
                                             text-decoration: none;">
                                         Recording Course
                                     </a>
-                                    <a class=" " href="#courses" target="_self" id="course" style="z-index: 12; white-space: nowrap; 
+                                    <a class="" href="#courses" target="_self" id="sr-nav-course" style="z-index: 12; white-space: nowrap; 
                                             font-size: 18px; line-height: 15px; font-weight: normal; 
                                             color: #7f7f7f; border-width:0px; cursor:pointer;
                                             text-decoration: none;">
@@ -1355,14 +1356,14 @@
                                 style="z-index: 12; white-space: nowrap;text-transform:left;">
                                 <div
                                     style="display: flex; flex-direction: column; gap: 20px; margin-left: 5rem; padding: 1.5rem; border-radius: 20px; background-color:#f0f0f0;">
-                                    <a class="" href="https://wetalk.com/chinese/" target="_self" id="linguistics"
+                                    <a class="" href="https://wetalk.com/chinese/" target="_self" id="sr-nav-chinese"
                                         style="z-index: 12; white-space: nowrap; 
                                             font-size: 18px; line-height: 15px; font-weight: normal; 
                                             color: #7f7f7f; border-width:0px; cursor:pointer;
                                             text-decoration: none;">
                                         Linguistics
                                     </a>
-                                    <a class="" href="https://wetalk.com/sinology/" target="_self" id="cc-learning"
+                                    <a class="" href="https://wetalk.com/sinology/" target="_self" id="sr-nav-sinology"
                                         style="z-index: 12; white-space: nowrap; 
                                             font-size: 18px; line-height: 15px; font-weight: normal; 
                                             color: #7f7f7f; border-width:0px; cursor:pointer;
@@ -1395,7 +1396,7 @@
 
                         <!-- LAYER NR. 8 -->
                         <a class="tp-caption  tp-static-layer  tp-rs-menulink" href="https://wetalk.com/linguistic/"
-                            target="_self" id="slide-3132-layer-8" data-x="['center','center','left','right']"
+                            target="_self" id="sr-nav-linguistics" data-x="['center','center','left','right']"
                             data-hoffset="['-145','0','985','-166']" data-y="['top','top','top','top']"
                             data-voffset="['30','0','180','237']" data-fontsize="['18','15','13','13']"
                             data-lineheight="['18','15','13','13']" data-width="none" data-height="none"
@@ -2158,6 +2159,10 @@
             </script>
         </article>
     </section>
+
+    <?php include "translate-button.php" ?>
+
+    <script type="module" src="scripts/translate.js"></script>
 
     <script type="text/javascript" src="assets/warning.js"></script>
 </body>
