@@ -48,6 +48,10 @@
             text-rendering: optimizeLegibility;
             -moz-osx-font-smoothing: grayscale
         }
+
+        .tp-caption.tp-resizeme #skip-link {
+            border: 1px solid black !important;
+        }
     </style>
 
     <!-- REVOLUTION JS FILES -->
