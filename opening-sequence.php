@@ -46,6 +46,10 @@
             text-rendering: optimizeLegibility;
             -moz-osx-font-smoothing: grayscale
         }
+
+        .tp-caption.tp-resizeme #skip-link {
+            border: 1px solid black !important;
+        }
     </style>
 
     <!-- REVOLUTION JS FILES -->
@@ -201,7 +205,7 @@
                                         color: #0f0f0f; cursor:pointer;
                                         text-decoration: none;
                                         padding-top: 10px; padding-bottom: 10px; padding-right: 40px; padding-left: 40px;
-                                        border: solid; border-color: #2b2b2b; border-width: 1px; border-radius: 25px;">
+                                         border-width: 1px; border-radius: 25px !important;">
                                     Skip
                                 </a>
                             </div>
