@@ -26,6 +26,7 @@
         html,
         body {
             overscroll-behavior: none;
+            background-image: linear-gradient(180deg, rgb(15, 0, 152) 27.29%, rgb(70, 25, 168) 105.37%);
         }
 
         @font-face {
