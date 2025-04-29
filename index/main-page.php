@@ -322,7 +322,7 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50"
                                     data-startdeg="0" data-enddeg="-381.5" data-origin="50% 50%">
-                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/taiyang.png" alt=""
+                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/earth.png" alt=""
                                         data-ww="['410px','410px','410px','410px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
@@ -358,8 +358,8 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/wenzi.png" alt=""
-                                        data-ww="['624px','624px','524px','424px']"
+                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/centertext-1.png"
+                                        alt="" data-ww="['624px','624px','524px','424px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -413,7 +413,7 @@
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/002.png" alt=""
+                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/fish-2.png" alt=""
                                         data-ww="['344px','344px','144px','144px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
@@ -432,7 +432,7 @@
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/001.png" alt=""
+                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/fish-1.png" alt=""
                                         data-ww="['284px','284px','124px','124px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
@@ -495,7 +495,7 @@
                             data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
                             data-description="">
                             <!-- MAIN IMAGE -->
-                            <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/beijing1.jpg" alt=""
+                            <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/slide2-bg.jpg" alt=""
                                 data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
                                 class="rev-slidebg" data-no-retina>
                             <!-- LAYERS -->
@@ -511,7 +511,7 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50"
                                     data-startdeg="0" data-enddeg="-360" data-origin="50% 50%">
-                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/taiyang1.png" alt=""
+                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/taiyang.png" alt=""
                                         data-ww="['410px','410px','310px','310px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
@@ -527,9 +527,9 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/you.png" alt=""
-                                    data-ww="['578px','578px','478px','478px']" data-hh="['auto','auto','auto','auto']"
-                                    data-no-retina>
+                                <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/right-curtain.png"
+                                    alt="" data-ww="['578px','578px','478px','478px']"
+                                    data-hh="['auto','auto','auto','auto']" data-no-retina>
                             </div>
 
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-7" id="left-layer-1"
@@ -543,7 +543,7 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/3-zuo.png" alt=""
+                                <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/left-curtain.png" alt=""
                                     data-ww="['578px','578px','478px','478px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
@@ -591,8 +591,8 @@
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/wenzi1.png" alt=""
-                                        data-ww="['624px','624px','524px','424px']"
+                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/centertext-2.png"
+                                        alt="" data-ww="['624px','624px','524px','424px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -624,7 +624,7 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/beijing01.png"
+                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/slide2-bottom.png"
                                         alt="" data-ww="['3400px','3400px','2500px','2500px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
@@ -669,7 +669,7 @@
                             data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
                             data-description="">
                             <!-- MAIN IMAGE -->
-                            <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/beijing-1.jpg" alt=""
+                            <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/slide3-bg.jpg" alt=""
                                 data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
                                 class="rev-slidebg" data-no-retina>
                             <!-- LAYERS -->
@@ -685,7 +685,7 @@
                                 style="z-index: 7; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/beijing01-1.png"
+                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/slide3-bottom.png"
                                         alt="" data-ww="['3400px','2900px','2900px','2900px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
@@ -704,7 +704,7 @@
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/beijing01-1.png"
+                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/slide3-bottom.png"
                                         alt="" data-ww="['3500px','3000px','3000px','3000px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
@@ -740,7 +740,7 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50"
                                     data-startdeg="0" data-enddeg="360" data-origin="50% 50%">
-                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/taiji.png" alt=""
+                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/yinyang.png" alt=""
                                         data-ww="['260px','260px','200px','160px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
@@ -776,7 +776,7 @@
                                     data-hh="['auto','auto','auto','auto']" data-no-retina>
                             </div>
 
-                            <div class="tp-caption tp-resizeme rs-parallaxlevel-4" id="bird-layer"
+                            <div class="tp-caption tp-resizeme rs-parallaxlevel-4" id="bird1-layer"
                                 data-x="['center','center','center','center']"
                                 data-hoffset="['-350','-300','-250','-150']"
                                 data-y="['middle','middle','middle','middle']"
@@ -819,8 +819,8 @@
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/wenzi-1.png" alt=""
-                                        data-ww="['624px','624px','524px','424px']"
+                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/centertext-3.png"
+                                        alt="" data-ww="['624px','624px','524px','424px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -864,7 +864,7 @@
                             data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
                             data-description="">
                             <!-- MAIN IMAGE -->
-                            <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/beijing-1.jpg" alt=""
+                            <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/slide3-bg.jpg" alt=""
                                 data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
                                 class="rev-slidebg" data-no-retina>
                             <!-- LAYERS -->
@@ -880,13 +880,13 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50"
                                     data-startdeg="0" data-enddeg="-360" data-origin="50% 50%">
-                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/1.png" alt=""
-                                        data-ww="['2100px','2100px','1900px','1900px']"
+                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/roman-loop.png"
+                                        alt="" data-ww="['2100px','2100px','1900px','1900px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
-                            <div class="tp-caption tp-resizeme rs-parallaxlevel-6" id="dian-layer"
+                            <div class="tp-caption tp-resizeme rs-parallaxlevel-6" id="dian1-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
@@ -896,7 +896,7 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/dian.png" alt=""
+                                <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/dian1.png" alt=""
                                     data-ww="['1476px','1176px','1076px','676px']"
                                     data-hh="['auto','auto','auto','auto']" data-no-retina>
                             </div>
@@ -929,8 +929,8 @@
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/wenzi-2.png" alt=""
-                                        data-ww="['624px','624px','524px','424px']"
+                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/centertext-4.png"
+                                        alt="" data-ww="['624px','624px','524px','424px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -947,7 +947,7 @@
                                 style="z-index: 7; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/beijing01-1.png"
+                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/slide3-bottom.png"
                                         alt="" data-ww="['3400px','3400px','3100px','3100px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
@@ -975,11 +975,11 @@
                             data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
                             data-description="">
                             <!-- MAIN IMAGE -->
-                            <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/beijing-scaled.jpg" alt=""
+                            <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/slide5-bg.jpg" alt=""
                                 data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
                                 class="rev-slidebg" data-no-retina>
                             <!-- LAYERS -->
-                            <div class="tp-caption tp-resizeme rs-parallaxlevel-3" id="dian1-layer"
+                            <div class="tp-caption tp-resizeme rs-parallaxlevel-3" id="dian2-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['-200','0','-50','-100']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
@@ -989,7 +989,7 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/dian-1.png" alt=""
+                                <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/dian2.png" alt=""
                                     data-ww="['1800px','1500px','1300px','1100px']"
                                     data-hh="['auto','auto','auto','auto']" data-no-retina>
                             </div>
@@ -1006,8 +1006,8 @@
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/wenzi-2.png" alt=""
-                                        data-ww="['524px','524px','424px','324px']"
+                                    <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/centertext-4.png"
+                                        alt="" data-ww="['524px','524px','424px','324px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -1118,7 +1118,7 @@
                                     data-no-retina>
                             </div>
 
-                            <div class="tp-caption tp-resizeme rs-parallaxlevel-5" id="bird1-layer"
+                            <div class="tp-caption tp-resizeme rs-parallaxlevel-5" id="bird3-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['300','300','200','200']"
                                 data-y="['middle','middle','middle','middle']"
                                 data-voffset="['-200','-200','-210','-180']" data-width="none" data-height="none"
@@ -1128,7 +1128,7 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/niao1-1.png" alt=""
+                                <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/niao3.png" alt=""
                                     data-ww="['554px','554px','354px','354px']" data-hh="['auto','auto','auto','auto']"
                                     data-no-retina>
                             </div>
@@ -1998,14 +1998,12 @@
             </div>
 
             <script type="text/javascript">
-                var tpj = jQuery;
-
                 var revapi1064;
-                tpj(document).ready(function () {
-                    if (tpj("#rev_slider_1064_1").revolution == undefined) {
+                $(document).ready(function () {
+                    if ($("#rev_slider_1064_1").revolution == undefined) {
                         revslider_showDoubleJqueryError("#rev_slider_1064_1");
                     } else {
-                        revapi1064 = tpj("#rev_slider_1064_1").show().revolution({
+                        revapi1064 = $("#rev_slider_1064_1").show().revolution({
                             sliderType: "standard",
                             jsFileLocation: "revolution/js/",
                             sliderLayout: "fullscreen",
@@ -2164,7 +2162,7 @@
         </article>
     </section>
 
-    <?php include "translate-button.php" ?>
+    <?php //include "translate-button.php" ?>
     <!-- for passing page name -->
     <div id="page-data" data-page="main-page.php"></div>
 
