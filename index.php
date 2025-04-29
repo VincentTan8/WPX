@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- LOAD JQUERY LIBRARY -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
 
     <link rel="stylesheet" type="text/css" href="index/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
     <link rel="stylesheet" type="text/css" href="index/revolution/fonts/font-awesome/css/font-awesome.css">
@@ -308,7 +308,9 @@
         </article>
     </section>
 
-    <?php include "translate-button.php" ?>
+    <?php //include "index/translate-button.php" ?>
+    <!-- for passing page name -->
+    <div id="page-data" data-page="index.php"></div>
 
     <script type="module" src="index/scripts/translate.js"></script>
     <script type="text/javascript" src="index/assets/warning.js"></script>
