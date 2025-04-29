@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- LOAD JQUERY LIBRARY -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
     <link rel="stylesheet" type="text/css" href="revolution/fonts/font-awesome/css/font-awesome.css">
@@ -614,7 +614,7 @@
 
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-6" id="bottom-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['180','180','230','230']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['250','250','300','300']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="off"
                                 data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
@@ -625,7 +625,7 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/images/dummy.png" data-lazyload="assets/wetalk/slide2-bottom.png"
-                                        alt="" data-ww="['3400px','3400px','2500px','2500px']"
+                                        alt="" data-ww="['2500px','2500px','1600px','1600px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
