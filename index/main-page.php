@@ -160,7 +160,7 @@
             position: fixed;
             top: 0;
             right: 0px;
-            width: 40vw;
+            width: 60vw;
             height: 100vh;
             display: flex;
             transition: transform 0.4s ease;
@@ -1994,6 +1994,10 @@
                             </ul>
                         </li>
                     </ul>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <img src="../resources/img/stroy-logo.png" alt="Bottom Image" style="max-width: 100%; height:
+                        auto;">
+                    </div>
                 </div>
             </div>
 
