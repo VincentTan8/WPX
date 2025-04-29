@@ -1837,13 +1837,6 @@
                             To put our family affairs in order, govern the country and bring peace to the
                             world, we must first cultivate ourselves. Only after we can get along with
                             ourselves, can we know how to get along with others and nature.
-                            After 13 years, he finally controlled the flooding. Later, temples and halls
-                            were built to memorize his great deeds and he was worshiped as the God of Yu.
-                            Nature has infinite power. Man as part of nature should live in harmony with
-                            nature, rather than dominate it. This element highlights the relationship
-                            between man and nature. "We are all sheltered by the same sky and we all live on
-                            the
-                            same planet Earth"
                         </p>
 
                         <!-- Second Image (Align right) -->
