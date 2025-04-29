@@ -1,3 +1,6 @@
+const currentScriptUrl = import.meta.url; // this is the URL of translate.js
+const currentScriptDir = currentScriptUrl.substring(0, currentScriptUrl.lastIndexOf('/'));
+
 export function initTranslateButton() {
     const translateBtn = document.getElementById('translate-btn');
     const languageOptions = document.getElementById('language-options');
@@ -35,13 +38,17 @@ async function setLanguage(lang) {
     // }
 
     const selectedLanguage = lang;
+    const pageData = document.getElementById("page-data");
+    const pageName = pageData.dataset.page; 
+
     try {
-        const response = await fetch("./scripts/fetch-language-set.php", {
+        const response = await fetch(`${currentScriptDir}/fetch-language-set.php`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
-            body: `language=${encodeURIComponent(selectedLanguage)}`
+            body: `language=${encodeURIComponent(selectedLanguage)}` +
+                  `&page=${encodeURIComponent(pageName)}`
         });
         const data = await response.json();
 
@@ -58,11 +65,14 @@ function translateElements(languageSet) {
         const link = document.getElementById(set.element_id);
         //some text have accompanying icons
         const icon = link.querySelector("i");
-        if(icon)
+        if(icon) {
             link.innerHTML = set.text + " ";
-        else
+            link.appendChild(icon);
+        }
+        else {
             link.innerHTML = set.text;
-        link.appendChild(icon);
+        }
+        
     })
 }
 

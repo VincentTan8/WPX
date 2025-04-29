@@ -26,6 +26,7 @@
         html,
         body {
             overscroll-behavior: none;
+            background-image: linear-gradient(180deg, rgb(15, 0, 152) 27.29%, rgb(70, 25, 168) 105.37%);
         }
 
         @font-face {
@@ -1370,7 +1371,8 @@
                                             text-decoration: none;">
                                         Chinese Culture Learning
                                     </a>
-                                    <a class="" href="https://wetalk.com/science/" target="_self" id="science" style="z-index: 12; white-space: nowrap; 
+                                    <a class="" href="https://wetalk.com/science/" target="_self" id="sr-nav-science"
+                                        style="z-index: 12; white-space: nowrap; 
                                             font-size: 18px; line-height: 15px; font-weight: normal; 
                                             color: #7f7f7f; border-width:0px; cursor:pointer;
                                             text-decoration: none;">
@@ -1387,6 +1389,9 @@
                             data-height="none" data-whitespace="nowrap" data-startslide="0" data-endslide="9"
                             data-type="image" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
                             data-visibility="['on','off','off','off']"
+                            data-actions='[
+                                {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"wetalk-courses-menu-line","delay":""},
+                                {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"courses-selection","delay":""}]'
                             data-frames='[
                                 {"delay":"bytrigger","speed":300,"frame":"0","from":"x:-10px;opacity:0;","speed":500,"to":"o:1;","ease":"power3.inOut"},
                                 {"delay":"bytrigger","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]' style="z-index: 13;border-width:0px;">
@@ -1432,7 +1437,7 @@
 
                         <!-- LAYER NR. 9 -->
                         <a class="tp-caption  tp-static-layer  tp-rs-menulink" href="https://wetalk.com/teacher/"
-                            target="_self" id="slide-3132-layer-9" data-x="['center','center','left','right']"
+                            target="_self" id="sr-nav-teachers" data-x="['center','center','left','right']"
                             data-hoffset="['-24','97','962','-165']" data-y="['top','top','top','top']"
                             data-voffset="['30','0','134','179']" data-fontsize="['18','15','13','13']"
                             data-lineheight="['18','15','13','13']" data-width="none" data-height="none"
@@ -1466,15 +1471,9 @@
                                 data-hh="['auto','auto','auto','auto']" data-no-retina="">
                         </div>
 
-                        <!-- LAYER NR. 11 -->
-                        <!-- Trigger Button -->
-
-
-
-
                         <!-- LAYER NR. 10 -->
                         <a class=" tp-caption tp-static-layer tp-rs-menulink" href="https://wetalk.com/news/"
-                            target="_self" id="slide-3132-layer-10" data-x="['center','center','left','right']"
+                            target="_self" id="sr-nav-news" data-x="['center','center','left','right']"
                             data-hoffset="['76','206','936','-163']" data-y="['top','top','top','top']"
                             data-voffset="['30','0','84','128']" data-fontsize="['18','15','13','13']"
                             data-lineheight="['18','15','13','13']" data-width="none" data-height="none"
@@ -1509,7 +1508,7 @@
                         </div>
 
                         <a class="tp-caption tp-static-layer   tp-rs-menulink" href="https://wetalk.com/study-abroad/"
-                            target="_self" id="slide-3132-layer-11" data-x="['center','center','left','right']"
+                            target="_self" id="sr-nav-study-abroad" data-x="['center','center','left','right']"
                             data-hoffset="['189','206','936','-163']" data-y="['top','top','top','top']"
                             data-voffset="['30','0','84','128']" data-fontsize="['18','15','13','13']"
                             data-lineheight="['18','15','13','13']" data-width="none" data-height="none"
@@ -1557,7 +1556,7 @@
                                     {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
                                     {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(240, 240, 240, 1.00);"}]' style="z-index: 11;">
                             <a class="tp-caption  tp-static-layer  tp-rs-menulink" href="#company" target="_self"
-                                id="slide-3132-layer-12" data-x="['center','center','left','right']"
+                                id="sr-nav-company" data-x="['center','center','left','right']"
                                 data-hoffset="['0','206','936','-163']" data-y="['top','top','top','top']"
                                 data-voffset="['0','0','84','128']" data-fontsize="['18','15','13','13']"
                                 data-lineheight="['18','15','13','13']" data-width="none" data-height="none"
@@ -1595,20 +1594,22 @@
                                 style="z-index: 12; white-space: nowrap;text-transform:left;">
                                 <div
                                     style="display: flex; flex-direction: column; gap: 20px; margin-top: 3rem; padding: 1.5rem; border-radius: 20px; background-color:#f0f0f0;">
-                                    <a class="" href="https://wetalk.com/charity/" target="_self" id="charity" style="z-index: 12; white-space: nowrap; 
+                                    <a class="" href="https://wetalk.com/charity/" target="_self" id="sr-nav-charity"
+                                        style="z-index: 12; white-space: nowrap; 
                                             font-size: 18px; line-height: 15px; font-weight: normal; 
                                             color: #7f7f7f; border-width:0px; cursor:pointer;
                                             text-decoration: none;">
                                         Charity
                                     </a>
-                                    <a class="" href="https://wetalk.com/about-us/" target="_self" id="about-us" style="z-index: 12; white-space: nowrap; 
+                                    <a class="" href="https://wetalk.com/about-us/" target="_self" id="sr-nav-about-us"
+                                        style="z-index: 12; white-space: nowrap; 
                                             font-size: 18px; line-height: 15px; font-weight: normal; 
                                             color: #7f7f7f; border-width:0px; cursor:pointer;
                                             text-decoration: none;">
                                         About Us
                                     </a>
-                                    <a class="" href="https://wetalk.com/campus-philippines/" target="_self" id="campus"
-                                        style="z-index: 12; white-space: nowrap; 
+                                    <a class="" href="https://wetalk.com/campus-philippines/" target="_self"
+                                        id="sr-nav-campus" style="z-index: 12; white-space: nowrap; 
                                             font-size: 18px; line-height: 15px; font-weight: normal; 
                                             color: #7f7f7f; border-width:0px; cursor:pointer;
                                             text-decoration: none;">
@@ -1625,6 +1626,9 @@
                             data-height="none" data-whitespace="nowrap" data-startslide="0" data-endslide="9"
                             data-type="image" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
                             data-visibility="['on','off','off','off']"
+                            data-actions='[
+                                {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"company-menu-line","delay":""},
+                                {"event":"mouseenter","action":"startlayer","layerstatus":"hidden","layer":"company-selection","delay":""}]'
                             data-frames='[
                                 {"delay":"bytrigger","speed":300,"frame":"0","from":"x:-10px;opacity:0;","speed":500,"to":"o:1;","ease":"power3.inOut"},
                                 {"delay":"bytrigger","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]' style="z-index: 13;border-width:0px;">
@@ -1633,7 +1637,7 @@
                         </div>
 
                         <a class="tp-caption  tp-static-layer  tp-rs-menulink" href="https://wetalk.com/signin/"
-                            target="_self" id="slide-3132-layer-13" data-x="['right','right','left','right']"
+                            target="_self" id="sr-nav-signin" data-x="['right','right','left','right']"
                             data-hoffset="['185','0','936','-163']" data-y="['top','top','top','top']"
                             data-voffset="['30','0','84','128']" data-fontsize="['18','15','13','13']"
                             data-lineheight="['18','15','13','13']" data-width="none" data-height="none"
@@ -1650,7 +1654,7 @@
                             Sign In
                         </a>
 
-                        <span class="tp-caption  tp-static-layer" id="slide-3132-layer-14"
+                        <span class="tp-caption  tp-static-layer" id="sr-nav-divider"
                             data-x="['right','right','left','right']" data-hoffset="['150','0','936','-163']"
                             data-y="['top','top','top','top']" data-voffset="['30','0','84','128']"
                             data-fontsize="['18','15','13','13']" data-lineheight="['18','15','13','13']"
@@ -1669,7 +1673,7 @@
                         </span>
 
                         <a class="tp-caption  tp-static-layer  tp-rs-menulink" href="https://wetalk.com/signup/"
-                            target="_self" id="slide-3132-layer-15" data-x="['right','right','left','right']"
+                            target="_self" id="sr-nav-signup" data-x="['right','right','left','right']"
                             data-hoffset="['20','0','936','-163']" data-y="['top','top','top','top']"
                             data-voffset="['30','0','84','128']" data-fontsize="['18','15','13','13']"
                             data-lineheight="['18','15','13','13']" data-width="none" data-height="none"
@@ -1710,10 +1714,6 @@
                             <span></span>
                             <span></span>
                         </div>
-
-
-
-
                     </div>
                 </div>
             </div><!-- END REVOLUTION SLIDER -->
@@ -1732,7 +1732,7 @@
                         </div>
 
                         <!-- Text -->
-                        <p style="text-align: left; color: white;">
+                        <p id="allusion-text-1" style="text-align: left; color: white;">
                             During the period of the Three Sovereigns and Five Emperors in ancient China,
                             people became destitute and homeless due to frequent floods. Gun and his son Yu
                             were appointed by Yao and Shun emperors to tame the flooding. Yu drew lessons
@@ -1779,7 +1779,7 @@
                         </div>
 
                         <!-- Text -->
-                        <p style=" text-align: left; color: white;">
+                        <p id="allusion-text-2" style=" text-align: left; color: white;">
                             Fist-and-palm salute is a modest way to show respect for others.
                             Usually, the right hand holds the fist inside and the left hand clenches the
                             fist outside. Both of them are closed in front of the chest. As Zuo Zhuan (The
@@ -1827,7 +1827,7 @@
                                     </div> -->
 
                         <!-- Text -->
-                        <p style=" text-align: left; color: white;">
+                        <p id="allusion-text-3" style=" text-align: left; color: white;">
                             It was earliest recorded in the Free and Easy Wandering, the first chapter of
                             the Zhuangzi. "In the Northern Ocean there is a fish, the name of which is Kun I
                             do not know how many li in size. It changes into a bird with the name of Peng,
@@ -1882,7 +1882,7 @@
                         </div>
 
                         <!-- Text -->
-                        <p style=" text-align: left; color: white;">
+                        <p id="allusion-text-4" style=" text-align: left; color: white;">
                             As a saying goes, "Past experience, if not forgotten, is a guide for the
                             future." However, the premise is that we can get something new from
                             • past experience. We gain new knowledge often by reviewing old knowledge.
@@ -1923,7 +1923,7 @@
                         </div>
 
                         <!-- Text -->
-                        <p style=" text-align: left; color: white;">
+                        <p id="allusion-text-5" style=" text-align: left; color: white;">
                             Learning is a lifelong cause. We live and learn. It is the most pleasant thing
                             to open the door to various disciplines through Chinese culture learning. We can
                             have a happy time in lyre playing, chess, calligraphy, and painting as well as
@@ -1952,41 +1952,45 @@
                 <div id="hamburgerPanel" style="width: 90%; height: 100%; color: white; padding: 20px">
                     <h2></h2>
                     <ul class="menu">
-                        <li><a href="main-page.php">Home</a></li>
+                        <li><a id="hm-nav-home" href="main-page.php">Home</a></li>
 
                         <li class="dropdown">
-                            <button class="dropdown-btn">
-                                Wetalk Courses <span class="arrow">▼</span>
+                            <button id="hm-nav-wetalk-courses" class="dropdown-btn">
+                                Wetalk Courses <i class="material-icons">arrow_drop_down</i>
                             </button>
                             <ul class="submenu">
-                                <li><a href="https://wetalk.com/short-video/">Intelligent Database</a></li>
-                                <li><a href="https://wetalk.com/recorded-courses/">Recording Course</a></li>
+                                <li><a id="hm-nav-intelligent-database"
+                                        href="https://wetalk.com/short-video/">Intelligent Database</a></li>
+                                <li><a id="hm-nav-recording-course"
+                                        href="https://wetalk.com/recorded-courses/">Recording Course</a></li>
                                 <li class="dropdown">
-                                    <button class="dropdown-btn" style="font-style:italic;">
-                                        Course <span class="arrow">▼</span>
+                                    <button id="hm-nav-course" class="dropdown-btn" style="font-style:italic;">
+                                        Course <i class="material-icons">arrow_drop_down</i>
                                     </button>
                                     <ul class="submenu">
-                                        <li><a href="https://wetalk.com/chinese/">Linguistic</a></li>
-                                        <li><a href="https://wetalk.com/sinology/">Chinese Culture Learning</a></li>
-                                        <li><a href="https://wetalk.com/science/">Science</a></li>
+                                        <li><a id="hm-nav-chinese" href="https://wetalk.com/chinese/">Linguistic</a>
+                                        </li>
+                                        <li><a id="hm-nav-sinology" href="https://wetalk.com/sinology/">Chinese Culture
+                                                Learning</a></li>
+                                        <li><a id="hm-nav-science" href="https://wetalk.com/science/">Science</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
 
-                        <li><a href="https://wetalk.com/linguistic/">Linguistic</a></li>
-                        <li><a href="https://wetalk.com/teacher/">Teacher</a></li>
-                        <li><a href="https://wetalk.com/news/">News</a></li>
-                        <li><a href="https://wetalk.com/study-abroad/">Study Abroad</a></li>
+                        <li><a id="hm-nav-linguistics" href="https://wetalk.com/linguistic/">Linguistic</a></li>
+                        <li><a id="hm-nav-teachers" href="https://wetalk.com/teacher/">Teacher</a></li>
+                        <li><a id="hm-nav-news" href="https://wetalk.com/news/">News</a></li>
+                        <li><a id="hm-nav-study-abroad" href="https://wetalk.com/study-abroad/">Study Abroad</a></li>
 
                         <li class="dropdown">
-                            <button class="dropdown-btn">
-                                Company <span class="arrow">▼</span>
+                            <button id="hm-nav-company" class="dropdown-btn">
+                                Company <i class="material-icons">arrow_drop_down</i>
                             </button>
                             <ul class="submenu">
-                                <li><a href="https://wetalk.com/charity/">Charity</a></li>
-                                <li><a href="https://wetalk.com/about-us/">About Us</a></li>
-                                <li><a href="https://wetalk.com/campus-philippines/">Campus</a></li>
+                                <li><a id="hm-nav-charity" href="https://wetalk.com/charity/">Charity</a></li>
+                                <li><a id="hm-nav-about-us" href="https://wetalk.com/about-us/">About Us</a></li>
+                                <li><a id="hm-nav-campus" href="https://wetalk.com/campus-philippines/">Campus</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -2161,9 +2165,10 @@
     </section>
 
     <?php include "translate-button.php" ?>
+    <!-- for passing page name -->
+    <div id="page-data" data-page="main-page.php"></div>
 
     <script type="module" src="scripts/translate.js"></script>
-
     <script type="text/javascript" src="assets/warning.js"></script>
 </body>
 

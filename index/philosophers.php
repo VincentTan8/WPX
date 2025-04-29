@@ -24,6 +24,8 @@
     <!-- REVOLUTION NAVIGATION STYLES -->
     <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
 
+    <link rel="stylesheet" type="text/css" href="styles/translate.css">
+
     <style>
         html,
         body {
@@ -1242,6 +1244,11 @@
         </article>
     </section>
 
+    <?php include "translate-button.php" ?>
+    <!-- for passing page name -->
+    <div id="page-data" data-page="philosophers.php"></div>
+
+    <script type="module" src="scripts/translate.js"></script>
     <script type="text/javascript" src="assets/warning.js"></script>
 </body>
 
