@@ -265,46 +265,36 @@
                             data-hideslideonmobile="off" data-easein="default" data-easeout="default"
                             data-masterspeed="500" data-thumb="" data-rotate="0" data-fstransition="fade"
                             data-fsmasterspeed="500" data-fsslotamount="7" data-saveperformance="off"
-                            data-title="Slide 1" data-param1="" data-param2="" data-param3="" data-param4=""
-                            data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
-                            data-description="">
+                            data-title="Slide 1" data-param1="" data-description="">
                             <!-- MAIN IMAGE -->
                             <img src="assets/wetalk/beijing.jpg" alt="" data-bgposition="center center"
                                 data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                             <!-- LAYERS -->
-                            <div class="tp-caption tp-resizeme rs-parallaxlevel-3" id="hailang-layer-1"
+                            <div class="tp-caption tp-resizeme rs-parallaxlevel-3" id="hailang-layer-2"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-860','-800','-500','-450']"
-                                data-y="['bottom','bottom','bottom','bottom']"
-                                data-voffset="['-60','-300','-120','-150']" data-width="none" data-height="none"
+                                data-hoffset="['-500','-450','-400','-350']"
+                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-20','-20','-20','-20']"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="off"
                                 data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 6; white-space: nowrap;text-transform:left;">
+                                data-basealign="slide" style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="assets/wetalk/hailang.png" alt=""
-                                        data-ww="['2193px','2000px','1800px','1800px']"
+                                    <img src="assets/wetalk/hailang2.png" alt=""
+                                        data-ww="['1240px','1240px','1040px','940px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
-                            <div class="tp-caption tp-resizeme rs-parallaxlevel-4" id="hailang-layer-2"
-                                data-x="['center','center','center','center']" data-hoffset="['280','100','210','310']"
-                                data-y="['bottom','bottom','bottom','bottom']"
-                                data-voffset="['-60','-300','-120','-150']" data-width="none" data-height="none"
+                            <div class="tp-caption tp-resizeme rs-parallaxlevel-4" id="hailang-layer-1"
+                                data-x="['center','center','center','center']" data-hoffset="['120','220','120','120']"
+                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-20','-20','-20','-20']"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="off"
                                 data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 6; white-space: nowrap;text-transform:left;">
+                                data-basealign="slide" style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/wetalk/hailang.png" alt=""
-                                        data-ww="['1993px','1800px','1700px','1700px']"
+                                        data-ww="['2193px','2100px','1800px','1800px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -347,12 +337,9 @@
                             <div class="tp-caption tp-resizeme" id="centertext-layer-1"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                 data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-80','-157','-157','-190']" data-width="none" data-height="none"
-                                data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
+                                data-voffset="['-80','-157','-157','-190']" data-whitespace="nowrap" data-type="image"
+                                data-responsive_offset="on"
                                 data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
@@ -399,8 +386,8 @@
 
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-3" id="fish-layer-2"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-265','-200','-150','-120']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['90','150','-100','230']"
+                                data-hoffset="['-65','-100','-150','-120']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['90','90','-100','230']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[{"delay":2470,"speed":500,"frame":"0","from":"x:[-100%];y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
@@ -420,7 +407,7 @@
                                 data-x="['center','center','center','center']"
                                 data-hoffset="['-535','-435','-300','-170']"
                                 data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-170','-170','-170','150']" data-width="none" data-height="none"
+                                data-voffset="['-170','-180','-180','150']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
                                 data-frames='[{"delay":2470,"speed":500,"frame":"0","from":"x:[-100%];y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
@@ -430,7 +417,7 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="assets/wetalk/fish-1.png" alt=""
-                                        data-ww="['284px','284px','124px','124px']"
+                                        data-ww="['284px','264px','124px','124px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -2012,9 +1999,9 @@
                                     drag_block_vertical: false
                                 }
                             },
-                            responsiveLevels: [1240, 1024, 778, 481],
-                            visibilityLevels: [1240, 1024, 778, 481],
-                            gridwidth: [1240, 1024, 778, 481],
+                            responsiveLevels: [1240, 1025, 778, 481],
+                            visibilityLevels: [1240, 1025, 778, 481],
+                            gridwidth: [1240, 1025, 778, 481],
                             gridheight: [868, 768, 960, 720],
                             lazyType: "none",
                             parallax: {
