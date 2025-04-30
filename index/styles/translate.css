@@ -21,8 +21,9 @@
 
 #language-options {
     position: fixed;
-    bottom: 0px;
-    left: 35%;
+    /* consider changing this to be dynamic */
+    top: 43px;
+    right: 20.5%;
     display: none;
     background-color: #303030;
     border: 1px solid #ddd;

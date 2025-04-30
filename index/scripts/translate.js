@@ -2,15 +2,24 @@ const currentScriptUrl = import.meta.url; // this is the URL of translate.js
 const currentScriptDir = currentScriptUrl.substring(0, currentScriptUrl.lastIndexOf('/'));
 
 export function initTranslateButton() {
-    const translateBtn = document.getElementById('translate-btn');
+    // const translateBtn = document.getElementById('translate-btn');
+    const translateBtn = document.getElementById('sr-nav-translate');
     const languageOptions = document.getElementById('language-options');
 
     if (!translateBtn || !languageOptions) return;
 
-    translateBtn.addEventListener('click', () => {
+    translateBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // prevent triggering the document click
         const isVisible = languageOptions.style.display === 'block';
         languageOptions.style.display = isVisible ? 'none' : 'block';
-        
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        const isClickInside = translateBtn.contains(e.target) || languageOptions.contains(e.target);
+        if (!isClickInside) {
+            languageOptions.style.display = 'none';
+        }
     });
 
     const buttons = languageOptions.querySelectorAll('button');
@@ -24,19 +33,6 @@ export function initTranslateButton() {
 
 //customize this according to the website's needs
 async function setLanguage(lang) {
-    // add translation logic here, such as:
-    // if(lang === 'en') {
-    //     const link = document.getElementById("open-link");
-    //     const icon = link.querySelector("i");
-    //     link.innerHTML = "Play Now ";
-    //     link.appendChild(icon);
-    // } else {
-    //     const link = document.getElementById("open-link");
-    //     const icon = link.querySelector("i");
-    //     link.innerHTML = "点击开始 ";
-    //     link.appendChild(icon);
-    // }
-
     const selectedLanguage = lang;
     const pageData = document.getElementById("page-data");
     const pageName = pageData.dataset.page; 
@@ -75,7 +71,6 @@ function translateElements(languageSet) {
         
     })
 }
-
 
 $(document).ready(function () {
     initTranslateButton();
