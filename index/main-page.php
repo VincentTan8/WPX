@@ -21,7 +21,6 @@
     <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
 
     <link rel="stylesheet" type="text/css" href="styles/translate.css">
-
     <style>
         html,
         body {
@@ -33,7 +32,7 @@
             font-family: 'Material Icons';
             font-style: normal;
             font-weight: 400;
-            src: url(//fonts.gstatic.com/s/materialicons/v41/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2')
+            src: url(//fonts.gstatic.com/s/materialicons/v41/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
         }
 
         .material-icons {
@@ -42,19 +41,15 @@
             font-style: normal;
             font-size: inherit;
             display: inline-block;
-            text-transform: none;
-            letter-spacing: normal;
-            word-wrap: normal;
-            white-space: nowrap;
-            direction: ltr;
             vertical-align: top;
             line-height: inherit;
             font-feature-settings: 'liga';
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
-            -moz-osx-font-smoothing: grayscale
+            -moz-osx-font-smoothing: grayscale;
         }
 
+        /* Panel styling */
         .panelWrapper,
         .panelWrapper2,
         .panelWrapper3,
@@ -63,35 +58,17 @@
             transition: left 0.4s ease, opacity 0.4s ease;
         }
 
-        .responsive-panel-wrapper {
-            position: fixed;
-            top: 0;
-            display: flex;
-            flex-direction: column;
-
-            z-index: 1000;
-            transition: left 0.4s ease, opacity 0.4s ease;
-            opacity: 0;
-            pointer-events: none;
-            box-sizing: border-box;
-
-        }
-
+        .responsive-panel-wrapper,
         .responsive-panel-wrapper-right {
             position: fixed;
             top: 0;
             display: flex;
             flex-direction: column;
-
             z-index: 1000;
-            transition: right 0.4s ease, opacity 0.4s ease;
+            transition: 0.4s ease;
             opacity: 0;
             pointer-events: none;
             box-sizing: border-box;
-        }
-
-        .responsive-panel-wrapper .panel-content {
-            font-size: 18px;
         }
 
         .responsive-panel-wrapper.visible {
@@ -100,12 +77,22 @@
             pointer-events: auto;
         }
 
-        /* Responsive tweak for smaller screens */
-        @media (max-width: 768px) {
+        #hamburgerPanelWrapper {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 60vw;
+            height: 100vh;
+            display: flex;
+            transition: transform 0.4s ease;
+            z-index: 1001;
+            transform: translateX(100%);
+            background-color: #000;
+        }
 
+        @media (max-width: 768px) {
             .responsive-panel-wrapper {
                 width: 75vw;
-                /* only 40% of screen */
                 max-width: 75vw;
                 left: -75vw;
             }
@@ -116,15 +103,24 @@
 
             .responsive-panel-wrapper .panel-content {
                 max-height: calc(100vh - 40px);
-
                 font-size: 12px;
-
                 padding-right: 10px;
+            }
 
+            #closePanelBtn,
+            #closePanelBtn2,
+            #closePanelBtn3,
+            #closePanelBtn4,
+            #closePanelBtn5 {
+                right: 10px;
+                opacity: 0;
+            }
+
+            #hamburgerPanelWrapper {
+                width: 70vw;
             }
         }
 
-        /* Close button styling */
         #closePanelBtn,
         #closePanelBtn2,
         #closePanelBtn3,
@@ -137,104 +133,8 @@
             cursor: pointer;
             opacity: 0;
             transition: opacity 0.4s ease;
-
-        }
-
-
-        /* Responsive tweak for smaller screens */
-        @media (max-width: 768px) {
-
-            #closePanelBtn,
-            #closePanelBtn2,
-            #closePanelBtn3,
-            #closePanelBtn4,
-            #closePanelBtn5 {
-                right: 10px;
-                opacity: 0;
-            }
-
-
-        }
-
-        #hamburgerPanelWrapper {
-            position: fixed;
-            top: 0;
-            right: 0px;
-            width: 60vw;
-            height: 100vh;
-            display: flex;
-            transition: transform 0.4s ease;
-            z-index: 1001;
-            transform: translateX(100%);
-            background-color: #000;
-        }
-
-        /* General reset for the menu */
-        .menu,
-        .menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            background-color: black;
-            text-align: right;
-        }
-
-        .menu li {
-            position: relative;
-        }
-
-        .menu a {
-            display: block;
-            padding: 12px 16px;
-            text-decoration: none;
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            background-color: black;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            text-align: right;
-        }
-
-        .dropdown-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 16px;
-            text-decoration: none;
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            background-color: black;
-            border: none;
-            cursor: pointer;
-        }
-
-        .dropdown-btn .arrow {
-            margin-left: 6px;
-            font-size: 12px;
-        }
-
-        .submenu {
-            display: none;
-            background-color: black;
-        }
-
-        .dropdown.open>.submenu {
-            display: block;
-        }
-
-        .submenu a {
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
-            color: white;
-            background-color: black;
-            padding: 10px 16px;
-            text-decoration: none;
-            font-style: italic;
         }
     </style>
-
     <!-- REVOLUTION JS FILES -->
     <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
     <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
@@ -1942,50 +1842,70 @@
 
                         <li class="dropdown">
                             <button id="hm-nav-wetalk-courses" class="dropdown-btn">
-                                Wetalk Courses <i class="material-icons">arrow_drop_down</i>
+                                WeTalk Courses <i class="material-icons">arrow_drop_down</i>
                             </button>
                             <ul class="submenu">
-                                <li><a id="hm-nav-intelligent-database"
-                                        href="https://wetalk.com/short-video/">Intelligent Database</a></li>
-                                <li><a id="hm-nav-recording-course"
-                                        href="https://wetalk.com/recorded-courses/">Recording Course</a></li>
-                                <li class="dropdown">
+                                <li class="hamburger-dropdown-item">
+                                    <a id="hm-nav-intelligent-database" href="https://wetalk.com/short-video/"
+                                        style="margin-left:-50px;">Intelligent Database</a>
+                                </li>
+                                <li class="hamburger-dropdown-item">
+                                    <a id="hm-nav-recording-course" href="https://wetalk.com/recorded-courses/"
+                                        style="margin-left:-50px;">Recording Course</a>
+                                </li>
+                                <li class="" id="course-dropdown">
                                     <button id="hm-nav-course" class="dropdown-btn" style="font-style:italic;">
                                         Course <i class="material-icons">arrow_drop_down</i>
                                     </button>
                                     <ul class="submenu">
-                                        <li><a id="hm-nav-chinese" href="https://wetalk.com/chinese/">Linguistic</a>
+                                        <li class="hamburger-dropdown-item">
+                                            <a id="hm-nav-chinese" href="https://wetalk.com/chinese/"
+                                                style="margin-left:-50px;">Linguistic</a>
                                         </li>
-                                        <li><a id="hm-nav-sinology" href="https://wetalk.com/sinology/">Chinese Culture
-                                                Learning</a></li>
-                                        <li><a id="hm-nav-science" href="https://wetalk.com/science/">Science</a></li>
+                                        <li class="hamburger-dropdown-item">
+                                            <a id="hm-nav-sinology" href="https://wetalk.com/sinology/"
+                                                style="margin-left:-50px;">Chinese Culture
+                                                Learning</a>
+                                        </li>
+                                        <li class="hamburger-dropdown-item">
+                                            <a id="hm-nav-science" href="https://wetalk.com/science/"
+                                                style="margin-left:-50px;">Science</a>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
-
-                        <li><a id="hm-nav-linguistics" href="https://wetalk.com/linguistic/">Linguistic</a></li>
-                        <li><a id="hm-nav-teachers" href="https://wetalk.com/teacher/">Teacher</a></li>
-                        <li><a id="hm-nav-news" href="https://wetalk.com/news/">News</a></li>
-                        <li><a id="hm-nav-study-abroad" href="https://wetalk.com/study-abroad/">Study Abroad</a></li>
+                        <li class="hamburger-dropdown-item"><a id="hm-nav-linguistics"
+                                href="https://wetalk.com/linguistic/">Linguistic</a></li>
+                        <li class="hamburger-dropdown-item"><a id="hm-nav-teachers"
+                                href="https://wetalk.com/teacher/">Teacher</a></li>
+                        <li class="hamburger-dropdown-item"><a id="hm-nav-news" href="https://wetalk.com/news/">News</a>
+                        </li>
+                        <li class="hamburger-dropdown-item"><a id="hm-nav-study-abroad"
+                                href="https://wetalk.com/study-abroad/">Study Abroad</a></li>
 
                         <li class="dropdown">
                             <button id="hm-nav-company" class="dropdown-btn">
                                 Company <i class="material-icons">arrow_drop_down</i>
                             </button>
                             <ul class="submenu">
-                                <li><a id="hm-nav-charity" href="https://wetalk.com/charity/">Charity</a></li>
-                                <li><a id="hm-nav-about-us" href="https://wetalk.com/about-us/">About Us</a></li>
-                                <li><a id="hm-nav-campus" href="https://wetalk.com/campus-philippines/">Campus</a></li>
+                                <li class="hamburger-dropdown-item"><a id="hm-nav-charity"
+                                        href="https://wetalk.com/charity/" style="margin-left:-50px;">Charity</a></li>
+                                <li class="hamburger-dropdown-item"><a id="hm-nav-about-us"
+                                        href="https://wetalk.com/about-us/" style="margin-left:-50px;">About Us</a></li>
+                                <li class="hamburger-dropdown-item"><a id="hm-nav-campus"
+                                        href="https://wetalk.com/campus-philippines/"
+                                        style="margin-left:-50px;">Campus</a></li>
                             </ul>
                         </li>
                     </ul>
                     <div style="text-align: center; margin-top: 20px;">
-                        <img src="../resources/img/stroy-logo.png" alt="Bottom Image" style="max-width: 100%; height:
-                        auto;">
+                        <img src="../resources/img/stroy-logo.png" alt="Bottom Image"
+                            style="max-width: 100%; height:auto;">
                     </div>
                 </div>
             </div>
+
 
             <script type="text/javascript">
                 var revapi1064;
@@ -2142,12 +2062,11 @@
 
 
                 });
-                document.querySelectorAll('.dropdown-btn').forEach(button => {
-                    button.addEventListener('click', () => {
-                        const submenu = button.nextElementSibling;
-                        submenu.style.display = submenu.style.display === "block" ? "none" : "block";
-                    });
-                });	/*ready*/
+
+
+
+
+
             </script>
         </article>
     </section>
@@ -2163,6 +2082,7 @@
 
     <script type="module" src="scripts/translate.js"></script>
     <script type="text/javascript" src="assets/warning.js"></script>
+    <script type="text/javascript" src="hamburger.js"></script>
 </body>
 
 </html>
