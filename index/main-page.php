@@ -1615,6 +1615,20 @@
                                 data-hh="['auto','auto','auto','auto']" data-no-retina="">
                         </div>
 
+                        <i class="material-icons tp-caption tp-static-layer" id="sr-nav-translate"
+                            data-x="['center','center','center','center']" data-hoffset="['420','206','936','-163']"
+                            data-y="['top','top','top','top']" data-voffset="['33','0','84','128']"
+                            data-visibility="['on','off','off','off']" data-startslide="0" data-endslide="9"
+                            data-type="text" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                            data-frames='[
+                                {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
+                                {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
+                                {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(240, 240, 240, 1.00);br:0px 0px 0px 0px;"}]'
+                            data-textAlign="['left','left','left','left']"
+                            style="z-index: 14; white-space: nowrap; font-size: 22px; line-height: 15px; font-weight: normal; color: #f0f0f0;border-width:0px;cursor:pointer;text-decoration: none;">
+                            language
+                        </i>
+
                         <a class="tp-caption  tp-static-layer  tp-rs-menulink" href="https://wetalk.com/signin/"
                             target="_self" id="sr-nav-signin" data-x="['right','right','left','right']"
                             data-hoffset="['185','0','936','-163']" data-y="['top','top','top','top']"
@@ -2138,7 +2152,12 @@
         </article>
     </section>
 
+    <!-- todo might remove -->
     <?php //include "translate-button.php" ?>
+    <div id="language-options">
+        <button data-lang="en">English</button>
+        <button data-lang="cn">中文</button>
+    </div>
     <!-- for passing page name -->
     <div id="page-data" data-page="main-page.php"></div>
 
