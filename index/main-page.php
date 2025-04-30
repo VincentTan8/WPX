@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
     <!-- REVOLUTION NAVIGATION STYLES -->
     <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
-
+    <link rel="stylesheet" type="text/css" href="styles/hamburger.css">
     <link rel="stylesheet" type="text/css" href="styles/translate.css">
     <style>
         html,
@@ -1853,7 +1853,7 @@
                                     <a id="hm-nav-recording-course" href="https://wetalk.com/recorded-courses/"
                                         style="margin-left:-50px;">Recording Course</a>
                                 </li>
-                                <li class="" id="course-dropdown">
+                                <li class="dropdown">
                                     <button id="hm-nav-course" class="dropdown-btn" style="font-style:italic;">
                                         Course <i class="material-icons">arrow_drop_down</i>
                                     </button>
@@ -2062,11 +2062,6 @@
 
 
                 });
-
-
-
-
-
             </script>
         </article>
     </section>
