@@ -1516,9 +1516,9 @@
                         </div>
 
                         <i class="material-icons tp-caption tp-static-layer" id="sr-nav-translate"
-                            data-x="['center','center','center','center']" data-hoffset="['420','206','936','-163']"
-                            data-y="['top','top','top','top']" data-voffset="['33','0','84','128']"
-                            data-visibility="['on','off','off','off']" data-startslide="0" data-endslide="9"
+                            data-x="['center','center','center','center']" data-hoffset="['420','400','270','110']"
+                            data-y="['top','top','top','top']" data-voffset="['33',33','33','33']"
+                            data-visibility="['on','on','on','on']" data-startslide="0" data-endslide="9"
                             data-type="text" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
                             data-frames='[
                                 {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
@@ -2077,7 +2077,7 @@
 
     <script type="module" src="scripts/translate.js"></script>
     <script type="text/javascript" src="assets/warning.js"></script>
-    <script type="text/javascript" src="hamburger.js"></script>
+    <script type="text/javascript" src="scripts/hamburger.js"></script>
 </body>
 
 </html>
