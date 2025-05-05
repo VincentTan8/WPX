@@ -25,6 +25,7 @@ export function initTranslateButton() {
     const buttons = languageOptions.querySelectorAll('button');
     buttons.forEach(button => {
         button.addEventListener('click', () => {
+            languageOptions.style.display = 'none';
             const lang = button.getAttribute('data-lang');
             setLanguage(lang);
         });
