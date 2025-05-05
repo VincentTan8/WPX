@@ -19,8 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $new_ref_num = generateRefNum($conn, $ref_num_prefix, $tablename);
 
     $sql = "INSERT INTO $tablename (`ref_num`, `web_page`, `element_id`, `en`, `cn`, `kr`, `jp`) 
-            VALUES ('$new_ref_num', '$web_page', '$element_id', '$en', '$cn', '$kr', '$jp');";
-    $conn->query($sql);
+            VALUES (?, ?, ?, ?, ?, ?, ?);";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssssss", $new_ref_num, $web_page, $element_id, $en, $cn, $kr, $jp);
+    $stmt->execute();
+    $result = $stmt->get_result();
 }
 ?>
 
@@ -38,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form action=" " method="POST">
             <h1> Add Entry</h1>
             <label for="web_page">Web Page:</label>
-            <input type="text" id="web_page" name="web_page">
+            <input type="text" id="web_page" name="web_page" value="philosophers.php">
             <br>
 
             <label for="element_id">Element ID:</label>
