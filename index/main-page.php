@@ -1517,7 +1517,7 @@
 
                         <div>
                             <i class="material-icons tp-caption tp-static-layer" id="sr-nav-translate"
-                                data-x="['center','center','center','center']" data-hoffset="['420','400','270','90']"
+                                data-x="['center','right','right','right']" data-hoffset="['420','94','94','94']"
                                 data-y="['top','top','top','top']" data-voffset="['33',33','33','33']"
                                 data-visibility="['on','on','on','on']" data-startslide="0" data-endslide="9"
                                 data-type="text" data-basealign="slide" data-responsive_offset="off"
