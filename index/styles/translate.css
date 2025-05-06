@@ -40,10 +40,10 @@
     text-align: left;
     cursor: pointer;
     color: grey;
-    border: none
+    border: none;
+    border-radius: 6px;
 }
 
 #language-options button:hover {
     background-color: color-mix(in srgb, #f0f0f0 90%, black);
-
 }
