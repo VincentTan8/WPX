@@ -174,8 +174,10 @@
                                 data-x="['center','center','center','center']"
                                 data-hoffset="['-500','-450','-400','-350']"
                                 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-20','-20','-20','-20']"
-                                data-whitespace="nowrap" data-type="image" data-responsive_offset="off"
-                                data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
+                                data-type="image" data-responsive_offset="off"
+                                data-frames='[
+                                    {"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 data-basealign="slide" style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
@@ -188,8 +190,10 @@
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-4" id="hailang-layer-1"
                                 data-x="['center','center','center','center']" data-hoffset="['120','220','120','120']"
                                 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-20','-20','-20','-20']"
-                                data-whitespace="nowrap" data-type="image" data-responsive_offset="off"
-                                data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
+                                data-type="image" data-responsive_offset="off"
+                                data-frames='[
+                                    {"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 data-basealign="slide" style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
@@ -202,12 +206,11 @@
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-1" id="earth-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['-270','-270','0','0']"
                                 data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-127','-127','-287','-287']" data-width="none" data-height="none"
-                                data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
-                                data-frames='[{"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-voffset="['-127','-127','-287','-287']" data-type="image"
+                                data-responsive_offset="on"
+                                data-frames='[
+                                    {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50"
                                     data-startdeg="0" data-enddeg="-381.5" data-origin="50% 50%">
@@ -220,12 +223,10 @@
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-1" id="ren-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['530','500','400','110']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['20','140','140','230']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="on"
-                                data-frames='[{"delay":1570,"speed":500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-type="image" data-responsive_offset="on"
+                                data-frames='[
+                                    {"delay":1570,"speed":500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
@@ -268,13 +269,10 @@
 
                             <div class="tp-caption tp-resizeme" id="shan-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['385','100','50','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['160','160','160','160']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['160','430','160','160']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[{"delay":1070,"speed":300,"frame":"0","from":"y:bottom;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
                                 style="z-index: 4; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
@@ -387,9 +385,6 @@
                                 data-voffset="['-267','-257','-257','-290']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
                                 data-frames='[{"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50"
                                     data-startdeg="0" data-enddeg="-360" data-origin="50% 50%">
@@ -400,14 +395,13 @@
                             </div>
 
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-7" id="right-layer-1"
-                                data-x="['center','center','center','center']" data-hoffset="['690','350','220','200']"
-                                data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-250','-270','-340','-310']" data-width="none" data-height="none"
+                                data-x="['right','right','right','right']" data-hoffset="['-0','-50','-100','-250']"
+                                data-y="['top','top','top','top']" data-voffset="['-0','-0','-0','-0']"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="off"
-                                data-frames='[{"delay":650,"speed":600,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-basealign="slide"
+                                data-frames='[
+                                    {"delay":650,"speed":600,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <img loading="lazy" src="assets/wetalk/right-curtain.png" alt=""
                                     data-ww="['578px','578px','478px','478px']" data-hh="['auto','auto','auto','auto']"
@@ -415,15 +409,12 @@
                             </div>
 
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-7" id="left-layer-1"
-                                data-x="['center','center','center','center']"
-                                data-hoffset="['-680',-300','-200','-170']"
-                                data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-280','-295','-355','-330']" data-width="none" data-height="none"
-                                data-whitespace="nowrap" data-type="image" data-responsive_offset="off"
-                                data-frames='[{"delay":650,"speed":600,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-x="['left','left','left','left']" data-hoffset="['-0',-50','-100','-250']"
+                                data-y="['top','top','top','top']" data-voffset="['-0','-0','-0','-0']"
+                                data-type="image" data-responsive_offset="off" data-basealign="slide"
+                                data-frames='[
+                                    {"delay":650,"speed":600,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <img loading="lazy" src="assets/wetalk/left-curtain.png" alt=""
                                     data-ww="['578px','578px','478px','478px']" data-hh="['auto','auto','auto','auto']"
@@ -496,13 +487,11 @@
 
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-6" id="bottom-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['250','250','350','300']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="off"
-                                data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-20','-20','-20','-20']"
+                                data-type="image" data-responsive_offset="off" data-basealign="slide"
+                                data-frames='[
+                                    {"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
