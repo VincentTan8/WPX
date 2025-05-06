@@ -1515,10 +1515,7 @@
                                 style="z-index: 14; white-space: nowrap; font-size: 22px; line-height: 15px; font-weight: normal; color: #f0f0f0;border-width:0px;cursor:pointer;text-decoration: none;">
                                 language
                             </i>
-                            <div id="language-options">
-                                <button data-lang="en">English</button>
-                                <button data-lang="cn">中文</button>
-                            </div>
+                            <?php include "translate-button.php" ?>
                         </div>
 
                         <a class="tp-caption  tp-static-layer  tp-rs-menulink" href="https://wetalk.com/signin/"
@@ -2057,8 +2054,6 @@
         </article>
     </section>
 
-    <!-- todo might remove -->
-    <?php //include "translate-button.php" ?>
     <!-- for passing page name -->
     <div id="page-data" data-page="main-page.php"></div>
 
