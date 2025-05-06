@@ -310,7 +310,6 @@
         </article>
     </section>
 
-    <?php //include "index/translate-button.php" ?>
     <!-- for passing page name -->
     <div id="page-data" data-page="index.php"></div>
 

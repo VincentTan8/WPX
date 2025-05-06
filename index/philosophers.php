@@ -1244,7 +1244,6 @@
         </article>
     </section>
 
-    <?php include "translate-button.php" ?>
     <!-- for passing page name -->
     <div id="page-data" data-page="philosophers.php"></div>
 
