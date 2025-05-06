@@ -25,7 +25,7 @@
     top: 65px;
     right: 22%;
     display: none;
-    background-color: #303030;
+    background-color: #f0f0f0;
     border: 1px solid #ddd;
     border-radius: 6px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -39,10 +39,10 @@
     width: 100%;
     text-align: left;
     cursor: pointer;
-    color: white;
+    color: grey;
     border: none
 }
 
 #language-options button:hover {
-    background-color: #101010;
+    background-color: color-mix(in srgb, #f0f0f0 90%, black);
 }
