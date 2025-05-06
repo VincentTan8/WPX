@@ -165,46 +165,36 @@
                             data-hideslideonmobile="off" data-easein="default" data-easeout="default"
                             data-masterspeed="500" data-thumb="" data-rotate="0" data-fstransition="fade"
                             data-fsmasterspeed="500" data-fsslotamount="7" data-saveperformance="off"
-                            data-title="Slide 1" data-param1="" data-param2="" data-param3="" data-param4=""
-                            data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
-                            data-description="">
+                            data-title="Slide 1" data-param1="" data-description="">
                             <!-- MAIN IMAGE -->
-                            <img loading="lazy" src="assets/wetalk/beijing.jpg" alt="" data-bgposition="center center"
+                            <img src="assets/wetalk/beijing.jpg" alt="" data-bgposition="center center"
                                 data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                             <!-- LAYERS -->
-                            <div class="tp-caption tp-resizeme rs-parallaxlevel-3" id="hailang-layer-1"
+                            <div class="tp-caption tp-resizeme rs-parallaxlevel-3" id="hailang-layer-2"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-860','-800','-500','-450']"
-                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-60','-100','0','-150']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="off"
+                                data-hoffset="['-500','-450','-400','-350']"
+                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-20','-20','-20','-20']"
+                                data-whitespace="nowrap" data-type="image" data-responsive_offset="off"
                                 data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 6; white-space: nowrap;text-transform:left;">
+                                data-basealign="slide" style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img loading="lazy" src="assets/wetalk/hailang.png" alt=""
-                                        data-ww="['2193px','2000px','1800px','1800px']"
+                                    <img src="assets/wetalk/hailang2.png" alt=""
+                                        data-ww="['1240px','1240px','1040px','940px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
-                            <div class="tp-caption tp-resizeme rs-parallaxlevel-4" id="hailang-layer-2"
-                                data-x="['center','center','center','center']" data-hoffset="['280','100','210','310']"
-                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-60','-100','0','-150']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="off"
+                            <div class="tp-caption tp-resizeme rs-parallaxlevel-4" id="hailang-layer-1"
+                                data-x="['center','center','center','center']" data-hoffset="['120','220','120','120']"
+                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-20','-20','-20','-20']"
+                                data-whitespace="nowrap" data-type="image" data-responsive_offset="off"
                                 data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 6; white-space: nowrap;text-transform:left;">
+                                data-basealign="slide" style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img loading="lazy" src="assets/wetalk/hailang.png" alt=""
-                                        data-ww="['1993px','1800px','1700px','1700px']"
+                                    <img src="assets/wetalk/hailang.png" alt=""
+                                        data-ww="['2193px','2100px','1800px','1800px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -221,7 +211,7 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50"
                                     data-startdeg="0" data-enddeg="-381.5" data-origin="50% 50%">
-                                    <img loading="lazy" src="assets/wetalk/earth.png" alt=""
+                                    <img src="assets/wetalk/earth.png" alt=""
                                         data-ww="['410px','410px','410px','410px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
@@ -239,8 +229,7 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img loading="lazy" src="assets/wetalk/ren.png" alt=""
-                                        data-ww="['691px','691px','491px','391px']"
+                                    <img src="assets/wetalk/ren.png" alt="" data-ww="['691px','691px','491px','391px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -248,16 +237,13 @@
                             <div class="tp-caption tp-resizeme" id="centertext-layer-1"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                 data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-80','-157','-157','-190']" data-width="none" data-height="none"
-                                data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
+                                data-voffset="['-80','-157','-157','-190']" data-whitespace="nowrap" data-type="image"
+                                data-responsive_offset="on"
                                 data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img loading="lazy" src="assets/wetalk/centertext-1.png" alt=""
+                                    <img src="assets/wetalk/centertext-1.png" alt=""
                                         data-ww="['624px','624px','524px','424px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
@@ -275,8 +261,7 @@
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img loading="lazy" src="assets/wetalk/shu.png" alt=""
-                                        data-ww="['871px','871px','671px','671px']"
+                                    <img src="assets/wetalk/shu.png" alt="" data-ww="['871px','871px','671px','671px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -293,7 +278,7 @@
                                 style="z-index: 4; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img loading="lazy" src="assets/wetalk/shan.png" alt=""
+                                    <img src="assets/wetalk/shan.png" alt=""
                                         data-ww="['1350px','1350px','1150px','1150px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
@@ -301,8 +286,8 @@
 
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-3" id="fish-layer-2"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-265','-200','-150','-120']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['90','150','-100','230']"
+                                data-hoffset="['-65','-100','-150','-120']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['90','90','-100','230']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[{"delay":2470,"speed":500,"frame":"0","from":"x:[-100%];y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
@@ -312,7 +297,7 @@
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img loading="lazy" src="assets/wetalk/fish-2.png" alt=""
+                                    <img src="assets/wetalk/fish-2.png" alt=""
                                         data-ww="['344px','344px','144px','144px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
@@ -322,7 +307,7 @@
                                 data-x="['center','center','center','center']"
                                 data-hoffset="['-535','-435','-300','-170']"
                                 data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-170','-170','-170','150']" data-width="none" data-height="none"
+                                data-voffset="['-170','-180','-180','150']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
                                 data-frames='[{"delay":2470,"speed":500,"frame":"0","from":"x:[-100%];y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
@@ -331,8 +316,8 @@
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img loading="lazy" src="assets/wetalk/fish-1.png" alt=""
-                                        data-ww="['284px','284px','124px','124px']"
+                                    <img src="assets/wetalk/fish-1.png" alt=""
+                                        data-ww="['284px','264px','124px','124px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -349,8 +334,7 @@
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="2"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img loading="lazy" src="assets/wetalk/niao.png" alt=""
-                                        data-ww="['120px','120px','120px','120px']"
+                                    <img src="assets/wetalk/niao.png" alt="" data-ww="['120px','120px','120px','120px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -512,7 +496,7 @@
 
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-6" id="bottom-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['250','250','300','300']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['250','250','350','300']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="off"
                                 data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
@@ -1531,6 +1515,27 @@
                                 data-hh="['auto','auto','auto','auto']" data-no-retina="">
                         </div>
 
+                        <div>
+                            <i class="material-icons tp-caption tp-static-layer" id="sr-nav-translate"
+                                data-x="['center','right','right','right']" data-hoffset="['420','94','94','94']"
+                                data-y="['top','top','top','top']" data-voffset="['33',33','33','33']"
+                                data-visibility="['on','on','on','on']" data-startslide="0" data-endslide="9"
+                                data-type="text" data-basealign="slide" data-responsive_offset="off"
+                                data-responsive="off"
+                                data-frames='[
+                                {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
+                                {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
+                                {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(240, 240, 240, 1.00);br:0px 0px 0px 0px;"}]'
+                                data-textAlign="['left','left','left','left']"
+                                style="z-index: 14; white-space: nowrap; font-size: 22px; line-height: 15px; font-weight: normal; color: #f0f0f0;border-width:0px;cursor:pointer;text-decoration: none;">
+                                language
+                            </i>
+                            <div id="language-options">
+                                <button data-lang="en">English</button>
+                                <button data-lang="cn">中文</button>
+                            </div>
+                        </div>
+
                         <a class="tp-caption  tp-static-layer  tp-rs-menulink" href="https://wetalk.com/signin/"
                             target="_self" id="sr-nav-signin" data-x="['right','right','left','right']"
                             data-hoffset="['185','0','936','-163']" data-y="['top','top','top','top']"
@@ -1737,13 +1742,6 @@
                             To put our family affairs in order, govern the country and bring peace to the
                             world, we must first cultivate ourselves. Only after we can get along with
                             ourselves, can we know how to get along with others and nature.
-                            After 13 years, he finally controlled the flooding. Later, temples and halls
-                            were built to memorize his great deeds and he was worshiped as the God of Yu.
-                            Nature has infinite power. Man as part of nature should live in harmony with
-                            nature, rather than dominate it. This element highlights the relationship
-                            between man and nature. "We are all sheltered by the same sky and we all live on
-                            the
-                            same planet Earth"
                         </p>
 
                         <!-- Second Image (Align right) -->
@@ -1863,7 +1861,7 @@
                                         style="margin-left:-50px;">Recording Course</a>
                                 </li>
                                 <li class="dropdown">
-                                    <button id="hm-nav-course" class="dropdown-btn" style="font-style:italic;">
+                                    <button id="hm-nav-course" class="dropdown-btn">
                                         Course <i class="material-icons">arrow_drop_down</i>
                                     </button>
                                     <ul class="submenu">
@@ -1942,9 +1940,9 @@
                                     drag_block_vertical: false
                                 }
                             },
-                            responsiveLevels: [1240, 1024, 778, 481],
-                            visibilityLevels: [1240, 1024, 778, 481],
-                            gridwidth: [1240, 1024, 778, 481],
+                            responsiveLevels: [1240, 1025, 778, 481],
+                            visibilityLevels: [1240, 1025, 778, 481],
+                            gridwidth: [1240, 1025, 778, 481],
                             gridheight: [868, 768, 960, 720],
                             lazyType: "none",
                             parallax: {
@@ -2075,13 +2073,14 @@
         </article>
     </section>
 
+    <!-- todo might remove -->
     <?php //include "translate-button.php" ?>
     <!-- for passing page name -->
     <div id="page-data" data-page="main-page.php"></div>
 
     <script type="module" src="scripts/translate.js"></script>
     <script type="text/javascript" src="assets/warning.js"></script>
-    <script type="text/javascript" src="hamburger.js"></script>
+    <script type="text/javascript" src="scripts/hamburger.js"></script>
 </body>
 
 </html>

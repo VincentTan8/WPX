@@ -784,10 +784,8 @@
                                 data-paddingleft="[0,0,0,0]" style="z-index: 10; font-family:'Roboto'; color: #0f0f0f; font-size: 18px;
                                     letter-spacing: 0px; white-space: normal;text-transform:left;">
                                 Zhuang Zhou, commonly known as Zhuangzi, was born in the town of
-                                Meng in the State of Song during the Warring States Period. ”。
+                                Meng in the State of Song during the Warring States Period.
                                 <br /><br />
-                                Zhuang Zhou, commonly known as Zhuangzi, was born in the town
-                                of Meng in the State of Song during the Warring States Period.
                                 He and Laozi are collectively called "Lao Zhuang" (literally
                                 Laozi and Zhuangzi). Zhuangzi inherited and carried forward
                                 Taoism as well as created his unique philosophical thoughts
