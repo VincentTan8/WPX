@@ -10,6 +10,8 @@
     <!-- LOAD JQUERY LIBRARY -->
     <script type="text/javascript" src="../jquery.js"></script>
 
+    <link rel="icon" href="../resources/img/favicon.ico">
+
     <!-- LOADING FONTS AND ICONS -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">

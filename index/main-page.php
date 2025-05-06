@@ -10,6 +10,8 @@
     <!-- LOAD JQUERY LIBRARY -->
     <script type="text/javascript" src="../jquery.js"></script>
 
+    <link rel="icon" href="../resources/img/favicon.ico">
+
     <link rel="stylesheet" type="text/css" href="revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
     <link rel="stylesheet" type="text/css" href="revolution/fonts/font-awesome/css/font-awesome.css">
 
