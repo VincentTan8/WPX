@@ -496,7 +496,7 @@
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img loading="lazy" src="assets/wetalk/slide2-bottom.png" alt=""
-                                        data-ww="['2500px','2500px','1600px','1600px']"
+                                        data-ww="['3400px','3400px','2500px','2500px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -1604,14 +1604,14 @@
                 style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
                 <!-- Allusion Panel -->
                 <div id="allusionPanel"
-                    style="width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    style="width: 90%; height: 100%; background-color: rgba(0, 0, 0, 0.9); color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
                     <!-- Panel Content -->
                     <div class="panel-content"
                         style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
 
                         <!-- First Image (Align left) -->
                         <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
-                            <img src="assets/wetalk/Screenshot-2024-05-04-234450.png" style="width: 40%;" />
+                            <img src="assets/wetalk/slide-1-allusion.png" style="width: 40%;" />
                         </div>
 
                         <!-- Text -->
@@ -1651,14 +1651,14 @@
                 style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
                 <!-- Allusion Panel -->
                 <div id="allusionPanelS2"
-                    style="width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    style="width: 90%; height: 100%; background-color: rgba(0, 0, 0, 0.9); color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
                     <!-- Panel Content -->
                     <div class="panel-content"
                         style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
 
-                        <!-- First Image (Align left) -->
+                        <!-- Second Image (Align left) -->
                         <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
-                            <img src="assets/wetalk/Screenshot-2024-05-06-184118.png" style="width: 30%;" />
+                            <img src="assets/wetalk/slide-2-allusion.png" style="width: 30%;" />
                         </div>
 
                         <!-- Text -->
@@ -1698,16 +1698,15 @@
                 style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
                 <!-- Allusion Panel -->
                 <div id="allusionPanel3"
-                    style="width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    style="width: 90%; height: 100%; background-color: rgba(0, 0, 0, 0.9); color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
                     <!-- Panel Content -->
                     <div class="panel-content"
                         style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
 
-                        <!-- First Image (Align left) -->
-                        <!-- <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
-                                        <img src="assets/wetalk/SScreenshot-2024-05-06-180033.png"
-                                            style="width: 40%;" />
-                                    </div> -->
+                        <!-- Third Image (Align left) -->
+                        <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
+                            <img src="assets/wetalk/slide-3-allusion.png" style="width: 30%;" />
+                        </div>
 
                         <!-- Text -->
                         <p id="allusion-text-3" style=" text-align: left; color: white;">
@@ -1747,14 +1746,14 @@
                 style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
                 <!-- Allusion Panel -->
                 <div id="allusionPanel4"
-                    style="width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    style="width: 90%; height: 100%; background-color: rgba(0, 0, 0, 0.9); color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
                     <!-- Panel Content -->
                     <div class="panel-content"
                         style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
 
-                        <!-- First Image (Align left) -->
+                        <!-- Fourth Image (Align left) -->
                         <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
-                            <img src="assets/wetalk/Screenshot-2024-05-04-234450.png" style="width: 37%;" />
+                            <img src="assets/wetalk/slide-4-allusion.png" style="width: 30%;" />
                         </div>
 
                         <!-- Text -->
@@ -1788,14 +1787,14 @@
                 style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
                 <!-- Allusion Panel -->
                 <div id="allusionPanel5"
-                    style="width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    style="width: 90%; height: 100%; background-color: rgba(0, 0, 0, 0.9); color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
                     <!-- Panel Content -->
                     <div class="panel-content"
                         style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
 
-                        <!-- First Image (Align left) -->
+                        <!-- Fifth Image (Align left) -->
                         <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
-                            <img src="assets/wetalk/Screenshot-2024-05-06-202034.png" style="width: 26%;" />
+                            <img src="assets/wetalk/slide-5-allusion.png" style="width: 26%;" />
                         </div>
 
                         <!-- Text -->
