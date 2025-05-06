@@ -17,7 +17,7 @@
       text-decoration: none;
       color: white;
       font-family: 'Poppins', sans-serif;
-      font-size: 16px;
+      font-size: 3.5vw;
       background-color: black;
       border: none;
       cursor: pointer;
@@ -32,7 +32,7 @@
       text-decoration: none;
       color: white;
       font-family: 'Poppins', sans-serif;
-      font-size: 16px;
+      font-size: 3.5vw;
       background-color: black;
       border: none;
       cursor: pointer;
@@ -60,7 +60,7 @@
   /* Initially hidden submenu items */
   .submenu a {
       font-family: 'Poppins', sans-serif;
-      font-size: 14px;
+      font-size: 3.5vw;
       color: white;
       background-color: black;
       padding: 10px 16px;
