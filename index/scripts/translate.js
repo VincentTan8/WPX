@@ -75,4 +75,13 @@ function translateElements(languageSet) {
 
 $(document).ready(function () {
     initTranslateButton();
+
+    const pageData = document.getElementById("page-data");
+    const pageLang = pageData.dataset.lang; 
+
+    if(pageLang === '_cn') {
+        setLanguage('cn');
+    } else if(pageLang === '_en') {
+        setLanguage('en');
+    }
 });
