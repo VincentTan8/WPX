@@ -1,5 +1,15 @@
 <?php
-//todo add session here for language translation
+if (!isset($_SESSION)) {
+    session_start();
+    ob_start();
+}
+
+if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
+    $lang = '_cn';
+} else {
+    $_SESSION['lang'] = 'EN';
+    $lang = '_en';
+}
 ?>
 
 <!DOCTYPE html>
@@ -328,7 +338,7 @@
     </section>
 
     <!-- for passing page data -->
-    <div id="page-data" data-page="index.php" data-lang=""></div>
+    <div id="page-data" data-page="index.php" data-lang="<?php echo $lang ?>"></div>
 
     <script type="module" src="index/scripts/translate.js"></script>
     <script type="text/javascript" src="index/assets/warning.js"></script>
