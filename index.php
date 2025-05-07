@@ -241,22 +241,18 @@
                     </ul>
 
                     <div class="tp-static-layers">
-                        <!-- todo adjust window -->
-                        <div>
-                            <i class="material-icons tp-caption tp-static-layer" id="sr-nav-translate"
-                                data-x="['right','right','right','right']" data-hoffset="['70','30','30','30']"
-                                data-y="['top','top','top','top']" data-voffset="['33',33','33','33']"
-                                data-visibility="['on','on','on','on']" data-startslide="0" data-endslide="9"
-                                data-type="text" data-basealign="slide" data-responsive_offset="off"
-                                data-responsive="off"
-                                data-frames='[
+                        <div class="tp-caption tp-static-layer" id="sr-nav-translate"
+                            data-x="['right','right','right','right']" data-hoffset="['70','30','30','30']"
+                            data-y="['top','top','top','top']" data-voffset="['33',33','33','33']"
+                            data-visibility="['on','on','on','on']" data-startslide="0" data-endslide="9"
+                            data-type="text" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                            data-frames='[
                                 {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
                                 {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
                                 {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(165, 165, 165, 1.00);br:0px 0px 0px 0px;"}]'
-                                data-textAlign="['left','left','left','left']"
-                                style="z-index: 14; white-space: nowrap; font-size: 22px; line-height: 15px; font-weight: normal; color: #0f0f0f;border-width:0px;cursor:pointer;text-decoration: none;">
-                                language
-                            </i>
+                            data-textAlign="['left','left','left','left']"
+                            style="z-index: 14; white-space: nowrap; font-size: 22px; line-height: 15px; font-weight: normal; color: #0f0f0f;border-width:0px;cursor:pointer;text-decoration: none;">
+                            <i class="material-icons">language</i>
                             <?php include "index/translate-button.php" ?>
                         </div>
                     </div>

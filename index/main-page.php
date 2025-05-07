@@ -1500,21 +1500,18 @@
                                 data-hh="['auto','auto','auto','auto']" data-no-retina="">
                         </div>
 
-                        <div>
-                            <i class="material-icons tp-caption tp-static-layer" id="sr-nav-translate"
-                                data-x="['center','right','right','right']" data-hoffset="['420','94','94','94']"
-                                data-y="['top','top','top','top']" data-voffset="['33',33','33','33']"
-                                data-visibility="['on','on','on','on']" data-startslide="0" data-endslide="9"
-                                data-type="text" data-basealign="slide" data-responsive_offset="off"
-                                data-responsive="off"
-                                data-frames='[
+                        <div class="tp-caption tp-static-layer" id="sr-nav-translate"
+                            data-x="['center','right','right','right']" data-hoffset="['420','94','94','94']"
+                            data-y="['top','top','top','top']" data-voffset="['33',33','33','33']"
+                            data-visibility="['on','on','on','on']" data-startslide="0" data-endslide="9"
+                            data-type="text" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                            data-frames='[
                                 {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
                                 {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
                                 {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(165, 165, 165, 1.00);br:0px 0px 0px 0px;"}]'
-                                data-textAlign="['left','left','left','left']"
-                                style="z-index: 14; white-space: nowrap; font-size: 22px; line-height: 15px; font-weight: normal; color: #f0f0f0;border-width:0px;cursor:pointer;text-decoration: none;">
-                                language
-                            </i>
+                            data-textAlign="['left','left','left','left']"
+                            style="z-index: 14; white-space: nowrap; font-size: 22px; line-height: 15px; font-weight: normal; color: #f0f0f0;border-width:0px;cursor:pointer;text-decoration: none;">
+                            <i class="material-icons">language</i>
                             <?php include "translate-button.php" ?>
                         </div>
 
