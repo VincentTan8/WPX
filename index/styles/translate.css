@@ -1,8 +1,7 @@
 #language-options {
-    position: fixed;
-    /* consider changing this to be dynamic */
-    top: 65px;
-    right: 22%;
+    position: absolute;
+    top: 30px;
+    right: -40%;
     display: none;
     background-color: #f0f0f0;
     border: 1px solid #ddd;
