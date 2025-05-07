@@ -1510,7 +1510,7 @@
                                 data-frames='[
                                 {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
                                 {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
-                                {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(240, 240, 240, 1.00);br:0px 0px 0px 0px;"}]'
+                                {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(165, 165, 165, 1.00);br:0px 0px 0px 0px;"}]'
                                 data-textAlign="['left','left','left','left']"
                                 style="z-index: 14; white-space: nowrap; font-size: 22px; line-height: 15px; font-weight: normal; color: #f0f0f0;border-width:0px;cursor:pointer;text-decoration: none;">
                                 language
@@ -2054,8 +2054,8 @@
         </article>
     </section>
 
-    <!-- for passing page name -->
-    <div id="page-data" data-page="main-page.php"></div>
+    <!-- for passing page data -->
+    <div id="page-data" data-page="main-page.php" data-lang=""></div>
 
     <script type="module" src="scripts/translate.js"></script>
     <script type="text/javascript" src="assets/warning.js"></script>
