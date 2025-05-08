@@ -247,17 +247,20 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
                 </div>
             </div><!-- END REVOLUTION SLIDER -->
 
-            <div class="scroll-container">
-                <img src="index/assets/opening-sequence/scroll.svg" alt="Left Scroll" class="scroll-handle left">
+            <div class="scroll-wrapper">
+                <div class="scroll-container">
+                    <img src="index/assets/opening-sequence/scroll.svg" alt="Left Scroll" class="scroll-handle left" />
 
-                <div class="paper-wrapper">
-                    <img src="index/assets/opening-sequence/paper.svg" alt="Paper" class="scroll-paper">
-                    <a class="play-text" href="index/philosophers.php" id="open-link">
-                        Start Now <i class="material-icons">play_arrow</i>
-                    </a>
+                    <div class="paper-wrapper">
+                        <img src="index/assets/opening-sequence/paper.svg" alt="Paper" class="scroll-paper" />
+                        <a class="play-text" href="index/philosophers.php" id="open-link">
+                            Start Now <i class="material-icons">play_arrow</i>
+                        </a>
+                    </div>
+
+                    <img src="index/assets/opening-sequence/scroll.svg" alt="Right Scroll"
+                        class="scroll-handle right" />
                 </div>
-
-                <img src="index/assets/opening-sequence/scroll.svg" alt="Right Scroll" class="scroll-handle right">
             </div>
 
             <script type="text/javascript">
