@@ -170,7 +170,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="green-wave-3-layer"
-                                data-x="['right','right','right','right']" data-hoffset="[-20','-20','-60','-90']"
+                                data-x="['right','right','right','right']" data-hoffset="[-20','-20','-60','-190']"
                                 data-y="['top','top','top','bottom']" data-voffset="['120','80','120','-40']"
                                 data-type="image" data-responsive_offset="on" data-basealign="slide"
                                 data-frames='[
@@ -252,8 +252,8 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
 
                 <div class="paper-wrapper">
                     <img src="index/assets/opening-sequence/paper.svg" alt="Paper" class="scroll-paper">
-                    <a class="play-text" href="index/philosophers.php" id="open-link">Play Now <i
-                            class="material-icons">play_arrow</i>
+                    <a class="play-text" href="index/philosophers.php" id="open-link">
+                        Start Now <i class="material-icons">play_arrow</i>
                     </a>
                 </div>
 
