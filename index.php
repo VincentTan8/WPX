@@ -105,7 +105,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
 
                             <div class="tp-caption tp-resizeme" id="sign-off-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['490','370','250','150']"
-                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['150','150','100','100']"
+                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['150','150','100','50']"
                                 data-type="image" data-responsive_offset="on" data-basealign="slide"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
@@ -122,7 +122,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
                             <div class="tp-caption tp-resizeme" id="cloud-0-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                 data-y="['bottom','bottom','bottom','bottom']"
-                                data-voffset="['-580','-410','-300','-250']" data-type="image"
+                                data-voffset="['-580','-410','-300','-280']" data-type="image"
                                 data-responsive_offset="on" data-basealign="slide"
                                 data-frames='[
                                     {"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},
@@ -139,7 +139,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
                             <div class="tp-caption tp-resizeme" id="green-wave-1-layer"
                                 data-x="['center','center','center','center']"
                                 data-hoffset="['-525','-380','-280','-170']"
-                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['20','20','20','20']"
+                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['20','20','20','-40']"
                                 data-type="image" data-responsive_offset="on" data-basealign="slide"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
@@ -170,8 +170,8 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="green-wave-3-layer"
-                                data-x="['right','right','right','right']" data-hoffset="[-20','-20','-60','-90']"
-                                data-y="['top','top','top','bottom']" data-voffset="['120','80','120','30']"
+                                data-x="['right','right','right','right']" data-hoffset="[-20','-20','-60','-190']"
+                                data-y="['top','top','top','bottom']" data-voffset="['120','80','120','-40']"
                                 data-type="image" data-responsive_offset="on" data-basealign="slide"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
@@ -252,8 +252,8 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
 
                 <div class="paper-wrapper">
                     <img src="index/assets/opening-sequence/paper.svg" alt="Paper" class="scroll-paper">
-                    <a class="play-text" href="index/philosophers.php" id="open-link">Play Now <i
-                            class="material-icons">play_arrow</i>
+                    <a class="play-text" href="index/philosophers.php" id="open-link">
+                        Start Now <i class="material-icons">play_arrow</i>
                     </a>
                 </div>
 
