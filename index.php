@@ -137,7 +137,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
 
                             <div class="tp-caption tp-resizeme" id="green-wave-1-layer"
                                 data-x="['center','center','center','center']"
-                                data-hoffset="['-525','-380','-280','-130']"
+                                data-hoffset="['-525','-380','-280','-170']"
                                 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['20','20','20','20']"
                                 data-type="image" data-responsive_offset="on" data-basealign="slide"
                                 data-frames='[
@@ -153,9 +153,9 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
 
                             <div class="tp-caption tp-resizeme" id="green-wave-2-layer"
                                 data-x="['left','left','left','left']" data-hoffset="['-30','-65','-70','-100']"
-                                data-y="['top','top','top','top']" data-voffset="['-20','-20','20','150']"
+                                data-y="['top','top','top','top']" data-voffset="['-20','-20','20','-20']"
                                 data-type="image" data-responsive_offset="on" data-basealign="slide"
-                                data-visibility="['on','on','on','off']"
+                                data-visibility="['on','on','on','on']"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
                                     {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
@@ -169,8 +169,8 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="green-wave-3-layer"
-                                data-x="['right','right','right','right']" data-hoffset="[-20','-20','-60','0']"
-                                data-y="['top','top','top','top']" data-voffset="['120','80','120','20']"
+                                data-x="['right','right','right','right']" data-hoffset="[-20','-20','-60','-90']"
+                                data-y="['top','top','top','bottom']" data-voffset="['120','80','120','30']"
                                 data-type="image" data-responsive_offset="on" data-basealign="slide"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
@@ -178,7 +178,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img src="index/assets/opening-sequence/green-wave-3.png" alt=""
-                                        data-ww="['516px','476px','406px','783px']"
+                                        data-ww="['516px','476px','406px','380px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
