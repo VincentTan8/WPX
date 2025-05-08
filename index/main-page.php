@@ -1,3 +1,17 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+    ob_start();
+}
+
+if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
+    $lang = '_cn';
+} else {
+    $_SESSION['lang'] = 'EN';
+    $lang = '_en';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +23,8 @@
 
     <!-- LOAD JQUERY LIBRARY -->
     <script type="text/javascript" src="../jquery.js"></script>
+
+    <link rel="icon" href="../resources/img/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
     <link rel="stylesheet" type="text/css" href="revolution/fonts/font-awesome/css/font-awesome.css">
@@ -174,8 +190,10 @@
                                 data-x="['center','center','center','center']"
                                 data-hoffset="['-500','-450','-400','-350']"
                                 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-20','-20','-20','-20']"
-                                data-whitespace="nowrap" data-type="image" data-responsive_offset="off"
-                                data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
+                                data-type="image" data-responsive_offset="off"
+                                data-frames='[
+                                    {"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 data-basealign="slide" style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
@@ -188,8 +206,10 @@
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-4" id="hailang-layer-1"
                                 data-x="['center','center','center','center']" data-hoffset="['120','220','120','120']"
                                 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-20','-20','-20','-20']"
-                                data-whitespace="nowrap" data-type="image" data-responsive_offset="off"
-                                data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
+                                data-type="image" data-responsive_offset="off"
+                                data-frames='[
+                                    {"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 data-basealign="slide" style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
@@ -202,12 +222,11 @@
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-1" id="earth-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['-270','-270','0','0']"
                                 data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-127','-127','-287','-287']" data-width="none" data-height="none"
-                                data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
-                                data-frames='[{"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-voffset="['-127','-127','-287','-287']" data-type="image"
+                                data-responsive_offset="on"
+                                data-frames='[
+                                    {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50"
                                     data-startdeg="0" data-enddeg="-381.5" data-origin="50% 50%">
@@ -220,12 +239,10 @@
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-1" id="ren-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['530','500','400','110']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['20','140','140','230']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="on"
-                                data-frames='[{"delay":1570,"speed":500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-type="image" data-responsive_offset="on"
+                                data-frames='[
+                                    {"delay":1570,"speed":500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
@@ -268,13 +285,10 @@
 
                             <div class="tp-caption tp-resizeme" id="shan-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['385','100','50','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['160','160','160','160']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['160','430','160','160']"
                                 data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
                                 data-responsive_offset="on"
                                 data-frames='[{"delay":1070,"speed":300,"frame":"0","from":"y:bottom;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
                                 style="z-index: 4; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
@@ -387,9 +401,6 @@
                                 data-voffset="['-267','-257','-257','-290']" data-width="none" data-height="none"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
                                 data-frames='[{"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-rotate" data-easing="Linear.easeNone" data-speed="50"
                                     data-startdeg="0" data-enddeg="-360" data-origin="50% 50%">
@@ -400,14 +411,13 @@
                             </div>
 
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-7" id="right-layer-1"
-                                data-x="['center','center','center','center']" data-hoffset="['690','350','220','200']"
-                                data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-250','-270','-340','-310']" data-width="none" data-height="none"
+                                data-x="['right','right','right','right']" data-hoffset="['-0','-50','-100','-250']"
+                                data-y="['top','top','top','top']" data-voffset="['-0','-0','-0','-0']"
                                 data-whitespace="nowrap" data-type="image" data-responsive_offset="off"
-                                data-frames='[{"delay":650,"speed":600,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-basealign="slide"
+                                data-frames='[
+                                    {"delay":650,"speed":600,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <img loading="lazy" src="assets/wetalk/right-curtain.png" alt=""
                                     data-ww="['578px','578px','478px','478px']" data-hh="['auto','auto','auto','auto']"
@@ -415,15 +425,12 @@
                             </div>
 
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-7" id="left-layer-1"
-                                data-x="['center','center','center','center']"
-                                data-hoffset="['-680',-300','-200','-170']"
-                                data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-280','-295','-355','-330']" data-width="none" data-height="none"
-                                data-whitespace="nowrap" data-type="image" data-responsive_offset="off"
-                                data-frames='[{"delay":650,"speed":600,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-x="['left','left','left','left']" data-hoffset="['-0',-50','-100','-250']"
+                                data-y="['top','top','top','top']" data-voffset="['-0','-0','-0','-0']"
+                                data-type="image" data-responsive_offset="off" data-basealign="slide"
+                                data-frames='[
+                                    {"delay":650,"speed":600,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <img loading="lazy" src="assets/wetalk/left-curtain.png" alt=""
                                     data-ww="['578px','578px','478px','478px']" data-hh="['auto','auto','auto','auto']"
@@ -496,18 +503,16 @@
 
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-6" id="bottom-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['250','250','350','300']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="off"
-                                data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-20','-20','-20','-20']"
+                                data-type="image" data-responsive_offset="off" data-basealign="slide"
+                                data-frames='[
+                                    {"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 style="z-index: 5; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
                                     <img loading="lazy" src="assets/wetalk/slide2-bottom.png" alt=""
-                                        data-ww="['2500px','2500px','1600px','1600px']"
+                                        data-ww="['3400px','3400px','2500px','2500px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -556,13 +561,11 @@
                             <!-- LAYERS -->
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-3" id="bottom-layer-1"
                                 data-x="['center','center','center','center']" data-hoffset="['625','600','600','600']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['380','380','380','380']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="off"
-                                data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-20','-20','-20','-20']"
+                                data-type="image" data-responsive_offset="off" data-basealign="slide"
+                                data-frames='[
+                                    {"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 style="z-index: 7; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
@@ -575,13 +578,11 @@
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-4" id="bottom-layer-2"
                                 data-x="['center','center','center','center']"
                                 data-hoffset="['-550','-500','-500','-500']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['380','380','380','380']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="off"
-                                data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-20','-20','-20','-20']"
+                                data-type="image" data-responsive_offset="off" data-basealign="slide"
+                                data-frames='[
+                                    {"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
@@ -817,13 +818,11 @@
 
                             <div class="tp-caption tp-resizeme rs-parallaxlevel-3" id="bottom-layer-3"
                                 data-x="['center','center','center','center']" data-hoffset="['100','100','100','100']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['380','380','370','370']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="off"
-                                data-frames='[{"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
+                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-20','-20','-20','-20']"
+                                data-type="image" data-responsive_offset="off" data-basealign="slide"
+                                data-frames='[
+                                    {"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
                                 style="z-index: 7; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
@@ -1515,25 +1514,19 @@
                                 data-hh="['auto','auto','auto','auto']" data-no-retina="">
                         </div>
 
-                        <div>
-                            <i class="material-icons tp-caption tp-static-layer" id="sr-nav-translate"
-                                data-x="['center','right','right','right']" data-hoffset="['420','94','94','94']"
-                                data-y="['top','top','top','top']" data-voffset="['33',33','33','33']"
-                                data-visibility="['on','on','on','on']" data-startslide="0" data-endslide="9"
-                                data-type="text" data-basealign="slide" data-responsive_offset="off"
-                                data-responsive="off"
-                                data-frames='[
+                        <div class="tp-caption tp-static-layer" id="sr-nav-translate"
+                            data-x="['center','right','right','right']" data-hoffset="['420','94','94','94']"
+                            data-y="['top','top','top','top']" data-voffset="['33',33','33','33']"
+                            data-visibility="['on','on','on','on']" data-startslide="0" data-endslide="9"
+                            data-type="text" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                            data-frames='[
                                 {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
                                 {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
-                                {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(240, 240, 240, 1.00);br:0px 0px 0px 0px;"}]'
-                                data-textAlign="['left','left','left','left']"
-                                style="z-index: 14; white-space: nowrap; font-size: 22px; line-height: 15px; font-weight: normal; color: #f0f0f0;border-width:0px;cursor:pointer;text-decoration: none;">
-                                language
-                            </i>
-                            <div id="language-options">
-                                <button data-lang="en">English</button>
-                                <button data-lang="cn">中文</button>
-                            </div>
+                                {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(165, 165, 165, 1.00);br:0px 0px 0px 0px;"}]'
+                            data-textAlign="['left','left','left','left']"
+                            style="z-index: 14; white-space: nowrap; font-size: 22px; line-height: 15px; font-weight: normal; color: #f0f0f0;border-width:0px;cursor:pointer;text-decoration: none;">
+                            <i class="material-icons">language</i>
+                            <?php include "translate-button.php" ?>
                         </div>
 
                         <a class="tp-caption  tp-static-layer  tp-rs-menulink" href="https://wetalk.com/signin/"
@@ -1621,14 +1614,14 @@
                 style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
                 <!-- Allusion Panel -->
                 <div id="allusionPanel"
-                    style="width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    style="width: 90%; height: 100%; background-color: rgba(0, 0, 0, 0.9); color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
                     <!-- Panel Content -->
                     <div class="panel-content"
                         style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
 
                         <!-- First Image (Align left) -->
                         <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
-                            <img src="assets/wetalk/Screenshot-2024-05-04-234450.png" style="width: 40%;" />
+                            <img src="assets/wetalk/slide-1-allusion.png" style="width: 40%;" />
                         </div>
 
                         <!-- Text -->
@@ -1668,14 +1661,14 @@
                 style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
                 <!-- Allusion Panel -->
                 <div id="allusionPanelS2"
-                    style="width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    style="width: 90%; height: 100%; background-color: rgba(0, 0, 0, 0.9); color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
                     <!-- Panel Content -->
                     <div class="panel-content"
                         style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
 
-                        <!-- First Image (Align left) -->
+                        <!-- Second Image (Align left) -->
                         <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
-                            <img src="assets/wetalk/Screenshot-2024-05-06-184118.png" style="width: 30%;" />
+                            <img src="assets/wetalk/slide-2-allusion.png" style="width: 30%;" />
                         </div>
 
                         <!-- Text -->
@@ -1715,16 +1708,15 @@
                 style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
                 <!-- Allusion Panel -->
                 <div id="allusionPanel3"
-                    style="width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    style="width: 90%; height: 100%; background-color: rgba(0, 0, 0, 0.9); color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
                     <!-- Panel Content -->
                     <div class="panel-content"
                         style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
 
-                        <!-- First Image (Align left) -->
-                        <!-- <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
-                                        <img src="assets/wetalk/SScreenshot-2024-05-06-180033.png"
-                                            style="width: 40%;" />
-                                    </div> -->
+                        <!-- Third Image (Align left) -->
+                        <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
+                            <img src="assets/wetalk/slide-3-allusion.png" style="width: 30%;" />
+                        </div>
 
                         <!-- Text -->
                         <p id="allusion-text-3" style=" text-align: left; color: white;">
@@ -1764,14 +1756,14 @@
                 style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
                 <!-- Allusion Panel -->
                 <div id="allusionPanel4"
-                    style="width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    style="width: 90%; height: 100%; background-color: rgba(0, 0, 0, 0.9); color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
                     <!-- Panel Content -->
                     <div class="panel-content"
                         style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
 
-                        <!-- First Image (Align left) -->
+                        <!-- Fourth Image (Align left) -->
                         <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
-                            <img src="assets/wetalk/Screenshot-2024-05-04-234450.png" style="width: 37%;" />
+                            <img src="assets/wetalk/slide-4-allusion.png" style="width: 30%;" />
                         </div>
 
                         <!-- Text -->
@@ -1805,14 +1797,14 @@
                 style="position: absolute; top: 0; left: -600px; width: 600px; height: 100vh; display: flex; transition: left 0.4s ease; z-index: 1000;">
                 <!-- Allusion Panel -->
                 <div id="allusionPanel5"
-                    style="width: 90%; height: 100%; background-color: #000; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    style="width: 90%; height: 100%; background-color: rgba(0, 0, 0, 0.9); color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
                     <!-- Panel Content -->
                     <div class="panel-content"
                         style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
 
-                        <!-- First Image (Align left) -->
+                        <!-- Fifth Image (Align left) -->
                         <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
-                            <img src="assets/wetalk/Screenshot-2024-05-06-202034.png" style="width: 26%;" />
+                            <img src="assets/wetalk/slide-5-allusion.png" style="width: 26%;" />
                         </div>
 
                         <!-- Text -->
@@ -2073,10 +2065,8 @@
         </article>
     </section>
 
-    <!-- todo might remove -->
-    <?php //include "translate-button.php" ?>
-    <!-- for passing page name -->
-    <div id="page-data" data-page="main-page.php"></div>
+    <!-- for passing page data -->
+    <div id="page-data" data-page="main-page.php" data-lang="<?php echo $lang ?>"></div>
 
     <script type="module" src="scripts/translate.js"></script>
     <script type="text/javascript" src="assets/warning.js"></script>

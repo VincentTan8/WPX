@@ -1,3 +1,17 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+    ob_start();
+}
+
+if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
+    $lang = '_cn';
+} else {
+    $_SESSION['lang'] = 'EN';
+    $lang = '_en';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +23,8 @@
 
     <!-- LOAD JQUERY LIBRARY -->
     <script type="text/javascript" src="../jquery.js"></script>
+
+    <link rel="icon" href="../resources/img/favicon.ico">
 
     <!-- LOADING FONTS AND ICONS -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
@@ -1169,6 +1185,21 @@
                                 padding: 10px 25px 10px 30px; border-radius: 30px;">
                             SKIP <i style="margin-left: 10px;" class="fa-icon-chevron-right"></i>
                         </a>
+
+                        <div class="tp-caption tp-static-layer" id="sr-nav-translate"
+                            data-x="['right','right','right','right']" data-hoffset="['200','180','180','180']"
+                            data-y="['top','top','top','top']" data-voffset="['53',53','53','53']"
+                            data-visibility="['on','on','on','on']" data-startslide="0" data-endslide="9"
+                            data-type="text" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                            data-frames='[
+                                {"from":"y:-10px;opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power3.easeOut"},
+                                {"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"},
+                                {"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(165, 165, 165, 1.00);br:0px 0px 0px 0px;"}]'
+                            data-textAlign="['left','left','left','left']"
+                            style="z-index: 14; white-space: nowrap; font-size: 22px; line-height: 15px; font-weight: normal; color: #0f0f0f;border-width:0px;cursor:pointer;text-decoration: none;">
+                            <i class="material-icons">language</i>
+                            <?php include "translate-button.php" ?>
+                        </div>
                     </div>
                 </div>
             </div><!-- END REVOLUTION SLIDER -->
@@ -1242,9 +1273,8 @@
         </article>
     </section>
 
-    <?php include "translate-button.php" ?>
-    <!-- for passing page name -->
-    <div id="page-data" data-page="philosophers.php"></div>
+    <!-- for passing page data -->
+    <div id="page-data" data-page="philosophers.php" data-lang="<?php echo $lang ?>"></div>
 
     <script type="module" src="scripts/translate.js"></script>
     <script type="text/javascript" src="assets/warning.js"></script>
