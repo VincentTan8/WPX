@@ -37,6 +37,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
     <link rel="stylesheet" type="text/css" href="index/revolution/css/navigation.css">
 
     <link rel="stylesheet" type="text/css" href="index/styles/translate.css">
+    <link rel="stylesheet" type="text/css" href="index/styles/scroll.css">
 
     <style>
         @font-face {
@@ -185,25 +186,6 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
                                 </div>
                             </div>
 
-                            <div class="tp-caption tp-resizeme" id="open-button-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-50','-50']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="button"
-                                data-responsive_offset="on"
-                                data-frames='[
-                                    {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
-                                    {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space:nowrap;">
-                                <a class="" href="index/philosophers.php" target="_self" id="open-link" style="z-index: 12; white-space: nowrap; 
-                                        font-size: 18px; line-height: 15px; font-weight: 600;
-                                        font-family:'Times New Roman', 'Times', 'serif'; 
-                                        color: #0f0f0f; border-width:0px; cursor:pointer;
-                                        text-decoration: none;">
-                                    Play Now <i class="material-icons">arrow_drop_down</i>
-                                </a>
-                            </div>
 
                             <div class="tp-caption tp-resizeme" id="skip-button-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -268,6 +250,20 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
                     </div>
                 </div>
             </div><!-- END REVOLUTION SLIDER -->
+
+            <div class="scroll-container">
+                <img src="index/assets/opening-sequence/scroll.svg" alt="Left Scroll" class="scroll-handle left">
+
+                <div class="paper-wrapper">
+                    <img src="index/assets/opening-sequence/paper.svg" alt="Paper" class="scroll-paper">
+                    <a class="play-text" href="index/philosophers.php" id="open-link">Play Now <i
+                            class="material-icons">play_arrow</i>
+                    </a>
+                </div>
+
+                <img src="index/assets/opening-sequence/scroll.svg" alt="Right Scroll" class="scroll-handle right">
+            </div>
+
             <script type="text/javascript">
                 var tpj = jQuery;
 
@@ -339,7 +335,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
 
     <!-- for passing page data -->
     <div id="page-data" data-page="index.php" data-lang="<?php echo $lang ?>"></div>
-
+    <script type="module" src="index/scripts/scroll.js"></script>
     <script type="module" src="index/scripts/translate.js"></script>
     <script type="text/javascript" src="index/assets/warning.js"></script>
 </body>
