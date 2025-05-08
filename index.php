@@ -7,6 +7,7 @@ if (!isset($_SESSION)) {
 if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
     $lang = '_cn';
 } else {
+    //default language
     $_SESSION['lang'] = 'EN';
     $lang = '_en';
 }
@@ -100,88 +101,85 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
                             data-hideslideonmobile="off" data-easein="default" data-easeout="default"
                             data-masterspeed="500" data-thumb="" data-rotate="0" data-fstransition="fade"
                             data-fsmasterspeed="500" data-fsslotamount="7" data-saveperformance="off"
-                            data-title="Slide 1" data-param1="" data-param2="" data-param3="" data-param4=""
-                            data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
-                            data-description="">
+                            data-title="Slide 1" data-param1="" data-description="">
 
-                            <!-- LAYERS -->
-                            <div class="tp-caption tp-resizeme" id="cloud-1-layer"
-                                data-x="['center','center','center','center']"
-                                data-hoffset="['-500','-500','-500','-230']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['320','320','320','350']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="on"
+                            <div class="tp-caption tp-resizeme" id="sign-off-layer"
+                                data-x="['center','center','center','center']" data-hoffset="['490','370','250','150']"
+                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['150','150','100','100']"
+                                data-type="image" data-responsive_offset="on" data-basealign="slide"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
                                     {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 5; white-space: nowrap;text-transform:left;">
+                                style="z-index: 7; white-space: nowrap;text-transform:left; margin-right: 50px;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="index/assets/opening-sequence/cloud-1.webp" alt=""
-                                        data-ww="['640px','640px','640px','480px']"
-                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
-                                </div>
-                            </div>
-
-                            <div class="tp-caption tp-resizeme" id="cloud-4-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['500','500','500','180']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['350','350','350','330']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="on"
-                                data-frames='[
-                                    {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
-                                    {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 5; white-space: nowrap;text-transform:left;">
-                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
-                                    data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="index/assets/opening-sequence/cloud-4.webp" alt=""
-                                        data-ww="['831px','831px','831px','480px']"
+                                    <img src="index/assets/opening-sequence/sign-off.png" alt=""
+                                        data-ww="['248px','228px','228px','168px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
                             <div class="tp-caption tp-resizeme" id="cloud-0-layer"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['450','450','450','450']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="on"
+                                data-y="['bottom','bottom','bottom','bottom']"
+                                data-voffset="['-580','-410','-300','-250']" data-type="image"
+                                data-responsive_offset="on" data-basealign="slide"
                                 data-frames='[
                                     {"delay":100,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power4.inOut"},
                                     {"delay":"wait","speed":300,"frame":"999","to":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
                                 style="z-index: 6; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-slideloop" data-easing="Linear.easeNone" data-speed="50"
                                     data-xs="-400" data-ys="0" data-xe="400" data-ye="0">
                                     <img src="index/assets/opening-sequence/cloud-0-scaled-1.webp" alt=""
                                         data-ww="['2773px','2090px','1821px','1516px']"
-                                        data-hh="['325px','325px','325px','225px']" data-no-retina>
+                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
 
-                            <div class="tp-caption tp-resizeme" id="sign-off-layer"
-                                data-x="['center','center','center','center']" data-hoffset="['420','320','220','130']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['250','250','230','280']"
-                                data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
-                                data-responsive_offset="on"
+                            <div class="tp-caption tp-resizeme" id="green-wave-1-layer"
+                                data-x="['center','center','center','center']"
+                                data-hoffset="['-525','-380','-280','-170']"
+                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['20','20','20','20']"
+                                data-type="image" data-responsive_offset="on" data-basealign="slide"
+                                data-frames='[
+                                    {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]' style="z-index: 5; white-space: nowrap;text-transform:left;">
+                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="3"
+                                    data-zoomstart="1" data-zoomend="1.05">
+                                    <img src="index/assets/opening-sequence/green-wave-1.png" alt=""
+                                        data-ww="['783px','683px','633px','583px']"
+                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
+                                </div>
+                            </div>
+
+                            <div class="tp-caption tp-resizeme" id="green-wave-2-layer"
+                                data-x="['left','left','left','left']" data-hoffset="['-30','-65','-70','-100']"
+                                data-y="['top','top','top','top']" data-voffset="['-20','-20','20','-20']"
+                                data-type="image" data-responsive_offset="on" data-basealign="slide"
+                                data-visibility="['on','on','on','on']"
                                 data-frames='[
                                     {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
                                     {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
-                                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                style="z-index: 5; white-space: nowrap;text-transform:left;">
+                                style="z-index: 3; white-space: nowrap;text-transform:left;">
                                 <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
                                     data-zoomstart="1" data-zoomend="1.05">
-                                    <img src="index/assets/opening-sequence/sign-off.png" alt=""
-                                        data-ww="['248px','238px','228px','168px']"
+                                    <img src="index/assets/opening-sequence/green-wave-2.png" alt=""
+                                        data-ww="['830px','753px','653px','830px']"
+                                        data-hh="['auto','auto','auto','auto']" data-no-retina>
+                                </div>
+                            </div>
+
+                            <div class="tp-caption tp-resizeme" id="green-wave-3-layer"
+                                data-x="['right','right','right','right']" data-hoffset="[-20','-20','-60','-90']"
+                                data-y="['top','top','top','bottom']" data-voffset="['120','80','120','30']"
+                                data-type="image" data-responsive_offset="on" data-basealign="slide"
+                                data-frames='[
+                                    {"delay":350,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"power3.inOut"},
+                                    {"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]' style="z-index: 4; white-space: nowrap;text-transform:left;">
+                                <div class="rs-looped rs-pulse" data-easing="Linear.easeNone" data-speed="5"
+                                    data-zoomstart="1" data-zoomend="1.05">
+                                    <img src="index/assets/opening-sequence/green-wave-3.png" alt=""
+                                        data-ww="['516px','476px','406px','380px']"
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
@@ -227,9 +225,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
                                         data-hh="['auto','auto','auto','auto']" data-no-retina>
                                 </div>
                             </div>
-
                         </li>
-
                     </ul>
 
                     <div class="tp-static-layers">
