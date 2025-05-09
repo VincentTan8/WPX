@@ -1,14 +1,10 @@
 window.addEventListener('load', () => {
-    const leftHandle = document.querySelector('.scroll-handle.left');
-    const rightHandle = document.querySelector('.scroll-handle.right');
     const paper = document.querySelector('.paper-wrapper');
     const scrollContainer = document.querySelector('.scroll-container');
 
     // Delay a bit to ensure layout is stable before animating
     setTimeout(() => {
-        // Start the scroll opening animation after the delay
-        leftHandle.style.transform = 'translateX(-400%)'; // move left
-        rightHandle.style.transform = 'translateX(350%)'; // move right
+        //paper element pushes scrolls apart
         paper.style.width = '150px'; // reveal paper
     }, 1500); // Adjusted to match the fade-in delay
 
