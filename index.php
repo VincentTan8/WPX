@@ -254,7 +254,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
                     <div class="paper-wrapper">
                         <img src="index/assets/opening-sequence/paper.svg" alt="Paper" class="scroll-paper" />
                         <a class="play-text" href="index/philosophers.php" id="open-link">
-                            Start Now <i class="material-icons">play_arrow</i>
+                            Start Now <i class="material-icons" style="font-size: 20px">play_arrow</i>
                         </a>
                     </div>
 
