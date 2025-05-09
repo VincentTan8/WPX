@@ -10,8 +10,20 @@ export function initTranslateButton() {
 
     translateBtn.addEventListener('click', (e) => {
         e.stopPropagation(); // prevent triggering the document click
+        languageOptions.classList.remove('flip-left'); // Reset
+
         const isVisible = languageOptions.style.display === 'block';
-        languageOptions.style.display = isVisible ? 'none' : 'block';
+
+        if (isVisible) {
+            languageOptions.style.display = 'none';
+        } else {
+            languageOptions.style.display = 'block';
+            const rect = languageOptions.getBoundingClientRect();
+            const spaceRight = window.innerWidth - rect.right;
+            if (spaceRight < 10) {
+                languageOptions.classList.add('flip-left'); // Flip if not enough space
+            }
+        }
     });
 
     // Close dropdown when clicking outside
