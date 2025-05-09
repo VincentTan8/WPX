@@ -5,117 +5,6 @@
     src: url(//fonts.gstatic.com/s/materialicons/v41/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
 }
 
-.scroll-container {
-    position: fixed;
-    /* Fix it to the screen */
-    top: 50%;
-    /* Center vertically */
-    left: 50%;
-    /* Center horizontally */
-    transform: translate(-50%, -50%);
-    /* Adjust by half the width/height to center */
-    width: 400px;
-    height: 111px;
-    overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
-
-    animation: fadeInScroll 1.85s ease-in-out forwards;
-    animation-delay: 350ms;
-    pointer-events: auto;
-    /* ensure it’s clickable */
-
-}
-
-@keyframes fadeInScroll {
-    0% {
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    100% {
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-/* Apply opacity transition to the scroll handles only */
-.scroll-handle {
-    opacity: 0;
-    /* Initially invisible */
-    transition: opacity 1.5s ease-in-out;
-    /* Smooth fade-in for the scroll handles */
-}
-
-/* When the scroll-container becomes visible, fade in the scroll handles */
-.scroll-container.visible .scroll-handle {
-    opacity: 1;
-    /* Fade in scroll handles */
-}
-
-.scroll-handle {
-    position: absolute;
-    top: 17px;
-    width: auto;
-    height: 75px;
-    object-fit: contain;
-    z-index: 2;
-    transition: transform .8s ease;
-    /* Keep transform animation */
-}
-
-.scroll-handle.left {
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.scroll-handle.right {
-    left: 50%;
-    transform: translateX(0%);
-}
-
-.paper-wrapper {
-    position: absolute;
-    top: 3px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 87%;
-    overflow: hidden;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: width 1s ease;
-}
-
-.scroll-paper {
-    height: 63px;
-    width: auto;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    position: absolute;
-    top: 17px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.play-text {
-    position: absolute;
-    top: 50%;
-    left: 53%;
-    transform: translate(-50%, -50%);
-    font-size: 18px;
-    font-weight: 400;
-    color: #2F9078;
-    font-family: 'Poppins', serif;
-    white-space: nowrap;
-    z-index: 3;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-}
-
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -135,6 +24,18 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+@keyframes fadeInScroll {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
 .scroll-wrapper {
     position: fixed;
     inset: 0;
@@ -142,4 +43,65 @@
     justify-content: center;
     align-items: center;
     pointer-events: none;
+}
+
+.scroll-container {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeInScroll 1.85s ease-in-out forwards;
+    animation-delay: 350ms;
+    pointer-events: auto;
+}
+
+/* Apply opacity transition to the scroll handles only */
+.scroll-handle {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    /* Smooth fade-in for the scroll handles */
+}
+
+/* When the scroll-container becomes visible, fade in the scroll handles */
+.scroll-container.visible .scroll-handle {
+    opacity: 1;
+    /* Fade in scroll handles */
+}
+
+.scroll-handle {
+    width: auto;
+    height: 75px;
+    object-fit: contain;
+    z-index: 2;
+    transition: transform .8s ease;
+    /* Keep transform animation */
+}
+
+.paper-wrapper {
+    width: 0;
+    height: 64px;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -1px;
+    margin-right: -1px;
+    transition: width 1s ease;
+    background-image: url(../assets/opening-sequence/paper.svg);
+}
+
+.play-text {
+    font-size: 18px;
+    font-weight: 400;
+    color: #2F9078;
+    font-family: 'Poppins', serif;
+    white-space: nowrap;
+    z-index: 3;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
 }
