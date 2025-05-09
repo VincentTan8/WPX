@@ -10,6 +10,11 @@
     min-width: 7rem;
 }
 
+#language-options.flip-left {
+    left: auto;
+    right: 0%;
+}
+
 #language-options button {
     display: flex;
     background: none;
