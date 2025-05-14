@@ -14,7 +14,7 @@ $page = $_POST['page'];
 
 $_SESSION['lang'] = strtoupper($language);   //format is coz of current translation implementation in the main website
 
-$tablename = $database . ".`translations`";
+$tablename = $database . ".`wt_translations`";
 $sql = "SELECT `id`, `web_page`, `element_id`, `$language` FROM $tablename
         WHERE `web_page` = ?";
 
