@@ -87,6 +87,9 @@ function translateElements(languageSet) {
 }
 
 $(document).ready(function () {
+    //get quote of the day
+    fetch(`${currentScriptDir}/get-quote-today.php`).catch(console.error);
+
     initTranslateButton();
 
     const pageData = document.getElementById("page-data");
