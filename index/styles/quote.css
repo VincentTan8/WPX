@@ -1,0 +1,103 @@
+/* Wrapper position */
+.thought-sequence {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    /* Stack from bottom to top */
+    align-items: flex-start;
+}
+
+/* Thought images */
+.thought-img {
+    width: 60px;
+    margin-left: 55%;
+    opacity: 0;
+    animation: bubblePop 0.6s forwards;
+    transform-origin: center;
+}
+
+/* Add space only between bubbles, from bottom to top */
+.thought-img:not(:last-child) {
+    margin-top: 10px;
+}
+
+/* Sequential delays */
+.img1 {
+    animation-delay: 0s;
+}
+
+.img2 {
+    animation-delay: 0.5s;
+}
+
+.img3 {
+    animation-delay: 1s;
+}
+
+/* Quote block styles */
+.quote-block {
+
+    opacity: 0;
+    animation: quoteReveal 0.8s forwards;
+    animation-delay: 1.8s;
+    font-family: 'Poppins', sans-serif;
+    max-width: 450px;
+
+    padding: 15px 20px;
+    border-radius: 12px;
+
+}
+
+/* Quote text */
+.quote-block .quote-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.quote-block .quote-author {
+    font-size: 0.9rem;
+    text-align: right;
+    color: #777;
+}
+
+/* Animations */
+@keyframes bubblePop {
+    0% {
+        opacity: 0;
+        transform: scale(0) translateY(30px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3) translateY(-10px);
+    }
+
+    70% {
+        transform: scale(0.95) translateY(-2px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes quoteReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(5px) scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
