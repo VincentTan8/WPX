@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $kr = $_POST['kr'];
     $jp = $_POST['jp'];
 
-    $tablename = $database . ".`translations`";
+    $tablename = $database . ".`wt_translations`";
 
     //Language set reference num generate
     //LS-{count}

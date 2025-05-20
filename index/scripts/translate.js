@@ -73,19 +73,23 @@ function translateElements(languageSet) {
     languageSet.forEach(set => {
         const link = document.getElementById(set.element_id);
         //some text have accompanying icons
-        const icon = link.querySelector("i");
-        if(icon) {
-            link.innerHTML = set.text + " ";
-            link.appendChild(icon);
+        if(link) {
+            const icon = link.querySelector("i");
+            if(icon) {
+                link.innerHTML = set.text + " ";
+                link.appendChild(icon);
+            }
+            else {
+                link.innerHTML = set.text;
+            }
         }
-        else {
-            link.innerHTML = set.text;
-        }
-        
     })
 }
 
 $(document).ready(function () {
+    //get quote of the day
+    fetch(`${currentScriptDir}/get-quote-today.php`).catch(console.error);
+
     initTranslateButton();
 
     const pageData = document.getElementById("page-data");

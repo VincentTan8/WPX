@@ -93,6 +93,20 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
             pointer-events: auto;
         }
 
+        #closePanelBtn,
+        #closePanelBtn2,
+        #closePanelBtn3,
+        #closePanelBtn4,
+        #closePanelBtn5 {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
         #hamburgerPanelWrapper {
             position: fixed;
             top: 0;
@@ -123,48 +137,14 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
                 padding-right: 10px;
             }
 
-            #closePanelBtn,
-            #closePanelBtn2,
-            #closePanelBtn3,
-            #closePanelBtn4,
-            #closePanelBtn5 {
-                right: 10px;
-                opacity: 0;
-            }
-
             #hamburgerPanelWrapper {
                 width: 70vw;
             }
-        }
-
-        #closePanelBtn,
-        #closePanelBtn2,
-        #closePanelBtn3,
-        #closePanelBtn4,
-        #closePanelBtn5 {
-            position: absolute;
-            top: 50%;
-            right: 11px;
-            transform: translateY(-50%);
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.4s ease;
         }
     </style>
     <!-- REVOLUTION JS FILES -->
     <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
     <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
-
-    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-    <!-- <script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
-    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.migration.min.js"></script>
-    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script> -->
 </head>
 
 <body>
