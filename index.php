@@ -39,6 +39,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
 
     <link rel="stylesheet" type="text/css" href="index/styles/translate.css">
     <link rel="stylesheet" type="text/css" href="index/styles/scroll.css">
+    <link rel="stylesheet" type="text/css" href="index/styles/quote.css">
 
     <style>
         @font-face {
@@ -255,12 +256,35 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
                         <a class="play-text" href="index/philosophers.php" id="open-link">
                             Start Now <i class="material-icons" style="font-size: 22px">play_arrow</i>
                         </a>
+
                     </div>
 
                     <img src="index/assets/opening-sequence/scroll.svg" alt="Right Scroll"
                         class="scroll-handle right" />
                 </div>
+
             </div>
+            <div class="scroll-wrapper">
+
+                <div class="thought-sequence">
+                    <div class="quote-block">
+                        <h3 class="quote-title" id="hm-quote-title">Quote of the Day</h3>
+                        <p class="quote-text" id="hm-quote-text">“Education is the most powerful weapon which you can
+                            use to change the
+                            world.”</p>
+                        <p class="quote-author" id="hm-quote-author">– Nelson Mandela</p>
+                    </div>
+
+                    <img src="index/assets/opening-sequence/quote1.svg" alt="Thought 1" class="thought-img img3">
+                    <img src="index/assets/opening-sequence/quote2.svg" alt="Thought 2" class="thought-img img2">
+                    <img src="index/assets/opening-sequence/quote3.svg" alt="Thought 3" class="thought-img img1">
+                </div>
+
+
+            </div>
+
+
+
 
             <script type="text/javascript">
                 var tpj = jQuery;
@@ -334,6 +358,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
     <!-- for passing page data -->
     <div id="page-data" data-page="index.php" data-lang="<?php echo $lang ?>"></div>
     <script type="module" src="index/scripts/scroll.js"></script>
+    <script type="module" src="index/scripts/quote.js"></script>
     <script type="module" src="index/scripts/translate.js"></script>
     <script type="text/javascript" src="index/assets/warning.js"></script>
 </body>
