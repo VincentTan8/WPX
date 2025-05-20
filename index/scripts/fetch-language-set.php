@@ -16,7 +16,7 @@ $_SESSION['lang'] = strtoupper($language);   //format is coz of current translat
 
 $tablename = $database . ".`wt_translations`";
 $sql = "SELECT `id`, `web_page`, `element_id`, `$language` FROM $tablename
-        WHERE `web_page` = ?";
+        WHERE `web_page` = ? OR `web_page` IS NULL";
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $page);
