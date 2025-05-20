@@ -269,7 +269,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
                 <div class="thought-sequence">
                     <div class="quote-block">
                         <h3 class="quote-title" id="hm-quote-title">Quote of the Day</h3>
-                        <p class="quote-text" id="hm-quote-textx">“Education is the most powerful weapon which you can
+                        <p class="quote-text" id="hm-quote-text">“Education is the most powerful weapon which you can
                             use to change the
                             world.”</p>
                         <p class="quote-author" id="hm-quote-author">– Nelson Mandela</p>
@@ -358,6 +358,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
     <!-- for passing page data -->
     <div id="page-data" data-page="index.php" data-lang="<?php echo $lang ?>"></div>
     <script type="module" src="index/scripts/scroll.js"></script>
+    <script type="module" src="index/scripts/quote.js"></script>
     <script type="module" src="index/scripts/translate.js"></script>
     <script type="text/javascript" src="index/assets/warning.js"></script>
 </body>
