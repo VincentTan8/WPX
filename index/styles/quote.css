@@ -6,11 +6,13 @@
     flex-direction: column;
     /* Stack from bottom to top */
     align-items: flex-start;
+    left: 7%;
+    top: 42%;
 }
 
 /* Thought images */
 .thought-img {
-    width: 60px;
+    width: 17px;
     margin-left: 55%;
     opacity: 0;
     animation: bubblePop 0.6s forwards;
@@ -24,15 +26,21 @@
 
 /* Sequential delays */
 .img1 {
-    animation-delay: 0s;
+    animation-delay: 1s;
+    margin-left: 58%
 }
 
 .img2 {
-    animation-delay: 0.5s;
+    animation-delay: 1.5s;
+    width: 20px;
+    margin-bottom: 1px;
 }
 
 .img3 {
-    animation-delay: 1s;
+    animation-delay: 2s;
+    width: 25px;
+    margin-bottom: -6px;
+    margin-left: 52%
 }
 
 /* Quote block styles */
@@ -40,9 +48,10 @@
 
     opacity: 0;
     animation: quoteReveal 0.8s forwards;
-    animation-delay: 1.8s;
+    animation-delay: 2.5s;
     font-family: 'Poppins', sans-serif;
-    max-width: 450px;
+    text-align: center;
+
 
     padding: 15px 20px;
     border-radius: 12px;
@@ -51,16 +60,55 @@
 
 /* Quote text */
 .quote-block .quote-text {
-    font-size: 1.1rem;
-    font-style: italic;
+    font-size: 15px;
     margin-bottom: 0.5rem;
     color: #333;
 }
 
 .quote-block .quote-author {
     font-size: 0.9rem;
-    text-align: right;
-    color: #777;
+
+
+}
+
+@media (max-width:1710px) {
+    .thought-sequence {
+        left: 1%;
+        top: 40%;
+    }
+}
+
+@media (max-width:787px) {
+
+    .quote-block {
+        max-width: 200px;
+    }
+
+    .quote-block .quote-title {
+        font-size: 12px;
+
+    }
+
+    .quote-block .quote-author {
+        font-size: 10px;
+    }
+
+
+
+    .quote-block .quote-text {
+        padding-top: 5px;
+        font-size: 10px;
+    }
+
+    .thought-sequence {
+        top: 57%;
+        left: -1%;
+    }
+
+    .thought-img {
+        width: 0px;
+    }
+
 }
 
 /* Animations */
