@@ -56,14 +56,20 @@
 
     padding: 15px 20px;
     border-radius: 12px;
+}
 
+.quote-block .quote-title,
+.quote-block .quote-text,
+.quote-block .quote-author {
+    color: grey;
 }
 
 /* Quote text */
 .quote-block .quote-text {
     font-size: 15px;
-    margin-bottom: 0.5rem;
-    color: #333;
+    margin-bottom: 0.2rem;
+    margin-top: 0.2rem;
+
 }
 
 .quote-block .quote-author {
