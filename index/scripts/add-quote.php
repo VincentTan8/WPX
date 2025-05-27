@@ -5,7 +5,7 @@ include 'generateRefNum.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $quote_date = $_POST['quote_date'];
-    $author = "- " + $_POST['author'];
+    $author = "- " . $_POST['author'];
     $en = $_POST['en'];
     $cn = $_POST['cn'];
 
