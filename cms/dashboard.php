@@ -132,13 +132,13 @@ if (!isset($_SESSION['user_id'])) {
                 <input type="date" name="quote_date" required>
 
                 <label>Author</label>
-                <input type="text" name="author" required>
+                <input type="text" name="author">
 
                 <label>English Quote</label>
                 <textarea name="en" required></textarea>
 
                 <label>Chinese Quote</label>
-                <textarea name="cn" required></textarea>
+                <textarea name="cn"></textarea>
 
                 <button type="submit">Submit</button>
             </form>
