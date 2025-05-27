@@ -119,6 +119,7 @@ if (!isset($_SESSION['user_id'])) {
             <h2>Welcome, <?= htmlspecialchars($_SESSION['username']) ?></h2>
             <a id="openAddQuote">Add Quote</a>
             <a id="openAddEntry">Add Entry</a>
+            <a href="quote-list.php">Quote List</a>
             <a href="logout.php">Logout</a>
         </div>
     </div>
@@ -132,13 +133,13 @@ if (!isset($_SESSION['user_id'])) {
                 <input type="date" name="quote_date" required>
 
                 <label>Author</label>
-                <input type="text" name="author" required>
+                <input type="text" name="author">
 
                 <label>English Quote</label>
                 <textarea name="en" required></textarea>
 
                 <label>Chinese Quote</label>
-                <textarea name="cn" required></textarea>
+                <textarea name="cn"></textarea>
 
                 <button type="submit">Submit</button>
             </form>
