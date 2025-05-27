@@ -42,6 +42,11 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
     <link rel="stylesheet" type="text/css" href="index/styles/quote.css">
 
     <style>
+        html,
+        body {
+            overscroll-behavior: none;
+        }
+
         @font-face {
             font-family: 'Material Icons';
             font-style: normal;
