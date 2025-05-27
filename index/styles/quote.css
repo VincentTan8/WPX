@@ -7,7 +7,7 @@
     /* Stack from bottom to top */
     align-items: flex-start;
     left: 7%;
-    top: 42%;
+    bottom: 41%;
     min-width: 578px;
 }
 
@@ -81,7 +81,7 @@
 @media (max-width:1710px) {
     .thought-sequence {
         left: 1%;
-        top: 40%;
+        bottom: 43%;
     }
 }
 
@@ -109,7 +109,7 @@
     }
 
     .thought-sequence {
-        top: 57%;
+        bottom: 22%;
         left: -45%;
     }
 
