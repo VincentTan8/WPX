@@ -119,6 +119,7 @@ if (!isset($_SESSION['user_id'])) {
             <h2>Welcome, <?= htmlspecialchars($_SESSION['username']) ?></h2>
             <a id="openAddQuote">Add Quote</a>
             <a id="openAddEntry">Add Entry</a>
+            <a href="quote-list.php">Quote List</a>
             <a href="logout.php">Logout</a>
         </div>
     </div>
