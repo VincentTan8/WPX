@@ -10,16 +10,6 @@ if (isset($_SESSION['user_id'])) {
 <head>
     <title>Login</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #eef2f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
         .login {
             margin-top: 8rem;
             padding: 2rem;

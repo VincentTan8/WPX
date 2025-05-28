@@ -26,6 +26,42 @@ $result = $conn->query($sql);
 
         }
 
+        #quoteTable {
+            border-collapse: collapse;
+        }
+
+        /* Quote section title */
+        h2 {
+            background-color: #0ca83e;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
+        }
+
+        /* Table header (th) styling */
+        #quoteTable thead th {
+            background-color: #0ca83e;
+            color: white;
+            font-weight: bold;
+            text-align: left;
+            padding: 0.75rem;
+        }
+
+        /* Table body (td) styling */
+        #quoteTable tbody td {
+            background-color: rgba(255, 176, 0, 0.25);
+            color: black;
+
+            padding: 0.75rem;
+        }
+
+        #quoteTable th,
+        #quoteTable td {
+            border: 1px solid grey;
+        }
+
 
         @media screen and (max-width: 768px) {
             .quote-table {
@@ -34,8 +70,8 @@ $result = $conn->query($sql);
         }
 
         /* Allow wrapping only for English and Chinese (columns 4 and 5) */
-        #quoteTable td:nth-child(4),
-        #quoteTable td:nth-child(5) {
+        #quoteTable td:nth-child(3),
+        #quoteTable td:nth-child(4) {
             white-space: normal !important;
             word-wrap: break-word;
         }
@@ -44,12 +80,12 @@ $result = $conn->query($sql);
 
 <body>
     <div class="quote-table">
-        <h2 style="margin-bottom:2rem;">Quote of the Day</h2>
+        <h2 style="margin-bottom:2rem; font-family: 'Poppins', sans-serif;">Quote of the Day</h2>
 
         <table id="quoteTable" class="display nowrap" style="width:100%;">
             <thead>
                 <tr>
-                    <th>Ref #</th>
+
                     <th>Date</th>
                     <th>Author</th>
                     <th>English</th>
@@ -60,7 +96,7 @@ $result = $conn->query($sql);
                 <?php if ($result && $result->num_rows > 0): ?>
                     <?php while ($row = $result->fetch_assoc()): ?>
                         <tr>
-                            <td><?= $row['ref_num'] ?? '' ?></td>
+
                             <td><?= $row['quote_date'] ?? '' ?></td>
                             <td><?= $row['author'] ?? '' ?></td>
                             <td><?= $row['en'] ?? '' ?></td>
