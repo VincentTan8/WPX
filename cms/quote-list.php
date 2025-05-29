@@ -123,19 +123,6 @@ $result = $conn->query($sql);
             border-radius: 4px;
         }
 
-        form button {
-            padding: 0.5rem 1rem;
-            background-color: #4a90e2;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        form button:hover {
-            background-color: #357ab7;
-        }
-
         .add-quote {
             display: inline-block;
             padding: 0.75rem 1.5rem;
@@ -144,7 +131,9 @@ $result = $conn->query($sql);
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            border: none;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
 
         }
     </style>
@@ -205,7 +194,7 @@ $result = $conn->query($sql);
                 <label>Chinese Quote</label>
                 <textarea name="cn"></textarea>
 
-                <button type="submit">Submit</button>
+                <button class="add-quote" type="submit">Submit</button>
             </form>
             <div id="quoteResult"></div>
         </div>
