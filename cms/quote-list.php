@@ -32,12 +32,13 @@ $result = $conn->query($sql);
 
         /* Quote section title */
         h2 {
-            background-color: #0ca83e;
-            color: white;
+            font-family: 'Poppins', sans-serif;
+            color: #0ca83e;
             padding: 1rem;
             text-align: center;
+            font-weight: 900;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
+
         }
 
         /* Table header (th) styling */
@@ -75,12 +76,83 @@ $result = $conn->query($sql);
             white-space: normal !important;
             word-wrap: break-word;
         }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        form label {
+            display: block;
+            margin: 0.5rem 0 0.25rem;
+            font-weight: bold;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            padding: 0.5rem 1rem;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #357ab7;
+        }
+
+        .add-quote {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #ffb000;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+
+        }
     </style>
 </head>
 
 <body>
     <div class="quote-table">
-        <h2 style="margin-bottom:2rem; font-family: 'Poppins', sans-serif;">Quote of the Day</h2>
+        <h2 style="margin-bottom:2rem;">Quote of the Day</h2>
 
         <table id="quoteTable" class="display nowrap" style="width:100%;">
             <thead>
@@ -110,6 +182,33 @@ $result = $conn->query($sql);
                 <?php endif; ?>
             </tbody>
         </table>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a class="add-quote" id="openAddQuote">
+                Add Quote
+            </a>
+        </div>
+    </div>
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('quoteModal')">&times;</span>
+            <h2>Add Quote</h2>
+            <form id="quoteForm">
+                <label>Quote Date</label>
+                <input type="date" name="quote_date" required>
+
+                <label>Author</label>
+                <input type="text" name="author">
+
+                <label>English Quote</label>
+                <textarea name="en" required></textarea>
+
+                <label>Chinese Quote</label>
+                <textarea name="cn"></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+            <div id="quoteResult"></div>
+        </div>
     </div>
 
     <script>
@@ -118,6 +217,51 @@ $result = $conn->query($sql);
                 responsive: true
             });
         });
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        document.getElementById('openAddQuote').addEventListener('click', () => {
+            document.getElementById('quoteModal').style.display = 'flex';
+        });
+
+        // Submit Add Quote Form
+        document.getElementById('quoteForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const resultDiv = document.getElementById('quoteResult');
+
+            const response = await fetch('../index/scripts/add-quote.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            const text = await response.text();
+            const [status, message] = text.trim().split('|');
+
+            if (status === 'success') {
+                alert(' Quote added successfully! ');
+                form.reset();
+                closeModal('quoteModal');
+                location.reload();
+            } else {
+                resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
+            }
+        });
+
+
+        // Close modal when clicking outside the modal content
+        window.addEventListener('click', function (event) {
+            const quoteModal = document.getElementById('quoteModal');
+
+
+            if (event.target === quoteModal) {
+                quoteModal.style.display = "none";
+            }
+        });
+
     </script>
 </body>
 

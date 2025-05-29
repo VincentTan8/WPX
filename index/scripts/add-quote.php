@@ -5,7 +5,7 @@ include 'generateRefNum.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $quote_date = $_POST['quote_date'];
-    $author = "- " . $_POST['author'];
+    $author = $_POST['author'];
     $en = $_POST['en'];
     $cn = $_POST['cn'];
 
@@ -21,9 +21,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssss", $new_ref_num, $quote_date, $author, $en, $cn);
-    $stmt->execute();
-    $result = $stmt->get_result();
 
-    echo "<p>Quote added! Ref#: $new_ref_num</p>";
+    if ($stmt->execute()) {
+        echo "success|$new_ref_num";
+    } else {
+        echo "error|Execution failed: " . $stmt->error;
+    }
+
+
 }
 ?>
