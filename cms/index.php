@@ -31,7 +31,9 @@ if (isset($_SESSION['user_id'])) {
 
         .login-container h2 {
             text-align: center;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            color: #0ca83e;
+            font-weight: 900;
             margin-bottom: 1.5rem;
         }
 
@@ -51,7 +53,7 @@ if (isset($_SESSION['user_id'])) {
         }
 
         .login-container button {
-            background-color: #4a90e2;
+            background-color: #ffb000;
             color: white;
             border: none;
             font-weight: bold;
@@ -59,9 +61,6 @@ if (isset($_SESSION['user_id'])) {
             transition: background-color 0.3s ease;
         }
 
-        .login-container button:hover {
-            background-color: #357ab7;
-        }
 
         @media (max-width: 500px) {
             .login-container {

@@ -37,17 +37,15 @@ if (!isset($_SESSION['user_id'])) {
             display: block;
             margin: 0.5rem 0;
             padding: 0.75rem;
-            background-color: #4a90e2;
-            color: white;
+            background-color: #ffb000;
+            color: white !important;
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
             cursor: pointer;
         }
 
-        .dashboard a:hover {
-            background-color: #357ab7;
-        }
+
 
         /* Modal Styles */
         .modal {
@@ -97,7 +95,7 @@ if (!isset($_SESSION['user_id'])) {
 
         form button {
             padding: 0.5rem 1rem;
-            background-color: #4a90e2;
+            background-color: #ffb000;
             color: white;
             border: none;
             border-radius: 5px;
@@ -106,6 +104,18 @@ if (!isset($_SESSION['user_id'])) {
 
         form button:hover {
             background-color: #357ab7;
+        }
+
+        .dashboard h2 {
+
+            font-family: 'Poppins', sans-serif;
+            color: #0ca83e;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 900;
+            border-radius: 8px;
+
+
         }
 
         @media (max-width: 500px) {
