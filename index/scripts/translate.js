@@ -1,3 +1,4 @@
+import { resetQuoteAnimation } from './quote.js';
 const currentScriptUrl = import.meta.url; // this is the URL of translate.js
 const currentScriptDir = currentScriptUrl.substring(0, currentScriptUrl.lastIndexOf('/'));
 
@@ -48,7 +49,7 @@ export function initTranslateButton() {
 async function setLanguage(lang) {
     const selectedLanguage = lang;
     const pageData = document.getElementById("page-data");
-    const pageName = pageData.dataset.page; 
+    const pageName = pageData.dataset.page;
 
     try {
         const response = await fetch(`${currentScriptDir}/fetch-language-set.php`, {
@@ -57,13 +58,15 @@ async function setLanguage(lang) {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
             body: `language=${encodeURIComponent(selectedLanguage)}` +
-                  `&page=${encodeURIComponent(pageName)}`
+                `&page=${encodeURIComponent(pageName)}`
         });
         const data = await response.json();
 
         const languageSet = data;
-        
+
         translateElements(languageSet);
+        resetQuoteAnimation();
+
     } catch (error) {
         console.error("Error fetching language set:", error);
     }
@@ -73,9 +76,9 @@ function translateElements(languageSet) {
     languageSet.forEach(set => {
         const link = document.getElementById(set.element_id);
         //some text have accompanying icons
-        if(link) {
+        if (link) {
             const icon = link.querySelector("i");
-            if(icon) {
+            if (icon) {
                 link.innerHTML = set.text + " ";
                 link.appendChild(icon);
             }
@@ -93,11 +96,13 @@ $(document).ready(function () {
     initTranslateButton();
 
     const pageData = document.getElementById("page-data");
-    const pageLang = pageData.dataset.lang; 
+    const pageLang = pageData.dataset.lang;
 
-    if(pageLang === '_cn') {
+    if (pageLang === '_cn') {
         setLanguage('cn');
-    } else if(pageLang === '_en') {
+
+    } else if (pageLang === '_en') {
         setLanguage('en');
+
     }
 });
