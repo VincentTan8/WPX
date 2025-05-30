@@ -188,11 +188,15 @@ $result = $conn->query($sql);
                 <label>Author</label>
                 <input type="text" name="author">
 
-                <label>English Quote</label>
-                <textarea name="en" required></textarea>
+                <label for="en">English Quote<div id="enError"
+                        style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
 
-                <label>Chinese Quote</label>
-                <textarea name="cn"></textarea>
+                <textarea name="en" id="en" required></textarea>
+
+                <label for="cn">Chinese Quote <div id="cnError"
+                        style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
+
+                <textarea name="cn" id="cn"></textarea>
 
                 <button class="add-quote" type="submit">Submit</button>
             </form>
@@ -236,7 +240,22 @@ $result = $conn->query($sql);
                 closeModal('quoteModal');
                 location.reload();
             } else {
-                resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
+                // Clear previous errors
+                document.getElementById('enError').textContent = '';
+                document.getElementById('cnError').textContent = '';
+                resultDiv.innerHTML = '';
+
+                if (status === 'error') {
+                    try {
+                        const errors = JSON.parse(message); // `field` now contains JSON string
+                        if (errors.en) document.getElementById('enError').textContent = errors.en;
+                        if (errors.cn) document.getElementById('cnError').textContent = errors.cn;
+                    } catch (e) {
+                        resultDiv.innerHTML = "<p style='color:red;'>" + field + "</p>";
+                    }
+                } else {
+                    resultDiv.innerHTML = "<p style='color:red;'>" + msg + "</p>";
+                }
             }
         });
 
