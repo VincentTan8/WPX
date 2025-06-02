@@ -8,6 +8,9 @@ if (!isset($_SESSION['user_id'])) {
 <?php include "../includes/header.php"; ?>
 
 <head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
     <title>Dashboard</title>
     <style>
         .dash-modal {
@@ -34,17 +37,15 @@ if (!isset($_SESSION['user_id'])) {
             display: block;
             margin: 0.5rem 0;
             padding: 0.75rem;
-            background-color: #4a90e2;
-            color: white;
+            background-color: #ffb000;
+            color: white !important;
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
             cursor: pointer;
         }
 
-        .dashboard a:hover {
-            background-color: #357ab7;
-        }
+
 
         /* Modal Styles */
         .modal {
@@ -94,7 +95,7 @@ if (!isset($_SESSION['user_id'])) {
 
         form button {
             padding: 0.5rem 1rem;
-            background-color: #4a90e2;
+            background-color: #ffb000;
             color: white;
             border: none;
             border-radius: 5px;
@@ -103,6 +104,18 @@ if (!isset($_SESSION['user_id'])) {
 
         form button:hover {
             background-color: #357ab7;
+        }
+
+        .dashboard h2 {
+
+            font-family: 'Poppins', sans-serif;
+            color: #0ca83e;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 900;
+            border-radius: 8px;
+
+
         }
 
         @media (max-width: 500px) {
@@ -117,36 +130,11 @@ if (!isset($_SESSION['user_id'])) {
     <div class="dash-modal">
         <div class="dashboard">
             <h2>Welcome, <?= htmlspecialchars($_SESSION['username']) ?></h2>
-            <a id="openAddQuote">Add Quote</a>
-            <a id="openAddEntry">Add Entry</a>
+            <a href="javascript:void(0)" id="openAddEntry">Add Entry</a>
             <a href="quote-list.php">Quote List</a>
             <a href="logout.php">Logout</a>
         </div>
     </div>
-    <!-- Quote Modal -->
-    <div id="quoteModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal('quoteModal')">&times;</span>
-            <h2>Add Quote</h2>
-            <form id="quoteForm">
-                <label>Quote Date</label>
-                <input type="date" name="quote_date" required>
-
-                <label>Author</label>
-                <input type="text" name="author">
-
-                <label>English Quote</label>
-                <textarea name="en" required></textarea>
-
-                <label>Chinese Quote</label>
-                <textarea name="cn"></textarea>
-
-                <button type="submit">Submit</button>
-            </form>
-            <div id="quoteResult"></div>
-        </div>
-    </div>
-
     <!-- Add Entry Modal -->
     <div id="entryModal" class="modal">
         <div class="modal-content">
@@ -184,65 +172,17 @@ if (!isset($_SESSION['user_id'])) {
         function closeModal(id) {
             document.getElementById(id).style.display = "none";
         }
-
-        document.getElementById('openAddQuote').addEventListener('click', () => {
-            document.getElementById('quoteModal').style.display = 'flex';
-        });
-
         document.getElementById('openAddEntry').addEventListener('click', () => {
             document.getElementById('entryModal').style.display = 'flex';
         });
 
-        // Submit Add Quote Form
-        document.getElementById('quoteForm').addEventListener('submit', async function (e) {
-            e.preventDefault();
-            const form = e.target;
-            const formData = new FormData(form);
-            const resultDiv = document.getElementById('quoteResult');
 
-            const response = await fetch('../index/scripts/add-quote.php', {
-                method: 'POST',
-                body: formData
-            });
 
-            const text = await response.text();
-            if (text.trim() === 'success') {
-                resultDiv.innerHTML = "<p style='color:green;'>Quote added successfully!</p>";
-                form.reset();
-            } else {
-                resultDiv.innerHTML = "<p style='color:red;'>" + text + "</p>";
-            }
-        });
-
-        // Submit Add Entry Form
-        document.getElementById('entryForm').addEventListener('submit', async function (e) {
-            e.preventDefault();
-            const form = e.target;
-            const formData = new FormData(form);
-            const resultDiv = document.getElementById('entryResult');
-
-            const response = await fetch('../index/scripts/add-entry.php', {
-                method: 'POST',
-                body: formData
-            });
-
-            const text = await response.text();
-            console.log('Response text:', text);
-            if (text.trim() === 'success') {
-                alert('Quote added successfully!');
-                form.reset();
-            } else {
-                resultDiv.innerHTML = "<p style='color:red;'>" + text + "</p>";
-            }
-        });
         // Close modal when clicking outside the modal content
         window.addEventListener('click', function (event) {
-            const quoteModal = document.getElementById('quoteModal');
+
             const entryModal = document.getElementById('entryModal');
 
-            if (event.target === quoteModal) {
-                quoteModal.style.display = "none";
-            }
 
             if (event.target === entryModal) {
                 entryModal.style.display = "none";
@@ -250,6 +190,9 @@ if (!isset($_SESSION['user_id'])) {
         });
 
     </script>
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 <?php include "../includes/footer.php"; ?>

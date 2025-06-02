@@ -10,16 +10,6 @@ if (isset($_SESSION['user_id'])) {
 <head>
     <title>Login</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #eef2f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
         .login {
             margin-top: 8rem;
             padding: 2rem;
@@ -41,7 +31,9 @@ if (isset($_SESSION['user_id'])) {
 
         .login-container h2 {
             text-align: center;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            color: #0ca83e;
+            font-weight: 900;
             margin-bottom: 1.5rem;
         }
 
@@ -61,7 +53,7 @@ if (isset($_SESSION['user_id'])) {
         }
 
         .login-container button {
-            background-color: #4a90e2;
+            background-color: #ffb000;
             color: white;
             border: none;
             font-weight: bold;
@@ -69,9 +61,6 @@ if (isset($_SESSION['user_id'])) {
             transition: background-color 0.3s ease;
         }
 
-        .login-container button:hover {
-            background-color: #357ab7;
-        }
 
         @media (max-width: 500px) {
             .login-container {
