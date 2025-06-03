@@ -152,17 +152,21 @@ $result = $conn->query($sql);
         <table id="quoteTable" class="display nowrap" style="width:100%;">
             <thead>
                 <tr>
-                    <th></th>
                     <th>Date</th>
                     <th>Author</th>
                     <th>English</th>
                     <th>Chinese</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <?php if ($result && $result->num_rows > 0): ?>
                     <?php while ($row = $result->fetch_assoc()): ?>
                         <tr>
+                            <td><?= $row['quote_date'] ?? '' ?></td>
+                            <td><?= $row['author'] ?? '' ?></td>
+                            <td><?= $row['en'] ?? '' ?></td>
+                            <td><?= $row['cn'] ?? '' ?></td>
                             <td>
                                 <a class="quote-button editQuote" data-refnum="<?= $row['ref_num'] ?>"
                                     data-date="<?= $row['quote_date'] ?? '' ?>" data-author="<?= $row['author'] ?? '' ?>"
@@ -170,10 +174,6 @@ $result = $conn->query($sql);
                                     Edit <i class="fas fa-edit"></i>
                                 </a>
                             </td>
-                            <td><?= $row['quote_date'] ?? '' ?></td>
-                            <td><?= $row['author'] ?? '' ?></td>
-                            <td><?= $row['en'] ?? '' ?></td>
-                            <td><?= $row['cn'] ?? '' ?></td>
                         </tr>
                     <?php endwhile; ?>
                 <?php else: ?>
@@ -215,8 +215,8 @@ $result = $conn->query($sql);
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal('editQuoteModal')">&times;</span>
             <h2>Edit Quote</h2>
-            <form id=editQuoteForm">
-                <input id="editQuoteRefNum" type="hidden" name="" required>
+            <form id="editQuoteForm">
+                <input id="editQuoteRefNum" type="hidden" name="ref_num" required>
 
                 <label>Quote Date</label>
                 <input id="editQuoteDate" type="date" name="quote_date" required>
@@ -224,12 +224,12 @@ $result = $conn->query($sql);
                 <label>Author</label>
                 <input id="editQuoteAuthor" type="text" name="author">
 
-                <label for="en">English Quote<div id="enError"
+                <label for="en">English Quote<div id="editENError"
                         style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
 
                 <textarea id="editQuoteEN" name="en" required></textarea>
 
-                <label for="cn">Chinese Quote <div id="cnError"
+                <label for="cn">Chinese Quote <div id="editCNError"
                         style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
 
                 <textarea id="editQuoteCN" name="cn"></textarea>
@@ -327,21 +327,22 @@ $result = $conn->query($sql);
                 closeModal('editQuoteModal');
                 location.reload();
             } else {
+                alert('Failed to edit ');
                 // Clear previous errors
-                document.getElementById('enError').textContent = '';
-                document.getElementById('cnError').textContent = '';
+                document.getElementById('editENError').textContent = '';
+                document.getElementById('editCNError').textContent = '';
                 resultDiv.innerHTML = '';
 
                 if (status === 'error') {
                     try {
                         const errors = JSON.parse(message); // `field` now contains JSON string
-                        if (errors.en) document.getElementById('enError').textContent = errors.en;
-                        if (errors.cn) document.getElementById('cnError').textContent = errors.cn;
+                        if (errors.en) document.getElementById('editENError').textContent = errors.en;
+                        if (errors.cn) document.getElementById('editCNError').textContent = errors.cn;
                     } catch (e) {
-                        resultDiv.innerHTML = "<p style='color:red;'>" + field + "</p>";
+                        resultDiv.innerHTML = "<p style='color:red;'>" + e + "</p>";
                     }
                 } else {
-                    resultDiv.innerHTML = "<p style='color:red;'>" + msg + "</p>";
+                    resultDiv.innerHTML = "<p style='color:red;'>" + status + "</p>";
                 }
             }
         });
