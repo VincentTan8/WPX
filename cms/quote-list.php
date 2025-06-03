@@ -121,7 +121,7 @@ $result = $conn->query($sql);
             border-radius: 4px;
         }
 
-        .add-quote {
+        .quote-button {
             display: inline-block;
             padding: 0.75rem 1.5rem;
             background-color: #ffb000;
@@ -143,7 +143,7 @@ $result = $conn->query($sql);
             <h2>Quote of the Day</h2>
 
             <div style="text-align: center;">
-                <a class="add-quote" id="openAddQuote">
+                <a class="quote-button" id="openAddQuote">
                     Add Quote
                 </a>
             </div>
@@ -152,7 +152,7 @@ $result = $conn->query($sql);
         <table id="quoteTable" class="display nowrap" style="width:100%;">
             <thead>
                 <tr>
-
+                    <th></th>
                     <th>Date</th>
                     <th>Author</th>
                     <th>English</th>
@@ -163,7 +163,13 @@ $result = $conn->query($sql);
                 <?php if ($result && $result->num_rows > 0): ?>
                     <?php while ($row = $result->fetch_assoc()): ?>
                         <tr>
-
+                            <td>
+                                <a class="quote-button editQuote" data-refnum="<?= $row['ref_num'] ?>"
+                                    data-date="<?= $row['quote_date'] ?? '' ?>" data-author="<?= $row['author'] ?? '' ?>"
+                                    data-en="<?= $row['en'] ?? '' ?>" data-cn="<?= $row['cn'] ?? '' ?>">
+                                    Edit <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
                             <td><?= $row['quote_date'] ?? '' ?></td>
                             <td><?= $row['author'] ?? '' ?></td>
                             <td><?= $row['en'] ?? '' ?></td>
@@ -199,9 +205,38 @@ $result = $conn->query($sql);
 
                 <textarea name="cn" id="cn"></textarea>
 
-                <button class="add-quote" type="submit">Submit</button>
+                <button class="quote-button" type="submit">Submit</button>
             </form>
             <div id="quoteResult"></div>
+        </div>
+    </div>
+
+    <div id="editQuoteModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('editQuoteModal')">&times;</span>
+            <h2>Edit Quote</h2>
+            <form id=editQuoteForm">
+                <input id="editQuoteRefNum" type="hidden" name="" required>
+
+                <label>Quote Date</label>
+                <input id="editQuoteDate" type="date" name="quote_date" required>
+
+                <label>Author</label>
+                <input id="editQuoteAuthor" type="text" name="author">
+
+                <label for="en">English Quote<div id="enError"
+                        style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
+
+                <textarea id="editQuoteEN" name="en" required></textarea>
+
+                <label for="cn">Chinese Quote <div id="cnError"
+                        style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
+
+                <textarea id="editQuoteCN" name="cn"></textarea>
+
+                <button class="quote-button" type="submit">Submit</button>
+            </form>
+            <div id="editQuoteResult"></div>
         </div>
     </div>
 
@@ -210,15 +245,26 @@ $result = $conn->query($sql);
             $('#quoteTable').DataTable({
                 responsive: true
             });
+
+            document.getElementById('openAddQuote').addEventListener('click', () => {
+                document.getElementById('quoteModal').style.display = 'flex';
+            });
+
+            document.querySelectorAll('.editQuote').forEach((editButton) => {
+                editButton.addEventListener('click', () => {
+                    document.getElementById('editQuoteModal').style.display = 'flex';
+                    document.getElementById('editQuoteRefNum').value = editButton.dataset.refnum;
+                    document.getElementById('editQuoteDate').value = editButton.dataset.date;
+                    document.getElementById('editQuoteAuthor').value = editButton.dataset.author;
+                    document.getElementById('editQuoteEN').value = editButton.dataset.en;
+                    document.getElementById('editQuoteCN').value = editButton.dataset.cn;
+                });
+            });
         });
 
         function closeModal(id) {
             document.getElementById(id).style.display = "none";
         }
-
-        document.getElementById('openAddQuote').addEventListener('click', () => {
-            document.getElementById('quoteModal').style.display = 'flex';
-        });
 
         // Submit Add Quote Form
         document.getElementById('quoteForm').addEventListener('submit', async function (e) {
@@ -260,14 +306,56 @@ $result = $conn->query($sql);
             }
         });
 
+        // Submit Edit Quote Form
+        document.getElementById('editQuoteForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const resultDiv = document.getElementById('editQuoteResult');
+
+            const response = await fetch('../index/scripts/edit-quote.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            const text = await response.text();
+            const [status, message] = text.trim().split('|');
+
+            if (status === 'success') {
+                alert(' Quote edited successfully! ');
+                form.reset();
+                closeModal('editQuoteModal');
+                location.reload();
+            } else {
+                // Clear previous errors
+                document.getElementById('enError').textContent = '';
+                document.getElementById('cnError').textContent = '';
+                resultDiv.innerHTML = '';
+
+                if (status === 'error') {
+                    try {
+                        const errors = JSON.parse(message); // `field` now contains JSON string
+                        if (errors.en) document.getElementById('enError').textContent = errors.en;
+                        if (errors.cn) document.getElementById('cnError').textContent = errors.cn;
+                    } catch (e) {
+                        resultDiv.innerHTML = "<p style='color:red;'>" + field + "</p>";
+                    }
+                } else {
+                    resultDiv.innerHTML = "<p style='color:red;'>" + msg + "</p>";
+                }
+            }
+        });
 
         // Close modal when clicking outside the modal content
         window.addEventListener('click', function (event) {
             const quoteModal = document.getElementById('quoteModal');
-
+            const editQuoteModal = document.getElementById('editQuoteModal');
 
             if (event.target === quoteModal) {
                 quoteModal.style.display = "none";
+            }
+            if (event.target === editQuoteModal) {
+                editQuoteModal.style.display = "none";
             }
         });
 
