@@ -34,11 +34,9 @@ $result = $conn->query($sql);
         h2 {
             font-family: 'Poppins', sans-serif;
             color: #0ca83e;
-            padding: 1rem;
             text-align: center;
             font-weight: 900;
             border-radius: 8px;
-
         }
 
         /* Table header (th) styling */
@@ -141,7 +139,15 @@ $result = $conn->query($sql);
 
 <body>
     <div class="quote-table">
-        <h2 style="margin-bottom:2rem;">Quote of the Day</h2>
+        <div style="display: flex; justify-content: space-between; margin-bottom:2rem;">
+            <h2>Quote of the Day</h2>
+
+            <div style="text-align: center;">
+                <a class="add-quote" id="openAddQuote">
+                    Add Quote
+                </a>
+            </div>
+        </div>
 
         <table id="quoteTable" class="display nowrap" style="width:100%;">
             <thead>
@@ -171,11 +177,6 @@ $result = $conn->query($sql);
                 <?php endif; ?>
             </tbody>
         </table>
-        <div style="text-align: center; margin-top: 2rem;">
-            <a class="add-quote" id="openAddQuote">
-                Add Quote
-            </a>
-        </div>
     </div>
     <div id="quoteModal" class="modal">
         <div class="modal-content">
