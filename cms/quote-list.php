@@ -152,21 +152,17 @@ $result = $conn->query($sql);
         <table id="quoteTable" class="display nowrap" style="width:100%;">
             <thead>
                 <tr>
+                    <th></th>
                     <th>Date</th>
                     <th>Author</th>
                     <th>English</th>
                     <th>Chinese</th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <?php if ($result && $result->num_rows > 0): ?>
                     <?php while ($row = $result->fetch_assoc()): ?>
                         <tr>
-                            <td><?= $row['quote_date'] ?? '' ?></td>
-                            <td><?= $row['author'] ?? '' ?></td>
-                            <td><?= $row['en'] ?? '' ?></td>
-                            <td><?= $row['cn'] ?? '' ?></td>
                             <td>
                                 <a class="quote-button editQuote" data-refnum="<?= $row['ref_num'] ?>"
                                     data-date="<?= $row['quote_date'] ?? '' ?>" data-author="<?= $row['author'] ?? '' ?>"
@@ -174,6 +170,10 @@ $result = $conn->query($sql);
                                     Edit <i class="fas fa-edit"></i>
                                 </a>
                             </td>
+                            <td><?= $row['quote_date'] ?? '' ?></td>
+                            <td><?= $row['author'] ?? '' ?></td>
+                            <td><?= $row['en'] ?? '' ?></td>
+                            <td><?= $row['cn'] ?? '' ?></td>
                         </tr>
                     <?php endwhile; ?>
                 <?php else: ?>
@@ -243,7 +243,14 @@ $result = $conn->query($sql);
     <script>
         $(document).ready(function () {
             $('#quoteTable').DataTable({
-                responsive: true
+                responsive: true,
+                columnDefs: [
+                    {
+                        targets: 0, //target first column
+                        searchable: false,
+                        orderable: false
+                    }
+                ]
             });
 
             document.getElementById('openAddQuote').addEventListener('click', () => {
