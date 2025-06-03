@@ -130,7 +130,7 @@ if (!isset($_SESSION['user_id'])) {
     <div class="dash-modal">
         <div class="dashboard">
             <h2>Welcome, <?= htmlspecialchars($_SESSION['username']) ?></h2>
-            <a href="javascript:void(0)" id="openAddEntry">Add Entry</a>
+            <!-- <a id="openAddEntry">Add Entry</a> -->
             <a href="quote-list.php">Quote List</a>
             <a href="logout.php">Logout</a>
         </div>
