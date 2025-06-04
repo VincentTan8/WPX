@@ -52,6 +52,9 @@ async function setLanguage(lang) {
     const pageName = pageData.dataset.page;
 
     try {
+        //get quote of the day
+        await fetch(`${currentScriptDir}/get-quote-today.php`).catch(console.error);
+
         const response = await fetch(`${currentScriptDir}/fetch-language-set.php`, {
             method: "POST",
             headers: {
@@ -65,7 +68,12 @@ async function setLanguage(lang) {
         const languageSet = data;
 
         translateElements(languageSet);
-        resetQuoteAnimation();
+        const quote = languageSet.find(set => set.element_id === 'hm-quote-text');
+        if(quote['text']){
+            resetQuoteAnimation();
+        } else {
+            console.log("No quote for today", quote)
+        }
 
     } catch (error) {
         console.error("Error fetching language set:", error);
@@ -90,9 +98,6 @@ function translateElements(languageSet) {
 }
 
 $(document).ready(function () {
-    //get quote of the day
-    fetch(`${currentScriptDir}/get-quote-today.php`).catch(console.error);
-
     initTranslateButton();
 
     const pageData = document.getElementById("page-data");
