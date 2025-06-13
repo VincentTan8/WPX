@@ -273,7 +273,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
 
                 <div class="thought-sequence">
                     <div class="quote-block">
-                        <h3 class="quote-title" id="hm-quote-title">Quote of the Day</h3>
+                        <!-- <h3 class="quote-title" id="hm-quote-title">Quote of the Day</h3> -->
                         <p class="quote-text" id="hm-quote-text">“Education is the most powerful weapon which you can
                             use to change the
                             world.”</p>
