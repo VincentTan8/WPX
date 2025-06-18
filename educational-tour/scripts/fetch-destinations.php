@@ -16,7 +16,7 @@ $card_header_text = "card_header_text" . $language;
 $card_description = "card_description" . $language;
 
 $tablename = $database . ".`wt_eductour_destinations`";
-$sql = "SELECT `country_img`, `$country_name` AS country_name, `$card_header_text` AS card_header_text, `$card_description` AS card_description FROM $tablename
+$sql = "SELECT `country_img`, `$country_name` AS `country_name`, `$card_header_text` AS `card_header_text`, `$card_description` AS `card_description` FROM $tablename
         WHERE `ref_num` = ?";
 
 $stmt = $conn->prepare($sql);
