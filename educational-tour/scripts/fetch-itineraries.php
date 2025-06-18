@@ -22,9 +22,9 @@ $stmt->bind_param("s", $tour_details_ref_num);
 $stmt->execute();
 $result = $stmt->get_result();
 
-$tour_det = [];
+$itineraries = [];
 while ($row = $result->fetch_assoc()) {
-    $tour_det[] = $row;
+    $itineraries[] = $row;
 }
-echo json_encode($tour_det);
+echo json_encode($itineraries);
 ?>
