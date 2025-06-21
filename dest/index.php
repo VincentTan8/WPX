@@ -3,12 +3,8 @@ if (!isset($_SESSION)) {
     session_start();
     ob_start();
 }
-
 if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
     $lang = '_cn';
-} else {
-    $_SESSION['lang'] = 'EN';
-    $lang = '_en';
 }
 ?>
 
@@ -30,37 +26,15 @@ include "../connections/dbname.php";
 
     <!-- Static Hero Section with separated gradient -->
     <div
-        style="position: relative; top:-10%;height: 95vh; background-image: url('img/et-bg.png'); background-size: cover;background-position: center top -60px; ">
+        style="position: relative; top:-10%;height: 95vh; background-image: url('img/taiwan-bg.png'); background-size: cover;background-position: center top -60px; ">
 
         <!-- Hero Text Content -->
-        <div
-            style="text-align: center; z-index: 2; position: relative; padding-top:200px; width:1036px; justify-self:center; ">
-            <h1 style="font-size: 50px; font-weight:700; color:black; font-family:'Poppins', sans-serif;"><span
-                    style="color:#F2AE14;">Explore the World.</span>Inspire Growth. Let your child learn through life,
-                not just textbooks.
-            </h1>
-            <p
-                style="font-size: 20px; font-weight:400; color:black; font-family:'Poppins', sans-serif; margin-top:32px;">
-                WeTalk Study Tours open the door to immersive, bilingual adventures in safe, exciting destinations like
-                Singapore, Japan, China, Taiwan, and Australia.</p>
-        </div>
-        <div style="display: flex; justify-content: center; gap: 30px; margin-top: 50px; flex-wrap: wrap;">
-            <div
-                style="border-radius: 25px; background: #09CA91; width: 350px; height: 80px; padding: 25px 19px; display: flex; justify-content: center; align-items: center; color: white; font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 400; cursor: pointer;">
-                <span style="margin-right: 15px;">Explore Our Destination</span><svg xmlns="http://www.w3.org/2000/svg"
-                    width="22" height="16" viewBox="0 0 22 16" fill="none">
-                    <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </div>
-            <div
-                style="border-radius: 25px; background: #fff; width: 350px; height: 80px; padding: 25px 19px; display: flex; justify-content: center; align-items: center; color: black; font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 400; cursor: pointer; border: 1px solid #ccc;">
-                <span style="margin-right: 15px;">Watch Our Journey</span> <svg xmlns="http://www.w3.org/2000/svg"
-                    width="22" height="16" viewBox="0 0 22 16" fill="none">
-                    <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="black" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </div>
+        <div style="text-align: center; z-index: 2; position: relative; padding-top:300px;  ">
+            <h1 style="font-size: 50px; font-weight:700; color:black; font-family:'Poppins', sans-serif;">WeTalk <span
+                    style="color:#F2AE14;">Taiwan</span>
+                Study Tour</h1>
+            <p style="font-size: 20px; font-weight:700; color:black; font-family:'Poppins', sans-serif;">Mandarin
+                Meets Culture in Every Corner</p>
         </div>
     </div>
 
