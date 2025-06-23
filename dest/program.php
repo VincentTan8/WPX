@@ -69,7 +69,8 @@
 <div class="container py-5 position-relative program-highlight-section">
     <!-- Header -->
     <div class="d-flex align-items-center gap-2 mb-4">
-        <h3 style="font-family:'Poppins', sans-serif; font-weight:700; font-size:40px;">Program Highlights</h3>
+        <h3 style="font-family:'Poppins', sans-serif; font-weight:700; font-size:40px; z-index: 2">Program Highlights
+        </h3>
     </div>
 
     <!-- Glow Background -->
