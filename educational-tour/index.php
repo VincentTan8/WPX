@@ -70,12 +70,10 @@ include "../connections/dbname.php";
         <div style="position:relative; margin-top: 300px;">
             <?php include "course_introduction.php"; ?>
             <?php include "../includes/address.php"; ?>
+            <?php include "../includes/footer.php"; ?>
         </div>
     </div>
     <!-- End white container -->
-
-    <!-- Footer (remains outside the white container) -->
-    <?php // include "../includes/footer.php"; ?>
 
     <div id="page-data" data-page="study-abroad" data-lang="<?php echo $lang ?>"></div>
     <script>console.log('<?php echo $lang . " is the lang"; ?>')</script>
