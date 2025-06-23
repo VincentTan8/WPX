@@ -8,7 +8,6 @@ if (!isset($_SESSION)) {
 <?php
 include "../../connections/dbname.php";
 
-$ref_num = $_POST['ref_num'];
 $language = $_POST['language'];  //_en, _cn, _kr, _jp
 
 $country_name = "country_name" . $language;
@@ -16,11 +15,9 @@ $card_header_text = "card_header_text" . $language;
 $card_description = "card_description" . $language;
 
 $tablename = $database . ".`wt_eductour_destinations`";
-$sql = "SELECT `country_img`, `$country_name` AS `country_name`, `$card_header_text` AS `card_header_text`, `$card_description` AS `card_description` FROM $tablename
-        WHERE `ref_num` = ?";
+$sql = "SELECT `ref_num`, `country_img`, `$country_name` AS `country_name`, `$card_header_text` AS `card_header_text`, `$card_description` AS `card_description` FROM $tablename";
 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $ref_num);
 $stmt->execute();
 $result = $stmt->get_result();
 
