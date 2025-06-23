@@ -12,6 +12,7 @@
         color: #444;
         margin-bottom: 80px;
         text-align: left;
+        font-family: 'Poppins', sans-serif;
     }
 
     .curved-line-wrapper {
