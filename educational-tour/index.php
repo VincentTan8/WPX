@@ -112,6 +112,7 @@ include "../connections/dbname.php";
     <script src="../resources/js/map.js"></script>
     <script src="../vendor/js/contact_us.js"></script>
     <script src="../resources/js/script.js"></script>
+    <script src="scripts/destinations.js"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
