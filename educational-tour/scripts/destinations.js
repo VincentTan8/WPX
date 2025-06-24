@@ -25,7 +25,7 @@ const fetchDestinations = async () => {
                 <h3>${item.country_name}</h3>
                 <h4 class="carousel-subtitle">${item.card_header_text}</h4>
                 <p>${item.card_description}</p>
-                <a href="wetalk.com/dest?data=${item.ref_num}" class="carousel-button">
+                <a href="../tour?dest=${item.ref_num}" class="carousel-button">
                     <span>About ${item.country_name}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="29" height="23" viewBox="0 0 29 23" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd"
