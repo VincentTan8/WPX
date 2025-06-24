@@ -1,8 +1,6 @@
 <style>
     .carousel-container {
-
         margin: 100px auto;
-
     }
 
     .carousel-header {
@@ -37,13 +35,13 @@
         box-shadow: 0px 0px 33px 5px rgba(0, 0, 0, 0.1);
         width: 400px;
         flex: 0 0 auto;
-        padding: 20px;
+        padding: 15px;
         display: flex;
         flex-direction: column;
         text-align: center;
+        margin-top: 50px;
         padding: 15px;
         transition: transform 0.3s ease;
-        margin-top: 50px;
     }
 
     .carousel-card img {
@@ -67,20 +65,20 @@
 
 
     .carousel-card p {
-        font-size: 1rem;
-        color: #666;
+        font-size: 16px;
+        color: #444444;
         text-align: left;
         margin-bottom: 20px;
         flex-grow: 1;
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: 0.32px;
+        line-height: 25px;
     }
 
     .carousel-subtitle {
         font-size: 18px;
         color: #444;
-
         font-family: 'Poppins', sans-serif;
-        font-size: 18px;
-        font-style: normal;
         font-weight: 700;
         line-height: normal;
         margin-bottom: 30px;
@@ -93,30 +91,33 @@
 
 
     .carousel-button {
-        display: inline-flex;
+        display: flex;
         align-items: center;
         text-align: center;
-        padding: 12px 25px;
+        justify-content: center;
         border: 1px solid #444444;
         border-radius: 30px;
         width: 250px;
-        gap: 20px;
-        align-self: flex-start;
+        height: 50px;
+        gap: 15px;
         background: linear-gradient(to right, #F2AE14 0%, #F2AE14 0%) no-repeat;
         background-size: 0% 100%;
         background-position: left;
-        color: #18181B;
-        font-weight: 400;
-        text-decoration: none;
         transition: background-size 0.4s ease, color 0.4s ease;
-        font-family: 'Poppins', serif;
-        font-size: 18px;
+        color: #18181B;
     }
 
     .carousel-button:hover {
         background-size: 100% 100%;
         color: #fff;
         border: 1px solid #F2AE14;
+    }
+
+    .carousel-button span {
+        font-family: 'Poppins', serif;
+        font-size: 18px;
+        font-weight: 400;
+        text-decoration: none;
     }
 
     .carousel-button svg path {
@@ -129,9 +130,9 @@
 </style>
 
 <div class="carousel-container">
-    <h2 class="carousel-header">Other Learning Journey you might be interested</h2>
+    <h2 class="carousel-header">Other learning journeys you might be interested in</h2>
     <div class="carousel-wrapper">
-        <div class="carousel-track">
+        <div id="carousel-parent" class="carousel-track">
 
             <div class="carousel-card">
                 <img src="img/singapore.png" alt="Singapore">
@@ -140,81 +141,15 @@
                 <p>A clean, safe and vibrant bilingual environment. Kids explore iconic sites like Gardens by the Bay,
                     Science Centre, and Singapore’s colorful cultural districts — while practicing both English and
                     Mandarin daily.</p>
-                <a href="#" class="carousel-button">About Singapore <svg xmlns="http://www.w3.org/2000/svg" width="29"
-                        height="23" viewBox="0 0 29 23" fill="none">
+                <a href="#" class="carousel-button">
+                    <span>About Singapore</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="23" viewBox="0 0 29 23" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M17.2929 1.02385C17.6834 0.633326 18.3166 0.633326 18.7071 1.02385L28.7071 11.0239C29.0976 11.4144 29.0976 12.0475 28.7071 12.4381L18.7071 22.4381C18.3166 22.8286 17.6834 22.8286 17.2929 22.4381C16.9024 22.0475 16.9024 21.4144 17.2929 21.0238L25.5858 12.731H1C0.447715 12.731 0 12.2832 0 11.731C0 11.1787 0.447715 10.731 1 10.731H25.5858L17.2929 2.43806C16.9024 2.04754 16.9024 1.41437 17.2929 1.02385Z"
                             fill="#18181B" />
-                    </svg></a>
+                    </svg>
+                </a>
             </div>
-
-
-            <div class="carousel-card">
-                <img src="img/japan.png" alt="Japan">
-                <h3>Japan</h3>
-                <h4 class="carousel-subtitle">Where Tradition Meets Technology</h4>
-                <p>Discover Japan’s rich culture through calligraphy, tea ceremony, and manga culture. Kids get to try
-                    basic Japanese phrases, visit shrines, and explore both ancient traditions and futuristic tech.</p>
-                <a href="#" class="carousel-button">About Japan <svg xmlns="http://www.w3.org/2000/svg" width="29"
-                        height="23" viewBox="0 0 29 23" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M17.2929 1.02385C17.6834 0.633326 18.3166 0.633326 18.7071 1.02385L28.7071 11.0239C29.0976 11.4144 29.0976 12.0475 28.7071 12.4381L18.7071 22.4381C18.3166 22.8286 17.6834 22.8286 17.2929 22.4381C16.9024 22.0475 16.9024 21.4144 17.2929 21.0238L25.5858 12.731H1C0.447715 12.731 0 12.2832 0 11.731C0 11.1787 0.447715 10.731 1 10.731H25.5858L17.2929 2.43806C16.9024 2.04754 16.9024 1.41437 17.2929 1.02385Z"
-                            fill="#18181B" />
-                    </svg></a>
-            </div>
-
-            <div class="carousel-card">
-                <img src="img/philippines.png" alt="Philippines">
-                <h3>Philippines</h3>
-                <h4 class="carousel-subtitle">Island Adventure with English Immersion</h4>
-                <p>A clean, safe and vibrant bilingual environment. Kids explore iconic sites like Gardens by the Bay,
-                    Science Centre, and Singapore’s colorful cultural districts — while practicing both English and
-                    Mandarin daily.</p>
-                <a href="#" class="carousel-button">About Philippines <svg xmlns="http://www.w3.org/2000/svg" width="29"
-                        height="23" viewBox="0 0 29 23" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M17.2929 1.02385C17.6834 0.633326 18.3166 0.633326 18.7071 1.02385L28.7071 11.0239C29.0976 11.4144 29.0976 12.0475 28.7071 12.4381L18.7071 22.4381C18.3166 22.8286 17.6834 22.8286 17.2929 22.4381C16.9024 22.0475 16.9024 21.4144 17.2929 21.0238L25.5858 12.731H1C0.447715 12.731 0 12.2832 0 11.731C0 11.1787 0.447715 10.731 1 10.731H25.5858L17.2929 2.43806C16.9024 2.04754 16.9024 1.41437 17.2929 1.02385Z"
-                            fill="#18181B" />
-                    </svg></a>
-            </div>
-
-            <div class="carousel-card">
-                <img src="img/china.png" alt="China">
-                <h3>China</h3>
-                <h4 class="carousel-subtitle">Roots, Language & Legacy</h4>
-                <p>A deep cultural journey through ancient cities like Xi’an, Beijing, or Shanghai. Students engage in
-                    idiom learning, calligraphy, martial arts, and explore Chinese medicine — perfect for cultural
-                    heritage connection.</p>
-                <a href="#" class="carousel-button">About China <svg xmlns="http://www.w3.org/2000/svg" width="29"
-                        height="23" viewBox="0 0 29 23" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M17.2929 1.02385C17.6834 0.633326 18.3166 0.633326 18.7071 1.02385L28.7071 11.0239C29.0976 11.4144 29.0976 12.0475 28.7071 12.4381L18.7071 22.4381C18.3166 22.8286 17.6834 22.8286 17.2929 22.4381C16.9024 22.0475 16.9024 21.4144 17.2929 21.0238L25.5858 12.731H1C0.447715 12.731 0 12.2832 0 11.731C0 11.1787 0.447715 10.731 1 10.731H25.5858L17.2929 2.43806C16.9024 2.04754 16.9024 1.41437 17.2929 1.02385Z"
-                            fill="#18181B" />
-                    </svg></a>
-            </div>
-
-            <!-- <div class="carousel-card">
-                <img src="img/taiwan.jpg" alt="Taiwan">
-                <h3>Taiwan</h3>
-                <p>Experience Mandarin immersion and friendly culture in vibrant Taiwan.</p>
-                <a href="#" class="carousel-button">Learn More</a>
-            </div> -->
-
-            <div class="carousel-card">
-                <img src="img/australia.png" alt="Australia">
-                <h3>Australia</h3>
-                <h4 class="carousel-subtitle">Language, Wildlife & the Outdoors</h4>
-                <p>Perfect for English immersion and nature exploration. Students interact with native speakers, visit
-                    wildlife sanctuaries, top universities, and learn about Aboriginal culture through real-life
-                    activities.</p>
-                <a href="#" class="carousel-button">About Australia <svg xmlns="http://www.w3.org/2000/svg" width="29"
-                        height="23" viewBox="0 0 29 23" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M17.2929 1.02385C17.6834 0.633326 18.3166 0.633326 18.7071 1.02385L28.7071 11.0239C29.0976 11.4144 29.0976 12.0475 28.7071 12.4381L18.7071 22.4381C18.3166 22.8286 17.6834 22.8286 17.2929 22.4381C16.9024 22.0475 16.9024 21.4144 17.2929 21.0238L25.5858 12.731H1C0.447715 12.731 0 12.2832 0 11.731C0 11.1787 0.447715 10.731 1 10.731H25.5858L17.2929 2.43806C16.9024 2.04754 16.9024 1.41437 17.2929 1.02385Z"
-                            fill="#18181B" />
-                    </svg></a>
-            </div>
-
         </div>
     </div>
 </div>
