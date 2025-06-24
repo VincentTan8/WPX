@@ -53,7 +53,7 @@ include "../connections/dbname.php";
     <!-- End white container -->
 
 
-    <div id="page-data" data-page="study-abroad" data-lang="<?php echo $lang ?>"></div>
+    <div id="page-data" data-page="study-abroad" data-lang="<?php echo $lang ?>" data-dest="<?php echo $dest ?>"></div>
     <script>console.log('<?php echo $lang . " is the lang"; ?>')</script>
 
     <!-- JavaScript -->
