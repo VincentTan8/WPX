@@ -9,6 +9,12 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
     $_SESSION['lang'] = 'EN';
     $lang = '_en';
 }
+
+if (isset($_GET['dest'])) {
+    $dest = $_GET['dest'];
+} else {
+    die;
+}
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +59,8 @@ include "../connections/dbname.php";
     <!-- End white container -->
 
 
-    <div id="page-data" data-page="study-abroad" data-lang="<?php echo $lang ?>" data-dest="<?php echo $dest ?>"></div>
+    <div id="page-data" data-page="study-abroad" data-lang="<?php echo $lang ?>"
+        data-dest="<?php echo htmlspecialchars($dest) ?>"></div>
     <script>console.log('<?php echo $lang . " is the lang"; ?>')</script>
 
     <!-- JavaScript -->
