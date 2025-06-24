@@ -6,6 +6,7 @@ if (!isset($_SESSION)) {
 ?>
 
 <!-- todo modify to not all tours -->
+<!-- Not being used yet -->
 <?php
 include "../../connections/dbname.php";
 
