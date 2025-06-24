@@ -34,16 +34,18 @@ include "../connections/dbname.php";
 <body oncontextmenu="return false;" data-spy="scroll" data-target=".navbar" data-offset="90" class="position-relative">
 
     <!-- Static Hero Section with separated gradient -->
-    <div
-        style="position: relative; top:-10%;height: 95vh; background-image: url('img/taiwan-bg.png'); background-size: cover;background-position: center top -60px; ">
+    <div id="hero-section"
+        style="position: relative; top:-10%; height: 95vh; background-image: url(''); background-size: cover;background-position: center top -60px; ">
 
         <!-- Hero Text Content -->
         <div style="text-align: center; z-index: 2; position: relative; padding-top:300px;  ">
-            <h1 style="font-size: 50px; font-weight:700; color:black; font-family:'Poppins', sans-serif;">WeTalk <span
-                    style="color:#F2AE14;">Taiwan</span>
+            <h1 id="hero-title"
+                style="font-size: 50px; font-weight:700; color:black; font-family:'Poppins', sans-serif;">WeTalk <span
+                    style="color:#F2AE14;">country</span>
                 Study Tour</h1>
-            <p style="font-size: 20px; font-weight:700; color:black; font-family:'Poppins', sans-serif;">Mandarin
-                Meets Culture in Every Corner</p>
+            <p id="hero-subtitle"
+                style="font-size: 20px; font-weight:700; color:black; font-family:'Poppins', sans-serif;">Description
+            </p>
         </div>
     </div>
 
@@ -97,6 +99,7 @@ include "../connections/dbname.php";
     <script src="../resources/js/map.js"></script>
     <script src="../vendor/js/contact_us.js"></script>
     <script src="../resources/js/script.js"></script>
+    <script src="scripts/tour.js"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
