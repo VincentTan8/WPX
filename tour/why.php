@@ -1,4 +1,4 @@
-<div class="container py-5">
+<div class="container mb-3">
     <div class="row align-items-center" style="padding: 0 20px;">
         <div class="col-md-6 mb-4 mb-md-0">
             <h2 class="mb-3" style="font-family:'Poppins', sans-serif; font-weight:700; font-size:40px;">Why
