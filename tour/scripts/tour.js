@@ -1,4 +1,4 @@
-const imgDir = "img/";
+const imgDir = "../resources/img/educational-tour/";
 const pageData = document.getElementById("page-data");
 const pageLang = pageData.dataset.lang;
 const destination = pageData.dataset.dest;
