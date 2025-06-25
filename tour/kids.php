@@ -64,20 +64,22 @@
         <h2 class="left-header">What Kids Will Take Away</h2>
         <ul class="checklist">
             <li>
-                <img src="img/check.png" alt="check"> Greater confidence in speaking Mandarin
+                <img src="<?php echo $imgDir ?>check.png" alt="check"> Greater confidence in speaking Mandarin
             </li>
             <li>
-                <img src="img/check.png" alt="check"> Cultural curiosity through food, art, and tradition
+                <img src="<?php echo $imgDir ?>check.png" alt="check"> Cultural curiosity through food, art, and
+                tradition
             </li>
             <li>
-                <img src="img/check.png" alt="check"> Memories of creativity, nature, and kindness
+                <img src="<?php echo $imgDir ?>check.png" alt="check"> Memories of creativity, nature, and kindness
             </li>
             <li>
-                <img src="img/check.png" alt="check"> Real-life application of language in fun scenarios
+                <img src="<?php echo $imgDir ?>check.png" alt="check"> Real-life application of language in fun
+                scenarios
             </li>
         </ul>
     </div>
     <div class="right-side">
-        <img src="img/kids.png" alt="Kids Group">
+        <img src="<?php echo $imgDir ?>kids.png" alt="Kids Group">
     </div>
 </div>

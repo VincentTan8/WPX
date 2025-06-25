@@ -9,7 +9,7 @@
             </p>
         </div>
         <div class="col-md-6 text-center">
-            <img id="why-img" src="img/why-taiwan.png" style="border-radius:15px;" alt="Sample Image">
+            <img id="why-img" src="<?php echo $imgDir ?>why-taiwan.png" style="border-radius:15px;" alt="Sample Image">
         </div>
     </div>
 </div>

@@ -69,7 +69,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="custom-box">
                 <div class="box-top">
-                    <img src="img/trust.png" alt="Feature 1">
+                    <img src="<?php echo $imgDir ?>trust.png" alt="Feature 1">
                 </div>
                 <div class="box-bottom">
                     <p>Trusted, kid-friendly hotel or serviced residence</p>
@@ -79,7 +79,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="custom-box">
                 <div class="box-top">
-                    <img src="img/supervised.png" alt="Feature 2">
+                    <img src="<?php echo $imgDir ?>supervised.png" alt="Feature 2">
                 </div>
                 <div class="box-bottom">
                     <p>24/7 adult supervision</p>
@@ -89,7 +89,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="custom-box">
                 <div class="box-top">
-                    <img src="img/instagram.png" alt="Feature 3">
+                    <img src="<?php echo $imgDir ?>instagram.png" alt="Feature 3">
                 </div>
                 <div class="box-bottom">
                     <p>Daily check-ins and progress notes for parents</p>
@@ -99,7 +99,7 @@
         <div class="col-md-3 col-sm-6">
             <div class="custom-box">
                 <div class="box-top">
-                    <img src="img/health.png" alt="Feature 4">
+                    <img src="<?php echo $imgDir ?>health.png" alt="Feature 4">
                 </div>
                 <div class="box-bottom">
                     <p>Travel insurance and emergency support included</p>

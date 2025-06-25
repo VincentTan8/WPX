@@ -29,6 +29,8 @@ $menu_bar6 = "active";
 
 include "../includes/header.php";
 include "../connections/dbname.php";
+
+$imgDir = "../resources/img/educational-tour/";
 ?>
 
 <body oncontextmenu="return false;" data-spy="scroll" data-target=".navbar" data-offset="90" class="position-relative">

@@ -136,11 +136,15 @@
     <div class="steps-left">
         <h2>Next Steps</h2>
         <ul class="steps-list">
-            <li><img src="img/white-check.png" alt="✓"> <span><strong>Next Tour:</strong> Sept 2025</span></li>
-            <li><img src="img/white-check.png" alt="✓"> <span><strong>Early Bird Discount:</strong> Until July 15</span>
+            <li><img src="<?php echo $imgDir ?>white-check.png" alt="✓"> <span><strong>Next Tour:</strong> Sept
+                    2025</span></li>
+            <li><img src="<?php echo $imgDir ?>white-check.png" alt="✓"> <span><strong>Early Bird Discount:</strong>
+                    Until July 15</span>
             </li>
-            <li><img src="img/white-check.png" alt="✓"> <span>Suitable for ages 8–15, beginner-friendly</span></li>
-            <li><img src="img/white-check.png" alt="✓"> <span>Includes pre-trip online Mandarin warm-up kit learning
+            <li><img src="<?php echo $imgDir ?>white-check.png" alt="✓"> <span>Suitable for ages 8–15,
+                    beginner-friendly</span></li>
+            <li><img src="<?php echo $imgDir ?>white-check.png" alt="✓"> <span>Includes pre-trip online Mandarin warm-up
+                    kit learning
                     kit</span></li>
         </ul>
 
@@ -169,6 +173,6 @@
         </div>
     </div>
     <div class="steps-right">
-        <img src="img/girl.png" alt="Girl with Laptop">
+        <img src="<?php echo $imgDir ?>girl.png" alt="Girl with Laptop">
     </div>
 </div>
