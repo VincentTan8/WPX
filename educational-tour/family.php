@@ -84,7 +84,7 @@
 
 <div class="next-family-section">
     <div class="steps-left">
-        <h2>Why Family Choose WeTalk</h2>
+        <h2>Why Families Choose WeTalk</h2>
         <ul class="steps-list">
             <li><img src="img/check-yellow.png" alt="✓"> <span>Daily bilingual guidance with safe accommodation</span>
             </li>

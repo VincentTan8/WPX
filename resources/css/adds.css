@@ -1,0 +1,539 @@
+ 
+/* Ensure all dropdown menus are hidden by default */
+.dropdown-menu {
+    display: none;
+}
+
+/* Show dropdown menu on hover */
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+/* Ensure the parent dropdown-menu has relative positioning */
+.dropdown-menu {
+    position: relative;
+}
+
+/* Style for the dropdown-submenu */
+.dropdown-submenu {
+    position: relative;
+}
+
+/* Position the nested dropdown menu correctly */
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+    display: none; /* Hide nested submenu by default */
+}
+
+/* Show the nested dropdown menu on hover of the parent dropdown item */
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+
+/* Ensure the dropdown items have proper styling */
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+/* Custom styles to make the modal full screen */
+.modal-dialog-fullscreen {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+    }
+
+    .modal-content-fullscreen {
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .modal-body-fullscreen {
+        height: calc(100% - 56px); /* Adjust height to remove the modal header height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .modal-body-fullscreen video {
+        width: 100%;
+        height: 100%;
+    }
+
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: white;
+        font-size: 2em;
+        cursor: pointer;
+        z-index: 1000;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .polygon-section {
+        background-color: lightcoral;
+        padding: 20px;
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Diamond shape */
+        width: 100%;
+        height: 100%;
+    }
+
+    .ellipse-section {
+        background-color: lightseagreen;
+        padding: 20px;
+        clip-path: ellipse(100% 50% at 50% 50%); /* Ellipse shape */
+        width: 100%;
+        height: 100%;
+    }
+
+    .curved-top-bottom {
+        background-color: lightblue;
+        padding: 20px;
+        border-radius: 50% 50px 20px 20px; /* Top-left, top-right, bottom-right, bottom-left */
+        /* Alternatively, you can use border-radius: 20px 20px 0 0 for top only and border-radius: 0 0 20px 20px for bottom only */
+    }
+    .half-triangle {
+        background-color: lightcoral;
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(0 0, 100% 0, 0 100%);
+        /* This creates a right-angle triangle with the right angle at the bottom left */
+    }
+
+    .curve-inside {
+background-color: #4CAF50; /* Background color */
+color: white; /* Text color */
+padding: 50px 20px; /* Padding */
+text-align: center; /* Center the text */
+font-family: Arial, sans-serif; /* Font */
+position: relative;
+
+clip-path: polygon(
+    0% 0%,     /* Start of top-left curve */
+    100% 0%,    /* Top-left corner */
+    50% 50%,   /* Top point */
+    75% 0%,    /* Top-right corner */
+    100% 0%,   /* End of top-right curve */
+    100% 90%,  /* Start of bottom-right curve */
+    75% 100%,  /* Bottom-right corner */
+    0% 80%,   /* Bottom point */
+    0% 100%,  /* Bottom-left corner */
+    0% 100%     /* End of bottom-left curve */
+);
+}
+ 
+
+.footer-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-menu li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-menu a {
+    color:gray;
+    text-decoration: none;
+}
+
+.footer-menu a:hover {
+    text-decoration: underline;
+}
+/* container */
+.responsive-two-column-grid {
+    display:block;
+}
+
+/* columns */
+.responsive-two-column-grid > * {
+    padding:1rem;
+}
+
+/* tablet breakpoint */
+@media (min-width:768px) {
+    .responsive-two-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+.round-button {
+            display: inline-block;
+            padding: 8px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color:orange;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 25px;
+           
+            transition: background-color 0.3s ease;
+            width: 150px;
+          
+           
+            
+           
+        }
+
+        .round-button:hover {
+            background-color:coral;
+            color: #fff;
+        }
+
+        
+.rounded-corner-text {
+    background-color: #F5F8FC; /* Light gray background color */
+    border-radius: 25px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside the div (top/bottom, left/right) */
+    color: #333; /* Dark gray text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: slight shadow for better aesthetics */
+    text-align: center; /* Center the text inside the div */
+    white-space: nowrap; /* Ensure the text stays on one line */
+    display: inline-block; /* Make the div take up only as much space as its content */
+    height: 40px; /* Set the height of each text block */
+    line-height: 50px; /* Center the text vertically within the block */
+}
+
+
+.tabs {
+    overflow: hidden;
+   
+     border-radius: 35px;
+}
+
+.tablinks {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+   
+    padding: 14px 16px;
+     border-radius: 35px;
+    transition: 0.3s;
+}
+
+.tablinks:hover {
+    background-color: #07CA91;
+    color: white;
+}
+
+.tablinks.active {
+    background-color: #07CA91;
+    color: white;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page-item {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.page-item.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+ 
+
+
+.column-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.column-item {
+    flex: 1;
+    min-width: 300px; /* Adjust based on your minimum desired width */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.column-item_teacher {
+    flex: 1;
+    min-width: 400px; /* Adjust based on your minimum desired width */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail-container {
+    position: relative;
+    display: inline-block;
+}
+
+.thumbnail-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+ .thumbnail-container {
+    position: relative;
+    display: inline-block;
+}
+
+.thumbnail {
+    display: block;
+    /*width: 100%;
+    height: auto;*/
+    width: auto;
+    height: 450px;
+
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the play button */
+    width: 100px;
+    height: 100px;
+    pointer-events: none; /* Allow clicking through the play button */
+}
+
+
+@media (max-width: 768px) {
+    .column-item {
+        flex: 1 1 100%; /* Columns stack on top of each other on smaller screens */
+    }
+}
+
+
+
+/* Parallax section */
+.parallax_p {
+    /* The image used */
+    background-image: url('../../chinese/img/background.png'); /* Replace with your image URL */
+
+    /* Set a specific height */
+    height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Content inside the parallax section */
+.parallax_p .content_parallax {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.parallax_p .content_parallax h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.parallax_p .content_parallax p {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+/* Regular section */
+.regular_p {
+    padding: 60px 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.regular_p .content_p {
+    max-width: 800px;
+    margin: auto;
+}
+
+.regular_p .content_p h2 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.regular_p .content_p p {
+    font-size: 1em;
+    margin: 0.5em 0;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .food-img-before {
+        margin-left: 0;
+        margin-top: -50px;
+        width: 100%;
+        height: auto;
+    }
+
+    .food-img-after {
+        margin-top: -50px;
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+    }
+
+    .text-center {
+        text-align: center !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .food-img-before {
+        margin-left: 500px;
+        margin-top: -100px;
+    }
+
+    .food-img-after {
+        margin-top: -780px;
+        height: 300px;
+        width: 300px;
+        margin-right: 250px;
+    }
+}
+ 
+
+ .faded-background {
+   background: linear-gradient(to bottom, #ffffff, #a8d8ea, #ffffff);
+    /* For older browsers */
+    background: -moz-linear-gradient(top, #ffffff, #a8d8ea, #ffffff);
+    background: -webkit-linear-gradient(top, #ffffff, #a8d8ea, #ffffff);
+    background: -o-linear-gradient(top, #ffffff, #a8d8ea, #ffffff);
+}
+
+ 
+ .responsive {
+  width: 100%;
+  height: auto;
+}
+
+ 
+    /* Default styles for the specific image */
+    #specific-image {
+      width: 100%; /* Default to full width */
+      height: auto; /* Maintain aspect ratio */
+    }
+    
+    /* Adjust the specific image size for large screens */
+    @media only screen and (min-width: 1200px) {
+      #specific-image {
+        width: 90%; /* Adjust size for larger screens */
+      }
+    }
+  
+
+
+    /* Default styles for the specific image */
+    #specific-image-full {
+      width: 100%; /* Default to full width */
+      height: auto; /* Maintain aspect ratio */
+    }
+    
+    /* Adjust the specific image size for large screens */
+    @media only screen and (min-width: 1200px) {
+      #specific-image-full {
+        width: 100%; /* Adjust size for larger screens */
+         height: 90%
+
+      }
+    }
+  
+  
+  /* Default styles for the specific image */
+    #specific-image-half {
+      width: 100%; /* Default to full width */
+      height: auto; /* Maintain aspect ratio */
+    }
+    
+    /* Adjust the specific image size for large screens */
+    @media only screen and (min-width: 1200px) {
+      #specific-image-half {
+        width: 60%; /* Adjust size for larger screens */
+     
+
+      }
+    }
+  
+
+ 
+    .slider_extra {
+      width: 100%;
+      
+      margin: 40px auto;
+      
+
+   
+      
+    }
+    .slick-slide img {
+      width: 95%;
+      height: auto;
+        
+   
+    }  
+    
+     #scienceStudies {
+  width: 40%;
+}
+
+/* Media query for mobile devices with a maximum width of 768px */
+@media (max-width: 768px) {
+  #scienceStudies {
+    width: 100%;
+  }
+}
+ 
+ 

@@ -1,0 +1,185 @@
+.panda-wrapper {
+    position: fixed;
+    left: -54px;
+    top: 45%;
+    transform: translateY(-50%);
+    display: flex;
+
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.panda-wrapper.slide-in {
+    animation: slideRotateIn 1.4s ease-out forwards;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@media(max-width:768px) {
+    .panda-wrapper {
+        left: -11%;
+    }
+}
+
+/* Slide + rotate like waving hi */
+@keyframes slideRotateIn {
+    0% {
+        transform: translate(-150px, -50%) rotate(-15deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, -50%) rotate(0deg);
+    }
+}
+
+.panda-img {
+    height: 150px;
+    max-height: 40vh;
+}
+
+@keyframes slideRotateOut {
+    0% {
+        transform: translate(0, -50%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-150px, -50%);
+        opacity: 0;
+    }
+}
+
+.panda-wrapper.slide-out {
+    animation: slideRotateOut .5s ease-in forwards;
+}
+
+.close-bubble {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.chat-bubble {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 10rem;
+    /* Make it a positioning context */
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    max-width: 260px;
+
+    padding: 0;
+    overflow: visible;
+    text-align: center;
+    min-width: 260px;
+    min-height: 191px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.6s ease-in, transform 0.6s ease-in;
+}
+
+/* Show bubble manually after panda animation */
+.chat-bubble.show-bubble {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.chat-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: -24px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 30px solid white;
+
+    transform: rotate(-22deg);
+    /* same as chat bubble background */
+}
+
+.chat-bubble::before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    /* slightly offset for shadow */
+    left: -25px;
+    /* match triangle position */
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 30px solid rgba(0, 0, 0, 0.2);
+    /* soft shadow color */
+    transform: rotate(-22deg);
+    z-index: 0;
+}
+
+.bubble-pointer {
+    position: absolute;
+    bottom: -10px;
+    left: 25px;
+    /* adjust if needed */
+    width: 0;
+    height: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+    /* same as chat bubble background */
+}
+
+/* Header section (yellow background, white text) */
+.quote-title {
+    background-color: #FFD43B;
+    color: white;
+    margin: 0;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.quote-container {
+    flex: 1;
+    /* makes this div fill remaining height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Body text (white background, black text) */
+.quote-text,
+.quote-author {
+    margin: 0;
+    padding: 10px 15px;
+    color: #333;
+    background-color: white;
+    font-size: 14px;
+}
+
+
+
+/* Bubble animation */
+@keyframes fadeInBubble {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

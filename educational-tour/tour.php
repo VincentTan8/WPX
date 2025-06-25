@@ -64,7 +64,7 @@
 </style>
 
 <div class="image-text-section">
-    <h2>Upcoming Tours</h2>
+    <h2 style="font-family: 'Poppins', sans-serif;">Upcoming Tours</h2>
 
     <div class="image-columns">
         <!-- Left column -->
