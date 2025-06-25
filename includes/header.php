@@ -400,53 +400,8 @@ $hide_panda = (strpos($_SERVER['PHP_SELF'], '/cms/') !== false);
                 <p class="quote-author" id="hm-quote-author">– Nelson Mandela</p>
             </div>
         </div>
-
-        <script>
-            function waitForImages(selector, callback) {
-                const container = document.querySelector(selector);
-                const images = container ? container.querySelectorAll('img') : [];
-
-                let loaded = 0;
-                if (images.length === 0) {
-                    callback();
-                    return;
-                }
-
-                images.forEach(img => {
-                    if (img.complete) {
-                        loaded++;
-                        if (loaded === images.length) callback();
-                    } else {
-                        img.addEventListener('load', () => {
-                            loaded++;
-                            if (loaded === images.length) callback();
-                        });
-                    }
-                });
-            }
-
-            document.addEventListener('DOMContentLoaded', () => {
-                waitForImages('.swiper-container', () => {
-                    const panda = document.querySelector('.panda-wrapper');
-                    const chatBubble = panda.querySelector('.chat-bubble');
-
-                    setTimeout(() => {
-                        panda.classList.add('slide-in');
-                        setTimeout(() => {
-                            chatBubble.classList.add('show-bubble');
-                        }, 1400);
-                    }, 500);
-                });
-
-                document.getElementById("close-bubble").addEventListener("click", function () {
-                    const wrapper = document.querySelector(".panda-wrapper");
-                    wrapper.classList.remove("slide-in");
-                    wrapper.classList.add("slide-out");
-                });
-            });
-        </script>
     <?php endif; ?>
-
+    <script type="module" src="../index/scripts/panda.js"></script>
     <script type="module" src="../index/scripts/translate.js"></script>
     <?php
     function getWords($sentence)
