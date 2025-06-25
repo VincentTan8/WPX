@@ -8,16 +8,14 @@
 
     .glow-bg {
         position: absolute;
-        top: 50%;
-        left: 50%;
         width: 900px;
         height: 500px;
         background: #66CDE7;
-        transform: translate(-50%, -50%);
         filter: blur(218.25px);
         z-index: 0;
         pointer-events: none;
         border-radius: 301.5px;
+        opacity: 0.76;
     }
 
     .testimonial-box {
