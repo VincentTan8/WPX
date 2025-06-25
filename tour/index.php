@@ -37,31 +37,26 @@ $imgDir = "../resources/img/educational-tour/";
 
     <!-- Static Hero Section with separated gradient -->
     <div id="hero-section"
-        style="position: relative; top:-10%; height: 95vh; background-image: url(''); background-size: cover;background-position: center top -60px; ">
+        style="position: absolute; top:0%; height: 100vh; width: 100%; background-image: url(''); background-size: cover;background-position: center -60px;">
+    </div>
 
-        <!-- Hero Text Content -->
-        <div style="text-align: center; z-index: 2; position: relative; padding-top:300px;  ">
-            <h1 id="hero-title"
-                style="font-size: 50px; font-weight:700; color:black; font-family:'Poppins', sans-serif;">WeTalk <span
-                    style="color:#F2AE14;">country</span>
-                Study Tour</h1>
-            <p id="hero-subtitle"
-                style="font-size: 20px; font-weight:700; color:black; font-family:'Poppins', sans-serif;">Description
-            </p>
-        </div>
+    <!-- Hero Text Content -->
+    <div style="text-align: center; z-index: 2; position: relative; padding-top:300px;  ">
+        <h1 id="hero-title" style="font-size: 50px; font-weight:700; color:black; font-family:'Poppins', sans-serif;">
+            WeTalk <span style="color:#F2AE14;">country</span>
+            Study Tour</h1>
+        <p id="hero-subtitle" style="font-size: 20px; font-weight:700; color:black; font-family:'Poppins', sans-serif;">
+            Description
+        </p>
     </div>
 
     <!-- Begin white container for main content -->
-    <div
-        style="background-color: white; margin: -220px 130px 0 130px; position: absolute; z-index: 10; border-radius: 15px; width:87%;">
-        <div style="position:relative; margin-top: 300px;">
-            <?php include "course_introduction.php"; ?>
-            <?php include "../includes/address.php"; ?>
-            <?php include "../includes/footer.php"; ?>
-        </div>
+    <div style="position:relative; margin-top: 150px; display: flex; justify-content: center;">
+        <?php include "course_introduction.php"; ?>
     </div>
     <!-- End white container -->
-
+    <?php include "../includes/address.php"; ?>
+    <?php include "../includes/footer.php"; ?>
 
     <div id="page-data" data-page="study-abroad" data-lang="<?php echo $lang ?>"
         data-dest="<?php echo htmlspecialchars($dest) ?>"></div>
