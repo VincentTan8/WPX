@@ -128,6 +128,6 @@
         </div>
     </div>
     <div class="steps-right">
-        <img src="img/girl.png" alt="Girl with Laptop">
+        <img src="<?php echo $imgDir ?>girl.png" alt="Girl with Laptop">
     </div>
 </div>

@@ -74,7 +74,7 @@
         top: -5px;
         width: 903px;
         height: 556px;
-        background-image: url('img/testimonial-quotes.png');
+        background-image: url('<?php echo $imgDir ?>testimonial-quotes.png');
         background-repeat: no-repeat;
     }
 
@@ -103,7 +103,7 @@
     <div class="p-4 rounded-4 position-relative d-flex justify-content-center">
         <div class="testimonial-box">
             <div style="">
-                <img src="img/parent.png" alt="Profile" class="testimonial-img" />
+                <img src="<?php echo $imgDir ?>parent.png" alt="Profile" class="testimonial-img" />
                 <p class="testimonial-text">
                     “My daughter became more confident, more open, and came home asking deeper questions about the
                     world. It

@@ -128,7 +128,7 @@
         Sample 6-Day Itinerary
     </h3>
     <div class="w-path-wrapper position-relative">
-        <img src="img/w.png" alt="W Path" class="w-path-img">
+        <img src="<?php echo $imgDir ?>w.png" alt="W Path" class="w-path-img">
 
         <!-- Day Circles -->
         <div class="day-marker day-1">

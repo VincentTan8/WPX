@@ -1,4 +1,4 @@
-const imgDir = "img/";
+const imgDir = "../resources/img/educational-tour/";
 
 const fetchDestinations = async () => {
     const pageData = document.getElementById("page-data");

@@ -24,13 +24,15 @@ $menu_bar6 = "active";
 
 include "../includes/header.php";
 include "../connections/dbname.php";
+
+$imgDir = "../resources/img/educational-tour/";
 ?>
 
 <body oncontextmenu="return false;" data-spy="scroll" data-target=".navbar" data-offset="90" class="position-relative">
 
     <!-- Static Hero Section with separated gradient -->
     <div
-        style="position: relative; top:-10%;height: 95vh; background-image: url('img/et-bg.png'); background-size: cover;background-position: center top -60px; ">
+        style="position: relative; top:-10%;height: 95vh; background-image: url('<?php echo $imgDir ?>et-bg.png'); background-size: cover;background-position: center top -60px; ">
 
         <!-- Hero Text Content -->
         <div

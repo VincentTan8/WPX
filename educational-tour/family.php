@@ -86,18 +86,23 @@
     <div class="steps-left">
         <h2>Why Families Choose WeTalk</h2>
         <ul class="steps-list">
-            <li><img src="img/check-yellow.png" alt="✓"> <span>Daily bilingual guidance with safe accommodation</span>
+            <li><img src="<?php echo $imgDir ?>check-yellow.png" alt="✓"> <span>Daily bilingual guidance with safe
+                    accommodation</span>
             </li>
-            <li><img src="img/check-yellow.png" alt="✓"> <span>Small groups with personalized attention</span>
+            <li><img src="<?php echo $imgDir ?>check-yellow.png" alt="✓"> <span>Small groups with personalized
+                    attention</span>
             </li>
-            <li><img src="img/check-yellow.png" alt="✓"> <span>Pre-tour online prep & post-tour learning</span></li>
-            <li><img src="img/check-yellow.png" alt="✓"> <span>Not rushed sightseeing, but intentional learning</span>
+            <li><img src="<?php echo $imgDir ?>check-yellow.png" alt="✓"> <span>Pre-tour online prep & post-tour
+                    learning</span></li>
+            <li><img src="<?php echo $imgDir ?>check-yellow.png" alt="✓"> <span>Not rushed sightseeing, but intentional
+                    learning</span>
             </li>
-            <li><img src="img/check-yellow.png" alt="✓"> <span>Strong focus on both cultural value & language
+            <li><img src="<?php echo $imgDir ?>check-yellow.png" alt="✓"> <span>Strong focus on both cultural value &
+                    language
                     growth</span></li>
         </ul>
     </div>
     <div class="family-right">
-        <img src="img/kid.png" alt="Kid Girl">
+        <img src="<?php echo $imgDir ?>kid.png" alt="Kid Girl">
     </div>
 </div>
