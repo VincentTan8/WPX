@@ -69,17 +69,18 @@
     <div class="image-columns">
         <!-- Left column -->
         <div class="left-column">
-            <div class="image-box" style="height: 100%; background-image: url('img/singapore.png');">
+            <div class="image-box" style="height: 100%; background-image: url('<?php echo $imgDir ?>singapore.png');">
                 <div class="image-caption">Singapore - Aug 2025</div>
             </div>
         </div>
 
         <!-- Right column -->
         <div class="right-column">
-            <div class="image-box" style="height: 250px; background-image: url('img/japan.png');">
+            <div class="image-box" style="height: 250px; background-image: url('<?php echo $imgDir ?>japan.png');">
                 <div class="image-caption">Japan - Sept 2025</div>
             </div>
-            <div class="image-box" style="height: 250px; background-image: url('img/taiwan-card.png');">
+            <div class="image-box"
+                style="height: 250px; background-image: url('<?php echo $imgDir ?>taiwan-card.png');">
                 <div class="image-caption">Taiwan - December 2025</div>
             </div>
         </div>
