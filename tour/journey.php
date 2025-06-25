@@ -133,8 +133,7 @@
     <h2 class="carousel-header">Other learning journeys you might be interested in</h2>
     <div class="carousel-wrapper">
         <div id="carousel-parent" class="carousel-track">
-
-            <div class="carousel-card">
+            <!-- <div class="carousel-card">
                 <img src="img/singapore.png" alt="Singapore">
                 <h3>Singapore</h3>
                 <h4 class="carousel-subtitle">Small country, big possibilities</h4>
@@ -149,7 +148,7 @@
                             fill="#18181B" />
                     </svg>
                 </a>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
