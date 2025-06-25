@@ -3,7 +3,7 @@ const pageData = document.getElementById("page-data");
 const pageLang = pageData.dataset.lang;
 const destination = pageData.dataset.dest;
 
-const fetchDestinations = async () => {
+const fetchRemDestinations = async () => {
     //difference here from destinations js is that the dest is not included in the list
     try {
         const response = await fetch("scripts/fetch-remaining-destinations.php", {
@@ -73,7 +73,7 @@ const fetchTour = async () => {
 
 $(document).ready(async function () {
     await fetchTour();
-    fetchDestinations();
+    fetchRemDestinations();
     // fetchProgram();
     // fetchItinerary();
     // fetchTakeaway();
