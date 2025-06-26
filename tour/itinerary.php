@@ -130,30 +130,30 @@
     <div class="w-path-wrapper position-relative">
         <img src="<?php echo $imgDir ?>w.png" alt="W Path" class="w-path-img">
 
-        <!-- Day Circles -->
+        <!-- Day Circles (content are replaced dynamically but must exist to be targeted) -->
         <div class="day-marker day-1">
             <div class="day-circle"><span>Day</span><span>1</span></div>
-            <p>Arrival, orientation, welcome ceremony</p>
+            <p>Day 1 itinerary</p>
         </div>
         <div class="day-marker day-2">
-            <div class="day-circle"><span>Day</span><span>2</span></div>
-            <p>Temple visit, language scavenger hunt, night market food tour</p>
+            <div class="day-circle"><span>Day</span><span></span></div>
+            <p></p>
         </div>
         <div class="day-marker day-3">
-            <div class="day-circle"><span>Day</span><span>3</span></div>
-            <p>Lantern-making, Mandarin drama games, eco trail walk</p>
+            <div class="day-circle"><span>Day</span><span></span></div>
+            <p></p>
         </div>
         <div class="day-marker day-4">
-            <div class="day-circle"><span>Day</span><span>4</span></div>
-            <p>Puppet theater visit + DIY workshop, postcard home activity</p>
+            <div class="day-circle"><span>Day</span><span></span></div>
+            <p></p>
         </div>
         <div class="day-marker day-5">
-            <div class="day-circle"><span>Day</span><span>5</span></div>
-            <p>Traditional cooking class + souvenir hunt using Chinese phrases</p>
+            <div class="day-circle"><span>Day</span><span></span></div>
+            <p></p>
         </div>
         <div class="day-marker day-6">
-            <div class="day-circle"><span>Day</span><span>6</span></div>
-            <p>Reflection, student performance, certificate ceremony</p>
+            <div class="day-circle"><span>Day</span><span></span></div>
+            <p></p>
         </div>
     </div>
 </div>

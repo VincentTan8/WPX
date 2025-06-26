@@ -3,7 +3,7 @@ const pageData = document.getElementById("page-data");
 const pageLang = pageData.dataset.lang;
 const destination = pageData.dataset.dest;
 
-const fetchDestinations = async () => {
+const fetchRemDestinations = async () => {
     //difference here from destinations js is that the dest is not included in the list
     try {
         const response = await fetch("scripts/fetch-remaining-destinations.php", {
@@ -70,11 +70,108 @@ const fetchTour = async () => {
     }
 };
 
+const fetchProgram = async (tour_ref_num) => {
+    try {
+        const response = await fetch("scripts/fetch-program-details.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `language=${encodeURIComponent(pageLang)}` +
+                  `&tour_details_ref_num=${encodeURIComponent(tour_ref_num)}`
+        });
+        const data = await response.json();
+
+        const container = document.getElementById('highlight-parent');
+        container.innerHTML = ''; // Clear existing static content if any
+
+        data.forEach(item => {
+            const card = document.createElement("div");
+            card.className = "highlight-card";
+            card.innerHTML = `
+            <img src="${imgDir}${item.program_img}" alt="${item.title}" class="img-fluid mb-2">
+            <p class="highlight-title">${item.title}</p>
+            <p class="highlight-desc">${item.description}</p>
+            `;
+
+            container.appendChild(card);
+        });
+        
+    } catch (error) {
+        console.error("Error fetching program details:", error);
+    }
+}
+
+const fetchItinerary = async(tour_ref_num) => {
+    try {
+        const response = await fetch("scripts/fetch-itineraries.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `language=${encodeURIComponent(pageLang)}` +
+                  `&tour_details_ref_num=${encodeURIComponent(tour_ref_num)}`
+        });
+        const dayData = await response.json();
+
+        const dayMarkers = document.querySelectorAll('.day-marker');
+
+        dayMarkers.forEach((marker, index) => {
+            const data = dayData[index];
+            if (!data) return;
+
+            // Update the day number
+            const spans = marker.querySelectorAll('.day-circle span');
+            if (spans.length >= 2) {     // html looks like this <div class="day-circle"><span>Day</span><span>1</span></div>
+                spans[1].textContent = data.day_no;
+            }
+
+            // Update the description paragraph
+            const p = marker.querySelector('p');
+            if (p) {
+                p.textContent = data.description;
+            }
+        });
+    } catch (error) {
+        console.error("Error fetching itineraries:", error);
+    }
+}
+
+const fetchTakeaway = async(tour_ref_num) => {
+    try {
+        const response = await fetch("scripts/fetch-takeaways.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `language=${encodeURIComponent(pageLang)}` +
+                  `&tour_details_ref_num=${encodeURIComponent(tour_ref_num)}`
+        });
+        const data = await response.json();
+
+        const list = document.getElementById("tour-takeaway");
+        list.innerHTML = ""; //Clear if needed
+
+        data.forEach(text => {
+            const li = document.createElement("li");
+            const img = document.createElement("img");
+            img.src = imgDir + "check.png";
+            img.alt = "check";
+
+            li.appendChild(img);
+            li.append(" " + text.takeaway); // Append text after image
+            list.appendChild(li);
+        });
+    } catch (error) {
+        console.error("Error fetching takeaways:", error);
+    }
+}
+
 
 $(document).ready(async function () {
-    await fetchTour();
-    fetchDestinations();
-    // fetchProgram();
-    // fetchItinerary();
-    // fetchTakeaway();
+    const tour_ref_num = await fetchTour();
+    fetchRemDestinations();
+    fetchProgram(tour_ref_num);
+    fetchItinerary(tour_ref_num);
+    fetchTakeaway(tour_ref_num);
 });
