@@ -102,11 +102,46 @@ const fetchProgram = async (tour_ref_num) => {
     }
 }
 
+const fetchItinerary = async(tour_ref_num) => {
+    try {
+        const response = await fetch("scripts/fetch-itineraries.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `language=${encodeURIComponent(pageLang)}` +
+                  `&tour_details_ref_num=${encodeURIComponent(tour_ref_num)}`
+        });
+        const dayData = await response.json();
+
+        const dayMarkers = document.querySelectorAll('.day-marker');
+
+        dayMarkers.forEach((marker, index) => {
+            const data = dayData[index];
+            if (!data) return;
+
+            // Update the day number
+            const spans = marker.querySelectorAll('.day-circle span');
+            if (spans.length >= 2) {     // html looks like this <div class="day-circle"><span>Day</span><span>1</span></div>
+                spans[1].textContent = data.day_no;
+            }
+
+            // Update the description paragraph
+            const p = marker.querySelector('p');
+            if (p) {
+                p.textContent = data.description;
+            }
+        });
+    } catch (error) {
+        console.error("Error fetching itineraries:", error);
+    }
+}
+
 
 $(document).ready(async function () {
     const tour_ref_num = await fetchTour();
     fetchRemDestinations();
     fetchProgram(tour_ref_num);
-    // fetchItinerary();
-    // fetchTakeaway();
+    fetchItinerary(tour_ref_num);
+    // fetchTakeaway(tour_ref_num);
 });
