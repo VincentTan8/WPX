@@ -4,13 +4,14 @@
         z-index: 1;
         display: flex;
         flex-direction: column;
+        padding: 0 20px;
     }
 
     .glow-bg {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 900px;
+        max-width: 900px;
         height: 500px;
         background: #66CDE7;
         transform: translate(-50%, -50%);
@@ -25,7 +26,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 900px;
+        max-width: 900px;
         height: 500px;
         border-radius: 25px;
         box-shadow: 0px 4px 25.7px 0px rgba(8, 77, 133, 0.25);
@@ -34,6 +35,7 @@
         padding-bottom: 3rem;
         background: white;
         overflow: hidden;
+        z-index: 2;
     }
 
     .testimonial-bar {
@@ -60,6 +62,7 @@
         margin-top: 1rem;
         font-weight: 600;
         color: #333;
+        text-align: center;
     }
 
     .testimonial-author {
@@ -67,25 +70,96 @@
         margin-top: 1rem;
         font-weight: 400;
         color: #555;
+        text-align: center;
     }
 
     .quotes {
         position: absolute;
         top: -5px;
-        width: 903px;
-        height: 556px;
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        aspect-ratio: 903 / 556;
         background-image: url('<?php echo $imgDir ?>testimonial-quotes.png');
         background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        pointer-events: none;
+        z-index: 3;
     }
 
     .stars {
         color: #f5c518;
         font-size: 1.5rem;
         margin-top: 1rem;
+        text-align: center;
     }
 
     .stars .empty {
         color: #ccc;
+    }
+
+    .parent-test {
+        padding: 1.5rem;
+    }
+
+    @media (max-width: 767px) {
+        .testimonial-box {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            padding: 1.5rem 1rem;
+            border-radius: 20px;
+            box-shadow: 0px 2px 12px rgba(8, 77, 133, 0.2);
+        }
+
+        .parent-test {
+            padding: 0rem;
+        }
+
+        .testimonial-img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 0.8rem;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .testimonial-author {
+            font-size: 0.85rem;
+            margin-top: 0.75rem;
+            text-align: center;
+        }
+
+        .stars {
+            font-size: 1.1rem;
+            margin-top: 0.75rem;
+            text-align: center;
+        }
+
+        .quotes {
+            display: none;
+        }
+
+        .glow-bg {
+            max-width: 100%;
+            height: 200px;
+            filter: blur(100px);
+        }
+
+        .parent-highlight-section {
+            padding: 0 10px;
+        }
+
+        .parent-highlight-section h3 {
+            font-size: 26px !important;
+            text-align: center;
+        }
     }
 </style>
 
@@ -100,7 +174,7 @@
     <div class="glow-bg"></div>
 
     <!-- Main Box -->
-    <div class="p-4 rounded-4 position-relative d-flex justify-content-center">
+    <div class="parent-test rounded-4 position-relative d-flex justify-content-center">
         <div class="testimonial-box">
             <div style="">
                 <img src="<?php echo $imgDir ?>parent.png" alt="Profile" class="testimonial-img" />

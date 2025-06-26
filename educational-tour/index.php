@@ -27,55 +27,156 @@ include "../connections/dbname.php";
 
 $imgDir = "../resources/img/educational-tour/";
 ?>
+<style>
+    .hero-section {
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        background-image: url('../resources/img/educational-tour/et-bg.png');
+        background-size: cover;
+        background-position: center top;
+    }
+
+    .hero-content {
+        text-align: center;
+        z-index: 2;
+        position: relative;
+        padding-top: 200px;
+        width: 1036px;
+        margin: 0 auto;
+    }
+
+    .hero-content h1 {
+        font-size: 50px;
+        font-weight: 700;
+        color: black;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .hero-content p {
+        font-size: 20px;
+        font-weight: 400;
+        color: black;
+        font-family: 'Poppins', sans-serif;
+        margin-top: 32px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 50px;
+        flex-wrap: wrap;
+        z-index: 2;
+        position: relative;
+    }
+
+    .hero-button {
+        border-radius: 25px;
+        width: 350px;
+        height: 80px;
+        padding: 25px 19px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        cursor: pointer;
+    }
+
+    .hero-button.green {
+        background: #09CA91;
+        color: white;
+    }
+
+    .hero-button.white {
+        background: #fff;
+        color: black;
+        border: 1px solid #ccc;
+    }
+
+    @media (max-width: 767px) {
+        .hero-content {
+            width: 90%;
+            padding-top: 150px;
+        }
+
+        .hero-content h1 {
+            font-size: 28px;
+            line-height: 1.4;
+        }
+
+        .hero-content p {
+            font-size: 15px;
+            margin-top: 20px;
+        }
+
+        .hero-button {
+            width: 90%;
+            height: auto;
+            padding: 16px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .hero-buttons {
+            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+    }
+</style>
 
 <body oncontextmenu="return false;" data-spy="scroll" data-target=".navbar" data-offset="90" class="position-relative">
 
     <!-- Static Hero Section with separated gradient -->
-    <div
-        style="position: relative; top:-10%;height: 95vh; background-image: url('<?php echo $imgDir ?>et-bg.png'); background-size: cover;background-position: center top -60px; ">
+    <!-- Hero Background -->
+    <div class="hero-section"></div>
 
-        <!-- Hero Text Content -->
-        <div
-            style="text-align: center; z-index: 2; position: relative; padding-top:200px; width:1036px; justify-self:center; ">
-            <h1 style="font-size: 50px; font-weight:700; color:black; font-family:'Poppins', sans-serif;"><span
-                    style="color:#F2AE14;">Explore the World.</span>Inspire Growth. Let your child learn through life,
-                not just textbooks.
-            </h1>
-            <p
-                style="font-size: 20px; font-weight:400; color:black; font-family:'Poppins', sans-serif; margin-top:32px;">
-                WeTalk Study Tours open the door to immersive, bilingual adventures in safe, exciting destinations like
-                Singapore, Japan, China, Taiwan, and Australia.</p>
+    <!-- Hero Content -->
+    <div class="hero-content">
+        <h1>
+            <span style="color:#F2AE14;">Explore the World.</span> Inspire Growth. Let your child learn through life,
+            not just textbooks.
+        </h1>
+        <p>
+            WeTalk Study Tours open the door to immersive, bilingual adventures in safe, exciting destinations like
+            Singapore, Japan, China, Taiwan, and Australia.
+        </p>
+    </div>
+
+    <!-- Hero Buttons -->
+    <div class="hero-buttons">
+        <div class="hero-button green">
+            <span style="margin-right: 15px;">Explore Our Destination</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" fill="none">
+                <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
         </div>
-        <div style="display: flex; justify-content: center; gap: 30px; margin-top: 50px; flex-wrap: wrap;">
-            <div
-                style="border-radius: 25px; background: #09CA91; width: 350px; height: 80px; padding: 25px 19px; display: flex; justify-content: center; align-items: center; color: white; font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 400; cursor: pointer;">
-                <span style="margin-right: 15px;">Explore Our Destination</span><svg xmlns="http://www.w3.org/2000/svg"
-                    width="22" height="16" viewBox="0 0 22 16" fill="none">
-                    <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </div>
-            <div
-                style="border-radius: 25px; background: #fff; width: 350px; height: 80px; padding: 25px 19px; display: flex; justify-content: center; align-items: center; color: black; font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 400; cursor: pointer; border: 1px solid #ccc;">
-                <span style="margin-right: 15px;">Watch Our Journey</span> <svg xmlns="http://www.w3.org/2000/svg"
-                    width="22" height="16" viewBox="0 0 22 16" fill="none">
-                    <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="black" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </div>
+        <div class="hero-button white">
+            <span style="margin-right: 15px;">Watch Our Journey</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" fill="none">
+                <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="black" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
         </div>
     </div>
+
+
 
     <!-- Begin white container for main content -->
-    <div
-        style="background-color: white; margin: -220px 130px 0 130px; position: absolute; z-index: 10; border-radius: 15px; width:87%;">
-        <div style="position:relative; margin-top: 300px;">
-            <?php include "course_introduction.php"; ?>
-            <?php include "../includes/address.php"; ?>
-            <?php include "../includes/footer.php"; ?>
-        </div>
+    <div style="position:relative; margin-top: 150px; display:flex; justify-content:center;">
+        <?php include "course_introduction.php"; ?>
+
     </div>
+    <?php include "../includes/address.php"; ?>
+    <?php include "../includes/footer.php"; ?>
     <!-- End white container -->
+
 
     <div id="page-data" data-page="study-abroad" data-lang="<?php echo $lang ?>"></div>
     <script>console.log('<?php echo $lang . " is the lang"; ?>')</script>

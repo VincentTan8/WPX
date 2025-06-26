@@ -81,16 +81,19 @@
         left: 5%;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 768px) {
         .next-steps-section {
             flex-direction: column;
-            padding: 40px 30px;
+            padding: 40px 20px;
             text-align: center;
+            gap: 30px;
         }
 
         .steps-left,
         .steps-right {
             max-width: 100%;
+            width: 100%;
+            flex: unset;
         }
 
         .steps-left h2,
@@ -99,7 +102,22 @@
         }
 
         .steps-buttons {
+            flex-direction: column;
+            gap: 15px;
             justify-content: center;
+            align-items: center;
+        }
+
+        .steps-buttons .button {
+            width: 100%;
+            max-width: 280px;
+            justify-content: center;
+        }
+
+        .steps-right img {
+            max-width: 90%;
+            margin: 0 auto;
+            display: block;
         }
     }
 </style>
