@@ -131,31 +131,33 @@
 
         .curved-line-wrapper img.curved-line {
             display: none;
-
         }
 
         .curve-markers {
-            flex-direction: column;
-            align-items: center;
-            gap: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px 20px;
+            justify-items: center;
+            text-align: center;
         }
 
         .curve-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            text-align: center;
             position: relative;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+        }
+
+        .curve-item:nth-child(5) {
+            grid-column: 1 / 3;
+
         }
 
         .curve-item img {
             order: 1;
             margin-bottom: 12px;
+            width: 70px;
+            height: 70px;
         }
 
         .desc-top,
@@ -165,9 +167,19 @@
             transform: none !important;
             margin: 0;
             font-size: 16px;
-            text-align: center;
             width: 200px;
         }
+
+        .curve-item .desc-top,
+        .curve-item .desc-bottom {
+            min-height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
     }
 </style>
 

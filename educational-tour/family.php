@@ -13,7 +13,7 @@
     }
 
     .steps-family-left {
-        max-width: 565px;
+        max-width: 620px;
         flex: 1;
     }
 
@@ -56,7 +56,7 @@
         position: absolute;
         height: 662px;
         width: 670px;
-        left: 47%;
+        left: 50%;
         top: -10.2%;
     }
 

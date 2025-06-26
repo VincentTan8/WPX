@@ -101,6 +101,13 @@ $imgDir = "../resources/img/educational-tour/";
         border: 1px solid #ccc;
     }
 
+    .course-tour-wrapper {
+        position: relative;
+        margin-top: 150px;
+        display: flex;
+        justify-content: center;
+    }
+
     @media (max-width: 767px) {
         .hero-content {
             width: 90%;
@@ -131,6 +138,11 @@ $imgDir = "../resources/img/educational-tour/";
             align-items: center;
             margin-top: 30px;
         }
+
+        .course-tour-wrapper {
+            margin-top: 0;
+        }
+
     }
 </style>
 
@@ -176,10 +188,12 @@ $imgDir = "../resources/img/educational-tour/";
 
 
     <!-- Begin white container for main content -->
-    <div style="position:relative; margin-top: 150px; display:flex; justify-content:center;">
+    <div class="course-tour-wrapper">
         <?php include "course_introduction.php"; ?>
-
     </div>
+
+
+
     <?php include "../includes/address.php"; ?>
     <?php include "../includes/footer.php"; ?>
     <!-- End white container -->

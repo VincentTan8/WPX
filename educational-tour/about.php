@@ -144,10 +144,25 @@
         fill: #fff;
     }
 
+    .carousel-wrapper.dragging {
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+    }
+
+    .carousel-wrapper {
+        cursor: grab;
+        cursor: -webkit-grab;
+    }
+
     @media (max-width: 768px) {
         .carousel-wrapper {
             overflow-x: auto;
             padding: 0 10px;
+        }
+
+        .carousel-section {
+            margin: 50px auto;
+            padding: 0 20px;
         }
 
         .carousel-track {
@@ -272,3 +287,36 @@
         </div>
     </div>
 </div>
+
+<script>
+    const carouselWrapper = document.querySelector('.carousel-wrapper');
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    carouselWrapper.addEventListener('mousedown', (e) => {
+        isDown = true;
+        carouselWrapper.classList.add('dragging');
+        startX = e.pageX - carouselWrapper.offsetLeft;
+        scrollLeft = carouselWrapper.scrollLeft;
+    });
+
+    carouselWrapper.addEventListener('mouseleave', () => {
+        isDown = false;
+        carouselWrapper.classList.remove('dragging');
+    });
+
+    carouselWrapper.addEventListener('mouseup', () => {
+        isDown = false;
+        carouselWrapper.classList.remove('dragging');
+    });
+
+    carouselWrapper.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carouselWrapper.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        carouselWrapper.scrollLeft = scrollLeft - walk;
+    });
+</script>
