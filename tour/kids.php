@@ -62,21 +62,11 @@
 <div class="two-side-container">
     <div class="left-side">
         <h2 class="left-header">What Kids Will Take Away</h2>
-        <ul class="checklist">
-            <li>
-                <img src="<?php echo $imgDir ?>check.png" alt="check"> Greater confidence in speaking Mandarin
-            </li>
-            <li>
-                <img src="<?php echo $imgDir ?>check.png" alt="check"> Cultural curiosity through food, art, and
-                tradition
-            </li>
-            <li>
-                <img src="<?php echo $imgDir ?>check.png" alt="check"> Memories of creativity, nature, and kindness
-            </li>
-            <li>
-                <img src="<?php echo $imgDir ?>check.png" alt="check"> Real-life application of language in fun
-                scenarios
-            </li>
+        <ul id="tour-takeaway" class="checklist">
+            <!-- Sample takeaway -->
+            <!-- <li>
+                <img src="<?php //echo $imgDir ?>check.png" alt="check"> Takeaway 1
+            </li> -->
         </ul>
     </div>
     <div class="right-side">

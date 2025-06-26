@@ -137,11 +137,41 @@ const fetchItinerary = async(tour_ref_num) => {
     }
 }
 
+const fetchTakeaway = async(tour_ref_num) => {
+    try {
+        const response = await fetch("scripts/fetch-takeaways.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `language=${encodeURIComponent(pageLang)}` +
+                  `&tour_details_ref_num=${encodeURIComponent(tour_ref_num)}`
+        });
+        const data = await response.json();
+
+        const list = document.getElementById("tour-takeaway");
+        list.innerHTML = ""; //Clear if needed
+
+        data.forEach(text => {
+            const li = document.createElement("li");
+            const img = document.createElement("img");
+            img.src = imgDir + "check.png";
+            img.alt = "check";
+
+            li.appendChild(img);
+            li.append(" " + text.takeaway); // Append text after image
+            list.appendChild(li);
+        });
+    } catch (error) {
+        console.error("Error fetching takeaways:", error);
+    }
+}
+
 
 $(document).ready(async function () {
     const tour_ref_num = await fetchTour();
     fetchRemDestinations();
     fetchProgram(tour_ref_num);
     fetchItinerary(tour_ref_num);
-    // fetchTakeaway(tour_ref_num);
+    fetchTakeaway(tour_ref_num);
 });
