@@ -68,15 +68,14 @@
 </style>
 
 <div class="image-text-section">
-    <h2 style="font-family: 'Poppins', sans-serif;">Upcoming Tours</h2>
+    <h2 id="upcoming-title" style="font-family: 'Poppins', sans-serif;">Upcoming Tours</h2>
 
     <div class="image-columns">
-
         <div class="left-column">
             <a href="wetalk.com/tour?dest=SG" target="_blank" style="display: block; height: 100%;">
                 <div class="image-box"
                     style="height: 100%; background-image: url('<?php echo $imgDir ?>singapore.png');">
-                    <div class="image-caption">Singapore - Aug 2025</div>
+                    <div id="upcoming-1" class="image-caption">Singapore - Aug 2025</div>
                 </div>
             </a>
         </div>
@@ -86,13 +85,13 @@
         <div class="right-column">
             <a href="wetalk.com/tour?dest=JP" target="_blank" style="display: block; height: 100%;">
                 <div class="image-box" style="height: 250px; background-image: url('<?php echo $imgDir ?>japan.png');">
-                    <div class="image-caption">Japan - Sept 2025</div>
+                    <div id="upcoming-2" class="image-caption">Japan - Sept 2025</div>
                 </div>
             </a>
             <a href="wetalk.com/tour?dest=TW" target="_blank" style="display: block; height: 100%;">
                 <div class="image-box"
                     style="height: 250px; background-image: url('<?php echo $imgDir ?>taiwan-card.png');">
-                    <div class="image-caption">Taiwan - December 2025</div>
+                    <div id="upcoming-3" class="image-caption">Taiwan - December 2025</div>
                 </div>
             </a>
         </div>

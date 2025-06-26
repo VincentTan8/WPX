@@ -184,38 +184,38 @@
 </style>
 
 <div class="curved-line-section">
-    <h2 class="curved-line-header">Who is it For?</h2>
+    <h2 id="who-title" class="curved-line-header">Who is it For?</h2>
 
     <div class="curved-line-wrapper">
         <img src="<?php echo $imgDir ?>line.png" alt="Curved Line" class="curved-line">
 
         <div class="curve-markers">
             <div class="curve-item" style="top:-12%;">
-                <div class="desc-top">Kids aged 5–16</div>
+                <div id="who-1" class="desc-top">Kids aged 5–16</div>
                 <img src="<?php echo $imgDir ?>who-1.png" alt="Step 1">
             </div>
 
             <div class="curve-item" style="top:26%; right:4%;">
                 <img src="<?php echo $imgDir ?>who-2.png" alt="Step 2">
-                <div class="desc-bottom">Parents who want
+                <div id="who-2" class="desc-bottom">Parents who want
                     educational travel</div>
             </div>
 
             <div class="curve-item" style="top:31%; right:3%;">
-                <div class="desc-top">Schools seeking curated
+                <div id="who-3" class="desc-top">Schools seeking curated
                     study tours</div>
                 <img src="<?php echo $imgDir ?>who-3.png" alt="Step 3">
             </div>
 
             <div class="curve-item" style="bottom:25%; left:2%;">
                 <img src="<?php echo $imgDir ?>who-4.png" alt="Step 4" style="transform:scale(1.30);">
-                <div class=" desc-bottom">Bilingual or
+                <div id="who-4" class=" desc-bottom">Bilingual or
                     heritage families
                 </div>
             </div>
 
             <div class="curve-item" style="bottom:27%;">
-                <div class="desc-top">First-time
+                <div id="who-5" class="desc-top">First-time
                     international travelers</div>
                 <img src="<?php echo $imgDir ?>who-5.png" alt="Step 5">
             </div>
