@@ -28,6 +28,10 @@ include "../connections/dbname.php";
 $imgDir = "../resources/img/educational-tour/";
 ?>
 <style>
+    span {
+        display: inline;
+    }
+
     .hero-section {
         position: absolute;
         top: 0;
@@ -139,9 +143,10 @@ $imgDir = "../resources/img/educational-tour/";
     <!-- Hero Content -->
     <div class="hero-content">
         <h1>
-            <span style="color:#F2AE14;">Explore the World.</span> &nbsp;Inspire Growth. Let your child learn through
-            life,
-            not just textbooks.
+            <span id="hero-header">
+                <span id="hero-header-yellow" style="color:#F2AE14;">Explore the World.</span><span> Inspire Growth. Let
+                    your child learn through life, not just textbooks.</span>
+            </span>
         </h1>
         <p>
             WeTalk Study Tours open the door to immersive, bilingual adventures in safe, exciting destinations like
@@ -179,7 +184,7 @@ $imgDir = "../resources/img/educational-tour/";
     <!-- End white container -->
 
 
-    <div id="page-data" data-page="study-abroad" data-lang="<?php echo $lang ?>"></div>
+    <div id="page-data" data-page="educ-tour" data-lang="<?php echo $lang ?>"></div>
     <script>console.log('<?php echo $lang . " is the lang"; ?>')</script>
 
     <!-- JavaScript -->
