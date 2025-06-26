@@ -70,11 +70,43 @@ const fetchTour = async () => {
     }
 };
 
+const fetchProgram = async (tour_ref_num) => {
+    try {
+        const response = await fetch("scripts/fetch-program-details.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `language=${encodeURIComponent(pageLang)}` +
+                  `&tour_details_ref_num=${encodeURIComponent(tour_ref_num)}`
+        });
+        const data = await response.json();
+
+        const container = document.getElementById('highlight-parent');
+        container.innerHTML = ''; // Clear existing static content if any
+
+        data.forEach(item => {
+            const card = document.createElement("div");
+            card.className = "highlight-card";
+            card.innerHTML = `
+            <img src="${imgDir}${item.program_img}" alt="${item.title}" class="img-fluid mb-2">
+            <p class="highlight-title">${item.title}</p>
+            <p class="highlight-desc">${item.description}</p>
+            `;
+
+            container.appendChild(card);
+        });
+        
+    } catch (error) {
+        console.error("Error fetching program details:", error);
+    }
+}
+
 
 $(document).ready(async function () {
-    await fetchTour();
+    const tour_ref_num = await fetchTour();
     fetchRemDestinations();
-    // fetchProgram();
+    fetchProgram(tour_ref_num);
     // fetchItinerary();
     // fetchTakeaway();
 });

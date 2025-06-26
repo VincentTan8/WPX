@@ -86,43 +86,13 @@
         </div>
 
         <!-- Main Box -->
-        <div class="highlight-box">
-            <div class=" highlight-card ">
-                <img src="<?php echo $imgDir ?>landmark.png" alt="Cultural Landmarks" class="img-fluid mb-2">
+        <div id="highlight-parent" class="highlight-box">
+            <!-- Sample card -->
+            <!-- <div class=" highlight-card ">
+                <img src="<?php //echo $imgDir ?>landmark.png" alt="Cultural Landmarks" class="img-fluid mb-2">
                 <p class="highlight-title">Cultural Landmarks</p>
                 <p class="highlight-desc">Temples, old streets, tea houses & night markets</p>
-            </div>
-            <div class="highlight-card ">
-                <img src="<?php echo $imgDir ?>training.png" alt="Mandarin Confidence Training" class="img-fluid mb-2">
-                <p class="highlight-title">Mandarin Confidence Training</p>
-                <p class="highlight-desc">Speak with vendors, interview locals,
-                    real-world language tasks</p>
-            </div>
-            <div class="highlight-card ">
-                <img src="<?php echo $imgDir ?>workshop.png" alt="DIY Creative Workshops" class="img-fluid mb-2">
-                <p class="highlight-title">DIY Creative Workshops</p>
-                <p class="highlight-desc">Make sky lanterns, glove puppets, aboriginal crafts</p>
-            </div>
-            <div class="highlight-card ">
-                <img src="<?php echo $imgDir ?>games.png" alt="Mandarin Drama Games" class="img-fluid mb-2">
-                <p class="highlight-title">Mandarin Drama Games</p>
-                <p class="highlight-desc">Use language to express, perform & connect</p>
-            </div>
-            <div class="highlight-card ">
-                <img src="<?php echo $imgDir ?>food.png" alt="Food Tour" class="img-fluid mb-2">
-                <p class="highlight-title">Food Tour</p>
-                <p class="highlight-desc">Bubble tea, pineapple cakes, dumplings & shaved ice</p>
-            </div>
-            <div class="highlight-card ">
-                <img src="<?php echo $imgDir ?>nature.png" alt="Nature Trails & Eco Learning" class="img-fluid mb-2">
-                <p class="highlight-title">Nature Trails & Eco Learning</p>
-                <p class="highlight-desc">Explore mountains, waterfalls & wildlife</p>
-            </div>
-            <div class="highlight-card ">
-                <img src="<?php echo $imgDir ?>family.png" alt="Family Letter Project" class="img-fluid mb-2">
-                <p class="highlight-title">Family Letter Project</p>
-                <p class="highlight-desc">Write a postcard home in Chinese</p>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
