@@ -139,7 +139,8 @@ $imgDir = "../resources/img/educational-tour/";
     <!-- Hero Content -->
     <div class="hero-content">
         <h1>
-            <span style="color:#F2AE14;">Explore the World.</span> Inspire Growth. Let your child learn through life,
+            <span style="color:#F2AE14;">Explore the World.</span> &nbsp;Inspire Growth. Let your child learn through
+            life,
             not just textbooks.
         </h1>
         <p>

@@ -12,12 +12,12 @@
         box-shadow: 0px 4px 19.3px 0px rgba(24, 24, 27, 0.25);
     }
 
-    .steps-left {
-        max-width: 550px;
+    .steps-family-left {
+        max-width: 565px;
         flex: 1;
     }
 
-    .steps-left h2 {
+    .steps-family-left h2 {
         font-size: 36px;
         font-weight: 700;
         font-family: 'Poppins', sans-serif;
@@ -68,12 +68,12 @@
             text-align: center;
         }
 
-        .steps-left {
+        .steps-family-left {
             max-width: 100%;
             width: 100%;
         }
 
-        .steps-left h2 {
+        .steps-family-left h2 {
             text-align: center;
         }
 
@@ -111,12 +111,10 @@
             margin: 0 auto;
         }
     }
-
-    }
 </style>
 
 <div class="next-family-section">
-    <div class="steps-left">
+    <div class="steps-family-left">
         <h2>Why Families Choose WeTalk</h2>
         <ul class="steps-list">
             <li><img src="<?php echo $imgDir ?>check-yellow.png" alt="✓"> <span>Daily bilingual guidance with safe
