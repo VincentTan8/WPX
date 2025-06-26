@@ -160,6 +160,11 @@
             padding: 0 10px;
         }
 
+        .carousel-section {
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
         .carousel-track {
             gap: 16px;
             width: max-content;
