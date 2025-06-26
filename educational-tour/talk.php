@@ -136,13 +136,17 @@
                         stroke-linejoin="round" />
                 </svg>
             </div>
-            <div class="button button-outline">
+
+            <a class="button button-outline"
+                href="https://wa.me/6597582288?text=Hi%20WeTalk%2C%20I%27d%20like%20to%20book%20a%20call%20with%20your%20team."
+                target="_blank">
                 Book a Call
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 22 16" fill="none">
                     <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="black" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-            </div>
+            </a>
+
         </div>
     </div>
     <div class="steps-right">

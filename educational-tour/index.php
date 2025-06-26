@@ -28,6 +28,10 @@ include "../connections/dbname.php";
 $imgDir = "../resources/img/educational-tour/";
 ?>
 <style>
+    html {
+        scroll-behavior: smooth;
+    }
+
     span {
         display: inline;
     }
@@ -169,13 +173,15 @@ $imgDir = "../resources/img/educational-tour/";
 
     <!-- Hero Buttons -->
     <div class="hero-buttons">
-        <div class="hero-button green">
-            <span id="hero-button-1" style="margin-right: 15px;">Explore Our Destination</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" fill="none">
-                <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
-        </div>
+        <a href="#carousel-anchor">
+            <div class="hero-button green">
+                <span id="hero-button-1" style="margin-right: 15px;">Explore Our Destination</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" fill="none">
+                    <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+        </a>
         <div class="hero-button white">
             <span id="hero-button-2" style="margin-right: 15px;">Watch Our Journey</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" fill="none">
