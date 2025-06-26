@@ -5,13 +5,13 @@
         display: flex;
         flex-direction: column;
         padding: 0 20px;
+        justify-content: center;
+        align-items: center;
     }
 
     .glow-bg {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        max-width: 900px;
+        width: 900px;
         height: 500px;
         background: #66CDE7;
         filter: blur(218.25px);
