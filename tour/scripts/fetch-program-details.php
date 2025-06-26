@@ -16,7 +16,7 @@ $description = "description" . $language;
 
 $tablename = $database . ".`wt_eductour_program_details`";
 $sql = "SELECT `program_img`, `$title` AS `title`, `$description` AS `description` FROM $tablename
-        WHERE `ref_num` = ?";
+        WHERE `tour_details_ref_num` = ?";
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $tour_details_ref_num);
