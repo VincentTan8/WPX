@@ -144,11 +144,12 @@ $imgDir = "../resources/img/educational-tour/";
     <div class="hero-content">
         <h1>
             <span id="hero-header">
-                <span id="hero-header-yellow" style="color:#F2AE14;">Explore the World.</span><span> Inspire Growth. Let
+                <span id="hero-header-yellow" style="color:#F2AE14;">Explore the World.</span><span
+                    id="hero-header-main"> Inspire Growth. Let
                     your child learn through life, not just textbooks.</span>
             </span>
         </h1>
-        <p>
+        <p id="hero-subtitle">
             WeTalk Study Tours open the door to immersive, bilingual adventures in safe, exciting destinations like
             Singapore, Japan, China, Taiwan, and Australia.
         </p>
@@ -157,14 +158,14 @@ $imgDir = "../resources/img/educational-tour/";
     <!-- Hero Buttons -->
     <div class="hero-buttons">
         <div class="hero-button green">
-            <span style="margin-right: 15px;">Explore Our Destination</span>
+            <span id="hero-button-1" style="margin-right: 15px;">Explore Our Destination</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" fill="none">
                 <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
             </svg>
         </div>
         <div class="hero-button white">
-            <span style="margin-right: 15px;">Watch Our Journey</span>
+            <span id="hero-button-2" style="margin-right: 15px;">Watch Our Journey</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" fill="none">
                 <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="black" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
