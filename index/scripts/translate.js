@@ -1,4 +1,5 @@
 import { resetQuoteAnimation } from './quote.js';
+import { animatePanda, waitForImages } from './panda.js';
 const currentScriptUrl = import.meta.url; // this is the URL of translate.js
 const currentScriptDir = currentScriptUrl.substring(0, currentScriptUrl.lastIndexOf('/'));
 
@@ -69,8 +70,11 @@ async function setLanguage(lang) {
 
         translateElements(languageSet);
         const quote = languageSet.find(set => set.element_id === 'hm-quote-text');
-        if(quote['text']){
+        if (quote['text']) {
             resetQuoteAnimation();
+            waitForImages('.swiper-container', () => {
+                animatePanda();
+            });
         } else {
             console.log("No quote for today", quote)
         }

@@ -1,6 +1,5 @@
 <style>
     .carousel-section {
-        max-width: 1300px;
         margin: 100px auto;
         padding: 0 20px;
     }
@@ -146,8 +145,20 @@
     }
 
     @media (max-width: 768px) {
+        .carousel-wrapper {
+            overflow-x: auto;
+            padding: 0 10px;
+        }
+
+        .carousel-track {
+            gap: 16px;
+            width: max-content;
+            min-width: unset;
+        }
+
         .carousel-top {
             flex-direction: column;
+            align-items: center;
             text-align: center;
         }
 
@@ -157,15 +168,67 @@
 
         .carousel-top-right {
             margin-top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .carousel-header {
+            font-size: 26px;
+        }
+
+        .carousel-desc {
+            font-size: 15px;
+            margin-top: 8px;
+        }
+
+        .carousel-wrapper {
+            padding: 0 10px;
+        }
+
+        .carousel-card {
+            width: 280px;
+            padding: 12px;
+            margin-top: 30px;
+        }
+
+        .carousel-card img {
+            height: 150px;
+        }
+
+        .carousel-card h3 {
+            font-size: 18px;
+        }
+
+        .carousel-subtitle {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .carousel-card p {
+            font-size: 14px;
+            line-height: 20px;
         }
 
         .carousel-button {
+            width: 180px;
+            height: 42px;
+            font-size: 14px;
             margin: 0 auto;
+        }
+
+        .carousel-button span {
+            font-size: 14px;
+        }
+
+        .carousel-button svg {
+            width: 16px;
+            height: 12px;
         }
     }
 </style>
 
-<div class="carousel-section">
+<div class="carousel-section" style="background-color:white;">
     <div class="carousel-top">
         <div class="carousel-top-left">
             <h2 class="carousel-header">About WeTalk Study Tour</h2>
