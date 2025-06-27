@@ -45,7 +45,7 @@ $imgDir = "../resources/img/educational-tour/";
     <!-- Hero Text Content -->
     <div style="text-align: center; z-index: 2; position: relative; padding-top:300px;  ">
         <h1 id="hero-title" style="font-size: 50px; font-weight:700; color:black; font-family:'Poppins', sans-serif;">
-            WeTalk <span style="color:#F2AE14;"></span>
+            WeTalk <span id="hero-highlight" style="color:#F2AE14;"></span>
             Study Tour</h1>
         <p id="hero-subtitle" style="font-size: 20px; font-weight:700; color:black; font-family:'Poppins', sans-serif;">
         </p>
@@ -59,7 +59,7 @@ $imgDir = "../resources/img/educational-tour/";
     <?php include "../includes/address.php"; ?>
     <?php include "../includes/footer.php"; ?>
 
-    <div id="page-data" data-page="study-abroad" data-lang="<?php echo $lang ?>"
+    <div id="page-data" data-page="tour" data-lang="<?php echo $lang ?>"
         data-dest="<?php echo htmlspecialchars($dest) ?>"></div>
     <script>console.log('<?php echo $lang . " is the lang"; ?>')</script>
 
