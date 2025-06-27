@@ -186,9 +186,8 @@ $imgDir = "../resources/img/educational-tour/";
         </a>
         <div class="hero-button white">
             <span id="hero-button-2" style="margin-right: 15px;">Watch Our Journey</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" fill="none">
-                <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="black" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
             </svg>
         </div>
     </div>

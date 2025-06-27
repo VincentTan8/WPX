@@ -2,7 +2,7 @@
     .next-steps-section {
         background-color: #09CA91;
         border-radius: 20px;
-        padding: 0px 80px;
+        padding: 0px 68px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -11,7 +11,7 @@
     }
 
     .steps-left {
-        max-width: 550px;
+        max-width: 600px;
         flex: 1;
     }
 
@@ -99,7 +99,7 @@
     }
 
     .steps-right {
-        flex: 1;
+
         text-align: center;
     }
 
