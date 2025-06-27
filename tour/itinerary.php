@@ -132,27 +132,27 @@
 
         <!-- Day Circles (content are replaced dynamically but must exist to be targeted) -->
         <div class="day-marker day-1">
-            <div class="day-circle"><span>Day</span><span>1</span></div>
+            <div class="day-circle"><span>Day 1</span></div>
             <p>Day 1 itinerary</p>
         </div>
         <div class="day-marker day-2">
-            <div class="day-circle"><span>Day</span><span></span></div>
+            <div class="day-circle"><span></span></div>
             <p></p>
         </div>
         <div class="day-marker day-3">
-            <div class="day-circle"><span>Day</span><span></span></div>
+            <div class="day-circle"><span></span></div>
             <p></p>
         </div>
         <div class="day-marker day-4">
-            <div class="day-circle"><span>Day</span><span></span></div>
+            <div class="day-circle"><span></span></div>
             <p></p>
         </div>
         <div class="day-marker day-5">
-            <div class="day-circle"><span>Day</span><span></span></div>
+            <div class="day-circle"><span></span></div>
             <p></p>
         </div>
         <div class="day-marker day-6">
-            <div class="day-circle"><span>Day</span><span></span></div>
+            <div class="day-circle"><span></span></div>
             <p></p>
         </div>
     </div>
