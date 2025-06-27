@@ -245,6 +245,19 @@
             width: 16px;
             height: 12px;
         }
+
+        .carousel-header {
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .carousel-desc {
+            font-size: 14px;
+            text-align: justify;
+            text-align-last: left;
+            margin-top: 10px;
+        }
+
     }
 </style>
 
