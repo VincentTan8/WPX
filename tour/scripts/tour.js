@@ -19,6 +19,10 @@ const fetchRemDestinations = async () => {
         const track = document.getElementById('carousel-parent');
         track.innerHTML = ''; // Clear existing static content if any
 
+        let about = "About ";
+        if(pageLang === '_cn')  //will have to add for other languages since this is not part of the data in db :<
+            about = "关于";
+
         data.forEach(item => {
             const card = document.createElement('div');
             card.className = 'carousel-card';
@@ -28,7 +32,7 @@ const fetchRemDestinations = async () => {
                 <h4 class="carousel-subtitle">${item.card_header_text}</h4>
                 <p>${item.card_description}</p>
                 <a href="../tour?dest=${item.ref_num}" class="carousel-button">
-                    <span>About ${item.country_name}</span>
+                    <span>${about}${item.country_name}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="29" height="23" viewBox="0 0 29 23" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M17.2929 1.02385C17.6834 0.633326 18.3166 0.633326 18.7071 1.02385L28.7071 11.0239C29.0976 11.4144 29.0976 12.0475 28.7071 12.4381L18.7071 22.4381C18.3166 22.8286 17.6834 22.8286 17.2929 22.4381C16.9024 22.0475 16.9024 21.4144 17.2929 21.0238L25.5858 12.731H1C0.447715 12.731 0 12.2832 0 11.731C0 11.1787 0.447715 10.731 1 10.731H25.5858L17.2929 2.43806C16.9024 2.04754 16.9024 1.41437 17.2929 1.02385Z"
@@ -57,11 +61,18 @@ const fetchTour = async () => {
         const entry = await response.json();
         const data = entry[0];
 
+        let study_tour = " Study Tour";
+        let why = "Why ";
+        if(pageLang === '_cn'){  //will have to add for other languages since this is not part of the data in db :<
+            study_tour = "游学团";
+            why = "为什么选择";
+        }
+
         document.getElementById('hero-section').style.backgroundImage = `url('${imgDir}${data.country_img}')`;
-        document.getElementById('hero-title').innerHTML = `WeTalk <span id="hero-highlight" style="color:#F2AE14;">${data.country_name}</span> Study Tour`;
+        document.getElementById('hero-title').innerHTML = `WeTalk <span id="hero-highlight" style="color:#F2AE14;">${data.country_name}</span>${study_tour}`;
         document.getElementById('hero-subtitle').textContent = data.header_text;
         document.getElementById('reason-text').textContent = data.description;
-        document.getElementById('why-country').textContent = data.country_name;
+        document.getElementById('why-country').textContent = `${why}${data.country_name}?`;
         document.getElementById('why-img').src = imgDir + data.country_why_img;
 
         return data.ref_num;
@@ -121,10 +132,8 @@ const fetchItinerary = async(tour_ref_num) => {
             if (!data) return;
 
             // Update the day number
-            const spans = marker.querySelectorAll('.day-circle span');
-            if (spans.length >= 2) {     // html looks like this <div class="day-circle"><span>Day</span><span>1</span></div>
-                spans[1].textContent = data.day_no;
-            }
+            const span = marker.querySelector('.day-circle span');    
+            span.textContent = data.day_no;
 
             // Update the description paragraph
             const p = marker.querySelector('p');

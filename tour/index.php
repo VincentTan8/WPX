@@ -103,7 +103,7 @@ $imgDir = "../resources/img/educational-tour/";
     <!-- Hero Text Content -->
     <div class="hero-text">
         <h1 id="hero-title">
-            WeTalk <span class="highlight">country</span> Study Tour
+            WeTalk <span id="hero-highlight" class="highlight">country</span> Study Tour
         </h1>
         <p id="hero-subtitle">Description</p>
     </div>
@@ -116,7 +116,7 @@ $imgDir = "../resources/img/educational-tour/";
     <?php include "../includes/address.php"; ?>
     <?php include "../includes/footer.php"; ?>
 
-    <div id="page-data" data-page="study-abroad" data-lang="<?php echo $lang ?>"
+    <div id="page-data" data-page="tour" data-lang="<?php echo $lang ?>"
         data-dest="<?php echo htmlspecialchars($dest) ?>"></div>
     <script>console.log('<?php echo $lang . " is the lang"; ?>')</script>
 
@@ -135,19 +135,6 @@ $imgDir = "../resources/img/educational-tour/";
     <script src="../vendor/js/hover-item.js"></script>
     <script src="../vendor/js/slick.min.js"></script>
     <script src="../vendor/js/parallaxie.min.js"></script>
-
-    <!-- Revolution Slider Scripts -->
-    <script src="../vendor/js/jquery.themepunch.tools.min.js"></script>
-    <script src="../vendor/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.actions.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.migration.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.video.min.js"></script>
 
     <!-- Custom Scripts -->
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyCo_pcAdFNbTDCAvMwAD19oRTuEmb9M50c"></script>

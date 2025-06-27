@@ -104,7 +104,7 @@
 </style>
 
 <div class="accommodation-con container  position-relative">
-    <h2 class="custom-header">Accommodation & Safety</h2>
+    <h2 id="accom-title" class="custom-header">Accommodation & Safety</h2>
     <div class="row g-4">
         <div class="col-md-3 col-sm-6">
             <div class="custom-box">
@@ -112,7 +112,7 @@
                     <img src="<?php echo $imgDir ?>trust.png" alt="Feature 1">
                 </div>
                 <div class="box-bottom">
-                    <p>Trusted, kid-friendly hotel or serviced residence</p>
+                    <p id="accom-text-1">Trusted, kid-friendly hotel or serviced residence</p>
                 </div>
             </div>
         </div>
@@ -122,7 +122,7 @@
                     <img src="<?php echo $imgDir ?>supervised.png" alt="Feature 2">
                 </div>
                 <div class="box-bottom">
-                    <p>24/7 adult supervision</p>
+                    <p id="accom-text-2">24/7 adult supervision</p>
                 </div>
             </div>
         </div>
@@ -132,7 +132,7 @@
                     <img src="<?php echo $imgDir ?>instagram.png" alt="Feature 3">
                 </div>
                 <div class="box-bottom">
-                    <p>Daily check-ins and progress notes for parents</p>
+                    <p id="accom-text-3">Daily check-ins and progress notes for parents</p>
                 </div>
             </div>
         </div>
@@ -142,7 +142,7 @@
                     <img src="<?php echo $imgDir ?>health.png" alt="Feature 4">
                 </div>
                 <div class="box-bottom">
-                    <p>Travel insurance and emergency support included</p>
+                    <p id="accom-text-4">Travel insurance and emergency support included</p>
                 </div>
             </div>
         </div>

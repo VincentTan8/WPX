@@ -11,10 +11,11 @@ include "../../connections/dbname.php";
 $tour_details_ref_num = $_POST['tour_details_ref_num'];  //tour details ref_num
 $language = $_POST['language'];  //_en, _cn, _kr, _jp
 
+$day_no = "day_no" . $language;
 $description = "description" . $language;
 
 $tablename = $database . ".`wt_eductour_itineraries`";
-$sql = "SELECT `ref_num`, `day_no`, `$description` AS `description` FROM $tablename
+$sql = "SELECT `ref_num`, `$day_no` AS `day_no`, `$description` AS `description` FROM $tablename
         WHERE `tour_details_ref_num` = ?";
 
 $stmt = $conn->prepare($sql);
