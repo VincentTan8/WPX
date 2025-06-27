@@ -124,13 +124,14 @@
 
 <div class="next-steps-section">
     <div class="steps-left">
-        <h2>Ready to Talk?</h2>
-        <p>Whether you're a curious parent or a school looking to partner, we’re here to help.Let’s discuss the right
+        <h2 id="talk-title">Ready to Talk?</h2>
+        <p id="talk-subtitle">Whether you're a curious parent or a school looking to partner, we’re here to help.Let’s
+            discuss the right
             program for your child’s goals.</p>
 
         <div class="steps-buttons">
             <div class="button button-register">
-                Contact Us
+                <span id="talk-contact">Contact Us</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" viewBox="0 0 22 16" fill="none">
                     <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -140,7 +141,7 @@
             <a class="button button-outline"
                 href="https://wa.me/6597582288?text=Hi%20WeTalk%2C%20I%27d%20like%20to%20book%20a%20call%20with%20your%20team."
                 target="_blank">
-                Book a Call
+                <span id="talk-book">Book a Call</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 22 16" fill="none">
                     <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="black" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
