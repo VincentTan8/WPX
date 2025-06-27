@@ -45,10 +45,9 @@ $imgDir = "../resources/img/educational-tour/";
     <!-- Hero Text Content -->
     <div style="text-align: center; z-index: 2; position: relative; padding-top:300px;  ">
         <h1 id="hero-title" style="font-size: 50px; font-weight:700; color:black; font-family:'Poppins', sans-serif;">
-            WeTalk <span style="color:#F2AE14;">country</span>
+            WeTalk <span style="color:#F2AE14;"></span>
             Study Tour</h1>
         <p id="hero-subtitle" style="font-size: 20px; font-weight:700; color:black; font-family:'Poppins', sans-serif;">
-            Description
         </p>
     </div>
 
@@ -79,19 +78,6 @@ $imgDir = "../resources/img/educational-tour/";
     <script src="../vendor/js/hover-item.js"></script>
     <script src="../vendor/js/slick.min.js"></script>
     <script src="../vendor/js/parallaxie.min.js"></script>
-
-    <!-- Revolution Slider Scripts -->
-    <script src="../vendor/js/jquery.themepunch.tools.min.js"></script>
-    <script src="../vendor/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.actions.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.migration.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.video.min.js"></script>
 
     <!-- Custom Scripts -->
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyCo_pcAdFNbTDCAvMwAD19oRTuEmb9M50c"></script>
