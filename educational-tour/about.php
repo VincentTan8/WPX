@@ -154,6 +154,11 @@
         cursor: -webkit-grab;
     }
 
+    #carousel-anchor {
+        scroll-margin-top: 100px;
+    }
+
+
     @media (max-width: 768px) {
         .carousel-wrapper {
             overflow-x: auto;
