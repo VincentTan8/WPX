@@ -6,6 +6,11 @@
         overflow: hidden;
     }
 
+    .it-con {
+        margin-top: 2rem;
+        ;
+    }
+
     .w-path-wrapper {
         position: relative;
         width: 100%;
@@ -169,7 +174,7 @@
     }
 </style>
 
-<div class="container position-relative" style="margin-bottom:30px;">
+<div class="it-con container position-relative" style="margin-bottom:30px;">
     <h3 id="itinerary-title" class="mb-5"
         style="text-align:left; font-weight:700; font-family:'Poppins', sans-serif; font-size:40px; margin-bottom:30px;">
         Sample 6-Day Itinerary
