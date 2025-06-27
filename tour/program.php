@@ -80,7 +80,7 @@
     <div>
         <!-- Header -->
         <div class="d-flex align-items-center gap-2 mb-4" style="padding-left: 14px;">
-            <h3 style="font-family:'Poppins', sans-serif; font-weight:700; font-size:40px;">Program
+            <h3 id="program-title" style="font-family:'Poppins', sans-serif; font-weight:700; font-size:40px;">Program
                 Highlights
             </h3>
         </div>

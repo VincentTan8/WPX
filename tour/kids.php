@@ -61,7 +61,7 @@
 </style>
 <div class="two-side-container">
     <div class="left-side">
-        <h2 class="left-header">What Kids Will Take Away</h2>
+        <h2 id="kids-title" class="left-header">What Kids Will Take Away</h2>
         <ul id="tour-takeaway" class="checklist">
             <!-- Sample takeaway -->
             <!-- <li>
