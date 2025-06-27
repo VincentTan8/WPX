@@ -61,11 +61,18 @@ const fetchTour = async () => {
         const entry = await response.json();
         const data = entry[0];
 
+        let study_tour = " Study Tour";
+        let why = "Why ";
+        if(pageLang === '_cn'){  //will have to add for other languages since this is not part of the data in db :<
+            study_tour = "游学团";
+            why = "为什么选择";
+        }
+
         document.getElementById('hero-section').style.backgroundImage = `url('${imgDir}${data.country_img}')`;
-        document.getElementById('hero-title').innerHTML = `WeTalk <span id="hero-highlight" style="color:#F2AE14;">${data.country_name}</span> Study Tour`;
+        document.getElementById('hero-title').innerHTML = `WeTalk <span id="hero-highlight" style="color:#F2AE14;">${data.country_name}</span>${study_tour}`;
         document.getElementById('hero-subtitle').textContent = data.header_text;
         document.getElementById('reason-text').textContent = data.description;
-        document.getElementById('why-country').textContent = data.country_name;
+        document.getElementById('why-country').textContent = `${why}${data.country_name}?`;
         document.getElementById('why-img').src = imgDir + data.country_why_img;
 
         return data.ref_num;
