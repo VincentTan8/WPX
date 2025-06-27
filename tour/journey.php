@@ -169,6 +169,7 @@
             font-size: 14px;
             line-height: 20px;
             margin-bottom: 16px;
+            text-align: justify;
         }
 
         .carousel-button {
