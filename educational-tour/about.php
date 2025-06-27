@@ -228,6 +228,7 @@
         .carousel-card p {
             font-size: 14px;
             line-height: 20px;
+            text-align: justify;
         }
 
         .carousel-button {
@@ -245,6 +246,18 @@
             width: 16px;
             height: 12px;
         }
+
+        .carousel-header {
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .carousel-desc {
+            font-size: 14px;
+            text-align: justify;
+            margin-top: 10px;
+        }
+
     }
 </style>
 
