@@ -27,6 +27,8 @@ $main_menu = 'LINGUISTICS';
 include "../includes/menu_bar_reset.php";
 $menu_bar6 = "active";
 
+$_SESSION['active_page'] = 'tour?dest=' . $dest;
+
 include "../includes/header.php";
 include "../connections/dbname.php";
 

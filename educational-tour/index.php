@@ -17,10 +17,12 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
 
 <?php
 $category = '';
-$main_menu = 'LINGUISTICS';
+$main_menu = 'LINGUISTICS'; //to change
 
 include "../includes/menu_bar_reset.php";
 $menu_bar6 = "active";
+
+$_SESSION['active_page'] = 'educational-tour';
 
 include "../includes/header.php";
 include "../connections/dbname.php";
