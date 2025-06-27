@@ -101,6 +101,10 @@
             text-align: center;
         }
 
+        .steps-left p {
+            text-align: justify;
+        }
+
         .steps-buttons {
             flex-direction: column;
             gap: 15px;

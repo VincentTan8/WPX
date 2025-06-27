@@ -118,16 +118,19 @@ $imgDir = "../resources/img/educational-tour/";
         .hero-content {
             width: 90%;
             padding-top: 150px;
+            text-align: justify;
         }
 
         .hero-content h1 {
             font-size: 28px;
             line-height: 1.4;
+            text-align: justify;
         }
 
         .hero-content p {
             font-size: 15px;
             margin-top: 20px;
+            text-align: justify;
         }
 
         @media (max-width: 767px) {

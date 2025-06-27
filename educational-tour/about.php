@@ -228,6 +228,7 @@
         .carousel-card p {
             font-size: 14px;
             line-height: 20px;
+            text-align: justify;
         }
 
         .carousel-button {
@@ -254,7 +255,6 @@
         .carousel-desc {
             font-size: 14px;
             text-align: justify;
-            text-align-last: left;
             margin-top: 10px;
         }
 
