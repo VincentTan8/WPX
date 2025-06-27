@@ -34,6 +34,64 @@ include "../connections/dbname.php";
 
 $imgDir = "../resources/img/educational-tour/";
 ?>
+<style>
+    .course-tour-wrapper {
+        position: relative;
+        margin-top: 150px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-text {
+        text-align: center;
+        z-index: 2;
+        position: relative;
+        padding-top: 300px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 50px;
+        font-weight: 700;
+        color: black;
+        font-family: 'Poppins', sans-serif;
+        margin-bottom: 20px;
+    }
+
+    .hero-text .highlight {
+        color: #F2AE14;
+    }
+
+    .hero-text p {
+        font-size: 20px;
+        font-weight: 700;
+        color: black;
+        font-family: 'Poppins', sans-serif;
+    }
+
+
+
+    @media (max-width: 767px) {
+        .course-tour-wrapper {
+            margin-top: 0;
+        }
+
+        .hero-text {
+            padding-top: 180px;
+        }
+
+        .hero-text h1 {
+            font-size: 32px;
+            line-height: 1.3;
+        }
+
+        .hero-text p {
+            font-size: 16px;
+        }
+
+    }
+</style>
 
 <body oncontextmenu="return false;" data-spy="scroll" data-target=".navbar" data-offset="90" class="position-relative">
 
@@ -43,17 +101,15 @@ $imgDir = "../resources/img/educational-tour/";
     </div>
 
     <!-- Hero Text Content -->
-    <div style="text-align: center; z-index: 2; position: relative; padding-top:300px;  ">
-        <h1 id="hero-title" style="font-size: 50px; font-weight:700; color:black; font-family:'Poppins', sans-serif;">
-            WeTalk <span style="color:#F2AE14;">country</span>
-            Study Tour</h1>
-        <p id="hero-subtitle" style="font-size: 20px; font-weight:700; color:black; font-family:'Poppins', sans-serif;">
-            Description
-        </p>
+    <div class="hero-text">
+        <h1 id="hero-title">
+            WeTalk <span class="highlight">country</span> Study Tour
+        </h1>
+        <p id="hero-subtitle">Description</p>
     </div>
 
     <!-- Begin white container for main content -->
-    <div style="position:relative; margin-top: 150px; display: flex; justify-content: center;">
+    <div class="course-tour-wrapper">
         <?php include "course_introduction.php"; ?>
     </div>
     <!-- End white container -->

@@ -127,6 +127,60 @@
     .carousel-button:hover svg path {
         fill: #fff;
     }
+
+    @media (max-width: 768px) {
+        .carousel-container {
+            margin: 60px 20px;
+        }
+
+        .carousel-header {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .carousel-track {
+            gap: 16px;
+            padding-bottom: 8px;
+        }
+
+        .carousel-card {
+            width: 280px;
+            padding: 12px;
+            margin-top: 30px;
+        }
+
+        .carousel-card img {
+            height: 140px;
+            margin-bottom: 12px;
+        }
+
+        .carousel-card h3 {
+            font-size: 18px;
+            margin: 8px 0;
+        }
+
+        .carousel-subtitle {
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .carousel-card p {
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 16px;
+        }
+
+        .carousel-button {
+            width: 200px;
+            height: 45px;
+            font-size: 16px;
+        }
+
+        .carousel-button span {
+            font-size: 16px;
+        }
+    }
 </style>
 
 <div class="carousel-container">

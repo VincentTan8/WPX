@@ -8,6 +8,10 @@
         font-weight: 700;
     }
 
+    .accommodation-con {
+        margin-top: 230px;
+    }
+
     .custom-box {
         background: #916DFF;
         border-radius: 15px;
@@ -42,7 +46,7 @@
         align-items: flex-start;
 
         height: 100px;
-        /* Equal height to enforce alignment */
+
     }
 
     .box-bottom p {
@@ -60,10 +64,46 @@
         .custom-header {
             text-align: center;
         }
+
+        .accommodation-con {
+            margin-top: 10px;
+        }
+
+        .custom-header {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .custom-box {
+            height: auto;
+            padding: 30px 20px;
+            gap: 16px;
+            margin-bottom: 1rem;
+        }
+
+        .box-top {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .box-top img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .box-bottom {
+            height: auto;
+        }
+
+        .box-bottom p {
+            font-size: 14px;
+            line-height: 1.4;
+        }
     }
 </style>
 
-<div class="container py-5 position-relative" style="margin-top:100px;">
+<div class="accommodation-con container  position-relative">
     <h2 class="custom-header">Accommodation & Safety</h2>
     <div class="row g-4">
         <div class="col-md-3 col-sm-6">
