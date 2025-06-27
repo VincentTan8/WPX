@@ -11,7 +11,7 @@
     }
 
     .steps-left {
-        max-width: 550px;
+        max-width: 600px;
         flex: 1;
     }
 
