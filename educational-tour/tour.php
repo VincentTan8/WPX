@@ -72,7 +72,7 @@
 
     <div class="image-columns">
         <div class="left-column">
-            <a href="wetalk.com/tour?dest=SG" target="_blank" style="display: block; height: 100%;">
+            <a href="../tour?dest=SG" style="display: block; height: 100%;">
                 <div class="image-box"
                     style="height: 100%; background-image: url('<?php echo $imgDir ?>singapore.png');">
                     <div id="upcoming-1" class="image-caption">Singapore - Aug 2025</div>
@@ -83,12 +83,12 @@
 
         <!-- Right column -->
         <div class="right-column">
-            <a href="wetalk.com/tour?dest=JP" target="_blank" style="display: block; height: 100%;">
+            <a href="../tour?dest=JP" style="display: block; height: 100%;">
                 <div class="image-box" style="height: 250px; background-image: url('<?php echo $imgDir ?>japan.png');">
                     <div id="upcoming-2" class="image-caption">Japan - Sept 2025</div>
                 </div>
             </a>
-            <a href="wetalk.com/tour?dest=TW" target="_blank" style="display: block; height: 100%;">
+            <a href="../tour?dest=TW" style="display: block; height: 100%;">
                 <div class="image-box"
                     style="height: 250px; background-image: url('<?php echo $imgDir ?>taiwan-card.png');">
                     <div id="upcoming-3" class="image-caption">Taiwan - December 2025</div>
