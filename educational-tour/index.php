@@ -130,19 +130,37 @@ $imgDir = "../resources/img/educational-tour/";
             margin-top: 20px;
         }
 
-        .hero-button {
-            width: 90%;
-            height: auto;
-            padding: 16px;
-            font-size: 16px;
-            text-align: center;
-        }
+        @media (max-width: 767px) {
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                margin-top: 30px;
+            }
 
-        .hero-buttons {
-            gap: 20px;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 30px;
+            .hero-button {
+                width: 100%;
+                max-width: 300px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 12px;
+                padding: 14px 20px;
+                border-radius: 20px;
+                font-size: 16px;
+                text-align: center;
+            }
+
+            .hero-button span {
+                flex: 1;
+                text-align: center;
+            }
+
+            .hero-button svg {
+                width: 22px;
+                height: 22px;
+            }
         }
 
         .course-tour-wrapper {
