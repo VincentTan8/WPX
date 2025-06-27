@@ -35,7 +35,7 @@
         justify-content: center;
         align-items: center;
         align-content: center;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+
     }
 
     .highlight-card {
@@ -70,6 +70,53 @@
         line-height: 1rem;
         font-family: 'Poppins', sans-serif;
         color: black;
+    }
+
+    @media (max-width: 768px) {
+
+        .program-highlight-section {
+            margin-bottom: 15px;
+        }
+
+        .glow-bg {
+            width: 100%;
+            height: 300px;
+            filter: blur(150px);
+            border-radius: 150px;
+        }
+
+        .highlight-box {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .highlight-card {
+            width: 100%;
+            background-color: #f0f0f0;
+            max-width: 100%;
+            height: auto;
+            padding: 20px;
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        .img-fluid {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .highlight-title {
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .highlight-desc {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
     }
 </style>
 

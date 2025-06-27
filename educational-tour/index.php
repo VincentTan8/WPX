@@ -226,19 +226,6 @@ $imgDir = "../resources/img/educational-tour/";
     <script src="../vendor/js/slick.min.js"></script>
     <script src="../vendor/js/parallaxie.min.js"></script>
 
-    <!-- Revolution Slider Scripts -->
-    <script src="../vendor/js/jquery.themepunch.tools.min.js"></script>
-    <script src="../vendor/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.actions.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.migration.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="../vendor/js/extensions/revolution.extension.video.min.js"></script>
-
     <!-- Custom Scripts -->
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyCo_pcAdFNbTDCAvMwAD19oRTuEmb9M50c"></script>
     <script src="../resources/js/map.js"></script>

@@ -93,39 +93,6 @@
 
         .curved-line-wrapper {
             height: auto;
-            padding-top: 40px;
-        }
-
-        .curved-line-wrapper img.curved-line {
-            display: none;
-        }
-
-        .curve-markers {
-            flex-direction: column;
-            gap: 80px;
-        }
-
-        .desc-top,
-        .desc-bottom {
-            position: static;
-            transform: none;
-            margin: 10px 0 0;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .curved-line-section {
-            padding: 80px 20px;
-        }
-
-        .curved-line-header {
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 40px;
-        }
-
-        .curved-line-wrapper {
-            height: auto;
             padding-top: 0;
         }
 
@@ -134,52 +101,56 @@
         }
 
         .curve-markers {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px 20px;
-            justify-items: center;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
         }
 
         .curve-item {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
-            position: relative;
-        }
-
-        .curve-item:nth-child(5) {
-            grid-column: 1 / 3;
-
+            justify-content: flex-start;
+            gap: 16px;
+            width: 100%;
+            max-width: 320px;
+            text-align: left;
         }
 
         .curve-item img {
-            order: 1;
-            margin-bottom: 12px;
             width: 70px;
             height: 70px;
-        }
-
-        .desc-top,
-        .desc-bottom {
-            order: 2;
-            position: static !important;
-            transform: none !important;
+            flex-shrink: 0;
             margin: 0;
-            font-size: 16px;
-            width: 200px;
         }
 
         .curve-item .desc-top,
         .curve-item .desc-bottom {
-            min-height: 42px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            position: static !important;
+            transform: none !important;
+            margin: 0;
+            font-size: 16px;
+            text-align: left;
+            width: auto;
+            max-width: 220px;
+            order: 2;
         }
 
+        .curve-item img {
+
+            order: 1;
+        }
+
+        .curve-item[style] {
+            position: static !important;
+            top: auto !important;
+            right: auto !important;
+            bottom: auto !important;
+            left: auto !important;
+            transform: none !important;
+            margin: 0 auto !important;
+        }
     }
 </style>
 

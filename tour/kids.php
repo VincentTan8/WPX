@@ -58,6 +58,36 @@
         height: auto;
         border-radius: 10px;
     }
+
+    @media (max-width: 768px) {
+        .two-side-container {
+            flex-direction: column;
+            gap: 40px;
+            padding: 40px 20px;
+        }
+
+        .left-side,
+        .right-side {
+            width: 100%;
+            text-align: center;
+            align-items: center;
+        }
+
+        .left-header {
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .checklist li {
+            font-size: 1rem;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .checklist li img {
+            margin-right: 16px;
+        }
+    }
 </style>
 <div class="two-side-container">
     <div class="left-side">

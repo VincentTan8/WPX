@@ -3,7 +3,10 @@ if (!isset($_SESSION)) {
     session_start();
     ob_start();
 }
-$hide_panda = (strpos($_SERVER['PHP_SELF'], '/cms/') !== false);
+$hide_panda = (
+    strpos($_SERVER['PHP_SELF'], '/cms/') !== false ||
+    strpos($_SERVER['PHP_SELF'], '/educational-tour/') !== false
+);
 
 ?>
 

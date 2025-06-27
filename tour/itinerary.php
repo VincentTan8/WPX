@@ -120,9 +120,56 @@
     .day-6 p {
         margin: 0 10px 0 0;
     }
+
+    @media (max-width: 768px) {
+        .w-journey-section {
+            margin: 60px 20px;
+            padding-bottom: 60px;
+        }
+
+        .w-path-wrapper {
+            margin-top: 40px;
+        }
+
+        .w-path-img {
+            display: none;
+
+        }
+
+        .day-marker {
+            position: static !important;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 16px;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto 24px;
+            font-size: 16px;
+        }
+
+        .day-circle {
+            width: 70px;
+            height: 70px;
+            font-size: 14px;
+        }
+
+        .day-circle span:first-child,
+        .day-circle span:last-child {
+            font-size: 14px;
+        }
+
+        .day-marker p {
+            margin: 0;
+            text-align: left;
+            font-size: 16px;
+            width: auto;
+            max-width: 220px;
+        }
+    }
 </style>
 
-<div class="container py-5 position-relative" style="margin-bottom:30px;">
+<div class="container position-relative" style="margin-bottom:30px;">
     <h3 id="itinerary-title" class="mb-5"
         style="text-align:left; font-weight:700; font-family:'Poppins', sans-serif; font-size:40px; margin-bottom:30px;">
         Sample 6-Day Itinerary
