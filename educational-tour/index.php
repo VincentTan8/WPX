@@ -160,11 +160,12 @@ $imgDir = "../resources/img/educational-tour/";
     <div class="hero-content">
         <h1>
             <span id="hero-header">
-                <span id="hero-header-yellow" style="color:#F2AE14;">Explore the World.</span><span> Inspire Growth. Let
+                <span id="hero-header-yellow" style="color:#F2AE14;">Explore the World.</span><span
+                    id="hero-header-main"> Inspire Growth. Let
                     your child learn through life, not just textbooks.</span>
             </span>
         </h1>
-        <p>
+        <p id="hero-subtitle">
             WeTalk Study Tours open the door to immersive, bilingual adventures in safe, exciting destinations like
             Singapore, Japan, China, Taiwan, and Australia.
         </p>
