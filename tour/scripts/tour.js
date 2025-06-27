@@ -125,10 +125,8 @@ const fetchItinerary = async(tour_ref_num) => {
             if (!data) return;
 
             // Update the day number
-            const span = marker.querySelector('.day-circle span');
-            if (span.length >= 1) {     
-                span[0].textContent = data.day_no;
-            }
+            const span = marker.querySelector('.day-circle span');    
+            span.textContent = data.day_no;
 
             // Update the description paragraph
             const p = marker.querySelector('p');
