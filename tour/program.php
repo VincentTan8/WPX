@@ -115,6 +115,7 @@
         .highlight-desc {
             font-size: 0.9rem;
             line-height: 1.4;
+            text-align: justify;
         }
 
     }
