@@ -196,21 +196,21 @@ $imgDir = "../resources/img/educational-tour/";
 
     <!-- Hero Buttons -->
     <div class="hero-buttons">
-        <a href="#carousel-anchor">
-            <div class="hero-button green">
-                <span id="hero-button-1" style="margin-right: 15px;">Explore Our Destination</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" fill="none">
-                    <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </div>
+        <a href="#carousel-anchor" class="hero-button green">
+            <span>Explore Our Destination</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none">
+                <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
         </a>
-        <div class="hero-button white">
-            <span id="hero-button-2" style="margin-right: 15px;">Watch Our Journey</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" viewBox="0 0 24 24">
+
+        <a href="your-journey-video-url" class="hero-button white">
+            <span>Watch Our Journey</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="black">
                 <path d="M8 5v14l11-7z" />
             </svg>
-        </div>
+        </a>
+
     </div>
 
 
