@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 $hide_panda = (
     strpos($_SERVER['PHP_SELF'], '/cms/') !== false ||
     strpos($_SERVER['PHP_SELF'], '/educational-tour/') !== false ||
-    strpos($_SERVER['PHP_SELF'], '/tour/')
+    strpos($_SERVER['PHP_SELF'], '/tour/') !== false
 );
 
 ?>
