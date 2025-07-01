@@ -177,15 +177,14 @@
 <div class="it-con container position-relative" style="margin-bottom:30px;">
     <h3 id="itinerary-title" class="mb-5"
         style="text-align:left; font-weight:700; font-family:'Poppins', sans-serif; font-size:40px; margin-bottom:30px;">
-        Sample 6-Day Itinerary
     </h3>
     <div class="w-path-wrapper position-relative">
         <img src="<?php echo $imgDir ?>w.png" alt="W Path" class="w-path-img">
 
         <!-- Day Circles (content are replaced dynamically but must exist to be targeted) -->
         <div class="day-marker day-1">
-            <div class="day-circle"><span>Day 1</span></div>
-            <p>Day 1 itinerary</p>
+            <div class="day-circle"><span></span></div>
+            <p></p>
         </div>
         <div class="day-marker day-2">
             <div class="day-circle"><span></span></div>
