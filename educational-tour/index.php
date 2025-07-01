@@ -94,6 +94,7 @@ $imgDir = "../resources/img/educational-tour/";
         font-size: 18px;
         font-weight: 400;
         cursor: pointer;
+        gap: 15px;
     }
 
     .hero-button.green {
