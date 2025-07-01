@@ -197,7 +197,7 @@ $imgDir = "../resources/img/educational-tour/";
     <!-- Hero Buttons -->
     <div class="hero-buttons">
         <a href="#carousel-anchor" class="hero-button green">
-            <span id="hero-button-3">Explore Our Destination</span>
+            <span id="hero-button-destination">Explore Our Destination</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none">
                 <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
