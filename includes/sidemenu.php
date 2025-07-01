@@ -168,6 +168,7 @@
                 <a class="nav-link_side dropdown-toggle" href="../educational-tour/">Educational Tours</a>
                 <!-- Submenu for Delicious Food -->
                 <ul class="submenu">
+                    <li><a href="../educational-tour/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General Info</a></li>
                     <li><a href="../tour/?dest=TW">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taiwan</a></li>
                     <li><a href="../tour/?dest=CN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;China</a></li>
                     <li><a href="../tour/?dest=SG">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Singapore</a></li>
