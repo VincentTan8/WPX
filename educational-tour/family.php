@@ -114,21 +114,13 @@
 
 <div class="next-family-section">
     <div class="steps-family-left">
-        <h2 id="family-title">Why Families Choose WeTalk</h2>
+        <h2 id="family-title"></h2>
         <ul class="steps-list">
-            <li><img src="<?php echo $imgDir ?>check-yellow.png" alt="✓"> <span id="step-text-1">Daily bilingual
-                    guidance with safe accommodation</span>
-            </li>
-            <li><img src="<?php echo $imgDir ?>check-yellow.png" alt="✓"> <span id="step-text-2">Small groups with
-                    personalized attention</span>
-            </li>
-            <li><img src="<?php echo $imgDir ?>check-yellow.png" alt="✓"> <span id="step-text-3">Pre-tour online prep &
-                    post-tour learning</span></li>
-            <li><img src="<?php echo $imgDir ?>check-yellow.png" alt="✓"> <span id="step-text-4">Not rushed sightseeing,
-                    but intentional learning</span>
-            </li>
-            <li><img src="<?php echo $imgDir ?>check-yellow.png" alt="✓"> <span id="step-text-5">Strong focus on both
-                    cultural value & language growth</span></li>
+            <li><img src="<?php echo $imgDir ?>check-yellow.png" alt="✓"> <span id="step-text-1"></span></li>
+            <li><img src="<?php echo $imgDir ?>check-yellow.png" alt="✓"> <span id="step-text-2"></span></li>
+            <li><img src="<?php echo $imgDir ?>check-yellow.png" alt="✓"> <span id="step-text-3"></span></li>
+            <li><img src="<?php echo $imgDir ?>check-yellow.png" alt="✓"> <span id="step-text-4"></span></li>
+            <li><img src="<?php echo $imgDir ?>check-yellow.png" alt="✓"> <span id="step-text-5"></span></li>
         </ul>
     </div>
     <div class="family-right">

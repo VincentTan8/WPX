@@ -167,7 +167,7 @@
     <!-- Header -->
     <div class="d-flex align-items-center justify-content-center gap-2 mb-4">
         <h3 id="testimonial-title"
-            style="font-family:'Poppins', sans-serif; font-weight:700; font-size:40px; z-index: 2">Parent Testimonials
+            style="font-family:'Poppins', sans-serif; font-weight:700; font-size:40px; z-index: 2">
         </h3>
     </div>
 
@@ -179,12 +179,8 @@
         <div class="testimonial-box">
             <div style="">
                 <img src="<?php echo $imgDir ?>parent.png" alt="Profile" class="testimonial-img" />
-                <p id="testimonial-text" class="testimonial-text">
-                    “My daughter became more confident, more open, and came home asking deeper questions about the
-                    world. It
-                    wasn’t just a trip — it was an awakening.”
-                </p>
-                <p id="testimonial-author" class="testimonial-author">— Mrs. Lee, parent from Singapore</p>
+                <p id="testimonial-text" class="testimonial-text"></p>
+                <p id="testimonial-author" class="testimonial-author"></p>
                 <div class="stars">
                     ★ ★ ★ ★ <span class="empty">★</span>
                 </div>

@@ -264,15 +264,12 @@
 <div class="carousel-section" style="background-color:white;">
     <div class="carousel-top">
         <div class="carousel-top-left">
-            <h2 id="about-title" class="carousel-header">About WeTalk Study Tour</h2>
-            <p id="about-subtitle" class="carousel-desc">WeTalk Study Tours are carefully curated journeys that combine
-                language learning,
-                cultural discovery, and hands-on exploration. Led by caring bilingual educators, each trip is designed
-                to help children grow in confidence, curiosity, and communication.</p>
+            <h2 id="about-title" class="carousel-header"></h2>
+            <p id="about-subtitle" class="carousel-desc"></p>
         </div>
         <div class="carousel-top-right">
             <a href="#carousel-anchor" class="hero-button green">
-                <span id="hero-button-3">Explore Our Destination</span>
+                <span id="hero-button-3"></span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" viewBox="0 0 22 16" fill="none">
                     <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
