@@ -184,33 +184,28 @@
 
 <div class="next-steps-section">
     <div class="steps-left">
-        <h2 id="next-title">Next Steps</h2>
+        <h2 id="next-title"></h2>
         <ul class="steps-list">
-            <li><img src="<?php echo $imgDir ?>white-check.png" alt="✓"> <span id="next-tour"><strong id="temp1">Next
-                        Tour:</strong> <span id="next-date">Sept
-                        2025</span></span></li>
-            <li><img src="<?php echo $imgDir ?>white-check.png" alt="✓"> <span id="early-bird"><strong id="temp3">Early
-                        Bird Discount:</strong>
-                    <span id="early-deadline">Until July 15</span></span>
-            </li>
-            <li><img src="<?php echo $imgDir ?>white-check.png" alt="✓"> <span id="suitable-for">Suitable for ages 8–15,
-                    beginner-friendly</span></li>
-            <li><img src="<?php echo $imgDir ?>white-check.png" alt="✓"> <span id="next-includes">Includes pre-trip
-                    online Mandarin warm-up kit learning kit</span></li>
+            <li><img src="<?php echo $imgDir ?>white-check.png" alt="✓"> <span><strong id="next-tour"></strong> <span
+                        id="next-date"></span></span></li>
+            <li><img src="<?php echo $imgDir ?>white-check.png" alt="✓"> <span><strong id="early-bird"></strong> <span
+                        id="early-deadline"></span></span></li>
+            <li><img src="<?php echo $imgDir ?>white-check.png" alt="✓"> <span id="suitable-for"></span></li>
+            <li><img src="<?php echo $imgDir ?>white-check.png" alt="✓"> <span id="next-includes"></span></li>
         </ul>
 
         <div class="steps-buttons">
             <a class="button button-register"
                 href="https://wa.me/6597582288?text=Hi%20WeTalk%2C%20I%27d%20like%20to%20book%20a%20call%20with%20your%20team."
                 target="_blank">
-                <span id="next-register" style="color:white;">Register Now</span>
+                <span id="next-register" style="color:white;"></span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" viewBox="0 0 22 16" fill="none">
                     <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
             </a>
             <div class="button button-outline">
-                <span id="next-download">Download Itinerary</span>
+                <span id="next-download"></span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 22 16" fill="none">
                     <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="black" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -219,7 +214,7 @@
             <a class=" button-outline consultation"
                 href="https://wa.me/6597582288?text=Hi%20WeTalk%2C%20I%27d%20like%20to%20book%20a%20call%20with%20your%20team."
                 target="_blank">
-                <span id="next-consult" style="color:white;">Consultation</span>
+                <span id="next-consult" style="color:white;"></span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 22 16" fill="none">
                     <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
