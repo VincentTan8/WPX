@@ -128,6 +128,17 @@
         fill: #fff;
     }
 
+    .carousel-wrapper.dragging {
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+    }
+
+    .carousel-wrapper {
+        cursor: grab;
+        cursor: -webkit-grab;
+    }
+
+
     @media (max-width: 768px) {
         .carousel-container {
             margin: 60px 20px;
@@ -207,3 +218,36 @@
         </div>
     </div>
 </div>
+
+<script>
+    const carouselWrapper2 = document.querySelector('.carousel-container .carousel-wrapper');
+
+    let isDragging2 = false;
+    let startX2;
+    let scrollLeft2;
+
+    carouselWrapper2.addEventListener('mousedown', (e) => {
+        isDragging2 = true;
+        carouselWrapper2.classList.add('dragging');
+        startX2 = e.pageX - carouselWrapper2.offsetLeft;
+        scrollLeft2 = carouselWrapper2.scrollLeft;
+    });
+
+    carouselWrapper2.addEventListener('mouseleave', () => {
+        isDragging2 = false;
+        carouselWrapper2.classList.remove('dragging');
+    });
+
+    carouselWrapper2.addEventListener('mouseup', () => {
+        isDragging2 = false;
+        carouselWrapper2.classList.remove('dragging');
+    });
+
+    carouselWrapper2.addEventListener('mousemove', (e) => {
+        if (!isDragging2) return;
+        e.preventDefault();
+        const x = e.pageX - carouselWrapper2.offsetLeft;
+        const walk = (x - startX2) * 1.5;
+        carouselWrapper2.scrollLeft = scrollLeft2 - walk;
+    });
+</script>

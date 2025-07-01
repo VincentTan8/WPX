@@ -83,7 +83,6 @@
 
         .steps-list li {
             padding-left: 0;
-            /* remove padding on mobile */
             justify-content: center;
             text-align: left;
             white-space: normal;
@@ -108,7 +107,7 @@
             width: 100%;
             max-width: 280px;
             height: auto;
-            margin: 0 auto;
+            margin-bottom: -41px;
         }
     }
 </style>

@@ -120,7 +120,7 @@
 
         .steps-right img {
             max-width: 90%;
-            margin: 0 auto;
+            margin-bottom: -42px;
             display: block;
         }
     }

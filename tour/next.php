@@ -177,6 +177,7 @@
         .steps-right img {
             max-width: 280px;
             left: 0;
+            margin-bottom: -42px;
         }
     }
 </style>
