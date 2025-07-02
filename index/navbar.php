@@ -28,8 +28,9 @@
 
     .navbar .dropdown-menu {
         background-color: white;
-        min-width: 200px;
         margin-top: 15px;
+        width: auto;
+        min-width: 125px;
         border: none;
         border-radius: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -38,6 +39,39 @@
         visibility: hidden;
         opacity: 0;
         transition: opacity 0.3s ease;
+
+    }
+
+    .dropdown-menu {
+        animation: .5s slidedown;
+    }
+
+    @keyframes slidedown {
+        from {
+            transform: translateY(-15px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .dropdown-submenu>.dropdown-menu {
+        animation: .5s slideright;
+    }
+
+    @keyframes slideright {
+        from {
+            transform: translatex(-15px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translatex(0px);
+            opacity: 1;
+        }
     }
 
 
@@ -73,7 +107,7 @@
     }
 
     .navbar .dropdown-item:hover {
-        background-color: #f8f9fa;
+
         color: black;
         border-radius: 10px;
     }
@@ -99,10 +133,9 @@
     }
 
     .dropdown-submenu>.dropdown-menu {
-        top: -90px;
+        top: -95px;
         left: 102%;
         margin-top: 0;
-        transform: translateY(-5px);
         border-radius: 20px;
     }
 
