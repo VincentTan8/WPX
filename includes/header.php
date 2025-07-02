@@ -93,6 +93,7 @@ $hide_panda = (
     $m_culture = 'Chinese Culture Learning';
     $m_teachers = 'Teachers';
     $m_news = 'News';
+    $m_study_abroad = 'Study Abroad';
     $m_educational_tours = 'Educational Tours';
     $m_company = 'Company';
     $m_charity = 'Charity';
@@ -119,6 +120,7 @@ $hide_panda = (
         $m_culture = '国学';
         $m_teachers = '进贤进能';
         $m_news = '温故知新';
+        $m_study_abroad = '留学';
         $m_educational_tours = '游学团';
         $m_company = '公司介绍';
         $m_charity = '公益慈善';
@@ -284,20 +286,25 @@ $hide_panda = (
 
                     </ul>
                     <ul class="nav navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle   <?php echo $menu_bar6 ?>" href="../educational-tour/"
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle   <?php //echo $menu_bar6 ?>" href="../educational-tour/"
                                 id="navbarDropdown2" role="button">
-                                <?php echo $m_educational_tours ?>
+                                <?php //echo $m_educational_tours ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                <a class="dropdown-item" href="../tour/?dest=TW"><?php echo $m_taiwan ?></a>
-                                <a class="dropdown-item" href="../tour/?dest=CN"><?php echo $m_china ?></a>
-                                <a class="dropdown-item" href="../tour/?dest=SG"><?php echo $m_singapore ?></a>
-                                <a class="dropdown-item" href="../tour/?dest=JP"><?php echo $m_japan ?></a>
-                                <a class="dropdown-item" href="../tour/?dest=PH"><?php echo $m_philippines ?></a>
+                                <a class="dropdown-item" href="../tour/?dest=TW"><?php //echo $m_taiwan ?></a>
+                                <a class="dropdown-item" href="../tour/?dest=CN"><?php //echo $m_china ?></a>
+                                <a class="dropdown-item" href="../tour/?dest=SG"><?php //echo $m_singapore ?></a>
+                                <a class="dropdown-item" href="../tour/?dest=JP"><?php //echo $m_japan ?></a>
+                                <a class="dropdown-item" href="../tour/?dest=PH"><?php //echo $m_philippines ?></a>
                             </div>
                         </li>
-
+                        
+ -->
+                        <li class="nav-item">
+                            <a class="nav-link link  <?php echo $menu_bar6 ?>"
+                                href="../study-abroad/"><?php echo $m_study_abroad ?></a>
+                        </li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle  <?php echo $menu_bar7 ?>" href="#" id="navbarDropdown2"

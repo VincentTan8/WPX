@@ -164,9 +164,8 @@
                     text-decoration: none;" href="../news/">News</a>
             </li>
 
-            <li class="nav-item_side" style="margin-top: 10px;">
+            <!-- <li class="nav-item_side" style="margin-top: 10px;">
                 <a class="nav-link_side dropdown-toggle" href="../educational-tour/">Educational Tours</a>
-                <!-- Submenu for Delicious Food -->
                 <ul class="submenu">
                     <li><a href="../educational-tour/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General Info</a></li>
                     <li><a href="../tour/?dest=TW">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taiwan</a></li>
@@ -175,6 +174,12 @@
                     <li><a href="../tour/?dest=JP">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Japan</a></li>
                     <li><a href="../tour/?dest=PH">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Philippines</a></li>
                 </ul>
+            </li> -->
+
+            <li style="margin-top: 15px;">
+                <a style="color:#ffffff; margin-left: 15px;
+                    background-color: transparent;
+                    text-decoration: none;" href="../study-abroad/">Study Abroad</a>
             </li>
             <li class="nav-item_side" style="margin-top: 10px;">
                 <a class="nav-link_side dropdown-toggle" href="#s">Company</a>
