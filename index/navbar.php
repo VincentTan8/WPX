@@ -279,15 +279,18 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="eduToursDropdown">
                         <li><a class="dropdown-item" id="sr-nav-singapore"
-                                href="https://wetalk.com/educational-tours/singapore/">Singapore</a></li>
-                        <li><a class="dropdown-item" id="sr-nav-china"
-                                href="https://wetalk.com/educational-tours/china/">China</a></li>
-                        <li><a class="dropdown-item" id="sr-nav-japan"
-                                href="https://wetalk.com/educational-tours/japan/">Japan</a></li>
+                                href="https://wetalk.com/tour?dest=SG/">Singapore</a>
+                        </li>
+                        <li><a class="dropdown-item" id="sr-nav-china" href="https://wetalk.com/tour?dest=CN/">China</a>
+                        </li>
+                        <li><a class="dropdown-item" id="sr-nav-japan" href="https://wetalk.com/tour?dest=JP/">Japan</a>
+                        </li>
                         <li><a class="dropdown-item" id="sr-nav-philippines"
-                                href="https://wetalk.com/educational-tours/philippines/">Philippines</a></li>
+                                href="https://wetalk.com/tour?dest=PH/">Philippines</a>
+                        </li>
                         <li><a class="dropdown-item" id="sr-nav-taiwan"
-                                href="https://wetalk.com/educational-tours/taiwan/">Taiwan</a></li>
+                                href="https://wetalk.com/tour?dest=TW/">Taiwan</a>
+                        </li>
                     </ul>
                 </li>
 
