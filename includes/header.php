@@ -286,28 +286,30 @@ $hide_panda = (
 
                     </ul>
                     <ul class="nav navbar-nav">
-                        <!-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle   <?php //echo $menu_bar6 ?>" href="../educational-tour/"
-                                id="navbarDropdown2" role="button">
-                                <?php //echo $m_educational_tours ?>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                <a class="dropdown-item" href="../tour/?dest=TW"><?php //echo $m_taiwan ?></a>
-                                <a class="dropdown-item" href="../tour/?dest=CN"><?php //echo $m_china ?></a>
-                                <a class="dropdown-item" href="../tour/?dest=SG"><?php //echo $m_singapore ?></a>
-                                <a class="dropdown-item" href="../tour/?dest=JP"><?php //echo $m_japan ?></a>
-                                <a class="dropdown-item" href="../tour/?dest=PH"><?php //echo $m_philippines ?></a>
-                            </div>
-                        </li>
-                        
- -->
+
                         <li class="nav-item">
                             <a class="nav-link link  <?php echo $menu_bar6 ?>"
                                 href="../study-abroad/"><?php echo $m_study_abroad ?></a>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle  <?php echo $menu_bar7 ?>" href="#" id="navbarDropdown2"
+                            <a class="nav-link dropdown-toggle   <?php echo $menu_bar7 ?>" href="../educational-tour/"
+                                id="navbarDropdown2" role="button">
+                                <?php echo $m_educational_tours ?>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="../tour/?dest=TW"><?php echo $m_taiwan ?></a>
+                                <a class="dropdown-item" href="../tour/?dest=CN"><?php echo $m_china ?></a>
+                                <a class="dropdown-item" href="../tour/?dest=SG"><?php echo $m_singapore ?></a>
+                                <a class="dropdown-item" href="../tour/?dest=JP"><?php echo $m_japan ?></a>
+                                <a class="dropdown-item" href="../tour/?dest=PH"><?php echo $m_philippines ?></a>
+                            </div>
+                        </li>
+
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  <?php echo $menu_bar8 ?>" href="#" id="navbarDropdown2"
                                 role="button">
                                 <?php echo $m_company ?>
                             </a>
@@ -325,7 +327,7 @@ $hide_panda = (
 
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle  <?php echo $menu_bar7 ?>" href="#" id="navbarDropdown2"
+                            <a class="nav-link dropdown-toggle  <?php echo $menu_bar9 ?>" href="#" id="navbarDropdown2"
                                 role="button">
                                 <i class="fas fa-globe"></i>
                             </a>
