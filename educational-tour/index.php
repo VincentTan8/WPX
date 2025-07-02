@@ -20,7 +20,7 @@ $category = '';
 $main_menu = 'LINGUISTICS'; //to change
 
 include "../includes/menu_bar_reset.php";
-$menu_bar6 = "active";
+$menu_bar9 = "active";
 
 $_SESSION['active_page'] = 'educational-tour';
 
