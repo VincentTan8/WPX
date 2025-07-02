@@ -1,6 +1,6 @@
 #language-options {
     position: absolute;
-    top: 30px;
+    top: 80px;
     display: none;
     background-color: #f0f0f0;
     border: 1px solid #ddd;
@@ -8,7 +8,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     min-width: 7rem;
-
 }
 
 #language-options.flip-left {
