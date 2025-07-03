@@ -176,11 +176,13 @@
                 <a class="nav-link_side dropdown-toggle" href="../educational-tour/">Educational Tours</a>
                 <ul class="submenu">
                     <li><a href="../educational-tour/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General Info</a></li>
-                    <li><a href="../tour/?dest=TW">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taiwan</a></li>
-                    <li><a href="../tour/?dest=CN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;China</a></li>
                     <li><a href="../tour/?dest=SG">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Singapore</a></li>
+
+                    <li><a href="../tour/?dest=CN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;China</a></li>
+
                     <li><a href="../tour/?dest=JP">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Japan</a></li>
                     <li><a href="../tour/?dest=PH">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Philippines</a></li>
+                    <li><a href="../tour/?dest=TW">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taiwan</a></li>
                 </ul>
             </li>
             <li class="nav-item_side" style="margin-top: 10px;">
