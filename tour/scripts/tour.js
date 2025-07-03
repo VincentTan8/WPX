@@ -121,7 +121,7 @@ const fetchProgram = async (tour_ref_num) => {
 
             container.appendChild(card);
         });
-
+        document.querySelector('.glow-bg').style.background = `#66CDE7`;
     } catch (error) {
         console.error("Error fetching program details:", error);
     }

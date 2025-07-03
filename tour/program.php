@@ -12,7 +12,9 @@
         position: absolute;
         width: 1345px;
         height: 603px;
-        background: #66CDE7;
+        /* background: #66CDE7; */
+        /* will be changed by js */
+        background: #f0f0f0;
         filter: blur(218.25px);
         pointer-events: none;
         border-radius: 301.5px;
