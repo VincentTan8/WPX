@@ -205,7 +205,7 @@ $imgDir = "../resources/img/educational-tour/";
             </svg>
         </a>
 
-        <a href="your-journey-video-url" class="hero-button white">
+        <a class="hero-button white">
             <span id="hero-button-2">Watch Our Journey</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="black">
                 <path d="M8 5v14l11-7z" />
