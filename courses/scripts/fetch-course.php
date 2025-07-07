@@ -19,14 +19,15 @@ $course_description = "course_description" . $language;
 $thumbnail_tag = "thumbnail_tag" . $language;
 $suitable_for = "suitable_for" . $language;
 $course_start_date = "course_start_date" . $language;
+$class_hours = "class_hours" . $language;
 
 $tablename = $database . ".`wt_courses`";
 
-$sql = "SELECT `ref_num`, `course_img`, `age_group`, `language`, `class_hours`, `course_package`, `course_type`,
+$sql = "SELECT `ref_num`, `course_img`, `age_group`, `language`, `course_package`, `course_type`,
                `$course_title` AS `course_title`, `$course_short_title` AS `course_short_title`, 
                `$course_subtitle` AS `course_subtitle`, `$course_description` AS `course_description`, 
                `$thumbnail_tag` AS `thumbnail_tag`, `$suitable_for` AS `suitable_for`,
-               `$course_start_date` AS `course_start_date`
+               `$course_start_date` AS `course_start_date`, `$class_hours` AS `class_hours`
         FROM $tablename
         WHERE `courses_ref_num` = ?";
 
