@@ -7,6 +7,7 @@ if (!isset($_SESSION)) {
 
 <?php
 //Fetches all courses based on whatever filter is present or fetches all courses if no filters are set
+//Not all details are selected here to avoid long loading times
 include "../../connections/dbname.php";
 
 $language = $_POST['language'];  //_en, _cn, _kr, _jp
@@ -15,13 +16,9 @@ $package_filter = $_POST['package_filter'];
 $age_filter = $_POST['age_filter'];
 $type_filter = $_POST['type_filter'];
 
-$course_title = "course_title" . $language;
 $course_short_title = "course_short_title" . $language;
-$course_subtitle = "course_subtitle" . $language;
 $course_description = "course_description" . $language;
 $thumbnail_tag = "thumbnail_tag" . $language;
-$suitable_for = "suitable_for" . $language;
-$course_start_date = "course_start_date" . $language;
 
 $tablename = $database . ".`wt_courses`";
 
@@ -56,11 +53,10 @@ if (!empty($where_clauses)) {
     $where_sql = "WHERE " . implode(" AND ", $where_clauses);
 }
 
-$sql = "SELECT `ref_num`, `course_img`, `age_group`, `language`, `class_hours`, `course_package`, `course_type`,
-               `$course_title` AS `course_title`, `$course_short_title` AS `course_short_title`, 
-               `$course_subtitle` AS `course_subtitle`, `$course_description` AS `course_description`, 
-               `$thumbnail_tag` AS `thumbnail_tag`, `$suitable_for` AS `suitable_for`,
-               `$course_start_date` AS `course_start_date`
+$sql = "SELECT `ref_num`, `course_img`, `age_group`, `language`, `course_package`, `course_type`,
+               `$course_short_title` AS `course_short_title`, 
+               `$course_description` AS `course_description`, 
+               `$thumbnail_tag` AS `thumbnail_tag`
         FROM $tablename
         $where_sql";
 
