@@ -6,6 +6,7 @@ if (!isset($_SESSION)) {
 ?>
 
 <?php
+//Fetch learning goals (aka course objectives)
 include "../../connections/dbname.php";
 
 $courses_ref_num = $_POST['courses_ref_num'];
