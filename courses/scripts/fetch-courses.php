@@ -6,6 +6,7 @@ if (!isset($_SESSION)) {
 ?>
 
 <?php
+//Fetches all courses based on whatever filter is present or fetches all courses if no filters are set
 include "../../connections/dbname.php";
 
 $language = $_POST['language'];  //_en, _cn, _kr, _jp
@@ -23,16 +24,50 @@ $suitable_for = "suitable_for" . $language;
 $course_start_date = "course_start_date" . $language;
 
 $tablename = $database . ".`wt_courses`";
+
+// Initialize query and parameters
+$where_clauses = [];
+$params = [];
+$types = ""; // For prepared statements (e.g., "sss")
+//check which filters are set
+if (!empty($lang_filter)) {
+    $where_clauses[] = "`language` = ?";
+    $params[] = $lang_filter;
+    $types .= "s";
+}
+if (!empty($package_filter)) {
+    $where_clauses[] = "`course_package` = ?";
+    $params[] = $package_filter;
+    $types .= "s";
+}
+if (!empty($age_filter)) {
+    $where_clauses[] = "`age_group` = ?";
+    $params[] = $age_filter;
+    $types .= "s";
+}
+if (!empty($type_filter)) {
+    $where_clauses[] = "`course_type` = ?";
+    $params[] = $type_filter;
+    $types .= "s";
+}
+
+$where_sql = "";
+if (!empty($where_clauses)) {
+    $where_sql = "WHERE " . implode(" AND ", $where_clauses);
+}
+
 $sql = "SELECT `ref_num`, `course_img`, `age_group`, `language`, `class_hours`, `course_package`, `course_type`,
                `$course_title` AS `course_title`, `$course_short_title` AS `course_short_title`, 
                `$course_subtitle` AS `course_subtitle`, `$course_description` AS `course_description`, 
                `$thumbnail_tag` AS `thumbnail_tag`, `$suitable_for` AS `suitable_for`,
                `$course_start_date` AS `course_start_date`
         FROM $tablename
-        WHERE `some filter` = ?";   //todo
+        $where_sql";
 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $courses_ref_num); //todo update to whatever
+if (!empty($params)) {
+    $stmt->bind_param($types, ...$params);
+}
 $stmt->execute();
 $result = $stmt->get_result();
 
