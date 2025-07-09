@@ -1,14 +1,7 @@
 <?php
-if (!isset($_SESSION)) {
-    session_start();
-    ob_start();
-}
-?>
-
-<?php
 // Database connection
 include "../../connections/dbname.php";
-include '../utils/generateRefNum.php';
+include 'generateRefNum.php';
 
 // Check connection
 if (!$conn) {
@@ -17,9 +10,35 @@ if (!$conn) {
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get input values and sanitize them
-    $course_title_en = $_POST['course_title_en'];
-    //todo insert more entries
+    $course_title_en = $_POST['addCourseTitleEN'];
+    $course_title_cn = $_POST['addCourseTitleCN'];
+
+    $course_short_title_en = $_POST['addCourseShortTitleEN'];
+    $course_short_title_cn = $_POST['addCourseShortTitleCN'];
+
+    $course_subtitle_en = $_POST['addCourseSubtitleEN'];
+    $course_subtitle_cn = $_POST['addCourseSubtitleCN'];
+
+    $course_description_en = $_POST['addCourseDescriptionEN'];
+    $course_description_cn = $_POST['addCourseDescriptionCN'];
+
+    $thumbnail_tag_en = $_POST['addThumbnailTagEN'];
+    $thumbnail_tag_cn = $_POST['addThumbnailTagCN'];
+
+    $suitable_for_en = $_POST['addSuitableForEN'];
+    $suitable_for_cn = $_POST['addSuitableForCN'];
+
+    $course_start_date_en = $_POST['addCourseStartDateEN'];
+    $course_start_date_cn = $_POST['addCourseStartDateCN'];
+
+    $class_hours_en = $_POST['addClassHoursEN'];
+    $class_hours_cn = $_POST['addClassHoursCN'];
+
+    $age_group = $_POST['addAgeGroup'];
+    $language = $_POST['addLanguage'];
+    $course_package = $_POST['addCoursePackage'];
+    $course_type = $_POST['addCourseType'];
+
 
     $coursestable = $database . ".`wt_courses`";
     $activitiestable = $database . ".`wt_course_activities`";
@@ -31,19 +50,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //WeTalk Courses reference num generate
     $ref_num_prefix = 'WTC-';
-    $new_ref_num = generateRefNum($conn, $ref_num_prefix, $scheduletable);
+    $new_ref_num = generateRefNum($conn, $ref_num_prefix, $coursestable);
 
-    $sql = "INSERT INTO $scheduletable (`ref_num`, `scheddate`, `schedstarttime`, `schedendtime`, `teacher_ref_num`, `platform`, `language_id`) 
-                VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO $coursestable (`ref_num`, `course_title_en`, `course_title_cn`,
+                `course_short_title_en`, `course_short_title_cn`,
+                `course_subtitle_en`, `course_subtitle_cn`,
+                `course_description_en`, `course_description_cn`,
+                `thumbnail_tag_en`, `thumbnail_tag_cn`,
+                `suitable_for_en`, `suitable_for_cn`,
+                `course_start_date_en`, `course_start_date_cn`,
+                `class_hours_en`, `class_hours_cn`,
+                `age_group`, `language`, `course_package`, `course_type`) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssssii", $new_ref_num, $scheddate, $schedstarttime, $schedendtime, $teacher_ref_num, $platform, $language_id);
-    if (!$stmt->execute()) {
-        echo "<script type='text/javascript'>alert('Error adding schedule: " . addslashes($stmt->error) . "'); window.location.href='schedule.php';</script>";
+    $stmt->bind_param(
+        "sssssssssssssssssssss",
+        $new_ref_num,
+        $course_title_en,
+        $course_title_cn,
+        $course_short_title_en,
+        $course_short_title_cn,
+        $course_subtitle_en,
+        $course_subtitle_cn,
+        $course_description_en,
+        $course_description_cn,
+        $thumbnail_tag_en,
+        $thumbnail_tag_cn,
+        $suitable_for_en,
+        $suitable_for_cn,
+        $course_start_date_en,
+        $course_start_date_cn,
+        $class_hours_en,
+        $class_hours_cn,
+        $age_group,
+        $language,
+        $course_package,
+        $course_type
+    );
+
+    if ($stmt->execute()) {
+        echo "success|$new_ref_num";
+    } else {
+        echo "error|Execution failed: " . $stmt->error;
     }
-
-    echo "<script type='text/javascript'>alert('Schedule added successfully!'); window.location.href='schedule.php';</script>";
-
 }
 
 // Close connection
