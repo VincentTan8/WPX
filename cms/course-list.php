@@ -148,11 +148,13 @@ while ($row = $result->fetch_assoc()) {
         <table id="courseTable" class="display nowrap" style="width:100%;">
             <thead>
                 <tr>
-                    <th></th>
                     <th>Course Title</th>
-                    <th>Language</th>
-                    <th>Package</th>
-                    <th>Type</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -160,15 +162,37 @@ while ($row = $result->fetch_assoc()) {
                     <?php $result->data_seek(0);
                     while ($row = $result->fetch_assoc()): ?>
                         <tr>
+                            <td><?= $row['course_title_en'] ?? '' ?></td>
                             <td>
                                 <a class="button editCourse" data-refnum="<?= $row['ref_num'] ?>">
-                                    Edit <i class="fas fa-edit"></i>
+                                    Edit Info <i class="fas fa-edit"></i>
                                 </a>
                             </td>
-                            <td><?= $row['course_title_en'] ?? '' ?></td>
-                            <td><?= $row['language'] ?? '' ?></td>
-                            <td><?= $row['course_package'] ?? '' ?></td>
-                            <td><?= $row['course_type'] ?? '' ?></td>
+                            <td>
+                                <a class="button " data-refnum="<?= $row['ref_num'] ?>">
+                                    Edit Activities <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a class="button " data-refnum="<?= $row['ref_num'] ?>">
+                                    Edit Features <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a class="button " data-refnum="<?= $row['ref_num'] ?>">
+                                    Edit Learning Goals <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a class="button " data-refnum="<?= $row['ref_num'] ?>">
+                                    Edit Materials <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a class="button " data-refnum="<?= $row['ref_num'] ?>">
+                                    Edit Teachers <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
                         </tr>
                     <?php endwhile; ?>
                 <?php else: ?>
@@ -179,26 +203,70 @@ while ($row = $result->fetch_assoc()) {
             </tbody>
         </table>
     </div>
-    <div id="quoteModal" class="modal">
+    <div id="courseModal" class="modal">
         <div class="modal-content">
-            <span class="modal-close" onclick="closeModal('quoteModal')">&times;</span>
-            <h2>Add Quote</h2>
+            <span class="modal-close" onclick="closeModal('courseModal')">&times;</span>
+            <h2>Add Course</h2>
             <form id="quoteForm">
-                <label>Quote Date</label>
-                <input type="date" name="quote_date" required>
+                <label for="addCourseTitleEN">Course Title EN</label>
+                <textarea id="addCourseTitleEN" name="addCourseTitleEN" required></textarea>
 
-                <label>Author</label>
-                <input type="text" name="author">
+                <label for="addCourseTitleCN">Course Title CN</label>
+                <textarea id="addCourseTitleCN" name="addCourseTitleCN"></textarea>
 
-                <label for="en">English Quote<div id="enError"
-                        style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
+                <label for="addCourseShortTitleEN">Course Short Title EN</label>
+                <textarea id="addCourseShortTitleEN" name="addCourseShortTitleEN"></textarea>
 
-                <textarea name="en" id="en" required></textarea>
+                <label for="addCourseShortTitleCN">Course Short Title CN</label>
+                <textarea id="addCourseShortTitleCN" name="addCourseShortTitleCN"></textarea>
 
-                <label for="cn">Chinese Quote <div id="cnError"
-                        style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
+                <label for="addCourseSubtitleEN">Course Subtitle EN</label>
+                <textarea id="addCourseSubtitleEN" name="addCourseSubtitleEN"></textarea>
 
-                <textarea name="cn" id="cn"></textarea>
+                <label for="addCourseSubtitleCN">Course Subtitle CN</label>
+                <textarea id="addCourseSubtitleCN" name="addCourseSubtitleCN"></textarea>
+
+                <label for="addCourseDescriptionEN">Course Description EN</label>
+                <textarea id="addCourseDescriptionEN" name="addCourseDescriptionEN"></textarea>
+
+                <label for="addCourseDescriptionCN">Course Description CN</label>
+                <textarea id="addCourseDescriptionCN" name="addCourseDescriptionCN"></textarea>
+
+                <label>Thumbnail Tag EN</label>
+                <input id="addThumbnailTagEN" type="text" name="addThumbnailTagEN">
+
+                <label>Thumbnail Tag CN</label>
+                <input id="addThumbnailTagCN" type="text" name="addThumbnailTagCN">
+
+                <label for="addSuitableForEN">Suitable For EN</label>
+                <textarea id="addSuitableForEN" name="addSuitableForEN"></textarea>
+
+                <label for="addSuitableForCN">Suitable For CN</label>
+                <textarea id="addSuitableForCN" name="addSuitableForCN"></textarea>
+
+                <label>Course Start Date EN</label>
+                <input id="addCourseStartDateEN" type="text" name="addCourseStartDateEN">
+
+                <label>Course Start Date CN</label>
+                <input id="addCourseStartDateCN" type="text" name="addCourseStartDateCN">
+
+                <label>Class Hours EN</label>
+                <input id="addClassHoursEN" type="text" name="addClassHoursEN">
+
+                <label>Class Hours CN</label>
+                <input id="addClassHoursCN" type="text" name="addClassHoursCN">
+
+                <label>Age Group</label>
+                <input id="addAgeGroup" type="text" name="addAgeGroup">
+
+                <label>Language</label>
+                <input id="addLanguage" type="text" name="addLanguage">
+
+                <label>Course Package</label>
+                <input id="addCoursePackage" type="text" name="addCoursePackage">
+
+                <label>Course Type</label>
+                <input id="addCourseType" type="text" name="addCourseType">
 
                 <button class="button" type="submit">Submit</button>
             </form>
@@ -209,7 +277,7 @@ while ($row = $result->fetch_assoc()) {
     <div id="editCourseModal" class="modal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal('editCourseModal')">&times;</span>
-            <h2>Edit Quote</h2>
+            <h2>Edit Course</h2>
             <form id="editCourseForm">
                 <input id="editCourseRefNum" type="hidden" name="ref_num" required>
 
@@ -220,22 +288,22 @@ while ($row = $result->fetch_assoc()) {
                 <textarea id="editCourseTitleCN" name="editCourseTitleCN"></textarea>
 
                 <label for="editCourseShortTitleEN">Course Short Title EN</label>
-                <textarea id="editCourseShortTitleEN" name="editCourseShortTitleEN" required></textarea>
+                <textarea id="editCourseShortTitleEN" name="editCourseShortTitleEN"></textarea>
 
                 <label for="editCourseShortTitleCN">Course Short Title CN</label>
-                <textarea id="editCourseShortTitleCN" name="editCourseShortTitleCN" required></textarea>
+                <textarea id="editCourseShortTitleCN" name="editCourseShortTitleCN"></textarea>
 
                 <label for="editCourseSubtitleEN">Course Subtitle EN</label>
-                <textarea id="editCourseSubtitleEN" name="editCourseSubtitleEN" required></textarea>
+                <textarea id="editCourseSubtitleEN" name="editCourseSubtitleEN"></textarea>
 
                 <label for="editCourseSubtitleCN">Course Subtitle CN</label>
-                <textarea id="editCourseSubtitleCN" name="editCourseSubtitleCN" required></textarea>
+                <textarea id="editCourseSubtitleCN" name="editCourseSubtitleCN"></textarea>
 
                 <label for="editCourseDescriptionEN">Course Description EN</label>
-                <textarea id="editCourseDescriptionEN" name="editCourseDescriptionEN" required></textarea>
+                <textarea id="editCourseDescriptionEN" name="editCourseDescriptionEN"></textarea>
 
                 <label for="editCourseDescriptionCN">Course Description CN</label>
-                <textarea id="editCourseDescriptionCN" name="editCourseDescriptionCN" required></textarea>
+                <textarea id="editCourseDescriptionCN" name="editCourseDescriptionCN"></textarea>
 
                 <label>Thumbnail Tag EN</label>
                 <input id="editThumbnailTagEN" type="text" name="editThumbnailTagEN">
@@ -288,7 +356,9 @@ while ($row = $result->fetch_assoc()) {
                 responsive: true,
                 columnDefs: [
                     {
-                        targets: 0, //target first column
+                        targets: function (idx) {
+                            return idx !== 0;
+                        },      //target everything except first column which is 0
                         searchable: false,
                         orderable: false,
                         width: '10px'
@@ -297,7 +367,7 @@ while ($row = $result->fetch_assoc()) {
             });
 
             document.getElementById('openAdd').addEventListener('click', () => {
-                document.getElementById('quoteModal').style.display = 'flex';
+                document.getElementById('courseModal').style.display = 'flex';
             });
 
             document.querySelectorAll('.editCourse').forEach((editButton) => {
@@ -362,7 +432,7 @@ while ($row = $result->fetch_assoc()) {
             if (status === 'success') {
                 alert(' Quote added successfully! ');
                 form.reset();
-                closeModal('quoteModal');
+                closeModal('courseModal');
                 location.reload();
             } else {
                 // Clear previous errors
@@ -427,11 +497,11 @@ while ($row = $result->fetch_assoc()) {
 
         // Close modal when clicking outside the modal content
         window.addEventListener('click', function (event) {
-            const quoteModal = document.getElementById('quoteModal');
+            const courseModal = document.getElementById('courseModal');
             const editCourseModal = document.getElementById('editCourseModal');
 
-            if (event.target === quoteModal) {
-                quoteModal.style.display = "none";
+            if (event.target === courseModal) {
+                courseModal.style.display = "none";
             }
             if (event.target === editCourseModal) {
                 editCourseModal.style.display = "none";
