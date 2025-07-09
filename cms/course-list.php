@@ -2,7 +2,7 @@
 include "../connections/dbname.php";
 
 $tablename = $database . ".`wt_courses`";
-$sql = "SELECT * FROM $tablename ORDER BY `course_title_en` ASC";
+$sql = "SELECT * FROM $tablename ORDER BY `course_title_en` ASC";  //limit this next time
 $result = $conn->query($sql);
 $result->data_seek(0); // reset pointer if already used in a loop
 $courseDataArray = [];
@@ -169,27 +169,27 @@ while ($row = $result->fetch_assoc()) {
                                 </a>
                             </td>
                             <td>
-                                <a class="button " data-refnum="<?= $row['ref_num'] ?>">
+                                <a class="button editActivities" data-refnum="<?= $row['ref_num'] ?>">
                                     Edit Activities <i class="fas fa-edit"></i>
                                 </a>
                             </td>
                             <td>
-                                <a class="button " data-refnum="<?= $row['ref_num'] ?>">
+                                <a class="button editFeatures" data-refnum="<?= $row['ref_num'] ?>">
                                     Edit Features <i class="fas fa-edit"></i>
                                 </a>
                             </td>
                             <td>
-                                <a class="button " data-refnum="<?= $row['ref_num'] ?>">
+                                <a class="button editLearningGoals" data-refnum="<?= $row['ref_num'] ?>">
                                     Edit Learning Goals <i class="fas fa-edit"></i>
                                 </a>
                             </td>
                             <td>
-                                <a class="button " data-refnum="<?= $row['ref_num'] ?>">
+                                <a class="button editMaterials" data-refnum="<?= $row['ref_num'] ?>">
                                     Edit Materials <i class="fas fa-edit"></i>
                                 </a>
                             </td>
                             <td>
-                                <a class="button " data-refnum="<?= $row['ref_num'] ?>">
+                                <a class="button editTeachers" data-refnum="<?= $row['ref_num'] ?>">
                                     Edit Teachers <i class="fas fa-edit"></i>
                                 </a>
                             </td>
@@ -207,7 +207,7 @@ while ($row = $result->fetch_assoc()) {
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal('courseModal')">&times;</span>
             <h2>Add Course</h2>
-            <form id="quoteForm">
+            <form id="addForm">
                 <label for="addCourseTitleEN">Course Title EN</label>
                 <textarea id="addCourseTitleEN" name="addCourseTitleEN" required></textarea>
 
@@ -270,7 +270,7 @@ while ($row = $result->fetch_assoc()) {
 
                 <button class="button" type="submit">Submit</button>
             </form>
-            <div id="quoteResult"></div>
+            <div id="addResult"></div>
         </div>
     </div>
 
@@ -347,6 +347,38 @@ while ($row = $result->fetch_assoc()) {
         </div>
     </div>
 
+    <div id="editFeaturesModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('editFeaturesModal')">&times;</span>
+            <h2>Edit Features</h2>
+            <div id="editFeaturesParent">
+                <div id="editFeaturesFormContainer">
+                    <form id="editFeaturesForm">
+                        <input id="editFeaturesRefNum" type="hidden" name="ref_num" required>
+
+                        <label for="editFeatureBoldEN">Feature Bold EN</label>
+                        <textarea id="editFeatureBoldEN" name="editFeatureBoldEN" required></textarea>
+
+                        <label for="editFeatureBoldCN">Feature Bold CN</label>
+                        <textarea id="editFeatureBoldCN" name="editFeatureBoldCN"></textarea>
+
+                        <label for="editFeatureEN">Feature EN</label>
+                        <textarea id="editFeatureEN" name="editFeatureEN"></textarea>
+
+                        <label for="editFeatureCN">Feature CN</label>
+                        <textarea id="editFeatureCN" name="editFeatureCN"></textarea>
+
+                        <button class="button" type="submit">Submit</button>
+                    </form>
+                </div>
+                <a class="button addFeatures" data-refnum="<?= $row['ref_num'] ?>">
+                    Add Features <i class="fas fa-plus"></i>
+                </a>
+            </div>
+            <div id="editFeaturesResult"></div>
+        </div>
+    </div>
+
     <script>
         //pass php courses array object into js
         const courseData = <?= json_encode($courseDataArray, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;
@@ -356,20 +388,25 @@ while ($row = $result->fetch_assoc()) {
                 responsive: true,
                 columnDefs: [
                     {
-                        targets: function (idx) {
-                            return idx !== 0;
-                        },      //target everything except first column which is 0
+                        targets: "_all",
                         searchable: false,
                         orderable: false,
                         width: '10px'
+                    },
+                    {
+                        targets: 0,
+                        searchable: true,
+                        orderable: true
                     }
                 ]
             });
 
+            //Open Add Course
             document.getElementById('openAdd').addEventListener('click', () => {
-                document.getElementById('courseModal').style.display = 'flex';
+                showModal('courseModal');
             });
 
+            //Open Edit Course Info
             document.querySelectorAll('.editCourse').forEach((editButton) => {
                 editButton.addEventListener('click', () => {
                     //fetch course details and display them
@@ -377,7 +414,8 @@ while ($row = $result->fetch_assoc()) {
                     const row = courseData[ref];
                     if (!row) return alert('Course data not found.');
 
-                    document.getElementById('editCourseModal').style.display = 'flex';
+                    document.getElementById('editCourseRefNum').value = ref;
+
                     document.getElementById('editCourseTitleEN').value = row.course_title_en || '';
                     document.getElementById('editCourseTitleCN').value = row.course_title_cn || '';
 
@@ -406,22 +444,56 @@ while ($row = $result->fetch_assoc()) {
                     document.getElementById('editLanguage').value = row.language || '';
                     document.getElementById('editCoursePackage').value = row.course_package || '';
                     document.getElementById('editCourseType').value = row.course_type || '';
+
+                    showModal('editCourseModal');
                 });
             });
+
+            //todo Open Edit Activities
+
+            //todo Open Edit Features
+            document.querySelectorAll('.editFeatures').forEach((editFeatureButton) => {
+                editFeatureButton.addEventListener('click', () => {
+                    <?php
+                    $tablename = $database . ".`wt_courses`";
+                    $sql = "SELECT * FROM $tablename ORDER BY `course_title_en` ASC";  //limit this next time
+                    $result = $conn->query($sql);
+                    $result->data_seek(0); // reset pointer if already used in a loop
+                    $courseDataArray = [];
+                    while ($row = $result->fetch_assoc()) {
+                        $ref = $row['ref_num'];
+                        $courseDataArray[$ref] = $row;
+                    }
+                    ?>
+                    const ref = editFeatureButton.dataset.refnum;
+                    showModal('editFeaturesModal');
+                });
+            });
+
+            //todo Open Edit Learning Goals
+
+            //todo Open Edit Materials
+
+            //todo Open Edit Teachers
+
         });
+
+        function showModal(id) {
+            document.getElementById(id).style.display = "flex";
+        }
 
         function closeModal(id) {
             document.getElementById(id).style.display = "none";
         }
 
-        // Submit Add Quote Form
-        document.getElementById('quoteForm').addEventListener('submit', async function (e) {
+        // Submit Add Course Form
+        document.getElementById('addForm').addEventListener('submit', async function (e) {
             e.preventDefault();
             const form = e.target;
             const formData = new FormData(form);
-            const resultDiv = document.getElementById('quoteResult');
+            const resultDiv = document.getElementById('addResult');
 
-            const response = await fetch('../index/scripts/add-quote.php', {
+            const response = await fetch('../course/scripts/add-course.php', {
                 method: 'POST',
                 body: formData
             });
@@ -430,26 +502,15 @@ while ($row = $result->fetch_assoc()) {
             const [status, message] = text.trim().split('|');
 
             if (status === 'success') {
-                alert(' Quote added successfully! ');
+                alert(' Course added successfully! ');
                 form.reset();
                 closeModal('courseModal');
                 location.reload();
             } else {
                 // Clear previous errors
-                document.getElementById('enError').textContent = '';
-                document.getElementById('cnError').textContent = '';
                 resultDiv.innerHTML = '';
-
                 if (status === 'error') {
-                    try {
-                        const errors = JSON.parse(message); // `field` now contains JSON string
-                        if (errors.en) document.getElementById('enError').textContent = errors.en;
-                        if (errors.cn) document.getElementById('cnError').textContent = errors.cn;
-                    } catch (e) {
-                        resultDiv.innerHTML = "<p style='color:red;'>" + field + "</p>";
-                    }
-                } else {
-                    resultDiv.innerHTML = "<p style='color:red;'>" + msg + "</p>";
+                    resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
                 }
             }
         });
@@ -461,7 +522,7 @@ while ($row = $result->fetch_assoc()) {
             const formData = new FormData(form);
             const resultDiv = document.getElementById('editCourseResult');
 
-            const response = await fetch('../index/scripts/edit-quote.php', {
+            const response = await fetch('../course/scripts/edit-course.php', {
                 method: 'POST',
                 body: formData
             });
@@ -477,20 +538,10 @@ while ($row = $result->fetch_assoc()) {
             } else {
                 alert('Failed to edit ');
                 // Clear previous errors
-                document.getElementById('editENError').textContent = '';
-                document.getElementById('editCNError').textContent = '';
                 resultDiv.innerHTML = '';
 
                 if (status === 'error') {
-                    try {
-                        const errors = JSON.parse(message); // `field` now contains JSON string
-                        if (errors.en) document.getElementById('editENError').textContent = errors.en;
-                        if (errors.cn) document.getElementById('editCNError').textContent = errors.cn;
-                    } catch (e) {
-                        resultDiv.innerHTML = "<p style='color:red;'>" + e + "</p>";
-                    }
-                } else {
-                    resultDiv.innerHTML = "<p style='color:red;'>" + status + "</p>";
+                    resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
                 }
             }
         });
@@ -499,12 +550,16 @@ while ($row = $result->fetch_assoc()) {
         window.addEventListener('click', function (event) {
             const courseModal = document.getElementById('courseModal');
             const editCourseModal = document.getElementById('editCourseModal');
+            const editFeaturesModal = document.getElementById('editFeaturesModal');
 
             if (event.target === courseModal) {
                 courseModal.style.display = "none";
             }
             if (event.target === editCourseModal) {
                 editCourseModal.style.display = "none";
+            }
+            if (event.target === editFeaturesModal) {
+                editFeaturesModal.style.display = "none";
             }
         });
 
