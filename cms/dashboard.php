@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 
 <head>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" /> -->
 
     <title>Dashboard</title>
     <style>
@@ -44,8 +44,6 @@ if (!isset($_SESSION['user_id'])) {
             transition: background-color 0.3s ease;
             cursor: pointer;
         }
-
-
 
         /* Modal Styles */
         .modal {
@@ -132,6 +130,7 @@ if (!isset($_SESSION['user_id'])) {
             <h2>Welcome, <?= htmlspecialchars($_SESSION['username']) ?></h2>
             <!-- <a id="openAddEntry">Add Entry</a> -->
             <a href="quote-list.php">Quote List</a>
+            <a href="course-list.php">Course List</a>
             <a href="logout.php">Logout</a>
         </div>
     </div>
