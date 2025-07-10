@@ -421,6 +421,18 @@ while ($row = $result->fetch_assoc()) {
         </div>
     </div>
 
+    <div id="editActivitiesModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('editActivitiesModal')">&times;</span>
+            <h2>Edit Activities</h2>
+            <div id="editActivitiesFormContainer">
+                <form id="editActivitiesForm">
+                </form>
+            </div>
+            <div id="editActivitiesResult"></div>
+        </div>
+    </div>
+
     <div id="editFeaturesModal" class="modal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal('editFeaturesModal')">&times;</span>
@@ -430,6 +442,42 @@ while ($row = $result->fetch_assoc()) {
                 </form>
             </div>
             <div id="editFeaturesResult"></div>
+        </div>
+    </div>
+
+    <div id="editLearningGoalsModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('editLearningGoalsModal')">&times;</span>
+            <h2>Edit Learning Goals</h2>
+            <div id="editLearningGoalsFormContainer">
+                <form id="editLearningGoalsForm">
+                </form>
+            </div>
+            <div id="editLearningGoalsResult"></div>
+        </div>
+    </div>
+
+    <div id="editMaterialsModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('editMaterialsModal')">&times;</span>
+            <h2>Edit Materials</h2>
+            <div id="editMaterialsFormContainer">
+                <form id="editMaterialsForm">
+                </form>
+            </div>
+            <div id="editMaterialsResult"></div>
+        </div>
+    </div>
+
+    <div id="editTeachersModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('editTeachersModal')">&times;</span>
+            <h2>Edit Teachers</h2>
+            <div id="editTeachersFormContainer">
+                <form id="editTeachersForm">
+                </form>
+            </div>
+            <div id="editTeachersResult"></div>
         </div>
     </div>
 
