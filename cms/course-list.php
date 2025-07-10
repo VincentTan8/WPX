@@ -1,6 +1,19 @@
 <?php
 include "../connections/dbname.php";
 
+function getActvities($conn, $database, $ref_num)
+{
+    $tablename = $database . ".`wt_course_activities`";
+    $sql = "SELECT * FROM $tablename WHERE `courses_ref_num` = '$ref_num'";
+    $result = $conn->query($sql);
+    $activityArray = [];
+    while ($row = $result->fetch_assoc()) {
+        $ref = $row['ref_num'];
+        $activityArray[$ref] = $row;
+    }
+    return $activityArray;
+}
+
 function getFeatures($conn, $database, $ref_num)
 {
     $tablename = $database . ".`wt_course_features`";
@@ -14,6 +27,45 @@ function getFeatures($conn, $database, $ref_num)
     return $featureArray;
 }
 
+function getLearningGoals($conn, $database, $ref_num)
+{
+    $tablename = $database . ".`wt_course_learning_goals`";
+    $sql = "SELECT * FROM $tablename WHERE `courses_ref_num` = '$ref_num'";
+    $result = $conn->query($sql);
+    $learningGoalArray = [];
+    while ($row = $result->fetch_assoc()) {
+        $ref = $row['ref_num'];
+        $learningGoalArray[$ref] = $row;
+    }
+    return $learningGoalArray;
+}
+
+function getMaterials($conn, $database, $ref_num)
+{
+    $tablename = $database . ".`wt_course_materials`";
+    $sql = "SELECT * FROM $tablename WHERE `courses_ref_num` = '$ref_num'";
+    $result = $conn->query($sql);
+    $materialArray = [];
+    while ($row = $result->fetch_assoc()) {
+        $ref = $row['ref_num'];
+        $materialArray[$ref] = $row;
+    }
+    return $materialArray;
+}
+
+function getTeachers($conn, $database, $ref_num)
+{
+    $tablename = $database . ".`wt_course_teachers`";
+    $sql = "SELECT * FROM $tablename WHERE `courses_ref_num` = '$ref_num'";
+    $result = $conn->query($sql);
+    $teacherArray = [];
+    while ($row = $result->fetch_assoc()) {
+        $ref = $row['ref_num'];
+        $teacherArray[$ref] = $row;
+    }
+    return $teacherArray;
+}
+
 $tablename = $database . ".`wt_courses`";
 $sql = "SELECT * FROM $tablename ORDER BY `course_title_en` ASC";  //limit this next time
 $result = $conn->query($sql);
@@ -22,7 +74,11 @@ $courseDataArray = [];
 while ($row = $result->fetch_assoc()) {
     $ref = $row['ref_num'];
     $courseDataArray[$ref] = $row;
+    $courseDataArray[$ref]['activities'] = getActvities($conn, $database, $ref);
     $courseDataArray[$ref]['features'] = getFeatures($conn, $database, $ref);
+    $courseDataArray[$ref]['learningGoals'] = getLearningGoals($conn, $database, $ref);
+    $courseDataArray[$ref]['materials'] = getMaterials($conn, $database, $ref);
+    $courseDataArray[$ref]['teachers'] = getTeachers($conn, $database, $ref);
 }
 ?>
 <?php include "../includes/header.php"; ?>
@@ -459,6 +515,7 @@ while ($row = $result->fetch_assoc()) {
                     //reset index form
                     let featureIndex = 1;
                     featuresForm.innerHTML = `
+                        <input type="hidden" name="courses_ref_num" value="${ref}" required>
                         <a class="button addFeatures">
                             Add Features <i class="fas fa-plus"></i>
                         </a>
@@ -477,20 +534,19 @@ while ($row = $result->fetch_assoc()) {
                         wrapper.dataset.index = index;
 
                         wrapper.innerHTML = `
-                            <input type="hidden" name="ref_num[]" value="${row.ref_num}" required>
-                            <input type="hidden" name="courses_ref_num[]" value="${row.courses_ref_num}" required>
+                            <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
 
                             <label>Feature Bold EN</label>
-                            <textarea name="editFeatureBoldEN[]">${row.feature_bold_en}</textarea>
+                            <textarea name="editFeatureBoldEN[]">${row?.feature_bold_en || ''}</textarea>
 
                             <label>Feature Bold CN</label>
-                            <textarea name="editFeatureBoldCN[]">${row.feature_bold_cn}</textarea>
+                            <textarea name="editFeatureBoldCN[]">${row?.feature_bold_cn || ''}</textarea>
 
                             <label>Feature EN</label>
-                            <textarea name="editFeatureEN[]">${row.feature_en}</textarea>
+                            <textarea name="editFeatureEN[]">${row?.feature_en || ''}</textarea>
 
                             <label>Feature CN</label>
-                            <textarea name="editFeatureCN[]">${row.feature_cn}</textarea>
+                            <textarea name="editFeatureCN[]">${row?.feature_cn || ''}</textarea>
 
                             <button type="button" class="button remove-feature">Remove</button>
                         `;
@@ -510,18 +566,18 @@ while ($row = $result->fetch_assoc()) {
                         featuresForm.insertBefore(createFeatureBlock(featureIndex++), addFeaturesButton);
                     });
 
-                    // Optional: handle form submission
-                    featuresForm.addEventListener('submit', function (e) {
-                        e.preventDefault();
-                        const formData = new FormData(featuresForm);
+                    // For debugging
+                    // featuresForm.addEventListener('submit', function (e) {
+                    //     e.preventDefault();
+                    //     const formData = new FormData(featuresForm);
 
-                        const allData = {};
-                        for (const key of formData.keys()) {
-                            allData[key] = formData.getAll(key); // get *all* values
-                        }
+                    //     const allData = {};
+                    //     for (const key of formData.keys()) {
+                    //         allData[key] = formData.getAll(key); // get *all* values
+                    //     }
 
-                        console.log(allData); // Full array data
-                    });
+                    //     console.log(allData); // Full array data
+                    // });
 
                     showModal('editFeaturesModal');
                 });
@@ -604,35 +660,35 @@ while ($row = $result->fetch_assoc()) {
         });
 
         // Submit Edit Features Form
-        // document.getElementById('editFeaturesForm').addEventListener('submit', async function (e) {
-        //     e.preventDefault();
-        //     const form = e.target;
-        //     const formData = new FormData(form);
-        //     const resultDiv = document.getElementById('editFeaturesResult');
+        document.getElementById('editFeaturesForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const resultDiv = document.getElementById('editFeaturesResult');
 
-        //     const response = await fetch('../course/scripts/edit-features.php', {
-        //         method: 'POST',
-        //         body: formData
-        //     });
+            const response = await fetch('../course/scripts/edit-features.php', {
+                method: 'POST',
+                body: formData
+            });
 
-        //     const text = await response.text();
-        //     const [status, message] = text.trim().split('|');
+            const text = await response.text();
+            const [status, message] = text.trim().split('|');
 
-        //     if (status === 'success') {
-        //         alert(' Features edited successfully! ');
-        //         form.reset();
-        //         closeModal('editFeaturesModal');
-        //         location.reload();
-        //     } else {
-        //         alert('Failed to edit ');
-        //         // Clear previous errors
-        //         resultDiv.innerHTML = '';
+            if (status === 'success') {
+                alert(' Features edited successfully! ');
+                form.reset();
+                closeModal('editFeaturesModal');
+                location.reload();
+            } else {
+                alert('Failed to edit ');
+                // Clear previous errors
+                resultDiv.innerHTML = '';
 
-        //         if (status === 'error') {
-        //             resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
-        //         }
-        //     }
-        // });
+                if (status === 'error') {
+                    resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
+                }
+            }
+        });
 
         // Close modal when clicking outside the modal content
         window.addEventListener('click', function (event) {
