@@ -12,9 +12,10 @@ $errors = [];
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $ref_num_array = $_POST['ref_num'];  //an array of ref nums
-    $courses_ref_num_array = $_POST['courses_ref_num'];  //all of these post values are arrays
-    $feature_bold_en_array = $_POST['editFeatureBoldEN'];
+    $courses_ref_num = $_POST['courses_ref_num']; //not an array
+
+    $ref_num_array = $_POST['ref_num'];  //an array of ref nums 
+    $feature_bold_en_array = $_POST['editFeatureBoldEN']; //all of these post values are arrays
     $feature_bold_cn_array = $_POST['editFeatureBoldCN'];
     $feature_en_array = $_POST['editFeatureEN'];
     $feature_cn_array = $_POST['editFeatureCN'];
@@ -24,27 +25,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $featureCount = count($ref_num_array); // assuming all arrays are same length
 
     for ($i = 0; $i < $featureCount; $i++) {
-        $sql = "UPDATE $featurestable SET 
-                `feature_bold_en` = ?,
-                `feature_bold_cn` = ?,
-                `feature_en` = ?,
-                `feature_cn` = ?
-            WHERE `ref_num` = ?";
+        if ($ref_num_array[$i] !== '') {
+            $sql = "UPDATE $featurestable SET 
+                    `feature_bold_en` = ?,
+                    `feature_bold_cn` = ?,
+                    `feature_en` = ?,
+                    `feature_cn` = ?
+                WHERE `ref_num` = ?";
 
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param(
-            "sssss",
-            $feature_bold_en_array[$i],
-            $feature_bold_cn_array[$i],
-            $feature_en_array[$i],
-            $feature_cn_array[$i],
-            $ref_num_array[$i]
-        );
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param(
+                "sssss",
+                $feature_bold_en_array[$i],
+                $feature_bold_cn_array[$i],
+                $feature_en_array[$i],
+                $feature_cn_array[$i],
+                $ref_num_array[$i]
+            );
 
-        if ($stmt->execute()) {
-            // nice
+            if (!$stmt->execute()) {
+                $errors[`$ref_num_array[$i]`] = $stmt->error;
+            }
         } else {
-            $errors[`$ref_num_array[$i]`] = $stmt->error;
+            //If feature does not exist yet
+            //WeTalk Course Features reference num generate
+            $ref_num_prefix = 'CF-';
+            $new_ref_num = generateRefNum($conn, $ref_num_prefix, $featurestable);
+
+            $sql = "INSERT INTO $featurestable 
+                (`ref_num`, `courses_ref_num`, 
+                `feature_bold_en`, `feature_bold_cn`,
+                `feature_en`, `feature_cn`)
+                VALUES (?, ?, ?, ?, ?, ?)";
+
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param(
+                "ssssss",
+                $new_ref_num,
+                $courses_ref_num,
+                $feature_bold_en_array[$i],
+                $feature_bold_cn_array[$i],
+                $feature_en_array[$i],
+                $feature_cn_array[$i]
+            );
+
+            if (!$stmt->execute()) {
+                $errors[`$new_ref_num`] = $stmt->error;
+            }
         }
     }
 
@@ -52,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "error|" . json_encode($errors);
         exit;
     } else {
-        echo "success|$ref_num";
+        echo "success|$courses_ref_num";
     }
 }
 
