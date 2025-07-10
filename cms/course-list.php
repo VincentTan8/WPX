@@ -1,6 +1,19 @@
 <?php
 include "../connections/dbname.php";
 
+function getFeatures($conn, $database, $ref_num)
+{
+    $tablename = $database . ".`wt_course_features`";
+    $sql = "SELECT * FROM $tablename WHERE `courses_ref_num` = '$ref_num'";
+    $result = $conn->query($sql);
+    $featureArray = [];
+    while ($row = $result->fetch_assoc()) {
+        $ref = $row['ref_num'];
+        $featureArray[$ref] = $row;
+    }
+    return $featureArray;
+}
+
 $tablename = $database . ".`wt_courses`";
 $sql = "SELECT * FROM $tablename ORDER BY `course_title_en` ASC";  //limit this next time
 $result = $conn->query($sql);
@@ -9,6 +22,7 @@ $courseDataArray = [];
 while ($row = $result->fetch_assoc()) {
     $ref = $row['ref_num'];
     $courseDataArray[$ref] = $row;
+    $courseDataArray[$ref]['features'] = getFeatures($conn, $database, $ref);
 }
 ?>
 <?php include "../includes/header.php"; ?>
@@ -129,6 +143,10 @@ while ($row = $result->fetch_assoc()) {
             border: none;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
             cursor: pointer;
+        }
+
+        .feature-block {
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -351,29 +369,9 @@ while ($row = $result->fetch_assoc()) {
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal('editFeaturesModal')">&times;</span>
             <h2>Edit Features</h2>
-            <div id="editFeaturesParent">
-                <div id="editFeaturesFormContainer">
-                    <form id="editFeaturesForm">
-                        <input id="editFeaturesRefNum" type="hidden" name="ref_num" required>
-
-                        <label for="editFeatureBoldEN">Feature Bold EN</label>
-                        <textarea id="editFeatureBoldEN" name="editFeatureBoldEN" required></textarea>
-
-                        <label for="editFeatureBoldCN">Feature Bold CN</label>
-                        <textarea id="editFeatureBoldCN" name="editFeatureBoldCN"></textarea>
-
-                        <label for="editFeatureEN">Feature EN</label>
-                        <textarea id="editFeatureEN" name="editFeatureEN"></textarea>
-
-                        <label for="editFeatureCN">Feature CN</label>
-                        <textarea id="editFeatureCN" name="editFeatureCN"></textarea>
-
-                        <button class="button" type="submit">Submit</button>
-                    </form>
-                </div>
-                <a class="button addFeatures" data-refnum="<?= $row['ref_num'] ?>">
-                    Add Features <i class="fas fa-plus"></i>
-                </a>
+            <div id="editFeaturesFormContainer">
+                <form id="editFeaturesForm">
+                </form>
             </div>
             <div id="editFeaturesResult"></div>
         </div>
@@ -451,21 +449,80 @@ while ($row = $result->fetch_assoc()) {
 
             //todo Open Edit Activities
 
-            //todo Open Edit Features
+            //Open Edit Features 
             document.querySelectorAll('.editFeatures').forEach((editFeatureButton) => {
                 editFeatureButton.addEventListener('click', () => {
-                    <?php
-                    $tablename = $database . ".`wt_courses`";
-                    $sql = "SELECT * FROM $tablename ORDER BY `course_title_en` ASC";  //limit this next time
-                    $result = $conn->query($sql);
-                    $result->data_seek(0); // reset pointer if already used in a loop
-                    $courseDataArray = [];
-                    while ($row = $result->fetch_assoc()) {
-                        $ref = $row['ref_num'];
-                        $courseDataArray[$ref] = $row;
-                    }
-                    ?>
+                    const featuresForm = document.getElementById('editFeaturesForm');
                     const ref = editFeatureButton.dataset.refnum;
+                    const rows = courseData[ref]['features'];  //list of features
+
+                    //reset index form
+                    let featureIndex = 1;
+                    featuresForm.innerHTML = `
+                        <a class="button addFeatures">
+                            Add Features <i class="fas fa-plus"></i>
+                        </a>
+                        <button class="button" type="submit">Submit</button>
+                    `;
+                    const addFeaturesButton = featuresForm.querySelector('.addFeatures');
+
+                    //Clear previous feature blocks
+                    document.querySelectorAll('.feature-block').forEach((block) => {
+                        block.remove();
+                    });
+
+                    function createFeatureBlock(index, row = null) {
+                        const wrapper = document.createElement('div');
+                        wrapper.className = 'feature-block';
+                        wrapper.dataset.index = index;
+
+                        wrapper.innerHTML = `
+                            <input type="hidden" name="ref_num[]" value="${row.ref_num}" required>
+                            <input type="hidden" name="courses_ref_num[]" value="${row.courses_ref_num}" required>
+
+                            <label>Feature Bold EN</label>
+                            <textarea name="editFeatureBoldEN[]">${row.feature_bold_en}</textarea>
+
+                            <label>Feature Bold CN</label>
+                            <textarea name="editFeatureBoldCN[]">${row.feature_bold_cn}</textarea>
+
+                            <label>Feature EN</label>
+                            <textarea name="editFeatureEN[]">${row.feature_en}</textarea>
+
+                            <label>Feature CN</label>
+                            <textarea name="editFeatureCN[]">${row.feature_cn}</textarea>
+
+                            <button type="button" class="button remove-feature">Remove</button>
+                        `;
+                        // Add remove logic
+                        wrapper.querySelector('.remove-feature').addEventListener('click', function () {
+                            wrapper.remove();
+                        });
+                        return wrapper;
+                    }
+
+                    Object.values(rows).forEach(row => {
+                        featuresForm.insertBefore(createFeatureBlock(featureIndex++, row), addFeaturesButton);
+                    });
+
+                    // Handle + Add Feature button
+                    addFeaturesButton.addEventListener('click', function () {
+                        featuresForm.insertBefore(createFeatureBlock(featureIndex++), addFeaturesButton);
+                    });
+
+                    // Optional: handle form submission
+                    featuresForm.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        const formData = new FormData(featuresForm);
+
+                        const allData = {};
+                        for (const key of formData.keys()) {
+                            allData[key] = formData.getAll(key); // get *all* values
+                        }
+
+                        console.log(allData); // Full array data
+                    });
+
                     showModal('editFeaturesModal');
                 });
             });
@@ -515,7 +572,7 @@ while ($row = $result->fetch_assoc()) {
             }
         });
 
-        // Submit Edit Quote Form
+        // Submit Edit Course Form
         document.getElementById('editCourseForm').addEventListener('submit', async function (e) {
             e.preventDefault();
             const form = e.target;
@@ -531,7 +588,7 @@ while ($row = $result->fetch_assoc()) {
             const [status, message] = text.trim().split('|');
 
             if (status === 'success') {
-                alert(' Quote edited successfully! ');
+                alert(' Course edited successfully! ');
                 form.reset();
                 closeModal('editCourseModal');
                 location.reload();
@@ -545,6 +602,37 @@ while ($row = $result->fetch_assoc()) {
                 }
             }
         });
+
+        // Submit Edit Features Form
+        // document.getElementById('editFeaturesForm').addEventListener('submit', async function (e) {
+        //     e.preventDefault();
+        //     const form = e.target;
+        //     const formData = new FormData(form);
+        //     const resultDiv = document.getElementById('editFeaturesResult');
+
+        //     const response = await fetch('../course/scripts/edit-features.php', {
+        //         method: 'POST',
+        //         body: formData
+        //     });
+
+        //     const text = await response.text();
+        //     const [status, message] = text.trim().split('|');
+
+        //     if (status === 'success') {
+        //         alert(' Features edited successfully! ');
+        //         form.reset();
+        //         closeModal('editFeaturesModal');
+        //         location.reload();
+        //     } else {
+        //         alert('Failed to edit ');
+        //         // Clear previous errors
+        //         resultDiv.innerHTML = '';
+
+        //         if (status === 'error') {
+        //             resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
+        //         }
+        //     }
+        // });
 
         // Close modal when clicking outside the modal content
         window.addEventListener('click', function (event) {
