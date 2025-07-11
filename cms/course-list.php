@@ -134,6 +134,15 @@ while ($row = $result->fetch_assoc()) {
             border: 1px solid grey;
         }
 
+        /* Apply to the first column (column 0) */
+        #courseTable td:nth-child(1),
+        #courseTable th:nth-child(1) {
+            max-width: 500px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
         @media screen and (max-width: 768px) {
             .table-container {
                 padding: 20px;
@@ -502,7 +511,10 @@ while ($row = $result->fetch_assoc()) {
                     {
                         targets: 0,
                         searchable: true,
-                        orderable: true
+                        orderable: true,
+                        createdCell: function (td, cellData, rowData, row, col) {
+                            td.title = cellData;
+                        }
                     }
                 ]
             });
@@ -810,7 +822,7 @@ while ($row = $result->fetch_assoc()) {
                 });
             });
 
-            //todo Open Edit Teachers
+            //Open Edit Teachers
             document.querySelectorAll('.editTeachers').forEach((editTeacherButton) => {
                 editTeacherButton.addEventListener('click', () => {
                     const teachersForm = document.getElementById('editTeachersForm');
