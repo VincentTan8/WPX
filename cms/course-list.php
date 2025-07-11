@@ -256,6 +256,11 @@ while ($row = $result->fetch_assoc()) {
                                 </a>
                             </td>
                             <td>
+                                <a class="button editLearningGoals" data-refnum="<?= $row['ref_num'] ?>">
+                                    Edit Learning Goals <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                            <td>
                                 <a class="button editActivities" data-refnum="<?= $row['ref_num'] ?>">
                                     Edit Activities <i class="fas fa-edit"></i>
                                 </a>
@@ -263,11 +268,6 @@ while ($row = $result->fetch_assoc()) {
                             <td>
                                 <a class="button editFeatures" data-refnum="<?= $row['ref_num'] ?>">
                                     Edit Features <i class="fas fa-edit"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <a class="button editLearningGoals" data-refnum="<?= $row['ref_num'] ?>">
-                                    Edit Learning Goals <i class="fas fa-edit"></i>
                                 </a>
                             </td>
                             <td>
@@ -298,51 +298,6 @@ while ($row = $result->fetch_assoc()) {
                 <label for="addCourseTitleEN">Course Title EN</label>
                 <textarea id="addCourseTitleEN" name="addCourseTitleEN" required></textarea>
 
-                <label for="addCourseTitleCN">Course Title CN</label>
-                <textarea id="addCourseTitleCN" name="addCourseTitleCN"></textarea>
-
-                <label for="addCourseShortTitleEN">Course Short Title EN</label>
-                <textarea id="addCourseShortTitleEN" name="addCourseShortTitleEN"></textarea>
-
-                <label for="addCourseShortTitleCN">Course Short Title CN</label>
-                <textarea id="addCourseShortTitleCN" name="addCourseShortTitleCN"></textarea>
-
-                <label for="addCourseSubtitleEN">Course Subtitle EN</label>
-                <textarea id="addCourseSubtitleEN" name="addCourseSubtitleEN"></textarea>
-
-                <label for="addCourseSubtitleCN">Course Subtitle CN</label>
-                <textarea id="addCourseSubtitleCN" name="addCourseSubtitleCN"></textarea>
-
-                <label for="addCourseDescriptionEN">Course Description EN</label>
-                <textarea id="addCourseDescriptionEN" name="addCourseDescriptionEN"></textarea>
-
-                <label for="addCourseDescriptionCN">Course Description CN</label>
-                <textarea id="addCourseDescriptionCN" name="addCourseDescriptionCN"></textarea>
-
-                <label>Thumbnail Tag EN</label>
-                <input id="addThumbnailTagEN" type="text" name="addThumbnailTagEN">
-
-                <label>Thumbnail Tag CN</label>
-                <input id="addThumbnailTagCN" type="text" name="addThumbnailTagCN">
-
-                <label for="addSuitableForEN">Suitable For EN</label>
-                <textarea id="addSuitableForEN" name="addSuitableForEN"></textarea>
-
-                <label for="addSuitableForCN">Suitable For CN</label>
-                <textarea id="addSuitableForCN" name="addSuitableForCN"></textarea>
-
-                <label>Course Start Date EN</label>
-                <input id="addCourseStartDateEN" type="text" name="addCourseStartDateEN">
-
-                <label>Course Start Date CN</label>
-                <input id="addCourseStartDateCN" type="text" name="addCourseStartDateCN">
-
-                <label>Class Hours EN</label>
-                <input id="addClassHoursEN" type="text" name="addClassHoursEN">
-
-                <label>Class Hours CN</label>
-                <input id="addClassHoursCN" type="text" name="addClassHoursCN">
-
                 <label>Age Group</label>
                 <input id="addAgeGroup" type="text" name="addAgeGroup">
 
@@ -354,6 +309,57 @@ while ($row = $result->fetch_assoc()) {
 
                 <label>Course Type</label>
                 <input id="addCourseType" type="text" name="addCourseType">
+
+                <label for="addCourseShortTitleEN">Course Short Title EN</label>
+                <textarea id="addCourseShortTitleEN" name="addCourseShortTitleEN"></textarea>
+
+                <label for="addCourseSubtitleEN">Course Subtitle EN</label>
+                <textarea id="addCourseSubtitleEN" name="addCourseSubtitleEN"></textarea>
+
+                <label for="addCourseDescriptionEN">Course Description EN</label>
+                <textarea id="addCourseDescriptionEN" name="addCourseDescriptionEN"></textarea>
+
+                <!-- <label>Course Image</label>
+                <input id="addCourseImg" type="file" name="addCourseImg">
+
+                <label>Course List Image</label>
+                <input id="addCourseListImg" type="file" name="addCourseListImg"> -->
+
+                <label>Thumbnail Tag EN</label>
+                <input id="addThumbnailTagEN" type="text" name="addThumbnailTagEN">
+
+                <label for="addSuitableForEN">Suitable For EN</label>
+                <textarea id="addSuitableForEN" name="addSuitableForEN"></textarea>
+
+                <label>Course Start Date EN</label>
+                <input id="addCourseStartDateEN" type="text" name="addCourseStartDateEN">
+
+                <label>Class Hours EN</label>
+                <input id="addClassHoursEN" type="text" name="addClassHoursEN">
+
+                <label for="addCourseTitleCN">Course Title CN</label>
+                <textarea id="addCourseTitleCN" name="addCourseTitleCN"></textarea>
+
+                <label for="addCourseShortTitleCN">Course Short Title CN</label>
+                <textarea id="addCourseShortTitleCN" name="addCourseShortTitleCN"></textarea>
+
+                <label for="addCourseSubtitleCN">Course Subtitle CN</label>
+                <textarea id="addCourseSubtitleCN" name="addCourseSubtitleCN"></textarea>
+
+                <label for="addCourseDescriptionCN">Course Description CN</label>
+                <textarea id="addCourseDescriptionCN" name="addCourseDescriptionCN"></textarea>
+
+                <label>Thumbnail Tag CN</label>
+                <input id="addThumbnailTagCN" type="text" name="addThumbnailTagCN">
+
+                <label for="addSuitableForCN">Suitable For CN</label>
+                <textarea id="addSuitableForCN" name="addSuitableForCN"></textarea>
+
+                <label>Course Start Date CN</label>
+                <input id="addCourseStartDateCN" type="text" name="addCourseStartDateCN">
+
+                <label>Class Hours CN</label>
+                <input id="addClassHoursCN" type="text" name="addClassHoursCN">
 
                 <button class="button" type="submit">Submit</button>
             </form>
@@ -371,51 +377,6 @@ while ($row = $result->fetch_assoc()) {
                 <label for="editCourseTitleEN">Course Title EN</label>
                 <textarea id="editCourseTitleEN" name="editCourseTitleEN" required></textarea>
 
-                <label for="editCourseTitleCN">Course Title CN</label>
-                <textarea id="editCourseTitleCN" name="editCourseTitleCN"></textarea>
-
-                <label for="editCourseShortTitleEN">Course Short Title EN</label>
-                <textarea id="editCourseShortTitleEN" name="editCourseShortTitleEN"></textarea>
-
-                <label for="editCourseShortTitleCN">Course Short Title CN</label>
-                <textarea id="editCourseShortTitleCN" name="editCourseShortTitleCN"></textarea>
-
-                <label for="editCourseSubtitleEN">Course Subtitle EN</label>
-                <textarea id="editCourseSubtitleEN" name="editCourseSubtitleEN"></textarea>
-
-                <label for="editCourseSubtitleCN">Course Subtitle CN</label>
-                <textarea id="editCourseSubtitleCN" name="editCourseSubtitleCN"></textarea>
-
-                <label for="editCourseDescriptionEN">Course Description EN</label>
-                <textarea id="editCourseDescriptionEN" name="editCourseDescriptionEN"></textarea>
-
-                <label for="editCourseDescriptionCN">Course Description CN</label>
-                <textarea id="editCourseDescriptionCN" name="editCourseDescriptionCN"></textarea>
-
-                <label>Thumbnail Tag EN</label>
-                <input id="editThumbnailTagEN" type="text" name="editThumbnailTagEN">
-
-                <label>Thumbnail Tag CN</label>
-                <input id="editThumbnailTagCN" type="text" name="editThumbnailTagCN">
-
-                <label for="editSuitableForEN">Suitable For EN</label>
-                <textarea id="editSuitableForEN" name="editSuitableForEN"></textarea>
-
-                <label for="editSuitableForCN">Suitable For CN</label>
-                <textarea id="editSuitableForCN" name="editSuitableForCN"></textarea>
-
-                <label>Course Start Date EN</label>
-                <input id="editCourseStartDateEN" type="text" name="editCourseStartDateEN">
-
-                <label>Course Start Date CN</label>
-                <input id="editCourseStartDateCN" type="text" name="editCourseStartDateCN">
-
-                <label>Class Hours EN</label>
-                <input id="editClassHoursEN" type="text" name="editClassHoursEN">
-
-                <label>Class Hours CN</label>
-                <input id="editClassHoursCN" type="text" name="editClassHoursCN">
-
                 <label>Age Group</label>
                 <input id="editAgeGroup" type="text" name="editAgeGroup">
 
@@ -427,6 +388,63 @@ while ($row = $result->fetch_assoc()) {
 
                 <label>Course Type</label>
                 <input id="editCourseType" type="text" name="editCourseType">
+
+                <label for="editCourseShortTitleEN">Course Short Title EN</label>
+                <textarea id="editCourseShortTitleEN" name="editCourseShortTitleEN"></textarea>
+
+                <label for="editCourseSubtitleEN">Course Subtitle EN</label>
+                <textarea id="editCourseSubtitleEN" name="editCourseSubtitleEN"></textarea>
+
+                <label for="editCourseDescriptionEN">Course Description EN</label>
+                <textarea id="editCourseDescriptionEN" name="editCourseDescriptionEN"></textarea>
+
+                <!-- <label>Course Image</label>
+                <div style="display: inline-flex; gap: 1rem;">
+                    <input id="editCourseImg" type="file" name="editCourseImg">
+                    <span id="courseImgName"></span>
+                </div>
+
+                <label>Course List Image</label>
+                <div style="display: inline-flex; gap: 1rem;">
+                    <input id="editCourseListImg" type="file" name="editCourseListImg">
+                    <span id="courseListImgName"></span>
+                </div> -->
+
+                <label>Thumbnail Tag EN</label>
+                <input id="editThumbnailTagEN" type="text" name="editThumbnailTagEN">
+
+                <label for="editSuitableForEN">Suitable For EN</label>
+                <textarea id="editSuitableForEN" name="editSuitableForEN"></textarea>
+
+                <label>Course Start Date EN</label>
+                <input id="editCourseStartDateEN" type="text" name="editCourseStartDateEN">
+
+                <label>Class Hours EN</label>
+                <input id="editClassHoursEN" type="text" name="editClassHoursEN">
+
+                <label for="editCourseTitleCN">Course Title CN</label>
+                <textarea id="editCourseTitleCN" name="editCourseTitleCN"></textarea>
+
+                <label for="editCourseShortTitleCN">Course Short Title CN</label>
+                <textarea id="editCourseShortTitleCN" name="editCourseShortTitleCN"></textarea>
+
+                <label for="editCourseSubtitleCN">Course Subtitle CN</label>
+                <textarea id="editCourseSubtitleCN" name="editCourseSubtitleCN"></textarea>
+
+                <label for="editCourseDescriptionCN">Course Description CN</label>
+                <textarea id="editCourseDescriptionCN" name="editCourseDescriptionCN"></textarea>
+
+                <label>Thumbnail Tag CN</label>
+                <input id="editThumbnailTagCN" type="text" name="editThumbnailTagCN">
+
+                <label for="editSuitableForCN">Suitable For CN</label>
+                <textarea id="editSuitableForCN" name="editSuitableForCN"></textarea>
+
+                <label>Course Start Date CN</label>
+                <input id="editCourseStartDateCN" type="text" name="editCourseStartDateCN">
+
+                <label>Class Hours CN</label>
+                <input id="editClassHoursCN" type="text" name="editClassHoursCN">
 
                 <button class="button" type="submit">Submit</button>
             </form>
@@ -545,6 +563,9 @@ while ($row = $result->fetch_assoc()) {
 
                     document.getElementById('editCourseDescriptionEN').value = row.course_description_en || '';
                     document.getElementById('editCourseDescriptionCN').value = row.course_description_cn || '';
+
+                    // document.getElementById('courseImgName').textContent = row.course_img || '';
+                    // document.getElementById('courseListImgName').textContent = row.course_list_img || '';
 
                     document.getElementById('editThumbnailTagEN').value = row.thumbnail_tag_en || '';
                     document.getElementById('editThumbnailTagCN').value = row.thumbnail_tag_cn || '';
