@@ -20,13 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $feature_en_array = $_POST['editFeatureEN'];
     $feature_cn_array = $_POST['editFeatureCN'];
 
-    $featurestable = $database . ".`wt_course_features`";
+    $tablename = $database . ".`wt_course_features`";
 
-    $featureCount = count($ref_num_array); // assuming all arrays are same length
+    $entryCount = count($ref_num_array); // assuming all arrays are same length
 
-    for ($i = 0; $i < $featureCount; $i++) {
+    for ($i = 0; $i < $entryCount; $i++) {
         if ($ref_num_array[$i] !== '') {
-            $sql = "UPDATE $featurestable SET 
+            $sql = "UPDATE $tablename SET 
                     `feature_bold_en` = ?,
                     `feature_bold_cn` = ?,
                     `feature_en` = ?,
@@ -50,9 +50,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //If feature does not exist yet
             //WeTalk Course Features reference num generate
             $ref_num_prefix = 'CF-';
-            $new_ref_num = generateRefNum($conn, $ref_num_prefix, $featurestable);
+            $new_ref_num = generateRefNum($conn, $ref_num_prefix, $tablename);
 
-            $sql = "INSERT INTO $featurestable 
+            $sql = "INSERT INTO $tablename 
                 (`ref_num`, `courses_ref_num`, 
                 `feature_bold_en`, `feature_bold_cn`,
                 `feature_en`, `feature_cn`)
