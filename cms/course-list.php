@@ -201,7 +201,11 @@ while ($row = $result->fetch_assoc()) {
             cursor: pointer;
         }
 
-        .feature-block {
+        .feature-block,
+        .activity-block,
+        .learning-goal-block,
+        .material-block,
+        .teacher-block {
             margin-bottom: 1rem;
         }
     </style>
@@ -551,7 +555,64 @@ while ($row = $result->fetch_assoc()) {
                 });
             });
 
-            //todo Open Edit Activities
+            //Open Edit Activities
+            document.querySelectorAll('.editActivities').forEach((editActivityButton) => {
+                editActivityButton.addEventListener('click', () => {
+                    const activitiesForm = document.getElementById('editActivitiesForm');
+                    const ref = editActivityButton.dataset.refnum;
+                    const rows = courseData[ref]['activities'];  //list of activities
+
+                    //reset index form
+                    let activityIndex = 1;
+                    activitiesForm.innerHTML = `
+                        <input type="hidden" name="courses_ref_num" value="${ref}" required>
+                        <a class="button addActivities">
+                            Add Activities <i class="fas fa-plus"></i>
+                        </a>
+                        <button class="button" type="submit">Submit</button>
+                    `;
+                    const addActivitiesButton = activitiesForm.querySelector('.addActivities');
+
+                    //Clear previous activity blocks
+                    document.querySelectorAll('.activity-block').forEach((block) => {
+                        block.remove();
+                    });
+
+                    function createActivityBlock(index, row = null) {
+                        const wrapper = document.createElement('div');
+                        wrapper.className = 'activity-block';
+                        wrapper.dataset.index = index;
+
+                        wrapper.innerHTML = `
+                            <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
+
+                            <label>Activity EN</label>
+                            <textarea name="editActivityEN[]">${row?.activity_en || ''}</textarea>
+
+                            <label>Activity CN</label>
+                            <textarea name="editActivityCN[]">${row?.activity_cn || ''}</textarea>
+
+                            <button type="button" class="button remove-activity">Remove</button>
+                        `;
+                        // Add remove logic
+                        wrapper.querySelector('.remove-activity').addEventListener('click', function () {
+                            wrapper.remove();
+                        });
+                        return wrapper;
+                    }
+
+                    Object.values(rows).forEach(row => {
+                        activitiesForm.insertBefore(createActivityBlock(activityIndex++, row), addActivitiesButton);
+                    });
+
+                    // Handle + Add Activity button
+                    addActivitiesButton.addEventListener('click', function () {
+                        activitiesForm.insertBefore(createActivityBlock(activityIndex++), addActivitiesButton);
+                    });
+
+                    showModal('editActivitiesModal');
+                });
+            });
 
             //Open Edit Features 
             document.querySelectorAll('.editFeatures').forEach((editFeatureButton) => {
@@ -631,12 +692,182 @@ while ($row = $result->fetch_assoc()) {
                 });
             });
 
-            //todo Open Edit Learning Goals
+            //Open Edit Learning Goals
+            document.querySelectorAll('.editLearningGoals').forEach((editLearningGoalButton) => {
+                editLearningGoalButton.addEventListener('click', () => {
+                    const learningGoalsForm = document.getElementById('editLearningGoalsForm');
+                    const ref = editLearningGoalButton.dataset.refnum;
+                    const rows = courseData[ref]['learningGoals'];  //list of learning goals
 
-            //todo Open Edit Materials
+                    //reset index form
+                    let learningGoalIndex = 1;
+                    learningGoalsForm.innerHTML = `
+                        <input type="hidden" name="courses_ref_num" value="${ref}" required>
+                        <a class="button addLearningGoals">
+                            Add Learning Goals <i class="fas fa-plus"></i>
+                        </a>
+                        <button class="button" type="submit">Submit</button>
+                    `;
+                    const addLearningGoalsButton = learningGoalsForm.querySelector('.addLearningGoals');
+
+                    //Clear previous learning goal blocks
+                    document.querySelectorAll('.learning-goal-block').forEach((block) => {
+                        block.remove();
+                    });
+
+                    function createLearningGoalBlock(index, row = null) {
+                        const wrapper = document.createElement('div');
+                        wrapper.className = 'learning-goal-block';
+                        wrapper.dataset.index = index;
+
+                        wrapper.innerHTML = `
+                            <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
+
+                            <label>Learning Goal EN</label>
+                            <textarea name="editLearningGoalEN[]">${row?.learning_goal_en || ''}</textarea>
+
+                            <label>Learning Goal CN</label>
+                            <textarea name="editLearningGoalCN[]">${row?.learning_goal_cn || ''}</textarea>
+
+                            <button type="button" class="button remove-learning-goal">Remove</button>
+                        `;
+                        // Add remove logic
+                        wrapper.querySelector('.remove-learning-goal').addEventListener('click', function () {
+                            wrapper.remove();
+                        });
+                        return wrapper;
+                    }
+
+                    Object.values(rows).forEach(row => {
+                        learningGoalsForm.insertBefore(createLearningGoalBlock(learningGoalIndex++, row), addLearningGoalsButton);
+                    });
+
+                    // Handle + Add Learning Goal button
+                    addLearningGoalsButton.addEventListener('click', function () {
+                        learningGoalsForm.insertBefore(createLearningGoalBlock(learningGoalIndex++), addLearningGoalsButton);
+                    });
+
+                    showModal('editLearningGoalsModal');
+                });
+            });
+
+            //Open Edit Materials
+            document.querySelectorAll('.editMaterials').forEach((editMaterialButton) => {
+                editMaterialButton.addEventListener('click', () => {
+                    const materialsForm = document.getElementById('editMaterialsForm');
+                    const ref = editMaterialButton.dataset.refnum;
+                    const rows = courseData[ref]['materials'];  //list of materials
+
+                    //reset index form
+                    let materialIndex = 1;
+                    materialsForm.innerHTML = `
+                        <input type="hidden" name="courses_ref_num" value="${ref}" required>
+                        <a class="button addMaterials">
+                            Add Materials <i class="fas fa-plus"></i>
+                        </a>
+                        <button class="button" type="submit">Submit</button>
+                    `;
+                    const addMaterialsButton = materialsForm.querySelector('.addMaterials');
+
+                    //Clear previous material blocks
+                    document.querySelectorAll('.material-block').forEach((block) => {
+                        block.remove();
+                    });
+
+                    function createMaterialBlock(index, row = null) {
+                        const wrapper = document.createElement('div');
+                        wrapper.className = 'material-block';
+                        wrapper.dataset.index = index;
+
+                        wrapper.innerHTML = `
+                            <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
+
+                            <label>Material EN</label>
+                            <textarea name="editMaterialEN[]">${row?.material_en || ''}</textarea>
+
+                            <label>Material CN</label>
+                            <textarea name="editMaterialCN[]">${row?.material_cn || ''}</textarea>
+
+                            <button type="button" class="button remove-material">Remove</button>
+                        `;
+                        // Add remove logic
+                        wrapper.querySelector('.remove-material').addEventListener('click', function () {
+                            wrapper.remove();
+                        });
+                        return wrapper;
+                    }
+
+                    Object.values(rows).forEach(row => {
+                        materialsForm.insertBefore(createMaterialBlock(materialIndex++, row), addMaterialsButton);
+                    });
+
+                    // Handle + Add Material button
+                    addMaterialsButton.addEventListener('click', function () {
+                        materialsForm.insertBefore(createMaterialBlock(materialIndex++), addMaterialsButton);
+                    });
+
+                    showModal('editMaterialsModal');
+                });
+            });
 
             //todo Open Edit Teachers
+            document.querySelectorAll('.editTeachers').forEach((editTeacherButton) => {
+                editTeacherButton.addEventListener('click', () => {
+                    const teachersForm = document.getElementById('editTeachersForm');
+                    const ref = editTeacherButton.dataset.refnum;
+                    const rows = courseData[ref]['teachers'];  //list of teachers
 
+                    //reset index form
+                    let teacherIndex = 1;
+                    teachersForm.innerHTML = `
+                        <input type="hidden" name="courses_ref_num" value="${ref}" required>
+                        <a class="button addTeachers">
+                            Add Teachers <i class="fas fa-plus"></i>
+                        </a>
+                        <button class="button" type="submit">Submit</button>
+                    `;
+                    const addTeachersButton = teachersForm.querySelector('.addTeachers');
+
+                    //Clear previous teacher blocks
+                    document.querySelectorAll('.teacher-block').forEach((block) => {
+                        block.remove();
+                    });
+
+                    function createTeacherBlock(index, row = null) {
+                        const wrapper = document.createElement('div');
+                        wrapper.className = 'teacher-block';
+                        wrapper.dataset.index = index;
+
+                        wrapper.innerHTML = `
+                            <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
+
+                            <label>Teacher EN</label>
+                            <textarea name="editTeacherEN[]">${row?.teacher_en || ''}</textarea>
+
+                            <label>Teacher CN</label>
+                            <textarea name="editTeacherCN[]">${row?.teacher_cn || ''}</textarea>
+
+                            <button type="button" class="button remove-teacher">Remove</button>
+                        `;
+                        // Add remove logic
+                        wrapper.querySelector('.remove-teacher').addEventListener('click', function () {
+                            wrapper.remove();
+                        });
+                        return wrapper;
+                    }
+
+                    Object.values(rows).forEach(row => {
+                        teachersForm.insertBefore(createTeacherBlock(teacherIndex++, row), addTeachersButton);
+                    });
+
+                    // Handle + Add Teacher button
+                    addTeachersButton.addEventListener('click', function () {
+                        teachersForm.insertBefore(createTeacherBlock(teacherIndex++), addTeachersButton);
+                    });
+
+                    showModal('editTeachersModal');
+                });
+            });
         });
 
         function showModal(id) {
@@ -742,7 +973,11 @@ while ($row = $result->fetch_assoc()) {
         window.addEventListener('click', function (event) {
             const courseModal = document.getElementById('courseModal');
             const editCourseModal = document.getElementById('editCourseModal');
+            const editActivitiesModal = document.getElementById('editActivitiesModal');
             const editFeaturesModal = document.getElementById('editFeaturesModal');
+            const editLearningGoalsModal = document.getElementById('editLearningGoalsModal');
+            const editMaterialsModal = document.getElementById('editMaterialsModal');
+            const editTeachersModal = document.getElementById('editTeachersModal');
 
             if (event.target === courseModal) {
                 courseModal.style.display = "none";
@@ -750,8 +985,20 @@ while ($row = $result->fetch_assoc()) {
             if (event.target === editCourseModal) {
                 editCourseModal.style.display = "none";
             }
+            if (event.target === editActivitiesModal) {
+                editActivitiesModal.style.display = "none";
+            }
             if (event.target === editFeaturesModal) {
                 editFeaturesModal.style.display = "none";
+            }
+            if (event.target === editLearningGoalsModal) {
+                editLearningGoalsModal.style.display = "none";
+            }
+            if (event.target === editMaterialsModal) {
+                editMaterialsModal.style.display = "none";
+            }
+            if (event.target === editTeachersModal) {
+                editTeachersModal.style.display = "none";
             }
         });
 
