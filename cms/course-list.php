@@ -938,6 +938,37 @@ while ($row = $result->fetch_assoc()) {
             }
         });
 
+        //Submit Edit Activities Form
+        document.getElementById('editActivitiesForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const resultDiv = document.getElementById('editActivitiesResult');
+
+            const response = await fetch('../course/scripts/edit-activities.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            const text = await response.text();
+            const [status, message] = text.trim().split('|');
+
+            if (status === 'success') {
+                alert(' Activities edited successfully! ');
+                form.reset();
+                closeModal('editActivitiesModal');
+                location.reload();
+            } else {
+                alert('Failed to edit ');
+                // Clear previous errors
+                resultDiv.innerHTML = '';
+
+                if (status === 'error') {
+                    resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
+                }
+            }
+        });
+
         // Submit Edit Features Form
         document.getElementById('editFeaturesForm').addEventListener('submit', async function (e) {
             e.preventDefault();
@@ -957,6 +988,99 @@ while ($row = $result->fetch_assoc()) {
                 alert(' Features edited successfully! ');
                 form.reset();
                 closeModal('editFeaturesModal');
+                location.reload();
+            } else {
+                alert('Failed to edit ');
+                // Clear previous errors
+                resultDiv.innerHTML = '';
+
+                if (status === 'error') {
+                    resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
+                }
+            }
+        });
+
+        //Submit Learning Goals Form
+        document.getElementById('editLearningGoalsForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const resultDiv = document.getElementById('editLearningGoalsResult');
+
+            const response = await fetch('../course/scripts/edit-learning-goals.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            const text = await response.text();
+            const [status, message] = text.trim().split('|');
+
+            if (status === 'success') {
+                alert(' Learning Goals edited successfully! ');
+                form.reset();
+                closeModal('editLearningGoalsModal');
+                location.reload();
+            } else {
+                alert('Failed to edit ');
+                // Clear previous errors
+                resultDiv.innerHTML = '';
+
+                if (status === 'error') {
+                    resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
+                }
+            }
+        });
+
+        //Submit Materials Form
+        document.getElementById('editMaterialsForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const resultDiv = document.getElementById('editMaterialsResult');
+
+            const response = await fetch('../course/scripts/edit-materials.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            const text = await response.text();
+            const [status, message] = text.trim().split('|');
+
+            if (status === 'success') {
+                alert(' Materials edited successfully! ');
+                form.reset();
+                closeModal('editMaterialsModal');
+                location.reload();
+            } else {
+                alert('Failed to edit ');
+                // Clear previous errors
+                resultDiv.innerHTML = '';
+
+                if (status === 'error') {
+                    resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
+                }
+            }
+        });
+
+        //Submit Teachers Form
+        document.getElementById('editTeachersForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const resultDiv = document.getElementById('editTeachersResult');
+
+            const response = await fetch('../course/scripts/edit-teachers.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            const text = await response.text();
+            const [status, message] = text.trim().split('|');
+
+            if (status === 'success') {
+                alert(' Teachers edited successfully! ');
+                form.reset();
+                closeModal('editTeachersModal');
                 location.reload();
             } else {
                 alert('Failed to edit ');
