@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $stmt = $conn->prepare($sql);
             $stmt->bind_param(
-                "ssssss",
+                "ssss",
                 $new_ref_num,
                 $courses_ref_num,
                 $activity_en_array[$i],
