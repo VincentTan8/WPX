@@ -115,6 +115,10 @@ $imgDir = "../resources/img/educational-tour/";
         justify-content: center;
     }
 
+    .modal-backdrop {
+        z-index: inherit;
+    }
+
     @media (max-width: 767px) {
         .hero-content {
             width: 90%;
@@ -205,12 +209,28 @@ $imgDir = "../resources/img/educational-tour/";
             </svg>
         </a>
 
-        <a class="hero-button white">
+        <a class="hero-button white" data-toggle="modal" data-target="#videoModal">
             <span id="hero-button-2">Watch Our Journey</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="black">
                 <path d="M8 5v14l11-7z" />
             </svg>
         </a>
+
+        <!-- Modal -->
+        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content" style="background-color: black; border: none;">
+                    <div class="modal-body p-0" style="position: relative;">
+                        <video id="journeyVideo" width="100%" controls style="z-index: 10; position: relative;">
+                            <source src="video/journey.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 
     </div>
 
@@ -276,6 +296,24 @@ $imgDir = "../resources/img/educational-tour/";
                 }]
             });
         });
+
+
+        $('#videoModal').on('shown.bs.modal', function () {
+            const video = document.getElementById('journeyVideo');
+            if (video) {
+                video.play();
+            }
+        });
+
+        $('#videoModal').on('hidden.bs.modal', function () {
+            const video = document.getElementById('journeyVideo');
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+        });
+
+
     </script>
 </body>
 
