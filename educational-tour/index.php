@@ -115,9 +115,6 @@ $imgDir = "../resources/img/educational-tour/";
         justify-content: center;
     }
 
-    .modal-backdrop {
-        z-index: inherit;
-    }
 
     @media (max-width: 767px) {
         .hero-content {
@@ -216,19 +213,6 @@ $imgDir = "../resources/img/educational-tour/";
             </svg>
         </a>
 
-        <!-- Modal -->
-        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content" style="background-color: black; border: none;">
-                    <div class="modal-body p-0" style="position: relative;">
-                        <video id="journeyVideo" width="100%" controls style="z-index: 10; position: relative;">
-                            <source src="video/journey.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
 
@@ -245,6 +229,22 @@ $imgDir = "../resources/img/educational-tour/";
 
     <?php include "../includes/address.php"; ?>
     <?php include "../includes/footer.php"; ?>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content" style="background-color: black; border: none;">
+                <div class="modal-body p-0" style="position: relative;">
+                    <video id="journeyVideo" width="100%" controls style="z-index: 1050; position: relative;">
+                        <source src="video/journey.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- End white container -->
 
 
