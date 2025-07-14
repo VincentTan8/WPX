@@ -51,6 +51,14 @@
             flex-shrink: 1;
         }
 
+        .offer-text h2 {
+            font-size: 24px;
+        }
+
+        .offer-text p {
+            font-size: 16px;
+        }
+
         .offer-image {
             width: 100%;
             max-width: 100%;

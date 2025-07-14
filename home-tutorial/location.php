@@ -84,7 +84,7 @@
         }
 
         .location-text h2 {
-            font-size: 28px;
+            font-size: 24px;
         }
 
         .check-item {

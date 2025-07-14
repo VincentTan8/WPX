@@ -118,6 +118,10 @@
             text-align: center;
         }
 
+        .start-left h2 {
+            font-size: 24px;
+        }
+
         .start-left p {
             width: 100%;
             font-size: 16px;
