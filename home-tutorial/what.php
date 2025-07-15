@@ -77,7 +77,7 @@
         <p>WeTalk Home Tutorial is designed to provide a comprehensive and immersive learning experience in the
             Philippines. This package is ideal for international learners seeking focused, one-on-one instruction in a
             comfortable and convenient environment.</p>
-        <p>Our Home Tutorial program is currently available for children aged 3 to 14</p>
+        <p>Our Home Tutorial program is currently available for children aged 3 to 14.</p>
     </div>
     <img src="../resources/img/tutorial/what.png" alt="Descriptive Alt Text" class="what-image">
 </div>
