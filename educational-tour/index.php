@@ -235,7 +235,28 @@ $imgDir = "../resources/img/educational-tour/";
     <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content" style="background-color: black; border: none;">
-                <div class="modal-body p-0" style="position: relative;">
+                <!-- Close button -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="
+                    position: absolute;
+                    top: -45px;
+                    right: -40px;
+                    z-index: 1055;
+                    font-size: 36px;
+                    
+                    color: white;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    line-height: 32px;
+                    text-align: center;
+                    border: none;
+                    
+                    cursor: pointer;
+                ">
+                    &times;
+                </button>
+
+                <div class="modal-body p-0" style="position: relative; border-radius:25px;">
                     <video id="journeyVideo" width="100%" controls style="z-index: 1050; position: relative;">
                         <source src="video/journey.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -305,6 +326,13 @@ $imgDir = "../resources/img/educational-tour/";
             }
         });
 
+        $('#videoModal').on('hidden.bs.modal', function () {
+            const video = document.getElementById('journeyVideo');
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+        });
         $('#videoModal').on('hidden.bs.modal', function () {
             const video = document.getElementById('journeyVideo');
             if (video) {
