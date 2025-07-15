@@ -1,6 +1,7 @@
 <?php
 // Database connection
 include "../../connections/dbname.php";
+include "uploadImage.php";
 
 // Check connection
 if (!$conn) {
@@ -12,37 +13,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ref_num = $_POST['ref_num'];
 
     $course_title_en = $_POST['editCourseTitleEN'];
-    $course_title_cn = $_POST['editCourseTitleCN'];
+    // $course_title_cn = $_POST['editCourseTitleCN'];
 
     $course_short_title_en = $_POST['editCourseShortTitleEN'];
-    $course_short_title_cn = $_POST['editCourseShortTitleCN'];
+    // $course_short_title_cn = $_POST['editCourseShortTitleCN'];
 
     $course_subtitle_en = $_POST['editCourseSubtitleEN'];
-    $course_subtitle_cn = $_POST['editCourseSubtitleCN'];
+    // $course_subtitle_cn = $_POST['editCourseSubtitleCN'];
 
     $course_description_en = $_POST['editCourseDescriptionEN'];
-    $course_description_cn = $_POST['editCourseDescriptionCN'];
+    // $course_description_cn = $_POST['editCourseDescriptionCN'];
 
     $thumbnail_tag_en = $_POST['editThumbnailTagEN'];
-    $thumbnail_tag_cn = $_POST['editThumbnailTagCN'];
+    // $thumbnail_tag_cn = $_POST['editThumbnailTagCN'];
 
     $suitable_for_en = $_POST['editSuitableForEN'];
-    $suitable_for_cn = $_POST['editSuitableForCN'];
+    // $suitable_for_cn = $_POST['editSuitableForCN'];
 
     $course_start_date_en = $_POST['editCourseStartDateEN'];
-    $course_start_date_cn = $_POST['editCourseStartDateCN'];
+    // $course_start_date_cn = $_POST['editCourseStartDateCN'];
 
     $class_hours_en = $_POST['editClassHoursEN'];
-    $class_hours_cn = $_POST['editClassHoursCN'];
+    // $class_hours_cn = $_POST['editClassHoursCN'];
 
     $age_group = $_POST['editAgeGroup'];
     $language = $_POST['editLanguage'];
     $course_package = $_POST['editCoursePackage'];
     $course_type = $_POST['editCourseType'];
 
-    $coursestable = $database . ".`wt_courses`";
+    $tablename = $database . ".`wt_courses`";
 
-    $sql = "UPDATE $coursestable SET 
+    $sql = "UPDATE $tablename SET 
             `course_title_en` = ?,
             `course_title_cn` = ?,
             `course_short_title_en` = ?,
@@ -92,6 +93,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     );
 
     if ($stmt->execute()) {
+        $course_img = $_FILES['editCourseImg'];
+        $course_list_img = $_FILES['editCourseListImg'];
+        if (isset($course_img) && $course_img['error'] !== UPLOAD_ERR_NO_FILE)
+            uploadImage($conn, $ref_num, $tablename, $course_img, 'course_img');
+        if (isset($course_list_img) && $course_list_img['error'] !== UPLOAD_ERR_NO_FILE)
+            uploadImage($conn, $ref_num, $tablename, $course_list_img, 'course_list_img');
         echo "success|$ref_num";
     } else {
         echo "error|Execution failed: " . $stmt->error;
