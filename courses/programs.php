@@ -558,7 +558,7 @@
         <?php
         for ($i = 0; $i < 12; $i++) {
             echo '
-               <a href="https://wetalk.com/course" style="text-decoration: none; color: inherit;">
+              <a href="https://wetalk.com/course" class="course-link" style="text-decoration: none; color: inherit;">
         <div class="course-card">
             <div class="course-image-wrapper">
                 <img src="../resources/img/courses/course-1.png" alt="Grid Image" class="image-grid" />
@@ -596,7 +596,7 @@
         const listBtn = document.getElementById("listToggle");
         const container = document.getElementById("courseContainer");
         const paginationContainer = document.getElementById("paginationContainer");
-        const courseCards = Array.from(container.querySelectorAll(".course-card"));
+        const courseCards = Array.from(container.querySelectorAll(".course-link"));
 
         const GRID_ITEMS_PER_PAGE = 9;
         const LIST_ITEMS_PER_PAGE = 5;
@@ -654,7 +654,7 @@
             const end = start + itemsPerPage;
 
             courseCards.forEach((card, index) => {
-                card.style.display = (index >= start && index < end) ? "flex" : "none";
+                card.style.display = (index >= start && index < end) ? "block" : "none";
             });
         }
         function updatePageInfo() {
