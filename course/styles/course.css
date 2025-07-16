@@ -148,6 +148,7 @@ input.invalid {
 /* Hide all steps by default: */
 .tab {
     display: none;
+    margin-bottom: 1rem;
 }
 
 #prevBtn {
@@ -156,6 +157,7 @@ input.invalid {
 
 #stepNav {
     width: 200px;
+    min-height: fit-content;
     background-color: #f9f9f9;
     padding: 20px;
     border-right: 1px solid #ccc;
