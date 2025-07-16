@@ -29,6 +29,31 @@ include "../connections/dbname.php";
 
 
 ?>
+<!-- JavaScript -->
+<script src="../vendor/js/bundle.min.js"></script>
+<script src="../vendor/js/jquery.fancybox.min.js"></script>
+<script src="../vendor/js/owl.carousel.min.js"></script>
+<script src="../vendor/js/swiper.min.js"></script>
+<script src="../vendor/js/jquery.cubeportfolio.min.js"></script>
+<script src="../vendor/js/jquery.appear.js"></script>
+<script src="../vendor/js/wow.min.js"></script>
+<script src="../vendor/js/flip.js"></script>
+<script src="../vendor/js/jquery-ui.bundle.js"></script>
+<script src="../vendor/js/select2.min.js"></script>
+<script src="../vendor/js/jquery.hoverdir.js"></script>
+<script src="../vendor/js/hover-item.js"></script>
+<script src="../vendor/js/slick.min.js"></script>
+<script src="../vendor/js/parallaxie.min.js"></script>
+
+<!-- Custom Scripts -->
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyCo_pcAdFNbTDCAvMwAD19oRTuEmb9M50c"></script>
+<script src="../resources/js/map.js"></script>
+<script src="../vendor/js/contact_us.js"></script>
+<script src="../resources/js/script.js"></script>
+<script src="scripts/courses.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <style>
     .hero-section {
         position: absolute;
@@ -222,31 +247,6 @@ include "../connections/dbname.php";
 
     <div id="page-data" data-page="educ-tour" data-lang="<?php echo $lang ?>"></div>
     <script>console.log('<?php echo $lang . " is the lang"; ?>')</script>
-
-    <!-- JavaScript -->
-    <script src="../vendor/js/bundle.min.js"></script>
-    <script src="../vendor/js/jquery.fancybox.min.js"></script>
-    <script src="../vendor/js/owl.carousel.min.js"></script>
-    <script src="../vendor/js/swiper.min.js"></script>
-    <script src="../vendor/js/jquery.cubeportfolio.min.js"></script>
-    <script src="../vendor/js/jquery.appear.js"></script>
-    <script src="../vendor/js/wow.min.js"></script>
-    <script src="../vendor/js/flip.js"></script>
-    <script src="../vendor/js/jquery-ui.bundle.js"></script>
-    <script src="../vendor/js/select2.min.js"></script>
-    <script src="../vendor/js/jquery.hoverdir.js"></script>
-    <script src="../vendor/js/hover-item.js"></script>
-    <script src="../vendor/js/slick.min.js"></script>
-    <script src="../vendor/js/parallaxie.min.js"></script>
-
-    <!-- Custom Scripts -->
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyCo_pcAdFNbTDCAvMwAD19oRTuEmb9M50c"></script>
-    <script src="../resources/js/map.js"></script>
-    <script src="../vendor/js/contact_us.js"></script>
-    <script src="../resources/js/script.js"></script>
-    <script src="scripts/destinations.js"></script>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
 </body>

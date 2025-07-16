@@ -555,54 +555,25 @@
 
 
     <div class="course-cards grid-view" id="courseContainer">
-        <?php
-        for ($i = 0; $i < 12; $i++) {
-            echo '
-              <a href="https://wetalk.com/course" class="course-link" style="text-decoration: none; color: inherit;">
-        <div class="course-card">
-            <div class="course-image-wrapper">
-                <img src="../resources/img/courses/course-1.png" alt="Grid Image" class="image-grid" />
-                <img src="../resources/img/courses/course-1-list.png" alt="List Image" class="image-list" />
-                <div class="course-badge">Level 1</div>
-            </div>
-            <div class="course-content">
-                <div class="course-rating-title-wrap">
-                    <div class="course-title">WeTalk Kids Chinese Package 2（WK1–WK2） Kids Level 1</div>
-                    <div class="course-rating" style="display: flex; align-items: center; gap: 4px;">
-                        ⭐ <span class="rating-text">5.0</span>
-                        <span class="rating-text">(20)</span>
-                    </div>
-                </div>
-                <div class="course-description">
-                    The Package 1 course focuses on teaching basic Chinese knowledge of daily necessities under such
-                    themes as greetings, numbers, family members, body parts, fruits, and colors. It also involves some
-                    simple sentence patterns. The package 1 course consists of two stages, through which students can
-                    master the phrases describing the basic common sense of life and the expression of simple sentences.
-                </div>
-                <div class="course-footer">WeTalk Kids Chinese</div>
-            </div>
-        </div>
-        </a>';
-        }
-        ?>
+
     </div>
 
     <div class="pagination-container" id="paginationContainer"></div>
 
 </div>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const gridBtn = document.getElementById("gridToggle");
-        const listBtn = document.getElementById("listToggle");
+    function setupPagination() {
         const container = document.getElementById("courseContainer");
         const paginationContainer = document.getElementById("paginationContainer");
-        const courseCards = Array.from(container.querySelectorAll(".course-link"));
+        const pageInfo = document.getElementById("pageInfo");
+        const gridBtn = document.getElementById("gridToggle");
+        const listBtn = document.getElementById("listToggle");
 
         const GRID_ITEMS_PER_PAGE = 9;
         const LIST_ITEMS_PER_PAGE = 5;
 
         let currentPage = 1;
-        let currentView = "grid";
+        let currentView = container.classList.contains("list-view") ? "list" : "grid";
 
         function setActive(btn) {
             [gridBtn, listBtn].forEach(b => b.classList.remove("active-toggle"));
@@ -614,11 +585,11 @@
         }
 
         function getTotalPages() {
-            return Math.ceil(courseCards.length / getItemsPerPage());
+            return Math.ceil(allCards.length / getItemsPerPage());
         }
 
         function renderPaginationButtons() {
-            paginationContainer.innerHTML = '';
+            paginationContainer.innerHTML = "";
             const totalPages = getTotalPages();
 
             for (let i = 1; i <= totalPages; i++) {
@@ -653,12 +624,12 @@
             const start = (currentPage - 1) * itemsPerPage;
             const end = start + itemsPerPage;
 
-            courseCards.forEach((card, index) => {
+            allCards.forEach((card, index) => {
                 card.style.display = (index >= start && index < end) ? "block" : "none";
             });
         }
+
         function updatePageInfo() {
-            const pageInfo = document.getElementById("pageInfo");
             const totalPages = getTotalPages();
             pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
         }
@@ -668,16 +639,15 @@
             renderPaginationButtons();
             updatePaginationView();
             updatePageInfo();
-
         }
 
+        // View Toggle
         gridBtn.addEventListener("click", () => {
             container.classList.remove("list-view");
             container.classList.add("grid-view");
             currentView = "grid";
             setActive(gridBtn);
             setPage(1);
-            updatePageInfo();
         });
 
         listBtn.addEventListener("click", () => {
@@ -686,20 +656,18 @@
             currentView = "list";
             setActive(listBtn);
             setPage(1);
-            updatePageInfo();
         });
 
-
-        setPage(1);
+        // Initialize default
         if (window.innerWidth <= 768) {
             container.classList.remove("grid-view");
             container.classList.add("list-view");
             currentView = "list";
             setActive(listBtn);
-            setPage(1);
-            updatePageInfo();
+        } else {
+            setActive(gridBtn);
         }
 
-    });
-
+        setPage(1);
+    }
 </script>
