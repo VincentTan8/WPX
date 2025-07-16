@@ -16,8 +16,8 @@ const fetchCourses = async () => {
 
         const data = await response.json();
 
-        const container = document.getElementById("courseContainer");
-        container.innerHTML = "";
+        const track = document.getElementById("courseContainer");
+        track.innerHTML = "";
         allCards = [];
 
         data.forEach(item => {
@@ -48,7 +48,7 @@ const fetchCourses = async () => {
                 </div>
             `;
 
-            container.appendChild(card);
+            track.appendChild(card);
             allCards.push(card);
         });
 
