@@ -165,6 +165,7 @@ while ($row = $result->fetch_assoc()) {
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal('editCourseModal')">&times;</span>
             <h2>Edit Course</h2>
+            <h4 id="editCourseModalTitle">Title</h4>
             <div class="formContainer">
                 <div id="stepNav" style="text-align:center;">
                     <button type="button" class="button step-label" onclick="goToTab(0)">General Info</button>
@@ -175,7 +176,6 @@ while ($row = $result->fetch_assoc()) {
                     <button type="button" class="button step-label" onclick="goToTab(4)">Materials</button>
                     <button type="button" class="button step-label" onclick="goToTab(5)">Teachers</button>
                 </div>
-
                 <form id="editCourseForm" class="editForm">
                     <div class="tab">
                         <input id="editCourseRefNum" type="hidden" name="ref_num" required>
@@ -184,16 +184,36 @@ while ($row = $result->fetch_assoc()) {
                         <textarea id="editCourseTitleEN" name="editCourseTitleEN" required></textarea>
 
                         <label>Age Group</label>
-                        <input id="editAgeGroup" type="text" name="editAgeGroup">
+                        <select id="editAgeGroup" name="editAgeGroup">
+                            <option value="">N/A</option>
+                            <option value="Kids">Kids</option>
+                            <option value="Adults">Adults</option>
+                            <option value="Teens">Teens/Youth</option>
+                        </select>
 
-                        <label>Language</label>
-                        <input id="editLanguage" type="text" name="editLanguage">
+                        <label>Course Language</label>
+                        <select id="editLanguage" name="editLanguage">
+                            <option value="English">English</option>
+                            <option value="Chinese">Chinese</option>
+                        </select>
 
                         <label>Course Package</label>
-                        <input id="editCoursePackage" type="text" name="editCoursePackage">
+                        <input list="coursePackageList" id="editCoursePackage" name="editCoursePackage">
+                        <datalist id="coursePackageList">
+                            <option value="Family">Family Package (WK Chinese)</option>
+                            <option value="School">School Package (Exam Oriented Course)</option>
+                        </datalist>
 
                         <label>Course Type</label>
-                        <input id="editCourseType" type="text" name="editCourseType">
+                        <input list="courseTypeList" id="editCourseType" name="editCourseType">
+                        <datalist id="courseTypeList">
+                            <option value="WeTalk Kids Chinese">WeTalk Kids Chinese</option>
+                            <option value="BuBianBan">BuBianBan</option>
+                            <option value="MOE">MOE</option>
+                            <option value="YCT">YCT</option>
+                            <option value="HSK">HSK</option>
+                            <option value="ESTC">ESTC</option>
+                        </datalist>
 
                         <label for="editCourseShortTitleEN">Course Short Title EN</label>
                         <textarea id="editCourseShortTitleEN" name="editCourseShortTitleEN"></textarea>
@@ -229,26 +249,24 @@ while ($row = $result->fetch_assoc()) {
                         <input id="editClassHoursEN" type="text" name="editClassHoursEN">
                     </div>
 
-                    <div class="tab">
-
+                    <div id="learningGoalsContainer" class="tab">
                     </div>
 
-                    <div class="tab">
-
+                    <div id="activitiesContainer" class="tab">
                     </div>
 
-                    <div class="tab">
-
+                    <div id="featuresContainer" class="tab">
                     </div>
 
-                    <div class="tab">
-
+                    <div id="materialsContainer" class="tab">
                     </div>
 
-                    <div class="tab">
-
+                    <div id="teachersContainer" class="tab">
                     </div>
 
+                    <a class="button" id="addBtn">
+                        Add Entry <i class="fas fa-plus"></i>
+                    </a>
                     <div style="float:right;">
                         <button class="button" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                         <button class="button" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
@@ -359,66 +377,6 @@ while ($row = $result->fetch_assoc()) {
         </div>
     </div> -->
 
-    <div id="editActivitiesModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal('editActivitiesModal')">&times;</span>
-            <h2>Edit Activities</h2>
-            <div id="editActivitiesFormContainer">
-                <form id="editActivitiesForm">
-                </form>
-            </div>
-            <div id="editActivitiesResult"></div>
-        </div>
-    </div>
-
-    <div id="editFeaturesModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal('editFeaturesModal')">&times;</span>
-            <h2>Edit Features</h2>
-            <div id="editFeaturesFormContainer">
-                <form id="editFeaturesForm">
-                </form>
-            </div>
-            <div id="editFeaturesResult"></div>
-        </div>
-    </div>
-
-    <div id="editLearningGoalsModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal('editLearningGoalsModal')">&times;</span>
-            <h2>Edit Learning Goals</h2>
-            <div id="editLearningGoalsFormContainer">
-                <form id="editLearningGoalsForm">
-                </form>
-            </div>
-            <div id="editLearningGoalsResult"></div>
-        </div>
-    </div>
-
-    <div id="editMaterialsModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal('editMaterialsModal')">&times;</span>
-            <h2>Edit Materials</h2>
-            <div id="editMaterialsFormContainer">
-                <form id="editMaterialsForm">
-                </form>
-            </div>
-            <div id="editMaterialsResult"></div>
-        </div>
-    </div>
-
-    <div id="editTeachersModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal('editTeachersModal')">&times;</span>
-            <h2>Edit Teachers</h2>
-            <div id="editTeachersFormContainer">
-                <form id="editTeachersForm">
-                </form>
-            </div>
-            <div id="editTeachersResult"></div>
-        </div>
-    </div>
-
     <script>
         //pass php courses array object into js
         const courseData = <?= json_encode($courseDataArray, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;
@@ -433,8 +391,10 @@ while ($row = $result->fetch_assoc()) {
             x[n].style.display = "block";
             //... and fix the Previous/Next buttons:
             if (n == 0) {
+                document.getElementById("addBtn").style.display = "none";
                 document.getElementById("prevBtn").style.display = "none";
             } else {
+                document.getElementById("addBtn").style.display = "inline-block";
                 document.getElementById("prevBtn").style.display = "inline";
             }
             if (n == (x.length - 1)) {
@@ -510,6 +470,178 @@ while ($row = $result->fetch_assoc()) {
         }
         // END Mutipage Form JS
 
+        //START Modal JS
+        function showModal(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        function addBlock() {
+            //currentTab is from Multipage Form JS
+            switch (currentTab) {
+                case 1:
+                    learningGoalsContainer.insertAdjacentElement('beforeend', createBlock(learningGoalIndex++, 1));
+                    break;
+                case 2:
+                    activitiesContainer.insertAdjacentElement('beforeend', createBlock(activityIndex++, 2));
+                    break;
+                case 3:
+                    featuresContainer.insertAdjacentElement('beforeend', createBlock(featureIndex++, 3));
+                    break;
+                case 4:
+                    materialsContainer.insertAdjacentElement('beforeend', createBlock(materialIndex++, 4));
+                    break;
+                case 5:
+                    teachersContainer.insertAdjacentElement('beforeend', createBlock(teacherIndex++, 5));
+                    break;
+                default:
+            }
+        }
+
+        function createBlock(index, tab, row = null) {
+            const wrapper = document.createElement('div');
+            switch (tab) {
+                case 1:
+                    wrapper.innerHTML = `
+                        <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
+
+                        <label>Learning Goal EN</label>
+                        <textarea name="editLearningGoalEN[]">${row?.learning_goal_en || ''}</textarea>
+
+                        <button type="button" class="button remove-block">Remove</button>
+                    `;
+                    break;
+                case 2:
+                    wrapper.innerHTML = `
+                        <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
+
+                        <label>Activity EN</label>
+                        <textarea name="editActivityEN[]">${row?.activity_en || ''}</textarea>
+
+                        <button type="button" class="button remove-block">Remove</button>
+                    `;
+                    break;
+                case 3:
+                    wrapper.innerHTML = `
+                        <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
+
+                        <label>Feature EN</label>
+                        <textarea name="editFeatureEN[]">${row?.feature_en || ''}</textarea>
+
+                        <label>Feature Bold EN</label>
+                        <textarea name="editFeatureBoldEN[]">${row?.feature_bold_en || ''}</textarea>
+                        
+                        <button type="button" class="button remove-block">Remove</button>
+                    `;
+                    break;
+                case 4:
+                    wrapper.innerHTML = `
+                        <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
+
+                        <label>Material EN</label>
+                        <textarea name="editMaterialEN[]">${row?.material_en || ''}</textarea>
+
+                        <label>Material CN</label>
+                        <textarea name="editMaterialCN[]">${row?.material_cn || ''}</textarea>
+
+                        <button type="button" class="button remove-block">Remove</button>
+                    `;
+                    break;
+                case 5:
+                    wrapper.innerHTML = `
+                        <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
+
+                        <label>Teacher EN</label>
+                        <textarea name="editTeacherEN[]">${row?.teacher_en || ''}</textarea>
+
+                        <label>Teacher CN</label>
+                        <textarea name="editTeacherCN[]">${row?.teacher_cn || ''}</textarea>
+
+                        <button type="button" class="button remove-block">Remove</button>
+                    `;
+                    break;
+                default:
+            }
+            wrapper.className = 'entry-block';
+            wrapper.dataset.index = index;
+            // Add remove logic (this will throw an error if tab is 0 but that should never happen anyway)
+            wrapper.querySelector('.remove-block').addEventListener('click', function () {
+                //todo create remove function here
+                wrapper.remove();
+            });
+            return wrapper;
+        }
+
+        function prefillInfo(row) {
+            document.getElementById('editCourseRefNum').value = row.ref_num;
+            document.getElementById('editCourseModalTitle').innerHTML = row.course_title_en || '';
+
+            document.getElementById('editCourseTitleEN').value = row.course_title_en || '';
+            // document.getElementById('editCourseTitleCN').value = row.course_title_cn || '';
+
+            document.getElementById('editCourseShortTitleEN').value = row.course_short_title_en || '';
+            // document.getElementById('editCourseShortTitleCN').value = row.course_short_title_cn || '';
+
+            document.getElementById('editCourseSubtitleEN').value = row.course_subtitle_en || '';
+            // document.getElementById('editCourseSubtitleCN').value = row.course_subtitle_cn || '';
+
+            document.getElementById('editCourseDescriptionEN').value = row.course_description_en || '';
+            // document.getElementById('editCourseDescriptionCN').value = row.course_description_cn || '';
+
+            document.getElementById('courseImgName').textContent = row.course_img || '';
+            document.getElementById('courseListImgName').textContent = row.course_list_img || '';
+
+            document.getElementById('editThumbnailTagEN').value = row.thumbnail_tag_en || '';
+            // document.getElementById('editThumbnailTagCN').value = row.thumbnail_tag_cn || '';
+
+            document.getElementById('editSuitableForEN').value = row.suitable_for_en || '';
+            // document.getElementById('editSuitableForCN').value = row.suitable_for_cn || '';
+
+            document.getElementById('editCourseStartDateEN').value = row.course_start_date_en || '';
+            // document.getElementById('editCourseStartDateCN').value = row.course_start_date_cn || '';
+
+            document.getElementById('editClassHoursEN').value = row.class_hours_en || '';
+            // document.getElementById('editClassHoursCN').value = row.class_hours_cn || '';
+
+            document.getElementById('editAgeGroup').value = row.age_group || '';
+            document.getElementById('editLanguage').value = row.language || '';
+            document.getElementById('editCoursePackage').value = row.course_package || '';
+            document.getElementById('editCourseType').value = row.course_type || '';
+        }
+
+        function prefillTab(ref, tab, rows, container) {
+            //reset index form
+            let index = 1;
+            container.innerHTML = `
+                <input type="hidden" name="courses_ref_num" value="${ref}" required>
+            `;
+
+            //Clear previous blocks
+            container.querySelectorAll('.entry-block').forEach((block) => {
+                block.remove();
+            });
+
+            Object.values(rows).forEach(row => {
+                container.insertAdjacentElement('beforeend', createBlock(index++, tab, row));
+            });
+            return index;
+        }
+
+        const addButton = document.getElementById('addBtn');
+        const activitiesContainer = document.getElementById('activitiesContainer');
+        const learningGoalsContainer = document.getElementById('learningGoalsContainer');
+        const featuresContainer = document.getElementById('featuresContainer');
+        const materialsContainer = document.getElementById('materialsContainer');
+        const teachersContainer = document.getElementById('teachersContainer');
+        let activityIndex = 1;
+        let learningGoalIndex = 1;
+        let featureIndex = 1;
+        let materialIndex = 1;
+        let teacherIndex = 1;
+
         $(document).ready(function () {
             $('#courseTable').DataTable({
                 responsive: true,
@@ -545,43 +677,25 @@ while ($row = $result->fetch_assoc()) {
                     const row = courseData[ref];
                     if (!row) return alert('Course data not found.');
 
-                    document.getElementById('editCourseRefNum').value = ref;
+                    const learningGoalRows = courseData[ref]['learningGoals'];  //list of learning goals
+                    const activityRows = courseData[ref]['activities'];  //list of activities
+                    const featureRows = courseData[ref]['features']; //list of features
+                    const materialRows = courseData[ref]['materials'];  //list of materials
+                    const teacherRows = courseData[ref]['teachers'];  //list of teachers
 
-                    document.getElementById('editCourseTitleEN').value = row.course_title_en || '';
-                    // document.getElementById('editCourseTitleCN').value = row.course_title_cn || '';
-
-                    document.getElementById('editCourseShortTitleEN').value = row.course_short_title_en || '';
-                    // document.getElementById('editCourseShortTitleCN').value = row.course_short_title_cn || '';
-
-                    document.getElementById('editCourseSubtitleEN').value = row.course_subtitle_en || '';
-                    // document.getElementById('editCourseSubtitleCN').value = row.course_subtitle_cn || '';
-
-                    document.getElementById('editCourseDescriptionEN').value = row.course_description_en || '';
-                    // document.getElementById('editCourseDescriptionCN').value = row.course_description_cn || '';
-
-                    document.getElementById('courseImgName').textContent = row.course_img || '';
-                    document.getElementById('courseListImgName').textContent = row.course_list_img || '';
-
-                    document.getElementById('editThumbnailTagEN').value = row.thumbnail_tag_en || '';
-                    // document.getElementById('editThumbnailTagCN').value = row.thumbnail_tag_cn || '';
-
-                    document.getElementById('editSuitableForEN').value = row.suitable_for_en || '';
-                    // document.getElementById('editSuitableForCN').value = row.suitable_for_cn || '';
-
-                    document.getElementById('editCourseStartDateEN').value = row.course_start_date_en || '';
-                    // document.getElementById('editCourseStartDateCN').value = row.course_start_date_cn || '';
-
-                    document.getElementById('editClassHoursEN').value = row.class_hours_en || '';
-                    // document.getElementById('editClassHoursCN').value = row.class_hours_cn || '';
-
-                    document.getElementById('editAgeGroup').value = row.age_group || '';
-                    document.getElementById('editLanguage').value = row.language || '';
-                    document.getElementById('editCoursePackage').value = row.course_package || '';
-                    document.getElementById('editCourseType').value = row.course_type || '';
+                    prefillInfo(row);
+                    learningGoalIndex = prefillTab(ref, 1, learningGoalRows, learningGoalsContainer);
+                    activityIndex = prefillTab(ref, 2, activityRows, activitiesContainer);
+                    featureIndex = prefillTab(ref, 3, featureRows, featuresContainer);
+                    materialIndex = prefillTab(ref, 4, materialRows, materialsContainer);
+                    teacherIndex = prefillTab(ref, 5, teacherRows, teachersContainer);
 
                     showModal('editCourseModal');
                 });
             });
+
+            // Handle Add Block Button In Edit Course Modal
+            addButton.addEventListener('click', addBlock);
 
             //Open Delete Course
             document.querySelectorAll('.deleteCourse').forEach((deleteButton) => {
@@ -591,330 +705,7 @@ while ($row = $result->fetch_assoc()) {
                     showModal('deleteCourseModal');
                 });
             });
-
-            //Open Edit Activities
-            // document.querySelectorAll('.editActivities').forEach((editActivityButton) => {
-            //     editActivityButton.addEventListener('click', () => {
-            //         const activitiesForm = document.getElementById('editActivitiesForm');
-            //         const ref = editActivityButton.dataset.refnum;
-            //         const rows = courseData[ref]['activities'];  //list of activities
-
-            //         //reset index form
-            //         let activityIndex = 1;
-            //         activitiesForm.innerHTML = `
-            //             <input type="hidden" name="courses_ref_num" value="${ref}" required>
-            //             <a class="button addActivities">
-            //                 Add Activities <i class="fas fa-plus"></i>
-            //             </a>
-            //             <button class="button" type="submit">Submit</button>
-            //         `;
-            //         const addActivitiesButton = activitiesForm.querySelector('.addActivities');
-
-            //         //Clear previous activity blocks
-            //         document.querySelectorAll('.activity-block').forEach((block) => {
-            //             block.remove();
-            //         });
-
-            //         function createActivityBlock(index, row = null) {
-            //             const wrapper = document.createElement('div');
-            //             wrapper.className = 'activity-block';
-            //             wrapper.dataset.index = index;
-
-            //             wrapper.innerHTML = `
-            //                 <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
-
-            //                 <label>Activity EN</label>
-            //                 <textarea name="editActivityEN[]">${row?.activity_en || ''}</textarea>
-
-            //                 <label>Activity CN</label>
-            //                 <textarea name="editActivityCN[]">${row?.activity_cn || ''}</textarea>
-
-            //                 <button type="button" class="button remove-activity">Remove</button>
-            //             `;
-            //             // Add remove logic
-            //             wrapper.querySelector('.remove-activity').addEventListener('click', function () {
-            //                 wrapper.remove();
-            //             });
-            //             return wrapper;
-            //         }
-
-            //         Object.values(rows).forEach(row => {
-            //             activitiesForm.insertBefore(createActivityBlock(activityIndex++, row), addActivitiesButton);
-            //         });
-
-            //         // Handle + Add Activity button
-            //         addActivitiesButton.addEventListener('click', function () {
-            //             activitiesForm.insertBefore(createActivityBlock(activityIndex++), addActivitiesButton);
-            //         });
-
-            //         showModal('editActivitiesModal');
-            //     });
-            // });
-
-            //Open Edit Features 
-            // document.querySelectorAll('.editFeatures').forEach((editFeatureButton) => {
-            //     editFeatureButton.addEventListener('click', () => {
-            //         const featuresForm = document.getElementById('editFeaturesForm');
-            //         const ref = editFeatureButton.dataset.refnum;
-            //         const rows = courseData[ref]['features'];  //list of features
-
-            //         //reset index form
-            //         let featureIndex = 1;
-            //         featuresForm.innerHTML = `
-            //             <input type="hidden" name="courses_ref_num" value="${ref}" required>
-            //             <a class="button addFeatures">
-            //                 Add Features <i class="fas fa-plus"></i>
-            //             </a>
-            //             <button class="button" type="submit">Submit</button>
-            //         `;
-            //         const addFeaturesButton = featuresForm.querySelector('.addFeatures');
-
-            //         //Clear previous feature blocks
-            //         document.querySelectorAll('.feature-block').forEach((block) => {
-            //             block.remove();
-            //         });
-
-            //         function createFeatureBlock(index, row = null) {
-            //             const wrapper = document.createElement('div');
-            //             wrapper.className = 'feature-block';
-            //             wrapper.dataset.index = index;
-
-            //             wrapper.innerHTML = `
-            //                 <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
-
-            //                 <label>Feature Bold EN</label>
-            //                 <textarea name="editFeatureBoldEN[]">${row?.feature_bold_en || ''}</textarea>
-
-            //                 <label>Feature Bold CN</label>
-            //                 <textarea name="editFeatureBoldCN[]">${row?.feature_bold_cn || ''}</textarea>
-
-            //                 <label>Feature EN</label>
-            //                 <textarea name="editFeatureEN[]">${row?.feature_en || ''}</textarea>
-
-            //                 <label>Feature CN</label>
-            //                 <textarea name="editFeatureCN[]">${row?.feature_cn || ''}</textarea>
-
-            //                 <button type="button" class="button remove-feature">Remove</button>
-            //             `;
-            //             // Add remove logic
-            //             wrapper.querySelector('.remove-feature').addEventListener('click', function () {
-            //                 wrapper.remove();
-            //             });
-            //             return wrapper;
-            //         }
-
-            //         Object.values(rows).forEach(row => {
-            //             featuresForm.insertBefore(createFeatureBlock(featureIndex++, row), addFeaturesButton);
-            //         });
-
-            //         // Handle + Add Feature button
-            //         addFeaturesButton.addEventListener('click', function () {
-            //             featuresForm.insertBefore(createFeatureBlock(featureIndex++), addFeaturesButton);
-            //         });
-
-            //         // For debugging
-            //         // featuresForm.addEventListener('submit', function (e) {
-            //         //     e.preventDefault();
-            //         //     const formData = new FormData(featuresForm);
-
-            //         //     const allData = {};
-            //         //     for (const key of formData.keys()) {
-            //         //         allData[key] = formData.getAll(key); // get *all* values
-            //         //     }
-
-            //         //     console.log(allData); // Full array data
-            //         // });
-
-            //         showModal('editFeaturesModal');
-            //     });
-            // });
-
-            //Open Edit Learning Goals
-            // document.querySelectorAll('.editLearningGoals').forEach((editLearningGoalButton) => {
-            //     editLearningGoalButton.addEventListener('click', () => {
-            //         const learningGoalsForm = document.getElementById('editLearningGoalsForm');
-            //         const ref = editLearningGoalButton.dataset.refnum;
-            //         const rows = courseData[ref]['learningGoals'];  //list of learning goals
-
-            //         //reset index form
-            //         let learningGoalIndex = 1;
-            //         learningGoalsForm.innerHTML = `
-            //             <input type="hidden" name="courses_ref_num" value="${ref}" required>
-            //             <a class="button addLearningGoals">
-            //                 Add Learning Goals <i class="fas fa-plus"></i>
-            //             </a>
-            //             <button class="button" type="submit">Submit</button>
-            //         `;
-            //         const addLearningGoalsButton = learningGoalsForm.querySelector('.addLearningGoals');
-
-            //         //Clear previous learning goal blocks
-            //         document.querySelectorAll('.learning-goal-block').forEach((block) => {
-            //             block.remove();
-            //         });
-
-            //         function createLearningGoalBlock(index, row = null) {
-            //             const wrapper = document.createElement('div');
-            //             wrapper.className = 'learning-goal-block';
-            //             wrapper.dataset.index = index;
-
-            //             wrapper.innerHTML = `
-            //                 <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
-
-            //                 <label>Learning Goal EN</label>
-            //                 <textarea name="editLearningGoalEN[]">${row?.learning_goal_en || ''}</textarea>
-
-            //                 <label>Learning Goal CN</label>
-            //                 <textarea name="editLearningGoalCN[]">${row?.learning_goal_cn || ''}</textarea>
-
-            //                 <button type="button" class="button remove-learning-goal">Remove</button>
-            //             `;
-            //             // Add remove logic
-            //             wrapper.querySelector('.remove-learning-goal').addEventListener('click', function () {
-            //                 wrapper.remove();
-            //             });
-            //             return wrapper;
-            //         }
-
-            //         Object.values(rows).forEach(row => {
-            //             learningGoalsForm.insertBefore(createLearningGoalBlock(learningGoalIndex++, row), addLearningGoalsButton);
-            //         });
-
-            //         // Handle + Add Learning Goal button
-            //         addLearningGoalsButton.addEventListener('click', function () {
-            //             learningGoalsForm.insertBefore(createLearningGoalBlock(learningGoalIndex++), addLearningGoalsButton);
-            //         });
-
-            //         showModal('editLearningGoalsModal');
-            //     });
-            // });
-
-            //Open Edit Materials
-            // document.querySelectorAll('.editMaterials').forEach((editMaterialButton) => {
-            //     editMaterialButton.addEventListener('click', () => {
-            //         const materialsForm = document.getElementById('editMaterialsForm');
-            //         const ref = editMaterialButton.dataset.refnum;
-            //         const rows = courseData[ref]['materials'];  //list of materials
-
-            //         //reset index form
-            //         let materialIndex = 1;
-            //         materialsForm.innerHTML = `
-            //             <input type="hidden" name="courses_ref_num" value="${ref}" required>
-            //             <a class="button addMaterials">
-            //                 Add Materials <i class="fas fa-plus"></i>
-            //             </a>
-            //             <button class="button" type="submit">Submit</button>
-            //         `;
-            //         const addMaterialsButton = materialsForm.querySelector('.addMaterials');
-
-            //         //Clear previous material blocks
-            //         document.querySelectorAll('.material-block').forEach((block) => {
-            //             block.remove();
-            //         });
-
-            //         function createMaterialBlock(index, row = null) {
-            //             const wrapper = document.createElement('div');
-            //             wrapper.className = 'material-block';
-            //             wrapper.dataset.index = index;
-
-            //             wrapper.innerHTML = `
-            //                 <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
-
-            //                 <label>Material EN</label>
-            //                 <textarea name="editMaterialEN[]">${row?.material_en || ''}</textarea>
-
-            //                 <label>Material CN</label>
-            //                 <textarea name="editMaterialCN[]">${row?.material_cn || ''}</textarea>
-
-            //                 <button type="button" class="button remove-material">Remove</button>
-            //             `;
-            //             // Add remove logic
-            //             wrapper.querySelector('.remove-material').addEventListener('click', function () {
-            //                 wrapper.remove();
-            //             });
-            //             return wrapper;
-            //         }
-
-            //         Object.values(rows).forEach(row => {
-            //             materialsForm.insertBefore(createMaterialBlock(materialIndex++, row), addMaterialsButton);
-            //         });
-
-            //         // Handle + Add Material button
-            //         addMaterialsButton.addEventListener('click', function () {
-            //             materialsForm.insertBefore(createMaterialBlock(materialIndex++), addMaterialsButton);
-            //         });
-
-            //         showModal('editMaterialsModal');
-            //     });
-            // });
-
-            //Open Edit Teachers
-            // document.querySelectorAll('.editTeachers').forEach((editTeacherButton) => {
-            //     editTeacherButton.addEventListener('click', () => {
-            //         const teachersForm = document.getElementById('editTeachersForm');
-            //         const ref = editTeacherButton.dataset.refnum;
-            //         const rows = courseData[ref]['teachers'];  //list of teachers
-
-            //         //reset index form
-            //         let teacherIndex = 1;
-            //         teachersForm.innerHTML = `
-            //             <input type="hidden" name="courses_ref_num" value="${ref}" required>
-            //             <a class="button addTeachers">
-            //                 Add Teachers <i class="fas fa-plus"></i>
-            //             </a>
-            //             <button class="button" type="submit">Submit</button>
-            //         `;
-            //         const addTeachersButton = teachersForm.querySelector('.addTeachers');
-
-            //         //Clear previous teacher blocks
-            //         document.querySelectorAll('.teacher-block').forEach((block) => {
-            //             block.remove();
-            //         });
-
-            //         function createTeacherBlock(index, row = null) {
-            //             const wrapper = document.createElement('div');
-            //             wrapper.className = 'teacher-block';
-            //             wrapper.dataset.index = index;
-
-            //             wrapper.innerHTML = `
-            //                 <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
-
-            //                 <label>Teacher EN</label>
-            //                 <textarea name="editTeacherEN[]">${row?.teacher_en || ''}</textarea>
-
-            //                 <label>Teacher CN</label>
-            //                 <textarea name="editTeacherCN[]">${row?.teacher_cn || ''}</textarea>
-
-            //                 <button type="button" class="button remove-teacher">Remove</button>
-            //             `;
-            //             // Add remove logic
-            //             wrapper.querySelector('.remove-teacher').addEventListener('click', function () {
-            //                 wrapper.remove();
-            //             });
-            //             return wrapper;
-            //         }
-
-            //         Object.values(rows).forEach(row => {
-            //             teachersForm.insertBefore(createTeacherBlock(teacherIndex++, row), addTeachersButton);
-            //         });
-
-            //         // Handle + Add Teacher button
-            //         addTeachersButton.addEventListener('click', function () {
-            //             teachersForm.insertBefore(createTeacherBlock(teacherIndex++), addTeachersButton);
-            //         });
-
-            //         showModal('editTeachersModal');
-            //     });
-            // });
-
         });
-
-        function showModal(id) {
-            document.getElementById(id).style.display = "flex";
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).style.display = "none";
-        }
 
         // Submit Add Course Form
         document.getElementById('addCourseForm').addEventListener('submit', async function (e) {
@@ -1158,6 +949,7 @@ while ($row = $result->fetch_assoc()) {
         window.addEventListener('click', function (event) {
             const addCourseModal = document.getElementById('addCourseModal');
             const editCourseModal = document.getElementById('editCourseModal');
+            const deleteCourseModal = document.getElementById('deleteCourseModal');
 
             if (event.target === addCourseModal) {
                 addCourseModal.style.display = "none";
@@ -1165,8 +957,10 @@ while ($row = $result->fetch_assoc()) {
             if (event.target === editCourseModal) {
                 editCourseModal.style.display = "none";
             }
+            if (event.target === deleteCourseModal) {
+                deleteCourseModal.style.display = "none";
+            }
         });
-
     </script>
 </body>
 
