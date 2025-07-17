@@ -185,7 +185,7 @@ while ($row = $result->fetch_assoc()) {
 
                         <label>Age Group</label>
                         <select id="editAgeGroup" name="editAgeGroup">
-                            <option value="">N/A</option>
+                            <option value="">Select..</option>
                             <option value="Kids">Kids</option>
                             <option value="Adults">Adults</option>
                             <option value="Teens">Teens/Youth</option>
@@ -193,6 +193,7 @@ while ($row = $result->fetch_assoc()) {
 
                         <label>Course Language</label>
                         <select id="editLanguage" name="editLanguage">
+                            <option value="">Select..</option>
                             <option value="English">English</option>
                             <option value="Chinese">Chinese</option>
                         </select>
@@ -398,7 +399,7 @@ while ($row = $result->fetch_assoc()) {
                 document.getElementById("prevBtn").style.display = "inline";
             }
             if (n == (x.length - 1)) {
-                document.getElementById("nextBtn").innerHTML = "Submit";
+                document.getElementById("nextBtn").innerHTML = "Save";
                 //do not put the type=submit here or else form will get submitted a tab too early
             } else {
                 document.getElementById("nextBtn").innerHTML = "Next";
@@ -479,6 +480,28 @@ while ($row = $result->fetch_assoc()) {
             document.getElementById(id).style.display = "none";
         }
 
+        async function deleteEntry(ref_num, tab) {
+            //Entry is an element of a course section (activities, features, materials, etc.)
+            const response = await fetch("../course/scripts/delete-entry.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: `ref_num=${encodeURIComponent(ref_num)}` +
+                    `&tab=${encodeURIComponent(tab)}`
+            });
+
+            const text = await response.text();
+            const [status, message] = text.trim().split('|');
+
+            if (status === 'success') {
+                return true;
+            } else {
+                alert('Failed to delete ');
+                return false;
+            }
+        }
+
         function addBlock() {
             //currentTab is from Multipage Form JS
             switch (currentTab) {
@@ -549,7 +572,7 @@ while ($row = $result->fetch_assoc()) {
                     break;
                 case 5:
                     wrapper.innerHTML = `
-                        <input type="hidden" name="techer_ref_num[]" value="${row?.ref_num || ''}" required>
+                        <input type="hidden" name="teacher_ref_num[]" value="${row?.ref_num || ''}" required>
 
                         <label>Teacher EN</label>
                         <textarea name="editTeacherEN[]">${row?.teacher_en || ''}</textarea>
@@ -562,9 +585,15 @@ while ($row = $result->fetch_assoc()) {
             wrapper.className = 'entry-block';
             wrapper.dataset.index = index;
             // Add remove logic (this will throw an error if tab is 0 but that should never happen anyway)
-            wrapper.querySelector('.remove-block').addEventListener('click', function () {
-                //todo create remove function here
-                wrapper.remove();
+            wrapper.querySelector('.remove-block').addEventListener('click', async function () {
+                if (row) {
+                    if (confirm("Are you sure?") && await deleteEntry(row.ref_num, tab)) {
+                        wrapper.remove();
+                        location.reload();
+                    }
+                } else {
+                    wrapper.remove();
+                }
             });
             return wrapper;
         }
