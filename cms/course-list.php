@@ -67,7 +67,7 @@ function getTeachers($conn, $database, $ref_num)
 }
 
 $tablename = $database . ".`wt_courses`";
-$sql = "SELECT * FROM $tablename ORDER BY `course_title_en` ASC";  //limit this next time
+$sql = "SELECT * FROM $tablename";  //limit this next time
 $result = $conn->query($sql);
 $result->data_seek(0); // reset pointer if already used in a loop
 $courseDataArray = [];
@@ -101,11 +101,19 @@ while ($row = $result->fetch_assoc()) {
 <body>
     <div class="table-container">
         <div style="display: flex; justify-content: space-between; margin-bottom:2rem;">
-            <h2>Course List</h2>
+            <div style="display: flex; gap: 1rem;">
+                <h2>Course List</h2>
+                <select id="dataLanguage" name="dataLanguage">
+                    <option value="_en">English</option>
+                    <option value="_cn">Chinese</option>
+                </select>
+            </div>
+
+
 
             <div style="text-align: center;">
                 <a class="button" id="openAdd">
-                    Add Course
+                    Add Course <i class="fas fa-plus"></i>
                 </a>
             </div>
         </div>
@@ -113,6 +121,8 @@ while ($row = $result->fetch_assoc()) {
         <table id="courseTable" class="display nowrap" style="width:100%;">
             <thead>
                 <tr>
+                    <th>ID</th>
+                    <th>Reference Number</th>
                     <th>Course Title</th>
                     <th></th>
                     <th></th>
@@ -123,6 +133,8 @@ while ($row = $result->fetch_assoc()) {
                     <?php $result->data_seek(0);
                     while ($row = $result->fetch_assoc()): ?>
                         <tr>
+                            <td><?= $row['id'] ?? '' ?></td>
+                            <td><?= $row['ref_num'] ?? '' ?></td>
                             <td><?= $row['course_title_en'] ?? '' ?></td>
                             <td>
                                 <a class="button editCourse" data-refnum="<?= $row['ref_num'] ?>">
@@ -271,6 +283,7 @@ while ($row = $result->fetch_assoc()) {
                     <div style="float:right;">
                         <button class="button" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                         <button class="button" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                        <button class="button" type="submit" id="submitBtn">Save</button>
                     </div>
                 </form>
             </div>
@@ -399,11 +412,9 @@ while ($row = $result->fetch_assoc()) {
                 document.getElementById("prevBtn").style.display = "inline";
             }
             if (n == (x.length - 1)) {
-                document.getElementById("nextBtn").innerHTML = "Save";
-                //do not put the type=submit here or else form will get submitted a tab too early
+                document.getElementById("nextBtn").style.display = "none";
             } else {
-                document.getElementById("nextBtn").innerHTML = "Next";
-                document.getElementById("nextBtn").type = "button";
+                document.getElementById("nextBtn").style.display = "inline";
             }
             //... and run a function that will display the correct step indicator:
             fixStepIndicator(n)
@@ -665,15 +676,20 @@ while ($row = $result->fetch_assoc()) {
         $(document).ready(function () {
             $('#courseTable').DataTable({
                 responsive: true,
+                order: [[0, 'desc']],
                 columnDefs: [
                     {
-                        targets: [1, 2],
+                        targets: [0, 1],
+                        width: "50px"
+                    },
+                    {
+                        targets: [3, 4],
                         searchable: false,
                         orderable: false,
                         width: "10px"
                     },
                     {
-                        targets: 0,
+                        targets: 2,
                         searchable: true,
                         orderable: true,
                         createdCell: function (td, cellData, rowData, row, col) {
@@ -689,19 +705,19 @@ while ($row = $result->fetch_assoc()) {
                 document.getElementById("addCourseTitleEN").focus();
             });
 
-            //Open Edit Course Info
-            document.querySelectorAll('.editCourse').forEach((editButton) => {
-                editButton.addEventListener('click', () => {
-                    //fetch course details and display them
+            document.addEventListener('click', (e) => {
+                //Open Edit Course Info
+                if (e.target.classList.contains('editCourse')) {
+                    const editButton = e.target;
                     const ref = editButton.dataset.refnum;
                     const row = courseData[ref];
                     if (!row) return alert('Course data not found.');
 
-                    const learningGoalRows = courseData[ref]['learningGoals'];  //list of learning goals
-                    const activityRows = courseData[ref]['activities'];  //list of activities
-                    const featureRows = courseData[ref]['features']; //list of features
-                    const materialRows = courseData[ref]['materials'];  //list of materials
-                    const teacherRows = courseData[ref]['teachers'];  //list of teachers
+                    const learningGoalRows = row['learningGoals'];
+                    const activityRows = row['activities'];
+                    const featureRows = row['features'];
+                    const materialRows = row['materials'];
+                    const teacherRows = row['teachers'];
 
                     prefillInfo(row);
                     learningGoalIndex = prefillTab(ref, 1, learningGoalRows, learningGoalsContainer);
@@ -711,20 +727,18 @@ while ($row = $result->fetch_assoc()) {
                     teacherIndex = prefillTab(ref, 5, teacherRows, teachersContainer);
 
                     showModal('editCourseModal');
-                });
+                }
+                //Open Delete Course
+                if (e.target.classList.contains('deleteCourse')) {
+                    const deleteButton = e.target;
+                    const ref = deleteButton.dataset.refnum;
+                    document.getElementById('deleteCourseRefNum').value = ref;
+                    showModal('deleteCourseModal');
+                }
             });
 
             // Handle Add Block Button In Edit Course Modal
             addButton.addEventListener('click', addBlock);
-
-            //Open Delete Course
-            document.querySelectorAll('.deleteCourse').forEach((deleteButton) => {
-                deleteButton.addEventListener('click', () => {
-                    const ref = deleteButton.dataset.refnum;
-                    document.getElementById('deleteCourseRefNum').value = ref;
-                    showModal('deleteCourseModal');
-                });
-            });
         });
 
         // Submit Add Course Form
