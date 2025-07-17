@@ -506,7 +506,7 @@ while ($row = $result->fetch_assoc()) {
             switch (tab) {
                 case 1:
                     wrapper.innerHTML = `
-                        <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
+                        <input type="hidden" name="learning_goal_ref_num[]" value="${row?.ref_num || ''}" required>
 
                         <label>Learning Goal EN</label>
                         <textarea name="editLearningGoalEN[]">${row?.learning_goal_en || ''}</textarea>
@@ -516,7 +516,7 @@ while ($row = $result->fetch_assoc()) {
                     break;
                 case 2:
                     wrapper.innerHTML = `
-                        <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
+                        <input type="hidden" name="activity_ref_num[]" value="${row?.ref_num || ''}" required>
 
                         <label>Activity EN</label>
                         <textarea name="editActivityEN[]">${row?.activity_en || ''}</textarea>
@@ -526,7 +526,7 @@ while ($row = $result->fetch_assoc()) {
                     break;
                 case 3:
                     wrapper.innerHTML = `
-                        <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
+                        <input type="hidden" name="feature_ref_num[]" value="${row?.ref_num || ''}" required>
 
                         <label>Feature EN</label>
                         <textarea name="editFeatureEN[]">${row?.feature_en || ''}</textarea>
@@ -539,26 +539,20 @@ while ($row = $result->fetch_assoc()) {
                     break;
                 case 4:
                     wrapper.innerHTML = `
-                        <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
+                        <input type="hidden" name="material_ref_num[]" value="${row?.ref_num || ''}" required>
 
                         <label>Material EN</label>
                         <textarea name="editMaterialEN[]">${row?.material_en || ''}</textarea>
-
-                        <label>Material CN</label>
-                        <textarea name="editMaterialCN[]">${row?.material_cn || ''}</textarea>
 
                         <button type="button" class="button remove-block">Remove</button>
                     `;
                     break;
                 case 5:
                     wrapper.innerHTML = `
-                        <input type="hidden" name="ref_num[]" value="${row?.ref_num || ''}" required>
+                        <input type="hidden" name="techer_ref_num[]" value="${row?.ref_num || ''}" required>
 
                         <label>Teacher EN</label>
                         <textarea name="editTeacherEN[]">${row?.teacher_en || ''}</textarea>
-
-                        <label>Teacher CN</label>
-                        <textarea name="editTeacherCN[]">${row?.teacher_cn || ''}</textarea>
 
                         <button type="button" class="button remove-block">Remove</button>
                     `;
@@ -615,9 +609,6 @@ while ($row = $result->fetch_assoc()) {
         function prefillTab(ref, tab, rows, container) {
             //reset index form
             let index = 1;
-            container.innerHTML = `
-                <input type="hidden" name="courses_ref_num" value="${ref}" required>
-            `;
 
             //Clear previous blocks
             container.querySelectorAll('.entry-block').forEach((block) => {
@@ -738,6 +729,17 @@ while ($row = $result->fetch_assoc()) {
 
         // Submit Edit Course Form
         document.getElementById('editCourseForm').addEventListener('submit', async function (e) {
+            // e.preventDefault();
+            // const form = e.target;
+            // const formData = new FormData(form);
+
+            // const allData = {};
+            // for (const key of formData.keys()) {
+            //     allData[key] = formData.getAll(key); // get *all* values
+            // }
+
+            // console.log(allData); // Full array data
+
             e.preventDefault();
             const form = e.target;
             const formData = new FormData(form);
@@ -789,161 +791,6 @@ while ($row = $result->fetch_assoc()) {
                 alert('Failed to delete ');
             }
         });
-
-        //Submit Edit Activities Form
-        // document.getElementById('editActivitiesForm').addEventListener('submit', async function (e) {
-        //     e.preventDefault();
-        //     const form = e.target;
-        //     const formData = new FormData(form);
-        //     const resultDiv = document.getElementById('editActivitiesResult');
-
-        //     const response = await fetch('../course/scripts/edit-activities.php', {
-        //         method: 'POST',
-        //         body: formData
-        //     });
-
-        //     const text = await response.text();
-        //     const [status, message] = text.trim().split('|');
-
-        //     if (status === 'success') {
-        //         alert(' Activities edited successfully! ');
-        //         form.reset();
-        //         closeModal('editActivitiesModal');
-        //         location.reload();
-        //     } else {
-        //         alert('Failed to edit ');
-        //         // Clear previous errors
-        //         resultDiv.innerHTML = '';
-
-        //         if (status === 'error') {
-        //             resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
-        //         }
-        //     }
-        // });
-
-        // // Submit Edit Features Form
-        // document.getElementById('editFeaturesForm').addEventListener('submit', async function (e) {
-        //     e.preventDefault();
-        //     const form = e.target;
-        //     const formData = new FormData(form);
-        //     const resultDiv = document.getElementById('editFeaturesResult');
-
-        //     const response = await fetch('../course/scripts/edit-features.php', {
-        //         method: 'POST',
-        //         body: formData
-        //     });
-
-        //     const text = await response.text();
-        //     const [status, message] = text.trim().split('|');
-
-        //     if (status === 'success') {
-        //         alert(' Features edited successfully! ');
-        //         form.reset();
-        //         closeModal('editFeaturesModal');
-        //         location.reload();
-        //     } else {
-        //         alert('Failed to edit ');
-        //         // Clear previous errors
-        //         resultDiv.innerHTML = '';
-
-        //         if (status === 'error') {
-        //             resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
-        //         }
-        //     }
-        // });
-
-        // //Submit Learning Goals Form
-        // document.getElementById('editLearningGoalsForm').addEventListener('submit', async function (e) {
-        //     e.preventDefault();
-        //     const form = e.target;
-        //     const formData = new FormData(form);
-        //     const resultDiv = document.getElementById('editLearningGoalsResult');
-
-        //     const response = await fetch('../course/scripts/edit-learning-goals.php', {
-        //         method: 'POST',
-        //         body: formData
-        //     });
-
-        //     const text = await response.text();
-        //     const [status, message] = text.trim().split('|');
-
-        //     if (status === 'success') {
-        //         alert(' Learning Goals edited successfully! ');
-        //         form.reset();
-        //         closeModal('editLearningGoalsModal');
-        //         location.reload();
-        //     } else {
-        //         alert('Failed to edit ');
-        //         // Clear previous errors
-        //         resultDiv.innerHTML = '';
-
-        //         if (status === 'error') {
-        //             resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
-        //         }
-        //     }
-        // });
-
-        // //Submit Materials Form
-        // document.getElementById('editMaterialsForm').addEventListener('submit', async function (e) {
-        //     e.preventDefault();
-        //     const form = e.target;
-        //     const formData = new FormData(form);
-        //     const resultDiv = document.getElementById('editMaterialsResult');
-
-        //     const response = await fetch('../course/scripts/edit-materials.php', {
-        //         method: 'POST',
-        //         body: formData
-        //     });
-
-        //     const text = await response.text();
-        //     const [status, message] = text.trim().split('|');
-
-        //     if (status === 'success') {
-        //         alert(' Materials edited successfully! ');
-        //         form.reset();
-        //         closeModal('editMaterialsModal');
-        //         location.reload();
-        //     } else {
-        //         alert('Failed to edit ');
-        //         // Clear previous errors
-        //         resultDiv.innerHTML = '';
-
-        //         if (status === 'error') {
-        //             resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
-        //         }
-        //     }
-        // });
-
-        // //Submit Teachers Form
-        // document.getElementById('editTeachersForm').addEventListener('submit', async function (e) {
-        //     e.preventDefault();
-        //     const form = e.target;
-        //     const formData = new FormData(form);
-        //     const resultDiv = document.getElementById('editTeachersResult');
-
-        //     const response = await fetch('../course/scripts/edit-teachers.php', {
-        //         method: 'POST',
-        //         body: formData
-        //     });
-
-        //     const text = await response.text();
-        //     const [status, message] = text.trim().split('|');
-
-        //     if (status === 'success') {
-        //         alert(' Teachers edited successfully! ');
-        //         form.reset();
-        //         closeModal('editTeachersModal');
-        //         location.reload();
-        //     } else {
-        //         alert('Failed to edit ');
-        //         // Clear previous errors
-        //         resultDiv.innerHTML = '';
-
-        //         if (status === 'error') {
-        //             resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
-        //         }
-        //     }
-        // });
 
         // Close modal when clicking outside the modal content
         window.addEventListener('click', function (event) {
