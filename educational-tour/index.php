@@ -185,21 +185,16 @@ $imgDir = "../resources/img/educational-tour/";
     <div class="hero-content">
         <h1>
             <span id="hero-header">
-                <span id="hero-header-yellow" style="color:#F2AE14;">Explore the World.</span><span
-                    id="hero-header-main"> Inspire Growth. Let
-                    your child learn through life, not just textbooks.</span>
+                <span id="hero-header-yellow" style="color:#F2AE14;"></span> <span id="hero-header-main"></span>
             </span>
         </h1>
-        <p id="hero-subtitle">
-            WeTalk Study Tours open the door to immersive, bilingual adventures in safe, exciting destinations like
-            Singapore, Japan, China, Taiwan, and Australia.
-        </p>
+        <p id="hero-subtitle"></p>
     </div>
 
     <!-- Hero Buttons -->
     <div class="hero-buttons">
         <a href="#carousel-anchor" class="hero-button green">
-            <span id="hero-button-1">Explore Our Destination</span>
+            <span id="hero-button-1"></span>
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none">
                 <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />

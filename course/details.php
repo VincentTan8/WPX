@@ -85,11 +85,11 @@
         text-align: left;
     }
 
-    .learning-goals {
+    .course-section {
         margin-top: 20px;
     }
 
-    .learning-goals h3 {
+    .course-section h3 {
         font-family: 'Poppins', sans-serif;
         font-size: 22px;
         text-align: left;
@@ -555,7 +555,7 @@
         </div>
 
         <div class="course-left-image-wrapper">
-            <img src="../resources/img/course/course-1.png" alt="Course" class="course-left-image">
+            <img src="../resources/img/course/course-1.png" alt="Course" class="course-left-image" id="course-img">
             <div class="course-left-badge" id="course-thumbnail">Level 1</div>
         </div>
 
@@ -567,14 +567,14 @@
         <!-- Todo use this to populate course details -->
         <div id="course-details-container"></div>
 
-        <div class="learning-goals">
+        <div class="course-section">
             <h3>Learning Goals</h3>
             <div id="goal-container">
 
             </div>
         </div>
 
-        <div class="learning-goals">
+        <div class="course-section">
             <h3>Course Description</h3>
             <div class="course-left-description" id="course-description">
                 The Package 1 course focuses on teaching basic Chinese knowledge of daily necessities under such themes
@@ -584,7 +584,7 @@
             </div>
 
         </div>
-        <div class="learning-goals">
+        <div class="course-section">
             <h3>Class Hours</h3>
             <div class="goal-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
@@ -592,7 +592,7 @@
             </div>
         </div>
 
-        <div class="learning-goals">
+        <div class="course-section">
             <h3>Course Activities</h3>
             <div id="activity-container"></div>
             <!-- <div class="goal-item">
@@ -617,8 +617,8 @@
             </div> -->
         </div>
 
-        <div class="learning-goals">
-            <h3>Suitable Age</h3>
+        <div class="course-section">
+            <h3>Suitable For</h3>
             <div class="goal-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
                 <div style="text-align:left;" id="course-suitable-for">All children in the world who are interested in
@@ -627,7 +627,7 @@
             </div>
         </div>
 
-        <div class="learning-goals">
+        <div class="course-section">
             <h3>Course Features</h3>
             <div id="feature-container"></div>
             <!-- <div class="goal-item">
@@ -664,7 +664,7 @@
             </div> -->
         </div>
 
-        <div class="learning-goals">
+        <div class="course-section">
             <h3>Course Type</h3>
             <div class="goal-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
@@ -672,7 +672,7 @@
             </div>
         </div>
 
-        <div class="learning-goals">
+        <div class="course-section">
             <h3>Course Start Date</h3>
             <div class="goal-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">

@@ -89,7 +89,7 @@
                 <circle cx="2.5" cy="3" r="2.5" fill="#A7A7A7" />
             </svg>
         </span>
-        <span class="breadcrumb-item current">WeTalk Kids Chinese Package 1</span>
+        <span id="breadcrumb-title" class="breadcrumb-item current">WeTalk Kids Chinese Package 1</span>
     </div>
 </div>
 

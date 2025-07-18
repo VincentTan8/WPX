@@ -12,7 +12,9 @@
         position: absolute;
         width: 1345px;
         height: 603px;
-        background: #66CDE7;
+        /* background: #66CDE7; */
+        /* will be changed by js */
+        background: #f0f0f0;
         filter: blur(218.25px);
         pointer-events: none;
         border-radius: 301.5px;
@@ -128,9 +130,7 @@
     <div>
         <!-- Header -->
         <div class="d-flex align-items-center gap-2 mb-4" style="padding-left: 14px;">
-            <h3 id="program-title" style="font-family:'Poppins', sans-serif; font-weight:700; font-size:40px;">Program
-                Highlights
-            </h3>
+            <h3 id="program-title" style="font-family:'Poppins', sans-serif; font-weight:700; font-size:40px;"></h3>
         </div>
 
         <!-- Main Box -->

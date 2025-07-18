@@ -102,10 +102,8 @@ $imgDir = "../resources/img/educational-tour/";
 
     <!-- Hero Text Content -->
     <div class="hero-text">
-        <h1 id="hero-title">
-            WeTalk <span id="hero-highlight" class="highlight">country</span> Study Tour
-        </h1>
-        <p id="hero-subtitle">Description</p>
+        <h1 id="hero-title"></h1>
+        <p id="hero-subtitle"></p>
     </div>
 
     <!-- Begin white container for main content -->

@@ -1,10 +1,8 @@
 <style>
-    body {
-        background-color: red;
-    }
-
     .navbar {
         font-family: 'Times New Roman', Times, serif;
+        font-size: 18px;
+        font-weight: 200;
         position: fixed;
         top: 0;
         left: 0;
@@ -19,12 +17,14 @@
         color: white;
     }
 
-    .navbar .nav-link:hover,
-    .navbar .dropdown-item:hover {
-        background-color: transparent;
+    #sr-nav-translate {
         color: white;
+        cursor: pointer
     }
 
+    #sr-nav-translate:hover {
+        color: rgba(165, 165, 165, 1.00);
+    }
 
     .navbar .dropdown-menu {
         background-color: white;
@@ -202,6 +202,7 @@
         }
     }
 </style>
+
 <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
     <div class="container-fluid" style="padding: 10px 30px; gap: 10px">
 
@@ -218,7 +219,7 @@
 
         <!-- Center: Navigation Menu -->
         <div class="collapse navbar-collapse justify-content-center flex-grow-1" id="navbarMenu">
-            <ul class="navbar-nav d-flex align-items-center gap-5 mb-0">
+            <ul class="navbar-nav d-flex align-items-center mb-0" style="gap: 30px">
 
                 <li class="nav-item">
                     <a class="nav-link hover-underline" href="main-page.php" id="sr-nav-home">Home</a>
@@ -265,24 +266,31 @@
                 <li class="nav-item">
                     <a class="nav-link hover-underline" id="sr-nav-news" href="https://wetalk.com/news/">News</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link hover-underline" id="sr-nav-study-abroad"
+                        href="https://wetalk.com/study-abroad/">Study Abroad</a>
+                </li>
 
                 <!-- Educational Tours Dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle hover-underline" href="#" id="sr-nav-educ-tour" role="button">
+                    <a class="nav-link dropdown-toggle hover-underline" href="https://wetalk.com/educational-tour/"
+                        id="sr-nav-educ-tour" role="button">
                         Educational Tours<i class="material-icons">arrow_drop_down</i>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="eduToursDropdown">
-                        <li><a class="dropdown-item" id="sr-nav-taiwan"
-                                href="https://wetalk.com/educational-tours/taiwan/">Taiwan</a></li>
-                        <li><a class="dropdown-item" id="sr-nav-china"
-                                href="https://wetalk.com/educational-tours/china/">China</a></li>
                         <li><a class="dropdown-item" id="sr-nav-singapore"
-                                href="https://wetalk.com/educational-tours/singapore/">Singapore</a>
+                                href="https://wetalk.com/tour?dest=SG">Singapore</a>
                         </li>
-                        <li><a class="dropdown-item" id="sr-nav-japan"
-                                href="https://wetalk.com/educational-tours/japan/">Japan</a></li>
+                        <li><a class="dropdown-item" id="sr-nav-china" href="https://wetalk.com/tour?dest=CN">China</a>
+                        </li>
+                        <li><a class="dropdown-item" id="sr-nav-japan" href="https://wetalk.com/tour?dest=JP">Japan</a>
+                        </li>
                         <li><a class="dropdown-item" id="sr-nav-philippines"
-                                href="https://wetalk.com/educational-tours/philippines/">Philippines</a></li>
+                                href="https://wetalk.com/tour?dest=PH">Philippines</a>
+                        </li>
+                        <li><a class="dropdown-item" id="sr-nav-taiwan"
+                                href="https://wetalk.com/tour?dest=TW">Taiwan</a>
+                        </li>
                     </ul>
                 </li>
 
@@ -299,6 +307,11 @@
                         <li><a class="dropdown-item" id="sr-nav-campus"
                                 href="https://wetalk.com/campus-philippines/">Campus</a></li>
                     </ul>
+                </li>
+
+                <li id="sr-nav-translate" class="nav-item nav-translate-button">
+                    <i class="material-icons" style="font-size: 22px;">language</i>
+                    <?php include "translate-button.php" ?>
                 </li>
 
             </ul>

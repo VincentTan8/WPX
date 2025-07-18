@@ -1,4 +1,4 @@
-const imgDir = "../resources/img/course/";
+const imgDir = "../resources/img/courses/";
 const checkImg = imgDir + "check-yellow-list.png";
 const pageData = document.getElementById("page-data");
 const pageLang = pageData.dataset.lang;
@@ -16,6 +16,7 @@ const fetchCourseDetails = async () => {
         const course = data[0];
 
         document.getElementById("course-title").textContent = course.course_title;
+        document.getElementById("breadcrumb-title").textContent = course.course_short_title;
         document.getElementById("course-subtitle").textContent = course.course_subtitle;
         document.getElementById("course-description").textContent = course.course_description;
         document.getElementById("course-thumbnail").textContent = course.thumbnail_tag;
@@ -69,10 +70,6 @@ const fetchCourseFeatures = async () => {
 
         const data = await response.json();
 
-
-
-
-
         const container = document.getElementById("feature-container");
         container.innerHTML = '';
 
@@ -87,7 +84,7 @@ const fetchCourseFeatures = async () => {
             const textDiv = document.createElement("div");
 
             const strong = document.createElement("strong");
-            strong.textContent = item.feature_bold + ": ";
+            strong.textContent = item.feature_bold;
 
             textDiv.appendChild(strong);
             textDiv.append(" " + item.feature);
@@ -131,7 +128,7 @@ const fetchCourseTeachers = async () => {
 
 const fetchCourseGoals = async () => {
     try {
-        const response = await fetch("scripts/fetch-learning_goals.php", {
+        const response = await fetch("scripts/fetch-learning-goals.php", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: `language=${encodeURIComponent(pageLang)}&courses_ref_num=${encodeURIComponent(courseRef)}`

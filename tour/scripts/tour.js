@@ -121,7 +121,7 @@ const fetchProgram = async (tour_ref_num) => {
 
             container.appendChild(card);
         });
-
+        document.querySelector('.glow-bg').style.background = `#66CDE7`;
     } catch (error) {
         console.error("Error fetching program details:", error);
     }
@@ -190,6 +190,30 @@ const fetchTakeaway = async (tour_ref_num) => {
     }
 }
 
+const fetchNextSteps = async (tour_ref_num) => {
+    try {
+        const response = await fetch("scripts/fetch-next-steps.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `language=${encodeURIComponent(pageLang)}` +
+                `&tour_details_ref_num=${encodeURIComponent(tour_ref_num)}`
+        });
+        const entry = await response.json();
+        const data = entry[0];
+
+        document.getElementById('next-tour').textContent = data.info_1;
+        document.getElementById('next-date').textContent = data.info_2;
+        document.getElementById('early-bird').textContent = data.info_3;
+        document.getElementById('early-deadline').textContent = data.info_4;
+        document.getElementById('suitable-for').textContent = data.info_5;
+        document.getElementById('next-includes').textContent = data.info_6;
+    } catch (error) {
+        console.error("Error fetching next steps:", error);
+    }
+}
+
 
 $(document).ready(async function () {
     const tour_ref_num = await fetchTour();
@@ -197,4 +221,5 @@ $(document).ready(async function () {
     fetchProgram(tour_ref_num);
     fetchItinerary(tour_ref_num);
     fetchTakeaway(tour_ref_num);
+    fetchNextSteps(tour_ref_num);
 });

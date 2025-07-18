@@ -196,7 +196,7 @@
 </style>
 
 <div class="carousel-container">
-    <h2 id="journey-title" class="carousel-header">Other learning journeys you might be interested in</h2>
+    <h2 id="journey-title" class="carousel-header"></h2>
     <div class="carousel-wrapper">
         <div id="carousel-parent" class="carousel-track">
             <!-- <div class="carousel-card">
