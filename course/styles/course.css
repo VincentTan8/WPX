@@ -17,6 +17,32 @@ h4 {
     text-align: center;
 }
 
+select.form-dropdown {
+    width: auto;
+    padding: 0.75rem 2.5rem 0.75rem 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: white;
+    background-color: #ffb000;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.25rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover and focus state for accessibility and feedback */
+select.form-dropdown:hover,
+select.form-dropdown:focus {
+    opacity: 0.9;
+    outline: none;
+}
+
 #courseTable {
     border-collapse: collapse;
 }
