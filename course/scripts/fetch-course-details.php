@@ -11,6 +11,7 @@ $language = $_POST['language'];  //_en, _cn, _kr, _jp
 
 
 $course_title = "course_title" . $language;
+$course_short_title = "course_short_title" . $language;
 $course_subtitle = "course_subtitle" . $language;
 $course_description = "course_description" . $language;
 $thumbnail_tag = "thumbnail_tag" . $language;
@@ -23,6 +24,7 @@ $table = $database . ".`wt_courses`";
 $sql = "SELECT 
             `course_img`, 
             `$course_title` AS `course_title`,
+            `$course_short_title` AS `course_short_title`,
             `$course_subtitle` AS `course_subtitle`,
             `$course_description` AS `course_description`,
             `$thumbnail_tag` AS `thumbnail_tag`,
