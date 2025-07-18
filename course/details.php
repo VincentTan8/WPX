@@ -94,13 +94,14 @@
         font-size: 22px;
         text-align: left;
         font-weight: 700;
+        margin-bottom: 30px;
     }
 
     .goal-item {
         display: flex;
         align-items: flex-start;
         gap: 30px;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
 
     }
 
@@ -546,7 +547,7 @@
 <div class="main-container">
     <div class="left-container">
         <div class="left-header-wrap">
-            <div class="course-left-title">WeTalk Kids Chinese Package 1 (WK1–WK2)</div>
+            <div class="course-left-title" id="course-title">WeTalk Kids Chinese Package 1 (WK1–WK2)</div>
             <div class="left-rating">
                 <span class="left-rating-star">★★★★★</span>
                 <span class="left-rating-text">5.0 (20)</span>
@@ -555,43 +556,27 @@
 
         <div class="course-left-image-wrapper">
             <img src="../resources/img/course/course-1.png" alt="Course" class="course-left-image">
-            <div class="course-left-badge">Level 1</div>
+            <div class="course-left-badge" id="course-thumbnail">Level 1</div>
         </div>
 
-        <div class="course-left-description">
+        <div class="course-left-description" id="course-subtitle">
             Designed for 4–8-year-old children with zero Chinese proficiency, these engaging courses use lively
             songs, animations, and interactive games to introduce Chinese naturally. Bilingual guidance starts with
             basic greetings and progresses gradually to build confidence in communication.
         </div>
+        <!-- Todo use this to populate course details -->
+        <div id="course-details-container"></div>
 
         <div class="learning-goals">
             <h3>Learning Goals</h3>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div>Master 300+ foundational vocabulary words (numbers, colors, fruits, animals, etc.).</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div>Learn simple expressions for greetings, self-introductions, and daily needs.</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div>Sing along with 10+ classic Chinese children’s songs to develop language intuition and
-                    pronunciation.</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div>Explore traditional Chinese festivals and cultural elements through fun activities.</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div>Cultivate enthusiasm for Chinese learning and foster self-confidence in expression.</div>
+            <div id="goal-container">
+
             </div>
         </div>
 
         <div class="learning-goals">
             <h3>Course Description</h3>
-            <div class="course-left-description">
+            <div class="course-left-description" id="course-description">
                 The Package 1 course focuses on teaching basic Chinese knowledge of daily necessities under such themes
                 as greetings, numbers, family members, body parts, fruits, and colors. It also involves some simple
                 sentence patterns. The package 1 course consists of two stages, through which students can master the
@@ -603,13 +588,14 @@
             <h3>Class Hours</h3>
             <div class="goal-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div>22 class hours in total</div>
+                <div id="course-class-hours">22 class hours in total</div>
             </div>
         </div>
 
         <div class="learning-goals">
             <h3>Course Activities</h3>
-            <div class="goal-item">
+            <div id="activity-container"></div>
+            <!-- <div class="goal-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
                 <div>Storytelling</div>
             </div>
@@ -628,21 +614,23 @@
             <div class="goal-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
                 <div>Singing and Dancing</div>
-            </div>
+            </div> -->
         </div>
 
         <div class="learning-goals">
             <h3>Suitable Age</h3>
             <div class="goal-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div style="text-align:left;">All children in the world who are interested in Chinese and have zero
+                <div style="text-align:left;" id="course-suitable-for">All children in the world who are interested in
+                    Chinese and have zero
                     Chinese proficiency.</div>
             </div>
         </div>
 
         <div class="learning-goals">
             <h3>Course Features</h3>
-            <div class="goal-item">
+            <div id="feature-container"></div>
+            <!-- <div class="goal-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
                 <div style="text-align:left;"><span style="font-weight:700;">Featured Learning content:</span>Through
                     the Chinese classic Three
@@ -673,26 +661,22 @@
                     learning in class,
                     students will be given real-time feedback. Key points of the course and related audio and video will
                     also be sent to students to help them consolidate and review the knowledge.</div>
-            </div>
+            </div> -->
         </div>
 
         <div class="learning-goals">
             <h3>Course Type</h3>
             <div class="goal-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div>Family Package</div>
+                <div id="course-type">Family Package</div>
             </div>
         </div>
-
-
-
-
 
         <div class="learning-goals">
             <h3>Course Start Date</h3>
             <div class="goal-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div>January 1, 2023</div>
+                <div id="course-start-date">January 1, 2023</div>
             </div>
         </div>
     </div>
