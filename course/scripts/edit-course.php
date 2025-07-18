@@ -14,30 +14,27 @@ $errors = [];
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ref_num = $_POST['ref_num'];
+    $lang = $_POST['lang'];
 
-    $course_title_en = $_POST['editCourseTitleEN'];
-    // $course_title_cn = $_POST['editCourseTitleCN'];
+    //Fields that have translations
+    $course_title = $_POST['editCourseTitle'];
+    $course_short_title = $_POST['editCourseShortTitle'];
+    $course_subtitle = $_POST['editCourseSubtitle'];
+    $course_description = $_POST['editCourseDescription'];
+    $thumbnail_tag = $_POST['editThumbnailTag'];
+    $suitable_for = $_POST['editSuitableFor'];
+    $course_start_date = $_POST['editCourseStartDate'];
+    $class_hours = $_POST['editClassHours'];
 
-    $course_short_title_en = $_POST['editCourseShortTitleEN'];
-    // $course_short_title_cn = $_POST['editCourseShortTitleCN'];
-
-    $course_subtitle_en = $_POST['editCourseSubtitleEN'];
-    // $course_subtitle_cn = $_POST['editCourseSubtitleCN'];
-
-    $course_description_en = $_POST['editCourseDescriptionEN'];
-    // $course_description_cn = $_POST['editCourseDescriptionCN'];
-
-    $thumbnail_tag_en = $_POST['editThumbnailTagEN'];
-    // $thumbnail_tag_cn = $_POST['editThumbnailTagCN'];
-
-    $suitable_for_en = $_POST['editSuitableForEN'];
-    // $suitable_for_cn = $_POST['editSuitableForCN'];
-
-    $course_start_date_en = $_POST['editCourseStartDateEN'];
-    // $course_start_date_cn = $_POST['editCourseStartDateCN'];
-
-    $class_hours_en = $_POST['editClassHoursEN'];
-    // $class_hours_cn = $_POST['editClassHoursCN'];
+    //Column names with translations
+    $col_course_title = "course_title" . $lang;
+    $col_course_short_title = "course_short_title" . $lang;
+    $col_course_subtitle = "course_subtitle" . $lang;
+    $col_course_description = "course_description" . $lang;
+    $col_thumbnail_tag = "thumbnail_tag" . $lang;
+    $col_suitable_for = "suitable_for" . $lang;
+    $col_course_start_date = "course_start_date" . $lang;
+    $col_class_hours = "class_hours" . $lang;
 
     $age_group = $_POST['editAgeGroup'];
     $language = $_POST['editLanguage'];
@@ -47,22 +44,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tablename = $database . ".`wt_courses`";
 
     $sql = "UPDATE $tablename SET 
-            `course_title_en` = ?,
-            `course_title_cn` = ?,
-            `course_short_title_en` = ?,
-            `course_short_title_cn` = ?,
-            `course_subtitle_en` = ?,
-            `course_subtitle_cn` = ?,
-            `course_description_en` = ?,
-            `course_description_cn` = ?,
-            `thumbnail_tag_en` = ?,
-            `thumbnail_tag_cn` = ?,
-            `suitable_for_en` = ?,
-            `suitable_for_cn` = ?,
-            `course_start_date_en` = ?,
-            `course_start_date_cn` = ?,
-            `class_hours_en` = ?,
-            `class_hours_cn` = ?,
+            `$col_course_title` = ?,
+            `$col_course_short_title` = ?,
+            `$col_course_subtitle` = ?,
+            `$col_course_description` = ?,
+            `$col_thumbnail_tag` = ?,
+            `$col_suitable_for` = ?,
+            `$col_course_start_date` = ?,
+            `$col_class_hours` = ?,
             `age_group` = ?,
             `language` = ?,
             `course_package` = ?,
@@ -71,23 +60,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param(
-        "sssssssssssssssssssss",
-        $course_title_en,
-        $course_title_cn,
-        $course_short_title_en,
-        $course_short_title_cn,
-        $course_subtitle_en,
-        $course_subtitle_cn,
-        $course_description_en,
-        $course_description_cn,
-        $thumbnail_tag_en,
-        $thumbnail_tag_cn,
-        $suitable_for_en,
-        $suitable_for_cn,
-        $course_start_date_en,
-        $course_start_date_cn,
-        $class_hours_en,
-        $class_hours_cn,
+        "sssssssssssss",
+        $course_title,
+        $course_short_title,
+        $course_subtitle,
+        $course_description,
+        $thumbnail_tag,
+        $suitable_for,
+        $course_start_date,
+        $class_hours,
         $age_group,
         $language,
         $course_package,
@@ -108,8 +89,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //First up is Learning Goals
         if (isset($_POST['learning_goal_ref_num'])) {
             $ref_num_array = $_POST['learning_goal_ref_num'];  //an array of ref nums 
-            $learning_goal_en_array = $_POST['editLearningGoalEN']; //all of these post values are arrays
-            // $learning_goal_cn_array = $_POST['editLearningGoalCN'];
+            $learning_goal_array = $_POST['editLearningGoal']; //all of these post values are arrays
+            $col_learning_goal = "learning_goal" . $lang;
 
             $tablename = $database . ".`wt_course_learning_goals`";
 
@@ -118,15 +99,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             for ($i = 0; $i < $entryCount; $i++) {
                 if ($ref_num_array[$i] !== '') {
                     $sql = "UPDATE $tablename SET 
-                            `learning_goal_en` = ?,
-                            `learning_goal_cn` = ?
+                            `$col_learning_goal` = ?
                         WHERE `ref_num` = ?";
 
                     $stmt = $conn->prepare($sql);
                     $stmt->bind_param(
-                        "sss",
-                        $learning_goal_en_array[$i],
-                        $learning_goal_cn_array[$i],
+                        "ss",
+                        $learning_goal_array[$i],
                         $ref_num_array[$i]
                     );
 
@@ -141,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     $sql = "INSERT INTO $tablename 
                         (`ref_num`, `courses_ref_num`, 
-                        `learning_goal_en`)
+                        `$col_learning_goal`)
                         VALUES (?, ?, ?)";
 
                     $stmt = $conn->prepare($sql);
@@ -149,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         "sss",
                         $new_ref_num,
                         $ref_num,
-                        $learning_goal_en_array[$i]
+                        $learning_goal_array[$i]
                     );
 
                     if (!$stmt->execute()) {
@@ -162,8 +141,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Second one is activities
         if (isset($_POST['activity_ref_num'])) {
             $ref_num_array = $_POST['activity_ref_num'];  //an array of ref nums 
-            $activity_en_array = $_POST['editActivityEN']; //all of these post values are arrays
-            // $activity_cn_array = $_POST['editActivityCN'];
+            $activity_array = $_POST['editActivity']; //all of these post values are arrays
+            $col_activity = "activity" . $lang;
 
             $tablename = $database . ".`wt_course_activities`";
 
@@ -172,15 +151,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             for ($i = 0; $i < $entryCount; $i++) {
                 if ($ref_num_array[$i] !== '') {
                     $sql = "UPDATE $tablename SET 
-                                `activity_en` = ?,
-                                `activity_cn` = ?
+                                `$col_activity` = ?
                             WHERE `ref_num` = ?";
 
                     $stmt = $conn->prepare($sql);
                     $stmt->bind_param(
-                        "sss",
-                        $activity_en_array[$i],
-                        $activity_cn_array[$i],
+                        "ss",
+                        $activity_array[$i],
                         $ref_num_array[$i]
                     );
 
@@ -195,7 +172,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     $sql = "INSERT INTO $tablename 
                                 (`ref_num`, `courses_ref_num`, 
-                                `activity_en`)
+                                `$col_activity`)
                             VALUES (?, ?, ?)";
 
                     $stmt = $conn->prepare($sql);
@@ -203,7 +180,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         "sss",
                         $new_ref_num,
                         $ref_num,
-                        $activity_en_array[$i]
+                        $activity_array[$i]
                     );
 
                     if (!$stmt->execute()) {
@@ -220,10 +197,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //3rd one is features
         if (isset($_POST['feature_ref_num'])) {
             $ref_num_array = $_POST['feature_ref_num'];  //an array of ref nums 
-            $feature_bold_en_array = $_POST['editFeatureBoldEN']; //all of these post values are arrays
-            // $feature_bold_cn_array = $_POST['editFeatureBoldCN'];
-            $feature_en_array = $_POST['editFeatureEN'];
-            // $feature_cn_array = $_POST['editFeatureCN'];
+            $feature_bold_array = $_POST['editFeatureBold']; //all of these post values are arrays
+            $feature_array = $_POST['editFeature'];
+            $col_feature_bold = "feature_bold" . $lang;
+            $col_feature = "feature" . $lang;
 
             $tablename = $database . ".`wt_course_features`";
 
@@ -232,19 +209,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             for ($i = 0; $i < $entryCount; $i++) {
                 if ($ref_num_array[$i] !== '') {
                     $sql = "UPDATE $tablename SET 
-                                `feature_bold_en` = ?,
-                                `feature_bold_cn` = ?,
-                                `feature_en` = ?,
-                                `feature_cn` = ?
+                                `$col_feature_bold` = ?,
+                                `$col_feature` = ?
                             WHERE `ref_num` = ?";
 
                     $stmt = $conn->prepare($sql);
                     $stmt->bind_param(
-                        "sssss",
-                        $feature_bold_en_array[$i],
-                        $feature_bold_cn_array[$i],
-                        $feature_en_array[$i],
-                        $feature_cn_array[$i],
+                        "sss",
+                        $feature_bold_array[$i],
+                        $feature_array[$i],
                         $ref_num_array[$i]
                     );
 
@@ -259,8 +232,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     $sql = "INSERT INTO $tablename 
                             (`ref_num`, `courses_ref_num`, 
-                            `feature_bold_en`,
-                            `feature_en`)
+                            `$col_feature_bold`,
+                            `$col_feature`)
                             VALUES (?, ?, ?, ?)";
 
                     $stmt = $conn->prepare($sql);
@@ -268,8 +241,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         "ssss",
                         $new_ref_num,
                         $ref_num,
-                        $feature_bold_en_array[$i],
-                        $feature_en_array[$i]
+                        $feature_bold_array[$i],
+                        $feature_array[$i]
                     );
 
                     if (!$stmt->execute()) {
@@ -287,8 +260,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //4th is materials
         if (isset($_POST['material_ref_num'])) {
             $ref_num_array = $_POST['material_ref_num'];  //an array of ref nums 
-            $material_en_array = $_POST['editMaterialEN']; //all of these post values are arrays
-            // $material_cn_array = $_POST['editMaterialCN'];
+            $material_array = $_POST['editMaterial']; //all of these post values are arrays
+            $col_material = "material" . $lang;
 
             $tablename = $database . ".`wt_course_materials`";
 
@@ -297,15 +270,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             for ($i = 0; $i < $entryCount; $i++) {
                 if ($ref_num_array[$i] !== '') {
                     $sql = "UPDATE $tablename SET 
-                                `material_en` = ?,
-                                `material_cn` = ?
+                                `$col_material` = ?
                             WHERE `ref_num` = ?";
 
                     $stmt = $conn->prepare($sql);
                     $stmt->bind_param(
-                        "sss",
-                        $material_en_array[$i],
-                        $material_cn_array[$i],
+                        "ss",
+                        $material_array[$i],
                         $ref_num_array[$i]
                     );
 
@@ -315,12 +286,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 } else {
                     //If material does not exist yet
                     //WeTalk Course Materials reference num generate
-                    $ref_num_prefix = 'CA-';
+                    $ref_num_prefix = 'CM-';
                     $new_ref_num = generateRefNum($conn, $ref_num_prefix, $tablename);
 
                     $sql = "INSERT INTO $tablename 
                             (`ref_num`, `courses_ref_num`, 
-                            `material_en`)
+                            `$col_material`)
                             VALUES (?, ?, ?)";
 
                     $stmt = $conn->prepare($sql);
@@ -328,7 +299,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         "sss",
                         $new_ref_num,
                         $ref_num,
-                        $material_en_array[$i]
+                        $material_array[$i]
                     );
 
                     if (!$stmt->execute()) {
@@ -346,8 +317,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //5th and last is teachers
         if (isset($_POST['teacher_ref_num'])) {
             $ref_num_array = $_POST['teacher_ref_num'];  //an array of ref nums 
-            $teacher_en_array = $_POST['editTeacherEN']; //all of these post values are arrays
-            // $teacher_cn_array = $_POST['editTeacherCN'];
+            $teacher_array = $_POST['editTeacher']; //all of these post values are arrays
+            $col_teacher = "teacher" . $lang;
 
             $tablename = $database . ".`wt_course_teachers`";
 
@@ -356,15 +327,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             for ($i = 0; $i < $entryCount; $i++) {
                 if ($ref_num_array[$i] !== '') {
                     $sql = "UPDATE $tablename SET 
-                                `teacher_en` = ?,
-                                `teacher_cn` = ?
+                                `$col_teacher` = ?
                             WHERE `ref_num` = ?";
 
                     $stmt = $conn->prepare($sql);
                     $stmt->bind_param(
-                        "sss",
-                        $teacher_en_array[$i],
-                        $teacher_cn_array[$i],
+                        "ss",
+                        $teacher_array[$i],
                         $ref_num_array[$i]
                     );
 
@@ -374,12 +343,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 } else {
                     //If teacher does not exist yet
                     //WeTalk Course Teachers reference num generate
-                    $ref_num_prefix = 'CA-';
+                    $ref_num_prefix = 'CT-';
                     $new_ref_num = generateRefNum($conn, $ref_num_prefix, $tablename);
 
                     $sql = "INSERT INTO $tablename 
                             (`ref_num`, `courses_ref_num`, 
-                            `teacher_en`)
+                            `$col_teacher`)
                             VALUES (?, ?, ?)";
 
                     $stmt = $conn->prepare($sql);
@@ -387,7 +356,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         "sss",
                         $new_ref_num,
                         $ref_num,
-                        $teacher_en_array[$i]
+                        $teacher_array[$i]
                     );
 
                     if (!$stmt->execute()) {
