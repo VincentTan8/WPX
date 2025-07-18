@@ -20,7 +20,7 @@ $category = '';
 $main_menu = 'LINGUISTICS'; //to change
 
 include "../includes/menu_bar_reset.php";
-$menu_bar6 = "active";
+$menu_bar9 = "active";
 
 $_SESSION['active_page'] = 'educational-tour';
 
@@ -115,6 +115,7 @@ $imgDir = "../resources/img/educational-tour/";
         justify-content: center;
     }
 
+
     @media (max-width: 767px) {
         .hero-content {
             width: 90%;
@@ -200,12 +201,15 @@ $imgDir = "../resources/img/educational-tour/";
             </svg>
         </a>
 
-        <a href="your-journey-video-url" class="hero-button white">
-            <span id="hero-button-2"></span>
+        <a class="hero-button white" data-toggle="modal" data-target="#videoModal">
+            <span id="hero-button-2">Watch Our Journey</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="black">
                 <path d="M8 5v14l11-7z" />
             </svg>
         </a>
+
+
+
 
     </div>
 
@@ -220,6 +224,43 @@ $imgDir = "../resources/img/educational-tour/";
 
     <?php include "../includes/address.php"; ?>
     <?php include "../includes/footer.php"; ?>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content" style="background-color: black; border: none;">
+                <!-- Close button -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="
+                    position: absolute;
+                    top: -45px;
+                    right: -40px;
+                    z-index: 1055;
+                    font-size: 36px;
+                    
+                    color: white;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    line-height: 32px;
+                    text-align: center;
+                    border: none;
+                    
+                    cursor: pointer;
+                ">
+                    &times;
+                </button>
+
+                <div class="modal-body p-0" style="position: relative; border-radius:25px;">
+                    <video id="journeyVideo" width="100%" controls style="z-index: 1050; position: relative;">
+                        <source src="video/journey.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- End white container -->
 
 
@@ -271,6 +312,31 @@ $imgDir = "../resources/img/educational-tour/";
                 }]
             });
         });
+
+
+        $('#videoModal').on('shown.bs.modal', function () {
+            const video = document.getElementById('journeyVideo');
+            if (video) {
+                video.play();
+            }
+        });
+
+        $('#videoModal').on('hidden.bs.modal', function () {
+            const video = document.getElementById('journeyVideo');
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+        });
+        $('#videoModal').on('hidden.bs.modal', function () {
+            const video = document.getElementById('journeyVideo');
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+        });
+
+
     </script>
 </body>
 

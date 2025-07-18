@@ -16,6 +16,14 @@
             padding-left: 20px;
             padding-right: 20px;
         }
+
+        .col-md-12 {
+            margin-bottom: 40px;
+        }
+    }
+
+    .col-md-12 {
+        margin-bottom: 150px;
     }
 </style>
 <div class="" id="main-content">

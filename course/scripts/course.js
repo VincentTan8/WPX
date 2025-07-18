@@ -1,101 +1,203 @@
-const imgDir = "../resources/img/courses/";
+const imgDir = "../resources/img/course/";
+const checkImg = imgDir + "check-yellow-list.png";
 const pageData = document.getElementById("page-data");
 const pageLang = pageData.dataset.lang;
-const destination = pageData.dataset.dest;
+const courseRef = pageData.dataset.mod;
 
-//todo change everything here
-
-const fetchCourse = async () => {
+const fetchCourseDetails = async () => {
     try {
-        const response = await fetch("scripts/fetch-tour-details.php", {
+        const response = await fetch("scripts/fetch-course-details.php", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: `language=${encodeURIComponent(pageLang)}` +
-                `&destination_ref_num=${encodeURIComponent(destination)}`
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `language=${encodeURIComponent(pageLang)}&courses_ref_num=${encodeURIComponent(courseRef)}`
         });
-        const entry = await response.json();
-        const data = entry[0];
 
-        let study_tour = " Study Tour";
-        let why = "Why ";
-        if (pageLang === '_cn') {  //will have to add for other languages since this is not part of the data in db :<
-            study_tour = "游学团";
-            why = "为什么选择";
-        }
+        const data = await response.json();
+        const course = data[0];
 
-        document.getElementById('hero-section').style.backgroundImage = `url('${imgDir}${data.country_img}')`;
-        document.getElementById('hero-title').innerHTML = `WeTalk <span id="hero-highlight" style="color:#F2AE14;">${data.country_name}</span>${study_tour}`;
-        document.getElementById('hero-subtitle').textContent = data.header_text;
-        document.getElementById('reason-text').textContent = data.description;
-        document.getElementById('why-country').textContent = `${why}${data.country_name}?`;
-        document.getElementById('why-img').src = imgDir + data.country_why_img;
+        document.getElementById("course-title").textContent = course.course_title;
+        document.getElementById("course-subtitle").textContent = course.course_subtitle;
+        document.getElementById("course-description").textContent = course.course_description;
+        document.getElementById("course-thumbnail").textContent = course.thumbnail_tag;
+        document.getElementById("course-suitable-for").textContent = course.suitable_for;
+        document.getElementById("course-start-date").textContent = course.course_start_date;
+        document.getElementById("course-class-hours").textContent = course.class_hours;
+        document.getElementById("course-type").textContent = course.course_type;
 
-        return data.ref_num;
-    } catch (error) {
-        console.error("Error fetching tour page details:", error);
+        if (document.getElementById("course-img"))
+            document.getElementById("course-img").src = imgDir + course.course_img;
+
+    } catch (err) {
+        console.error("Error fetching course details:", err);
     }
 };
 
-const fetchLearningGoals = async (courses_ref_num) => {
+const fetchCourseMaterial = async () => {
     try {
-        const response = await fetch("scripts/fetch-program-details.php", {
+        const response = await fetch("scripts/fetch-materials.php", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: `language=${encodeURIComponent(pageLang)}` +
-                `&tour_details_ref_num=${encodeURIComponent(tour_ref_num)}`
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `language=${encodeURIComponent(pageLang)}&courses_ref_num=${encodeURIComponent(courseRef)}`
         });
-        const data = await response.json();
 
-        const container = document.getElementById('highlight-parent');
-        container.innerHTML = ''; // Clear existing static content if any
+        const data = await response.json();
+        const container = document.getElementById("material-container");
+        container.innerHTML = '';
 
         data.forEach(item => {
-            const card = document.createElement("div");
-            card.className = "highlight-card";
-            card.innerHTML = `
-            <img src="${imgDir}${item.program_img}" alt="${item.title}" class="img-fluid mb-2">
-            <p class="highlight-title">${item.title}</p>
-            <p class="highlight-desc">${item.description}</p>
-            `;
+            const li = document.createElement("li");
+            const img = document.createElement("img");
+            img.src = checkImg;
+            img.alt = "check";
 
-            container.appendChild(card);
+            li.appendChild(img);
+            li.append(" " + item.material);
+            container.appendChild(li);
         });
-        document.querySelector('.glow-bg').style.background = `#66CDE7`;
-    } catch (error) {
-        console.error("Error fetching program details:", error);
+    } catch (err) {
+        console.error("Error fetching course material:", err);
     }
-}
+};
 
-
-const fetchNextSteps = async (tour_ref_num) => {
+const fetchCourseFeatures = async () => {
     try {
-        const response = await fetch("scripts/fetch-next-steps.php", {
+        const response = await fetch("scripts/fetch-features.php", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: `language=${encodeURIComponent(pageLang)}` +
-                `&tour_details_ref_num=${encodeURIComponent(tour_ref_num)}`
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `language=${encodeURIComponent(pageLang)}&courses_ref_num=${encodeURIComponent(courseRef)}`
         });
-        const entry = await response.json();
-        const data = entry[0];
 
-        document.getElementById('next-tour').textContent = data.info_1;
-        document.getElementById('next-date').textContent = data.info_2;
-        document.getElementById('early-bird').textContent = data.info_3;
-        document.getElementById('early-deadline').textContent = data.info_4;
-        document.getElementById('suitable-for').textContent = data.info_5;
-        document.getElementById('next-includes').textContent = data.info_6;
-    } catch (error) {
-        console.error("Error fetching next steps:", error);
+        const data = await response.json();
+
+
+
+
+
+        const container = document.getElementById("feature-container");
+        container.innerHTML = '';
+
+        data.forEach(item => {
+            const itemDiv = document.createElement("div");
+            itemDiv.className = "goal-item";
+
+            const img = document.createElement("img");
+            img.src = checkImg;
+            img.alt = "check";
+
+            const textDiv = document.createElement("div");
+
+            const strong = document.createElement("strong");
+            strong.textContent = item.feature_bold + ": ";
+
+            textDiv.appendChild(strong);
+            textDiv.append(" " + item.feature);
+
+            itemDiv.appendChild(img);
+            itemDiv.appendChild(textDiv);
+
+            container.appendChild(itemDiv);
+        });
+    } catch (err) {
+        console.error("Error fetching course features:", err);
     }
-}
+};
 
-$(document).ready(async function () {
-    const courses_ref_num = await fetchCourse();
-    fetchLearningGoals(courses_ref_num);
+const fetchCourseTeachers = async () => {
+    try {
+        const response = await fetch("scripts/fetch-teachers.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `language=${encodeURIComponent(pageLang)}&courses_ref_num=${encodeURIComponent(courseRef)}`
+        });
+
+        const data = await response.json();
+        const container = document.getElementById("teacher-container");
+        container.innerHTML = '';
+
+        data.forEach(item => {
+            const li = document.createElement("li");
+            const img = document.createElement("img");
+            img.src = checkImg;
+            img.alt = "check";
+
+            li.appendChild(img);
+            li.append(" " + item.teacher);
+            container.appendChild(li);
+        });
+    } catch (err) {
+        console.error("Error fetching course teachers:", err);
+    }
+};
+
+const fetchCourseGoals = async () => {
+    try {
+        const response = await fetch("scripts/fetch-learning_goals.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `language=${encodeURIComponent(pageLang)}&courses_ref_num=${encodeURIComponent(courseRef)}`
+        });
+
+        const data = await response.json();
+        const container = document.getElementById("goal-container");
+        container.innerHTML = '';
+
+        data.forEach(item => {
+            const itemDiv = document.createElement("div");
+            itemDiv.className = "goal-item";
+
+            const img = document.createElement("img");
+            img.src = checkImg;
+            img.alt = "check";
+
+            const textDiv = document.createElement("div");
+            textDiv.textContent = item.learning_goal;
+
+            itemDiv.appendChild(img);
+            itemDiv.appendChild(textDiv);
+            container.appendChild(itemDiv);
+        });
+    } catch (err) {
+        console.error("Error fetching course goals:", err);
+    }
+};
+
+const fetchCourseActivities = async () => {
+    try {
+        const response = await fetch("scripts/fetch-activities.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `language=${encodeURIComponent(pageLang)}&courses_ref_num=${encodeURIComponent(courseRef)}`
+        });
+
+        const data = await response.json();
+        const container = document.getElementById("activity-container");
+        container.innerHTML = '';
+
+        data.forEach(item => {
+            const itemDiv = document.createElement("div");
+            itemDiv.className = "goal-item";
+
+            const img = document.createElement("img");
+            img.src = checkImg;
+            img.alt = "check";
+
+            const textDiv = document.createElement("div");
+            textDiv.textContent = item.activity;
+
+            itemDiv.appendChild(img);
+            itemDiv.appendChild(textDiv);
+            container.appendChild(itemDiv);
+        });
+    } catch (err) {
+        console.error("Error fetching course activities:", err);
+    }
+};
+
+$(document).ready(function () {
+    fetchCourseDetails();
+    fetchCourseMaterial();
+    fetchCourseFeatures();
+    fetchCourseTeachers();
+    fetchCourseGoals();
+    fetchCourseActivities();
 });
