@@ -233,34 +233,40 @@ $imgDir = "../resources/img/educational-tour/";
 
     <!-- Modal -->
     <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content" style="background-color: black; border: none;">
-                <!-- Close button -->
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document"
+            style="border-radius: 25px; overflow: visible;">
+            <div class="modal-content"
+                style="background-color: transparent; border: none; border-radius: 25px; overflow: visible;">
+                <!-- Floating Close Button -->
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="
-                    position: absolute;
-                    top: -45px;
-                    right: -40px;
-                    z-index: 1055;
-                    font-size: 36px;
-                    
-                    color: white;
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 50%;
-                    line-height: 32px;
-                    text-align: center;
-                    border: none;
-                    
-                    cursor: pointer;
+                  position: absolute;
+                  top: -35px;
+                  right: -35px;
+                  background: none;
+                  color:white;
+                  border-radius: 50%;
+                  width: 40px;
+                  height: 40px;
+                  font-size: 40px;
+                  line-height: 34px;
+                  text-align: center;
+                  
+                  z-index: 1051;
+                  
                 ">
-                    &times;
+                    ×
                 </button>
 
-                <div class="modal-body p-0" style="position: relative; border-radius:25px;">
-                    <video id="journeyVideo" width="100%" controls style="z-index: 1050; position: relative;">
-                        <source src="video/journey.mp4" type="video/mp4">
+                <div class="modal-body p-0"
+                    style="position: relative; border-radius: 25px; overflow: hidden; background: black;">
+
+                    <!-- Video -->
+                    <video id="journeyVideo" width="100%" controls style="display: block; border-radius: 25px;">
+                        <source src="video/journey.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
+
+
                 </div>
             </div>
         </div>
