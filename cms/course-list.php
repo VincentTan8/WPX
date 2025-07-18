@@ -80,6 +80,14 @@ while ($row = $result->fetch_assoc()) {
     $courseDataArray[$ref]['materials'] = getMaterials($conn, $database, $ref);
     $courseDataArray[$ref]['teachers'] = getTeachers($conn, $database, $ref);
 }
+
+//for setting the language data to be edited
+if (isset($_SESSION['dataLang']) and $_SESSION['dataLang'] == '_cn') {
+    $dataLang = '_cn';
+} else {
+    $_SESSION['dataLang'] = '_en';
+    $dataLang = '_en';
+}
 ?>
 <?php include "../includes/header.php"; ?>
 
@@ -103,13 +111,11 @@ while ($row = $result->fetch_assoc()) {
         <div style="display: flex; justify-content: space-between; margin-bottom:2rem;">
             <div style="display: flex; gap: 1rem;">
                 <h2>Course List</h2>
-                <select id="dataLanguage" name="dataLanguage">
-                    <option value="_en">English</option>
-                    <option value="_cn">Chinese</option>
+                <select id="dataLanguage" class="form-dropdown" name="dataLanguage">
+                    <option value="_en" <?= $dataLang === '_en' ? 'selected' : '' ?>>English</option>
+                    <option value="_cn" <?= $dataLang === '_cn' ? 'selected' : '' ?>>Chinese</option>
                 </select>
             </div>
-
-
 
             <div style="text-align: center;">
                 <a class="button" id="openAdd">
@@ -191,9 +197,10 @@ while ($row = $result->fetch_assoc()) {
                 <form id="editCourseForm" class="editForm">
                     <div class="tab">
                         <input id="editCourseRefNum" type="hidden" name="ref_num" required>
+                        <input id="editDataLang" type="hidden" name="lang" required>
 
-                        <label for="editCourseTitleEN">Course Title EN</label>
-                        <textarea id="editCourseTitleEN" name="editCourseTitleEN" required></textarea>
+                        <label for="editCourseTitle">Course Title</label>
+                        <textarea id="editCourseTitle" name="editCourseTitle" required></textarea>
 
                         <label>Age Group</label>
                         <select id="editAgeGroup" name="editAgeGroup">
@@ -228,14 +235,14 @@ while ($row = $result->fetch_assoc()) {
                             <option value="ESTC">ESTC</option>
                         </datalist>
 
-                        <label for="editCourseShortTitleEN">Course Short Title EN</label>
-                        <textarea id="editCourseShortTitleEN" name="editCourseShortTitleEN"></textarea>
+                        <label for="editCourseShortTitle">Course Short Title</label>
+                        <textarea id="editCourseShortTitle" name="editCourseShortTitle"></textarea>
 
-                        <label for="editCourseSubtitleEN">Course Subtitle EN</label>
-                        <textarea id="editCourseSubtitleEN" name="editCourseSubtitleEN"></textarea>
+                        <label for="editCourseSubtitle">Course Subtitle</label>
+                        <textarea id="editCourseSubtitle" name="editCourseSubtitle"></textarea>
 
-                        <label for="editCourseDescriptionEN">Course Description EN</label>
-                        <textarea id="editCourseDescriptionEN" name="editCourseDescriptionEN"></textarea>
+                        <label for="editCourseDescription">Course Description</label>
+                        <textarea id="editCourseDescription" name="editCourseDescription"></textarea>
 
                         <label>Course Image</label>
                         <div style="display: inline-flex; gap: 1rem;">
@@ -249,17 +256,17 @@ while ($row = $result->fetch_assoc()) {
                             <span id="courseListImgName"></span>
                         </div>
 
-                        <label>Thumbnail Tag EN</label>
-                        <input id="editThumbnailTagEN" type="text" name="editThumbnailTagEN">
+                        <label>Thumbnail Tag</label>
+                        <input id="editThumbnailTag" type="text" name="editThumbnailTag">
 
-                        <label for="editSuitableForEN">Suitable For EN</label>
-                        <textarea id="editSuitableForEN" name="editSuitableForEN"></textarea>
+                        <label for="editSuitableFor">Suitable For</label>
+                        <textarea id="editSuitableFor" name="editSuitableFor"></textarea>
 
-                        <label>Course Start Date EN</label>
-                        <input id="editCourseStartDateEN" type="text" name="editCourseStartDateEN">
+                        <label>Course Start Date</label>
+                        <input id="editCourseStartDate" type="text" name="editCourseStartDate">
 
-                        <label>Class Hours EN</label>
-                        <input id="editClassHoursEN" type="text" name="editClassHoursEN">
+                        <label>Class Hours</label>
+                        <input id="editClassHours" type="text" name="editClassHours">
                     </div>
 
                     <div id="learningGoalsContainer" class="tab">
@@ -304,92 +311,6 @@ while ($row = $result->fetch_assoc()) {
             </div>
         </div>
     </div>
-
-    <!-- only cn left to get from here -->
-    <!-- <div id="editCourseModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal('editCourseModal')">&times;</span>
-            <h2>Edit Course</h2>
-            <form id="editCourseForm">
-                <input id="editCourseRefNum" type="hidden" name="ref_num" required>
-
-                <label for="editCourseTitleEN">Course Title EN</label>
-                <textarea id="editCourseTitleEN" name="editCourseTitleEN" required></textarea>
-
-                <label>Age Group</label>
-                <input id="editAgeGroup" type="text" name="editAgeGroup">
-
-                <label>Language</label>
-                <input id="editLanguage" type="text" name="editLanguage">
-
-                <label>Course Package</label>
-                <input id="editCoursePackage" type="text" name="editCoursePackage">
-
-                <label>Course Type</label>
-                <input id="editCourseType" type="text" name="editCourseType">
-
-                <label for="editCourseShortTitleEN">Course Short Title EN</label>
-                <textarea id="editCourseShortTitleEN" name="editCourseShortTitleEN"></textarea>
-
-                <label for="editCourseSubtitleEN">Course Subtitle EN</label>
-                <textarea id="editCourseSubtitleEN" name="editCourseSubtitleEN"></textarea>
-
-                <label for="editCourseDescriptionEN">Course Description EN</label>
-                <textarea id="editCourseDescriptionEN" name="editCourseDescriptionEN"></textarea>
-
-                <label>Course Image</label>
-                <div style="display: inline-flex; gap: 1rem;">
-                    <input id="editCourseImg" type="file" name="editCourseImg">
-                    <span id="courseImgName"></span>
-                </div>
-
-                <label>Course List Image</label>
-                <div style="display: inline-flex; gap: 1rem;">
-                    <input id="editCourseListImg" type="file" name="editCourseListImg">
-                    <span id="courseListImgName"></span>
-                </div>
-
-                <label>Thumbnail Tag EN</label>
-                <input id="editThumbnailTagEN" type="text" name="editThumbnailTagEN">
-
-                <label for="editSuitableForEN">Suitable For EN</label>
-                <textarea id="editSuitableForEN" name="editSuitableForEN"></textarea>
-
-                <label>Course Start Date EN</label>
-                <input id="editCourseStartDateEN" type="text" name="editCourseStartDateEN">
-
-                <label>Class Hours EN</label>
-                <input id="editClassHoursEN" type="text" name="editClassHoursEN">
-
-                <label for="editCourseTitleCN">Course Title CN</label>
-                <textarea id="editCourseTitleCN" name="editCourseTitleCN"></textarea>
-
-                <label for="editCourseShortTitleCN">Course Short Title CN</label>
-                <textarea id="editCourseShortTitleCN" name="editCourseShortTitleCN"></textarea>
-
-                <label for="editCourseSubtitleCN">Course Subtitle CN</label>
-                <textarea id="editCourseSubtitleCN" name="editCourseSubtitleCN"></textarea>
-
-                <label for="editCourseDescriptionCN">Course Description CN</label>
-                <textarea id="editCourseDescriptionCN" name="editCourseDescriptionCN"></textarea>
-
-                <label>Thumbnail Tag CN</label>
-                <input id="editThumbnailTagCN" type="text" name="editThumbnailTagCN">
-
-                <label for="editSuitableForCN">Suitable For CN</label>
-                <textarea id="editSuitableForCN" name="editSuitableForCN"></textarea>
-
-                <label>Course Start Date CN</label>
-                <input id="editCourseStartDateCN" type="text" name="editCourseStartDateCN">
-
-                <label>Class Hours CN</label>
-                <input id="editClassHoursCN" type="text" name="editClassHoursCN">
-
-                <button class="button" type="submit">Submit</button>
-            </form>
-            <div id="editCourseResult"></div>
-        </div>
-    </div> -->
 
     <script>
         //pass php courses array object into js
@@ -482,7 +403,7 @@ while ($row = $result->fetch_assoc()) {
         }
         // END Mutipage Form JS
 
-        //START Modal JS
+        //START JS for stuff in the MODAL
         function showModal(id) {
             document.getElementById(id).style.display = "flex";
         }
@@ -536,14 +457,15 @@ while ($row = $result->fetch_assoc()) {
         }
 
         function createBlock(index, tab, row = null) {
+            const lang = document.getElementById('dataLanguage').value;
             const wrapper = document.createElement('div');
             switch (tab) {
                 case 1:
                     wrapper.innerHTML = `
                         <input type="hidden" name="learning_goal_ref_num[]" value="${row?.ref_num || ''}" required>
 
-                        <label>Learning Goal EN</label>
-                        <textarea name="editLearningGoalEN[]">${row?.learning_goal_en || ''}</textarea>
+                        <label>Learning Goal</label>
+                        <textarea name="editLearningGoal[]">${row?.['learning_goal' + lang] || ''}</textarea>
 
                         <button type="button" class="button remove-block">Remove</button>
                     `;
@@ -552,8 +474,8 @@ while ($row = $result->fetch_assoc()) {
                     wrapper.innerHTML = `
                         <input type="hidden" name="activity_ref_num[]" value="${row?.ref_num || ''}" required>
 
-                        <label>Activity EN</label>
-                        <textarea name="editActivityEN[]">${row?.activity_en || ''}</textarea>
+                        <label>Activity</label>
+                        <textarea name="editActivity[]">${row?.['activity' + lang] || ''}</textarea>
 
                         <button type="button" class="button remove-block">Remove</button>
                     `;
@@ -562,11 +484,11 @@ while ($row = $result->fetch_assoc()) {
                     wrapper.innerHTML = `
                         <input type="hidden" name="feature_ref_num[]" value="${row?.ref_num || ''}" required>
 
-                        <label>Feature EN</label>
-                        <textarea name="editFeatureEN[]">${row?.feature_en || ''}</textarea>
+                        <label>Feature</label>
+                        <textarea name="editFeature[]">${row?.['feature' + lang] || ''}</textarea>
 
-                        <label>Feature Bold EN</label>
-                        <textarea name="editFeatureBoldEN[]">${row?.feature_bold_en || ''}</textarea>
+                        <label>Feature Bold</label>
+                        <textarea name="editFeatureBold[]">${row?.['feature_bold' + lang] || ''}</textarea>
                         
                         <button type="button" class="button remove-block">Remove</button>
                     `;
@@ -575,8 +497,8 @@ while ($row = $result->fetch_assoc()) {
                     wrapper.innerHTML = `
                         <input type="hidden" name="material_ref_num[]" value="${row?.ref_num || ''}" required>
 
-                        <label>Material EN</label>
-                        <textarea name="editMaterialEN[]">${row?.material_en || ''}</textarea>
+                        <label>Material</label>
+                        <textarea name="editMaterial[]">${row?.['material' + lang] || ''}</textarea>
 
                         <button type="button" class="button remove-block">Remove</button>
                     `;
@@ -585,8 +507,8 @@ while ($row = $result->fetch_assoc()) {
                     wrapper.innerHTML = `
                         <input type="hidden" name="teacher_ref_num[]" value="${row?.ref_num || ''}" required>
 
-                        <label>Teacher EN</label>
-                        <textarea name="editTeacherEN[]">${row?.teacher_en || ''}</textarea>
+                        <label>Teacher</label>
+                        <textarea name="editTeacher[]">${row?.['teacher' + lang] || ''}</textarea>
 
                         <button type="button" class="button remove-block">Remove</button>
                     `;
@@ -610,35 +532,24 @@ while ($row = $result->fetch_assoc()) {
         }
 
         function prefillInfo(row) {
+            const lang = document.getElementById('dataLanguage').value;
+            document.getElementById('editDataLang').value = lang;
             document.getElementById('editCourseRefNum').value = row.ref_num;
-            document.getElementById('editCourseModalTitle').innerHTML = row.course_title_en || '';
 
-            document.getElementById('editCourseTitleEN').value = row.course_title_en || '';
-            // document.getElementById('editCourseTitleCN').value = row.course_title_cn || '';
+            document.getElementById('editCourseModalTitle').innerHTML = row['course_title' + lang] || '';
 
-            document.getElementById('editCourseShortTitleEN').value = row.course_short_title_en || '';
-            // document.getElementById('editCourseShortTitleCN').value = row.course_short_title_cn || '';
-
-            document.getElementById('editCourseSubtitleEN').value = row.course_subtitle_en || '';
-            // document.getElementById('editCourseSubtitleCN').value = row.course_subtitle_cn || '';
-
-            document.getElementById('editCourseDescriptionEN').value = row.course_description_en || '';
-            // document.getElementById('editCourseDescriptionCN').value = row.course_description_cn || '';
+            document.getElementById('editCourseTitle').value = row['course_title' + lang] || '';
+            document.getElementById('editCourseShortTitle').value = row['course_short_title' + lang] || '';
+            document.getElementById('editCourseSubtitle').value = row['course_subtitle' + lang] || '';
+            document.getElementById('editCourseDescription').value = row['course_description' + lang] || '';
 
             document.getElementById('courseImgName').textContent = row.course_img || '';
             document.getElementById('courseListImgName').textContent = row.course_list_img || '';
 
-            document.getElementById('editThumbnailTagEN').value = row.thumbnail_tag_en || '';
-            // document.getElementById('editThumbnailTagCN').value = row.thumbnail_tag_cn || '';
-
-            document.getElementById('editSuitableForEN').value = row.suitable_for_en || '';
-            // document.getElementById('editSuitableForCN').value = row.suitable_for_cn || '';
-
-            document.getElementById('editCourseStartDateEN').value = row.course_start_date_en || '';
-            // document.getElementById('editCourseStartDateCN').value = row.course_start_date_cn || '';
-
-            document.getElementById('editClassHoursEN').value = row.class_hours_en || '';
-            // document.getElementById('editClassHoursCN').value = row.class_hours_cn || '';
+            document.getElementById('editThumbnailTag').value = row['thumbnail_tag' + lang] || '';
+            document.getElementById('editSuitableFor').value = row['suitable_for' + lang] || '';
+            document.getElementById('editCourseStartDate').value = row['course_start_date' + lang] || '';
+            document.getElementById('editClassHours').value = row['class_hours' + lang] || '';
 
             document.getElementById('editAgeGroup').value = row.age_group || '';
             document.getElementById('editLanguage').value = row.language || '';
@@ -672,6 +583,7 @@ while ($row = $result->fetch_assoc()) {
         let featureIndex = 1;
         let materialIndex = 1;
         let teacherIndex = 1;
+        //END JS for stuff in MODAL
 
         $(document).ready(function () {
             $('#courseTable').DataTable({
@@ -707,8 +619,8 @@ while ($row = $result->fetch_assoc()) {
 
             document.addEventListener('click', (e) => {
                 //Open Edit Course Info
-                if (e.target.classList.contains('editCourse')) {
-                    const editButton = e.target;
+                const editButton = e.target.closest('.editCourse');
+                if (editButton) {
                     const ref = editButton.dataset.refnum;
                     const row = courseData[ref];
                     if (!row) return alert('Course data not found.');
@@ -729,8 +641,8 @@ while ($row = $result->fetch_assoc()) {
                     showModal('editCourseModal');
                 }
                 //Open Delete Course
-                if (e.target.classList.contains('deleteCourse')) {
-                    const deleteButton = e.target;
+                const deleteButton = e.target.closest('.deleteCourse');
+                if (deleteButton) {
                     const ref = deleteButton.dataset.refnum;
                     document.getElementById('deleteCourseRefNum').value = ref;
                     showModal('deleteCourseModal');
@@ -850,6 +762,18 @@ while ($row = $result->fetch_assoc()) {
             if (event.target === deleteCourseModal) {
                 deleteCourseModal.style.display = "none";
             }
+        });
+
+        document.getElementById('dataLanguage').addEventListener('change', function () {
+            const selectedLang = this.value;
+
+            fetch('../course/scripts/set-language-data.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'dataLang=' + encodeURIComponent(selectedLang)
+            })
         });
     </script>
 </body>
