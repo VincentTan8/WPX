@@ -3,14 +3,14 @@
         <?php include "breadcrumb.php" ?>
     </div>
 
-    <div class=" col-md-12 text-center  ">
+    <div class=" col-md-12   ">
         <?php include "details.php" ?>
     </div>
 
-    <div class=" col-md-12 text-center  ">
+    <div class=" col-md-12  ">
         <?php include "related.php" ?>
     </div>
-    <div class=" col-md-12 text-center " style="margin-top:150px;">
+    <div class=" col-md-12  " style="margin-top:150px;">
         <?php include "trial.php" ?>
     </div>
 </div>
