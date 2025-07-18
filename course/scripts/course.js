@@ -17,6 +17,7 @@ const fetchCourseDetails = async () => {
 
         document.getElementById("course-title").textContent = course.course_title;
         document.getElementById("breadcrumb-title").textContent = course.course_short_title;
+        document.getElementById("breadcrumb-footer").innerHTML = course.course_type;
         document.getElementById("course-subtitle").textContent = course.course_subtitle;
         document.getElementById("course-description").textContent = course.course_description;
         document.getElementById("course-thumbnail").textContent = course.thumbnail_tag;

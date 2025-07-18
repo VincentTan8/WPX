@@ -97,6 +97,6 @@
 <div style="height: 10px;"></div>
 
 
-<div class="breadcrumb-footer">
+<div id="breadcrumb-footer" class="breadcrumb-footer">
     WeTalk Kids Chinese
 </div>
