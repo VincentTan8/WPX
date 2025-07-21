@@ -1,7 +1,7 @@
 const courseImgDir = "../resources/img/courses/";
 let allCards = [];
 
-const fetchCourses = async () => {
+const fetchCourses = async (filter = "") => {
     const pageData = document.getElementById("page-data");
     const pageLang = pageData.dataset.lang;
 
@@ -11,7 +11,7 @@ const fetchCourses = async () => {
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
-            body: `language=${encodeURIComponent(pageLang)}`
+            body: `language=${encodeURIComponent(pageLang)}&filter=${encodeURIComponent(filter)}`
         });
 
         const data = await response.json();
@@ -59,7 +59,13 @@ const fetchCourses = async () => {
 };
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
+    const categoryFilter = document.querySelector(".category-filter");
+
+    categoryFilter.addEventListener("change", () => {
+        const selectedFilter = categoryFilter.value;
+        fetchCourses(selectedFilter);
+    });
+
     fetchCourses();
 });
