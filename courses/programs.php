@@ -496,7 +496,7 @@
 </style>
 
 
-<div class="course-section">
+<div class="course-section" id="courseSection">
     <div class="controls-container">
         <div class="view-toggle">
             <button class="toggle-btn active-toggle" id="gridToggle">
