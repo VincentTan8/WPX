@@ -685,7 +685,7 @@
         <div class="tab-toggle">
             <button class="toggle-button active" onclick="setTab('online')">Online</button>
             <button class="toggle-button" onclick="setTab('onsite')">On-Site</button>
-            <button class="toggle-button" onclick="setTab('tohome')">To-Home</button>
+            <button class="toggle-button disabled" onclick="setTab('tohome')">To-Home</button>
             <div class="tab-bg">
                 <svg id="bg-online" class="active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472 191" fill="none">
                     <path
@@ -793,8 +793,11 @@
 
 <script>
     function setTab(tab) {
+        const targetBtn = document.querySelector(`.toggle-button[onclick="setTab('${tab}')"]`);
+        if (targetBtn.classList.contains('disabled')) return;
+
         document.querySelectorAll('.toggle-button').forEach(btn => btn.classList.remove('active'));
-        document.querySelector(`.toggle-button[onclick="setTab('${tab}')"]`).classList.add('active');
+        targetBtn.classList.add('active');
 
         document.querySelectorAll('.tab-bg svg').forEach(svg => svg.classList.remove('active'));
         document.getElementById('bg-' + tab).classList.add('active');
@@ -802,6 +805,8 @@
 
     document.querySelectorAll('.option').forEach(option => {
         option.addEventListener('click', () => {
+            if (option.classList.contains('disabled')) return;
+
             const group = option.dataset.group;
             document.querySelectorAll(`.option[data-group="${group}"]`).forEach(opt => {
                 opt.classList.remove('selected');
@@ -821,9 +826,10 @@
         document.body.style.overflow = '';
     }
 
-
     document.querySelectorAll('.pricing-modal .option').forEach(option => {
         option.addEventListener('click', () => {
+            if (option.classList.contains('disabled')) return;
+
             const group = option.dataset.group;
             document.querySelectorAll(`.pricing-modal .option[data-group="${group}"]`).forEach(opt => {
                 opt.classList.remove('selected');
@@ -831,7 +837,6 @@
             option.classList.add('selected');
         });
     });
-
     document.querySelector('.footer-left').addEventListener('click', function (e) {
         e.stopPropagation();
         document.getElementById('currencyPopup').classList.add('active');
