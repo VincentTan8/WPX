@@ -707,19 +707,10 @@
 
         <div class="tab-content">
             <div class="section-label">Way of teaching:</div>
-            <div class="option-group">
-                <div class="option selected" data-group="teaching">Solo (1on1)</div>
-                <div class="option" data-group="teaching">Group</div>
-            </div>
-
+            <div class="session-type-options option-group"></div>
             <div class="section-label">Numbers of Sessions:</div>
-            <div class="option-group">
-                <div class="option selected" data-group="sessions">40 Sessions</div>
-                <div class="option" data-group="sessions">60 Sessions</div>
-                <div class="option" data-group="sessions">90 Sessions</div>
-            </div>
-
-            <div class="total">Total: <span>PHP 12,652.00</span></div>
+            <div class="num-session-options option-group"></div>
+            <div class="total">Total: <span class="price-total"></span></div>
             <button class="try-now">Try now</button>
         </div>
     </div>
@@ -762,18 +753,11 @@
             <div class="option course-type-option" data-group="course-type">To-Home</div>
         </div>
         <div class="section-label">Way of teaching:</div>
-        <div class="option-group">
-            <div class="option selected" data-group="teaching">Solo (1on1)</div>
-            <div class="option" data-group="teaching">Group</div>
-        </div>
-        <div class="section-label">Number of Session:</div>
-        <div class="option-group sessions-group">
-            <div class="option selected" data-group="sessions">40 Sessions</div>
-            <div class="option" data-group="sessions">60 Sessions</div>
-            <div class="option" data-group="sessions">90 Sessions</div>
-        </div>
+        <div class="session-type-options option-group"></div>
+        <div class="section-label">Number of Sessions:</div>
+        <div class="num-session-options option-group sessions-group"></div>
 
-        <div class="total">Total: <span>PHP 12,652.00</span></div>
+        <div class="total">Total: <span class="price-total"></span></div>
         <div class="modal-bottom-row">
             <div class="footer-left">
                 <div class="dollar-box">
@@ -800,17 +784,6 @@
         document.getElementById('bg-' + tab).classList.add('active');
     }
 
-    document.querySelectorAll('.option').forEach(option => {
-        option.addEventListener('click', () => {
-            const group = option.dataset.group;
-            document.querySelectorAll(`.option[data-group="${group}"]`).forEach(opt => {
-                opt.classList.remove('selected');
-            });
-            option.classList.add('selected');
-        });
-    });
-
-
     function openPricingModal() {
         document.getElementById('pricingModal').classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -820,7 +793,6 @@
         document.getElementById('pricingModal').classList.remove('active');
         document.body.style.overflow = '';
     }
-
 
     document.querySelectorAll('.pricing-modal .option').forEach(option => {
         option.addEventListener('click', () => {
@@ -837,11 +809,9 @@
         document.getElementById('currencyPopup').classList.add('active');
     });
 
-
     function closeCurrencyPopup() {
         document.getElementById('currencyPopup').classList.remove('active');
     }
-
 
     document.addEventListener('click', function (e) {
         const popup = document.getElementById('currencyPopup');
@@ -851,7 +821,4 @@
             popup.classList.remove('active');
         }
     });
-
-
-
 </script>
