@@ -17,7 +17,7 @@ $sessiontable = $database . ".`wt_rates_session_types`";
 
 $sql = "SELECT DISTINCT(rst.ref_num), rst.display_name FROM $sessiontable rst
         JOIN $tablename t ON t.session_type_ref_num = rst.ref_num
-        WHERE t.course_category = ? AND t.age_group = ?";
+        WHERE t.course_category = ? AND t.age_group = ? ORDER BY rst.ref_num DESC";
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ss", $course_type, $age_group);
