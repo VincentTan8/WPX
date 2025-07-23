@@ -9,7 +9,6 @@ include "../../connections/dbname.php";
 $courses_ref_num = $_POST['courses_ref_num'];
 $language = $_POST['language'];  //_en, _cn, _kr, _jp
 
-
 $course_title = "course_title" . $language;
 $course_short_title = "course_short_title" . $language;
 $course_subtitle = "course_subtitle" . $language;
@@ -31,7 +30,7 @@ $sql = "SELECT
             `$suitable_for` AS `suitable_for`,
             `$course_start_date` AS `course_start_date`,
             `$class_hours` AS `class_hours`,
-            `course_type`
+            `age_group`, `course_type`
         FROM $table 
         WHERE `ref_num` = ?";
 
