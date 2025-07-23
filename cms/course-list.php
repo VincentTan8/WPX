@@ -556,7 +556,7 @@ if (isset($_SESSION['dataLang']) and $_SESSION['dataLang'] == '_cn') {
             document.getElementById('editAgeGroup').value = row.age_group || '';
             document.getElementById('editLanguage').value = row.language || '';
             document.getElementById('editCoursePackage').value = row.course_package || '';
-            document.getElementById('editCourseType').value = row.course_type || '';
+            document.getElementById('editCourseType').value = row['course_type' + lang] || '';
         }
 
         function prefillTab(ref, tab, rows, container) {

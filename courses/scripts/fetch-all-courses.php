@@ -14,6 +14,7 @@ $filter = $_POST['filter'] ?? '';
 $course_short_title = "course_short_title" . $language;
 $course_description = "course_description" . $language;
 $thumbnail_tag = "thumbnail_tag" . $language;
+$course_type = "course_type" . $language;
 
 
 $tablename = $database . ".`wt_courses`";
@@ -26,7 +27,7 @@ $sql = "SELECT
             `$course_description` AS `course_description`, 
             `language`,
             `age_group`,
-            `course_type` 
+            `$course_type` AS `course_type` 
         FROM $tablename";
 
 $conditions = [];

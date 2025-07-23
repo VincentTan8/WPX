@@ -37,7 +37,7 @@ const fetchCourseDetails = async () => {
 
         //get needed info for rates
         age_group = course.age_group;
-        course_type = course.course_type;
+        course_type = course.course_type_en;
         fetchPriceConfigs();
 
     } catch (err) {
