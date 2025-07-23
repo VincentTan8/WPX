@@ -17,11 +17,11 @@ $num_sessions = $_POST['num_sessions'];
 $tablename = $database . ".`wt_rates_prices`";
 
 $sql = "SELECT * FROM $tablename
-        WHERE `course_category` = ? AND `age_group` = ?
+        WHERE `course_category` = ? AND `age_group` = ? AND
               `session_type_ref_num` = ? AND `num_sessions` = ?";
 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ssss", $course_type, $age_group, $session_type, $num_sessions);
+$stmt->bind_param("sssi", $course_type, $age_group, $session_type, $num_sessions);
 $stmt->execute();
 $result = $stmt->get_result();
 
