@@ -685,21 +685,17 @@
         <div class="tab-toggle">
             <button class="toggle-button active" onclick="setTab('online')">Online</button>
             <button class="toggle-button" onclick="setTab('onsite')">On-Site</button>
-            <button class="toggle-button disabled" onclick="setTab('tohome')">To-Home</button>
             <div class="tab-bg">
-                <svg id="bg-online" class="active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472 191" fill="none">
+                <svg id="bg-online" class="active" xmlns="http://www.w3.org/2000/svg" width="472" height="162"
+                    viewBox="0 0 472 162" fill="none">
                     <path
-                        d="M157.333 31C157.333 39.2843 164.049 46 172.333 46H457C465.284 46 472 52.7157 472 61V176C472 184.284 465.284 191 457 191H15C6.71572 191 0 184.284 0 176V15C0 6.71572 6.71573 0 15 0H142.333C150.617 0 157.333 6.71573 157.333 15V31Z"
+                        d="M236.333 41C236.333 46.5228 240.81 51 246.333 51H462C467.523 51 472 55.4772 472 61V152C472 157.523 467.523 162 462 162H9.99999C4.47714 162 0 157.523 0 152V51.1665C0 51.0745 0.0745463 51 0.166504 51V51C0.258461 51 0.333008 50.9255 0.333008 50.8335V10C0.333008 4.47715 4.81016 0 10.333 0H226.333C231.856 0 236.333 4.47715 236.333 10V41Z"
                         fill="#4170FE" />
                 </svg>
-                <svg id="bg-onsite" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472 191" fill="none">
+                <svg id="bg-onsite" xmlns="http://www.w3.org/2000/svg" width="472" height="162" viewBox="0 0 472 162"
+                    fill="none">
                     <path
-                        d="M314.333 31C314.333 39.2843 321.049 46 329.333 46H457C465.284 46 472 52.7157 472 61V176C472 184.284 465.284 191 457 191H15C6.71572 191 0 184.284 0 176V61C0 52.7157 6.71573 46 15 46H142C150.284 46 157 39.2843 157 31V15C157 6.71573 163.716 0 172 0H299.333C307.617 0 314.333 6.71573 314.333 15V31Z"
-                        fill="#4170FE" />
-                </svg>
-                <svg id="bg-tohome" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 473 191" fill="none">
-                    <path
-                        d="M472.333 56.8335C472.333 56.9255 472.258 57 472.167 57C472.075 57 472 57.0745 472 57.1665V176C472 184.284 465.284 191 457 191H15C6.71572 191 0 184.284 0 176V61C0 52.7157 6.71573 46 15 46H300C308.284 46 315 39.2843 315 31V15C315 6.71573 321.716 0 330 0H457.333C465.617 0 472.333 6.71573 472.333 15V56.8335Z"
+                        d="M472 152C472 157.523 467.523 162 462 162H9.99999C4.47714 162 0 157.523 0 152V61C0 55.4772 4.47715 51 10 51H226C231.523 51 236 46.5228 236 41V10C236 4.47715 240.477 0 246 0H462C467.523 0 472 4.47715 472 10V152Z"
                         fill="#4170FE" />
                 </svg>
             </div>
@@ -794,13 +790,14 @@
 <script>
     function setTab(tab) {
         const targetBtn = document.querySelector(`.toggle-button[onclick="setTab('${tab}')"]`);
-        if (targetBtn.classList.contains('disabled')) return;
+        if (!targetBtn) return;
 
         document.querySelectorAll('.toggle-button').forEach(btn => btn.classList.remove('active'));
         targetBtn.classList.add('active');
 
         document.querySelectorAll('.tab-bg svg').forEach(svg => svg.classList.remove('active'));
-        document.getElementById('bg-' + tab).classList.add('active');
+        const svg = document.getElementById('bg-' + tab);
+        if (svg) svg.classList.add('active');
     }
 
     document.querySelectorAll('.option').forEach(option => {
