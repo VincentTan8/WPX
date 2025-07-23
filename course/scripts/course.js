@@ -265,6 +265,13 @@ const fetchPrice = async () => {
         const session_type_ref_num = activeSessionType;
         const num_sessions = activeNumSessions;
 
+        const tryButton = document.querySelectorAll('.try-now');
+
+        //disable buttons while we wait for new price to be fetched
+        tryButton.forEach(button => {
+            button.disabled = true;
+        });
+
         if(session_type_ref_num != "" && num_sessions != "") {
             const response = await fetch("scripts/fetch-price.php", {
                 method: "POST",
@@ -280,8 +287,10 @@ const fetchPrice = async () => {
             totalSpans.forEach(total => {
                 total.textContent = item.currency + " " + item.price;
             });
-        }
-
+            tryButton.forEach(button => {
+                button.disabled = false;
+            });
+        } 
     } catch (err) {
         console.error("Error fetching price:", err);
     }

@@ -228,6 +228,14 @@
         width: 100%;
         border-radius: 10px;
         cursor: pointer;
+        transition: background 0.3s ease, opacity 0.3s ease;
+    }
+
+    .try-now:disabled {
+        background: #ccc;
+        color: #666;
+        cursor: not-allowed;
+        opacity: 0.7;
     }
 
     .mobile-only {
@@ -711,7 +719,7 @@
             <div class="section-label">Numbers of Sessions:</div>
             <div class="num-session-options option-group"></div>
             <div class="total">Total: <span class="price-total"></span></div>
-            <button class="try-now">Try now</button>
+            <button class="try-now" disabled>Try now</button>
         </div>
     </div>
 </div>
@@ -769,7 +777,7 @@
                 </div>
                 <div class="currency-label">Currency</div>
             </div>
-            <button class="try-now">Try now</button>
+            <button class="try-now" disabled>Try now</button>
         </div>
 
     </div>
