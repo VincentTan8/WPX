@@ -213,7 +213,7 @@ include "../connections/dbname.php";
 
     <!-- Hero Buttons -->
     <div class="hero-buttons">
-        <a class="hero-button green">
+        <a class="hero-button green" onclick="scrollToCourses()">
             <span style="color:white;">Try Now</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none">
                 <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round"
@@ -221,7 +221,7 @@ include "../connections/dbname.php";
             </svg>
         </a>
 
-        <a class="hero-button white">
+        <a class="hero-button white" onclick="scrollToCourses()">
             <span>Learn More</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none">
                 <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="black" stroke-width="2" stroke-linecap="round"
@@ -247,6 +247,19 @@ include "../connections/dbname.php";
 
     <div id="page-data" data-page="courses" data-lang="<?php echo $lang ?>"></div>
     <script>console.log('<?php echo $lang . " is the lang"; ?>')</script>
+    <script>
+        function scrollToCourses() {
+            const section = document.getElementById("courseSection");
+            const offset = -60;
+
+            const top = section.getBoundingClientRect().top + window.pageYOffset + offset;
+
+            window.scrollTo({
+                top,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 
 
 </body>

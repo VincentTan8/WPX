@@ -100,7 +100,7 @@
             <div class="image-container" style="background-color: #B2F3CE;">
                 <img src="../resources/img/courses/girl-1.png" alt="Teacher 1" />
             </div>
-            <div class="teacher-name">陈依倩</div>
+            <div class="teacher-name">陈桂香</div>
             <div class="teacher-title">擅长汉语口语训练；多次承担对外汉语教学</div>
         </div>
 
@@ -116,7 +116,7 @@
             <div class="image-container" style="background-color: #FFDF8D;">
                 <img src="../resources/img/courses/girl-2.png" alt="Teacher 3" />
             </div>
-            <div class="teacher-name">玉珠</div>
+            <div class="teacher-name">高玉枝</div>
             <div class="teacher-title">最佳国际汉语教师 / 国际汉语少儿考试培优能手</div>
         </div>
 

@@ -245,7 +245,7 @@
 
     .course-description {
         width: 415px;
-        height: 84px;
+        height: 83px;
         overflow: hidden;
         color: #18181B;
         font-family: 'Poppins', sans-serif;
@@ -496,7 +496,7 @@
 </style>
 
 
-<div class="course-section">
+<div class="course-section" id="courseSection">
     <div class="controls-container">
         <div class="view-toggle">
             <button class="toggle-btn active-toggle" id="gridToggle">
@@ -535,7 +535,7 @@
                 <option>School Package</option>
                 <option>Kids Courses</option>
                 <option>Adult Courses</option>
-                <option>Teens/Youth Courses</option>
+                <!-- <option>Teens/Youth Courses</option> -->
             </select>
             <!-- <div class="search-box">
                 <input type="text" placeholder="Search..." />
