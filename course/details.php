@@ -790,17 +790,6 @@
         document.body.style.overflow = '';
     }
 
-    document.querySelectorAll('.pricing-modal .option').forEach(option => {
-        option.addEventListener('click', () => {
-            if (option.classList.contains('disabled')) return;
-
-            const group = option.dataset.group;
-            document.querySelectorAll(`.pricing-modal .option[data-group="${group}"]`).forEach(opt => {
-                opt.classList.remove('selected');
-            });
-            option.classList.add('selected');
-        });
-    });
     document.querySelector('.footer-left').addEventListener('click', function (e) {
         e.stopPropagation();
         document.getElementById('currencyPopup').classList.add('active');
