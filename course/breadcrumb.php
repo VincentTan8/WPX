@@ -83,7 +83,7 @@
                 <circle cx="2.5" cy="3" r="2.5" fill="#A7A7A7" />
             </svg>
         </span>
-        <span class="breadcrumb-item">Courses</span>
+        <a class="breadcrumb-item" href="../courses">Courses</a>
         <span class="separator">
             <svg xmlns="http://www.w3.org/2000/svg" width="5" height="6" viewBox="0 0 5 6" fill="none">
                 <circle cx="2.5" cy="3" r="2.5" fill="#A7A7A7" />
