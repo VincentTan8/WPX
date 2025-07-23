@@ -555,7 +555,7 @@
 <div class="main-container">
     <div class="left-container">
         <div class="left-header-wrap">
-            <div class="course-left-title" id="course-title">WeTalk Kids Chinese Package 1 (WK1–WK2)</div>
+            <div class="course-left-title" id="course-title"></div>
             <div class="left-rating">
                 <span class="left-rating-star">★★★★★</span>
                 <span class="left-rating-text">5.0 (20)</span>
@@ -563,15 +563,11 @@
         </div>
 
         <div class="course-left-image-wrapper">
-            <img src="../resources/img/course/course-1.png" alt="Course" class="course-left-image" id="course-img">
-            <div class="course-left-badge" id="course-thumbnail">Level 1</div>
+            <img src="" alt="Course Image" class="course-left-image" id="course-img">
+            <div class="course-left-badge" id="course-thumbnail"></div>
         </div>
 
-        <div class="course-left-description" id="course-subtitle">
-            Designed for 4–8-year-old children with zero Chinese proficiency, these engaging courses use lively
-            songs, animations, and interactive games to introduce Chinese naturally. Bilingual guidance starts with
-            basic greetings and progresses gradually to build confidence in communication.
-        </div>
+        <div class="course-left-description" id="course-subtitle"></div>
         <!-- Todo use this to populate course details -->
         <div id="course-details-container"></div>
 
@@ -584,13 +580,7 @@
 
         <div class="course-section">
             <h3>Course Description</h3>
-            <div class="course-left-description" id="course-description">
-                The Package 1 course focuses on teaching basic Chinese knowledge of daily necessities under such themes
-                as greetings, numbers, family members, body parts, fruits, and colors. It also involves some simple
-                sentence patterns. The package 1 course consists of two stages, through which students can master the
-                phrases describing the basic common sense of life and the expression of simple sentences.
-            </div>
-
+            <div class="course-left-description" id="course-description"></div>
         </div>
         <div class="course-section">
             <h3>Class Hours</h3>
@@ -629,9 +619,7 @@
             <h3>Suitable For</h3>
             <div class="goal-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div style="text-align:left;" id="course-suitable-for">All children in the world who are interested in
-                    Chinese and have zero
-                    Chinese proficiency.</div>
+                <div style="text-align:left;" id="course-suitable-for"></div>
             </div>
         </div>
 
@@ -676,7 +664,7 @@
             <h3>Course Type</h3>
             <div class="goal-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div id="course-type">Family Package</div>
+                <div id="course-type"></div>
             </div>
         </div>
 
