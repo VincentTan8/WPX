@@ -40,7 +40,8 @@ include "../connections/dbname.php";
     </div>
     <?php include "../includes/address.php"; ?>
     <?php include "../includes/footer.php"; ?>
-    <div id="page-data" data-lang="<?php echo $lang; ?>" data-mod="<?php echo htmlspecialchars($mod) ?>"></div>
+    <div id="page-data" data-page="course" data-lang="<?php echo $lang; ?>"
+        data-mod="<?php echo htmlspecialchars($mod) ?>"></div>
 
     <script src="../vendor/js/bundle.min.js"></script>
     <script src="../vendor/js/jquery.fancybox.min.js"></script>

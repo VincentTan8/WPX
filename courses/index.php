@@ -245,7 +245,7 @@ include "../connections/dbname.php";
     <!-- End white container -->
 
 
-    <div id="page-data" data-page="educ-tour" data-lang="<?php echo $lang ?>"></div>
+    <div id="page-data" data-page="courses" data-lang="<?php echo $lang ?>"></div>
     <script>console.log('<?php echo $lang . " is the lang"; ?>')</script>
 
 
