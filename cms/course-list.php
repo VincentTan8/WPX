@@ -233,6 +233,8 @@ if (isset($_SESSION['dataLang']) and $_SESSION['dataLang'] == '_cn') {
                             <option value="YCT">YCT</option>
                             <option value="HSK">HSK</option>
                             <option value="ESTC">ESTC</option>
+                            <option value="Kids English Courses">Kids English Courses</option>
+                            <option value="Adult English Class">Adult English Class</option>
                         </datalist>
 
                         <label for="editCourseShortTitle">Course Short Title</label>
@@ -554,7 +556,7 @@ if (isset($_SESSION['dataLang']) and $_SESSION['dataLang'] == '_cn') {
             document.getElementById('editAgeGroup').value = row.age_group || '';
             document.getElementById('editLanguage').value = row.language || '';
             document.getElementById('editCoursePackage').value = row.course_package || '';
-            document.getElementById('editCourseType').value = row.course_type || '';
+            document.getElementById('editCourseType').value = row['course_type' + lang] || '';
         }
 
         function prefillTab(ref, tab, rows, container) {

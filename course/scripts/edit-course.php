@@ -25,6 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $suitable_for = $_POST['editSuitableFor'];
     $course_start_date = $_POST['editCourseStartDate'];
     $class_hours = $_POST['editClassHours'];
+    //this has translation but is also used to filter
+    $course_type = $_POST['editCourseType'];
 
     //Column names with translations
     $col_course_title = "course_title" . $lang;
@@ -35,11 +37,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $col_suitable_for = "suitable_for" . $lang;
     $col_course_start_date = "course_start_date" . $lang;
     $col_class_hours = "class_hours" . $lang;
+    $col_course_type = "course_type" . $lang;
 
     $age_group = $_POST['editAgeGroup'];
     $language = $_POST['editLanguage'];
     $course_package = $_POST['editCoursePackage'];
-    $course_type = $_POST['editCourseType'];
 
     $tablename = $database . ".`wt_courses`";
 
@@ -55,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             `age_group` = ?,
             `language` = ?,
             `course_package` = ?,
-            `course_type` = ?
+            `$col_course_type` = ?
         WHERE `ref_num` = ?";
 
     $stmt = $conn->prepare($sql);

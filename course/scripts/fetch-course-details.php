@@ -9,7 +9,6 @@ include "../../connections/dbname.php";
 $courses_ref_num = $_POST['courses_ref_num'];
 $language = $_POST['language'];  //_en, _cn, _kr, _jp
 
-
 $course_title = "course_title" . $language;
 $course_short_title = "course_short_title" . $language;
 $course_subtitle = "course_subtitle" . $language;
@@ -18,6 +17,7 @@ $thumbnail_tag = "thumbnail_tag" . $language;
 $suitable_for = "suitable_for" . $language;
 $course_start_date = "course_start_date" . $language;
 $class_hours = "class_hours" . $language;
+$course_type = "course_type" . $language;
 
 $table = $database . ".`wt_courses`";
 
@@ -31,7 +31,8 @@ $sql = "SELECT
             `$suitable_for` AS `suitable_for`,
             `$course_start_date` AS `course_start_date`,
             `$class_hours` AS `class_hours`,
-            `course_type`
+            `$course_type` AS `course_type`,
+            `age_group`, `course_type_en`
         FROM $table 
         WHERE `ref_num` = ?";
 

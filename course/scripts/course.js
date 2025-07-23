@@ -4,6 +4,12 @@ const pageData = document.getElementById("page-data");
 const pageLang = pageData.dataset.lang;
 const courseRef = pageData.dataset.mod;
 
+//for rates usage later
+let age_group = "";
+let course_type = "";
+let activeSessionType = "";
+let activeNumSessions = "";
+
 const fetchCourseDetails = async () => {
     try {
         const response = await fetch("scripts/fetch-course-details.php", {
@@ -17,6 +23,7 @@ const fetchCourseDetails = async () => {
 
         document.getElementById("course-title").textContent = course.course_title;
         document.getElementById("breadcrumb-title").textContent = course.course_short_title;
+        document.getElementById("breadcrumb-footer").innerHTML = course.course_type;
         document.getElementById("course-subtitle").textContent = course.course_subtitle;
         document.getElementById("course-description").textContent = course.course_description;
         document.getElementById("course-thumbnail").textContent = course.thumbnail_tag;
@@ -27,6 +34,11 @@ const fetchCourseDetails = async () => {
 
         if (document.getElementById("course-img"))
             document.getElementById("course-img").src = imgDir + course.course_img;
+
+        //get needed info for rates
+        age_group = course.age_group;
+        course_type = course.course_type_en;
+        fetchPriceConfigs();
 
     } catch (err) {
         console.error("Error fetching course details:", err);
@@ -189,6 +201,100 @@ const fetchCourseActivities = async () => {
         console.error("Error fetching course activities:", err);
     }
 };
+
+const fetchPriceConfigs = async () => {
+    try {
+        const response = await fetch("scripts/fetch-price-config.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `age_group=${encodeURIComponent(age_group)}&course_type=${encodeURIComponent(course_type)}`
+        });
+
+        const data = await response.json();
+
+        const typesContainers = document.querySelectorAll('.session-type-options');
+        const sessionNumContainers = document.querySelectorAll('.num-session-options');
+
+        typesContainers.forEach(typesContainer => {
+            typesContainer.innerHTML = '';
+            data.session_types.forEach(item => {
+                const itemDiv = document.createElement("div");
+                itemDiv.className = "option";
+                itemDiv.dataset.group = "teaching";
+                itemDiv.textContent = item.display_name;
+                itemDiv.dataset.ref_num = item.ref_num;
+                typesContainer.appendChild(itemDiv);
+            });
+        });
+        
+        sessionNumContainers.forEach(sessionNumContainer => {
+            sessionNumContainer.innerHTML = '';
+            data.num_sessions.forEach(item => {
+                const itemDiv = document.createElement("div");
+                itemDiv.className = "option";
+                itemDiv.dataset.group = "sessions";
+                itemDiv.textContent = item.num_sessions + " Sessions";
+                itemDiv.dataset.num = item.num_sessions;
+                sessionNumContainer.appendChild(itemDiv);
+            });
+        });
+
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', () => {
+                const group = option.dataset.group;
+                document.querySelectorAll(`.option[data-group="${group}"]`).forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                option.classList.add('selected');
+                if (group == "teaching")
+                    activeSessionType = option.dataset.ref_num;
+                if (group == "sessions")
+                    activeNumSessions = option.dataset.num;
+
+                fetchPrice();
+            });
+        });
+
+    } catch (err) {
+        console.error("Error fetching price configs:", err);
+    }
+};
+
+const fetchPrice = async () => {
+    try {
+        const session_type_ref_num = activeSessionType;
+        const num_sessions = activeNumSessions;
+
+        const tryButton = document.querySelectorAll('.try-now');
+
+        //disable buttons while we wait for new price to be fetched
+        tryButton.forEach(button => {
+            button.disabled = true;
+        });
+
+        if(session_type_ref_num != "" && num_sessions != "") {
+            const response = await fetch("scripts/fetch-price.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: `age_group=${encodeURIComponent(age_group)}&course_type=${encodeURIComponent(course_type)}` + 
+                    `&session_type_ref_num=${encodeURIComponent(session_type_ref_num)}&num_sessions=${encodeURIComponent(num_sessions)}`
+            });
+
+            const data = await response.json();
+
+            const totalSpans = document.querySelectorAll('.price-total');
+            const item = data[0];
+            totalSpans.forEach(total => {
+                total.textContent = item.currency + " " + item.price;
+            });
+            tryButton.forEach(button => {
+                button.disabled = false;
+            });
+        } 
+    } catch (err) {
+        console.error("Error fetching price:", err);
+    }
+}
 
 $(document).ready(function () {
     fetchCourseDetails();
