@@ -62,7 +62,7 @@ switch ($filter) {
         break;
     case 'Adult Courses':
         $conditions[] = "age_group = ?";
-        $params[] = "Adult";
+        $params[] = "Adults";
         $types .= "s";
         break;
     case 'Teens/Youth Courses':
