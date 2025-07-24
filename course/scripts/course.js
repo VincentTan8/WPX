@@ -158,7 +158,8 @@ const fetchPriceConfigs = async () => {
         const response = await fetch("scripts/fetch-price-config.php", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: `age_group=${encodeURIComponent(age_group)}&course_type=${encodeURIComponent(course_type)}`
+            body: `age_group=${encodeURIComponent(age_group)}&course_type=${encodeURIComponent(course_type)}` +
+                  `&language=${encodeURIComponent(pageLang)}`
         });
 
         const data = await response.json();
@@ -166,11 +167,13 @@ const fetchPriceConfigs = async () => {
         const typesContainers = document.querySelectorAll('.session-type-options');
         const sessionNumContainers = document.querySelectorAll('.num-session-options');
 
+        let preselect = 0;
+
         typesContainers.forEach(typesContainer => {
             typesContainer.innerHTML = '';
-            data.session_types.forEach(item => {
+            data.session_types.forEach((item, index) => {
                 const itemDiv = document.createElement("div");
-                itemDiv.className = "option";
+                itemDiv.className = "option" + (index === preselect ? " selected" : "");
                 itemDiv.dataset.group = "teaching";
                 itemDiv.textContent = item.display_name;
                 itemDiv.dataset.ref_num = item.ref_num;
@@ -180,16 +183,22 @@ const fetchPriceConfigs = async () => {
         
         sessionNumContainers.forEach(sessionNumContainer => {
             sessionNumContainer.innerHTML = '';
-            data.num_sessions.forEach(item => {
+            data.num_sessions.forEach((item, index) => {
                 const itemDiv = document.createElement("div");
-                itemDiv.className = "option";
+                itemDiv.className = "option" + (index === preselect ? " selected" : "");
                 itemDiv.dataset.group = "sessions";
-                itemDiv.textContent = item.num_sessions + " Sessions";
+                if (pageLang == "_en") itemDiv.textContent = item.num_sessions + " Sessions";
+                if (pageLang == "_cn") itemDiv.textContent = item.num_sessions + " 单节课时";
                 itemDiv.dataset.num = item.num_sessions;
+                
                 sessionNumContainer.appendChild(itemDiv);
             });
         });
-
+        //Preselected item
+        activeSessionType = data.session_types.length ? data.session_types[preselect].ref_num : "";
+        activeNumSessions = data.num_sessions.length ? data.num_sessions[preselect].num_sessions : "";
+        fetchPrice();
+        
         document.querySelectorAll('.option').forEach(option => {
             option.addEventListener('click', () => {
                 const group = option.dataset.group;
