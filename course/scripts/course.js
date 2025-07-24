@@ -10,6 +10,20 @@ let course_type = "";
 let activeSessionType = "";
 let activeNumSessions = "";
 
+//to determine if a section from course details will appear or not based on data presence
+function updateSection(value, contentId, sectionClass) {
+    if (value && value.trim() !== "") {
+        document.getElementById(contentId).textContent = value;
+    } else {
+        document.querySelector(`.${sectionClass}`).style.display = "none";
+    }
+}
+//to hide sections such as learning goals, activities, features, materials and teachers
+function hideSection(sectionClass) {
+    const section = document.querySelector(`.${sectionClass}`);
+    if (section) section.style.display = "none";
+}
+
 const fetchCourseDetails = async () => {
     try {
         const response = await fetch("scripts/fetch-course-details.php", {
@@ -27,10 +41,11 @@ const fetchCourseDetails = async () => {
         document.getElementById("course-subtitle").textContent = course.course_subtitle;
         document.getElementById("course-description").textContent = course.course_description;
         document.getElementById("course-thumbnail").textContent = course.thumbnail_tag;
-        document.getElementById("course-suitable-for").textContent = course.suitable_for;
-        document.getElementById("course-start-date").textContent = course.course_start_date;
-        document.getElementById("course-class-hours").textContent = course.class_hours;
-        document.getElementById("course-type").textContent = course.course_type;
+
+        updateSection(course.class_hours, "course-class-hours", "class-hours-section");
+        updateSection(course.suitable_for, "course-suitable-for", "suitable-for-section");
+        updateSection(course.course_type, "course-type", "course-type-section");
+        updateSection(course.course_start_date, "course-start-date", "start-date-section");
 
         if (document.getElementById("course-img"))
             document.getElementById("course-img").src = imgDir + course.course_img;
@@ -45,162 +60,98 @@ const fetchCourseDetails = async () => {
     }
 };
 
-const fetchCourseMaterial = async () => {
+const fetchAndRenderList = async ({
+    url,
+    containerId,
+    sectionClass = null, // Optional: for hideSection
+    extractContent
+}) => {
     try {
-        const response = await fetch("scripts/fetch-materials.php", {
+        const response = await fetch(url, {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: `language=${encodeURIComponent(pageLang)}&courses_ref_num=${encodeURIComponent(courseRef)}`
         });
 
         const data = await response.json();
-        const container = document.getElementById("material-container");
+        const container = document.getElementById(containerId);
         container.innerHTML = '';
 
+        if (!Array.isArray(data) || data.length === 0) {
+            if (sectionClass) hideSection(sectionClass);
+            return;
+        }
+
         data.forEach(item => {
-            const li = document.createElement("li");
+            const itemElem = document.createElement("div");
+            itemElem.className = "course-item";
+
             const img = document.createElement("img");
             img.src = checkImg;
             img.alt = "check";
+            itemElem.appendChild(img);
 
-            li.appendChild(img);
-            li.append(" " + item.material);
-            container.appendChild(li);
+            const content = extractContent(item);
+            if (typeof content === "string") {
+                itemElem.append(" " + content);
+            } else {
+                itemElem.appendChild(content);
+            }
+
+            container.appendChild(itemElem);
         });
+
     } catch (err) {
-        console.error("Error fetching course material:", err);
+        console.error(`Error fetching from ${url}:`, err);
     }
 };
 
-const fetchCourseFeatures = async () => {
-    try {
-        const response = await fetch("scripts/fetch-features.php", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: `language=${encodeURIComponent(pageLang)}&courses_ref_num=${encodeURIComponent(courseRef)}`
-        });
+const fetchLearningGoals = () =>
+    fetchAndRenderList({
+        url: "scripts/fetch-learning-goals.php",
+        containerId: "goal-container",
+        sectionClass: "learning-goals-section",
+        extractContent: item => item.learning_goal
+    });
 
-        const data = await response.json();
+const fetchCourseActivities = () =>
+    fetchAndRenderList({
+        url: "scripts/fetch-activities.php",
+        containerId: "activity-container",
+        sectionClass: "activities-section",
+        extractContent: item => item.activity
+    });
 
-        const container = document.getElementById("feature-container");
-        container.innerHTML = '';
-
-        data.forEach(item => {
-            const itemDiv = document.createElement("div");
-            itemDiv.className = "goal-item";
-
-            const img = document.createElement("img");
-            img.src = checkImg;
-            img.alt = "check";
-
-            const textDiv = document.createElement("div");
-
+const fetchCourseFeatures = () =>
+    fetchAndRenderList({
+        url: "scripts/fetch-features.php",
+        containerId: "feature-container",
+        sectionClass: "features-section",
+        extractContent: item => {
+            const div = document.createElement("div");
             const strong = document.createElement("strong");
             strong.textContent = item.feature_bold;
+            div.appendChild(strong);
+            div.append(" " + item.feature);
+            return div;
+        }
+    });
 
-            textDiv.appendChild(strong);
-            textDiv.append(" " + item.feature);
+const fetchCourseMaterials = () =>
+    fetchAndRenderList({
+        url: "scripts/fetch-materials.php",
+        containerId: "material-container",
+        sectionClass: "materials-section",
+        extractContent: item => item.material
+    });
 
-            itemDiv.appendChild(img);
-            itemDiv.appendChild(textDiv);
-
-            container.appendChild(itemDiv);
-        });
-    } catch (err) {
-        console.error("Error fetching course features:", err);
-    }
-};
-
-const fetchCourseTeachers = async () => {
-    try {
-        const response = await fetch("scripts/fetch-teachers.php", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: `language=${encodeURIComponent(pageLang)}&courses_ref_num=${encodeURIComponent(courseRef)}`
-        });
-
-        const data = await response.json();
-        const container = document.getElementById("teacher-container");
-        container.innerHTML = '';
-
-        data.forEach(item => {
-            const li = document.createElement("li");
-            const img = document.createElement("img");
-            img.src = checkImg;
-            img.alt = "check";
-
-            li.appendChild(img);
-            li.append(" " + item.teacher);
-            container.appendChild(li);
-        });
-    } catch (err) {
-        console.error("Error fetching course teachers:", err);
-    }
-};
-
-const fetchCourseGoals = async () => {
-    try {
-        const response = await fetch("scripts/fetch-learning-goals.php", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: `language=${encodeURIComponent(pageLang)}&courses_ref_num=${encodeURIComponent(courseRef)}`
-        });
-
-        const data = await response.json();
-        const container = document.getElementById("goal-container");
-        container.innerHTML = '';
-
-        data.forEach(item => {
-            const itemDiv = document.createElement("div");
-            itemDiv.className = "goal-item";
-
-            const img = document.createElement("img");
-            img.src = checkImg;
-            img.alt = "check";
-
-            const textDiv = document.createElement("div");
-            textDiv.textContent = item.learning_goal;
-
-            itemDiv.appendChild(img);
-            itemDiv.appendChild(textDiv);
-            container.appendChild(itemDiv);
-        });
-    } catch (err) {
-        console.error("Error fetching course goals:", err);
-    }
-};
-
-const fetchCourseActivities = async () => {
-    try {
-        const response = await fetch("scripts/fetch-activities.php", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: `language=${encodeURIComponent(pageLang)}&courses_ref_num=${encodeURIComponent(courseRef)}`
-        });
-
-        const data = await response.json();
-        const container = document.getElementById("activity-container");
-        container.innerHTML = '';
-
-        data.forEach(item => {
-            const itemDiv = document.createElement("div");
-            itemDiv.className = "goal-item";
-
-            const img = document.createElement("img");
-            img.src = checkImg;
-            img.alt = "check";
-
-            const textDiv = document.createElement("div");
-            textDiv.textContent = item.activity;
-
-            itemDiv.appendChild(img);
-            itemDiv.appendChild(textDiv);
-            container.appendChild(itemDiv);
-        });
-    } catch (err) {
-        console.error("Error fetching course activities:", err);
-    }
-};
+const fetchCourseTeachers = () =>
+    fetchAndRenderList({
+        url: "scripts/fetch-teachers.php",
+        containerId: "teacher-container",
+        sectionClass: "teachers-section",
+        extractContent: item => item.teacher
+    });
 
 const fetchPriceConfigs = async () => {
     try {
@@ -298,9 +249,9 @@ const fetchPrice = async () => {
 
 $(document).ready(function () {
     fetchCourseDetails();
-    fetchCourseMaterial();
+    fetchCourseMaterials();
     fetchCourseFeatures();
     fetchCourseTeachers();
-    fetchCourseGoals();
+    fetchLearningGoals();
     fetchCourseActivities();
 });
