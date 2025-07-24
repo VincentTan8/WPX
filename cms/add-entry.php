@@ -1,7 +1,7 @@
 <?php
 // Database connection
-include "../config/conf.php";
-include 'generateRefNum.php';
+include "../connections/dbname.php";
+include '../index/scripts/generateRefNum.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $web_page = $_POST['web_page'];
@@ -23,7 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssssss", $new_ref_num, $web_page, $element_id, $en, $cn, $kr, $jp);
-    $stmt->execute();
-    $result = $stmt->get_result();
+
+    if ($stmt->execute()) {
+        echo "success|$new_ref_num";
+    } else {
+        echo "error|Execution failed: " . $stmt->error;
+    }
 }
 ?>
