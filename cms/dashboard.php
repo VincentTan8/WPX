@@ -13,6 +13,16 @@ if (!isset($_SESSION['user_id'])) {
 
     <title>Dashboard</title>
     <style>
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 1.5rem;
+            color: #0ca83e;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 900;
+            border-radius: 8px;
+        }
+
         .dash-modal {
             justify-self: center;
             align-items: center;
@@ -26,11 +36,6 @@ if (!isset($_SESSION['user_id'])) {
             max-width: 400px;
             text-align: center;
             justify-content: center;
-        }
-
-        .dashboard h2 {
-            margin-bottom: 1.5rem;
-            color: #333;
         }
 
         .dashboard a {
@@ -105,15 +110,13 @@ if (!isset($_SESSION['user_id'])) {
         }
 
         .dashboard h2 {
-
             font-family: 'Poppins', sans-serif;
+            margin-bottom: 1.5rem;
             color: #0ca83e;
             padding: 1rem;
             text-align: center;
             font-weight: 900;
             border-radius: 8px;
-
-
         }
 
         @media (max-width: 500px) {
@@ -128,7 +131,7 @@ if (!isset($_SESSION['user_id'])) {
     <div class="dash-modal">
         <div class="dashboard">
             <h2>Welcome, <?= htmlspecialchars($_SESSION['username']) ?></h2>
-            <!-- <a id="openAddEntry">Add Entry</a> -->
+            <a id="openAddEntry">Add Translation</a>
             <a href="quote-list.php">Quote List</a>
             <a href="course-list.php">Course List</a>
             <a href="logout.php">Logout</a>
@@ -138,10 +141,10 @@ if (!isset($_SESSION['user_id'])) {
     <div id="entryModal" class="modal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal('entryModal')">&times;</span>
-            <h2>Add Translation Entry</h2>
+            <h2>Add Translation</h2>
             <form id="entryForm">
-                <label for="web_page">Web Page:</label>
-                <input type="text" name="web_page" value="philosophers.php" required>
+                <label for="web_page">Page Data Name:</label>
+                <input type="text" name="web_page" required>
 
                 <label for="element_id">Element ID:</label>
                 <input type="text" name="element_id" required>
@@ -166,7 +169,6 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </div>
 
-
     <script>
         function closeModal(id) {
             document.getElementById(id).style.display = "none";
@@ -175,23 +177,15 @@ if (!isset($_SESSION['user_id'])) {
             document.getElementById('entryModal').style.display = 'flex';
         });
 
-
-
         // Close modal when clicking outside the modal content
         window.addEventListener('click', function (event) {
-
             const entryModal = document.getElementById('entryModal');
-
-
-            if (event.target === entryModal) {
-                entryModal.style.display = "none";
-            }
+            if (event.target === entryModal) entryModal.style.display = "none";
         });
 
     </script>
     <!-- Bootstrap JS Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 <?php include "../includes/footer.php"; ?>
