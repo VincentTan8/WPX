@@ -673,7 +673,7 @@
             <div class="section-label" id="num-session-title"></div>
             <div class="num-session-options option-group"></div>
             <div class="total"><span id="total-text"></span> <span class="price-total"></span></div>
-            <button class="try-now" id="try-button" disabled></button>
+            <button class="try-now more-link" id="try-button" disabled></button>
         </div>
     </div>
 </div>
