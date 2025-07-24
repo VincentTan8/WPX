@@ -42,6 +42,10 @@ const fetchCourseDetails = async () => {
         document.getElementById("course-description").textContent = course.course_description;
         document.getElementById("course-thumbnail").textContent = course.thumbnail_tag;
 
+        //idk bout this one mehn
+        document.getElementById("try-button").dataset.id = course.course_title;  //I used id coz un ung ginamit ni sir sa footer.php
+        document.getElementById("try-button").dataset.ref_num = courseRef;
+
         updateSection(course.class_hours, "course-class-hours", "class-hours-section");
         updateSection(course.suitable_for, "course-suitable-for", "suitable-for-section");
         updateSection(course.course_type, "course-type", "course-type-section");
