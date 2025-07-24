@@ -202,10 +202,7 @@ include "../connections/dbname.php";
     <div class="hero-content">
         <h1>
             <span id="hero-header">
-                <span id="hero-header-title">
-                    WeTalk is dedicated to unlocking the full potential of every learner, guaranteeing the best results
-                    out of our expertly designed online and onsite curriculum.
-                </span>
+                <span id="hero-header-title"></span>
             </span>
         </h1>
 
@@ -214,7 +211,7 @@ include "../connections/dbname.php";
     <!-- Hero Buttons -->
     <div class="hero-buttons">
         <a class="hero-button green" onclick="scrollToCourses()">
-            <span id="hero-button-1" style="color:white;">Try Now</span>
+            <span id="hero-button-1" style="color:white;"></span>
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none">
                 <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
@@ -222,7 +219,7 @@ include "../connections/dbname.php";
         </a>
 
         <a class="hero-button white" onclick="scrollToCourses()">
-            <span id="hero-button-2">Learn More</span>
+            <span id="hero-button-2"></span>
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none">
                 <path d="M14 1L21 8M21 8L14 15M21 8H1" stroke="black" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
@@ -231,19 +228,14 @@ include "../connections/dbname.php";
 
     </div>
 
-
-
     <!-- Begin white container for main content -->
     <div class="course-tour-wrapper">
         <?php include "course_introduction.php"; ?>
     </div>
 
-
-
     <?php include "../includes/address.php"; ?>
     <?php include "../includes/footer.php"; ?>
     <!-- End white container -->
-
 
     <div id="page-data" data-page="courses" data-lang="<?php echo $lang ?>"></div>
     <script>console.log('<?php echo $lang . " is the lang"; ?>')</script>
@@ -260,8 +252,6 @@ include "../connections/dbname.php";
             });
         }
     </script>
-
-
 </body>
 
 </html>
