@@ -138,7 +138,7 @@
         color: #FFCB99;
     }
 
-    form {
+    .flex-form {
         display: flex;
         flex-direction: column;
         gap: 15px;
@@ -211,7 +211,7 @@
             font-size: 26px;
         }
 
-        form {
+        .flex-form {
             gap: 10px;
         }
 
@@ -281,7 +281,7 @@
             <div class="form-box">
                 <h3><span class="choose-highlight">Choose</span> a Trial Class</h3>
 
-                <form>
+                <form class="flex-form">
                     <div class="form-row">
                         <input type="text" placeholder="First Name" required>
                         <input type="text" placeholder="Last Name" required>
