@@ -528,7 +528,7 @@
 
         <div class="filter-container">
             <select class="category-filter">
-                <option id="filter-all" value="">All Categories</option>
+                <option id="filter-all" value=""></option>
                 <option id="filter-eng" value="English Programs">English Programs</option>
                 <option id="filter-chi" value="Chinese Programs">Chinese Programs</option>
                 <option id="filter-fam" value="Family Package">Family Package</option>
@@ -550,7 +550,7 @@
         </div>
     </div>
 
-    <div class="all-programs-title" id="allProgramsTitle">All Programs</div>
+    <div class="all-programs-title" id="allProgramsTitle"></div>
 
     <div class="course-cards grid-view" id="courseContainer"></div>
 
