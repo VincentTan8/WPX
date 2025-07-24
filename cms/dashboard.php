@@ -144,22 +144,22 @@ if (!isset($_SESSION['user_id'])) {
             <h2>Add Translation</h2>
             <form id="entryForm">
                 <label for="web_page">Page Data Name:</label>
-                <input type="text" name="web_page" required>
+                <input type="text" name="web_page">
 
                 <label for="element_id">Element ID:</label>
                 <input type="text" name="element_id" required>
 
                 <label for="en">English (en):</label>
-                <textarea name="en" required></textarea>
+                <textarea name="en"></textarea>
 
                 <label for="cn">Chinese (cn):</label>
-                <textarea name="cn" required></textarea>
+                <textarea name="cn"></textarea>
 
                 <label for="kr">Korean (kr):</label>
-                <textarea name="kr" required></textarea>
+                <textarea name="kr"></textarea>
 
                 <label for="jp">Japanese (jp):</label>
-                <textarea name="jp" required></textarea>
+                <textarea name="jp"></textarea>
 
                 <div class="button-group">
                     <button type="submit">Add Entry</button>
@@ -181,6 +181,36 @@ if (!isset($_SESSION['user_id'])) {
         window.addEventListener('click', function (event) {
             const entryModal = document.getElementById('entryModal');
             if (event.target === entryModal) entryModal.style.display = "none";
+        });
+
+        //Submit translation entry
+        document.getElementById('entryForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const resultDiv = document.getElementById('entryResult');
+
+            const response = await fetch('add-entry.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            const text = await response.text();
+            const [status, message] = text.trim().split('|');
+
+            if (status === 'success') {
+                alert(' Translation added successfully! ');
+                form.reset();
+                closeModal('entryModal');
+                location.reload();
+            } else {
+                // Clear previous errors
+                resultDiv.innerHTML = '';
+
+                if (status === 'error') {
+                    resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
+                }
+            }
         });
 
     </script>
