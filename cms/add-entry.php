@@ -1,7 +1,7 @@
 <?php
 // Database connection
 include "../connections/dbname.php";
-include '../index/scripts/generateRefNum.php';
+include 'generateRefNum.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $web_page = $_POST['web_page'];
