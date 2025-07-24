@@ -563,7 +563,7 @@
         </div>
 
         <div class="course-left-image-wrapper">
-            <img src="" alt="Course Image" class="course-left-image" id="course-img">
+            <img alt="Loading Image..." class="course-left-image" id="course-img">
             <div class="course-left-badge" id="course-thumbnail"></div>
         </div>
 
