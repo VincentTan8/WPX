@@ -570,18 +570,18 @@
         <div class="course-left-description" id="course-subtitle"></div>
 
         <div class="course-section learning-goals-section">
-            <h3 id="learning-goals-title">Learning Goals</h3>
+            <h3 id="learning-goals-title"></h3>
             <div id="goal-container">
             </div>
         </div>
 
         <div class="course-section">
-            <h3 id="course-description-title">Course Description</h3>
+            <h3 id="course-description-title"></h3>
             <div class="course-left-description" id="course-description"></div>
         </div>
 
         <div class="course-section class-hours-section">
-            <h3 id="class-hours-title">Class Hours</h3>
+            <h3 id="class-hours-title"></h3>
             <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
                 <div id="course-class-hours"></div>
@@ -589,7 +589,7 @@
         </div>
 
         <div class="course-section activities-section">
-            <h3 id="activities-title">Course Activities</h3>
+            <h3 id="activities-title"></h3>
             <div id="activity-container"></div>
             <!-- <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
@@ -598,7 +598,7 @@
         </div>
 
         <div class="course-section suitable-for-section">
-            <h3 id="suitable-title">Suitable For</h3>
+            <h3 id="suitable-title"></h3>
             <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
                 <div style="text-align:left;" id="course-suitable-for"></div>
@@ -606,7 +606,7 @@
         </div>
 
         <div class="course-section features-section">
-            <h3 id="features-title">Course Features</h3>
+            <h3 id="features-title"></h3>
             <div id="feature-container"></div>
             <!-- <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
@@ -619,19 +619,19 @@
         </div>
 
         <div class="course-section materials-section">
-            <h3 id="materials-title">Materials</h3>
+            <h3 id="materials-title"></h3>
             <div id="material-container">
             </div>
         </div>
 
         <div class="course-section teachers-section">
-            <h3 id="teachers-title">Teachers</h3>
+            <h3 id="teachers-title"></h3>
             <div id="teacher-container">
             </div>
         </div>
 
         <div class="course-section course-type-section">
-            <h3 id="course-type-title">Course Type</h3>
+            <h3 id="course-type-title"></h3>
             <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
                 <div id="course-type"></div>
@@ -639,18 +639,18 @@
         </div>
 
         <div class="course-section start-date-section">
-            <h3 id="start-date-title">Course Start Date</h3>
+            <h3 id="start-date-title"></h3>
             <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div id="course-start-date">January 1, 2023</div>
+                <div id="course-start-date"></div>
             </div>
         </div>
     </div>
 
     <div class="right-container">
         <div class="tab-toggle">
-            <button class="toggle-button active" onclick="setTab('online')" id="online-button">Online</button>
-            <button class="toggle-button" onclick="setTab('onsite')" id="onsite-button">On-Site</button>
+            <button class="toggle-button active" onclick="setTab('online')" id="online-button"></button>
+            <button class="toggle-button" onclick="setTab('onsite')" id="onsite-button"></button>
             <div class="tab-bg">
                 <svg id="bg-online" class="active" xmlns="http://www.w3.org/2000/svg" width="472" height="162"
                     viewBox="0 0 472 162" fill="none">
@@ -668,12 +668,12 @@
         </div>
 
         <div class="tab-content">
-            <div class="section-label" id="teaching-title">Way of teaching:</div>
+            <div class="section-label" id="teaching-title"></div>
             <div class="session-type-options option-group"></div>
-            <div class="section-label" id="num-session-title">Numbers of Sessions:</div>
+            <div class="section-label" id="num-session-title"></div>
             <div class="num-session-options option-group"></div>
-            <div class="total"><span id="total-text">Total:</span> <span class="price-total"></span></div>
-            <button class="try-now" id="try-button" disabled>Try now</button>
+            <div class="total"><span id="total-text"></span> <span class="price-total"></span></div>
+            <button class="try-now" id="try-button" disabled></button>
         </div>
     </div>
 </div>
@@ -689,7 +689,7 @@
         </div>
         <div class="currency-label" id="currency-text-mobile-1">Currency</div>
     </div>
-    <button class="try-now-mobile" id="try-button-mobile-1" onclick="openPricingModal()">Try now</button>
+    <button class="try-now-mobile" id="try-button-mobile-1" onclick="openPricingModal()"></button>
 </div>
 
 <!-- Currency popup -->
@@ -710,17 +710,16 @@
         <button class="pricing-close" onclick="closePricingModal()">×</button>
         <div class="section-label"></div>
         <div class="option-group">
-            <div class="option course-type-option selected" data-group="course-type" id="online-button-mobile">Online
-            </div>
-            <div class="option course-type-option" data-group="course-type" id="onsite-button-mobile">On-Site</div>
+            <div class="option course-type-option selected" data-group="course-type" id="online-button-mobile"></div>
+            <div class="option course-type-option" data-group="course-type" id="onsite-button-mobile"></div>
             <!-- <div class="option course-type-option" data-group="course-type">To-Home</div> -->
         </div>
-        <div class="section-label" id="teaching-title-mobile">Way of teaching:</div>
+        <div class="section-label" id="teaching-title-mobile"></div>
         <div class="session-type-options option-group"></div>
-        <div class="section-label" id="num-session-title-mobile">Number of Sessions:</div>
+        <div class="section-label" id="num-session-title-mobile"></div>
         <div class="num-session-options option-group sessions-group"></div>
 
-        <div class="total"><span id="total-text-mobile">Total:</span> <span class="price-total"></span></div>
+        <div class="total"><span id="total-text-mobile"></span> <span class="price-total"></span></div>
         <div class="modal-bottom-row">
             <div class="footer-left">
                 <div class="dollar-box">
@@ -732,7 +731,7 @@
                 </div>
                 <div class="currency-label" id="currency-text-mobile-2">Currency</div>
             </div>
-            <button class="try-now" id="try-button-mobile-2" disabled>Try now</button>
+            <button class="try-now" id="try-button-mobile-2" disabled></button>
         </div>
 
     </div>
