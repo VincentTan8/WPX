@@ -204,7 +204,7 @@
 
 <!-- Related Section -->
 <div class="related-section">
-    <h2 class="related-title">Related Courses</h2>
+    <h2 id="related-courses-title" class="related-title">Related Courses</h2>
 
     <div class="swiper related-swiper">
         <div class="swiper-wrapper">
