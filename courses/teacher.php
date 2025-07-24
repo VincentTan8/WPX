@@ -64,7 +64,6 @@
     }
 
 
-
     .teacher-name {
         color: #2D2B32;
         text-align: center;
@@ -91,11 +90,11 @@
 
 <div class="teacher-section">
     <h2 class="teacher-heading">
-        <span class="highlight">Excellent Teachers</span>
-        <span class="subtext"> empowers students growth</span>
+        <span id="teacher-text-green" class="highlight"></span> <span id="teacher-text-black" class="subtext"></span>
     </h2>
 
-    <div class="teacher-grid">
+    <?php include "teacher-content-copy.php" ?>
+    <!-- <div class="teacher-grid">
         <div class="teacher-card">
             <div class="image-container" style="background-color: #B2F3CE;">
                 <img src="../resources/img/courses/girl-1.png" alt="Teacher 1" />
@@ -144,5 +143,5 @@
             <div class="teacher-name">Sharma Villanueva</div>
             <div class="teacher-title">教育背景和资格证书 / 学院-综合艺术学士学位(英语专业)</div>
         </div>
-    </div>
+    </div> -->
 </div>
