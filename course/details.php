@@ -97,7 +97,7 @@
         margin-bottom: 30px;
     }
 
-    .goal-item {
+    .course-item {
         display: flex;
         align-items: flex-start;
         gap: 30px;
@@ -105,7 +105,7 @@
 
     }
 
-    .goal-item img {
+    .course-item img {
         width: 20px;
         height: 20px;
         margin-top: 4px;
@@ -468,7 +468,7 @@
             border-radius: 5px;
         }
 
-        .goal-item div {
+        .course-item div {
             text-align: left;
         }
 
@@ -568,13 +568,10 @@
         </div>
 
         <div class="course-left-description" id="course-subtitle"></div>
-        <!-- Todo use this to populate course details -->
-        <div id="course-details-container"></div>
 
-        <div class="course-section">
+        <div class="course-section learning-goals-section">
             <h3>Learning Goals</h3>
             <div id="goal-container">
-
             </div>
         </div>
 
@@ -582,95 +579,68 @@
             <h3>Course Description</h3>
             <div class="course-left-description" id="course-description"></div>
         </div>
-        <div class="course-section">
+
+        <div class="course-section class-hours-section">
             <h3>Class Hours</h3>
-            <div class="goal-item">
+            <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div id="course-class-hours">22 class hours in total</div>
+                <div id="course-class-hours"></div>
             </div>
         </div>
 
-        <div class="course-section">
+        <div class="course-section activities-section">
             <h3>Course Activities</h3>
             <div id="activity-container"></div>
-            <!-- <div class="goal-item">
+            <!-- <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
                 <div>Storytelling</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div>Painting</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div>Arts and Crafts</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div>Writing Activities</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div>Singing and Dancing</div>
             </div> -->
         </div>
 
-        <div class="course-section">
+        <div class="course-section suitable-for-section">
             <h3>Suitable For</h3>
-            <div class="goal-item">
+            <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
                 <div style="text-align:left;" id="course-suitable-for"></div>
             </div>
         </div>
 
-        <div class="course-section">
+        <div class="course-section features-section">
             <h3>Course Features</h3>
             <div id="feature-container"></div>
-            <!-- <div class="goal-item">
+            <!-- <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
                 <div style="text-align:left;"><span style="font-weight:700;">Featured Learning content:</span>Through
                     the Chinese classic Three
                     Character Classic for enlightenment, the course can correct children's pronunciation in the forms of
                     reading and chanting, promote their spoken Chinese, enhance their memory, and stimulate their
                     perception of rhythm</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div style="text-align:left;"><span style="font-weight:700;">Professional course design:</span>According
-                    to the characteristics
-                    of
-                    students' physical and mental development, the course selects and compiles themes from children's
-                    textbooks, allowing students to learn by starting from the simple life knowledge. This goes with the
-                    laws of children's learning and growth.</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div style="text-align:left;"><span style="font-weight:700; text-align:left;">Interesting interactive
-                        learning:</span>The course
-                    is taught in such
-                    interactive forms as games, performances, songs, and handwork, allowing students to learn in a happy
-                    and relaxed atmosphere.</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div style="text-align:left;"><span style="font-weight:700;">Complete closed-loop learning:</span>After
-                    learning in class,
-                    students will be given real-time feedback. Key points of the course and related audio and video will
-                    also be sent to students to help them consolidate and review the knowledge.</div>
             </div> -->
         </div>
 
-        <div class="course-section">
+        <div class="course-section materials-section">
+            <h3>Materials</h3>
+            <div id="material-container">
+            </div>
+        </div>
+
+        <div class="course-section teachers-section">
+            <h3>Teachers</h3>
+            <div id="teacher-container">
+            </div>
+        </div>
+
+        <div class="course-section course-type-section">
             <h3>Course Type</h3>
-            <div class="goal-item">
+            <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
                 <div id="course-type"></div>
             </div>
         </div>
 
-        <div class="course-section">
+        <div class="course-section start-date-section">
             <h3>Course Start Date</h3>
-            <div class="goal-item">
+            <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
                 <div id="course-start-date">January 1, 2023</div>
             </div>
