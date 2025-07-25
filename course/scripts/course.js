@@ -4,9 +4,10 @@ const pageData = document.getElementById("page-data");
 const pageLang = pageData.dataset.lang;
 const courseRef = pageData.dataset.mod;
 
-//for rates usage later
+//for rates usage and related courses usage later
 let age_group = "";
 let course_type = "";
+let course_lang = "";
 let activeSessionType = "";
 let activeNumSessions = "";
 
@@ -58,6 +59,9 @@ const fetchCourseDetails = async () => {
         age_group = course.age_group;
         course_type = course.course_type_en;
         fetchPriceConfigs();
+        course_lang = course.language;
+        //fetch related courses based on current course age group and course language
+        fetchRelatedCourses();
 
     } catch (err) {
         console.error("Error fetching course details:", err);
@@ -210,10 +214,8 @@ const fetchPriceConfigs = async () => {
                     opt.classList.remove('selected');
                 });
                 option.classList.add('selected');
-                if (group == "teaching")
-                    activeSessionType = option.dataset.ref_num;
-                if (group == "sessions")
-                    activeNumSessions = option.dataset.num;
+                if (group == "teaching") activeSessionType = option.dataset.ref_num;
+                if (group == "sessions") activeNumSessions = option.dataset.num;
 
                 fetchPrice();
             });
@@ -232,9 +234,7 @@ const fetchPrice = async () => {
         const tryButton = document.querySelectorAll('.try-now');
 
         //disable buttons while we wait for new price to be fetched
-        tryButton.forEach(button => {
-            button.disabled = true;
-        });
+        tryButton.forEach(button => { button.disabled = true; });
 
         if(session_type_ref_num != "" && num_sessions != "") {
             const response = await fetch("scripts/fetch-price.php", {
@@ -257,6 +257,43 @@ const fetchPrice = async () => {
         } 
     } catch (err) {
         console.error("Error fetching price:", err);
+    }
+}
+
+const fetchRelatedCourses = async () => {
+    try {
+        const response = await fetch("scripts/fetch-related-courses.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `lang_filter=${encodeURIComponent(course_lang)}&age_filter=${encodeURIComponent(age_group)}` + 
+                  `&curr_ref_num=${encodeURIComponent(courseRef)}&language=${encodeURIComponent(pageLang)}`
+        });
+
+        const data = await response.json();
+        const swiperWrapper = document.querySelector('.swiper-wrapper');
+        swiperWrapper.innerHTML = '';
+
+        data.forEach(item => {
+            // const itemElem = document.createElement("div");
+            // itemElem.className = "course-item";
+
+            // const img = document.createElement("img");
+            // img.src = checkImg;
+            // img.alt = "check";
+            // itemElem.appendChild(img);
+
+            // const content = extractContent(item);
+            // if (typeof content === "string") {
+            //     itemElem.append(" " + content);
+            // } else {
+            //     itemElem.appendChild(content);
+            // }
+
+            // container.appendChild(itemElem);
+        });
+        
+    } catch (err) {
+        console.error("Error fetching related courses:", err);
     }
 }
 
