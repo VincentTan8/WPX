@@ -15,6 +15,12 @@ if (isset($_GET['mod'])) {
 } else {
     die;
 }
+if (isset($_SESSION['currency'])) {
+    $currency = $_SESSION['currency'];
+} else {
+    $_SESSION['currency'] = 'PHP';
+    $currency = 'PHP';
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +37,6 @@ $_SESSION['active_page'] = 'course?mod=' . $mod;
 include "../includes/header.php";
 include "../connections/dbname.php";
 
-
 ?>
 
 <body oncontextmenu="return false;" data-spy="scroll" data-target=".navbar" data-offset="90" class="position-relative">
@@ -40,7 +45,7 @@ include "../connections/dbname.php";
     </div>
     <?php include "../includes/address.php"; ?>
     <?php include "../includes/footer.php"; ?>
-    <div id="page-data" data-page="course" data-lang="<?php echo $lang; ?>"
+    <div id="page-data" data-page="course" data-lang="<?php echo $lang; ?>" data-currency="<?php echo $currency; ?>"
         data-mod="<?php echo htmlspecialchars($mod) ?>"></div>
 
     <script src="../vendor/js/bundle.min.js"></script>
@@ -64,7 +69,6 @@ include "../connections/dbname.php";
     <script src="../vendor/js/contact_us.js"></script>
     <script src="../resources/js/script.js"></script>
     <script src="scripts/course.js"></script>
-
 
 </body>
 
