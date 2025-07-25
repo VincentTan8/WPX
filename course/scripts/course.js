@@ -274,37 +274,62 @@ const fetchRelatedCourses = async () => {
         swiperWrapper.innerHTML = '';
 
         data.forEach(item => {
+            const slide = document.createElement("div");
+            slide.className = "swiper-slide";
             const card = document.createElement("a");
             card.href = `../course?mod=${item.ref_num}`;
             card.className = "course-link";
 
             card.innerHTML = `
-                <div class="swiper-slide">
-                    <div class="course-card">
-                        <div class="course-image-wrapper">
-                            <img src="${imgDir}${item.course_img}" alt="Course"/>
-                            <div class="course-badge">${item.thumbnail_tag}</div>
-                        </div>
-                        <div class="course-content">
-                            <div class="course-rating-title-wrap">
-                                <div class="course-title">${item.course_short_title}</div>
-                                <div class="course-rating" style="display: flex; align-items: center; gap: 4px;">
-                                    ⭐ <span class="rating-text">5.0</span>
-                                    <span class="rating-text">(20)</span>
-                                </div>
+                <div class="course-card">
+                    <div class="course-image-wrapper">
+                        <img src="${imgDir}${item.course_img}" alt="Course"/>
+                        <div class="course-badge">${item.thumbnail_tag}</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-rating-title-wrap">
+                            <div class="course-title">${item.course_short_title}</div>
+                            <div class="course-rating" style="display: flex; align-items: center; gap: 4px;">
+                                ⭐ <span class="rating-text">5.0</span>
+                                <span class="rating-text">(20)</span>
                             </div>
-                            <div class="course-description">
-                                ${item.course_description}
-                            </div>
-                            <div class="course-footer">${item.course_type}</div>
                         </div>
+                        <div class="course-description">
+                            ${item.course_description}
+                        </div>
+                        <div class="course-footer">${item.course_type}</div>
                     </div>
                 </div>
             `;
-
-            swiperWrapper.appendChild(card);
+            slide.appendChild(card);
+            swiperWrapper.appendChild(slide);
         });
-        
+
+        //Initialize swiper when data has finished loaded
+        new Swiper(".related-swiper", {
+            loop: false,
+            slidesPerView: 3,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1
+                },
+                768: {
+                    slidesPerView: 2
+                },
+                1024: {
+                    slidesPerView: 3
+                }
+            }
+        });
     } catch (err) {
         console.error("Error fetching related courses:", err);
     }
