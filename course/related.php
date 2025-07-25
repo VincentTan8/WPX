@@ -128,7 +128,7 @@
 
     .course-description {
         width: 415px;
-        height: 84px;
+        height: 83px;
         overflow: hidden;
         color: #18181B;
         font-family: 'Poppins', sans-serif;
