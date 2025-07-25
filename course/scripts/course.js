@@ -274,22 +274,35 @@ const fetchRelatedCourses = async () => {
         swiperWrapper.innerHTML = '';
 
         data.forEach(item => {
-            // const itemElem = document.createElement("div");
-            // itemElem.className = "course-item";
+            const card = document.createElement("a");
+            card.href = `../course?mod=${item.ref_num}`;
+            card.className = "course-link";
 
-            // const img = document.createElement("img");
-            // img.src = checkImg;
-            // img.alt = "check";
-            // itemElem.appendChild(img);
+            card.innerHTML = `
+                <div class="swiper-slide">
+                    <div class="course-card">
+                        <div class="course-image-wrapper">
+                            <img src="${imgDir}${item.course_img}" alt="Course"/>
+                            <div class="course-badge">${item.thumbnail_tag}</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-rating-title-wrap">
+                                <div class="course-title">${item.course_short_title}</div>
+                                <div class="course-rating" style="display: flex; align-items: center; gap: 4px;">
+                                    ⭐ <span class="rating-text">5.0</span>
+                                    <span class="rating-text">(20)</span>
+                                </div>
+                            </div>
+                            <div class="course-description">
+                                ${item.course_description}
+                            </div>
+                            <div class="course-footer">${item.course_type}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
 
-            // const content = extractContent(item);
-            // if (typeof content === "string") {
-            //     itemElem.append(" " + content);
-            // } else {
-            //     itemElem.appendChild(content);
-            // }
-
-            // container.appendChild(itemElem);
+            swiperWrapper.appendChild(card);
         });
         
     } catch (err) {
