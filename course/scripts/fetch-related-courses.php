@@ -8,17 +8,20 @@ if (!isset($_SESSION)) {
 <?php
 //Fetches all courses based on whatever filter is present or fetches all courses if no filters are set
 //Not all details are selected here to avoid long loading times
+//Excludes course that related courses are based on
 include "../../connections/dbname.php";
 
 $language = $_POST['language'];  //_en, _cn, _kr, _jp
+$curr_ref_num = $_POST['curr_ref_num'];
 $lang_filter = $_POST['lang_filter'];
-$package_filter = $_POST['package_filter'];
+// $package_filter = $_POST['package_filter'];
 $age_filter = $_POST['age_filter'];
-$type_filter = $_POST['type_filter'];
+// $type_filter = $_POST['type_filter'];
 
 $course_short_title = "course_short_title" . $language;
 $course_description = "course_description" . $language;
 $thumbnail_tag = "thumbnail_tag" . $language;
+$course_type = "course_type" . $language;
 
 $tablename = $database . ".`wt_courses`";
 
@@ -32,28 +35,35 @@ if (!empty($lang_filter)) {
     $params[] = $lang_filter;
     $types .= "s";
 }
-if (!empty($package_filter)) {
-    $where_clauses[] = "`course_package` = ?";
-    $params[] = $package_filter;
-    $types .= "s";
-}
+// if (!empty($package_filter)) {
+//     $where_clauses[] = "`course_package` = ?";
+//     $params[] = $package_filter;
+//     $types .= "s";
+// }
 if (!empty($age_filter)) {
     $where_clauses[] = "`age_group` = ?";
     $params[] = $age_filter;
     $types .= "s";
 }
-if (!empty($type_filter)) {
-    $where_clauses[] = "`course_type` = ?";
-    $params[] = $type_filter;
-    $types .= "s";
-}
+// if (!empty($type_filter)) {
+//     $where_clauses[] = "`course_type` = ?";
+//     $params[] = $type_filter;
+//     $types .= "s";
+// }
+
+//Exclude current course
+$where_clauses[] = "`ref_num` != ?";
+$params[] = $curr_ref_num;
+$types .= "s";
 
 $where_sql = "";
 if (!empty($where_clauses)) {
     $where_sql = "WHERE " . implode(" AND ", $where_clauses);
 }
 
-$sql = "SELECT `ref_num`, `course_img`, `age_group`, `language`, `course_package`, `course_type`,
+
+$sql = "SELECT `ref_num`, `course_img`, `age_group`, `language`, `course_package`, 
+               `$course_type` AS `course_type`,
                `$course_short_title` AS `course_short_title`, 
                `$course_description` AS `course_description`, 
                `$thumbnail_tag` AS `thumbnail_tag`
