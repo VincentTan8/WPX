@@ -128,7 +128,7 @@
 
     .course-description {
         width: 415px;
-        height: 84px;
+        height: 83px;
         overflow: hidden;
         color: #18181B;
         font-family: 'Poppins', sans-serif;
@@ -204,12 +204,11 @@
 
 <!-- Related Section -->
 <div class="related-section">
-    <h2 class="related-title">Related Courses</h2>
-
+    <h2 id="related-courses-title" class="related-title">Related Courses</h2>
     <div class="swiper related-swiper">
         <div class="swiper-wrapper">
             <!-- Course Slides -->
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
                 <div class="course-card">
                     <div class="course-image-wrapper">
                         <img src="../resources/img/course/course-1.png" alt="Course" />
@@ -230,110 +229,7 @@
                         <div class="course-footer">WeTalk Kids Chinese</div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Duplicate for demo -->
-            <div class="swiper-slide">
-                <div class="course-card">
-                    <div class="course-image-wrapper">
-                        <img src="../resources/img/course/course-1.png" alt="Course" />
-                        <div class="course-badge">Level 1</div>
-                    </div>
-                    <div class="course-content">
-                        <div class="course-rating-title-wrap">
-                            <div class="course-title">WeTalk Kids Chinese Package 2（WK1–WK2） Kids Level 1</div>
-                            <div class="course-rating">
-                                ⭐ <span class="rating-text">5.0</span>
-                                <span class="rating-text">(20)</span>
-                            </div>
-                        </div>
-                        <div class="course-description">
-                            The Package 1 course focuses on basic Chinese under greetings, family, fruits, and more,
-                            using simple sentence patterns.
-                        </div>
-                        <div class="course-footer">WeTalk Kids Chinese</div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="course-card">
-                    <div class="course-image-wrapper">
-                        <img src="../resources/img/course/course-1.png" alt="Course" />
-                        <div class="course-badge">Level 1</div>
-                    </div>
-                    <div class="course-content">
-                        <div class="course-rating-title-wrap">
-                            <div class="course-title">WeTalk Kids Chinese Package 2（WK1–WK2） Kids Level 1</div>
-                            <div class="course-rating">
-                                ⭐ <span class="rating-text">5.0</span>
-                                <span class="rating-text">(20)</span>
-                            </div>
-                        </div>
-                        <div class="course-description">
-                            The Package 1 course focuses on basic Chinese under greetings, family, fruits, and more,
-                            using simple sentence patterns.
-                        </div>
-                        <div class="course-footer">WeTalk Kids Chinese</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="course-card">
-                    <div class="course-image-wrapper">
-                        <img src="../resources/img/course/course-1.png" alt="Course" />
-                        <div class="course-badge">Level 1</div>
-                    </div>
-                    <div class="course-content">
-                        <div class="course-rating-title-wrap">
-                            <div class="course-title">WeTalk Kids Chinese Package 2（WK1–WK2） Kids Level 1</div>
-                            <div class="course-rating">
-                                ⭐ <span class="rating-text">5.0</span>
-                                <span class="rating-text">(20)</span>
-                            </div>
-                        </div>
-                        <div class="course-description">
-                            The Package 1 course focuses on basic Chinese under greetings, family, fruits, and more,
-                            using simple sentence patterns.
-                        </div>
-                        <div class="course-footer">WeTalk Kids Chinese</div>
-                    </div>
-                </div>
-            </div>
+            </div> -->
         </div>
-
-
-
     </div>
 </div>
-
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        new Swiper(".related-swiper", {
-            loop: false,
-            slidesPerView: 3,
-            spaceBetween: 30,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev"
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true
-            },
-            breakpoints: {
-                0: {
-                    slidesPerView: 1
-                },
-                768: {
-                    slidesPerView: 2
-                },
-                1024: {
-                    slidesPerView: 3
-                }
-            }
-        });
-    });
-</script>

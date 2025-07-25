@@ -197,6 +197,14 @@ $hide_panda = (
             padding: 10px;
             color: #000000;
         }
+
+        .dropdown-menu {
+            min-width: 0;
+        }
+
+        .lang-text {
+            margin-right: 20px;
+        }
     </style>
 
 </head>
@@ -326,11 +334,41 @@ $hide_panda = (
                             </div>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="scroll nav-link link" href="#blog"><i class="fas fa-search"></i></a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" d="navbarDropdown2" role="button">
+                                <svg style="transform: translateY(-3px);" xmlns="http://www.w3.org/2000/svg" width="22"
+                                    height="22" viewBox="0 0 22 22" fill="none">
+                                    <!-- Outer Border -->
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M14.8457 1H7.15431C5.513 1.00907 3.94253 1.66979 2.78839 2.8368C1.63425 4.00383 0.990967 5.58154 1.0001 7.22286V14.7771C0.990967 16.4184 1.63425 17.9961 2.78839 19.1631C3.94253 20.3301 5.513 20.991 7.15431 21H14.8457C16.487 20.991 18.0574 20.3301 19.2115 19.1631C20.3658 17.9961 21.0089 16.4184 20.9999 14.7771V7.22286C21.0089 5.58154 20.3658 4.00383 19.2115 2.8368C18.0574 1.66979 16.487 1.00907 14.8457 1Z"
+                                        stroke="#2D2B32" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+
+                                    <!-- Inner Icon (translated to center) -->
+                                    <g transform="translate(7, 3.5) scale(1)">
+                                        <path
+                                            d="M6.66683 5.23242L6.6295 5.09342C6.48775 4.56196 6.16061 4.09015 5.70006 3.75296C5.23952 3.41578 4.67198 3.23256 4.08763 3.23242H3.53083C3.07458 3.23255 2.63262 3.38161 2.28085 3.654C1.92908 3.92639 1.68946 4.30511 1.60314 4.72511C1.51682 5.14512 1.58919 5.58019 1.80782 5.95562C2.02645 6.33104 2.3777 6.62338 2.80123 6.78242L5.1991 7.68242C5.62263 7.84147 5.97387 8.1338 6.1925 8.50923C6.41113 8.88465 6.4835 9.31973 6.39718 9.73973C6.31086 10.1597 6.07124 10.5385 5.71947 10.8108C5.3677 11.0832 4.92574 11.2323 4.4695 11.2324H3.91376C3.32923 11.2325 2.76145 11.0494 2.30068 10.7122C1.83992 10.375 1.51262 9.90305 1.37083 9.37142L1.3335 9.23242M4.00016 1.23242V3.23242M4.00016 11.2324V13.2324"
+                                            stroke="#2D2B32" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </g>
+                                </svg>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="../includes/currency.php?currency=SGD">
+                                    SGD
+                                </a>
+                                <a class="dropdown-item" href="../includes/currency.php?currency=CNY">
+                                    CNY
+                                </a>
+                                <a class="dropdown-item" href="../includes/currency.php?currency=PHP">
+                                    PHP
+                                </a>
+                                <a class="dropdown-item" href="../includes/currency.php?currency=USD">
+                                    USD
+                                </a>
+                            </div>
                         </li>
-
-
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle  <?php echo $menu_bar8 ?>" href="#" id="navbarDropdown2"
@@ -338,25 +376,19 @@ $hide_panda = (
                                 <i class="fas fa-globe"></i>
                             </a>
 
-
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                                 <a class="dropdown-item" href="../includes/language.php?lang=EN">
                                     <img src="../resources/img/en.png" alt="English Flag"
                                         style="width: 20px; height: 20px; margin-right: 8px;">
-                                    EN
+                                    <span class="lang-text">EN</span>
                                 </a>
                                 <a class="dropdown-item" href="../includes/language.php?lang=CN">
                                     <img src="../resources/img/cn.png" alt="Chinese Flag"
                                         style="width: 20px; height: 20px; margin-right: 8px;">
-                                    CN
+                                    <span class="lang-text">CN</span>
                                 </a>
                             </div>
-
-
-
                         </li>
-
-
 
                         <li class="nav-item">
                             <a class="nav-link link" href="../signin/" target="_blank"><?php echo $m_sign_in ?></a>
@@ -365,9 +397,6 @@ $hide_panda = (
                         <li class="nav-item">
                             <a class="nav-link link" href="../signup/" target="_blank"><?php echo $m_sigun_up ?></a>
                         </li>
-
-
-
                     </ul>
                     <!-- Add custom CSS for the nested submenu -->
 

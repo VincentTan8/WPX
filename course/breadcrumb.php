@@ -77,19 +77,19 @@
 
 <div class="breadcrumb-container">
     <div class="breadcrumb">
-        <span class="breadcrumb-item">Home</span>
+        <a id="breadcrumb-home" class="breadcrumb-item" href="../index/main-page.php"></a>
         <span class="separator">
             <svg xmlns="http://www.w3.org/2000/svg" width="5" height="6" viewBox="0 0 5 6" fill="none">
                 <circle cx="2.5" cy="3" r="2.5" fill="#A7A7A7" />
             </svg>
         </span>
-        <a class="breadcrumb-item" href="../courses">Courses</a>
+        <a id="breadcrumb-courses" class="breadcrumb-item" href="../courses"></a>
         <span class="separator">
             <svg xmlns="http://www.w3.org/2000/svg" width="5" height="6" viewBox="0 0 5 6" fill="none">
                 <circle cx="2.5" cy="3" r="2.5" fill="#A7A7A7" />
             </svg>
         </span>
-        <span id="breadcrumb-title" class="breadcrumb-item current">WeTalk Kids Chinese Package 1</span>
+        <span id="breadcrumb-title" class="breadcrumb-item current"></span>
     </div>
 </div>
 
@@ -97,6 +97,4 @@
 <div style="height: 10px;"></div>
 
 
-<div id="breadcrumb-footer" class="breadcrumb-footer">
-    WeTalk Kids Chinese
-</div>
+<div id="breadcrumb-footer" class="breadcrumb-footer"></div>

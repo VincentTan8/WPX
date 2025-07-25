@@ -11,11 +11,14 @@ include "../../connections/dbname.php";
 
 $age_group = $_POST['age_group'];
 $course_type = $_POST['course_type'];
+$lang = $_POST['language']; // _en, _cn
+
+$display_name = "display_name" . $lang;
 
 $tablename = $database . ".`wt_rates_prices`";
 $sessiontable = $database . ".`wt_rates_session_types`";
 
-$sql = "SELECT DISTINCT(rst.ref_num), rst.display_name FROM $sessiontable rst
+$sql = "SELECT DISTINCT(rst.ref_num), rst.$display_name AS `display_name` FROM $sessiontable rst
         JOIN $tablename t ON t.session_type_ref_num = rst.ref_num
         WHERE t.course_category = ? AND t.age_group = ? ORDER BY rst.ref_num DESC";
 

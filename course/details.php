@@ -97,7 +97,7 @@
         margin-bottom: 30px;
     }
 
-    .goal-item {
+    .course-item {
         display: flex;
         align-items: flex-start;
         gap: 30px;
@@ -105,7 +105,7 @@
 
     }
 
-    .goal-item img {
+    .course-item img {
         width: 20px;
         height: 20px;
         margin-top: 4px;
@@ -214,7 +214,7 @@
         margin-bottom: 20px;
     }
 
-    .total span {
+    .price-total {
         color: red;
     }
 
@@ -468,7 +468,7 @@
             border-radius: 5px;
         }
 
-        .goal-item div {
+        .course-item div {
             text-align: left;
         }
 
@@ -563,124 +563,94 @@
         </div>
 
         <div class="course-left-image-wrapper">
-            <img src="" alt="Course Image" class="course-left-image" id="course-img">
+            <img alt="Loading Image..." class="course-left-image" id="course-img">
             <div class="course-left-badge" id="course-thumbnail"></div>
         </div>
 
         <div class="course-left-description" id="course-subtitle"></div>
-        <!-- Todo use this to populate course details -->
-        <div id="course-details-container"></div>
 
-        <div class="course-section">
-            <h3>Learning Goals</h3>
+        <div class="course-section learning-goals-section">
+            <h3 id="learning-goals-title"></h3>
             <div id="goal-container">
-
             </div>
         </div>
 
         <div class="course-section">
-            <h3>Course Description</h3>
+            <h3 id="course-description-title"></h3>
             <div class="course-left-description" id="course-description"></div>
         </div>
-        <div class="course-section">
-            <h3>Class Hours</h3>
-            <div class="goal-item">
+
+        <div class="course-section class-hours-section">
+            <h3 id="class-hours-title"></h3>
+            <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div id="course-class-hours">22 class hours in total</div>
+                <div id="course-class-hours"></div>
             </div>
         </div>
 
-        <div class="course-section">
-            <h3>Course Activities</h3>
+        <div class="course-section activities-section">
+            <h3 id="activities-title"></h3>
             <div id="activity-container"></div>
-            <!-- <div class="goal-item">
+            <!-- <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
                 <div>Storytelling</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div>Painting</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div>Arts and Crafts</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div>Writing Activities</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div>Singing and Dancing</div>
             </div> -->
         </div>
 
-        <div class="course-section">
-            <h3>Suitable For</h3>
-            <div class="goal-item">
+        <div class="course-section suitable-for-section">
+            <h3 id="suitable-title"></h3>
+            <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
                 <div style="text-align:left;" id="course-suitable-for"></div>
             </div>
         </div>
 
-        <div class="course-section">
-            <h3>Course Features</h3>
+        <div class="course-section features-section">
+            <h3 id="features-title"></h3>
             <div id="feature-container"></div>
-            <!-- <div class="goal-item">
+            <!-- <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
                 <div style="text-align:left;"><span style="font-weight:700;">Featured Learning content:</span>Through
                     the Chinese classic Three
                     Character Classic for enlightenment, the course can correct children's pronunciation in the forms of
                     reading and chanting, promote their spoken Chinese, enhance their memory, and stimulate their
                     perception of rhythm</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div style="text-align:left;"><span style="font-weight:700;">Professional course design:</span>According
-                    to the characteristics
-                    of
-                    students' physical and mental development, the course selects and compiles themes from children's
-                    textbooks, allowing students to learn by starting from the simple life knowledge. This goes with the
-                    laws of children's learning and growth.</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div style="text-align:left;"><span style="font-weight:700; text-align:left;">Interesting interactive
-                        learning:</span>The course
-                    is taught in such
-                    interactive forms as games, performances, songs, and handwork, allowing students to learn in a happy
-                    and relaxed atmosphere.</div>
-            </div>
-            <div class="goal-item">
-                <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div style="text-align:left;"><span style="font-weight:700;">Complete closed-loop learning:</span>After
-                    learning in class,
-                    students will be given real-time feedback. Key points of the course and related audio and video will
-                    also be sent to students to help them consolidate and review the knowledge.</div>
             </div> -->
         </div>
 
-        <div class="course-section">
-            <h3>Course Type</h3>
-            <div class="goal-item">
+        <div class="course-section materials-section">
+            <h3 id="materials-title"></h3>
+            <div id="material-container">
+            </div>
+        </div>
+
+        <div class="course-section teachers-section">
+            <h3 id="teachers-title"></h3>
+            <div id="teacher-container">
+            </div>
+        </div>
+
+        <div class="course-section course-type-section">
+            <h3 id="course-type-title"></h3>
+            <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
                 <div id="course-type"></div>
             </div>
         </div>
 
-        <div class="course-section">
-            <h3>Course Start Date</h3>
-            <div class="goal-item">
+        <div class="course-section start-date-section">
+            <h3 id="start-date-title"></h3>
+            <div class="course-item">
                 <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                <div id="course-start-date">January 1, 2023</div>
+                <div id="course-start-date"></div>
             </div>
         </div>
     </div>
 
     <div class="right-container">
         <div class="tab-toggle">
-            <button class="toggle-button active" onclick="setTab('online')">Online</button>
-            <button class="toggle-button" onclick="setTab('onsite')">On-Site</button>
+            <button class="toggle-button active" onclick="setTab('online')" id="online-button"></button>
+            <button class="toggle-button" onclick="setTab('onsite')" id="onsite-button"></button>
             <div class="tab-bg">
                 <svg id="bg-online" class="active" xmlns="http://www.w3.org/2000/svg" width="472" height="162"
                     viewBox="0 0 472 162" fill="none">
@@ -698,12 +668,12 @@
         </div>
 
         <div class="tab-content">
-            <div class="section-label">Way of teaching:</div>
+            <div class="section-label" id="teaching-title"></div>
             <div class="session-type-options option-group"></div>
-            <div class="section-label">Numbers of Sessions:</div>
+            <div class="section-label" id="num-session-title"></div>
             <div class="num-session-options option-group"></div>
-            <div class="total">Total: <span class="price-total"></span></div>
-            <button class="try-now" disabled>Try now</button>
+            <div class="total"><span id="total-text"></span> <span class="price-total"></span></div>
+            <button class="try-now more-link" id="try-button" disabled></button>
         </div>
     </div>
 </div>
@@ -717,9 +687,9 @@
                     stroke="#2D2B32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
         </div>
-        <div class="currency-label">Currency</div>
+        <div class="currency-label" id="currency-text-mobile-1">Currency</div>
     </div>
-    <button class="try-now-mobile" onclick="openPricingModal()">Try now</button>
+    <button class="try-now-mobile" id="try-button-mobile-1" onclick="openPricingModal()"></button>
 </div>
 
 <!-- Currency popup -->
@@ -740,16 +710,16 @@
         <button class="pricing-close" onclick="closePricingModal()">×</button>
         <div class="section-label"></div>
         <div class="option-group">
-            <div class="option course-type-option selected" data-group="course-type">Online</div>
-            <div class="option course-type-option" data-group="course-type">On-Site</div>
-            <div class="option course-type-option" data-group="course-type">To-Home</div>
+            <div class="option course-type-option selected" data-group="course-type" id="online-button-mobile"></div>
+            <div class="option course-type-option" data-group="course-type" id="onsite-button-mobile"></div>
+            <!-- <div class="option course-type-option" data-group="course-type">To-Home</div> -->
         </div>
-        <div class="section-label">Way of teaching:</div>
+        <div class="section-label" id="teaching-title-mobile"></div>
         <div class="session-type-options option-group"></div>
-        <div class="section-label">Number of Sessions:</div>
+        <div class="section-label" id="num-session-title-mobile"></div>
         <div class="num-session-options option-group sessions-group"></div>
 
-        <div class="total">Total: <span class="price-total"></span></div>
+        <div class="total"><span id="total-text-mobile"></span> <span class="price-total"></span></div>
         <div class="modal-bottom-row">
             <div class="footer-left">
                 <div class="dollar-box">
@@ -759,9 +729,9 @@
                             stroke="#2D2B32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>
-                <div class="currency-label">Currency</div>
+                <div class="currency-label" id="currency-text-mobile-2">Currency</div>
             </div>
-            <button class="try-now" disabled>Try now</button>
+            <button class="try-now" id="try-button-mobile-2" disabled></button>
         </div>
 
     </div>
@@ -790,17 +760,6 @@
         document.body.style.overflow = '';
     }
 
-    document.querySelectorAll('.pricing-modal .option').forEach(option => {
-        option.addEventListener('click', () => {
-            if (option.classList.contains('disabled')) return;
-
-            const group = option.dataset.group;
-            document.querySelectorAll(`.pricing-modal .option[data-group="${group}"]`).forEach(opt => {
-                opt.classList.remove('selected');
-            });
-            option.classList.add('selected');
-        });
-    });
     document.querySelector('.footer-left').addEventListener('click', function (e) {
         e.stopPropagation();
         document.getElementById('currencyPopup').classList.add('active');

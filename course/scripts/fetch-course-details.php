@@ -32,7 +32,7 @@ $sql = "SELECT
             `$course_start_date` AS `course_start_date`,
             `$class_hours` AS `class_hours`,
             `$course_type` AS `course_type`,
-            `age_group`, `course_type_en`
+            `age_group`, `language`, `course_type_en`
         FROM $table 
         WHERE `ref_num` = ?";
 

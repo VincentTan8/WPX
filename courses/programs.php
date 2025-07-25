@@ -528,14 +528,14 @@
 
         <div class="filter-container">
             <select class="category-filter">
-                <option value="">All Categories</option>
-                <option>English Programs</option>
-                <option>Chinese Programs</option>
-                <option>Family Package</option>
-                <option>School Package</option>
-                <option>Kids Courses</option>
-                <option>Adult Courses</option>
-                <!-- <option>Teens/Youth Courses</option> -->
+                <option id="filter-all" value=""></option>
+                <option id="filter-eng" value="English Programs">English Programs</option>
+                <option id="filter-chi" value="Chinese Programs">Chinese Programs</option>
+                <option id="filter-fam" value="Family Package">Family Package</option>
+                <option id="filter-school" value="School Package">School Package</option>
+                <option id="filter-kids" value="Kids Courses">Kids Courses</option>
+                <option id="filter-adults" value="Adult Courses">Adult Courses</option>
+                <!-- <option id="filter-teens" value="Teens/Youth Courses">Teens/Youth Courses</option> -->
             </select>
             <!-- <div class="search-box">
                 <input type="text" placeholder="Search..." />
@@ -550,13 +550,9 @@
         </div>
     </div>
 
-    <div class="all-programs-title" id="allProgramsTitle">All Programs</div>
+    <div class="all-programs-title" id="allProgramsTitle"></div>
 
-
-
-    <div class="course-cards grid-view" id="courseContainer">
-
-    </div>
+    <div class="course-cards grid-view" id="courseContainer"></div>
 
     <div class="pagination-container" id="paginationContainer"></div>
 
@@ -631,7 +627,10 @@
 
         function updatePageInfo() {
             const totalPages = getTotalPages();
-            pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+            if ('<?= $lang ?>' == '_en')
+                pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+            if ('<?= $lang ?>' == '_cn')
+                pageInfo.textContent = `第${currentPage}页 / 共${totalPages}页`;
         }
 
         function setPage(pageNum) {

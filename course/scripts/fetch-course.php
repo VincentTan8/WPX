@@ -7,6 +7,7 @@ if (!isset($_SESSION)) {
 
 <?php
 //Fetches a specific course based on a ref_num
+//not being used atm
 include "../../connections/dbname.php";
 
 $courses_ref_num = $_POST['courses_ref_num'];

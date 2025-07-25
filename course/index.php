@@ -15,6 +15,12 @@ if (isset($_GET['mod'])) {
 } else {
     die;
 }
+if (isset($_SESSION['currency'])) {
+    $currency = $_SESSION['currency'];
+} else {
+    $_SESSION['currency'] = 'PHP';
+    $currency = 'PHP';
+}
 ?>
 
 <!DOCTYPE html>
@@ -24,13 +30,12 @@ $category = '';
 $main_menu = 'LINGUISTICS'; //to change
 
 include "../includes/menu_bar_reset.php";
-$menu_bar6 = "active";
+$menu_bar3 = "active";
 
 $_SESSION['active_page'] = 'course?mod=' . $mod;
 
 include "../includes/header.php";
 include "../connections/dbname.php";
-
 
 ?>
 
@@ -40,7 +45,8 @@ include "../connections/dbname.php";
     </div>
     <?php include "../includes/address.php"; ?>
     <?php include "../includes/footer.php"; ?>
-    <div id="page-data" data-lang="<?php echo $lang; ?>" data-mod="<?php echo htmlspecialchars($mod) ?>"></div>
+    <div id="page-data" data-page="course" data-lang="<?php echo $lang; ?>" data-currency="<?php echo $currency; ?>"
+        data-mod="<?php echo htmlspecialchars($mod) ?>"></div>
 
     <script src="../vendor/js/bundle.min.js"></script>
     <script src="../vendor/js/jquery.fancybox.min.js"></script>
@@ -63,7 +69,6 @@ include "../connections/dbname.php";
     <script src="../vendor/js/contact_us.js"></script>
     <script src="../resources/js/script.js"></script>
     <script src="scripts/course.js"></script>
-
 
 </body>
 
