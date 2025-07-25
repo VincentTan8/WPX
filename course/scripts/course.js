@@ -3,6 +3,7 @@ const checkImg = imgDir + "check-yellow-list.png";
 const pageData = document.getElementById("page-data");
 const pageLang = pageData.dataset.lang;
 const courseRef = pageData.dataset.mod;
+const currency = pageData.dataset.currency;
 
 //for rates usage and related courses usage later
 let age_group = "";
@@ -234,26 +235,34 @@ const fetchPrice = async () => {
         const tryButton = document.querySelectorAll('.try-now');
 
         //disable buttons while we wait for new price to be fetched
-        tryButton.forEach(button => { button.disabled = true; });
+        tryButton.forEach(button => { 
+            button.disabled = true; 
+            if (pageLang == "_en") button.textContent = "Not Available";
+            if (pageLang == "_cn") button.textContent = "无法使用";
+        });
 
         if(session_type_ref_num != "" && num_sessions != "") {
             const response = await fetch("scripts/fetch-price.php", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: `age_group=${encodeURIComponent(age_group)}&course_type=${encodeURIComponent(course_type)}` + 
+                body: `age_group=${encodeURIComponent(age_group)}&course_type=${encodeURIComponent(course_type)}&currency=${encodeURIComponent(currency)}` + 
                     `&session_type_ref_num=${encodeURIComponent(session_type_ref_num)}&num_sessions=${encodeURIComponent(num_sessions)}`
             });
 
             const data = await response.json();
 
-            const totalSpans = document.querySelectorAll('.price-total');
-            const item = data[0];
-            totalSpans.forEach(total => {
-                total.textContent = item.currency + " " + item.price;
-            });
-            tryButton.forEach(button => {
-                button.disabled = false;
-            });
+            if (Array.isArray(data) && data.length !== 0) {
+                const totalSpans = document.querySelectorAll('.price-total');
+                const item = data[0];
+                totalSpans.forEach(total => {
+                    total.textContent = item.currency + " " + item.price;
+                });
+                tryButton.forEach(button => {
+                    button.disabled = false;
+                    if (pageLang == "_en") button.textContent = "Try Now";
+                    if (pageLang == "_cn") button.textContent = "立即试用";
+                });
+            }
         } 
     } catch (err) {
         console.error("Error fetching price:", err);
