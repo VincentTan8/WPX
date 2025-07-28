@@ -348,7 +348,7 @@
             box-shadow: 0 -2px 30px rgba(0, 0, 0, 0.3);
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
-            padding: 30px 20px;
+            padding: 65px 20px;
             display: none;
             flex-direction: column;
             gap: 20px;
