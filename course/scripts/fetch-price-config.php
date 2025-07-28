@@ -11,6 +11,7 @@ include "../../connections/dbname.php";
 
 $age_group = $_POST['age_group'];
 $course_type = $_POST['course_type'];
+$currency = $_POST['currency'];
 $lang = $_POST['language']; // _en, _cn
 
 $display_name = "display_name" . $lang;
@@ -20,10 +21,10 @@ $sessiontable = $database . ".`wt_rates_session_types`";
 
 $sql = "SELECT DISTINCT(rst.ref_num), rst.$display_name AS `display_name` FROM $sessiontable rst
         JOIN $tablename t ON t.session_type_ref_num = rst.ref_num
-        WHERE t.course_category = ? AND t.age_group = ? ORDER BY rst.ref_num DESC";
+        WHERE t.course_category = ? AND t.age_group = ? AND t.currency = ? ORDER BY rst.ref_num DESC";
 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ss", $course_type, $age_group);
+$stmt->bind_param("sss", $course_type, $age_group, $currency);
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -33,10 +34,10 @@ while ($row = $result->fetch_assoc()) {
 }
 
 $sql = "SELECT DISTINCT(`num_sessions`) FROM $tablename
-        WHERE `course_category` = ?";
+        WHERE `course_category` = ? AND `currency` = ?";
 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $course_type);
+$stmt->bind_param("ss", $course_type, $currency);
 $stmt->execute();
 $result = $stmt->get_result();
 
