@@ -47,6 +47,8 @@ const fetchCourseDetails = async () => {
         //idk bout this one mehn
         document.getElementById("try-button").dataset.id = course.course_title;  //I used id coz un ung ginamit ni sir sa footer.php
         document.getElementById("try-button").dataset.ref_num = courseRef;
+        document.getElementById("try-button-mobile-1").dataset.id = course.course_title;  //I used id coz un ung ginamit ni sir sa footer.php
+        document.getElementById("try-button-mobile-1").dataset.ref_num = courseRef;
 
         updateSection(course.class_hours, "course-class-hours", "class-hours-section");
         updateSection(course.suitable_for, "course-suitable-for", "suitable-for-section");
