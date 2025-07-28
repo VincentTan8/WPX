@@ -743,6 +743,14 @@
 </div>
 
 <script>
+    function handleClick(event) {
+        event.preventDefault();
+        const popupMobile = document.getElementById("popupForm");
+        var companyId = this.getAttribute('data-id');
+        document.getElementById('course').value = companyId;
+        popupMobile.style.display = "block";
+    }
+
     function setTab(tab) {
         const targetBtn = document.querySelector(`.toggle-button[onclick="setTab('${tab}')"]`);
         if (!targetBtn) return;
@@ -759,23 +767,17 @@
         document.getElementById('pricingModal').classList.add('active');
         document.querySelector('.footer-fixed').classList.add('modal-open');
         document.body.style.overflow = 'hidden';
-
-
         const btn = document.getElementById('try-button-mobile-1');
-        btn.textContent = 'Try Now';
-        btn.setAttribute('type', 'submit');
+        btn.addEventListener('click', handleClick);
     }
 
     function closePricingModal() {
         document.getElementById('pricingModal').classList.remove('active');
         document.querySelector('.footer-fixed').classList.remove('modal-open');
         document.body.style.overflow = '';
-
         const btn = document.getElementById('try-button-mobile-1');
-        btn.textContent = 'Try Now';
-        btn.removeAttribute('type');
+        btn.removeEventListener('click', handleClick);
     }
-
 
     document.querySelector('.footer-left').addEventListener('click', function (e) {
         e.stopPropagation();
