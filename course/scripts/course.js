@@ -168,7 +168,7 @@ const fetchPriceConfigs = async () => {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: `age_group=${encodeURIComponent(age_group)}&course_type=${encodeURIComponent(course_type)}` +
-                  `&language=${encodeURIComponent(pageLang)}`
+                  `&language=${encodeURIComponent(pageLang)}&currency=${encodeURIComponent(currency)}`
         });
 
         const data = await response.json();
@@ -237,8 +237,8 @@ const fetchPrice = async () => {
         //disable buttons while we wait for new price to be fetched
         tryButton.forEach(button => { 
             button.disabled = true; 
-            if (pageLang == "_en") button.textContent = "Not Available";
-            if (pageLang == "_cn") button.textContent = "无法使用";
+            if (pageLang == "_en") button.textContent = "Loading...";
+            if (pageLang == "_cn") button.textContent = "加载中...";
         });
 
         if(session_type_ref_num != "" && num_sessions != "") {
@@ -261,6 +261,12 @@ const fetchPrice = async () => {
                     button.disabled = false;
                     if (pageLang == "_en") button.textContent = "Try Now";
                     if (pageLang == "_cn") button.textContent = "立即试用";
+                });
+            } else {
+                tryButton.forEach(button => { 
+                    button.disabled = true; 
+                    if (pageLang == "_en") button.textContent = "Not Available";
+                    if (pageLang == "_cn") button.textContent = "无法使用";
                 });
             }
         } 
