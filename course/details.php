@@ -697,10 +697,14 @@
     <div class="currency-popup-inner">
 
         <div class="currency-options">
-            <div class="currency-option">SGD</div>
-            <div class="currency-option">CNY</div>
-            <div class="currency-option">PHP</div>
-            <div class="currency-option">USD</div>
+            <div class="currency-option"><a style="color: black" href="../includes/currency.php?currency=SGD">SGD</a>
+            </div>
+            <div class="currency-option"><a style="color: black" href="../includes/currency.php?currency=RMB">CNY</a>
+            </div>
+            <div class="currency-option"><a style="color: black" href="../includes/currency.php?currency=PHP">PHP</a>
+            </div>
+            <div class="currency-option"><a style="color: black" href="../includes/currency.php?currency=USD">USD</a>
+            </div>
         </div>
     </div>
 </div>
