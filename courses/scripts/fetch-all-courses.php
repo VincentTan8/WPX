@@ -16,7 +16,6 @@ $course_description = "course_description" . $language;
 $thumbnail_tag = "thumbnail_tag" . $language;
 $course_type = "course_type" . $language;
 
-
 $tablename = $database . ".`wt_courses`";
 $sql = "SELECT 
             `ref_num`, 
@@ -33,7 +32,6 @@ $sql = "SELECT
 $conditions = [];
 $params = [];
 $types = "";
-
 
 switch ($filter) {
     case 'English Programs':
@@ -71,12 +69,35 @@ switch ($filter) {
         $params[] = "Teens";
         $types .= "s";
         break;
+    default:
+        $query = '%' . $filter . '%';
+        $conditions[] = "$course_short_title LIKE ?";
+        $params[] = $query;
+        $types .= "s";
+        $conditions[] = "$course_description LIKE ?";
+        $params[] = $query;
+        $types .= "s";
+        $conditions[] = "$thumbnail_tag LIKE ?";
+        $params[] = $query;
+        $types .= "s";
+        $conditions[] = "$course_type LIKE ?";
+        $params[] = $query;
+        $types .= "s";
+        $conditions[] = "age_group LIKE ?";
+        $params[] = $query;
+        $types .= "s";
+        $conditions[] = "course_package LIKE ?";
+        $params[] = $query;
+        $types .= "s";
+        $conditions[] = "language LIKE ?";
+        $params[] = $query;
+        $types .= "s";
+        break;
 }
 
 if (!empty($conditions)) {
-    $sql .= " WHERE " . implode(" AND ", $conditions);
+    $sql .= " WHERE " . implode(" OR ", $conditions);
 }
-
 
 $stmt = $conn->prepare($sql);
 
