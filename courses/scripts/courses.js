@@ -61,10 +61,16 @@ const fetchCourses = async (filter = "") => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const categoryFilter = document.querySelector(".category-filter");
+    const searchTextBox = document.getElementById("searchTextBox");
 
     categoryFilter.addEventListener("change", () => {
         const selectedFilter = categoryFilter.value;
         fetchCourses(selectedFilter);
+    });
+
+    searchTextBox.addEventListener('input', () => {
+        const query = searchTextBox.value;
+        fetchCourses(query);
     });
 
     fetchCourses();
