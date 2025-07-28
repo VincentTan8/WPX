@@ -23,6 +23,8 @@
         width: 100%;
     }
 
+
+
     .course-left-title {
         font-family: 'Poppins', sans-serif;
         font-size: 24px;
@@ -346,7 +348,6 @@
             box-shadow: 0 -2px 30px rgba(0, 0, 0, 0.3);
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
-            z-index: 2000;
             padding: 30px 20px;
             display: none;
             flex-direction: column;
@@ -724,7 +725,7 @@
         <div class="num-session-options option-group sessions-group"></div>
 
         <div class="total"><span id="total-text-mobile"></span> <span class="price-total"></span></div>
-        <div class="modal-bottom-row">
+        <!-- <div class="modal-bottom-row">
             <div class="footer-left">
                 <div class="dollar-box">
                     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none">
@@ -736,7 +737,7 @@
                 <div class="currency-label" id="currency-text-mobile-2">Currency</div>
             </div>
             <button class="try-now" id="try-button-mobile-2" disabled></button>
-        </div>
+        </div> -->
 
     </div>
 </div>
@@ -756,13 +757,25 @@
 
     function openPricingModal() {
         document.getElementById('pricingModal').classList.add('active');
+        document.querySelector('.footer-fixed').classList.add('modal-open');
         document.body.style.overflow = 'hidden';
+
+
+        const btn = document.getElementById('try-button-mobile-1');
+        btn.textContent = 'Try Now';
+        btn.setAttribute('type', 'submit');
     }
 
     function closePricingModal() {
         document.getElementById('pricingModal').classList.remove('active');
+        document.querySelector('.footer-fixed').classList.remove('modal-open');
         document.body.style.overflow = '';
+
+        const btn = document.getElementById('try-button-mobile-1');
+        btn.textContent = 'Try Now';
+        btn.removeAttribute('type');
     }
+
 
     document.querySelector('.footer-left').addEventListener('click', function (e) {
         e.stopPropagation();
