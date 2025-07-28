@@ -358,7 +358,7 @@ $hide_panda = (
                                 <a class="dropdown-item" href="../includes/currency.php?currency=SGD">
                                     SGD
                                 </a>
-                                <a class="dropdown-item" href="../includes/currency.php?currency=CNY">
+                                <a class="dropdown-item" href="../includes/currency.php?currency=RMB">
                                     CNY
                                 </a>
                                 <a class="dropdown-item" href="../includes/currency.php?currency=PHP">
