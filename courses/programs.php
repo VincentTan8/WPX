@@ -537,8 +537,8 @@
                 <option id="filter-adults" value="Adult Courses">Adult Courses</option>
                 <!-- <option id="filter-teens" value="Teens/Youth Courses">Teens/Youth Courses</option> -->
             </select>
-            <!-- <div class="search-box">
-                <input type="text" placeholder="Search..." />
+            <div class="search-box">
+                <input type="text" id="searchTextBox" placeholder="Search..." />
                 <div class="search-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
                         <path
@@ -546,7 +546,7 @@
                             stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 
