@@ -223,7 +223,6 @@
 
     .course-title {
         width: 314px;
-        height: 51px;
         color: #18181B;
         font-family: 'Poppins', sans-serif;
         font-size: 18px;
@@ -245,7 +244,6 @@
 
     .course-description {
         width: 415px;
-        height: 83px;
         overflow: hidden;
         color: #18181B;
         font-family: 'Poppins', sans-serif;
