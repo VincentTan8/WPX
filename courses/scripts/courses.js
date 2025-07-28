@@ -58,6 +58,14 @@ const fetchCourses = async (filter = "") => {
     }
 };
 
+// Debounce function to limit how often search is happening
+function debounce(func, wait) {
+    let timeout
+    return function (...args) {
+        clearTimeout(timeout)
+        timeout = setTimeout(() => func.apply(this, args), wait)
+    }
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     const categoryFilter = document.querySelector(".category-filter");
@@ -68,10 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
         fetchCourses(selectedFilter);
     });
 
-    searchTextBox.addEventListener('input', () => {
+    searchTextBox.addEventListener('input', debounce(() => {
         const query = searchTextBox.value;
         fetchCourses(query);
-    });
+    }, 500));
 
     fetchCourses();
 });
