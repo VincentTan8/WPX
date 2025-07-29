@@ -73,10 +73,10 @@
 <div class="offer-container">
     <img src="../resources/img/tutorial/offer.png" alt="Descriptive Alt Text" class="offer-image">
     <div class="offer-text">
-        <h2>What do we offer? </h2>
-        <p>WeTalk’s Home Tutorial English Program offers engaging one-on-one or small group lessons designed especially
-            for young ESL learners, from pre-beginner to advanced levels. The program emphasizes personalized
-            instruction delivered in the comfort of the student's home. Our expert teachers focus on developing all
-            areas of English—speaking, listening, reading, and writing, while nurturing values.</p>
+        <h2 id="offer-title">What do we offer? </h2>
+        <p id="offer-subtitle">WeTalk’s Home Tutorial English Program offers engaging one-on-one or small group lessons
+            designed especially for young ESL learners, from pre-beginner to advanced levels. The program emphasizes
+            personalized instruction delivered in the comfort of the student's home. Our expert teachers focus on
+            developing all areas of English—speaking, listening, reading, and writing, while nurturing values.</p>
     </div>
 </div>

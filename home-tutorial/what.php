@@ -28,6 +28,7 @@
     }
 
     .what-text p {
+        letter-spacing: normal;
         font-size: 18px;
         font-family: 'Poppins', sans-serif;
     }
@@ -73,11 +74,11 @@
 
 <div class="what-container">
     <div class="what-text">
-        <h2>What is WeTalk Home Tutorial?</h2>
-        <p>WeTalk Home Tutorial is designed to provide a comprehensive and immersive learning experience in the
-            Philippines. This package is ideal for international learners seeking focused, one-on-one instruction in a
-            comfortable and convenient environment.</p>
-        <p>Our Home Tutorial program is currently available for children aged 3 to 14.</p>
+        <h2 id="what-title">What is WeTalk Home Tutorial?</h2>
+        <p id="what-subtitle-1">WeTalk Home Tutorial is designed to provide a comprehensive and immersive learning
+            experience in the Philippines. This package is ideal for international learners seeking focused, one-on-one
+            instruction in a comfortable and convenient environment.</p>
+        <p id="what-subtitle-2">Our Home Tutorial program is currently available for children aged 3 to 14.</p>
     </div>
     <img src="../resources/img/tutorial/what.png" alt="Descriptive Alt Text" class="what-image">
 </div>

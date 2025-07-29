@@ -1,6 +1,7 @@
 <style>
     span {
         display: inline;
+        letter-spacing: normal;
     }
 
     .location-container {
@@ -10,8 +11,7 @@
         background: #007CFF;
         border-radius: 25px;
         box-shadow: 0px 4px 19.3px 0px rgba(24, 24, 27, 0.25);
-        margin: 120px 50px 0 50px;
-
+        margin: 120px 0px 0 0px;
         gap: 50px;
         color: white;
         font-family: 'Poppins', sans-serif;
@@ -99,7 +99,7 @@
 
 <div class="location-container">
     <div class="location-text">
-        <h2>Location Covered</h2>
+        <h2 id="location-title">Location Covered</h2>
         <div class="check-list">
             <div class="check-item">
                 <div class="check-icon">
@@ -110,8 +110,8 @@
                     </svg>
                 </div>
                 <span>
-                    <span>Home tutorial services are available only within the</span> <strong>Bonifacio Global City
-                        (BGC)</strong> <span> area.</span></span>
+                    <span id="home-item-1">Home tutorial services are available only within the</span> <strong
+                        id="home-item-2">Bonifacio Global City (BGC)</strong> <span id="home-item-3">area.</span></span>
             </div>
             <div class="check-item">
                 <div class="check-icon">
@@ -122,7 +122,8 @@
                     </svg>
                 </div>
                 <span>
-                    <span>Tutorials are available from</span> <strong>9:00 AM to 9:00 PM.</strong>
+                    <span id="home-item-4">Tutorials are available from</span> <strong id="home-item-5">9:00 AM to 9:00
+                        PM.</strong>
                 </span>
             </div>
             <div class="check-item">
@@ -134,8 +135,8 @@
                     </svg>
                 </div>
                 <span>
-                    <span>Locations outside BGC are</span> <strong>NOT</strong> <span>eligible for home
-                        tutorials.</span>
+                    <span id="home-item-6">Locations outside BGC are</span> <strong id="home-item-7">NOT</strong> <span
+                        id="home-item-8">eligible for home tutorials.</span>
                 </span>
             </div>
             <div class="check-item">
@@ -147,7 +148,8 @@
                     </svg>
                 </div>
                 <span>
-                    <span>Tutorial will be conducted in a public area</span> <strong>(lobby, business center).</strong>
+                    <span id="home-item-9">Tutorial will be conducted in a public area</span> <strong
+                        id="home-item-10">(lobby, business center).</strong>
                 </span>
             </div>
             <div class="check-item">
@@ -159,12 +161,10 @@
                     </svg>
                 </div>
                 <span>
-                    <span>Conduct classes only in approved, safe locations</span> <strong>(living room, study
-                        area)</strong> <span>. If the student is
-                        staying in a hotel, the class must be held in a designated public area</span> <strong>(lobby,
-                        business center,
-                        or
-                        other safe public spaces).</strong>
+                    <span id="home-item-11">Conduct classes only in approved, safe locations</span> <strong
+                        id="home-item-12">(living room, study area)</strong> <span id="home-item-13">. If the student is
+                        staying in a hotel, the class must be held in a designated public area</span> <strong
+                        id="home-item-14">(lobby, business center, or other safe public spaces).</strong>
                 </span>
             </div>
         </div>
