@@ -59,6 +59,7 @@
         gap: 15px;
         cursor: pointer;
         flex-shrink: 0;
+        box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.25);
     }
 
     .start-button span {
