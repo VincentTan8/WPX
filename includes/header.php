@@ -156,7 +156,7 @@ $hide_panda = (
         }
 
         .navbar-top-default.center-logo .logo {
-            left: 45%;
+            left: 42.5%;
         }
 
         /* Show submenu on hover of the parent list item */
