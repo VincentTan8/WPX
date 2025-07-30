@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 2em;  max-width: 1660px;
-        background-color: white;">
+        background-color: white; border-radius: 20px;">
     <div class="col-md-12 text-left  ">
         <?php include "what.php" ?>
     </div>
