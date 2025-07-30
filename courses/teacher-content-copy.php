@@ -16,9 +16,6 @@ if (!isset($_SESSION)) {
         border: 2px solid #DBEBFF;
         background-color: #E3F0FF;
         border-radius: 25px;
-
-
-
     }
 
     .thumbnail_teacher.bg-color-1 {
@@ -64,12 +61,7 @@ if (!isset($_SESSION)) {
 </style>
 
 <?php
-$where = " WHERE UPPER(category)='" . $category . "'";
-if ($category == '') {
-    $where = '';
-}
-
-$query = "SELECT * FROM teachers " . $where;
+$query = "SELECT * FROM teachers WHERE show_teacher = 'Y' ORDER BY RAND() LIMIT 6";
 $result = mysqli_query($db_connection, $query);
 
 $bg_classes = ['bg-color-1', 'bg-color-2', 'bg-color-3', 'bg-color-4'];
@@ -88,8 +80,8 @@ $index = 0;
                         <div class="thumbnail-container">
                             <img class="thumbnail thumbnail_teacher ' . $bg_class . '" src="../teacher/img/thumbnails/' . $row['thumbnails'] . '">
                         </div>
-                        <p class="text-capitalize menu-heading mb-10">' . $row['fullname'] . '</p>
-                        <p class="mb-4">' . str_replace(",", " / ", $row['label_details']) . '</p>
+                        <p class="text-capitalize menu-heading mb-10">' . $row['fullname' . $lang] . '</p>
+                        <p class="mb-4">' . str_replace(",", " / ", $row['label_details' . $lang]) . '</p>
                     </a>
                   </div>';
         }
@@ -130,8 +122,8 @@ $index = 0;
                     <a href="../teacher-info/main.php?id=' . $row['id'] . '" target="_blank">
                         <img class="thumbnail_teacher d-block" src="../teacher/img/thumbnails/' . $row['thumbnails'] . '">
                         <div class="carousel-caption" style=" right:0px; left:0px; bottom:0px; position:relative;" >
-                            <h5>' . $row['fullname'] . '</h5>
-                            <p>' . str_replace(",", " / ", $row['label_details']) . '</p>
+                            <h5>' . $row['fullname' . $lang] . '</h5>
+                            <p>' . str_replace(",", " / ", $row['label_details' . $lang]) . '</p>
                         </div>
                     </a>
                   </div>';
