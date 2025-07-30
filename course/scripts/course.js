@@ -170,7 +170,7 @@ const fetchPriceConfigs = async () => {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: `age_group=${encodeURIComponent(age_group)}&course_type=${encodeURIComponent(course_type)}` +
-                  `&language=${encodeURIComponent(pageLang)}&currency=${encodeURIComponent(currency)}`
+                `&language=${encodeURIComponent(pageLang)}&currency=${encodeURIComponent(currency)}`
         });
 
         const data = await response.json();
@@ -191,7 +191,7 @@ const fetchPriceConfigs = async () => {
                 typesContainer.appendChild(itemDiv);
             });
         });
-        
+
         sessionNumContainers.forEach(sessionNumContainer => {
             sessionNumContainer.innerHTML = '';
             data.num_sessions.forEach((item, index) => {
@@ -201,7 +201,7 @@ const fetchPriceConfigs = async () => {
                 if (pageLang == "_en") itemDiv.textContent = item.num_sessions + " Sessions";
                 if (pageLang == "_cn") itemDiv.textContent = item.num_sessions + " 单节课时";
                 itemDiv.dataset.num = item.num_sessions;
-                
+
                 sessionNumContainer.appendChild(itemDiv);
             });
         });
@@ -209,7 +209,7 @@ const fetchPriceConfigs = async () => {
         activeSessionType = data.session_types.length ? data.session_types[preselect].ref_num : "";
         activeNumSessions = data.num_sessions.length ? data.num_sessions[preselect].num_sessions : "";
         fetchPrice();
-        
+
         document.querySelectorAll('.option').forEach(option => {
             option.addEventListener('click', () => {
                 const group = option.dataset.group;
@@ -237,17 +237,17 @@ const fetchPrice = async () => {
         const tryButton = document.querySelectorAll('.try-now');
 
         //disable buttons while we wait for new price to be fetched
-        tryButton.forEach(button => { 
-            button.disabled = true; 
+        tryButton.forEach(button => {
+            button.disabled = true;
             if (pageLang == "_en") button.textContent = "Loading...";
             if (pageLang == "_cn") button.textContent = "加载中...";
         });
 
-        if(session_type_ref_num != "" && num_sessions != "") {
+        if (session_type_ref_num != "" && num_sessions != "") {
             const response = await fetch("scripts/fetch-price.php", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: `age_group=${encodeURIComponent(age_group)}&course_type=${encodeURIComponent(course_type)}&currency=${encodeURIComponent(currency)}` + 
+                body: `age_group=${encodeURIComponent(age_group)}&course_type=${encodeURIComponent(course_type)}&currency=${encodeURIComponent(currency)}` +
                     `&session_type_ref_num=${encodeURIComponent(session_type_ref_num)}&num_sessions=${encodeURIComponent(num_sessions)}`
             });
 
@@ -256,22 +256,28 @@ const fetchPrice = async () => {
             if (Array.isArray(data) && data.length !== 0) {
                 const totalSpans = document.querySelectorAll('.price-total');
                 const item = data[0];
-                totalSpans.forEach(total => {
-                    total.textContent = item.currency + " " + item.price;
+                const formattedPrice = Number(item.price).toLocaleString(undefined, {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
                 });
+
+                totalSpans.forEach(total => {
+                    total.textContent = item.currency + " " + formattedPrice;
+                });
+
                 tryButton.forEach(button => {
                     button.disabled = false;
-                    if (pageLang == "_en") button.textContent = "Try Now";
-                    if (pageLang == "_cn") button.textContent = "立即试用";
+                    if (pageLang === "_en") button.textContent = "Try Now";
+                    if (pageLang === "_cn") button.textContent = "立即试用";
                 });
             } else {
-                tryButton.forEach(button => { 
-                    button.disabled = true; 
+                tryButton.forEach(button => {
+                    button.disabled = true;
                     if (pageLang == "_en") button.textContent = "Not Available";
                     if (pageLang == "_cn") button.textContent = "无法使用";
                 });
             }
-        } 
+        }
     } catch (err) {
         console.error("Error fetching price:", err);
     }
@@ -282,8 +288,8 @@ const fetchRelatedCourses = async () => {
         const response = await fetch("scripts/fetch-related-courses.php", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: `lang_filter=${encodeURIComponent(course_lang)}&age_filter=${encodeURIComponent(age_group)}` + 
-                  `&curr_ref_num=${encodeURIComponent(courseRef)}&language=${encodeURIComponent(pageLang)}`
+            body: `lang_filter=${encodeURIComponent(course_lang)}&age_filter=${encodeURIComponent(age_group)}` +
+                `&curr_ref_num=${encodeURIComponent(courseRef)}&language=${encodeURIComponent(pageLang)}`
         });
 
         const data = await response.json();
