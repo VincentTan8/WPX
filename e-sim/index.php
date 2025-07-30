@@ -111,11 +111,13 @@ include "../connections/dbname.php";
     <div class="hero-content">
         <h1>
             <span id="hero-header">
-                <span>Arrive. Connect. Explore - with</span><span style="color:#F2AE14;"> WeTalks's </span><span> eSIM
+                <span id="hero-title-1">Arrive. Connect. Explore - with</span> <span id="hero-title-2"
+                    style="color:#F2AE14;">WeTalks's</span>
+                <span id="hero-title-3">eSIM
                     Guide</span>
             </span>
         </h1>
-        <p>
+        <p id="hero-subtitle">
             No roaming fees. No airport queues. Get your eSIM ready before landing and stay connected from the moment
             you touch down.
         </p>
@@ -158,7 +160,7 @@ include "../connections/dbname.php";
     <script src="../resources/js/map.js"></script>
     <script src="../vendor/js/contact_us.js"></script>
     <script src="../resources/js/script.js"></script>
-    <script src="scripts/destinations.js"></script>
+    <script src="scripts/e-sim.js"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 

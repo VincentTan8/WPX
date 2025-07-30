@@ -199,13 +199,13 @@
 
 <div class="set-up-guides">
     <div class="set-up-guides-header-container">
-        <h2 class="set-up-guides-header">Country-Specific eSIM Setup Guides</h2>
+        <h2 id="country-title" class="set-up-guides-header">Country-Specific eSIM Setup Guides</h2>
 
         <div class="country-tabs">
-            <button class="tab active">Singapore eSIM Guide</button>
-            <button class="tab">Philippines eSIM Guide</button>
-            <button class="tab">Taiwan eSIM Guide</button>
-            <button class="tab">China eSIM Guide</button>
+            <button class="tab active" id="sg">Singapore eSIM Guide</button>
+            <button class="tab" id="ph">Philippines eSIM Guide</button>
+            <button class="tab" id="tw">Taiwan eSIM Guide</button>
+            <button class="tab" id="cn">China eSIM Guide</button>
         </div>
     </div>
 
@@ -223,19 +223,19 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>GOMO by Singtel</td>
-                            <td>Tourist eSIM (7–12 days, 100GB)</td>
-                            <td><a href="https://www.gomo.sg/esim">https://www.gomo.sg/esim</a></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <td>MI Prepaid eSIM</td>
-                            <td>Prepaid Tourist SIM</td>
-                            <td><a href="https://www.m1.com.sg/m1">https://www.m1.com.sg/m1</a></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <td>Airalo – Singapore</td>
-                            <td>3GB–10GB options</td>
-                            <td><a href="https://www.airalo.com/sg">https://www.airalo.com/sg</a></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
@@ -243,159 +243,13 @@
 
             <div class="setup-right">
                 <ol class="setup-steps">
-                    <li>1.Choose and purchase your plan via provider website or app</li>
-                    <li>2.Scan the provided QR code</li>
-                    <li>3.Install eSIM on your phone</li>
-                    <li>4.Enable mobile data and roaming</li>
-                    <li>5.Done!</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                 </ol>
             </div>
         </div>
     </div>
 </div>
-
-<script>
-    const tabButtons = document.querySelectorAll('.country-tabs .tab');
-    const providerTableBody = document.querySelector('.provider-table tbody');
-    const stepsContainer = document.querySelector('.setup-steps');
-
-    const countryData = {
-        'Singapore eSIM Guide': {
-            providers: [
-                {
-                    provider: 'GOMO by Singtel',
-                    plan: 'Tourist eSIM (7–12 days, 100GB)',
-                    link: 'https://www.gomo.sg/esim'
-                },
-                {
-                    provider: 'MI Prepaid eSIM',
-                    plan: 'Prepaid Tourist SIM',
-                    link: 'https://www.m1.com.sg/m1'
-                },
-                {
-                    provider: 'Airalo – Singapore',
-                    plan: '3GB–10GB options',
-                    link: 'https://www.airalo.com/sg'
-                }
-            ],
-            steps: [
-                '1. Choose and purchase your plan via provider website or app',
-                '2. Scan the provided QR code',
-                '3. Install eSIM on your phone',
-                '4. Enable mobile data and roaming',
-                '5. Done!'
-            ]
-        },
-        'Philippines eSIM Guide': {
-            providers: [
-                {
-                    provider: 'Globe Go eSIM',
-                    plan: 'Tourist SIM with 20GB+',
-                    link: 'https://www.globe.com.ph/esim.html'
-                },
-                {
-                    provider: 'M1 Prepaid eSIM',
-                    plan: 'Prepaid Travel SIM',
-                    link: 'https://smart.com.ph/Pages/esim'
-                },
-                {
-                    provider: 'Airalo – Singapore',
-                    plan: 'Local data (3GB–10GB)',
-                    link: 'https://www.airalo.com/philippines-esim'
-                },
-
-            ],
-            steps: [
-                '1. Select and purchase plan online',
-                '2. Receive QR code',
-                '3. Install eSIM profile',
-                '4. Activate before travel or on arrival'
-            ]
-        },
-        'Taiwan eSIM Guide': {
-            providers: [
-                {
-                    provider: 'Chunghwa Telecom',
-                    plan: 'Tourist eSIM w/ unlimited data',
-                    link: 'https://www.cht.com.tw/en/home/cht'
-                },
-                {
-                    provider: 'Taiwan Mobile',
-                    plan: 'Local + Tourist Plans',
-                    link: 'https://www.taiwanmobile.com/english/services/esim.html'
-                },
-                {
-                    provider: 'Airalo – Taiwan',
-                    plan: '3GB–10GB options',
-                    link: 'https://www.airalo.com/taiwan-esim'
-                }
-            ],
-            steps: [
-                '1. Choose and buy plan',
-                '2. Scan QR code or use app',
-                '3. Install eSIM profile',
-                '4. Turn on roaming',
-                '5. Done!'
-            ]
-        },
-        'China eSIM Guide': {
-            providers: [
-                {
-                    provider: 'Airalo – China',
-                    plan: 'Local eSIM (2GB–10GB options)',
-                    link: 'https://www.airalo.com/china-esim'
-                },
-                {
-                    provider: 'Nomad eSIM',
-                    plan: 'China + Hong Kong options',
-                    link: 'https://www.getnomad.app/'
-                },
-                {
-                    provider: 'Holafly eSIM',
-                    plan: 'Unlimited data (Daily plans)',
-                    link: 'https://esim.holafly.com/china-esim/'
-                }
-            ],
-            steps: [
-                '1. Ensure your device supports eSIM and is unlocked.',
-                '2. Choose a provider and purchase a plan online.',
-                '3. Stay connected to Wi-Fi.',
-                '4. Receive and scan the QR code provided by the provider.',
-                '5. Install the eSIM profile on your phone.',
-                '6. Turn on mobile data and roaming.',
-                '7. Note: Some websites and apps may be restricted in China. Consider downloading a VPN before your trip.'
-            ]
-        }
-    };
-
-    tabButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Activate tab visually
-            tabButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const selected = btn.textContent.trim();
-            const selectedData = countryData[selected];
-
-            // Update provider table
-            providerTableBody.innerHTML = '';
-            selectedData.providers.forEach(item => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${item.provider}</td>
-                    <td>${item.plan}</td>
-                    <td><a href="${item.link}" target="_blank">${item.link}</a></td>
-                `;
-                providerTableBody.appendChild(row);
-            });
-
-            // Update setup steps
-            stepsContainer.innerHTML = '';
-            selectedData.steps.forEach(step => {
-                const li = document.createElement('li');
-                li.textContent = step;
-                stepsContainer.appendChild(li);
-            });
-        });
-    });
-</script>

@@ -127,73 +127,93 @@
     }
 </style>
 <div class="e-sim-activation">
-    <h2 class="e-sim-activation-header">How to Activate eSIM Data Plans</h2>
+    <h2 class="e-sim-activation-header" id="activate-title">How to Activate eSIM Data Plans</h2>
 
     <ol class="e-sim-activation-list">
         <li>
-            <strong>Supported Devices</strong>
-            <p>Ensure your device is eSIM-compatible, such as:</p>
+            <strong id="active-list-1">Supported Devices</strong>
+            <p id="activate-list-1-p">Ensure your device is eSIM-compatible, such as:</p>
             <ul class="check-list">
-                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> Smartphones (e.g., iPhone,
-                    Samsung, Google Pixel)</li>
-                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> Tablets and iPads (e.g., iPad
-                    Pro)</li>
-                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> Wearables (e.g., Apple Watch,
-                    Huawei Watch 3 Pro)</li>
+                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> <span
+                        id="actiave-list-1-b-1">Smartphones (e.g.,
+                        iPhone,
+                        Samsung, Google Pixel)</span></li>
+                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> <span
+                        id="activate-list-1-b-2">Tablets and iPads (e.g.,
+                        iPad
+                        Pro)</span></li>
+                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> <span
+                        id="activate-list-1-b-3">Wearables (e.g., Apple
+                        Watch,
+                        Huawei Watch 3 Pro)</span></li>
             </ul>
         </li>
 
         <li>
-            <strong>Purchase an eSIM Data Plan</strong>
+            <strong id="activate-list-2">Purchase an eSIM Data Plan</strong>
             <ul class="check-list">
-                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> Local carriers (e.g., China
-                    Unicom, T-Mobile, Vodafone)</li>
-                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> Third-party platforms (e.g.,
-                    Airalo, Nomad, Holafly)</li>
+                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> <span
+                        id="activate-list-2-b-1">Local carriers (e.g.,
+                        China
+                        Unicom, T-Mobile, Vodafone)</span></li>
+                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> <span
+                        id="activate-list-2-b-2">Third-party platforms
+                        (e.g.,
+                        Airalo, Nomad, Holafly)</span></li>
             </ul>
         </li>
 
         <li>
-            <strong>Activation Steps</strong>
+            <strong id="activate-list-3">Activation Steps</strong>
 
             <div class="method">
-                <p><strong>Method 1:</strong> Carrier’s Official App (e.g., China Unicom, My MI+)</p>
+                <p><strong id="activate-list-3-p-1">Method 1:</strong> <span id="activate-list-3-p-2">Carrier’s Official
+                        App (e.g., China Unicom, My MI+)</span></p>
                 <ol>
-                    <li>1. Download the carrier’s app</li>
-                    <li>2. Complete identity verification (if required)</li>
-                    <li>3. Select and purchase a data plan</li>
-                    <li>4. Scan the QR code provided to activate your eSIM</li>
+                    <li id="activate-list-3-b-1">1. Download the carrier’s app</li>
+                    <li id="activate-list-3-b-2">2. Complete identity verification (if required)</li>
+                    <li id="activate-list-3-b-3">3. Select and purchase a data plan</li>
+                    <li id="activate-list-3-b-4">4. Scan the QR code provided to activate your eSIM</li>
                 </ol>
 
-                <p><strong>Method 2:</strong> Third-Party eSIM Providers (e.g., Airalo)</p>
+                <p><strong id="activate-list-3-p-3">Method 2:</strong> <span id="activate-list-3-p-4">Third-Party eSIM
+                        Providers (e.g., Airalo)</span></p>
                 <ol>
-                    <li>1. Buy a plan on the provider’s website or app</li>
-                    <li>2. Receive QR code or activation link via email</li>
-                    <li>3. Go to Settings > Cellular > Add eSIM > Scan QR code</li>
+                    <li id="activate-list-3-b-5">1. Buy a plan on the provider’s website or app</li>
+                    <li id="activate-list-3-b-6">2. Receive QR code or activation link via email</li>
+                    <li id="activate-list-3-b-7">3. Go to Settings > Cellular > Add eSIM > Scan QR code</li>
                 </ol>
             </div>
         </li>
 
         <li>
-            <strong>Key Notes</strong>
+            <strong id="activate-list-4">Key Notes</strong>
             <ul class="check-list">
-                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> Ensure your device is unlocked
-                    and supports eSIM</li>
-                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> Stay connected to Wi-Fi during
-                    setup</li>
-                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check">You can store multiple eSIMs,
-                    but usually only one active at a
-                    time (varies by device)</li>
+                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> <span
+                        id="activate-list-4-b-1">Ensure your device is
+                        unlocked
+                        and supports eSIM</span></li>
+                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> <span
+                        id="activate-list-4-b-2">Stay connected to Wi-Fi
+                        during
+                        setup</span></li>
+                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> <span
+                        id="activate-list-4-b-3">You can store multiple
+                        eSIMs,
+                        but usually only one active at a
+                        time (varies by device)</span></li>
             </ul>
         </li>
         <li>
-            <strong>Monitoring Usage</strong>
-            <p>Track your data usage through:</p>
+            <strong id="activate-list-5">Monitoring Usage</strong>
+            <p id="activate-list-5-p">Track your data usage through:</p>
             <ul class="check-list">
-                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> The carrier’s app (e.g., “My
-                    T-Mobile”, “My M1+”)</li>
-                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> Device settings (Settings >
-                    Cellular > Data Usage)</li>
+                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> <span
+                        id="activate-list-5-b-1">The carrier’s app (e.g., “My
+                        T-Mobile”, “My M1+”)</span></li>
+                <li><img src="../resources/img/e-sim/check-yellow-list.png" alt="check"> <span
+                        id="activate-list-5-b-2">Device settings (Settings >
+                        Cellular > Data Usage)</span></li>
             </ul>
         </li>
 

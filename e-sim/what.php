@@ -87,8 +87,8 @@
 </style>
 
 <div class="e-sim">
-    <h2 class="e-sim-title">What is an eSIM?</h2>
-    <p class="e-sim-desc">
+    <h2 id="what-title" class="e-sim-title">What is an eSIM?</h2>
+    <p id="what-subtitle" class="e-sim-desc">
         An eSIM (Embedded SIM) is a digital SIM built into your phone. It allows you to activate a mobile data plan
         without inserting a physical SIM card. Once activated, your phone connects instantly to a local network.
     </p>
@@ -96,23 +96,23 @@
     <div class="e-sim-cards">
         <div class="e-sim-card">
             <img src="../resources/img/e-sim/setup.png" alt="eSIM Feature 1" />
-            <p>Easy Setup</p>
+            <p id="what-card-1">Easy Setup</p>
         </div>
         <div class="e-sim-card">
             <img src="../resources/img/e-sim/activate.png" alt="eSIM Feature 2" />
-            <p>Instant Activation</p>
+            <p id="what-card-2">Instant Activation</p>
         </div>
         <div class="e-sim-card">
             <img src="../resources/img/e-sim/no.png" alt="eSIM Feature 3" />
-            <p>No need to swap SIM Cards</p>
+            <p id="what-card-3">No need to swap SIM Cards</p>
         </div>
         <div class="e-sim-card">
             <img src="../resources/img/e-sim/expensive.png" alt="eSIM Feature 4" />
-            <p>Avoid Expensive Roaming Charges</p>
+            <p id="what-card-4">Avoid Expensive Roaming Charges</p>
         </div>
         <div class="e-sim-card">
             <img src="../resources/img/e-sim/phone.png" alt="eSIM Feature 5" />
-            <p>Use your phone just like a local </p>
+            <p id="what-card-5">Use your phone just like a local </p>
         </div>
     </div>
 </div>

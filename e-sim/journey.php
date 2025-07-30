@@ -78,18 +78,23 @@
 </style>
 
 <div class="e-sim-journey">
-    <h2 class="e-sim-journey-header">Your eSIM Companion for the Journey</h2>
+    <h2 id="journey-title" class="e-sim-journey-header">Your eSIM Companion for the Journey</h2>
 
     <div class="e-sim-journey-content">
         <div class="e-sim-journey-left">
-            <p>You are free to choose any eSIM provider you prefer, but the below recommendations will save you time and
+            <p id="journey-subtitle-1">You are free to choose any eSIM provider you prefer, but the below
+                recommendations will save you time and
                 ensure smoother connectivity.</p>
-            <p>As part of your WeTalk Study Tour preparation, WeTalk has prepared this guide to recommend trusted eSIM
+            <p id="journey-subtitle-2">As part of your WeTalk Study Tour preparation, WeTalk has prepared this guide to
+                recommend trusted eSIM
                 options in Singapore, Philippines, and Taiwan. These are all traveler-friendly options with easy setup
                 and solid network coverage.</p>
-            <p><strong>Note:</strong> WeTalk does not sell or activate eSIMs. This page is for informational purposes to
-                help you prepare
-                for your journey.</p>
+            <p><strong id="journey-subtitle-3">Note:</strong> <span id="journey-subtitle-4">WeTalk does not sell or
+                    activate eSIMs. This page is
+                    for
+                    informational purposes to
+                    help you prepare
+                    for your journey.</span></p>
         </div>
 
         <div class="e-sim-journey-right">
