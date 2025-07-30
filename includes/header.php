@@ -156,7 +156,7 @@ $hide_panda = (
         }
 
         .navbar-top-default.center-logo .logo {
-            left: 42.5%;
+            transform: translateX(-177px);
         }
 
         /* Show submenu on hover of the parent list item */
@@ -204,6 +204,12 @@ $hide_panda = (
 
         .lang-text {
             margin-right: 20px;
+        }
+
+        @media screen and (max-width: 767px) {
+            .navbar-top-default.center-logo .logo {
+                transform: none;
+            }
         }
     </style>
 
