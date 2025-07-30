@@ -88,8 +88,8 @@ $index = 0;
                         <div class="thumbnail-container">
                             <img class="thumbnail thumbnail_teacher ' . $bg_class . '" src="../teacher/img/thumbnails/' . $row['thumbnails'] . '">
                         </div>
-                        <p class="text-capitalize menu-heading mb-10">' . $row['fullname'] . '</p>
-                        <p class="mb-4">' . str_replace(",", " / ", $row['label_details']) . '</p>
+                        <p class="text-capitalize menu-heading mb-10">' . $row['fullname' . $lang] . '</p>
+                        <p class="mb-4">' . str_replace(",", " / ", $row['label_details' . $lang]) . '</p>
                     </a>
                   </div>';
         }
@@ -117,7 +117,8 @@ $index = 0;
         ?>
     </ol>
 
-    <div class="carousel-inner" style=" box-shadow:0 0 10px rgba(0, 0, 0, 0.1); border:1px solid #ddd; padding:20px; width:90vw; height:55vh;">
+    <div class="carousel-inner"
+        style=" box-shadow:0 0 10px rgba(0, 0, 0, 0.1); border:1px solid #ddd; padding:20px; width:90vw; height:55vh;">
         <?php
         mysqli_data_seek($result, 0);
         $index = 0;
@@ -129,8 +130,8 @@ $index = 0;
                     <a href="../teacher-info/main.php?id=' . $row['id'] . '" target="_blank">
                         <img class="thumbnail_teacher d-block" src="../teacher/img/thumbnails/' . $row['thumbnails'] . '">
                         <div class="carousel-caption" style=" right:0px; left:0px; bottom:0px; position:relative;" >
-                            <h5>' . $row['fullname'] . '</h5>
-                            <p>' . str_replace(",", " / ", $row['label_details']) . '</p>
+                            <h5>' . $row['fullname' . $lang] . '</h5>
+                            <p>' . str_replace(",", " / ", $row['label_details' . $lang]) . '</p>
                         </div>
                     </a>
                   </div>';
