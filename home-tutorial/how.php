@@ -211,12 +211,12 @@
 
 
 <div class="enroll-container">
-    <h2>How to Enroll in the WeTalk Home Tutorial?</h2>
+    <h2 id="how-title">How to Enroll in the WeTalk Home Tutorial?</h2>
     <div class="enroll-steps">
         <!-- Step 1 -->
         <div class="enroll-step">
             <div class="enroll-step-top">
-                <div class="enroll-step-text">1. Inquiry & Registration</div>
+                <div id="step-1" class="enroll-step-text">1. Inquiry & Registration</div>
                 <div class="enroll-step-icon-wrapper">
                     <svg viewBox="0 0 53 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="26.5" cy="27" r="25.5" />
@@ -229,9 +229,9 @@
             </div>
             <div class="enroll-details">
                 <ul>
-                    <li>Students/guardians inquire about the home tutorial program.</li>
-                    <li>Customer Service (CS) provides details on requirements, fees, and policies.</li>
-                    <li>Student completes the registration form.</li>
+                    <li id="step-1-1">Students/guardians inquire about the home tutorial program.</li>
+                    <li id="step-1-2">Customer Service (CS) provides details on requirements, fees, and policies.</li>
+                    <li id="step-1-3">Student completes the registration form.</li>
                 </ul>
             </div>
         </div>
@@ -239,7 +239,7 @@
         <!-- Step 2 -->
         <div class="enroll-step">
             <div class="enroll-step-top">
-                <div class="enroll-step-text">2. Level Test at Wetalk Center</div>
+                <div id="step-2" class="enroll-step-text">2. Level Test at Wetalk Center</div>
                 <div class="enroll-step-icon-wrapper">
                     <svg viewBox="0 0 53 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="26.5" cy="27" r="25.5" />
@@ -252,9 +252,9 @@
             </div>
             <div class="enroll-details">
                 <ul>
-                    <li>Students must visit the Wetalk center to take a level test.</li>
-                    <li>The teacher administers the level test and determines the appropriate learning plan based on the
-                        results.</li>
+                    <li id="step-2-1">Students must visit the Wetalk center to take a level test.</li>
+                    <li id="step-2-2">The teacher administers the level test and determines the appropriate learning
+                        plan based on the results.</li>
                 </ul>
             </div>
         </div>
@@ -262,7 +262,7 @@
         <!-- Step 3 -->
         <div class="enroll-step">
             <div class="enroll-step-top">
-                <div class="enroll-step-text">3. Verification of Student’s Location & Safety Check</div>
+                <div id="step-3" class="enroll-step-text">3. Verification of Student’s Location & Safety Check</div>
                 <div class="enroll-step-icon-wrapper">
                     <svg viewBox="0 0 53 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="26.5" cy="27" r="25.5" />
@@ -275,17 +275,17 @@
             </div>
             <div class="enroll-details">
                 <ul>
-                    <li>CS verifies the student’s home/hotel address.</li>
-                    <li>Supervisor and Admin ensure it meets safety standards.</li>
-                    <li>If the student is staying in a hotel, the designated public space (lobby or business center) is
-                        confirmed.</li>
+                    <li id="step-3-1">CS verifies the student’s home/hotel address.</li>
+                    <li id="step-3-2">Supervisor and Admin ensure it meets safety standards.</li>
+                    <li id="step-3-3">If the student is staying in a hotel, the designated public space (lobby or
+                        business center) is confirmed.</li>
                 </ul>
             </div>
         </div>
         <!-- Step 4 -->
         <div class="enroll-step">
             <div class="enroll-step-top">
-                <div class="enroll-step-text">4. Scheduling & Payment Confirmation</div>
+                <div id="step-4" class="enroll-step-text">4. Scheduling & Payment Confirmation</div>
                 <div class="enroll-step-icon-wrapper">
                     <svg viewBox="0 0 53 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="26.5" cy="27" r="25.5" />
@@ -298,8 +298,8 @@
             </div>
             <div class="enroll-details">
                 <ul>
-                    <li>CS confirms the schedule with the student and assigns an available teacher.</li>
-                    <li>Payment must be completed before the first session.</li>
+                    <li id="step-4-1">CS confirms the schedule with the student and assigns an available teacher.</li>
+                    <li id="step-4-2">Payment must be completed before the first session.</li>
                 </ul>
             </div>
         </div>
@@ -307,7 +307,7 @@
         <!-- Step 5 -->
         <div class="enroll-step">
             <div class="enroll-step-top">
-                <div class="enroll-step-text">5. Teacher Assignment & Briefing</div>
+                <div id="step-5" class="enroll-step-text">5. Teacher Assignment & Briefing</div>
                 <div class="enroll-step-icon-wrapper">
                     <svg viewBox="0 0 53 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="26.5" cy="27" r="25.5" />
@@ -320,8 +320,8 @@
             </div>
             <div class="enroll-details">
                 <ul>
-                    <li>The Supervisor assigns a teacher based on availability and student’s level.</li>
-                    <li>The teacher is briefed on student details and expectations.</li>
+                    <li id="step-5-1">The Supervisor assigns a teacher based on availability and student’s level.</li>
+                    <li id="step-5-2">The teacher is briefed on student details and expectations.</li>
                 </ul>
             </div>
         </div>
@@ -329,7 +329,7 @@
         <!-- Step 6 -->
         <div class="enroll-step">
             <div class="enroll-step-top">
-                <div class="enroll-step-text">6. Lesson Conducted</div>
+                <div id="step-6" class="enroll-step-text">6. Lesson Conducted</div>
                 <div class="enroll-step-icon-wrapper">
                     <svg viewBox="0 0 53 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="26.5" cy="27" r="25.5" />
@@ -342,8 +342,8 @@
             </div>
             <div class="enroll-details">
                 <ul>
-                    <li>The teacher arrives on time at the agreed location.</li>
-                    <li>The lesson is conducted following Wetalk’s curriculum.</li>
+                    <li id="step-6-1">The teacher arrives on time at the agreed location.</li>
+                    <li id="step-6-2">The lesson is conducted following Wetalk’s curriculum.</li>
                 </ul>
             </div>
         </div>
@@ -351,7 +351,7 @@
         <!-- Step 7 -->
         <div class="enroll-step">
             <div class="enroll-step-top">
-                <div class="enroll-step-text">7. Monitoring & Feedback</div>
+                <div id="step-7" class="enroll-step-text">7. Monitoring & Feedback</div>
                 <div class="enroll-step-icon-wrapper">
                     <svg viewBox="0 0 53 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="26.5" cy="27" r="25.5" />
@@ -364,8 +364,8 @@
             </div>
             <div class="enroll-details">
                 <ul>
-                    <li>CS checks in with students/guardians and teachers for feedback.</li>
-                    <li>Issues or concerns are documented and addressed.</li>
+                    <li id="step-7-1">CS checks in with students/guardians and teachers for feedback.</li>
+                    <li id="step-7-2">Issues or concerns are documented and addressed.</li>
                 </ul>
             </div>
         </div>

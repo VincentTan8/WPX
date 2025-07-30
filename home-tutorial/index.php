@@ -20,9 +20,9 @@ $category = '';
 $main_menu = 'LINGUISTICS'; //to change
 
 include "../includes/menu_bar_reset.php";
-$menu_bar6 = "active";
+$menu_bar3 = "active";
 
-$_SESSION['active_page'] = 'tutorial';
+$_SESSION['active_page'] = 'home-tutorial';
 
 include "../includes/header.php";
 include "../connections/dbname.php";
@@ -111,15 +111,11 @@ include "../connections/dbname.php";
     <div class="hero-content">
         <h1>
             <span id="hero-header">
-                <span>Personalized English</span><span style="color:#F2AE14;"> Learning at Home </span><span>for Kids
-                    Aged 3–14</span>
+                <span id="hero-title-1"></span> <span id="hero-title-2" style="color:#F2AE14;"></span>
+                <span id="hero-title-3"></span>
             </span>
         </h1>
-        <p>
-            Experience world-class one-on-one or small group ESL lessons tailored for young learners—right in the
-            comfort of your home. With expert teachers and a values-driven approach, WeTalk Home Tutorial helps your
-            child grow in confidence, communication, and character.
-        </p>
+        <p id="hero-subtitle"></p>
     </div>
 
 
@@ -135,7 +131,7 @@ include "../connections/dbname.php";
     <!-- End white container -->
 
 
-    <div id="page-data" data-page="educ-tour" data-lang="<?php echo $lang ?>"></div>
+    <div id="page-data" data-page="home-tutorial" data-lang="<?php echo $lang ?>"></div>
     <script>console.log('<?php echo $lang . " is the lang"; ?>')</script>
 
     <!-- JavaScript -->

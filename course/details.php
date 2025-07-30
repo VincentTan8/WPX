@@ -348,7 +348,7 @@
             box-shadow: 0 -2px 30px rgba(0, 0, 0, 0.3);
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
-            padding: 25px 20px 65px 20px;
+            padding: 40px 20px 65px 20px;
             display: none;
             flex-direction: column;
             gap: 20px;
@@ -364,7 +364,7 @@
 
         .pricing-close {
             position: absolute;
-            top: -25px;
+            top: -30px;
             right: 20px;
             font-size: 20px;
             font-weight: bold;
@@ -789,11 +789,16 @@
     }
 
     document.addEventListener('click', function (e) {
+        const pricingModal = document.getElementById('pricingModal');
+        const footerFixed = document.querySelector('.footer-fixed');
         const popup = document.getElementById('currencyPopup');
         const trigger = document.querySelector('.footer-left');
 
         if (!popup.contains(e.target) && !trigger.contains(e.target)) {
             popup.classList.remove('active');
+        }
+        if (!pricingModal.contains(e.target) && !footerFixed.contains(e.target)) {
+            closePricingModal();
         }
     });
 </script>

@@ -59,6 +59,7 @@
         gap: 15px;
         cursor: pointer;
         flex-shrink: 0;
+        box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.25);
     }
 
     .start-button span {
@@ -147,12 +148,12 @@
 
 <div class="start-container">
     <div class="start-left">
-        <h2>Ready to Get Started?</h2>
-        <p>Whether you're a curious parent or a school looking to partner, we’re here to help. Let’s discuss the right
-            program for your child’s goals.</p>
+        <h2 id="start-title">Ready to Get Started?</h2>
+        <p id="start-body">Whether you're a curious parent or a school looking to partner, we’re here to help. Let’s
+            discuss the right program for your child’s goals.</p>
         <div class="start-buttons">
             <div class="start-button contact-us">
-                <span>Contact Us</span>
+                <span id="contact-button">Contact Us</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="29" height="22" viewBox="0 0 29 22" fill="none">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M17.2929 0.292893C17.6834 -0.0976311 18.3166 -0.0976311 18.7071 0.292893L28.7071 10.2929C29.0976 10.6834 29.0976 11.3166 28.7071 11.7071L18.7071 21.7071C18.3166 22.0976 17.6834 22.0976 17.2929 21.7071C16.9024 21.3166 16.9024 20.6834 17.2929 20.2929L25.5858 12H1C0.447715 12 0 11.5523 0 11C0 10.4477 0.447715 10 1 10H25.5858L17.2929 1.70711C16.9024 1.31658 16.9024 0.683417 17.2929 0.292893Z"
@@ -160,7 +161,7 @@
                 </svg>
             </div>
             <div class="start-button book-call">
-                <span>Book a Call</span>
+                <span id="book-button">Book a Call</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="25" viewBox="0 0 18 26" fill="none">
                     <path
                         d="M17.0757 11.4446C18.066 12.2451 18.066 13.7549 17.0757 14.5554L3.50724 25.5227C2.19935 26.5798 0.249999 25.6489 0.249999 23.9672L0.25 2.03277C0.25 0.351073 2.19936 -0.579799 3.50724 0.477349L17.0757 11.4446Z"
