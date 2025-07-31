@@ -396,10 +396,13 @@
     }
 
     @media (max-width: 768px) {
+
+
         .controls-container {
             flex-direction: column;
             align-items: flex-start;
             gap: 15px;
+            margin-bottom: 0px;
         }
 
         .filter-container {
@@ -413,7 +416,7 @@
 
         .all-programs-title {
             font-size: 20px;
-            margin-top: 30px;
+            margin-top: 0px;
             margin-bottom: 15px;
         }
 

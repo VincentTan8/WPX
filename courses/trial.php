@@ -189,6 +189,7 @@
             width: 100%;
             height: auto;
             padding: 60px 20px;
+            margin-top: 60px;
         }
 
         .trial-class-inner {

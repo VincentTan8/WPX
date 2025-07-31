@@ -137,6 +137,12 @@
             padding: 0 20px;
         }
 
+        .set-up-guides {
+            margin-top: 60px;
+
+        }
+
+
         .set-up-guides-header {
             font-size: 28px;
             text-align: left;
