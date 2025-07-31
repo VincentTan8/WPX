@@ -3,6 +3,13 @@ if (!isset($_SESSION)) {
   session_start();
   ob_start();
 }
+
+if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
+  $lang = '_cn';
+} else {
+  $_SESSION['lang'] = 'EN';
+  $lang = '_en';
+}
 ?>
 
 
@@ -24,16 +31,15 @@ if (!isset($_SESSION)) {
 $category = '';
 $main_menu = 'LINGUISTICS';
 
-
 include "../includes/menu_bar_reset.php";
 $menu_bar4 = "active";
 
+$teachers_id = $_SESSION['teachers_id'];
+$_SESSION['active_page'] = 'teacher-info/main.php?id=' . $teachers_id;
+
+
 include "../includes/header.php";
 include "../connections/dbname.php";
-
-
-
-$teachers_id = $_SESSION['teachers_id'];
 
 $fullname = '';
 $photo = '';
@@ -58,11 +64,6 @@ $digital_label_C2 = '';
 $digital_label_C3 = '';
 
 
-
-
-
-
-
 $ryesultctr667aa12 = mysqli_query($conn, "SELECT * 
 FROM teachers  
 WHERE id='$teachers_id' LIMIT 1");
@@ -72,7 +73,7 @@ if ($my_total_records_check > 0) {
 
   $ryow12aa12 = mysqli_fetch_assoc($ryesultctr667aa12);
 
-  $fullname = $ryow12aa12['fullname'];
+  $fullname = $ryow12aa12['fullname' . $lang];
   $introduction = $ryow12aa12['introduction'];
   $birthplace = $ryow12aa12['birthplace'];
   $education = $ryow12aa12['education'];
@@ -95,8 +96,7 @@ if ($my_total_records_check > 0) {
   $digital_label_C2 = $ryow12aa12['digital_label_C2'];
   $digital_label_C3 = $ryow12aa12['digital_label_C3'];
 
-
-  $label_details = str_replace(",", " / ", $ryow12aa12['label_details']);
+  $label_details = str_replace(",", " / ", $ryow12aa12['label_details' . $lang]);
 
   $teacher_photo = $ryow12aa12['photo'];
   $photo = '../teacher/img/photo/' . $teacher_photo;
@@ -105,17 +105,8 @@ if ($my_total_records_check > 0) {
     $photo = '../teacher/img/thumbnails/' . $ryow12aa12['thumbnails'];
 
   }
-
-
-
-
 }
-
-
-
 ?>
-
-
 
 
 <body oncontextmenu="return false;" data-spy="scroll" data-target=".navbar" data-offset="90" class="position-relative">
