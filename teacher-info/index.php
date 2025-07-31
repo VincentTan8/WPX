@@ -19,9 +19,14 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
 <head>
   <style>
     #rev_slider_1_1 {
-      height: 100vh !important;
+      height: 100% !important;
       overflow: visible !important;
       position: relative;
+    }
+
+    .forcefullwidth_wrapper_tp_banner,
+    .rev_slider_wrapper {
+      height: 100vh !important;
     }
   </style>
 </head>
@@ -129,7 +134,7 @@ if ($my_total_records_check > 0) {
     </div>
   </div>
   <!--Banner sec Start curve-inside -->
-  <section class="p-0 h-100" style="background-color:#F3F8FE; height:100vh !important; ">
+  <section class="p-0" style="background-color:#F3F8FE; height:100% !important; ">
 
     <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullscreen-container " data-alias="megaone-food-slider1"
       data-source="gallery"
@@ -159,8 +164,6 @@ if ($my_total_records_check > 0) {
               style="z-index: 5; white-space: nowrap; font-size: 40px; line-height: 70px; font-weight: bold; color: #444444; letter-spacing: 0px;font-family:Arial, Helvetica, sans-serif;">
               <?php echo $fullname ?>
             </div>
-
-
 
 
             <!-- LAYER NR. 1 -->
@@ -219,23 +222,8 @@ if ($my_total_records_check > 0) {
 
             <!-- LAYER NR. 3 -->
             <div class="tp-caption   tp-resizeme" id="slide-1-layer-4" data-x="['left','center','center','center']"
-              data-hoffset="['3','1','-10','-10']" data-y="['top','middle','middle','middle']"
-              data-voffset="['260','25','6','95']" data-fontsize="['18','18','18','14']"
-              data-lineheight="['30','26','26','20']" data-width="['480','570','580','350']" data-height="none"
-              data-whitespace="normal" data-type="text" data-responsive_offset="on"
-              data-visibility="['on','off','off','off']"
-              data-frames='[{"delay":1319.921875,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-              data-textAlign="['left','center','center','center']" data-paddingtop="[0,0,0,0]"
-              data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-              style="z-index: 7; min-width: 570px; max-width: 570px; white-space: normal; font-size: 18px; line-height: 26px; font-weight: 400; color: #444444; letter-spacing: 0px;font-family:Roboto;">
-              <?php echo $label_details ?>
-            </div>
-
-
-            <!-- LAYER NR. 3 -->
-            <div class="tp-caption   tp-resizeme" id="slide-1-layer-4" data-x="['left','center','center','center']"
               data-hoffset="['3','1','-10','0']" data-y="['top','middle','middle','middle']"
-              data-voffset="['330','25','6','230']" data-fontsize="['18','18','18','14']"
+              data-voffset="['280','25','6','300']" data-fontsize="['18','18','18','14']"
               data-lineheight="['30','26','26','20']" data-width="['480','570','580','390']" data-height="none"
               data-whitespace="normal" data-type="text" data-responsive_offset="on"
               data-visibility="['on','off','off','on']"
@@ -244,7 +232,9 @@ if ($my_total_records_check > 0) {
               data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
               style="z-index: 7; min-width: 570px; max-width: 570px; white-space: normal; font-size: 18px; line-height: 26px; font-weight: 400; color: #444444; letter-spacing: 0px;font-family:Roboto; ">
 
-              <?php echo $introduction ?>
+              <?php echo $label_details ?>
+
+              </br></br><?php echo $introduction ?>
               </br></br><span id="teacher-place-of-birth">Place of Birth :</span> <?php echo $birthplace ?>
 
               </br><span id="teacher-education">Education :</span> <?php echo $education ?>
