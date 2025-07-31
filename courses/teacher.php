@@ -89,7 +89,7 @@
 
     @media (max-width: 768px) {
         .teacher-section {
-            margin-top: 60px;
+            margin-top: 0px;
         }
     }
 </style>
