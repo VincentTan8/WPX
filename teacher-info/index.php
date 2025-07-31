@@ -74,11 +74,11 @@ if ($my_total_records_check > 0) {
   $ryow12aa12 = mysqli_fetch_assoc($ryesultctr667aa12);
 
   $fullname = $ryow12aa12['fullname' . $lang];
-  $introduction = $ryow12aa12['introduction'];
-  $birthplace = $ryow12aa12['birthplace'];
-  $education = $ryow12aa12['education'];
-  $motto = $ryow12aa12['motto'];
-  $philosophy = $ryow12aa12['philosophy'];
+  $introduction = $ryow12aa12['introduction' . $lang];
+  $birthplace = $ryow12aa12['birthplace' . $lang];
+  $education = $ryow12aa12['education' . $lang];
+  $motto = $ryow12aa12['motto' . $lang];
+  $philosophy = $ryow12aa12['philosophy' . $lang];
   $category_details = $ryow12aa12['category_details'];
 
   $digital_label_A = $ryow12aa12['digital_label_A'];
@@ -245,12 +245,12 @@ if ($my_total_records_check > 0) {
               style="z-index: 7; min-width: 570px; max-width: 570px; white-space: normal; font-size: 18px; line-height: 26px; font-weight: 400; color: #444444; letter-spacing: 0px;font-family:Roboto; ">
 
               <?php echo $introduction ?>
-              </br></br>Place of Birth : <?php echo $birthplace ?>
+              </br></br><span id="teacher-place-of-birth">Place of Birth :</span> <?php echo $birthplace ?>
 
-              </br>Educate : <?php echo $education ?>
+              </br><span id="teacher-education">Education :</span> <?php echo $education ?>
 
-              </br></br><b>Motto :</b> <?php echo $motto ?>
-              </br><b>Philosophy :</b> <?php echo $philosophy ?>
+              </br></br><b id="bold-motto">Motto :</b> <?php echo $motto ?>
+              </br><b id="bold-philosophy">Philosophy :</b> <?php echo $philosophy ?>
 
 
             </div>
