@@ -109,7 +109,7 @@
             align-items: center;
             height: auto;
             padding: 40px 20px;
-            margin: 100px 20px 0 20px;
+            margin: 100px 0 0 0;
         }
 
         .start-left {

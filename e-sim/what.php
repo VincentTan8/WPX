@@ -67,7 +67,7 @@
 
     @media (max-width: 767px) {
         .e-sim {
-            margin: 60px 20px 0 20px;
+            margin: 60px 0 0 0;
         }
 
         .e-sim-title {

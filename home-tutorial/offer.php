@@ -41,7 +41,7 @@
     @media (max-width: 768px) {
         .offer-container {
             flex-direction: column-reverse;
-            margin: 60px 20px 0 20px;
+            margin: 60px 0 0 0;
             gap: 40px;
             align-items: flex-start;
         }

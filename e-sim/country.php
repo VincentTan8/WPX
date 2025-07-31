@@ -190,7 +190,7 @@
         }
 
         .provider-table td:last-child a {
-            max-width: 100px;
+            max-width: 50px;
 
             display: inline-block;
         }

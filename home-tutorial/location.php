@@ -74,7 +74,7 @@
         .location-container {
             flex-direction: column;
             padding: 40px 20px;
-            margin: 80px 20px 0 20px;
+            margin: 80px 0 0 0;
             gap: 40px;
         }
 
