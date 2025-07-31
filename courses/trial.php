@@ -247,6 +247,10 @@
         .trial-image.zigzag-img {
             margin-left: 0;
         }
+
+        .trial-right {
+            padding: 0px;
+        }
     }
 </style>
 
