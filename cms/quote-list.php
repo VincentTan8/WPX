@@ -4,6 +4,12 @@ include "../index/config/conf.php";
 $tablename = $database . ".`wt_quotes`";
 $sql = "SELECT ref_num, quote_date, author, en, cn FROM $tablename ORDER BY quote_date DESC";
 $result = $conn->query($sql);
+$result->data_seek(0); // reset pointer if already used in a loop
+$quoteDataArray = [];
+while ($row = $result->fetch_assoc()) {
+    $ref = $row['ref_num'];
+    $quoteDataArray[$ref] = $row;
+}
 ?>
 <?php include "../includes/header.php"; ?>
 
@@ -69,10 +75,11 @@ $result = $conn->query($sql);
         }
 
         /* Allow wrapping only for English and Chinese (columns 4 and 5) */
-        #quoteTable td:nth-child(3),
-        #quoteTable td:nth-child(4) {
+        #quoteTable td:nth-child(4),
+        #quoteTable td:nth-child(5) {
             white-space: normal !important;
             word-wrap: break-word;
+            width: 39%;
         }
 
         /* Modal Styles */
@@ -95,6 +102,7 @@ $result = $conn->query($sql);
             border-radius: 8px;
             width: 90%;
             max-width: 600px;
+            max-height: 90vh;
             position: relative;
         }
 
@@ -161,12 +169,11 @@ $result = $conn->query($sql);
             </thead>
             <tbody>
                 <?php if ($result && $result->num_rows > 0): ?>
-                    <?php while ($row = $result->fetch_assoc()): ?>
+                    <?php $result->data_seek(0);
+                    while ($row = $result->fetch_assoc()): ?>
                         <tr>
                             <td>
-                                <a class="quote-button editQuote" data-refnum="<?= $row['ref_num'] ?>"
-                                    data-date="<?= $row['quote_date'] ?? '' ?>" data-author="<?= $row['author'] ?? '' ?>"
-                                    data-en="<?= $row['en'] ?? '' ?>" data-cn="<?= $row['cn'] ?? '' ?>">
+                                <a class="quote-button editQuote" data-refnum="<?= $row['ref_num'] ?>">
                                     Edit <i class="fas fa-edit"></i>
                                 </a>
                             </td>
@@ -241,6 +248,9 @@ $result = $conn->query($sql);
     </div>
 
     <script>
+        //pass php courses array object into js
+        const quoteData = <?= json_encode($quoteDataArray, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;
+
         $(document).ready(function () {
             $('#quoteTable').DataTable({
                 responsive: true,
@@ -257,15 +267,21 @@ $result = $conn->query($sql);
                 document.getElementById('quoteModal').style.display = 'flex';
             });
 
-            document.querySelectorAll('.editQuote').forEach((editButton) => {
-                editButton.addEventListener('click', () => {
+            document.addEventListener('click', (e) => {
+                //Open Edit Quote Info
+                const editButton = e.target.closest('.editQuote');
+                if (editButton) {
+                    const ref = editButton.dataset.refnum;
+                    const row = quoteData[ref];
+                    if (!row) return alert('Quote data not found.');
+
                     document.getElementById('editQuoteModal').style.display = 'flex';
-                    document.getElementById('editQuoteRefNum').value = editButton.dataset.refnum;
-                    document.getElementById('editQuoteDate').value = editButton.dataset.date;
-                    document.getElementById('editQuoteAuthor').value = editButton.dataset.author;
-                    document.getElementById('editQuoteEN').value = editButton.dataset.en;
-                    document.getElementById('editQuoteCN').value = editButton.dataset.cn;
-                });
+                    document.getElementById('editQuoteRefNum').value = row.ref_num;
+                    document.getElementById('editQuoteDate').value = row.quote_date;
+                    document.getElementById('editQuoteAuthor').value = row.author;
+                    document.getElementById('editQuoteEN').value = row.en;
+                    document.getElementById('editQuoteCN').value = row.cn;
+                }
             });
         });
 
