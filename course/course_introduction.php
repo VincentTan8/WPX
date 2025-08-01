@@ -3,7 +3,7 @@
         <?php include "breadcrumb.php" ?>
     </div>
 
-    <div class=" col-md-12   " style="position:relative; z-index:1000;">
+    <div class=" col-md-12   " style="position:relative; z-index:997;">
         <?php include "details.php" ?>
     </div>
 
