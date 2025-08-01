@@ -131,89 +131,13 @@ if (!isset($_SESSION['user_id'])) {
     <div class="dash-modal">
         <div class="dashboard">
             <h2>Welcome, <?= htmlspecialchars($_SESSION['username']) ?></h2>
-            <a id="openAddEntry">Add Translation</a>
+            <a href="translation-list.php">Translation List</a>
             <a href="quote-list.php">Quote List</a>
             <a href="course-list.php">Course List</a>
             <a href="logout.php">Logout</a>
         </div>
     </div>
-    <!-- Add Entry Modal -->
-    <div id="entryModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal('entryModal')">&times;</span>
-            <h2>Add Translation</h2>
-            <form id="entryForm">
-                <label for="web_page">Page Data Name:</label>
-                <input type="text" name="web_page">
 
-                <label for="element_id">Element ID:</label>
-                <input type="text" name="element_id" required>
-
-                <label for="en">English (en):</label>
-                <textarea name="en"></textarea>
-
-                <label for="cn">Chinese (cn):</label>
-                <textarea name="cn"></textarea>
-
-                <label for="kr">Korean (kr):</label>
-                <textarea name="kr"></textarea>
-
-                <label for="jp">Japanese (jp):</label>
-                <textarea name="jp"></textarea>
-
-                <div class="button-group">
-                    <button type="submit">Add Entry</button>
-                </div>
-                <div id="entryResult" class="result"></div>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        function closeModal(id) {
-            document.getElementById(id).style.display = "none";
-        }
-        document.getElementById('openAddEntry').addEventListener('click', () => {
-            document.getElementById('entryModal').style.display = 'flex';
-        });
-
-        // Close modal when clicking outside the modal content
-        window.addEventListener('click', function (event) {
-            const entryModal = document.getElementById('entryModal');
-            if (event.target === entryModal) entryModal.style.display = "none";
-        });
-
-        //Submit translation entry
-        document.getElementById('entryForm').addEventListener('submit', async function (e) {
-            e.preventDefault();
-            const form = e.target;
-            const formData = new FormData(form);
-            const resultDiv = document.getElementById('entryResult');
-
-            const response = await fetch('add-entry.php', {
-                method: 'POST',
-                body: formData
-            });
-
-            const text = await response.text();
-            const [status, message] = text.trim().split('|');
-
-            if (status === 'success') {
-                alert(' Translation added successfully! ');
-                form.reset();
-                closeModal('entryModal');
-                location.reload();
-            } else {
-                // Clear previous errors
-                resultDiv.innerHTML = '';
-
-                if (status === 'error') {
-                    resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
-                }
-            }
-        });
-
-    </script>
     <!-- Bootstrap JS Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
