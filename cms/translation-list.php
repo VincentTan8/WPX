@@ -138,6 +138,16 @@ while ($row = $result->fetch_assoc()) {
             overflow-y: auto;
         }
 
+        .addForm,
+        .editForm {
+            background-color: #ffffff;
+            width: 70%;
+            flex: 1;
+            padding: 40px;
+            min-width: 300px;
+            overflow-y: auto;
+        }
+
         .button {
             display: inline-block;
             padding: 0.75rem 1.5rem;
@@ -207,7 +217,7 @@ while ($row = $result->fetch_assoc()) {
             <span class="modal-close" onclick="closeModal('addModal')">&times;</span>
             <h2>Add Translation</h2>
             <div class="formContainer" style="justify-content: center">
-                <form id="addForm">
+                <form id="addForm" class="addForm">
                     <label for="web_page">Page Data Name:</label>
                     <input type="text" name="web_page">
 
@@ -240,7 +250,7 @@ while ($row = $result->fetch_assoc()) {
             <span class="modal-close" onclick="closeModal('editModal')">&times;</span>
             <h2>Edit Translation</h2>
             <div class="formContainer" style="justify-content: center">
-                <form id="editForm">
+                <form id="editForm" class="editForm">
                     <input id="editRefNum" type="hidden" name="ref_num" required>
 
                     <label for="web_page">Page Data Name:</label>

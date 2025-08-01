@@ -129,6 +129,26 @@ while ($row = $result->fetch_assoc()) {
             border-radius: 4px;
         }
 
+        .formContainer {
+            display: flex;
+            width: 100%;
+            height: 90%;
+            background-color: #ffffff;
+            font-family: 'Poppins';
+            border: 1px solid #ddd;
+            overflow-y: auto;
+        }
+
+        .addForm,
+        .editForm {
+            background-color: #ffffff;
+            width: 70%;
+            flex: 1;
+            padding: 40px;
+            min-width: 300px;
+            overflow-y: auto;
+        }
+
         .quote-button {
             display: inline-block;
             padding: 0.75rem 1.5rem;
@@ -195,25 +215,27 @@ while ($row = $result->fetch_assoc()) {
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal('quoteModal')">&times;</span>
             <h2>Add Quote</h2>
-            <form id="quoteForm">
-                <label>Quote Date</label>
-                <input type="date" name="quote_date" required>
+            <div class="formContainer" style="justify-content: center">
+                <form id="quoteForm" class="addForm">
+                    <label>Quote Date</label>
+                    <input type="date" name="quote_date" required>
 
-                <label>Author</label>
-                <input type="text" name="author">
+                    <label>Author</label>
+                    <input type="text" name="author">
 
-                <label for="en">English Quote<div id="enError"
-                        style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
+                    <label for="en">English Quote<div id="enError"
+                            style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
 
-                <textarea name="en" id="en" required></textarea>
+                    <textarea name="en" id="en" required></textarea>
 
-                <label for="cn">Chinese Quote <div id="cnError"
-                        style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
+                    <label for="cn">Chinese Quote <div id="cnError"
+                            style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
 
-                <textarea name="cn" id="cn"></textarea>
+                    <textarea name="cn" id="cn"></textarea>
 
-                <button class="quote-button" type="submit">Submit</button>
-            </form>
+                    <button class="quote-button" type="submit">Submit</button>
+                </form>
+            </div>
             <div id="quoteResult"></div>
         </div>
     </div>
@@ -222,27 +244,29 @@ while ($row = $result->fetch_assoc()) {
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal('editQuoteModal')">&times;</span>
             <h2>Edit Quote</h2>
-            <form id="editQuoteForm">
-                <input id="editQuoteRefNum" type="hidden" name="ref_num" required>
+            <div class="formContainer" style="justify-content: center">
+                <form id="editQuoteForm" class="editForm">
+                    <input id="editQuoteRefNum" type="hidden" name="ref_num" required>
 
-                <label>Quote Date</label>
-                <input id="editQuoteDate" type="date" name="quote_date" required>
+                    <label>Quote Date</label>
+                    <input id="editQuoteDate" type="date" name="quote_date" required>
 
-                <label>Author</label>
-                <input id="editQuoteAuthor" type="text" name="author">
+                    <label>Author</label>
+                    <input id="editQuoteAuthor" type="text" name="author">
 
-                <label for="en">English Quote<div id="editENError"
-                        style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
+                    <label for="en">English Quote<div id="editENError"
+                            style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
 
-                <textarea id="editQuoteEN" name="en" required></textarea>
+                    <textarea id="editQuoteEN" name="en" required></textarea>
 
-                <label for="cn">Chinese Quote <div id="editCNError"
-                        style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
+                    <label for="cn">Chinese Quote <div id="editCNError"
+                            style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
 
-                <textarea id="editQuoteCN" name="cn"></textarea>
+                    <textarea id="editQuoteCN" name="cn"></textarea>
 
-                <button class="quote-button" type="submit">Submit</button>
-            </form>
+                    <button class="quote-button" type="submit">Submit</button>
+                </form>
+            </div>
             <div id="editQuoteResult"></div>
         </div>
     </div>
