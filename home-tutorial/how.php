@@ -158,7 +158,7 @@
 
     @media (max-width: 768px) {
         .enroll-container {
-            margin: 100px 20px 0;
+            margin: 50px 0 0;
         }
 
         .enroll-container h2 {

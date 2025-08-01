@@ -95,7 +95,7 @@
     @media (max-width: 768px) {
 
         .e-sim-activation {
-            margin: 100px 20px 0 20px;
+            margin: 60px 0 0 0;
 
         }
 

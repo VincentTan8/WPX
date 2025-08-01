@@ -189,6 +189,7 @@
             width: 100%;
             height: auto;
             padding: 60px 20px;
+            margin-top: 60px;
         }
 
         .trial-class-inner {
@@ -245,6 +246,10 @@
         .trial-image.people-img,
         .trial-image.zigzag-img {
             margin-left: 0;
+        }
+
+        .trial-right {
+            padding: 0px;
         }
     }
 </style>

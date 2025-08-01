@@ -137,6 +137,12 @@
             padding: 0 20px;
         }
 
+        .set-up-guides {
+            margin-top: 60px;
+
+        }
+
+
         .set-up-guides-header {
             font-size: 28px;
             text-align: left;
@@ -190,7 +196,7 @@
         }
 
         .provider-table td:last-child a {
-            max-width: 100px;
+            max-width: 50px;
 
             display: inline-block;
         }

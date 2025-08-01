@@ -86,6 +86,12 @@
         letter-spacing: 1.3px;
         padding: 0 20px;
     }
+
+    @media (max-width: 768px) {
+        .teacher-section {
+            margin-top: 0px;
+        }
+    }
 </style>
 
 <div class="teacher-section">

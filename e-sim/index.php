@@ -45,7 +45,7 @@ include "../connections/dbname.php";
     }
 
     .hero-content {
-        text-align: center;
+        /* text-align: center; */
         z-index: 2;
         position: relative;
         padding-top: 250px;
@@ -58,6 +58,7 @@ include "../connections/dbname.php";
         font-weight: 700;
         color: #18181B;
         font-family: 'Poppins', sans-serif;
+        text-align: center;
     }
 
     .hero-content p {
@@ -79,13 +80,13 @@ include "../connections/dbname.php";
         .hero-content {
             width: 90%;
             padding-top: 150px;
-            text-align: justify;
+            text-align: center;
         }
 
         .hero-content h1 {
             font-size: 28px;
             line-height: 1.4;
-            text-align: justify;
+            text-align: center;
         }
 
         .hero-content p {
@@ -112,8 +113,7 @@ include "../connections/dbname.php";
         <h1>
             <span id="hero-header">
                 <span id="hero-title-1">Arrive. Connect. Explore - with</span> <span id="hero-title-2"
-                    style="color:#F2AE14;">WeTalks's</span>
-                <span id="hero-title-3">eSIM
+                    style="color:#F2AE14;">WeTalk's</span> <span id="hero-title-3">eSIM
                     Guide</span>
             </span>
         </h1>

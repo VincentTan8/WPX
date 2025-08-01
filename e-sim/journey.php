@@ -47,7 +47,7 @@
 
     @media (max-width: 768px) {
         .e-sim-journey {
-            margin: 60px 20px 0 20px;
+            margin: 60px 0 0 0;
         }
 
         .e-sim-journey-header {

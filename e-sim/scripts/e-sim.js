@@ -158,7 +158,7 @@ function populateTable(countryCode) {
         row.innerHTML = `
             <td>${item.provider}</td>
             <td>${item.plan}</td>
-            <td><a href="${item.link}" target="_blank">${item.link}</a></td>
+            <td><a href="${item.link}" target="_blank">${item.provider}</a></td>
         `;
         providerTableBody.appendChild(row);
     });

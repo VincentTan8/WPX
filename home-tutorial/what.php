@@ -44,7 +44,7 @@
     @media (max-width: 768px) {
         .what-container {
             flex-direction: column;
-            margin: 60px 20px 0 20px;
+            margin: 60px 0 0 0;
             gap: 24px;
             align-items: flex-start;
         }

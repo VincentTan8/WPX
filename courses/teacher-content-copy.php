@@ -110,7 +110,7 @@ $index = 0;
     </ol>
 
     <div class="carousel-inner"
-        style=" box-shadow:0 0 10px rgba(0, 0, 0, 0.1); border:1px solid #ddd; padding:20px; width:90vw; height:55vh;">
+        style=" box-shadow:0 0 10px rgba(0, 0, 0, 0.1); border:1px solid #ddd; padding:20px;  height:55vh;">
         <?php
         mysqli_data_seek($result, 0);
         $index = 0;
