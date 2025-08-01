@@ -239,7 +239,7 @@ $hide_panda = (
         </div>
         <nav class="navbar navbar-top-default navbar-expand-lg full-nav center-logo nav-line">
             <div class="container">
-                <a class="logo link" href="javascript:void(0)" style="margin-top: -10px;">
+                <a class="logo link" href="../index/main-page.php">
                     <img src="../resources/img/logo.png" alt="logo" title="Logo" class="logo-default d-lg-none">
                     <img src="../resources/img/logo.png" alt="logo" title="Logo" class="logo-scrolled">
                 </a>

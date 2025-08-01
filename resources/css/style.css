@@ -396,6 +396,7 @@ ul {
     background: -webkit-linear-gradient(left, #fc2a40, #ff5606);
     background: linear-gradient(to right, #fc2a40, #ff5606);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fc2a40', endColorstr='#ff5606', GradientType=1);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -588,8 +589,9 @@ h6 {
     position: absolute;
     left: 50%;
     transform: translateX(-45%);
-    max-width: 150px;
     top: 8px;
+    max-width: 150px;
+    margin-top: -10px;
 }
 
 .logo {
@@ -662,12 +664,14 @@ h6 {
     top: 50%;
     margin-top: 4px;
     right: 0;
+    transition: all linear 300ms;
     -webkit-transition: all linear 300ms;
 }
 
 .side-nav-btn:hover span:nth-child(1),
 .side-nav-btn:hover span:nth-child(3) {
     width: 60%;
+    transition: all linear 300ms;
     -webkit-transition: all linear 300ms;
 }
 
@@ -1598,7 +1602,6 @@ li {
     left: 0;
 }
 
-.food-img2-after {}
 
 .book-img-width {
     max-width: 190px;
@@ -2826,8 +2829,6 @@ ul {
     border-radius: 5px;
 }
 
-.widget_search .input-group {}
-
 .widget_search .form-control,
 .widget_search .input-group-addon {
     border-color: #d6d5d5;
@@ -2934,7 +2935,7 @@ ul.social_icon li,
 
 
 .webcats li a>span {
-    display: inline-block;
+    display: block;
     margin-left: 5px;
     -webkit-border-radius: 50%;
     border-radius: 50%;
@@ -3189,7 +3190,7 @@ form.findus textarea {
     }
 
     .center-logo .logo {
-        position: absolute;
+        max-width: 115px;
     }
 
     .logo {
@@ -3476,6 +3477,10 @@ form.findus textarea {
         left: unset;
         top: -37%;
         max-width: 115px;
+    }
+
+    .header-appear .logo {
+        top: 37%;
     }
 
     .rare-box {

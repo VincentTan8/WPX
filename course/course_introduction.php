@@ -3,11 +3,11 @@
         <?php include "breadcrumb.php" ?>
     </div>
 
-    <div class=" col-md-12   " style="position:relative; z-index:1000;">
+    <div class=" col-md-12   " style="position:relative; z-index:11;">
         <?php include "details.php" ?>
     </div>
 
-    <div style="position:relative; z-index:200;">
+    <div style="position:relative; z-index:-1;">
         <div class=" col-md-12  ">
             <?php include "related.php" ?>
         </div>

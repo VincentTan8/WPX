@@ -1,20 +1,20 @@
 <?php
-include "../index/config/conf.php";
+include "../connections/dbname.php";
 
-$tablename = $database . ".`wt_quotes`";
-$sql = "SELECT ref_num, quote_date, author, en, cn FROM $tablename ORDER BY quote_date DESC";
+$tablename = $database . ".`wt_translations`";
+$sql = "SELECT * FROM $tablename";
 $result = $conn->query($sql);
 $result->data_seek(0); // reset pointer if already used in a loop
-$quoteDataArray = [];
+$translationDataArray = [];
 while ($row = $result->fetch_assoc()) {
     $ref = $row['ref_num'];
-    $quoteDataArray[$ref] = $row;
+    $translationDataArray[$ref] = $row;
 }
 ?>
 <?php include "../includes/header.php"; ?>
 
 <head>
-    <title>Quote List</title>
+    <title>Translations List</title>
 
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
@@ -26,13 +26,12 @@ while ($row = $result->fetch_assoc()) {
     <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
 
     <style>
-        .quote-table {
+        .data-table {
             padding: 60px;
             margin-top: 8rem;
-
         }
 
-        #quoteTable {
+        #dataTable {
             border-collapse: collapse;
         }
 
@@ -46,7 +45,7 @@ while ($row = $result->fetch_assoc()) {
         }
 
         /* Table header (th) styling */
-        #quoteTable thead th {
+        #dataTable thead th {
             background-color: #0ca83e;
             color: white;
             font-weight: bold;
@@ -55,31 +54,31 @@ while ($row = $result->fetch_assoc()) {
         }
 
         /* Table body (td) styling */
-        #quoteTable tbody td {
+        #dataTable tbody td {
             background-color: rgba(255, 176, 0, 0.25);
             color: black;
 
             padding: 0.75rem;
         }
 
-        #quoteTable th,
-        #quoteTable td {
+        #dataTable th,
+        #dataTable td {
             border: 1px solid grey;
         }
 
 
         @media screen and (max-width: 768px) {
-            .quote-table {
+            .data-table {
                 padding: 20px;
             }
         }
 
-        /* Allow wrapping only for English and Chinese (columns 4 and 5) */
-        #quoteTable td:nth-child(4),
-        #quoteTable td:nth-child(5) {
+        /* Allow wrapping only for English and Chinese (columns 5 and 6) */
+        #dataTable td:nth-child(5),
+        #dataTable td:nth-child(6) {
             white-space: normal !important;
             word-wrap: break-word;
-            width: 39%;
+            width: 30%;
         }
 
         /* Modal Styles */
@@ -149,7 +148,7 @@ while ($row = $result->fetch_assoc()) {
             overflow-y: auto;
         }
 
-        .quote-button {
+        .button {
             display: inline-block;
             padding: 0.75rem 1.5rem;
             background-color: #ffb000;
@@ -166,25 +165,26 @@ while ($row = $result->fetch_assoc()) {
 </head>
 
 <body>
-    <div class="quote-table">
+    <div class="data-table">
         <div style="display: flex; justify-content: space-between; margin-bottom:2rem;">
-            <h2>Quote of the Day</h2>
+            <h2>Translations</h2>
 
             <div style="text-align: center;">
-                <a class="quote-button" id="openAddQuote">
-                    Add Quote
+                <a class="button" id="openAddTranslation">
+                    Add Translation
                 </a>
             </div>
         </div>
 
-        <table id="quoteTable" class="display nowrap" style="width:100%;">
+        <table id="dataTable" class="display nowrap" style="width:100%;">
             <thead>
                 <tr>
                     <th></th>
-                    <th>Date</th>
-                    <th>Author</th>
-                    <th>English</th>
-                    <th>Chinese</th>
+                    <th>Ref Num</th>
+                    <th>Web Page</th>
+                    <th>Element ID</th>
+                    <th>EN</th>
+                    <th>CN</th>
                 </tr>
             </thead>
             <tbody>
@@ -193,90 +193,97 @@ while ($row = $result->fetch_assoc()) {
                     while ($row = $result->fetch_assoc()): ?>
                         <tr>
                             <td>
-                                <a class="quote-button editQuote" data-refnum="<?= $row['ref_num'] ?>">
+                                <a class="button edit" data-refnum="<?= $row['ref_num'] ?>">
                                     Edit <i class="fas fa-edit"></i>
                                 </a>
                             </td>
-                            <td><?= $row['quote_date'] ?? '' ?></td>
-                            <td><?= $row['author'] ?? '' ?></td>
+                            <td><?= $row['ref_num'] ?? '' ?></td>
+                            <td><?= $row['web_page'] ?? '' ?></td>
+                            <td><?= $row['element_id'] ?? '' ?></td>
                             <td><?= $row['en'] ?? '' ?></td>
                             <td><?= $row['cn'] ?? '' ?></td>
                         </tr>
                     <?php endwhile; ?>
                 <?php else: ?>
                     <tr>
-                        <td colspan="5">No quotes found.</td>
+                        <td colspan="5">No translations found.</td>
                     </tr>
                 <?php endif; ?>
             </tbody>
         </table>
     </div>
-    <div id="quoteModal" class="modal">
+    <div id="addModal" class="modal">
         <div class="modal-content">
-            <span class="modal-close" onclick="closeModal('quoteModal')">&times;</span>
-            <h2>Add Quote</h2>
+            <span class="modal-close" onclick="closeModal('addModal')">&times;</span>
+            <h2>Add Translation</h2>
             <div class="formContainer" style="justify-content: center">
-                <form id="quoteForm" class="addForm">
-                    <label>Quote Date</label>
-                    <input type="date" name="quote_date" required>
+                <form id="addForm" class="addForm">
+                    <label for="web_page">Page Data Name:</label>
+                    <input type="text" name="web_page">
 
-                    <label>Author</label>
-                    <input type="text" name="author">
+                    <label for="element_id">Element ID:</label>
+                    <input type="text" name="element_id" required>
 
-                    <label for="en">English Quote<div id="enError"
-                            style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
+                    <label for="en">English (en):</label>
+                    <textarea name="en"></textarea>
 
-                    <textarea name="en" id="en" required></textarea>
+                    <label for="cn">Chinese (cn):</label>
+                    <textarea name="cn"></textarea>
 
-                    <label for="cn">Chinese Quote <div id="cnError"
-                            style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
+                    <label for="kr">Korean (kr):</label>
+                    <textarea name="kr"></textarea>
 
-                    <textarea name="cn" id="cn"></textarea>
+                    <label for="jp">Japanese (jp):</label>
+                    <textarea name="jp"></textarea>
 
-                    <button class="quote-button" type="submit">Submit</button>
+                    <div class="button-group">
+                        <button class="button" type="submit">Add Translation</button>
+                    </div>
+                    <div id="entryResult" class="result"></div>
                 </form>
             </div>
-            <div id="quoteResult"></div>
         </div>
     </div>
 
-    <div id="editQuoteModal" class="modal">
+    <div id="editModal" class="modal">
         <div class="modal-content">
-            <span class="modal-close" onclick="closeModal('editQuoteModal')">&times;</span>
-            <h2>Edit Quote</h2>
+            <span class="modal-close" onclick="closeModal('editModal')">&times;</span>
+            <h2>Edit Translation</h2>
             <div class="formContainer" style="justify-content: center">
-                <form id="editQuoteForm" class="editForm">
-                    <input id="editQuoteRefNum" type="hidden" name="ref_num" required>
+                <form id="editForm" class="editForm">
+                    <input id="editRefNum" type="hidden" name="ref_num" required>
 
-                    <label>Quote Date</label>
-                    <input id="editQuoteDate" type="date" name="quote_date" required>
+                    <label for="web_page">Page Data Name:</label>
+                    <input id="editWebPage" type="text" name="web_page">
 
-                    <label>Author</label>
-                    <input id="editQuoteAuthor" type="text" name="author">
+                    <label for="element_id">Element ID:</label>
+                    <input id="editElementID" type="text" name="element_id" required>
 
-                    <label for="en">English Quote<div id="editENError"
-                            style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
+                    <label for="en">English (en):</label>
+                    <textarea id="editEN" name="en"></textarea>
 
-                    <textarea id="editQuoteEN" name="en" required></textarea>
+                    <label for="cn">Chinese (cn):</label>
+                    <textarea id="editCN" name="cn"></textarea>
 
-                    <label for="cn">Chinese Quote <div id="editCNError"
-                            style="color:red; font-size: 0.9rem; margin-bottom: 5px;"></div></label>
+                    <label for="kr">Korean (kr):</label>
+                    <textarea id="editKR" name="kr"></textarea>
 
-                    <textarea id="editQuoteCN" name="cn"></textarea>
+                    <label for="jp">Japanese (jp):</label>
+                    <textarea id="editJP" name="jp"></textarea>
 
-                    <button class="quote-button" type="submit">Submit</button>
+                    <button class="button" type="submit">Submit</button>
                 </form>
             </div>
-            <div id="editQuoteResult"></div>
+            <div id="editResult"></div>
         </div>
     </div>
 
     <script>
         //pass php courses array object into js
-        const quoteData = <?= json_encode($quoteDataArray, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;
+        const translationData = <?= json_encode($translationDataArray, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;
 
         $(document).ready(function () {
-            $('#quoteTable').DataTable({
+            $('#dataTable').DataTable({
                 responsive: true,
                 columnDefs: [
                     {
@@ -287,24 +294,26 @@ while ($row = $result->fetch_assoc()) {
                 ]
             });
 
-            document.getElementById('openAddQuote').addEventListener('click', () => {
-                document.getElementById('quoteModal').style.display = 'flex';
+            document.getElementById('openAddTranslation').addEventListener('click', () => {
+                document.getElementById('addModal').style.display = 'flex';
             });
 
             document.addEventListener('click', (e) => {
-                //Open Edit Quote Info
-                const editButton = e.target.closest('.editQuote');
+                //Open Edit Translation Info
+                const editButton = e.target.closest('.edit');
                 if (editButton) {
                     const ref = editButton.dataset.refnum;
-                    const row = quoteData[ref];
-                    if (!row) return alert('Quote data not found.');
+                    const row = translationData[ref];
+                    if (!row) return alert('Translation data not found.');
 
-                    document.getElementById('editQuoteModal').style.display = 'flex';
-                    document.getElementById('editQuoteRefNum').value = row.ref_num;
-                    document.getElementById('editQuoteDate').value = row.quote_date;
-                    document.getElementById('editQuoteAuthor').value = row.author;
-                    document.getElementById('editQuoteEN').value = row.en;
-                    document.getElementById('editQuoteCN').value = row.cn;
+                    document.getElementById('editModal').style.display = 'flex';
+                    document.getElementById('editRefNum').value = row.ref_num;
+                    document.getElementById('editWebPage').value = row.web_page;
+                    document.getElementById('editElementID').value = row.element_id;
+                    document.getElementById('editEN').value = row.en;
+                    document.getElementById('editCN').value = row.cn;
+                    document.getElementById('editKR').value = row.kr;
+                    document.getElementById('editJP').value = row.jp;
                 }
             });
         });
@@ -313,14 +322,14 @@ while ($row = $result->fetch_assoc()) {
             document.getElementById(id).style.display = "none";
         }
 
-        // Submit Add Quote Form
-        document.getElementById('quoteForm').addEventListener('submit', async function (e) {
+        // Submit Add Form
+        document.getElementById('addForm').addEventListener('submit', async function (e) {
             e.preventDefault();
             const form = e.target;
             const formData = new FormData(form);
-            const resultDiv = document.getElementById('quoteResult');
+            const resultDiv = document.getElementById('entryResult');
 
-            const response = await fetch('../index/scripts/add-quote.php', {
+            const response = await fetch('add-translation.php', {
                 method: 'POST',
                 body: formData
             });
@@ -329,38 +338,28 @@ while ($row = $result->fetch_assoc()) {
             const [status, message] = text.trim().split('|');
 
             if (status === 'success') {
-                alert(' Quote added successfully! ');
+                alert(' Translation added successfully! ');
                 form.reset();
-                closeModal('quoteModal');
+                closeModal('addModal');
                 location.reload();
             } else {
                 // Clear previous errors
-                document.getElementById('enError').textContent = '';
-                document.getElementById('cnError').textContent = '';
                 resultDiv.innerHTML = '';
 
                 if (status === 'error') {
-                    try {
-                        const errors = JSON.parse(message); // `field` now contains JSON string
-                        if (errors.en) document.getElementById('enError').textContent = errors.en;
-                        if (errors.cn) document.getElementById('cnError').textContent = errors.cn;
-                    } catch (e) {
-                        resultDiv.innerHTML = "<p style='color:red;'>" + field + "</p>";
-                    }
-                } else {
-                    resultDiv.innerHTML = "<p style='color:red;'>" + msg + "</p>";
+                    resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
                 }
             }
         });
 
-        // Submit Edit Quote Form
-        document.getElementById('editQuoteForm').addEventListener('submit', async function (e) {
+        // Submit Edit Form
+        document.getElementById('editForm').addEventListener('submit', async function (e) {
             e.preventDefault();
             const form = e.target;
             const formData = new FormData(form);
-            const resultDiv = document.getElementById('editQuoteResult');
+            const resultDiv = document.getElementById('editResult');
 
-            const response = await fetch('../index/scripts/edit-quote.php', {
+            const response = await fetch('edit-translation.php', {
                 method: 'POST',
                 body: formData
             });
@@ -369,41 +368,31 @@ while ($row = $result->fetch_assoc()) {
             const [status, message] = text.trim().split('|');
 
             if (status === 'success') {
-                alert(' Quote edited successfully! ');
+                alert(' Translation edited successfully! ');
                 form.reset();
-                closeModal('editQuoteModal');
+                closeModal('editModal');
                 location.reload();
             } else {
                 alert('Failed to edit ');
                 // Clear previous errors
-                document.getElementById('editENError').textContent = '';
-                document.getElementById('editCNError').textContent = '';
                 resultDiv.innerHTML = '';
 
                 if (status === 'error') {
-                    try {
-                        const errors = JSON.parse(message); // `field` now contains JSON string
-                        if (errors.en) document.getElementById('editENError').textContent = errors.en;
-                        if (errors.cn) document.getElementById('editCNError').textContent = errors.cn;
-                    } catch (e) {
-                        resultDiv.innerHTML = "<p style='color:red;'>" + e + "</p>";
-                    }
-                } else {
-                    resultDiv.innerHTML = "<p style='color:red;'>" + status + "</p>";
+                    resultDiv.innerHTML = "<p style='color:red;'>" + message + "</p>";
                 }
             }
         });
 
         // Close modal when clicking outside the modal content
         window.addEventListener('click', function (event) {
-            const quoteModal = document.getElementById('quoteModal');
-            const editQuoteModal = document.getElementById('editQuoteModal');
+            const addModal = document.getElementById('addModal');
+            const editModal = document.getElementById('editModal');
 
-            if (event.target === quoteModal) {
-                quoteModal.style.display = "none";
+            if (event.target === addModal) {
+                addModal.style.display = "none";
             }
-            if (event.target === editQuoteModal) {
-                editQuoteModal.style.display = "none";
+            if (event.target === editModal) {
+                editModal.style.display = "none";
             }
         });
 
