@@ -89,6 +89,8 @@ $hide_panda = (
     $m_recording_course = 'Recording Course';
     $m_course = 'Course';
     $m_linguistic = 'Linguistics';
+    $m_language_courses = 'Language Courses';
+    $m_home_tutorial = 'Home School';
     $m_science = 'Science';
     $m_culture = 'Chinese Culture Learning';
     $m_teachers = 'Teachers';
@@ -116,6 +118,8 @@ $hide_panda = (
         $m_recording_course = '录播课程';
         $m_course = '课程介绍';
         $m_linguistic = '言学';
+        $m_language_courses = '语言课程';
+        $m_home_tutorial = '家庭教程';
         $m_science = '科学';
         $m_culture = '国学';
         $m_teachers = '进贤进能';
@@ -156,7 +160,7 @@ $hide_panda = (
         }
 
         .navbar-top-default.center-logo .logo {
-            transform: translateX(-177px);
+            /* transform: translateX(0px); */
         }
 
         /* Show submenu on hover of the parent list item */
@@ -238,7 +242,7 @@ $hide_panda = (
             </div>
         </div>
         <nav class="navbar navbar-top-default navbar-expand-lg full-nav center-logo nav-line">
-            <div class="container">
+            <div class="container" style="padding-right: 0; padding-left: 0;">
                 <a class="logo link" href="../index/main-page.php">
                     <img src="../resources/img/logo.png" alt="logo" title="Logo" class="logo-default d-lg-none">
                     <img src="../resources/img/logo.png" alt="logo" title="Logo" class="logo-scrolled">
@@ -246,9 +250,9 @@ $hide_panda = (
 
                 <div class="collapse navbar-collapse d-none d-lg-block">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link link " href="../index/main-page.php"><?php echo $m_home ?></a>
-                        </li>
+                        </li> -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle <?php echo $menu_bar2 ?>" href="#" id="navbarDropdown1"
                                 role="button">
@@ -284,30 +288,20 @@ $hide_panda = (
                             </div>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link link <?php echo $menu_bar3 ?>"
-                                href="../linguistic/"><?php echo $m_linguistic ?></a>
-
-
-
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  <?php echo $menu_bar3 ?>" href="../courses/"
+                                id="navbarDropdown1" role="button">
+                                <?php echo $m_linguistic ?>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                <a class="dropdown-item" href="../courses/"><?php echo $m_language_courses ?></a>
+                                <a class="dropdown-item" href="../home-tutorial/"><?php echo $m_home_tutorial ?></a>
+                            </div>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link link  <?php echo $menu_bar4 ?>"
                                 href="../teacher/"><?php echo $m_teachers ?></a>
-                        </li>
-
-
-
-                        <li class="nav-item">
-                            <a class="nav-link link  <?php echo $menu_bar5 ?>" href="../news/"><?php echo $m_news ?></a>
-                        </li>
-
-                    </ul>
-                    <ul class="nav navbar-nav">
-
-                        <li class="nav-item">
-                            <a class="nav-link link  <?php echo $menu_bar6 ?>"
-                                href="../study-abroad/"><?php echo $m_study_abroad ?></a>
                         </li>
 
                         <li class="nav-item dropdown">
@@ -325,15 +319,24 @@ $hide_panda = (
                                 <a class="dropdown-item" href="../tour/?dest=TW"><?php echo $m_taiwan ?></a>
                             </div>
                         </li>
+                    </ul>
 
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link link  <?php echo $menu_bar5 ?>" href="../news/"><?php echo $m_news ?></a>
+                        </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link link  <?php echo $menu_bar6 ?>"
+                                href="../study-abroad/"><?php echo $m_study_abroad ?></a>
+                        </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle  <?php echo $menu_bar7 ?>" href="#" id="navbarDropdown2"
+                            <a class="nav-link dropdown-toggle  <?php echo $menu_bar7 ?>" href="#" id="navbarDropdown3"
                                 role="button">
                                 <?php echo $m_company ?>
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
                                 <a class="dropdown-item" href="../charity/"><?php echo $m_charity ?></a>
                                 <a class="dropdown-item" href="../about-us/"><?php echo $m_about_us ?></a>
                                 <a class="dropdown-item" href="../campus-philippines/"><?php echo $m_campus ?></a>
@@ -341,7 +344,7 @@ $hide_panda = (
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" d="navbarDropdown2" role="button">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button">
                                 <svg style="transform: translateY(-3px);" xmlns="http://www.w3.org/2000/svg" width="22"
                                     height="22" viewBox="0 0 22 22" fill="none">
                                     <!-- Outer Border -->
@@ -360,7 +363,7 @@ $hide_panda = (
                                 </svg>
                             </a>
 
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
                                 <a class="dropdown-item" href="../includes/currency.php?currency=SGD">
                                     SGD
                                 </a>
@@ -377,12 +380,12 @@ $hide_panda = (
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle  <?php echo $menu_bar8 ?>" href="#" id="navbarDropdown2"
+                            <a class="nav-link dropdown-toggle  <?php echo $menu_bar8 ?>" href="#" id="navbarDropdown4"
                                 role="button">
                                 <i class="fas fa-globe"></i>
                             </a>
 
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
                                 <a class="dropdown-item" href="../includes/language.php?lang=EN">
                                     <img src="../resources/img/en.png" alt="English Flag"
                                         style="width: 20px; height: 20px; margin-right: 8px;">

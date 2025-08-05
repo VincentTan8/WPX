@@ -7,7 +7,7 @@ if (!isset($_SESSION)) {
 
 <?php
 // Fetch all text given a language and webpage
-include "../config/conf.php";
+include "../../connections/dbname.php";
 
 $language = $_POST['language'];  //en, cn, kr, jp
 $page = $_POST['page'];
