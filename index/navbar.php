@@ -44,6 +44,7 @@
 
     .dropdown-menu {
         animation: .5s slidedown;
+        --bs-dropdown-link-active-bg: #c9c9c9;
     }
 
     @keyframes slidedown {
@@ -255,9 +256,19 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link hover-underline" id="sr-nav-linguistics"
-                        href="https://wetalk.com/linguistic/">Linguistic</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle hover-underline" href="https://wetalk.com/courses/"
+                        id="sr-nav-linguistics" role="button">
+                        Linguistics<i class="material-icons">arrow_drop_down</i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="linguisticsDropdown">
+                        <li><a class="dropdown-item" id="sr-nav-language-courses"
+                                href="https://wetalk.com/courses/">Language Courses</a>
+                        </li>
+                        <li><a class="dropdown-item" id="sr-nav-home-tutorial"
+                                href="https://wetalk.com/home-tutorial">Home School</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link hover-underline" id="sr-nav-teachers"
@@ -277,7 +288,7 @@
                         id="sr-nav-educ-tour" role="button">
                         Educational Tours<i class="material-icons">arrow_drop_down</i>
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="eduToursDropdown">
+                    <ul class="dropdown-menu" aria-labelledby="educToursDropdown">
                         <li><a class="dropdown-item" id="sr-nav-singapore"
                                 href="https://wetalk.com/tour?dest=SG">Singapore</a>
                         </li>

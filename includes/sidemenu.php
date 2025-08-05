@@ -19,13 +19,11 @@
 
         .nav-item_side {
             position: relative;
-            margin-bottom: 10px;
-            /* Optional: spacing between nav items */
         }
 
         .nav-link_side {
             display: block;
-            padding: 10px 15px;
+            padding: 7.5px 15px;
             text-decoration: none;
             color: #ffffff;
             background-color: rgba(0, 0, 0, 0.7);
@@ -109,7 +107,7 @@
 <body>
     <div class="navbar-nav_side" style="margin-top: 70px;">
         <ul>
-            <li>
+            <li style="padding: 7.5px 0px;">
                 <a style="color:#ffffff; margin-left: 15px;
                     background-color: transparent;
                     text-decoration: none;" href="../">Home</a>
@@ -134,8 +132,8 @@
                             <li><a href="#course2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chinese Culture Learning</a></li>
                             <li><a href="#course3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Science</a></li>
                         </ul> -->
-                        <a href="#s"
-                            class="nav-link_side  dropdown-toggle  ">&nbsp;<!--<i class="fas fa-book"></i>-->Course</a>
+                        <a href="#s" class="nav-link_side  dropdown-toggle  "
+                            style="margin-left: 15px;">&nbsp;<!--<i class="fas fa-book"></i>-->Course</a>
                         <ul class="submenu">
                             <li><a href="../chinese/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linguistics</a>
                             </li>
@@ -146,46 +144,44 @@
                     </li>
                 </ul>
             </li>
-            <li style="margin-top: -5px;">
-                <a style="color:#ffffff; margin-left: 15px;
-                    background-color: transparent;
-                    text-decoration: none;" href="../linguistic/">Linguistics</a>
+            <li class="nav-item_side">
+                <a class="nav-link_side dropdown-toggle" href="../courses/">Linguistics</a>
+                <ul class="submenu">
+                    <li><a href="../courses/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Language Courses</a></li>
+                    <li><a href="../home-tutorial/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home School</a></li>
+                </ul>
             </li>
 
-            <li style="margin-top: 15px;">
+            <li style="padding: 7.5px 0px;">
                 <a style="color:#ffffff; margin-left: 15px;
                     background-color: transparent;
                     text-decoration: none;" href="../teacher/">Teachers</a>
             </li>
 
-            <li style="margin-top: 15px;">
+            <li style="padding: 7.5px 0px;">
                 <a style="color:#ffffff; margin-left: 15px;
                     background-color: transparent;
                     text-decoration: none;" href="../news/">News</a>
             </li>
 
-
-
-            <li style="margin-top: 15px;">
+            <li style="padding: 7.5px 0px;">
                 <a style="color:#ffffff; margin-left: 15px;
                     background-color: transparent;
                     text-decoration: none;" href="../study-abroad/">Study Abroad</a>
-
             </li>
-            <li class="nav-item_side" style="margin-top: 10px;">
+
+            <li class="nav-item_side">
                 <a class="nav-link_side dropdown-toggle" href="../educational-tour/">Educational Tours</a>
                 <ul class="submenu">
                     <li><a href="../educational-tour/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General Info</a></li>
                     <li><a href="../tour/?dest=SG">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Singapore</a></li>
-
                     <li><a href="../tour/?dest=CN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;China</a></li>
-
                     <li><a href="../tour/?dest=JP">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Japan</a></li>
                     <li><a href="../tour/?dest=PH">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Philippines</a></li>
                     <li><a href="../tour/?dest=TW">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taiwan</a></li>
                 </ul>
             </li>
-            <li class="nav-item_side" style="margin-top: 10px;">
+            <li class="nav-item_side">
                 <a class="nav-link_side dropdown-toggle" href="#s">Company</a>
                 <!-- Submenu for Delicious Food -->
                 <ul class="submenu">
@@ -195,18 +191,18 @@
                 </ul>
             </li>
 
-            <li style="margin-top: 10px;">
+            <li style="padding: 7.5px 0px;;">
                 <a style="color:#ffffff; margin-left: 15px;
                     background-color: transparent;
                     text-decoration: none;" href="#contact">Sign In</a>
             </li>
 
-            <li style="margin-top: 15px;">
+            <li style="padding: 7.5px 0px;">
                 <a style="color:#ffffff; margin-left: 15px;
                     background-color: transparent;
                     text-decoration: none;" href="#contact">Sign Up</a>
             </li>
-            <li class="nav-item_side" style="margin-top: 10px;">
+            <li class="nav-item_side">
                 <a class="nav-link_side dropdown-toggle" href="#s">Language</a>
                 <ul class="submenu">
                     <li><a href="../includes/language.php?lang=EN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;English</a></li>

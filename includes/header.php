@@ -11,8 +11,6 @@ $hide_panda = (
 
 ?>
 
-
-
 <head>
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -25,7 +23,7 @@ $hide_panda = (
     <!-- keywords -->
     <meta name="keywords" content="">
     <!-- Page Title -->
-    <title>WeTalk - WeTalk International Education Pte. Ltd.</title>
+    <title>WeTalk - More Than Language</title>
 
     <!-- Favicon -->
     <link rel="icon" href="../resources/img/favicon.ico">
@@ -102,13 +100,12 @@ $hide_panda = (
     $m_about_us = 'About Us';
     $m_campus = 'Campus';
     $m_sign_in = 'Sign In';
-    $m_sigun_up = 'Sign Up';
+    $m_sign_up = 'Sign Up';
     $m_taiwan = 'Taiwan';
     $m_china = 'China';
     $m_singapore = 'Singapore';
     $m_japan = 'Japan';
     $m_philippines = 'Philippines';
-
 
 
     if ($lang == '_cn') {
@@ -131,19 +128,14 @@ $hide_panda = (
         $m_about_us = '关于我们';
         $m_campus = '校区介绍';
         $m_sign_in = '登录';
-        $m_sigun_up = '注册';
+        $m_sign_up = '注册';
         $m_taiwan = '台湾';
         $m_china = '中国';
         $m_singapore = '新加坡';
         $m_japan = '日本';
         $m_philippines = '菲律宾';
-
-
     }
-
-
     ?>
-
 
     <style>
         /* Hide submenu by default */
@@ -229,7 +221,6 @@ $hide_panda = (
 <!--End Preloader-->
 
 <div class="wrapper">
-
     <!--Header Section-->
     <header class="header-with-topbar style-two">
         <div class="top-header-area d-none d-lg-inline-block transparent-bg center-logo">
@@ -404,7 +395,7 @@ $hide_panda = (
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link link" href="../signup/" target="_blank"><?php echo $m_sigun_up ?></a>
+                            <a class="nav-link link" href="../signup/" target="_blank"><?php echo $m_sign_up ?></a>
                         </li>
                     </ul>
                     <!-- Add custom CSS for the nested submenu -->
@@ -432,9 +423,6 @@ $hide_panda = (
         <!-- Side Menu -->
         <div class="side-menu dnone">
             <div class="inner-wrapper nav-icon">
-
-
-
                 <span class="btn-close link" id="btn_sideNavClose"></span>
                 <nav class="side-nav w-100">
                     <div class="navbar-nav">
@@ -451,17 +439,13 @@ $hide_panda = (
 
                     <img src="../resources/img/stroy-logo.png ">
 
-
                     <p class="text-black"> Copyright &copy; WeTalk International Education Pte. Ltd. 众语国际教育咨询有限公司 2024
                     </p>
-
                 </div>
             </div>
         </div>
         <a id="close_side_menu" href="javascript:void(0);"></a>
         <!--Side Menu-->
-
-
 
     </header>
     <?php if (!$hide_panda): ?>
@@ -485,8 +469,6 @@ $hide_panda = (
         // Use preg_match_all to find all words in the sentence
         preg_match_all('/\b\w+\b/', $sentence, $matches);
         // Return the matched words
-    
-
         return $matches[0];
     }
 
