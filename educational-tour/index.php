@@ -41,7 +41,7 @@ $imgDir = "../resources/img/educational-tour/";
     .hero-section {
         position: absolute;
         top: 0;
-        height: 100vh;
+        height: 1500px;
         width: 100%;
         background-image: url('../resources/img/educational-tour/et-bg.png');
         background-size: cover;
