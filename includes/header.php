@@ -100,7 +100,7 @@ $hide_panda = (
     $m_about_us = 'About Us';
     $m_campus = 'Campus';
     $m_sign_in = 'Sign In';
-    $m_sigun_up = 'Sign Up';
+    $m_sign_up = 'Sign Up';
     $m_taiwan = 'Taiwan';
     $m_china = 'China';
     $m_singapore = 'Singapore';
@@ -128,7 +128,7 @@ $hide_panda = (
         $m_about_us = '关于我们';
         $m_campus = '校区介绍';
         $m_sign_in = '登录';
-        $m_sigun_up = '注册';
+        $m_sign_up = '注册';
         $m_taiwan = '台湾';
         $m_china = '中国';
         $m_singapore = '新加坡';
@@ -395,7 +395,7 @@ $hide_panda = (
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link link" href="../signup/" target="_blank"><?php echo $m_sigun_up ?></a>
+                            <a class="nav-link link" href="../signup/" target="_blank"><?php echo $m_sign_up ?></a>
                         </li>
                     </ul>
                     <!-- Add custom CSS for the nested submenu -->
