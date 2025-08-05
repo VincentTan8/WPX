@@ -50,6 +50,10 @@
         </div>
 
         <div class=" col-md-12 text-center  ">
+            <?php include "e-sim.php" ?>
+        </div>
+
+        <div class=" col-md-12 text-center  ">
             <?php include "talk.php" ?>
         </div>
     </div>
