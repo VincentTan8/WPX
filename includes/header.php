@@ -23,7 +23,7 @@ $hide_panda = (
     <!-- keywords -->
     <meta name="keywords" content="">
     <!-- Page Title -->
-    <title>WeTalk - WeTalk International Education Pte. Ltd.</title>
+    <title>WeTalk - More Than Language</title>
 
     <!-- Favicon -->
     <link rel="icon" href="../resources/img/favicon.ico">
