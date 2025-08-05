@@ -11,8 +11,6 @@ $hide_panda = (
 
 ?>
 
-
-
 <head>
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -110,7 +108,6 @@ $hide_panda = (
     $m_philippines = 'Philippines';
 
 
-
     if ($lang == '_cn') {
         $m_home = '首页';
         $m_wetalk_courses = '众语集';
@@ -137,13 +134,8 @@ $hide_panda = (
         $m_singapore = '新加坡';
         $m_japan = '日本';
         $m_philippines = '菲律宾';
-
-
     }
-
-
     ?>
-
 
     <style>
         /* Hide submenu by default */
@@ -229,7 +221,6 @@ $hide_panda = (
 <!--End Preloader-->
 
 <div class="wrapper">
-
     <!--Header Section-->
     <header class="header-with-topbar style-two">
         <div class="top-header-area d-none d-lg-inline-block transparent-bg center-logo">
@@ -432,9 +423,6 @@ $hide_panda = (
         <!-- Side Menu -->
         <div class="side-menu dnone">
             <div class="inner-wrapper nav-icon">
-
-
-
                 <span class="btn-close link" id="btn_sideNavClose"></span>
                 <nav class="side-nav w-100">
                     <div class="navbar-nav">
@@ -451,17 +439,13 @@ $hide_panda = (
 
                     <img src="../resources/img/stroy-logo.png ">
 
-
                     <p class="text-black"> Copyright &copy; WeTalk International Education Pte. Ltd. 众语国际教育咨询有限公司 2024
                     </p>
-
                 </div>
             </div>
         </div>
         <a id="close_side_menu" href="javascript:void(0);"></a>
         <!--Side Menu-->
-
-
 
     </header>
     <?php if (!$hide_panda): ?>
@@ -485,8 +469,6 @@ $hide_panda = (
         // Use preg_match_all to find all words in the sentence
         preg_match_all('/\b\w+\b/', $sentence, $matches);
         // Return the matched words
-    
-
         return $matches[0];
     }
 
