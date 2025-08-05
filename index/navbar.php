@@ -44,6 +44,7 @@
 
     .dropdown-menu {
         animation: .5s slidedown;
+        --bs-dropdown-link-active-bg: #c9c9c9;
     }
 
     @keyframes slidedown {
