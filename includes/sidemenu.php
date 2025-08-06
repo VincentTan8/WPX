@@ -110,7 +110,7 @@
             <li style="padding: 7.5px 0px;">
                 <a style="color:#ffffff; margin-left: 15px;
                     background-color: transparent;
-                    text-decoration: none;" href="../">Home</a>
+                    text-decoration: none;" href="<?php echo BASE_URL; ?>">Home</a>
             </li>
             <li class="nav-item_side">
                 <a class="nav-link_side link dropdown-toggle" href="#b">WeTalk Courses</a>
@@ -118,11 +118,12 @@
                     <li>
                         <a style="color:#ffffff; margin-left: 15px;
                             background-color: transparent;
-                            text-decoration: none;" href="../short-video/">&nbsp;Intelligent Databases</a>
+                            text-decoration: none;" href="<?php echo BASE_URL; ?>short-video/">&nbsp;Intelligent
+                            Databases</a>
                     </li>
                     <li><a style="color:#ffffff; margin-left: 15px;
                             background-color: transparent;
-                            text-decoration: none;" href="../recorded-courses/"><!--<i class="fas fa-lightbulb"></i>&nbsp;Intelligent Databases</a></li>
+                            text-decoration: none;" href="<?php echo BASE_URL; ?>recorded-courses/"><!--<i class="fas fa-lightbulb"></i>&nbsp;Intelligent Databases</a></li>
                     <li><a   class="dropdown-toggle" href="#"><!--<i class="fas fa-file-video"></i>-->&nbsp;Recording
                             Course</a></li>
                     <li class="nav-item_side">
@@ -135,59 +136,75 @@
                         <a href="#s" class="nav-link_side  dropdown-toggle  "
                             style="margin-left: 15px;">&nbsp;<!--<i class="fas fa-book"></i>-->Course</a>
                         <ul class="submenu">
-                            <li><a href="../chinese/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linguistics</a>
+                            <li><a
+                                    href="<?php echo BASE_URL; ?>chinese/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linguistics</a>
                             </li>
-                            <li><a href="../sinology/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chinese Culture
+                            <li><a href="<?php echo BASE_URL; ?>sinology/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chinese
+                                    Culture
                                     Learning</a></li>
-                            <li><a href="../science/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Science</a></li>
+                            <li><a
+                                    href="<?php echo BASE_URL; ?>science/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Science</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
             </li>
             <li class="nav-item_side">
-                <a class="nav-link_side dropdown-toggle" href="../courses/">Linguistics</a>
+                <a class="nav-link_side dropdown-toggle" href="<?php echo BASE_URL; ?>courses/">Linguistics</a>
                 <ul class="submenu">
-                    <li><a href="../courses/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Language Courses</a></li>
-                    <li><a href="../home-tutorial/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home School</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>courses/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Language
+                            Courses</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>home-tutorial/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home
+                            School</a></li>
                 </ul>
             </li>
 
             <li style="padding: 7.5px 0px;">
                 <a style="color:#ffffff; margin-left: 15px;
                     background-color: transparent;
-                    text-decoration: none;" href="../teacher/">Teachers</a>
+                    text-decoration: none;" href="<?php echo BASE_URL; ?>teacher/">Teachers</a>
             </li>
 
             <li style="padding: 7.5px 0px;">
                 <a style="color:#ffffff; margin-left: 15px;
                     background-color: transparent;
-                    text-decoration: none;" href="../news/">News</a>
+                    text-decoration: none;" href="<?php echo BASE_URL; ?>news/">News</a>
             </li>
 
             <li style="padding: 7.5px 0px;">
                 <a style="color:#ffffff; margin-left: 15px;
                     background-color: transparent;
-                    text-decoration: none;" href="../study-abroad/">Study Abroad</a>
+                    text-decoration: none;" href="<?php echo BASE_URL; ?>study-abroad/">Study Abroad</a>
             </li>
 
             <li class="nav-item_side">
-                <a class="nav-link_side dropdown-toggle" href="../educational-tour/">Educational Tours</a>
+                <a class="nav-link_side dropdown-toggle" href="<?php echo BASE_URL; ?>educational-tour/">Educational
+                    Tours</a>
                 <ul class="submenu">
-                    <li><a href="../educational-tour/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General Info</a></li>
-                    <li><a href="../tour/?dest=SG">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Singapore</a></li>
-                    <li><a href="../tour/?dest=CN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;China</a></li>
-                    <li><a href="../tour/?dest=JP">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Japan</a></li>
-                    <li><a href="../tour/?dest=PH">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Philippines</a></li>
-                    <li><a href="../tour/?dest=TW">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taiwan</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>educational-tour/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General
+                            Info</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>tour/?dest=SG">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Singapore</a>
+                    </li>
+                    <li><a href="<?php echo BASE_URL; ?>tour/?dest=CN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;China</a>
+                    </li>
+                    <li><a href="<?php echo BASE_URL; ?>tour/?dest=JP">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Japan</a>
+                    </li>
+                    <li><a
+                            href="<?php echo BASE_URL; ?>tour/?dest=PH">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Philippines</a>
+                    </li>
+                    <li><a href="<?php echo BASE_URL; ?>tour/?dest=TW">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taiwan</a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item_side">
                 <a class="nav-link_side dropdown-toggle" href="#s">Company</a>
                 <!-- Submenu for Delicious Food -->
                 <ul class="submenu">
-                    <li><a href="../charity/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Charity</a></li>
-                    <li><a href="../about-us/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About Us</a></li>
-                    <li><a href="../campus-philippines/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Campus</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>charity/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Charity</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>about-us/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About Us</a></li>
+                    <li><a
+                            href="<?php echo BASE_URL; ?>campus-philippines/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Campus</a>
+                    </li>
                 </ul>
             </li>
 
@@ -205,8 +222,12 @@
             <li class="nav-item_side">
                 <a class="nav-link_side dropdown-toggle" href="#s">Language</a>
                 <ul class="submenu">
-                    <li><a href="../includes/language.php?lang=EN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;English</a></li>
-                    <li><a href="../includes/language.php?lang=CN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中文</a></li>
+                    <li><a
+                            href="<?php echo BASE_URL; ?>includes/language.php?lang=EN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;English</a>
+                    </li>
+                    <li><a
+                            href="<?php echo BASE_URL; ?>includes/language.php?lang=CN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中文</a>
+                    </li>
                 </ul>
             </li>
         </ul>
