@@ -69,25 +69,42 @@ include $chessPath . "../../connections/dbname.php";
         background-color: #f0f0f0;
     }
 
-
     .responsive-img {
         display: block;
+        margin: 0 auto;
         max-width: 100%;
         height: auto;
-        margin: 0 auto;
-        margin-top: -60px;
     }
 
     @media (max-width: 767px) {
-        .responsive-img {
+        .responsive-img.mt-100 {
             margin-top: 100px;
         }
     }
 </style>
 
 <body oncontextmenu="return false;" data-spy="scroll" data-target=".navbar" data-offset="90" class="position-relative">
-    <div>
-        <img src="chess-class-page-high-res.png" alt="Loading..." class="responsive-img">
+    <div class="image-container">
+        <a href="https://wa.me/6597582288?text=Hi%20WeTalk%2C%20I%27d%20like%20to%20book%20a%20call%20with%20your%20team."
+            target="_blank">
+            <img src="image-1.png" alt="Loading.." loading="lazy" class="responsive-img mt-100">
+        </a>
+        <a href="https://wa.me/6597582288?text=Hi%20WeTalk%2C%20I%27d%20like%20to%20book%20a%20call%20with%20your%20team."
+            target="_blank">
+            <img src="image-2.png" alt="Loading.." loading="lazy" class="responsive-img">
+        </a>
+        <a href="https://wa.me/6597582288?text=Hi%20WeTalk%2C%20I%27d%20like%20to%20book%20a%20call%20with%20your%20team."
+            target="_blank">
+            <img src="image-3.png" alt="Loading.." loading="lazy" class="responsive-img">
+        </a>
+        <a href="https://wa.me/6597582288?text=Hi%20WeTalk%2C%20I%27d%20like%20to%20book%20a%20call%20with%20your%20team."
+            target="_blank">
+            <img src="image-4.png" alt="Loading.." loading="lazy" class="responsive-img">
+        </a>
+        <a href="https://wa.me/6597582288?text=Hi%20WeTalk%2C%20I%27d%20like%20to%20book%20a%20call%20with%20your%20team."
+            target="_blank">
+            <img src="image-5.png" alt="Loading.." loading="lazy" class="responsive-img">
+        </a>
     </div>
 
     <?php include $chessPath . "../../includes/address.php"; ?>
