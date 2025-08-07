@@ -24,10 +24,15 @@ $hide_panda = (
     <meta charset="utf-8">
 
     <meta meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta property="og:title" content="WeTalk - More than Language" />
+    <meta property="og:description" content="Empowering learning through multilingual education." />
+    <meta property="og:image" content="https://wetalk.com/resources/img/logo.png" />
+    <meta property="og:url" content="https://wetalk.com/" />
+    <meta property="og:type" content="website" />
+
     <!-- Author -->
     <meta name="author" content="Wetalk">
-    <!-- description -->
-    <meta name="description" content="">
     <!-- keywords -->
     <meta name="keywords" content="">
     <!-- Page Title -->

@@ -19,6 +19,12 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="WeTalk - More than Language" />
+    <meta property="og:description" content="Empowering learning through multilingual education." />
+    <meta property="og:image" content="https://wetalk.com/resources/img/logo.png" />
+    <meta property="og:url" content="https://wetalk.com/" />
+    <meta property="og:type" content="website" />
+
     <title>WeTalk - More than Language</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
