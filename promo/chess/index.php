@@ -76,9 +76,17 @@ include $chessPath . "../../connections/dbname.php";
         height: auto;
     }
 
+    .mobile {
+        display: none;
+    }
+
     @media (max-width: 767px) {
-        .responsive-img.mt-100 {
-            margin-top: 100px;
+        .responsive-img {
+            display: none;
+        }
+
+        .mobile {
+            display: block;
         }
     }
 </style>
@@ -87,23 +95,28 @@ include $chessPath . "../../connections/dbname.php";
     <div class="image-container">
         <a href="https://wa.me/6597582288?text=Hi%20WeTalk%2C%20I%27d%20like%20to%20book%20a%20call%20with%20your%20team."
             target="_blank">
-            <img src="image-1.png" alt="Loading.." loading="lazy" class="responsive-img mt-100">
+            <img src="image-1.png" alt="Loading.." loading="lazy" class="responsive-img">
+            <img src="image-1-mobile.png" alt="Loading.." loading="lazy" class="mobile">
         </a>
         <a href="https://wa.me/6597582288?text=Hi%20WeTalk%2C%20I%27d%20like%20to%20book%20a%20call%20with%20your%20team."
             target="_blank">
             <img src="image-2.png" alt="Loading.." loading="lazy" class="responsive-img">
+            <img src="image-2-mobile.png" alt="Loading.." loading="lazy" class="mobile">
         </a>
         <a href="https://wa.me/6597582288?text=Hi%20WeTalk%2C%20I%27d%20like%20to%20book%20a%20call%20with%20your%20team."
             target="_blank">
             <img src="image-3.png" alt="Loading.." loading="lazy" class="responsive-img">
+            <img src="image-3-mobile.png" alt="Loading.." loading="lazy" class="mobile">
         </a>
         <a href="https://wa.me/6597582288?text=Hi%20WeTalk%2C%20I%27d%20like%20to%20book%20a%20call%20with%20your%20team."
             target="_blank">
             <img src="image-4.png" alt="Loading.." loading="lazy" class="responsive-img">
+            <img src="image-4-mobile.png" alt="Loading.." loading="lazy" class="mobile">
         </a>
         <a href="https://wa.me/6597582288?text=Hi%20WeTalk%2C%20I%27d%20like%20to%20book%20a%20call%20with%20your%20team."
             target="_blank">
             <img src="image-5.png" alt="Loading.." loading="lazy" class="responsive-img">
+            <img src="image-5-mobile.png" alt="Loading.." loading="lazy" class="mobile">
         </a>
     </div>
 
