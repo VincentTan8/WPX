@@ -3,6 +3,12 @@ if (!isset($_SESSION)) {
   session_start();
   ob_start();
 }
+if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
+  $lang = '_cn';
+} else {
+  $_SESSION['lang'] = 'EN';
+  $lang = '_en';
+}
 
 $ref = $_GET['ref'] ?? null;
 if (!$ref) {
@@ -44,7 +50,7 @@ if (mysqli_num_rows($result) === 0) {
 <body>
 
   <!-- Store language and reference info for JS -->
-  <div id="page-data" data-lang="_en" data-ref="<?php echo htmlspecialchars($ref); ?>"></div>
+  <div id="page-data" data-lang="<?php echo $lang ?>" data-ref="<?php echo htmlspecialchars($ref); ?>"></div>
 
   <!-- Static News Info -->
   <section>
