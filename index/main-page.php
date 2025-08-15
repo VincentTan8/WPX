@@ -20,6 +20,11 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>WeTalk - More than Language</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="WeTalk - More than Language" />
+    <meta property="og:description" content="Empowering learning through multilingual education." />
+    <meta property="og:image" content="https://wetalk.com/resources/img/logo.png" />
+    <meta property="og:url" content="https://wetalk.com/" />
+    <meta property="og:type" content="website" />
 
     <!-- LOAD JQUERY LIBRARY -->
     <script type="text/javascript" src="../jquery.js"></script>

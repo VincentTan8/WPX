@@ -126,8 +126,9 @@
             width: 100%;
             /* Ensure button is full-width */
         }
-  }
- .payment-methods {
+    }
+
+    .payment-methods {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -148,7 +149,6 @@
         justify-content: left;
         gap: 30px;
         flex-wrap: wrap;
-      
     }
 
     .payment-icon {
@@ -156,37 +156,38 @@
         height: auto;
         object-fit: contain;
     }
-  
-  #jcb {
-    width:50px;
-  }
+
+    #jcb {
+        width: 50px;
+    }
+
     #visa,
     #paypal {
         width: 85px;
     }
-  
-  #alipay
-  {
-    width:95px;
-  }
+
+    #alipay {
+        width: 95px;
+    }
+
     #wechat,
-  #gcash
-     {
+    #gcash {
         width: 85px;
     }
 
     .payment-mobile {
         margin-left: -10px;
     }
-@media (max-width: 992px) {
-    .payment-icon {
-        width: 55px !important;
-    }
 
-    .copyright-para {
-        margin-right: 0px !important;
+    @media (max-width: 992px) {
+        .payment-icon {
+            width: 55px !important;
+        }
+
+        .copyright-para {
+            margin-right: 0px !important;
+        }
     }
-}
 
 
     @media (max-width: 992px) {
@@ -233,15 +234,15 @@
         .footer-menu a:hover {
             text-decoration: underline;
         }
-       
-      #alipay,
+
+        #alipay,
         #wechat,
         #gcash {
             width: 95px !important;
 
         }
 
- 
+
         #visa,
         #jcb,
         #paypal {
@@ -251,7 +252,7 @@
 
 
     }
-  
+
     @media (max-width: 768px) {
         .payment-icon {
             width: 28px !important;
@@ -290,17 +291,19 @@
     <div class="popup-content">
 
 
-        <form name="form_company" id="form_company" method="post" action="../includes/save.php" class="login-form">
+        <form name="form_company" id="form_company" method="post" action="<?php echo BASE_URL; ?>includes/save.php"
+            class="login-form">
             <span class="close">&times;</span>
             <h4><b>Book a class now! 现在预定课程</b></h4>
             <p style="color:#767E90; font-size:13px; line-height:20px">Once you log in or create an account, it means
                 that
-                you have read and agreed to WeTalk <a href="../service/" target="_blank"> terms of service </a>
-                and <a href="../privacy/" target="_blank"> privacy agreement </a>. </p>
+                you have read and agreed to WeTalk <a href="<?php echo BASE_URL; ?>service/" target="_blank"> terms of
+                    service </a>
+                and <a href="<?php echo BASE_URL; ?>privacy/" target="_blank"> privacy agreement </a>. </p>
 
             <p style="color:#767E90; font-size:13px; line-height:20px; margin-top:-20px">一旦您登录或创建帐户，即表示您已阅读并同意
-                向WeTalk提供<a href="../service/" target="_blank"> 服务条款和 </a>
-                <a href="../privacy/" target="_blank"> 隐私协议 </a>。
+                向WeTalk提供<a href="<?php echo BASE_URL; ?>service/" target="_blank"> 服务条款和 </a>
+                <a href="<?php echo BASE_URL; ?>privacy/" target="_blank"> 隐私协议 </a>。
             </p>
 
 
@@ -326,7 +329,7 @@
 
 
             <button type="submit" style="background-color: #FEA500;"><b>SUBMIT 提交</b></button>
-            <!-- <p style="color:#767E90; font-size:13px; line-height:20px">Have an account already? <a href="../signin/">Log-in</a> </p> -->
+            <!-- <p style="color:#767E90; font-size:13px; line-height:20px">Have an account already? <a href="<?php echo BASE_URL; ?>signin/">Log-in</a> </p> -->
         </form>
     </div>
 </div>
@@ -339,30 +342,40 @@
             <div class="col-12 col-lg-3 d-none d-lg-block">
                 <div class="footer-logo">
                     <div class="logo-max">
-                        <a href="../" class="logo link" title="logo">
-                            <img src="../resources/img/logo.png" alt="logo" title="Logo" class="logo-default">
+                        <a href="<?php echo BASE_URL; ?>" class="logo link" title="logo">
+                            <img src="<?php echo BASE_URL; ?>resources/img/logo.png" alt="logo" title="Logo"
+                                class="logo-default">
                         </a>
                     </div>
                     <!--    <p class="footer-width pt-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim viverra ultrices.</p> -->
 
                 </div>
             </div>
-          
-           <div class="col-12 col-lg-5 d-flex justify-content-center ">
+
+            <div class="col-12 col-lg-5 d-flex justify-content-center ">
                 <div class="payment-methods text-left w-100">
                     <p class="payment-title">Supported Payment Methods</p>
                     <div class="payment-row w-100">
-                         <img src="../resources/img/payment-method/mastercard.png" id="master" alt="Mastercard" class="payment-icon">
-                        <img src="../resources/img/payment-method/visa.svg" id="visa" alt="Visa" class="payment-icon">
-                        <img src="../resources/img/payment-method/jcb.svg" id="jcb" alt="JCB" class="payment-icon">
-                        <img src="../resources/img/payment-method/paypal.svg" id="paypal" alt="PayPal" class="payment-icon">
-                        <img src="../resources/img/payment-method/union.png" id="unionpay" alt="UnionPay" class="payment-icon">
+                        <img src="<?php echo BASE_URL; ?>resources/img/payment-method/mastercard.png" id="master"
+                            alt="Mastercard" class="payment-icon">
+                        <img src="<?php echo BASE_URL; ?>resources/img/payment-method/visa.svg" id="visa" alt="Visa"
+                            class="payment-icon">
+                        <img src="<?php echo BASE_URL; ?>resources/img/payment-method/jcb.svg" id="jcb" alt="JCB"
+                            class="payment-icon">
+                        <img src="<?php echo BASE_URL; ?>resources/img/payment-method/paypal.svg" id="paypal"
+                            alt="PayPal" class="payment-icon">
+                        <img src="<?php echo BASE_URL; ?>resources/img/payment-method/union.png" id="unionpay"
+                            alt="UnionPay" class="payment-icon">
                     </div>
                     <div class="payment-row w-100 payment-mobile">
-                        <img src="../resources/img/payment-method/alipay.svg" id="alipay" alt="Alipay" class="payment-icon">
-                        <img src="../resources/img/payment-method/wechat.svg" id="wechat" alt="WeChat Pay" class="payment-icon">
-                        <img src="../resources/img/payment-method/gcash.svg" id="gcash" alt="GCash" class="payment-icon">
-                        <img src="../resources/img/payment-method/banktransfer.svg" id="banktransfer" alt="Bank Transfer" class="payment-icon">
+                        <img src="<?php echo BASE_URL; ?>resources/img/payment-method/alipay.svg" id="alipay"
+                            alt="Alipay" class="payment-icon">
+                        <img src="<?php echo BASE_URL; ?>resources/img/payment-method/wechat.svg" id="wechat"
+                            alt="WeChat Pay" class="payment-icon">
+                        <img src="<?php echo BASE_URL; ?>resources/img/payment-method/gcash.svg" id="gcash" alt="GCash"
+                            class="payment-icon">
+                        <img src="<?php echo BASE_URL; ?>resources/img/payment-method/banktransfer.svg"
+                            id="banktransfer" alt="Bank Transfer" class="payment-icon">
                     </div>
                 </div>
             </div>
@@ -388,14 +401,16 @@
 
                     <ul class="footer-menu" style="margin-top:15px">
                         <!-- <li><a href="#home">Home</a></li>
-            <li><a href="#services">Linguistics</a></li>
-            <li><a href="#about">Wetalk Courses</a></li>
-            <li><a href="#about">Teachers</a></li>
-            <li><a href="#about">Science</a></li>
-            <li><a href="#about">Chinese Culture Learning</a></li> -->
-                        <li style="float: right;"><a href="../service/" target="_blank">Terms of Service 服务条款</a></li>
+                        <li><a href="#services">Linguistics</a></li>
+                        <li><a href="#about">Wetalk Courses</a></li>
+                        <li><a href="#about">Teachers</a></li>
+                        <li><a href="#about">Science</a></li>
+                        <li><a href="#about">Chinese Culture Learning</a></li> -->
+                        <li style="float: right;"><a href="<?php echo BASE_URL; ?>service/" target="_blank">Terms of
+                                Service 服务条款</a></li>
                         <li style="float: right;"><a href="#contact">|</a></li>
-                        <li style="float: right;"><a href="../privacy/" target="_blank">Private Policy 隐私协议</a></li>
+                        <li style="float: right;"><a href="<?php echo BASE_URL; ?>privacy/" target="_blank">Private
+                                Policy 隐私协议</a></li>
                     </ul>
 
                 </div>
@@ -411,8 +426,8 @@
 
 
             </br>
-            <p class="copyright-para" style="margin-right: 8em;">Copyright &copy; WeTalk International Education Pte. Ltd. 众语国际教育咨询有限公司 2025 <a
-                    href="javascript:void(0);" class="grey"></a></p>
+            <p class="copyright-para" style="margin-right: 8em;">Copyright &copy; WeTalk International Education Pte.
+                Ltd. 众语国际教育咨询有限公司 2025 <a href="javascript:void(0);" class="grey"></a></p>
 
         </div>
 

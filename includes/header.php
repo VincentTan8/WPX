@@ -3,12 +3,20 @@ if (!isset($_SESSION)) {
     session_start();
     ob_start();
 }
+
+if ($_SERVER['HTTP_HOST'] === 'localhost') {
+    define('BASE_URL', '/WPX/');  //change this according to your local environment
+} else {
+    define('BASE_URL', '/');  //if its live
+}
+$headerPath = __DIR__ . '/';
+
 $hide_panda = (
     strpos($_SERVER['PHP_SELF'], '/cms/') !== false ||
     strpos($_SERVER['PHP_SELF'], '/educational-tour/') !== false ||
-    strpos($_SERVER['PHP_SELF'], '/tour/') !== false
+    strpos($_SERVER['PHP_SELF'], '/tour/') !== false ||
+    strpos($_SERVER['PHP_SELF'], '/promo/chess/') !== false
 );
-
 ?>
 
 <head>
@@ -16,36 +24,41 @@ $hide_panda = (
     <meta charset="utf-8">
 
     <meta meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta property="og:title" content="WeTalk - More than Language" />
+    <meta property="og:description" content="Empowering learning through multilingual education." />
+    <meta property="og:image" content="https://wetalk.com/resources/img/logo.png" />
+    <meta property="og:url" content="https://wetalk.com/" />
+    <meta property="og:type" content="website" />
+
     <!-- Author -->
     <meta name="author" content="Wetalk">
-    <!-- description -->
-    <meta name="description" content="">
     <!-- keywords -->
     <meta name="keywords" content="">
     <!-- Page Title -->
     <title>WeTalk - More Than Language</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="../resources/img/favicon.ico">
+    <link rel="icon" href="<?php echo BASE_URL; ?>resources/img/favicon.ico">
     <!-- Bundle -->
-    <link rel="stylesheet" href="../vendor/css/bundle.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>vendor/css/bundle.min.css">
     <!-- Plugin Css -->
-    <link rel="stylesheet" href="../vendor/css/revolution-settings.min.css">
-    <link rel="stylesheet" href="../vendor/css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="../vendor/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../vendor/css/swiper.min.css">
-    <link rel="stylesheet" href="../vendor/css/cubeportfolio.min.css">
-    <link rel="stylesheet" href="../vendor/css/LineIcons.min.css">
-    <link rel="stylesheet" href="../vendor/css/jquery-ui.bundle.css">
-    <link rel="stylesheet" href="../vendor/css/select2.min.css">
-    <link rel="stylesheet" href="../vendor/css/slick-theme.css">
-    <link rel="stylesheet" href="../vendor/css/slick.css">
-    <link rel="stylesheet" href="../resources/css/panda.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>vendor/css/revolution-settings.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>vendor/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>vendor/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>vendor/css/swiper.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>vendor/css/cubeportfolio.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>vendor/css/LineIcons.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>vendor/css/jquery-ui.bundle.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>vendor/css/select2.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>vendor/css/slick-theme.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>vendor/css/slick.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>resources/css/panda.css">
     <!--    <link rel="stylesheet" href="vendor/css/animate.css">-->
     <!-- Style Sheet -->
-    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>resources/css/style.css">
 
-    <link rel="stylesheet" href="../resources/css/adds.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>resources/css/adds.css">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css"
@@ -53,24 +66,24 @@ $hide_panda = (
 
 
     <script>
-        $(document).ready(function () {
-            // Enable Bootstrap dropdown hover effect
-            $('.dropdown-toggle').dropdownHover();
+        // $(document).ready(function () {
+        //     // Enable Bootstrap dropdown hover effect
+        //     $('.dropdown-toggle').dropdownHover();
 
-            // Show/hide line on hover
-            $('.dropdown-toggle').hover(
-                function () {
-                    $(this).siblings('.hover-line').fadeIn(200);
-                },
-                function () {
-                    $(this).siblings('.hover-line').fadeOut(200);
-                }
-            );
-        });
+        //     // Show/hide line on hover
+        //     $('.dropdown-toggle').hover(
+        //         function () {
+        //             $(this).siblings('.hover-line').fadeIn(200);
+        //         },
+        //         function () {
+        //             $(this).siblings('.hover-line').fadeOut(200);
+        //         }
+        //     );
+        // });
     </script>
 
     <?php
-    include "../resources/js/adds.php";
+    include $headerPath . "../resources/js/adds.php";
 
     $lang = '';
 
@@ -214,7 +227,7 @@ $hide_panda = (
 
 <!-- <div class="loader" id="loader-fade">
     <div class="loader-wrapper">
-        <img src="../resources/img/loader.gif" alt="image">
+        <img src="<?php echo BASE_URL; ?>resources/img/loader.gif" alt="image">
     </div>
 </div> -->
 
@@ -226,23 +239,26 @@ $hide_panda = (
         <div class="top-header-area d-none d-lg-inline-block transparent-bg center-logo">
             <div class="container">
                 <div class="row">
-                    <a href="../" class="logo link" title="logo">
-                        <img src="../resources/img/logo.png" alt="logo" title="Logo" class="logo-default">
+                    <a href="<?php echo BASE_URL; ?>" class="logo link" title="logo">
+                        <img src="<?php echo BASE_URL; ?>resources/img/logo.png" alt="logo" title="Logo"
+                            class="logo-default">
                     </a>
                 </div>
             </div>
         </div>
         <nav class="navbar navbar-top-default navbar-expand-lg full-nav center-logo nav-line">
             <div class="container" style="padding-right: 0; padding-left: 0;">
-                <a class="logo link" href="../index/main-page.php">
-                    <img src="../resources/img/logo.png" alt="logo" title="Logo" class="logo-default d-lg-none">
-                    <img src="../resources/img/logo.png" alt="logo" title="Logo" class="logo-scrolled">
+                <a class="logo link" href="<?php echo BASE_URL; ?>index/main-page.php">
+                    <img src="<?php echo BASE_URL; ?>resources/img/logo.png" alt="logo" title="Logo"
+                        class="logo-default d-lg-none">
+                    <img src="<?php echo BASE_URL; ?>resources/img/logo.png" alt="logo" title="Logo"
+                        class="logo-scrolled">
                 </a>
 
                 <div class="collapse navbar-collapse d-none d-lg-block">
                     <ul class="nav navbar-nav">
                         <!-- <li class="nav-item">
-                            <a class="nav-link link " href="../index/main-page.php"><?php echo $m_home ?></a>
+                            <a class="nav-link link " href="<?php echo BASE_URL; ?>index/main-page.php"><?php echo $m_home ?></a>
                         </li> -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle <?php echo $menu_bar2 ?>" href="#" id="navbarDropdown1"
@@ -250,9 +266,10 @@ $hide_panda = (
                                 <?php echo $m_wetalk_courses ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                                <a class="dropdown-item" href="../short-video/"><i class="fas fa-lightbulb"></i>
+                                <a class="dropdown-item" href="<?php echo BASE_URL; ?>short-video/"><i
+                                        class="fas fa-lightbulb"></i>
                                     &nbsp;&nbsp;<?php echo $m_intelligent ?></a>
-                                <a class="dropdown-item" href="../recorded-courses/"><i
+                                <a class="dropdown-item" href="<?php echo BASE_URL; ?>recorded-courses/"><i
                                         class="fas fa-file-video"></i>&nbsp;&nbsp;<?php echo $m_recording_course ?></a>
                                 <!-- Nested submenu starts here -->
 
@@ -270,9 +287,12 @@ $hide_panda = (
                                             class="fas fa-book"></i>&nbsp;&nbsp;<?php echo $m_course ?> <span
                                             style="padding-right: 115px;">&nbsp;</span></a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="../chinese/"><?php echo $m_linguistic ?></a>
-                                        <a class="dropdown-item" href="../sinology/"><?php echo $m_culture ?></a>
-                                        <a class="dropdown-item" href="../science/"><?php echo $m_science ?></a>
+                                        <a class="dropdown-item"
+                                            href="<?php echo BASE_URL; ?>chinese/"><?php echo $m_linguistic ?></a>
+                                        <a class="dropdown-item"
+                                            href="<?php echo BASE_URL; ?>sinology/"><?php echo $m_culture ?></a>
+                                        <a class="dropdown-item"
+                                            href="<?php echo BASE_URL; ?>science/"><?php echo $m_science ?></a>
                                     </div>
                                 </div>
                                 <!-- Nested submenu ends here -->
@@ -280,46 +300,54 @@ $hide_panda = (
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle  <?php echo $menu_bar3 ?>" href="../courses/"
-                                id="navbarDropdown1" role="button">
+                            <a class="nav-link dropdown-toggle  <?php echo $menu_bar3 ?>"
+                                href="<?php echo BASE_URL; ?>courses/" id="navbarDropdown1" role="button">
                                 <?php echo $m_linguistic ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                                <a class="dropdown-item" href="../courses/"><?php echo $m_language_courses ?></a>
-                                <a class="dropdown-item" href="../home-tutorial/"><?php echo $m_home_tutorial ?></a>
+                                <a class="dropdown-item"
+                                    href="<?php echo BASE_URL; ?>courses/"><?php echo $m_language_courses ?></a>
+                                <a class="dropdown-item"
+                                    href="<?php echo BASE_URL; ?>home-tutorial/"><?php echo $m_home_tutorial ?></a>
                             </div>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link link  <?php echo $menu_bar4 ?>"
-                                href="../teacher/"><?php echo $m_teachers ?></a>
+                                href="<?php echo BASE_URL; ?>teacher/"><?php echo $m_teachers ?></a>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle   <?php echo $menu_bar9 ?>" href="../educational-tour/"
-                                id="navbarDropdown2" role="button">
+                            <a class="nav-link dropdown-toggle   <?php echo $menu_bar9 ?>"
+                                href="<?php echo BASE_URL; ?>educational-tour/" id="navbarDropdown2" role="button">
                                 <?php echo $m_educational_tours ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                <a class="dropdown-item" href="../tour/?dest=SG"><?php echo $m_singapore ?></a>
+                                <a class="dropdown-item"
+                                    href="<?php echo BASE_URL; ?>tour/?dest=SG"><?php echo $m_singapore ?></a>
 
-                                <a class="dropdown-item" href="../tour/?dest=CN"><?php echo $m_china ?></a>
+                                <a class="dropdown-item"
+                                    href="<?php echo BASE_URL; ?>tour/?dest=CN"><?php echo $m_china ?></a>
 
-                                <a class="dropdown-item" href="../tour/?dest=JP"><?php echo $m_japan ?></a>
-                                <a class="dropdown-item" href="../tour/?dest=PH"><?php echo $m_philippines ?></a>
-                                <a class="dropdown-item" href="../tour/?dest=TW"><?php echo $m_taiwan ?></a>
+                                <a class="dropdown-item"
+                                    href="<?php echo BASE_URL; ?>tour/?dest=JP"><?php echo $m_japan ?></a>
+                                <a class="dropdown-item"
+                                    href="<?php echo BASE_URL; ?>tour/?dest=PH"><?php echo $m_philippines ?></a>
+                                <a class="dropdown-item"
+                                    href="<?php echo BASE_URL; ?>tour/?dest=TW"><?php echo $m_taiwan ?></a>
                             </div>
                         </li>
                     </ul>
 
                     <ul class="nav navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link link  <?php echo $menu_bar5 ?>" href="../news/"><?php echo $m_news ?></a>
+                            <a class="nav-link link  <?php echo $menu_bar5 ?>"
+                                href="<?php echo BASE_URL; ?>news/"><?php echo $m_news ?></a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link link  <?php echo $menu_bar6 ?>"
-                                href="../study-abroad/"><?php echo $m_study_abroad ?></a>
+                                href="<?php echo BASE_URL; ?>study-abroad/"><?php echo $m_study_abroad ?></a>
                         </li>
 
                         <li class="nav-item dropdown">
@@ -328,9 +356,12 @@ $hide_panda = (
                                 <?php echo $m_company ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                                <a class="dropdown-item" href="../charity/"><?php echo $m_charity ?></a>
-                                <a class="dropdown-item" href="../about-us/"><?php echo $m_about_us ?></a>
-                                <a class="dropdown-item" href="../campus-philippines/"><?php echo $m_campus ?></a>
+                                <a class="dropdown-item"
+                                    href="<?php echo BASE_URL; ?>charity/"><?php echo $m_charity ?></a>
+                                <a class="dropdown-item"
+                                    href="<?php echo BASE_URL; ?>about-us/"><?php echo $m_about_us ?></a>
+                                <a class="dropdown-item"
+                                    href="<?php echo BASE_URL; ?>campus-philippines/"><?php echo $m_campus ?></a>
                             </div>
                         </li>
 
@@ -355,16 +386,20 @@ $hide_panda = (
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
-                                <a class="dropdown-item" href="../includes/currency.php?currency=SGD">
+                                <a class="dropdown-item"
+                                    href="<?php echo BASE_URL; ?>includes/currency.php?currency=SGD">
                                     SGD
                                 </a>
-                                <a class="dropdown-item" href="../includes/currency.php?currency=RMB">
+                                <a class="dropdown-item"
+                                    href="<?php echo BASE_URL; ?>includes/currency.php?currency=RMB">
                                     CNY
                                 </a>
-                                <a class="dropdown-item" href="../includes/currency.php?currency=PHP">
+                                <a class="dropdown-item"
+                                    href="<?php echo BASE_URL; ?>includes/currency.php?currency=PHP">
                                     PHP
                                 </a>
-                                <a class="dropdown-item" href="../includes/currency.php?currency=USD">
+                                <a class="dropdown-item"
+                                    href="<?php echo BASE_URL; ?>includes/currency.php?currency=USD">
                                     USD
                                 </a>
                             </div>
@@ -377,13 +412,13 @@ $hide_panda = (
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
-                                <a class="dropdown-item" href="../includes/language.php?lang=EN">
-                                    <img src="../resources/img/en.png" alt="English Flag"
+                                <a class="dropdown-item" href="<?php echo BASE_URL; ?>includes/language.php?lang=EN">
+                                    <img src="<?php echo BASE_URL; ?>resources/img/en.png" alt="English Flag"
                                         style="width: 20px; height: 20px; margin-right: 8px;">
                                     <span class="lang-text">EN</span>
                                 </a>
-                                <a class="dropdown-item" href="../includes/language.php?lang=CN">
-                                    <img src="../resources/img/cn.png" alt="Chinese Flag"
+                                <a class="dropdown-item" href="<?php echo BASE_URL; ?>includes/language.php?lang=CN">
+                                    <img src="<?php echo BASE_URL; ?>resources/img/cn.png" alt="Chinese Flag"
                                         style="width: 20px; height: 20px; margin-right: 8px;">
                                     <span class="lang-text">CN</span>
                                 </a>
@@ -391,11 +426,13 @@ $hide_panda = (
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link link" href="../signin/" target="_blank"><?php echo $m_sign_in ?></a>
+                            <a class="nav-link link" href="<?php echo BASE_URL; ?>signin/"
+                                target="_blank"><?php echo $m_sign_in ?></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link link" href="../signup/" target="_blank"><?php echo $m_sign_up ?></a>
+                            <a class="nav-link link" href="<?php echo BASE_URL; ?>signup/"
+                                target="_blank"><?php echo $m_sign_up ?></a>
                         </li>
                     </ul>
                     <!-- Add custom CSS for the nested submenu -->
@@ -429,7 +466,7 @@ $hide_panda = (
 
                         <nav class="side-nav w-100">
 
-                            <?php include "sidemenu.php" ?>
+                            <?php include $headerPath . "sidemenu.php" ?>
 
                         </nav>
                     </div>
@@ -437,7 +474,7 @@ $hide_panda = (
 
                 <div align="center" style="margin-top: -50px;" class=" side-footer text-white w-100">
 
-                    <img src="../resources/img/stroy-logo.png ">
+                    <img src="<?php echo BASE_URL; ?>resources/img/stroy-logo.png ">
 
                     <p class="text-black"> Copyright &copy; WeTalk International Education Pte. Ltd. 众语国际教育咨询有限公司 2024
                     </p>
@@ -445,12 +482,12 @@ $hide_panda = (
             </div>
         </div>
         <a id="close_side_menu" href="javascript:void(0);"></a>
-        <!--Side Menu-->
+        <!-- End Side Menu-->
 
     </header>
     <?php if (!$hide_panda): ?>
         <div class="panda-wrapper">
-            <img src="../resources/img/Panda.png" alt="Panda" class="panda-img" />
+            <img src="<?php echo BASE_URL; ?>resources/img/Panda.png" alt="Panda" class="panda-img" />
             <div class="chat-bubble">
                 <button class="close-bubble" id="close-bubble">&times;</button>
                 <h3 class="quote-title" id="hm-quote-title">Quote of the Day</h3>
@@ -461,8 +498,8 @@ $hide_panda = (
             </div>
         </div>
     <?php endif; ?>
-    <script type="module" src="../index/scripts/panda.js"></script>
-    <script type="module" src="../index/scripts/translate.js"></script>
+    <script type="module" src="<?php echo BASE_URL; ?>index/scripts/panda.js"></script>
+    <script type="module" src="<?php echo BASE_URL; ?>index/scripts/translate.js"></script>
     <?php
     function getWords($sentence)
     {
