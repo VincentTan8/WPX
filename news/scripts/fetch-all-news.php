@@ -10,8 +10,8 @@ include "../../connections/dbname.php";
 
 $language = $_POST['language']; //  _en, _cn, _kr, _jp
 
-$news_title = "news_title_" . $language;
-$news_description = "news_description_" . $language;
+$news_title = "news_title" . $language;
+$news_description = "news_description" . $language;
 
 $tablename = $database . ".`wt_news`";
 $sql = "SELECT 
