@@ -53,12 +53,34 @@ if (mysqli_num_rows($result) === 0) {
   <div id="page-data" data-lang="<?php echo $lang ?>" data-ref="<?php echo htmlspecialchars($ref); ?>"></div>
 
   <!-- Static News Info -->
-  <section>
-    <!-- <h1 id="news-title"></h1>
-    <p id="news-description"></p>
-    <p id="news-category"></p>
-    <p id="news-date-posted"></p>
-    <img id="news-thumbnail" alt="News Thumbnail" /> -->
+  <section class="container" style="margin-top:5rem;">
+    <!-- Title -->
+
+    <h1 id="news-title" style="text-align:left; margin-bottom:1.5rem;"></h1>
+    <!-- Date posted -->
+    <p id="news-date-posted" style="text-align:left; margin-top:0.5rem; font-size:12px; color:#555;"></p>
+    <!-- Thumbnail -->
+    <!-- <div class="row">
+      <div class="col-12">
+        <img id="news-thumbnail" alt="News Thumbnail"
+          style="width:500px;  height:400px; border-radius:10px; display:block; margin:0 auto; " />
+
+      </div>
+    </div> -->
+
+
+
+    <!-- Description -->
+    <!-- <p id="news-description" style="text-align:center; margin-top:1.5rem; font-size:30px;"></p> -->
+
+    <!-- Extra date -->
+    <p id="news-date" style="text-align:center;"></p>
+  </section>
+
+
+  <!-- <p id="news-category"></p> -->
+
+
   </section>
 
   <!-- Dynamic News Sections Render Here -->
