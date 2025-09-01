@@ -72,8 +72,8 @@
 
     .desc {
         margin-top: 50px;
-        font-size: 15px;
-        color: gray;
+        font-size: 14px;
+        color: #444444;
         line-height: 1.6;
         font-family: 'Poppins', sans-serif;
     }
@@ -113,11 +113,12 @@
             <div class="box-header">
                 <img src="img/1.png" class="box-icon" alt="Icon 1">
                 <div class="box-title-group">
-                    <h3>Excellent Team</h3>
-                    <p class="subtitle">Experienced teachers and experts offer high-quality education</p>
+                    <h3 id="teacher-title-1">Excellent Team</h3>
+                    <p class="subtitle" id="teacher-subtitle-1">Experienced teachers and experts offer high-quality
+                        education</p>
                 </div>
             </div>
-            <p class="desc">
+            <p class="desc" id="teacher-desc-1">
                 WeTalk International has built a strong, high-level faculty team, consisting of both
                 highly respected senior scholars and young outstanding experts. At WeTalk International,
                 this faculty team plays a key role in cultivating excellent talent as well as inheriting
@@ -131,11 +132,12 @@
             <div class="box-header">
                 <img src="img/2.png" class="box-icon" alt="Icon 2">
                 <div class="box-title-group">
-                    <h3>Strict Screening</h3>
-                    <p class="subtitle">Strict screening aims to match each student with more suitable teachers.</p>
+                    <h3 id="teacher-title-2">Strict Screening</h3>
+                    <p class="subtitle" id="teacher-subtitle-2">Strict screening aims to match each student with more
+                        suitable teachers.</p>
                 </div>
             </div>
-            <p class="desc">
+            <p class="desc" id="teacher-desc-2">
                 WeTalk International "recruits a good teacher before opening a class". Every
                 teacher here has been subject to six rounds of strict interviews, from sending a resume to officially
                 taking up the post. We are eager to recruit professional educators with a global vision, extensive
@@ -150,12 +152,13 @@
             <div class="box-header">
                 <img src="img/3.png" class="box-icon" alt="Icon 3">
                 <div class="box-title-group">
-                    <h3>Lean Cultivation</h3>
-                    <p class="subtitle">Persistent improvement and training enhancement provide the best services for
+                    <h3 id="teacher-title-3">Lean Cultivation</h3>
+                    <p class="subtitle" id="teacher-subtitle-3">Persistent improvement and training enhancement provide
+                        the best services for
                         you.</p>
                 </div>
             </div>
-            <p class="desc">
+            <p class="desc" id="teacher-desc-3">
                 WeTalk International provides pre-work and in-service training for its teachers as well as skill
                 training for teachers at different levels. The online-offline training system motivates every teacher to
                 keep improving their competence and teaching levels so as to offer students better services.
@@ -168,12 +171,13 @@
             <div class="box-header">
                 <img src="img/4.png" class="box-icon" alt="Icon 4">
                 <div class="box-title-group">
-                    <h3>Regular Assessment</h3>
-                    <p class="subtitle">Regular assessment helps teachers continue to improve their teaching quality and
+                    <h3 id="teacher-title-4">Regular Assessment</h3>
+                    <p class="subtitle" id="teacher-subtitle-4">Regular assessment helps teachers continue to improve
+                        their teaching quality and
                         facilitate the growth of both teachers and students</p>
                 </div>
             </div>
-            <p class="desc">
+            <p class="desc" id="teacher-desc-4">
                 WeTalk International provides its teachers with high-quality international teaching communication forums
                 and frequently organizes activities like student analysis, experience exchange, attending, giving, and
                 evaluating lectures, and teaching competitions, in a bid to stimulate teachers to keep improving their
