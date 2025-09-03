@@ -236,12 +236,12 @@ if ($my_total_records_check > 0) {
 
               </br></br><?php echo $introduction ?>
               <?php if (!empty($birthplace)): ?>
-                </br></br><span id="teacher-place-of-birth">Place of Birth :</span> <?php echo $birthplace ?>
+                </br></br><b id="teacher-place-of-birth">Place of Birth :</b> <?php echo $birthplace ?>
               <?php endif; ?>
-              </br><span id="teacher-education">Education :</span> <?php echo $education ?>
+              </br><b id="teacher-education">Education :</b> <?php echo $education ?>
 
-              </br></br><b id="bold-motto">Motto :</b> <?php echo $motto ?>
-              </br><b id="bold-philosophy">Philosophy :</b> <?php echo $philosophy ?>
+              </br></br><b id="teacher-motto">Motto :</b> <?php echo $motto ?>
+              </br><b id="teacher-philosophy">Philosophy :</b> <?php echo $philosophy ?>
 
 
             </div>
@@ -439,7 +439,7 @@ if ($my_total_records_check > 0) {
   <!--End Go Top-->
 
   </div>
-
+  <div id="page-data" data-page="teacher-info" data-lang="<?php echo $lang ?>"></div>
   <!-- JavaScript -->
   <script src="../vendor/js/bundle.min.js"></script>
   <!-- Plugin Js -->
