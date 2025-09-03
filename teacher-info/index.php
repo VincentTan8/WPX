@@ -104,10 +104,10 @@ if ($my_total_records_check > 0) {
   $label_details = str_replace(",", " / ", $ryow12aa12['label_details' . $lang]);
 
   $teacher_photo = $ryow12aa12['photo'];
-  $photo = '../teacher/img/photo/' . $teacher_photo;
+  $photo = '../teachers/img/photo/' . $teacher_photo;
 
   if ($teacher_photo == '') {
-    $photo = '../teacher/img/thumbnails/' . $ryow12aa12['thumbnails'];
+    $photo = '../teachers/img/thumbnails/' . $ryow12aa12['thumbnails'];
 
   }
 }
@@ -235,8 +235,9 @@ if ($my_total_records_check > 0) {
               <?php echo $label_details ?>
 
               </br></br><?php echo $introduction ?>
-              </br></br><span id="teacher-place-of-birth">Place of Birth :</span> <?php echo $birthplace ?>
-
+              <?php if (!empty($birthplace)): ?>
+                </br></br><span id="teacher-place-of-birth">Place of Birth :</span> <?php echo $birthplace ?>
+              <?php endif; ?>
               </br><span id="teacher-education">Education :</span> <?php echo $education ?>
 
               </br></br><b id="bold-motto">Motto :</b> <?php echo $motto ?>
@@ -279,7 +280,7 @@ if ($my_total_records_check > 0) {
         ]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
               data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
               style="z-index: 210;">
-              <img id="animatedImage" src="../teacher/img/banner-bg-1.png" alt=""
+              <img id="animatedImage" src="../teachers/img/banner-bg-1.png" alt=""
                 data-ww="['1800px','1200px','664px','500px']" data-hh="['500px','1400px','751px','551px']"
                 data-no-retina>
             </div>
@@ -312,7 +313,7 @@ if ($my_total_records_check > 0) {
         ]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
               data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
               style="z-index: 209;">
-              <img id="animatedImage" src="../teacher/img/banner-bg-2.png" alt=""
+              <img id="animatedImage" src="../teachers/img/banner-bg-2.png" alt=""
                 data-ww="['200px','664px','664px','400px']" data-hh="['250px','751px','751px','451px']" data-no-retina>
             </div>
 
@@ -328,7 +329,7 @@ if ($my_total_records_check > 0) {
         ]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
               data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
               style="z-index: 209;">
-              <img id="animatedImage" src="../teacher/img/like-icon.png" alt=""
+              <img id="animatedImage" src="../teachers/img/like-icon.png" alt=""
                 data-ww="['100px','1200px','664px','500px']" data-hh="['50px','1400px','751px','651px']" data-no-retina>
             </div>
 

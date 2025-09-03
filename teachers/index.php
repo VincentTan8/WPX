@@ -19,7 +19,7 @@ $main_menu = 'LINGUISTICS';
 include "../includes/menu_bar_reset.php";
 $menu_bar4 = "active";
 
-$_SESSION['active_page'] = 'teacher';
+$_SESSION['active_page'] = 'teachers';
 
 include "../includes/header.php";
 include "../connections/dbname.php";
@@ -72,7 +72,7 @@ include "../connections/dbname.php";
                         data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8=""
                         data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE  -->
-                        <img src="../teacher/img/background.png" data-bgcolor='#ffffff'
+                        <img src="../teachers/img/background.png" data-bgcolor='#ffffff'
                             style='background:#ffffff;  border-bottom-left-radius: 180px;' alt=""
                             data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
                             data-bgparallax="off" class="rev-slidebg" data-no-retina>
@@ -187,7 +187,7 @@ include "../connections/dbname.php";
         ]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                             style="z-index: 1000;">
-                            <img id="animatedImage" src="../teacher/img/banner-l-1.png" alt=""
+                            <img id="animatedImage" src="../teachers/img/banner-l-1.png" alt=""
                                 data-ww="['600','700px','600px','400px']" data-hh="['292','392px','331px','251px']"
                                 data-no-retina>
                         </div>
@@ -205,7 +205,7 @@ include "../connections/dbname.php";
         ]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                             style="z-index: 999;">
-                            <img id="animatedImage" src="../teacher/img/banner-l-2.png" alt=""
+                            <img id="animatedImage" src="../teachers/img/banner-l-2.png" alt=""
                                 data-ww="['450','600px','464px','300px']" data-hh="['320','700px','351px','251px']"
                                 data-no-retina>
                         </div>
@@ -223,7 +223,7 @@ include "../connections/dbname.php";
         ]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                             style="z-index: 98;">
-                            <img id="animatedImage" src="../teacher/img/banner-l-3.png" alt=""
+                            <img id="animatedImage" src="../teachers/img/banner-l-3.png" alt=""
                                 data-ww="['450','1200px','664px','500px']" data-hh="['292','1400px','751px','651px']"
                                 data-no-retina>
                         </div>
@@ -251,7 +251,7 @@ include "../connections/dbname.php";
         ]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                             style="z-index: 210;">
-                            <img id="animatedImage" src="../teacher/img/banner-3.png" alt=""
+                            <img id="animatedImage" src="../teachers/img/banner-3.png" alt=""
                                 data-ww="['480','1200px','664px','500px']" data-hh="['490','1400px','751px','651px']"
                                 data-no-retina>
                         </div>
@@ -270,7 +270,7 @@ include "../connections/dbname.php";
         ]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                             style="z-index: 210;">
-                            <img id="animatedImage" src="../teacher/img/banner-2.png" alt=""
+                            <img id="animatedImage" src="../teachers/img/banner-2.png" alt=""
                                 data-ww="['480','700px','504px','400px']" data-hh="['200','451px','300px','351px']"
                                 data-no-retina>
                         </div>
@@ -422,13 +422,13 @@ include "../connections/dbname.php";
                     <div class="zic-img">
 
 
-                        <h2 style="font-family: Arial, Helvetica, sans-serif; font-weight:bold"
+                        <h2 style="font-family: 'Poppins', sans-serif; font-weight:bold"
                             class="text-capitalize  bg-dark-grey"><?php echo $faculty ?></h2>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="tabs" style="text-align: center;">
+                <div class="tabs" style="text-align: center; font-family:'Poppins', sans-serif;">
                     <button class="tablinks " onclick="openTab(event, 'tab1')"><?php echo $chin ?></button>
                     <button class="tablinks" onclick="openTab(event, 'tab2')"><?php echo $trad ?></button>
                     <button class="tablinks" onclick="openTab(event, 'tab3')"><?php echo $engt ?></button>
@@ -553,7 +553,7 @@ include "../connections/dbname.php";
     <!--End Go Top-->
 
     </div>
-    <div id="page-data" data-page="" data-lang="<?php echo $lang ?>"></div>
+    <div id="page-data" data-page="teachers" data-lang="<?php echo $lang ?>"></div>
     <!-- JavaScript -->
     <script src="../vendor/js/bundle.min.js"></script>
     <!-- Plugin Js -->

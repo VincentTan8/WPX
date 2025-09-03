@@ -31,18 +31,12 @@ const fetchNews = async () => {
         const news = data[0];
 
         document.getElementById("news-title").textContent = news.news_title;
-        document.getElementById("news-category").textContent = news.news_category;
-        document.getElementById("news-description").textContent = news.news_description;
-        document.getElementById("news-date-posted").textContent = news.date_posted;
-        document.getElementById("news-date").textContent = news.date;
-        document.getElementById("news-id").textContent = news.news_id;
-        document.getElementById("news-lang").textContent = news.news_lang;
+        document.getElementById("news-date-posted").textContent = "Date Posted: " + news.date_posted;
 
-        // Set thumbnail image
-        if (document.getElementById("news-thumbnail"))
-            document.getElementById("news-thumbnail").src = imgDir + news.news_thumbnail;
+        console.log("Fetched news data:", news);
+        console.log("date_posted:", news.date_posted);
+        console.log("date:", news.date);
 
-        // Optional: story source and video file
         document.getElementById("news-story-source").textContent = news.story_source;
         document.getElementById("news-video-file").textContent = news.video_file;
 
@@ -73,11 +67,10 @@ const fetchAndRenderList = async ({
             return;
         }
 
-        // 🔥 THIS is the missing part: rendering each item using extractContent
-        data.forEach(item => {
+        data.forEach((item, index) => {
             const wrapper = document.createElement("div");
             wrapper.className = "news-section";
-            wrapper.innerHTML = extractContent(item);
+            wrapper.innerHTML = extractContent(item, index);
             container.appendChild(wrapper);
         });
 
@@ -85,32 +78,51 @@ const fetchAndRenderList = async ({
         console.error(`Error fetching from ${url}:`, err);
     }
 };
-
 const fetchNewsSection = () =>
     fetchAndRenderList({
         url: "scripts/fetch-news-section.php",
         containerId: "news-container",
         sectionClass: "news-section",
-        extractContent: item => `
+        extractContent: (item, index) => `
             <div class="container" style="margin-top:2rem;">
+                ${item.section_title
+                ? `
                 <div class="row position-relative">
                     <div class="col-lg-12 text-center mb50">
                         <div class="zic-img" style="margin-bottom:1rem;">
-                            <h2 class="text-capitalize">${item.section_title}</h2>
+                            <h2 class="text-left text-capitalize" style="margin:0 2rem; font-size:20px; font-weight:700;">${item.section_title}</h2>
                         </div>
                     </div>
                 </div>
+                `
+                : ``
+            }
+                
 
-                <div class="row justify-content-center">
-                    <div class="tabs" style="margin-top:1rem; margin-bottom:1rem;">
-                        ${item.photo ? `<img src="${imgDir + item.photo}" alt="Section Image" style="margin-bottom:1rem;"/>` : ""}
-                        <p style="text-align: left; margin-left:2rem;margin-right:2rem; z-index:999;   ">${item.section_detail}</p>
+                <div class="row justify-content-center align-items-center" style="margin-top:1rem; margin-bottom:1rem;">
+                    ${item.photo
+                ? `
+                    <div class="col-12 d-flex justify-content-center mb-3">
+                        <img src="${imgDir + item.photo}" alt="Section Image" style="max-width:100%; height:auto; border-radius:8px;"/>
                     </div>
+                    <div class="col-12 d-flex">
+                        <p style="text-align: left; margin:0 2rem; font-size:14px;">
+                            ${item.section_detail}
+                        </p>
+                    </div>
+                  `
+                : `
+                <div class="col-12 d-flex">
+                    <p style="text-align: left; margin:0 2rem; font-size:14px;">
+                        ${item.section_detail}
+                    </p>
+                </div>
+              `
+            }
                 </div>
             </div>
         `
     });
-
 
 
 

@@ -81,17 +81,19 @@ $index = 0;
         <?php
         mysqli_data_seek($result, 0);
         while ($row = mysqli_fetch_array($result)) {
-            $bg_class = $bg_classes[$index % 4];
-            $index++;
-            echo '<div class="column-item_teacher">
+            if ($row['show_teacher'] === "Y") {
+                $bg_class = $bg_classes[$index % 4];
+                $index++;
+                echo '<div class="column-item_teacher">
                     <a href="../teacher-info/main.php?id=' . $row['id'] . '" target="_blank">
                         <div class="thumbnail-container">
-                            <img class="thumbnail thumbnail_teacher ' . $bg_class . '" src="../teacher/img/thumbnails/' . $row['thumbnails'] . '">
+                            <img class="thumbnail thumbnail_teacher ' . $bg_class . '" src="../teachers/img/thumbnails/' . $row['thumbnails'] . '">
                         </div>
                         <p class="text-capitalize menu-heading mb-10">' . $row['fullname' . $lang] . '</p>
                         <p class="mb-4">' . str_replace(",", " / ", $row['label_details' . $lang]) . '</p>
                     </a>
                   </div>';
+            }
         }
         ?>
     </div>
@@ -128,7 +130,7 @@ $index = 0;
             $index++;
             echo '<div class="carousel-item ' . $active . '" >
                     <a href="../teacher-info/main.php?id=' . $row['id'] . '" target="_blank">
-                        <img class="thumbnail_teacher d-block" src="../teacher/img/thumbnails/' . $row['thumbnails'] . '">
+                        <img class="thumbnail_teacher d-block" src="../teachers/img/thumbnails/' . $row['thumbnails'] . '">
                         <div class="carousel-caption" style=" right:0px; left:0px; bottom:0px; position:relative;" >
                             <h5>' . $row['fullname' . $lang] . '</h5>
                             <p>' . str_replace(",", " / ", $row['label_details' . $lang]) . '</p>

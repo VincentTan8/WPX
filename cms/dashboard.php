@@ -135,6 +135,7 @@ if (!isset($_SESSION['user_id'])) {
             <a href="news-list.php">News List</a>
             <a href="quote-list.php">Quote List</a>
             <a href="course-list.php">Course List</a>
+            <a href="teacher-list.php">Teachers List</a>
             <a href="logout.php">Logout</a>
         </div>
     </div>
