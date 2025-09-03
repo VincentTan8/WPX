@@ -238,10 +238,15 @@ if ($my_total_records_check > 0) {
               <?php if (!empty($birthplace)): ?>
                 </br></br><b id="teacher-place-of-birth">Place of Birth :</b> <?php echo $birthplace ?>
               <?php endif; ?>
-              </br><b id="teacher-education">Education :</b> <?php echo $education ?>
-
-              </br></br><b id="teacher-motto">Motto :</b> <?php echo $motto ?>
-              </br><b id="teacher-philosophy">Philosophy :</b> <?php echo $philosophy ?>
+              <?php if (!empty($education)): ?>
+                </br><b id="teacher-education">Education :</b> <?php echo $education ?>
+              <?php endif; ?>
+              <?php if (!empty($motto)): ?>
+                </br></br><b id="teacher-motto">Motto :</b> <?php echo $motto ?>
+              <?php endif; ?>
+              <?php if (!empty($philosophy)): ?>
+                </br><b id="teacher-philosophy">Philosophy :</b> <?php echo $philosophy ?>
+              <?php endif; ?>
 
 
             </div>
