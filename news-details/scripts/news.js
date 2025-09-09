@@ -88,7 +88,7 @@ const fetchNewsSection = () =>
                 ${item.section_title
                 ? `
                 <div class="row position-relative">
-                    <div class="col-lg-12 text-center mb50">
+                    <div class="col-lg-12 text-center mb50" style="justify-items:center; font-family:'Poppins', sans-serif;">
                         <div class="zic-img" style="margin-bottom:1rem;">
                             <h2 class="text-left text-capitalize" style="margin:0 2rem; font-size:20px; font-weight:700;">${item.section_title}</h2>
                         </div>
