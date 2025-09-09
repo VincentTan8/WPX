@@ -47,6 +47,23 @@ if (mysqli_num_rows($result) === 0) {
   <link rel="stylesheet" href="news-details.css">
 </head>
 
+<style>
+  .news-title {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+
+  }
+
+
+  @media (max-width: 767px) {
+    .news-title {
+      font-size: 28px;
+    }
+  }
+</style>
+
 <body>
 
   <!-- Store language and reference info for JS -->
@@ -56,7 +73,8 @@ if (mysqli_num_rows($result) === 0) {
   <section class="container" style="margin-top:5rem;">
     <!-- Title -->
 
-    <h1 id="news-title" style="text-align:left; margin-bottom:1.5rem;"></h1>
+    <h1 id="news-title" class="news-title"></h1>
+
     <!-- Date posted -->
     <p id="news-date-posted" style="text-align:left; margin-top:0.5rem; font-size:12px; color:#555;"></p>
     <!-- Thumbnail -->
