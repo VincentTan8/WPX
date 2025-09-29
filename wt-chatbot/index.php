@@ -28,14 +28,16 @@ include "../includes/header.php";
 include "../connections/dbname.php";
 
 ?>
-<script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
-<script src="https://files.bpcontent.cloud/2025/09/10/01/20250910012657-FVQNQMDY.js" defer></script>
+<!-- <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
+<script src="https://files.bpcontent.cloud/2025/09/24/08/20250924084540-B5Q8A59C.js" defer></script> -->
+<!-- <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
+<script src="https://files.bpcontent.cloud/2025/09/10/01/20250910012657-FVQNQMDY.js" defer></script> -->
 
 <body oncontextmenu="return false;" data-spy="scroll" data-target=".navbar" data-offset="90" class="position-relative">
 
 
     <?php include "../includes/address.php"; ?>
-    <?php //include "../includes/footer.php"; ?>
+    <?php include "../includes/footer.php"; ?>
     <!-- End white container -->
 
 
