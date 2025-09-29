@@ -1,105 +1,130 @@
 <section class="contact-us" style="background-color:#07CA91; text-align: left;" id="contact">
 
-<div class="container" style="text-align: left;">
-    <div class="row pb-0">
-        <div class="col-md-6">
-            <div class="contact">
-                         <div style="text-align: left;  ">
-                            <img src="../resources/img/apply<?php echo $lang ?>.png" alt="image">
+    <div class="container" style="text-align: left;">
+        <div class="row pb-0">
+            <div class="col-md-6">
+                <div class="contact">
+                    <div style="font-family:'Poppins', sans-serif; text-align: left;">
+
+
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <h2
+                                style="font-size: 28px; font-weight: 700; margin: 0; color: white; font-family:'Poppins', sans-serif;">
+                                Apply for a Trial Class
+                            </h2>
+                            <img src="../resources/img/hair.png" alt="Apply" style="height: 40px; width: auto;">
                         </div>
-                 
-                    
 
 
-               
+                        <p
+                            style="font-size: 18px; margin-bottom: 20px; color:white; font-family:'Poppins', sans-serif;">
+                            Every month more than 3000 students attend our trial class!
+                        </p>
 
 
-                  <div style="text-align: left; height:150px; width:250px">
-                            <img src="../resources/img/apply2.png" class="wow rotateInDownLeft" alt="image">
-                        </div>
-                 
+                        <ol
+                            style="font-size: 16px; line-height: 1.8; color: white; padding-left: 20px; font-family:'Poppins', sans-serif;">
+                            <li>1. Accomplish the application information</li>
+                            <li>2. We will contact you as soon as possible and learn about your children's needs</li>
+                            <li>3. The course consultant will arrange an excellent teacher for the trial class</li>
+                        </ol>
+
+                    </div>
+
+                    <div style="text-align: left; height:150px; width:250px">
+                        <img src="../resources/img/apply2.png" class="wow rotateInDownLeft" alt="image">
+                    </div>
+
+                </div>
             </div>
-            </div>
-        <div class="col-md-6 wow rotateInDownLeft" style="background-color: white; border-radius: 25px;">
-            <div class="book-table" style="padding-top: 50px;">
-                <h2 class="table-booking" style="text-align:center;font-size: 25px; font-weight:bold; font-family:Arial, Helvetica, sans-serif"  >Choose a  trial class </br> 选择试听课程</h2>
-            </div>
+            <div class="col-md-6 wow rotateInDownLeft" style="background-color: white; border-radius: 25px;">
+                <div class="book-table" style="padding-top: 50px;">
+                    <h2 class="table-booking"
+                        style="text-align:center;font-size: 25px; font-weight:bold; font-family:Arial, Helvetica, sans-serif">
+                        Choose a trial class </br> 选择试听课程</h2>
+                </div>
 
-            <form method="post" action="../includes/save.php" class="contact-form" id="contact-form-data">
-                <div class="row" style="margin-top: 40px; margin-left:10px; margin-right:10px">
-                    <div class="col-sm-12" id="result"></div>
+                <form method="post" action="../includes/save.php" class="contact-form" id="contact-form-data">
+                    <div class="row" style="margin-top: 40px; margin-left:10px; margin-right:10px">
+                        <div class="col-sm-12" id="result"></div>
                         <div class="col-md-6 mb-3">
-                            <input required type="text" name="first_name" class=" form-control m-mb-20" placeholder="Given Name 名">
+                            <input required type="text" name="first_name" class=" form-control m-mb-20"
+                                placeholder="Given Name 名">
                         </div>
 
                         <div class="col-md-6 mb-3">
-                            <input required type="text" name="last_name" class=" form-control m-mb-20" placeholder="Family Name 姓">
+                            <input required type="text" name="last_name" class=" form-control m-mb-20"
+                                placeholder="Family Name 姓">
                         </div>
-                    
 
-                                <div class="col-md-6 mb-3">
-                                    <input required type="email" name="email" class=" form-control m-mb-20" placeholder="Email 电子邮件地址">
-                                </div>
-                            
-                                <div class="col-md-6 mb-3">
-                                
-                                                            <input required   type="text" name="contact" class=" form-control m-mb-20" placeholder="Contact Number 电话号码">
 
-                                
-                                </div>
+                        <div class="col-md-6 mb-3">
+                            <input required type="email" name="email" class=" form-control m-mb-20"
+                                placeholder="Email 电子邮件地址">
+                        </div>
 
-                    <div class="col-md-12 mb-12">
-                      
+                        <div class="col-md-6 mb-3">
+
+                            <input required type="text" name="contact" class=" form-control m-mb-20"
+                                placeholder="Contact Number 电话号码">
+
+
+                        </div>
+
+                        <div class="col-md-12 mb-12">
+
                             <select required title="" class=" js-example-basic-single" name="course">
 
- <option value="">Select a Course 选择课程
-</option>
+                                <option value="">Select a Course 选择课程
+                                </option>
 
                                 <option value="Exam-oriented Course (Kids)
 ">Exam-oriented Course (Kids) 面向考试的课程（儿童）
-</option>
+                                </option>
                                 <option value="Exam-oriented Chinese Course (Adult)
 ">Exam-oriented Chinese Course (Adult) 面向考试的中文课程（成人）
-</option>
+                                </option>
                                 <option value="Kids English Courses
 ">Kids English Courses 儿童英语课程
-</option>
+                                </option>
                                 <option value="Adult English Courses
 ">Adult English Courses 成人英语课程
-</option>
+                                </option>
                                 <option value="Chinese Idioms
 ">Chinese Idioms 中文成语
-</option>
+                                </option>
                                 <option value="Filipino Program
 ">Filipino Program 菲律宾语课程
-</option>
-                                 
+                                </option>
+
                             </select>
-                    </div>
+                        </div>
 
-                   </br> </br>  </br> 
- 
-                            <div class="col-md-12 mb-6">
-                      
-                                                   <textarea type="text" name="message" class=" form-control m-mb-20" placeholder="Message 消息"></textarea>
+                        </br> </br> </br>
 
-                     
-                            </div>
+                        <div class="col-md-12 mb-6">
 
-                           
-                    <div class="col-md-12 text-center text-md-center">
+                            <textarea type="text" name="message" class=" form-control m-mb-20"
+                                placeholder="Message 消息"></textarea>
 
-                        <input type="submit" name="btnExit" style="width: 60%;" value="REGISTER 注册" class="btn btn-green btn-large btn-rounded ">
-                     
-                    </div>
 
-                    </br> </br> </br> </br>
-            
+                        </div>
 
-                   
 
-            </form>
-        </div>
+                        <div class="col-md-12 text-center text-md-center">
+
+                            <input type="submit" name="btnExit" style="width: 60%;" value="REGISTER 注册"
+                                class="btn btn-green btn-large btn-rounded ">
+
+                        </div>
+
+                        </br> </br> </br> </br>
+
+
+
+
+                </form>
+            </div>
         </div>
     </div>
 </section>
