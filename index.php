@@ -372,6 +372,10 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
     <script type="module" src="index/scripts/quote.js"></script>
     <script type="module" src="index/scripts/translate.js"></script>
     <script type="text/javascript" src="index/assets/warning.js"></script>
+
+    <!-- Botpress Script -->
+    <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
+    <script src="https://files.bpcontent.cloud/2025/09/24/08/20250924084540-B5Q8A59C.js" defer></script>
 </body>
 
 </html>
