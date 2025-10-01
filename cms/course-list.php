@@ -249,13 +249,13 @@ if (isset($_SESSION['dataLang']) and $_SESSION['dataLang'] == '_cn') {
                         <label>Course Image</label>
                         <div style="display: inline-flex; gap: 1rem;">
                             <input id="editCourseImg" type="file" name="editCourseImg">
-                            <span id="courseImgName"></span>
+                            <img id="courseThumbnail" style="max-height: 60px; display:none;">
                         </div>
 
                         <label>Course List Image</label>
                         <div style="display: inline-flex; gap: 1rem;">
                             <input id="editCourseListImg" type="file" name="editCourseListImg">
-                            <span id="courseListImgName"></span>
+                            <img id="courseListThumbnail" style="max-height: 60px; display:none;">
                         </div>
 
                         <label>Thumbnail Tag</label>
@@ -545,8 +545,20 @@ if (isset($_SESSION['dataLang']) and $_SESSION['dataLang'] == '_cn') {
             document.getElementById('editCourseSubtitle').value = row['course_subtitle' + lang] || '';
             document.getElementById('editCourseDescription').value = row['course_description' + lang] || '';
 
-            document.getElementById('courseImgName').textContent = row.course_img || '';
-            document.getElementById('courseListImgName').textContent = row.course_list_img || '';
+            const courseThumbnail = document.getElementById('courseThumbnail');
+            if (row.course_img) {
+                courseThumbnail.src = `../resources/img/courses/${row.course_img}`;
+                courseThumbnail.style.display = 'block';
+            } else {
+                courseThumbnail.style.display = 'none';
+            }
+            const courseListThumbnail = document.getElementById('courseListThumbnail');
+            if (row.course_list_img) {
+                courseListThumbnail.src = `../resources/img/courses/${row.course_list_img}`;
+                courseListThumbnail.style.display = 'block';
+            } else {
+                courseListThumbnail.style.display = 'none';
+            }
 
             document.getElementById('editThumbnailTag').value = row['thumbnail_tag' + lang] || '';
             document.getElementById('editSuitableFor').value = row['suitable_for' + lang] || '';
