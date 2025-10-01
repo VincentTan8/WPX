@@ -56,6 +56,11 @@ include "../connections/dbname.php";
 <script src="../resources/js/script.js"></script>
 
 <style>
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
     .main-container {
         display: flex;
         gap: 169px;
@@ -302,7 +307,6 @@ include "../connections/dbname.php";
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 5px;
     }
 
     .dollar-box {
@@ -375,9 +379,10 @@ include "../connections/dbname.php";
             box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
             padding: 10px 20px;
             display: flex;
+            gap: 1rem;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
+            z-index: 998;
         }
 
         .try-now-mobile {
@@ -402,8 +407,7 @@ include "../connections/dbname.php";
             box-shadow: 0 -2px 30px rgba(0, 0, 0, 0.3);
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
-            z-index: 2000;
-            padding: 30px 20px;
+            padding: 40px 20px 65px 20px;
             display: none;
             flex-direction: column;
             gap: 20px;
@@ -419,7 +423,7 @@ include "../connections/dbname.php";
 
         .pricing-close {
             position: absolute;
-            top: -25px;
+            top: -30px;
             right: 20px;
             font-size: 20px;
             font-weight: bold;
@@ -478,56 +482,9 @@ include "../connections/dbname.php";
             text-align: left;
         }
 
-        .modal-bottom-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 10px;
-            gap: 10px;
-        }
-
-        .modal-bottom-row .footer-left {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .modal-bottom-row .dollar-box {
-            width: 22px;
-            height: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 4px;
-            stroke-width: 2px;
-            stroke: #2D2B32;
-        }
-
-        .modal-bottom-row .currency-label {
-            font-family: 'Poppins', sans-serif;
-            font-size: 12px;
-            font-weight: 600;
-            color: #2D2B32;
-        }
-
-        .modal-bottom-row .try-now {
-            background: #FFB800;
-            border: none;
-            color: white;
-            font-size: 16px;
-            font-weight: 600;
-            padding: 12px 24px;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 325px;
-            border-radius: 5px;
-        }
-
         .section-item div {
             text-align: left;
         }
-
 
         .left-header-wrap {
             flex-direction: column;
@@ -554,7 +511,6 @@ include "../connections/dbname.php";
             z-index: 3000;
 
             width: 116px;
-            height: 178px;
             display: none;
             flex-direction: column;
             gap: 12px;
@@ -598,7 +554,6 @@ include "../connections/dbname.php";
         .currency-option {
             padding: 10px 15px;
             border-radius: 8px;
-            background: #F3F3F3;
             font-family: 'Poppins', sans-serif;
             font-size: 14px;
             cursor: pointer;
@@ -835,13 +790,13 @@ include "../connections/dbname.php";
                         <button class="toggle-button active" onclick="setTab('onsite')">On-Site</button>
                         <button class="toggle-button disabled" onclick="setTab('tohome')">To-Home</button>
                         <div class="tab-bg">
-                            <svg id="bg-online" class="active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472 191"
-                                fill="none">
+                            <svg id="bg-online" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472 191" fill="none">
                                 <path
                                     d="M157.333 31C157.333 39.2843 164.049 46 172.333 46H457C465.284 46 472 52.7157 472 61V176C472 184.284 465.284 191 457 191H15C6.71572 191 0 184.284 0 176V15C0 6.71572 6.71573 0 15 0H142.333C150.617 0 157.333 6.71573 157.333 15V31Z"
                                     fill="#4170FE" />
                             </svg>
-                            <svg id="bg-onsite" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472 191" fill="none">
+                            <svg id="bg-onsite" class="active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472 191"
+                                fill="none">
                                 <path
                                     d="M314.333 31C314.333 39.2843 321.049 46 329.333 46H457C465.284 46 472 52.7157 472 61V176C472 184.284 465.284 191 457 191H15C6.71572 191 0 184.284 0 176V61C0 52.7157 6.71573 46 15 46H142C150.284 46 157 39.2843 157 31V15C157 6.71573 163.716 0 172 0H299.333C307.617 0 314.333 6.71573 314.333 15V31Z"
                                     fill="#4170FE" />
@@ -863,28 +818,28 @@ include "../connections/dbname.php";
 
                         <div class="section-label">Numbers of Sessions:</div>
                         <div class="option-group">
-                            <div class="option selected" data-group="sessions">10 Sessions</div>
+                            <div class="session-num option selected" data-group="sessions">10 Sessions</div>
 
                         </div>
 
-                        <div class="total">Total: <span>$ 450.00</span></div>
-                        <button class="try-now">Try now</button>
+                        <div class="total">Price: <span>$ 450.00</span></div>
+                        <button class="try-now" id="try-button"><a id="try-link">Try Now</a></button>
                     </div>
                 </div>
             </div>
             <div class="footer-fixed mobile-only">
                 <div class="footer-left">
                     <div class="dollar-box">
-
                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none">
                             <path
                                 d="M6.66683 5.23242L6.6295 5.09342C6.48775 4.56196 6.16061 4.09015 5.70006 3.75296C5.23952 3.41578 4.67198 3.23256 4.08763 3.23242H3.53083C3.07458 3.23255 2.63262 3.38161 2.28085 3.654C1.92908 3.92639 1.68946 4.30511 1.60314 4.72511C1.51682 5.14512 1.58919 5.58019 1.80782 5.95562C2.02645 6.33104 2.3777 6.62338 2.80123 6.78242L5.1991 7.68242C5.62263 7.84147 5.97387 8.1338 6.1925 8.50923C6.41113 8.88465 6.4835 9.31973 6.39718 9.73973C6.31086 10.1597 6.07124 10.5385 5.71947 10.8108C5.3677 11.0832 4.92574 11.2323 4.4695 11.2324H3.91376C3.32923 11.2325 2.76145 11.0494 2.30068 10.7122C1.83992 10.375 1.51262 9.90305 1.37083 9.37142L1.3335 9.23242M4.00016 1.23242V3.23242M4.00016 11.2324V13.2324"
                                 stroke="#2D2B32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <div class="currency-label">Currency</div>
+                    <div class="currency-label" id="currency-text-mobile-1">Currency</div>
                 </div>
-                <button class="try-now-mobile" onclick="openPricingModal()">Try now</button>
+                <button class="try-now-mobile" id="try-button-mobile-1" onclick="openPricingModal()"><a
+                        id="try-link-mobile">Try Now</a></button>
             </div>
 
             <!-- Currency popup -->
@@ -905,10 +860,9 @@ include "../connections/dbname.php";
                     <button class="pricing-close" onclick="closePricingModal()">×</button>
                     <div class="section-label"></div>
                     <div class="option-group">
-                        <div class="option calligraphy-type-option selected" data-group="calligraphy-type">Online
-                        </div>
-                        <!-- <div class="option calligraphy-type-option" data-group="calligraphy-type">On-Site</div>
-                            <div class="option calligraphy-type-option" data-group="calligraphy-type">To-Home</div> -->
+                        <!-- <div class="option calligraphy-type-option" data-group="calligraphy-type">Online</div> -->
+                        <div class="option calligraphy-type-option selected" data-group="calligraphy-type">On-Site</div>
+                        <!-- <div class="option calligraphy-type-option" data-group="calligraphy-type">To-Home</div> -->
                     </div>
                     <div class="section-label">Way of teaching:</div>
                     <div class="option-group">
@@ -917,31 +871,23 @@ include "../connections/dbname.php";
                     </div>
                     <div class="section-label">Number of Session:</div>
                     <div class="option-group sessions-group">
-                        <div class="option selected" data-group="sessions">10 Sessions</div>
-
+                        <div class="session-num option selected" data-group="sessions">10 Sessions</div>
                     </div>
 
-                    <div class="total">Total: <span>$ 450.00</span></div>
-                    <div class="modal-bottom-row">
-                        <div class="footer-left">
-                            <div class="dollar-box">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15"
-                                    fill="none">
-                                    <path
-                                        d="M6.66683 5.23242L6.6295 5.09342C6.48775 4.56196 6.16061 4.09015 5.70006 3.75296C5.23952 3.41578 4.67198 3.23256 4.08763 3.23242H3.53083C3.07458 3.23255 2.63262 3.38161 2.28085 3.654C1.92908 3.92639 1.68946 4.30511 1.60314 4.72511C1.51682 5.14512 1.58919 5.58019 1.80782 5.95562C2.02645 6.33104 2.3777 6.62338 2.80123 6.78242L5.1991 7.68242C5.62263 7.84147 5.97387 8.1338 6.1925 8.50923C6.41113 8.88465 6.4835 9.31973 6.39718 9.73973C6.31086 10.1597 6.07124 10.5385 5.71947 10.8108C5.3677 11.0832 4.92574 11.2323 4.4695 11.2324H3.91376C3.32923 11.2325 2.76145 11.0494 2.30068 10.7122C1.83992 10.375 1.51262 9.90305 1.37083 9.37142L1.3335 9.23242M4.00016 1.23242V3.23242M4.00016 11.2324V13.2324"
-                                        stroke="#2D2B32" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                            <div class="currency-label">Currency</div>
-                        </div>
-                        <button class="try-now">Try now</button>
-                    </div>
-
+                    <div class="total">Price: <span>$ 450.00</span></div>
                 </div>
             </div>
 
             <script>
+                function handleClick(event) {
+                    // event.preventDefault();
+                    // const popupMobile = document.getElementById("popupForm");
+                    // var companyId = this.getAttribute('data-id');
+                    // document.getElementById('course').value = companyId;
+                    // popupMobile.style.display = "block";
+
+                }
+
                 function setTab(tab) {
                     document.querySelectorAll('.toggle-button').forEach(btn => btn.classList.remove('active'));
                     document.querySelector(`.toggle-button[onclick="setTab('${tab}')"]`).classList.add('active');
@@ -961,10 +907,20 @@ include "../connections/dbname.php";
 
                         if (group === "teaching") {
                             const totalPrice = document.querySelector(".total span");
+                            const sessionNum = document.querySelector(".session-num");
+                            const tryLink = document.getElementById("try-link");
                             if (option.textContent.includes("Solo")) {
-                                totalPrice.textContent = "Contact Us";
+                                sessionNum.textContent = "Private sessions available upon request";
+                                totalPrice.textContent = "Varies";
+                                tryLink.href = "https://api.whatsapp.com/send?phone=6597582288";
+                                tryLink.target = "_blank";
+                                tryLink.textContent = "Contact Us";
                             } else if (option.textContent.includes("Group")) {
+                                sessionNum.textContent = "10 Sessions";
                                 totalPrice.textContent = "$ 450.00";
+                                tryLink.href = "";
+                                tryLink.target = "";
+                                tryLink.textContent = "Try Now";
                             }
                         }
                     });
@@ -972,12 +928,18 @@ include "../connections/dbname.php";
 
                 function openPricingModal() {
                     document.getElementById('pricingModal').classList.add('active');
+                    document.querySelector('.footer-fixed').classList.add('modal-open');
                     document.body.style.overflow = 'hidden';
+                    const btn = document.getElementById('try-button-mobile-1');
+                    btn.addEventListener('click', handleClick);
                 }
 
                 function closePricingModal() {
                     document.getElementById('pricingModal').classList.remove('active');
+                    document.querySelector('.footer-fixed').classList.remove('modal-open');
                     document.body.style.overflow = '';
+                    const btn = document.getElementById('try-button-mobile-1');
+                    btn.removeEventListener('click', handleClick);
                 }
 
                 document.querySelectorAll('.pricing-modal .option').forEach(option => {
@@ -988,14 +950,23 @@ include "../connections/dbname.php";
                         });
                         option.classList.add('selected');
 
-
                         if (group === "teaching") {
                             const totalPrice = document.querySelector(".pricing-modal .total span");
+                            const sessionNum = document.querySelector(".pricing-modal .option-group .session-num");
+                            const tryLink = document.getElementById("try-link-mobile");
                             if (totalPrice) {
                                 if (option.textContent.includes("Solo")) {
-                                    totalPrice.textContent = "Contact Us";
+                                    sessionNum.textContent = "Private sessions available upon request";
+                                    totalPrice.innerHTML = "Varies";
+                                    tryLink.href = "https://api.whatsapp.com/send?phone=6597582288";
+                                    tryLink.target = "_blank";
+                                    tryLink.textContent = "Contact Us";
                                 } else if (option.textContent.includes("Group")) {
+                                    sessionNum.textContent = "10 Sessions";
                                     totalPrice.textContent = "$ 450.00";
+                                    tryLink.href = "";
+                                    tryLink.target = "";
+                                    tryLink.textContent = "Try Now";
                                 }
                             }
                         }
@@ -1012,13 +983,21 @@ include "../connections/dbname.php";
                 }
 
                 document.addEventListener('click', function (e) {
+                    const pricingModal = document.getElementById('pricingModal');
+                    const footerFixed = document.querySelector('.footer-fixed');
                     const popup = document.getElementById('currencyPopup');
                     const trigger = document.querySelector('.footer-left');
 
                     if (!popup.contains(e.target) && !trigger.contains(e.target)) {
                         popup.classList.remove('active');
                     }
+                    if (!pricingModal.contains(e.target) && !footerFixed.contains(e.target)) {
+                        closePricingModal();
+                    }
                 });
+
+                document.getElementById("try-button").dataset.id = "Cultivating Character Through Every Stroke";  //I used id coz un ung ginamit ni sir sa footer.php
+                document.getElementById("try-button-mobile-1").dataset.id = "Cultivating Character Through Every Stroke";
             </script>
 
         </div>
