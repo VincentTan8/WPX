@@ -283,7 +283,7 @@ include "../connections/dbname.php";
         margin-bottom: 20px;
     }
 
-    .total span {
+    .price-total {
         color: red;
     }
 
@@ -568,7 +568,9 @@ include "../connections/dbname.php";
             <div class="main-container">
                 <div class="left-container">
                     <div class="left-header-wrap">
-                        <div class="calligraphy-left-title">Cultivating Character Through Every Stroke</div>
+                        <div id="calligraphy-title" class="calligraphy-left-title">
+                            书法
+                        </div>
                         <div class="left-rating">
                             <span class="left-rating-star">★★★★★</span>
                             <span class="left-rating-text">5.0 (20)</span>
@@ -580,201 +582,150 @@ include "../connections/dbname.php";
                             class="calligraphy-left-image">
                     </div>
 
-                    <div class="calligraphy-left-description">
-                        Learn the timeless art of Chinese calligraphy in Singapore.
+                    <div id="calligraphy-description" class="calligraphy-left-description">
+                        在新加坡城市中心，习得中华书法之美；一笔一画，修心养性
                     </div>
 
                     <div class="details-section">
-                        <h3>Why Learn Calligraphy</h3>
-                        <div class="section-left-description">
-                            Chinese calligraphy is more than writing, it’s a way of life. Every stroke embodies
-                            patience, balance, and harmony. At WeTalk, our calligraphy program helps students:
-
+                        <h3 id="section-1-title">为什么学书法？</h3>
+                        <div id="section-1-description" class="section-left-description">
+                            中国书法不仅仅是书写，更是一种生活方式。每一笔都体现着耐心、平衡与和谐。在WeTalk，我们的书法课程帮助学生：</div>
+                        <div class="section-item">
+                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
+                            <div id="section-1-item-1">创意表达 - 将墨水转化为流动的艺术</div>
                         </div>
                         <div class="section-item">
                             <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>Express Creativity - Transform ink into flowing art
-                            </div>
+                            <div id="section-1-item-2">专注静心 - 培养专注力和内心的平静</div>
                         </div>
                         <div class="section-item">
                             <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>Build Mindfulness - Develop focus and inner calm</div>
+                            <div id="section-1-item-3">文化传承 - 体验中华传统智慧</div>
                         </div>
                         <div class="section-item">
                             <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div> Connect with Culture - Experience the wisdom of Chinese heritage
-                            </div>
-                        </div>
-                        <div class="section-item">
-                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>Develop Character - Calligraphy nurtures discipline, persistence, and respect
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="details-section">
-                        <h3>Curriculum</h3>
-                        <div class="section-item">
-                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>Beginner - Brush holding, ink prep, basic strokes, simple characters
-
-                            </div>
-                        </div>
-                        <div class="section-item">
-                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>Intermediate - Script styles (楷书, 行书), copying masters, expression & structure
-                            </div>
-                        </div>
-                        <div class="section-item">
-                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div> Advanced - Freehand creativity, large works, exhibitions & competitions
-
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="details-section">
-                        <h3>Our Teachers</h3>
-                        <div class="section-left-description">
-                            Ms. Mi Lan
-                        </div>
-                        <div class="section-item">
-                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>Winner of Young Designer Awards in Paris & Tokyo
-
-                            </div>
-                        </div>
-                        <div class="section-item">
-                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>20+ years of teaching experience (former Hwa Chong teacher)
-                            </div>
-                        </div>
-                        <div class="section-item">
-                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div> 2018 Dr. Tan Chee Cho Calligraphy Award (First Prize)
-
-                            </div>
-                        </div>
-                        <div class="section-item">
-                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>Skilled in both brush & pen calligraphy, integrates Chinese cultural wisdom into
-                                lessons
-
-                            </div>
-                        </div>
-
-                        <div class="section-left-description">
-                            Mr. An Chun Lai
-                        </div>
-                        <div class="section-item">
-                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>3-time Champion of Singapore Calligraphy Open Competition (2013–2015)
-                            </div>
-                        </div>
-                        <div class="section-item">
-                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>Winner of 2015 Brush Calligraphy Open Division
-
-                            </div>
-                        </div>
-                        <div class="section-item">
-                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div> Works selected for the Singapore Modern Calligraphy Exhibition for 10 consecutive
-                                years (2014–2023)
-                            </div>
-                        </div>
-                        <div class="section-item">
-                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>Awarded Special Prize at the 35th Anniversary Exhibition of the Singapore
-                                Calligraphy
-                                Association (2021)
-
-                            </div>
-                        </div>
-                        <div class="section-item">
-                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>Member of Singapore Calligraphy Association, Fellow of Singapore Calligraphy
-                                Institute
-
-
-                            </div>
-                        </div>
-
-                        <div class="section-item">
-                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>Experienced educator in top schools & MOE programs, national competition judge
-
-
-                            </div>
+                            <div id="section-1-item-4">品格养成 - 书法培养纪律、毅力和尊重</div>
                         </div>
                     </div>
 
                     <div class="details-section">
-                        <h3>Student Experience</h3>
+                        <h3 id="section-2-title">课程体系</h3>
                         <div class="section-item">
                             <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>Hands-on practice with personal guidance
-                            </div>
+                            <div id="section-2-item-1">初级 - 握笔、备墨、基本笔画、简笔字</div>
                         </div>
                         <div class="section-item">
                             <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>Small classes for maximum attention
-                            </div>
+                            <div id="section-2-item-2">中级 - 字体样式（楷书、行书）、临摹母版、表达和结构</div>
                         </div>
                         <div class="section-item">
                             <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>Students’ works often showcased at WeTalk events and exhibitions
-                            </div>
+                            <div id="section-2-item-3">高级 - 自由创作、大型作品、展览及比赛</div>
                         </div>
                     </div>
 
                     <div class="details-section">
-                        <h3>FAQ</h3>
-                        <div class="section-left-description">
-                            1. Do I need experience?
+                        <h3 id="section-3-title">师资团队</h3>
+                        <div id="section-3-desc-1" class="section-left-description">
+                            米兰老师
                         </div>
                         <div class="section-item">
                             <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div> No. Beginners are welcome; we teach step by step.
-
-                            </div>
-                        </div>
-                        <div class="section-left-description">
-                            2. Are materials provided?
+                            <div id="section-3-1-1">巴黎和东京青年设计师奖得主</div>
                         </div>
                         <div class="section-item">
                             <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div>Starter kits (brush, ink, paper) available for purchase at WeTalk.
-
-                            </div>
-                        </div>
-
-                        <div class="section-left-description">
-                            3. Is calligraphy suitable for kids?
+                            <div id="section-3-1-2">20+年教学经验（前华中教师）</div>
                         </div>
                         <div class="section-item">
                             <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div> Yes. Children from age 4 onwards can join and benefit greatly in focus and
-                                patience.
-
-                            </div>
-                        </div>
-
-                        <div class="section-left-description">
-                            4. Do you offer adult classes?
+                            <div id="section-3-1-3">2018年陈志祖博士书法奖（一等奖）</div>
                         </div>
                         <div class="section-item">
                             <img src="../resources/img/course/check-yellow-list.png" alt="check">
-                            <div> Yes. Separate tracks for teens and adults.
+                            <div id="section-3-1-4">精通毛笔书法，懂得将中国文化智慧融入课堂</div>
+                        </div>
 
-                            </div>
+                        <div id="section-3-desc-2" class="section-left-description">
+                            安春来老师
+                        </div>
+                        <div class="section-item">
+                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
+                            <div id="section-3-2-1">三届新加坡书法公开赛冠军（2013-2015）</div>
+                        </div>
+                        <div class="section-item">
+                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
+                            <div id="section-3-2-2">2015年毛笔书法公开赛冠军</div>
+                        </div>
+                        <div class="section-item">
+                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
+                            <div id="section-3-2-3">作品连续10年入选新加坡现代书法展（2014-2023）</div>
+                        </div>
+                        <div class="section-item">
+                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
+                            <div id="section-3-2-4">荣获新加坡书法协会35周年纪念展特别奖（2021年）</div>
+                        </div>
+                        <div class="section-item">
+                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
+                            <div id="section-3-2-5">新加坡书法协会会员、新加坡书法研究院院士</div>
+                        </div>
+                        <div class="section-item">
+                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
+                            <div id="section-3-2-6">顶尖学校和教育部项目经验丰富的教育工作者，国家级竞赛评委</div>
+                        </div>
+                    </div>
+
+                    <div class="details-section">
+                        <h3 id="section-4-title">学习风采</h3>
+                        <div class="section-item">
+                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
+                            <div id="section-4-item-1">在个人指导下进行实践</div>
+                        </div>
+                        <div class="section-item">
+                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
+                            <div id="section-4-item-2">小班授课，最大程度关注</div>
+                        </div>
+                        <div class="section-item">
+                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
+                            <div id="section-4-item-3">学生的作品经常在 WeTalk 活动和展览中展出</div>
+                        </div>
+                    </div>
+
+                    <div class="details-section">
+                        <h3 id="section-5-title">常见问题</h3>
+                        <div id="section-5-q-1" class="section-left-description">
+                            1. 需要基础吗？
+                        </div>
+                        <div class="section-item">
+                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
+                            <div id="section-5-a-1">不需要，零基础可学。</div>
+                        </div>
+                        <div id="section-5-q-2" class="section-left-description">
+                            2. 材料包含吗？
+                        </div>
+                        <div class="section-item">
+                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
+                            <div id="section-5-a-2">可购买入门套装。</div>
+                        </div>
+
+                        <div id="section-5-q-3" class="section-left-description">
+                            3. 适合儿童吗？
+                        </div>
+                        <div class="section-item">
+                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
+                            <div id="section-5-a-3">4岁以上皆可参加。</div>
+                        </div>
+
+                        <div id="section-5-q-4" class="section-left-description">
+                            4. 有成人课程吗？
+                        </div>
+                        <div class="section-item">
+                            <img src="../resources/img/course/check-yellow-list.png" alt="check">
+                            <div id="section-5-a-4">设青少年与成人分班。</div>
                         </div>
                     </div>
                     <div class="details-section">
-                        <h3>Watch Calligraphy in Action</h3>
+                        <h3 id="section-6-title">观看书法课堂示范</h3>
                         <div class="video-container">
                             <video controls>
                                 <source src="../resources/img/calligraphy/calligraphy.mp4" type="video/mp4">
@@ -787,7 +738,7 @@ include "../connections/dbname.php";
                 <div class="right-container">
                     <div class="tab-toggle">
                         <button class="toggle-button disabled" onclick="setTab('online')">Online</button>
-                        <button class="toggle-button active" onclick="setTab('onsite')">On-Site</button>
+                        <button id="onsite" class="toggle-button active" onclick="setTab('onsite')">On-Site</button>
                         <button class="toggle-button disabled" onclick="setTab('tohome')">To-Home</button>
                         <div class="tab-bg">
                             <svg id="bg-online" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472 191" fill="none">
@@ -810,19 +761,19 @@ include "../connections/dbname.php";
                     </div>
 
                     <div class="tab-content">
-                        <div class="section-label">Way of teaching:</div>
+                        <div id="calligraphy-setup" class="section-label">Way of Teaching:</div>
                         <div class="option-group">
-                            <div class="option " data-group="teaching">Solo (1on1)</div>
-                            <div class="option selected" data-group="teaching">Group</div>
+                            <div id="1on1" class="option " data-group="teaching" data-value="solo">Solo (1on1)</div>
+                            <div id="group" class="option selected" data-group="teaching" data-value="group">Group</div>
                         </div>
-
-                        <div class="section-label">Numbers of Sessions:</div>
+                        <div id="calligraphy-session-num" class="section-label">Number of Sessions:</div>
                         <div class="option-group">
-                            <div class="session-num option selected" data-group="sessions">10 Sessions</div>
-
+                            <div id="10sessions" class="session-num option selected" data-group="sessions">10 Sessions
+                            </div>
                         </div>
-
-                        <div class="total">Price: <span>$ 450.00</span></div>
+                        <div class="total">
+                            <span id="calligraphy-total">Price:</span> <span class="price-total">$ 450.00</span>
+                        </div>
                         <button class="try-now" id="try-button"><a id="try-link">Try Now</a></button>
                     </div>
                 </div>
@@ -861,147 +812,27 @@ include "../connections/dbname.php";
                     <div class="section-label"></div>
                     <div class="option-group">
                         <!-- <div class="option calligraphy-type-option" data-group="calligraphy-type">Online</div> -->
-                        <div class="option calligraphy-type-option selected" data-group="calligraphy-type">On-Site</div>
+                        <div id="onsite-mobile" class="option calligraphy-type-option selected"
+                            data-group="calligraphy-type">On-Site</div>
                         <!-- <div class="option calligraphy-type-option" data-group="calligraphy-type">To-Home</div> -->
                     </div>
-                    <div class="section-label">Way of teaching:</div>
+                    <div id="calligraphy-setup-mobile" class="section-label">Way of teaching:</div>
                     <div class="option-group">
-                        <div class="option " data-group="teaching">Solo (1on1)</div>
-                        <div class="option selected" data-group="teaching">Group</div>
+                        <div id="1on1-mobile" class="option" data-group="teaching" data-value="solo">Solo (1on1)</div>
+                        <div id="group-mobile" class="option selected" data-group="teaching" data-value="group">Group
+                        </div>
                     </div>
-                    <div class="section-label">Number of Session:</div>
+                    <div id="calligraphy-session-num-mobile" class="section-label">Number of Session:</div>
                     <div class="option-group sessions-group">
-                        <div class="session-num option selected" data-group="sessions">10 Sessions</div>
+                        <div id="10sessions-mobile" class="session-num option selected" data-group="sessions">10
+                            Sessions</div>
                     </div>
-
-                    <div class="total">Price: <span>$ 450.00</span></div>
+                    <div class="total">
+                        <span id="calligraphy-total-mobile">Price:</span> <span class="price-total">$ 450.00</span>
+                    </div>
                 </div>
             </div>
-
-            <script>
-                function handleClick(event) {
-                    // event.preventDefault();
-                    // const popupMobile = document.getElementById("popupForm");
-                    // var companyId = this.getAttribute('data-id');
-                    // document.getElementById('course').value = companyId;
-                    // popupMobile.style.display = "block";
-
-                }
-
-                function setTab(tab) {
-                    document.querySelectorAll('.toggle-button').forEach(btn => btn.classList.remove('active'));
-                    document.querySelector(`.toggle-button[onclick="setTab('${tab}')"]`).classList.add('active');
-
-                    document.querySelectorAll('.tab-bg svg').forEach(svg => svg.classList.remove('active'));
-                    document.getElementById('bg-' + tab).classList.add('active');
-                }
-
-                document.querySelectorAll('.option').forEach(option => {
-                    option.addEventListener('click', () => {
-                        const group = option.dataset.group;
-                        document.querySelectorAll(`.option[data-group="${group}"]`).forEach(opt => {
-                            opt.classList.remove('selected');
-                        });
-                        option.classList.add('selected');
-
-
-                        if (group === "teaching") {
-                            const totalPrice = document.querySelector(".total span");
-                            const sessionNum = document.querySelector(".session-num");
-                            const tryLink = document.getElementById("try-link");
-                            if (option.textContent.includes("Solo")) {
-                                sessionNum.textContent = "Private sessions available upon request";
-                                totalPrice.textContent = "Varies";
-                                tryLink.href = "https://api.whatsapp.com/send?phone=6597582288";
-                                tryLink.target = "_blank";
-                                tryLink.textContent = "Contact Us";
-                            } else if (option.textContent.includes("Group")) {
-                                sessionNum.textContent = "10 Sessions";
-                                totalPrice.textContent = "$ 450.00";
-                                tryLink.href = "";
-                                tryLink.target = "";
-                                tryLink.textContent = "Try Now";
-                            }
-                        }
-                    });
-                });
-
-                function openPricingModal() {
-                    document.getElementById('pricingModal').classList.add('active');
-                    document.querySelector('.footer-fixed').classList.add('modal-open');
-                    document.body.style.overflow = 'hidden';
-                    const btn = document.getElementById('try-button-mobile-1');
-                    btn.addEventListener('click', handleClick);
-                }
-
-                function closePricingModal() {
-                    document.getElementById('pricingModal').classList.remove('active');
-                    document.querySelector('.footer-fixed').classList.remove('modal-open');
-                    document.body.style.overflow = '';
-                    const btn = document.getElementById('try-button-mobile-1');
-                    btn.removeEventListener('click', handleClick);
-                }
-
-                document.querySelectorAll('.pricing-modal .option').forEach(option => {
-                    option.addEventListener('click', () => {
-                        const group = option.dataset.group;
-                        document.querySelectorAll(`.pricing-modal .option[data-group="${group}"]`).forEach(opt => {
-                            opt.classList.remove('selected');
-                        });
-                        option.classList.add('selected');
-
-                        if (group === "teaching") {
-                            const totalPrice = document.querySelector(".pricing-modal .total span");
-                            const sessionNum = document.querySelector(".pricing-modal .option-group .session-num");
-                            const tryLink = document.getElementById("try-link-mobile");
-                            if (totalPrice) {
-                                if (option.textContent.includes("Solo")) {
-                                    sessionNum.textContent = "Private sessions available upon request";
-                                    totalPrice.innerHTML = "Varies";
-                                    tryLink.href = "https://api.whatsapp.com/send?phone=6597582288";
-                                    tryLink.target = "_blank";
-                                    tryLink.textContent = "Contact Us";
-                                } else if (option.textContent.includes("Group")) {
-                                    sessionNum.textContent = "10 Sessions";
-                                    totalPrice.textContent = "$ 450.00";
-                                    tryLink.href = "";
-                                    tryLink.target = "";
-                                    tryLink.textContent = "Try Now";
-                                }
-                            }
-                        }
-                    });
-                });
-
-                document.querySelector('.footer-left').addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    document.getElementById('currencyPopup').classList.add('active');
-                });
-
-                function closeCurrencyPopup() {
-                    document.getElementById('currencyPopup').classList.remove('active');
-                }
-
-                document.addEventListener('click', function (e) {
-                    const pricingModal = document.getElementById('pricingModal');
-                    const footerFixed = document.querySelector('.footer-fixed');
-                    const popup = document.getElementById('currencyPopup');
-                    const trigger = document.querySelector('.footer-left');
-
-                    if (!popup.contains(e.target) && !trigger.contains(e.target)) {
-                        popup.classList.remove('active');
-                    }
-                    if (!pricingModal.contains(e.target) && !footerFixed.contains(e.target)) {
-                        closePricingModal();
-                    }
-                });
-
-                document.getElementById("try-button").dataset.id = "Cultivating Character Through Every Stroke";  //I used id coz un ung ginamit ni sir sa footer.php
-                document.getElementById("try-button-mobile-1").dataset.id = "Cultivating Character Through Every Stroke";
-            </script>
-
         </div>
-
     </div>
 
     <?php include "../includes/address.php"; ?>
@@ -1009,6 +840,165 @@ include "../connections/dbname.php";
 
     <div id="page-data" data-page="calligraphy" data-lang="<?php echo $lang ?>"></div>
 
+    <script>
+        const pageData = document.getElementById("page-data");
+        const pageLang = pageData.dataset.lang;
+
+        function handleClick(event) {
+            // event.preventDefault();
+            // const popupMobile = document.getElementById("popupForm");
+            // var companyId = this.getAttribute('data-id');
+            // document.getElementById('course').value = companyId;
+            // popupMobile.style.display = "block";
+        }
+
+        function setTab(tab) {
+            document.querySelectorAll('.toggle-button').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.toggle-button[onclick="setTab('${tab}')"]`).classList.add('active');
+
+            document.querySelectorAll('.tab-bg svg').forEach(svg => svg.classList.remove('active'));
+            document.getElementById('bg-' + tab).classList.add('active');
+        }
+
+        function updateOptions(option) {
+            const group = option.dataset.group;
+            document.querySelectorAll(`.tab-content .option[data-group="${group}"]`).forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            option.classList.add('selected');
+
+            if (group === "teaching") {
+                const totalPrice = document.querySelector(".total .price-total");
+                const sessionNum = document.querySelector(".session-num");
+                const tryLink = document.getElementById("try-link");
+
+                if (option.dataset.value === "solo") {
+                    if (pageLang == "_en") {
+                        sessionNum.textContent = "Private sessions available upon request";
+                        totalPrice.textContent = "Varies";
+                        tryLink.textContent = "Contact Us";
+                    }
+                    if (pageLang == "_cn") {
+                        sessionNum.textContent = "可应要求提供私人课程";
+                        totalPrice.innerHTML = "各不相同";
+                        tryLink.textContent = "联系我们";
+                    }
+                    tryLink.href = "https://api.whatsapp.com/send?phone=6597582288";
+                    tryLink.target = "_blank";
+                } else if (option.dataset.value === "group") {
+                    if (pageLang == "_en") {
+                        sessionNum.textContent = "10 Sessions";
+                        totalPrice.textContent = "$ 450.00";
+                        tryLink.textContent = "Try Now";
+                    }
+                    if (pageLang == "_cn") {
+                        sessionNum.textContent = "10 单节课时";
+                        totalPrice.innerHTML = "$ 450.00";
+                        tryLink.textContent = "立即试听";
+                    }
+                    tryLink.href = "";
+                    tryLink.target = "";
+                }
+            }
+        }
+
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', () => updateOptions(option));
+        });
+        let initialOption = document.querySelector(`.tab-content .option[data-group="teaching"].selected`);
+        updateOptions(initialOption);
+
+        function openPricingModal() {
+            document.getElementById('pricingModal').classList.add('active');
+            document.querySelector('.footer-fixed').classList.add('modal-open');
+            document.body.style.overflow = 'hidden';
+            const btn = document.getElementById('try-button-mobile-1');
+            btn.addEventListener('click', handleClick);
+        }
+
+        function closePricingModal() {
+            document.getElementById('pricingModal').classList.remove('active');
+            document.querySelector('.footer-fixed').classList.remove('modal-open');
+            document.body.style.overflow = '';
+            const btn = document.getElementById('try-button-mobile-1');
+            btn.removeEventListener('click', handleClick);
+        }
+
+        function updateOptionsMobile(option) {
+            const group = option.dataset.group;
+            document.querySelectorAll(`.pricing-modal .option[data-group="${group}"]`).forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            option.classList.add('selected');
+
+            if (group === "teaching") {
+                const totalPrice = document.querySelector(".pricing-modal .total .price-total");
+                const sessionNum = document.querySelector(".pricing-modal .option-group .session-num");
+                const tryLink = document.getElementById("try-link-mobile");
+                if (totalPrice) {
+                    if (option.dataset.value === "solo") {
+                        if (pageLang == "_en") {
+                            sessionNum.textContent = "Private sessions available upon request";
+                            totalPrice.innerHTML = "Varies";
+                            tryLink.textContent = "Contact Us";
+                        }
+                        if (pageLang == "_cn") {
+                            sessionNum.textContent = "可应要求提供私人课程";
+                            totalPrice.innerHTML = "各不相同";
+                            tryLink.textContent = "联系我们";
+                        }
+                        tryLink.href = "https://api.whatsapp.com/send?phone=6597582288";
+                        tryLink.target = "_blank";
+                    } else if (option.dataset.value === "group") {
+                        if (pageLang == "_en") {
+                            sessionNum.textContent = "10 Sessions";
+                            totalPrice.textContent = "$ 450.00";
+                            tryLink.textContent = "Try Now";
+                        }
+                        if (pageLang == "_cn") {
+                            sessionNum.textContent = "10 单节课时";
+                            totalPrice.innerHTML = "$ 450.00";
+                            tryLink.textContent = "立即试听";
+                        }
+                        tryLink.href = "";
+                        tryLink.target = "";
+                    }
+                }
+            }
+        }
+
+        document.querySelectorAll('.pricing-modal .option').forEach(option => {
+            option.addEventListener('click', () => updateOptionsMobile(option));
+        });
+        initialOption = document.querySelector(`.pricing-modal .option[data-group="teaching"].selected`);
+        updateOptionsMobile(initialOption);
+
+        document.querySelector('.footer-left').addEventListener('click', function (e) {
+            e.stopPropagation();
+            document.getElementById('currencyPopup').classList.add('active');
+        });
+
+        function closeCurrencyPopup() {
+            document.getElementById('currencyPopup').classList.remove('active');
+        }
+
+        document.addEventListener('click', function (e) {
+            const pricingModal = document.getElementById('pricingModal');
+            const footerFixed = document.querySelector('.footer-fixed');
+            const popup = document.getElementById('currencyPopup');
+            const trigger = document.querySelector('.footer-left');
+
+            if (!popup.contains(e.target) && !trigger.contains(e.target)) {
+                popup.classList.remove('active');
+            }
+            if (!pricingModal.contains(e.target) && !footerFixed.contains(e.target)) {
+                closePricingModal();
+            }
+        });
+
+        document.getElementById("try-button").dataset.id = "Cultivating Character Through Every Stroke";  //I used id coz un ung ginamit ni sir sa footer.php
+        document.getElementById("try-button-mobile-1").dataset.id = "Cultivating Character Through Every Stroke";
+    </script>
 </body>
 
 </html>
