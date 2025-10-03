@@ -645,6 +645,7 @@ include "../connections/dbname.php";
                             <img src="../resources/img/course/check-yellow-list.png" alt="check">
                             <div id="section-3-1-4">精通毛笔书法，懂得将中国文化智慧融入课堂</div>
                         </div>
+                        <!-- <img src="test-profile.jpg" height="500px" width="500px"> -->
 
                         <div id="section-3-desc-2" class="section-left-description">
                             安春来老师
@@ -673,6 +674,7 @@ include "../connections/dbname.php";
                             <img src="../resources/img/course/check-yellow-list.png" alt="check">
                             <div id="section-3-2-6">顶尖学校和教育部项目经验丰富的教育工作者，国家级竞赛评委</div>
                         </div>
+                        <!-- <img src="test-profile.jpg" height="500px" width="500px"> -->
                     </div>
 
                     <div class="details-section">
@@ -896,7 +898,7 @@ include "../connections/dbname.php";
                         totalPrice.innerHTML = "$ 450.00";
                         tryLink.textContent = "立即试听";
                     }
-                    tryLink.href = "";
+                    tryLink.href = "javascript:void(0)";
                     tryLink.target = "";
                 }
             }
@@ -960,7 +962,7 @@ include "../connections/dbname.php";
                             totalPrice.innerHTML = "$ 450.00";
                             tryLink.textContent = "立即试听";
                         }
-                        tryLink.href = "";
+                        tryLink.href = "javascript:void(0)";
                         tryLink.target = "";
                     }
                 }
