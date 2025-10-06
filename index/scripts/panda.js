@@ -1,14 +1,16 @@
 
 export function animatePanda() {
     const panda = document.querySelector('.panda-wrapper');
-    const chatBubble = panda.querySelector('.chat-bubble');
+    if(panda) {
+        const chatBubble = panda.querySelector('.chat-bubble');
 
-    if (!panda || !chatBubble) return;
+        if (!chatBubble) return;
 
-    panda.classList.add('slide-in');
-    setTimeout(() => {
-        chatBubble.classList.add('show-bubble');
-    }, 1400);
+        panda.classList.add('slide-in');
+        setTimeout(() => {
+            chatBubble.classList.add('show-bubble');
+        }, 1400);
+    }
 }
 
 // Internal utility function
