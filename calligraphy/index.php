@@ -898,8 +898,8 @@ include "../connections/dbname.php";
                         totalPrice.innerHTML = "$ 450.00";
                         tryLink.textContent = "立即试听";
                     }
-                    tryLink.href = "javascript:void(0)";
-                    tryLink.target = "";
+                    tryLink.href = "https://api.whatsapp.com/send?phone=6597582288";
+                    tryLink.target = "_blank";
                 }
             }
         }
@@ -962,8 +962,8 @@ include "../connections/dbname.php";
                             totalPrice.innerHTML = "$ 450.00";
                             tryLink.textContent = "立即试听";
                         }
-                        tryLink.href = "javascript:void(0)";
-                        tryLink.target = "";
+                        tryLink.href = "https://api.whatsapp.com/send?phone=6597582288";
+                        tryLink.target = "_blank";
                     }
                 }
             }
