@@ -24,6 +24,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
     <meta property="og:image" content="https://wetalk.com/resources/img/logo.png" />
     <meta property="og:url" content="https://wetalk.com/" />
     <meta property="og:type" content="website" />
+    <meta name="description" content="Empowering learning through multilingual education." />
 
     <title>WeTalk - More than Language</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
