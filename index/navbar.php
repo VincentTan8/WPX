@@ -233,6 +233,8 @@
                         WeTalk Courses<i class="material-icons">arrow_drop_down</i>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="wetalkCourses">
+                        <li><a class="dropdown-item" id="sr-nav-calligraphy"
+                                href="https://wetalk.com/calligraphy/">Calligraphy</a>
                         <li><a class="dropdown-item" id="sr-nav-intelligent-database"
                                 href="https://wetalk.com/short-video/">Intelligent Database</a>
                         </li>

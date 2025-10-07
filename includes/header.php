@@ -96,6 +96,7 @@ $hide_panda = (
 
     $m_home = 'Home';
     $m_wetalk_courses = 'WeTalk Courses';
+    $m_calligraphy = 'Calligraphy';
     $m_intelligent = 'Intelligent Databases';
     $m_recording_course = 'Recording Course';
     $m_course = 'Course';
@@ -124,6 +125,7 @@ $hide_panda = (
     if ($lang == '_cn') {
         $m_home = '首页';
         $m_wetalk_courses = '众语集';
+        $m_calligraphy = '书法';
         $m_intelligent = '智慧库';
         $m_recording_course = '录播课程';
         $m_course = '课程介绍';
@@ -266,9 +268,10 @@ $hide_panda = (
                                 <?php echo $m_wetalk_courses ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                <a class="dropdown-item" href="<?php echo BASE_URL; ?>calligraphy/"><i
+                                        class="fas fa-paint-brush"></i> <?php echo $m_calligraphy ?></a>
                                 <a class="dropdown-item" href="<?php echo BASE_URL; ?>short-video/"><i
-                                        class="fas fa-lightbulb"></i>
-                                    &nbsp;&nbsp;<?php echo $m_intelligent ?></a>
+                                        class="fas fa-lightbulb"></i>&nbsp;&nbsp;<?php echo $m_intelligent ?></a>
                                 <a class="dropdown-item" href="<?php echo BASE_URL; ?>recorded-courses/"><i
                                         class="fas fa-file-video"></i>&nbsp;&nbsp;<?php echo $m_recording_course ?></a>
                                 <!-- Nested submenu starts here -->
