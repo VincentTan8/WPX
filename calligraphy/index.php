@@ -339,6 +339,13 @@ include "../connections/dbname.php";
         display: flex;
     }
 
+    .equal-img {
+        height: 500px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
     @media (max-width: 1710px) {
         .main-container {
             margin-left: 120px;
@@ -354,8 +361,6 @@ include "../connections/dbname.php";
             margin: 0;
             padding: 20px;
         }
-
-
 
         .mobile-only {
             display: flex;
@@ -646,6 +651,17 @@ include "../connections/dbname.php";
                             <div id="section-3-1-4">精通毛笔书法，懂得将中国文化智慧融入课堂</div>
                         </div>
                         <!-- <img src="test-profile.jpg" height="500px" width="500px"> -->
+                        <div class="row text-center">
+                            <div class="col-md-4 col-sm-12 mb-3">
+                                <img src="ms_1.jpg" class="img-fluid equal-img" alt="Image 1">
+                            </div>
+                            <div class="col-md-4 col-sm-12 mb-3">
+                                <img src="ms_2.jpg" class="img-fluid equal-img" alt="Image 2">
+                            </div>
+                            <div class="col-md-4 col-sm-12 mb-3">
+                                <img src="ms_3.jpg" class="img-fluid equal-img" alt="Image 3">
+                            </div>
+                        </div>
 
                         <div id="section-3-desc-2" class="section-left-description">
                             安春来老师
@@ -675,6 +691,14 @@ include "../connections/dbname.php";
                             <div id="section-3-2-6">顶尖学校和教育部项目经验丰富的教育工作者，国家级竞赛评委</div>
                         </div>
                         <!-- <img src="test-profile.jpg" height="500px" width="500px"> -->
+                        <div class="row text-center">
+                            <div class="col-md-6 col-sm-12 mb-3">
+                                <img src="mr_1.jpg" class="img-fluid equal-img" alt="Image 1">
+                            </div>
+                            <div class="col-md-6 col-sm-12 mb-3">
+                                <img src="mr_2.png" class="img-fluid equal-img" alt="Image 2">
+                            </div>
+                        </div>
                     </div>
 
                     <div class="details-section">
