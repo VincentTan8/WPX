@@ -274,6 +274,11 @@
         #banktransfer {
             width: 65px !important;
         }
+
+        .bpFabWrapper {
+            bottom: 5rem !important;
+            right: 0.8rem !important;
+        }
     }
 </style>
 
