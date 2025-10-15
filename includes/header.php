@@ -317,7 +317,7 @@ $hide_panda = (
 
                         <li class="nav-item">
                             <a class="nav-link link  <?php echo $menu_bar4 ?>"
-                                href="<?php echo BASE_URL; ?>teacher/"><?php echo $m_teachers ?></a>
+                                href="<?php echo BASE_URL; ?>teachers/"><?php echo $m_teachers ?></a>
                         </li>
 
                         <li class="nav-item dropdown">
