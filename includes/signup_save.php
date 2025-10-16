@@ -90,61 +90,38 @@ if (isset($_POST['voucher']) and $my_flag == 0) {
                 $my_flag = 0;
                 echo "<script> alert('Invalid Voucher Code!!');
                                                   </script>";
-
-
-
             }
-
         }
-
-
-
     }
-
-
-
 }
 
 
 if ($my_flag == 1) {
-
-    $query = "INSERT INTO booking SET ";
-
+    $fields = [];
+    $values = [];
 
     if (isset($page_reference_number)) {
-        $query .= "ref_number= '" . $page_reference_number . "', ";
+        $fields[] = 'ref_number';
+        $values[] = $page_reference_number;
     }
     if (isset($presentdate)) {
-        $query .= "date= '" . $presentdate . "', ";
+        $fields[] = 'date';
+        $values[] = $presentdate;
     }
-    if (isset($_POST['first_name'])) {
-        $query .= "first_name='" . $_POST['first_name'] . "', ";
+
+    foreach (['first_name', 'last_name', 'message', 'email', 'course', 'contact', 'voucher', 'date_class', 'time_class'] as $field) {
+        if (isset($_POST[$field])) {
+            $fields[] = $field;
+            $values[] = $_POST[$field];
+        }
     }
-    if (isset($_POST['last_name'])) {
-        $query .= "last_name='" . $_POST['last_name'] . "', ";
+
+    if (!empty($fields)) {
+        $placeholders = implode(', ', array_map(fn($f) => "$f = ?", $fields));
+        $stmt = $conn->prepare("INSERT INTO booking SET $placeholders");
+        $stmt->bind_param(str_repeat('s', count($values)), ...$values);
+        $stmt->execute();
     }
-    if (isset($_POST['message'])) {
-        $query .= "message='" . $_POST['message'] . "', ";
-    }
-    if (isset($_POST['email'])) {
-        $query .= "email= '" . $_POST['email'] . "', ";
-    }
-    if (isset($_POST['course'])) {
-        $query .= "course='" . $_POST['course'] . "', ";
-    }
-    if (isset($_POST['contact'])) {
-        $query .= "contact='" . $_POST['contact'] . "', ";
-    }
-    if (isset($_POST['voucher'])) {
-        $query .= "voucher='" . $_POST['voucher'] . "', ";
-    }
-    if (isset($_POST['date_class'])) {
-        $query .= "date_class='" . $_POST['date_class'] . "', ";
-    }
-    if (isset($_POST['time_class'])) {
-        $query .= "time_class='" . $_POST['time_class'] . "' ";
-    }
-    $result = mysqli_query($conn, $query); //query executes
 
 
     $_SESSION['your_email'] = $_POST['email'];
