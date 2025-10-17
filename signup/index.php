@@ -184,27 +184,33 @@
                     <option value="">
                         Select a Course 选择一个课程
                     </option>
-                    <option value="Trending Guo Xue">
+                    <!-- <option value="Trending Guo Xue">
                         Trending Guo Xue 潮国学
-                    </option>
-                    <option value="Exam-oriented Course (Kids)">
+                    </option> -->
+                    <!-- <option value="Exam-oriented Course (Kids)">
                         Exam-oriented Course (Kids) 应试中文课程（儿童）
-                    </option>
-                    <option value="Exam-oriented Chinese Course (Adult)">
+                    </option> -->
+                    <!-- <option value="Exam-oriented Chinese Course (Adult)">
                         Exam-oriented Chinese Course (Adult) 应试中文课程（成人）
+                    </option> -->
+                    <option value="Kids English Class">
+                        Kids English Class 儿童英语课程
                     </option>
-                    <option value="Kids English Courses">
-                        Kids English Courses 儿童英语课程
+                    <option value="Adult English Class">
+                        Adult English Class 成人英语课程
                     </option>
-                    <option value="Adult English Courses">
-                        Adult English Courses 成人英语课程
+                    <option value="Kids Mandarin Class">
+                        Kids Mandarin Class 儿童普通话课程
                     </option>
-                    <option value="Chinese Idioms">
+                    <option value="Adult Mandarin Class">
+                        Adult Mandarin Class 成人普通话课程
+                    </option>
+                    <!-- <option value="Chinese Idioms">
                         Chinese Idioms 中华成语课
-                    </option>
-                    <option value="Filipino Program">
+                    </option> -->
+                    <!-- <option value="Filipino Program">
                         Filipino Program 菲律宾语课
-                    </option>
+                    </option> -->
                 </select>
 
                 <hr>
