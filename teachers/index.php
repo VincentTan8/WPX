@@ -366,7 +366,7 @@ include "../connections/dbname.php";
                             data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                             style="z-index: 200; white-space: nowrap; font-size: 90px; line-height: 85px; font-weight: 700; letter-spacing: 0px;font-family:Playfair Display;">
-                            <img src="../linguistic/img/plain_box_page.png" alt=""
+                            <img src="../resources/img/plain_box_page.png" alt=""
                                 data-ww="['none','1640px','1300px','1300px']"
                                 data-hh="['500px','650px','470px','700px']" data-no-retina>
                         </div>
