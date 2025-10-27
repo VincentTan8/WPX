@@ -11,9 +11,9 @@ $stmt = $conn->prepare($sql);
 $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_assoc();
-$author = $row['author'];
-$enQuote = $row['en'];
-$cnQuote = $row['cn'];
+$author = $row['author'] ?? null;
+$enQuote = $row['en'] ?? null;
+$cnQuote = $row['cn'] ?? null;
 
 $tablename = $database . ".`wt_translations`";
 //Update quote text body
