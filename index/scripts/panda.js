@@ -39,8 +39,6 @@ export function waitForImages(selector, callback) {
 
 // Main execution
 document.addEventListener('DOMContentLoaded', () => {
-
-
     const closeBtn = document.getElementById("close-bubble");
     if (closeBtn) {
         closeBtn.addEventListener("click", () => {
@@ -51,4 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    setTimeout(() => {
+        const wrapper = document.querySelector(".panda-wrapper");
+        if (wrapper) {
+            wrapper.classList.remove("slide-in");
+            wrapper.classList.add("slide-out");
+        }
+    }, 30000);
 });
