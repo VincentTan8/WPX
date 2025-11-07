@@ -274,7 +274,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link hover-underline" id="sr-nav-teachers"
-                        href="https://wetalk.com/teacher/">Teacher</a>
+                        href="https://wetalk.com/teachers/">Teachers</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link hover-underline" id="sr-nav-news" href="https://wetalk.com/news/">News</a>

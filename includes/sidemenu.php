@@ -162,7 +162,7 @@
             <li style="padding: 7.5px 0px;">
                 <a style="color:#ffffff; margin-left: 15px;
                     background-color: transparent;
-                    text-decoration: none;" href="<?php echo BASE_URL; ?>teacher/">Teachers</a>
+                    text-decoration: none;" href="<?php echo BASE_URL; ?>teachers/">Teachers</a>
             </li>
 
             <li style="padding: 7.5px 0px;">

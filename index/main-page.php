@@ -1357,7 +1357,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
                         <li class="hamburger-dropdown-item"><a id="hm-nav-linguistics"
                                 href="https://wetalk.com/linguistic/">Linguistic</a></li>
                         <li class="hamburger-dropdown-item"><a id="hm-nav-teachers"
-                                href="https://wetalk.com/teacher/">Teacher</a></li>
+                                href="https://wetalk.com/teachers/">Teachers</a></li>
                         <li class="hamburger-dropdown-item"><a id="hm-nav-news" href="https://wetalk.com/news/">News</a>
                         </li>
                         <li class="hamburger-dropdown-item"><a id="hm-nav-study-abroad"
