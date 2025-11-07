@@ -63,7 +63,7 @@ include "../connections/dbname.php";
 
     .main-container {
         display: flex;
-        gap: 169px;
+        gap: 100px;
         padding: 30px 0;
         margin-left: 240px;
         margin-right: 240px;
@@ -74,7 +74,7 @@ include "../connections/dbname.php";
         flex-direction: column;
         align-items: flex-start;
         gap: 50px;
-        width: 800px;
+        width: 100%;
         justify-content: space-between;
     }
 
@@ -172,7 +172,7 @@ include "../connections/dbname.php";
     }
 
     .right-container {
-        width: 472px;
+        width: 417px;
         height: 709px;
         flex-shrink: 0;
     }
