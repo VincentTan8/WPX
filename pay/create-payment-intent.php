@@ -8,7 +8,7 @@ $input = json_decode(file_get_contents("php://input"), true);
 
 $amount = $input["amount"] ?? null;
 $currency = $input["currency"] ?? null;
-$order_id = $input["merchant_order_id"] ?? uniqid("OrderID_");
+$order_id = $input["merchant_order_id"] ?? uniqid("OrderID_"); //constructed like this to handle custom order ID's in the future
 
 if (!$amount || !$currency) {
     echo json_encode([
