@@ -80,8 +80,8 @@ function createPaymentIntent($amount, $currency, $merchant_order_id)
         "currency" => $currency,
         "merchant_order_id" => $merchant_order_id,
         "request_id" => uniqid("ReqID_"),
-        "descriptor" => "Airwallex - Test Descriptor",
-        "return_url" => "https://www.airwallex.com"
+        "descriptor" => "Airwallex - Test Descriptor", //todo change this
+        "return_url" => "https://www.airwallex.com"  //todo change this
     ]);
 
     //201 response checking is done in create-payment-intent.php
