@@ -24,22 +24,38 @@ include "../connections/dbname.php";
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head lang="en">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="style.css" />
+<!-- JavaScript -->
+<script src="<?php echo BASE_URL; ?>vendor/js/bundle.min.js"></script>
+<script src="<?php echo BASE_URL; ?>vendor/js/jquery.fancybox.min.js"></script>
+<script src="<?php echo BASE_URL; ?>vendor/js/owl.carousel.min.js"></script>
+<script src="<?php echo BASE_URL; ?>vendor/js/swiper.min.js"></script>
+<script src="<?php echo BASE_URL; ?>vendor/js/jquery.cubeportfolio.min.js"></script>
+<script src="<?php echo BASE_URL; ?>vendor/js/jquery.appear.js"></script>
+<script src="<?php echo BASE_URL; ?>vendor/js/wow.min.js"></script>
+<script src="<?php echo BASE_URL; ?>vendor/js/flip.js"></script>
+<script src="<?php echo BASE_URL; ?>vendor/js/jquery-ui.bundle.js"></script>
+<script src="<?php echo BASE_URL; ?>vendor/js/select2.min.js"></script>
+<script src="<?php echo BASE_URL; ?>vendor/js/jquery.hoverdir.js"></script>
+<script src="<?php echo BASE_URL; ?>vendor/js/hover-item.js"></script>
+<script src="<?php echo BASE_URL; ?>vendor/js/slick.min.js"></script>
+<script src="<?php echo BASE_URL; ?>vendor/js/parallaxie.min.js"></script>
 
-    <link rel="stylesheet" href="style.css" />
-    <title>WeTalk Unified Payment Page</title>
-    <!-- Import @airwallex/components-sdk bundle 
+<!-- Custom Scripts -->
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyCo_pcAdFNbTDCAvMwAD19oRTuEmb9M50c"></script>
+<script src="<?php echo BASE_URL; ?>resources/js/map.js"></script>
+<script src="<?php echo BASE_URL; ?>vendor/js/contact_us.js"></script>
+<script src="<?php echo BASE_URL; ?>resources/js/script.js"></script>
+<!-- Import @airwallex/components-sdk bundle 
                - You MUST replace the bundle version to the latest NPM version
                  in order to import the package properly! -->
-    <script src="https://static.airwallex.com/components/sdk/v1/index.js"></script>
-</head>
+<script src="https://static.airwallex.com/components/sdk/v1/index.js"></script>
+
 
 <body>
-    <div class="payment-form-body">
+    <div class="payment-form-body position-relative" data-spy="scroll" data-target=".navbar" data-offset="90">
         <h1>WeTalk Unified Payment Page</h1>
 
         <form id="checkoutForm" style="max-width: 500px; margin-bottom: 2rem;">
@@ -81,7 +97,6 @@ include "../connections/dbname.php";
                     <div class="currency-selected">
                         <img src="assets/us.svg" class="flag">
                         <span class="code">USD</span>
-                        <span class="arrow">▼</span>
                     </div>
 
                     <div class="currency-dropdown">
@@ -132,6 +147,7 @@ include "../connections/dbname.php";
     <?php include "../includes/address.php" ?>
 
     <?php include "../includes/footer.php"; ?>
+    <div id="page-data" data-page="pay" data-lang="<?php echo $lang; ?>"></div>
 
     <script async>
         (async () => {
