@@ -1,24 +1,44 @@
 <?php
+if (!isset($_SESSION)) {
+    session_start();
+    ob_start();
+}
+?>
+
+<?php
 header("Content-Type: application/json");
 
 require_once __DIR__ . "/airwallex_functions.php";
 
+//Fetch price of given config
+include "../connections/dbname.php";
+
 // Read JSON from frontend
 $input = json_decode(file_get_contents("php://input"), true);
 
-$amount = $input["amount"] ?? null;
+$course_name = $input["course_name"] ?? null;
 $currency = $input["currency"] ?? null;
 $order_id = $input["merchant_order_id"] ?? uniqid("OrderID_"); //constructed like this to handle custom order ID's in the future
 
-if (!$amount || !$currency) {
+if (!$course_name || !$currency) {
     echo json_encode([
         "success" => false,
-        "error" => "Missing amount or currency"
+        "error" => "Missing course name or currency"
     ]);
     exit;
 }
 
-//todo Fetch amount based on currency and course selection
+//Fetch amount based on currency and course selection
+$tablename = $database . ".`wt_rates_prices`";
+$sql = "SELECT `price` FROM $tablename
+        WHERE `currency` = ? AND `course_name` = ? LIMIT 1";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ss", $currency, $course_name);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+$amount = $row['price'];
 
 try {
     $res = createPaymentIntent($amount, $currency, $order_id);
