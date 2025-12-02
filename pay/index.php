@@ -84,49 +84,49 @@ include "../connections/dbname.php";
             <select id="courseSelection" name="courseSelection" required class="form-select" style="width:100%; 
                     margin: 8px 0 16px;">
                 <option value="">Select a course</option>
-                <option value="course_basic">Basic Mandarin</option>
-                <option value="course_intermediate">Intermediate Mandarin</option>
-                <option value="course_advanced">Advanced Mandarin</option>
-                <option value="course_kids">Kids Course</option>
             </select>
 
             <div class="currency-wrapper">
-                <label for="currencySelector">Currency</label>
-
-                <div id="currencySelector" class="currency-select">
-                    <div class="currency-selected">
-                        <img src="assets/us.svg" class="flag">
-                        <span class="code">USD</span>
-                    </div>
-
-                    <div class="currency-dropdown">
-                        <div class="currency-option" data-code="USD" data-name="US Dollar" data-flag="us.svg">
+                <label for="currencySelector">Currency and Price</label>
+                <div style="display:flex; gap:10px; margin:8px 0 0;">
+                    <div id="currencySelector" class="currency-select">
+                        <div class="currency-selected">
                             <img src="assets/us.svg" class="flag">
                             <span class="code">USD</span>
-                            <span class="name">US Dollar</span>
                         </div>
 
-                        <div class="currency-option" data-code="PHP" data-name="Philippine Peso" data-flag="ph.svg">
-                            <img src="assets/ph.svg" class="flag">
-                            <span class="code">PHP</span>
-                            <span class="name">Philippine Peso</span>
+                        <div class="currency-dropdown">
+                            <div class="currency-option" data-code="USD" data-name="US Dollar" data-flag="us.svg">
+                                <img src="assets/us.svg" class="flag">
+                                <span class="code">USD</span>
+                                <span class="name">US Dollar</span>
+                            </div>
+
+                            <div class="currency-option" data-code="PHP" data-name="Philippine Peso" data-flag="ph.svg">
+                                <img src="assets/ph.svg" class="flag">
+                                <span class="code">PHP</span>
+                                <span class="name">Philippine Peso</span>
+                            </div>
+
+                            <div class="currency-option" data-code="CNY" data-name="Chinese Yuan" data-flag="cn.svg">
+                                <img src="assets/cn.svg" class="flag">
+                                <span class="code">CNY</span>
+                                <span class="name">Chinese Yuan</span>
+                            </div>
+
+                            <div class="currency-option" data-code="SGD" data-name="Singapore Dollar"
+                                data-flag="sg.svg">
+                                <img src="assets/sg.svg" class="flag">
+                                <span class="code">SGD</span>
+                                <span class="name">Singapore Dollar</span>
+                            </div>
                         </div>
 
-                        <div class="currency-option" data-code="CNY" data-name="Chinese Yuan" data-flag="cn.svg">
-                            <img src="assets/cn.svg" class="flag">
-                            <span class="code">CNY</span>
-                            <span class="name">Chinese Yuan</span>
-                        </div>
-
-                        <div class="currency-option" data-code="SGD" data-name="Singapore Dollar" data-flag="sg.svg">
-                            <img src="assets/sg.svg" class="flag">
-                            <span class="code">SGD</span>
-                            <span class="name">Singapore Dollar</span>
-                        </div>
+                        <!-- Hidden field to send value to backend -->
+                        <input type="hidden" id="currencyInput" name="currency" value="USD">
                     </div>
-
-                    <!-- Hidden field to send value to backend -->
-                    <input type="hidden" id="currencyInput" name="currency" value="USD">
+                    <input type="text" id="priceDisplay" name="priceDisplay" readonly
+                        style="flex:1; padding:10px; border-radius:6px; border:1px solid #ccc; margin: 0">
                 </div>
             </div>
 
@@ -151,16 +151,15 @@ include "../connections/dbname.php";
 
     <script async>
         (async () => {
-            async function createPayment(currency) {
+            async function createPayment(course_name, currency) {
                 const res = await fetch('create-payment-intent.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        amount: 70,  //remove here and move to create payment intent php file
-                        //add course code or ref num here
+                        course_name,
                         //possibly add same parameters for fetching price such as group Setup
                         //make it optional since this could be used for seasonal courses
-                        currency: currency,
+                        currency,
                     })
                 });
 
@@ -185,70 +184,42 @@ include "../connections/dbname.php";
 
             const redirectHppForCheckout = (currency, intent_id, client_secret) => {
                 payments.redirectToCheckout({
-                    env: 'demo',
+                    env: 'demo',  //todo change when going to prod
                     mode: 'payment',
                     currency,
                     intent_id,
                     client_secret,
-                    successUrl: 'https://www.airwallex.com', // Must be HTTPS sites
-                    failUrl: 'https://www.google.com', // Must be HTTPS sites
+                    successUrl: 'https://wetalk.com/testpay/success.php', // Must be HTTPS sites
+                    failUrl: 'https://wetalk.com/testpay/failed.php', // Must be HTTPS sites
                     appearance: {
                         mode: 'light',
                         variables: {
                             colorBrand: '#f2b33d',
                         },
                     },
+                    // methods: "auto,"
                     methods: ['googlepay', 'applepay', 'card', 'alipaycn', 'gcash', 'grabpay', 'kakaopay', 'wechatpay'],
                     logoUrl: "https://wetalk.com/resources/img/logo.png",
-                    // methods: "auto,"
+                    // shopper_email: ,
+                    // shopper_name: ,
                 });
             }
 
             document.getElementById('hpp').addEventListener('click', async () => {
                 //Call createPayment after selecting course package and currency, and filling out fields
+                const course_name = document.getElementById("courseSelection").value;
                 const currency = document.getElementById("currencyInput").value;
-                const { intent, client_secret } = await createPayment(currency);
+                const { intent, client_secret } = await createPayment(course_name, currency);
+
 
                 if (mode === 'payment') {
                     redirectHppForCheckout(currency, intent, client_secret);
                 }
             });
         })();
-
-        //Currency selector section
-        const currencySelector = document.getElementById("currencySelector");
-        const dropdown = currencySelector.querySelector(".currency-dropdown");
-        const selected = currencySelector.querySelector(".currency-selected");
-        const hiddenInput = document.getElementById("currencyInput");
-
-        selected.addEventListener("click", () => {
-            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-        });
-
-        document.querySelectorAll(".currency-option").forEach(option => {
-            option.addEventListener("click", () => {
-                const code = option.dataset.code;
-                const name = option.dataset.name;
-                const flag = option.dataset.flag;
-
-                // Update visible display
-                selected.querySelector(".flag").src = "assets/" + flag;
-                selected.querySelector(".code").innerText = code;
-
-                // Update hidden input
-                hiddenInput.value = code;
-
-                dropdown.style.display = "none";
-            });
-        });
-
-        // Close if user clicks outside
-        document.addEventListener("click", (e) => {
-            if (!currencySelector.contains(e.target)) {
-                dropdown.style.display = "none";
-            }
-        });
     </script>
+    <script src="scripts/pay.js"></script>
+    <script src="scripts/currency-selector.js"></script>
 </body>
 
 </html>
