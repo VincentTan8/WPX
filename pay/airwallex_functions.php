@@ -1,4 +1,5 @@
 <?php
+//todo change these when going to prod
 const AW_API_KEY = "b635c8230076145b5f19a63d165b3c9f6b19348e3ec1b674a8b591245551598b7e8742e1b620699f2fcdf89f06489736";
 const AW_CLIENT_ID = "YoTN8CSsTXOqkAPrLaRRtQ";
 const AW_ACCESS_ID = "acct_EpoT-nKJPD2y0YQln4okng";
@@ -31,12 +32,12 @@ function postAirwallexHTTP($url, $headers, $body = "")
 function getAirwallexToken()
 {
     //check cache
-    if (file_exists(AW_TOKEN_CACHE)) {
-        $cache = json_decode(file_get_contents(AW_TOKEN_CACHE), true);
-        if ($cache && $cache['expires_at'] > time()) {
-            return $cache['token'];
-        }
-    }
+    // if (file_exists(AW_TOKEN_CACHE)) {
+    //     $cache = json_decode(file_get_contents(AW_TOKEN_CACHE), true);
+    //     if ($cache && $cache['expires_at'] > time()) {
+    //         return $cache['token'];
+    //     }
+    // }
 
     $url = AW_BASE_URL . "/authentication/login";
 
@@ -54,12 +55,12 @@ function getAirwallexToken()
     }
 
     $token = $res["body"]["token"];
-    $expiry = $res["body"]["expires_at"];
+    // $expiry = $res["body"]["expires_at"];
 
-    file_put_contents(AW_TOKEN_CACHE, json_encode([
-        "token" => $token,
-        "expires_at" => $expiry
-    ]));
+    // file_put_contents(AW_TOKEN_CACHE, json_encode([
+    //     "token" => $token,
+    //     "expires_at" => $expiry
+    // ]));
 
     return $token;
 }
