@@ -190,7 +190,6 @@ include "../connections/dbname.php";
                     intent_id,
                     client_secret,
                     successUrl: 'https://wetalk.com/testpay/success.php', // Must be HTTPS sites
-                    failUrl: 'https://wetalk.com/testpay/failed.php', // Must be HTTPS sites
                     appearance: {
                         mode: 'light',
                         variables: {
