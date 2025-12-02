@@ -29,6 +29,28 @@ function postAirwallexHTTP($url, $headers, $body = "")
     ];
 }
 
+function getAirwallexHTTP($url, $headers)
+{
+    $ch = curl_init();
+
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER => $headers,
+        CURLOPT_SSL_VERIFYPEER => true
+    ]);
+
+    $response = curl_exec($ch);
+    $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    return [
+        "status" => $status,
+        "body" => json_decode($response, true)
+    ];
+}
+
+
 function getAirwallexToken()
 {
     //check cache
@@ -87,6 +109,20 @@ function createPaymentIntent($amount, $currency, $merchant_order_id)
 
     //201 response checking is done in create-payment-intent.php
     return postAirwallexHTTP($url, $headers, $body);
+}
+
+function retrievePaymentIntent($intent_id)
+{
+    $token = getAirwallexToken();
+
+    $url = AW_BASE_URL . "/pa/payment_intents/" . $intent_id;
+
+    $headers = [
+        "Authorization: Bearer " . $token,
+        "Content-Type: application/json"
+    ];
+
+    return getAirwallexHTTP($url, $headers);
 }
 
 
