@@ -87,7 +87,7 @@ function getAirwallexToken()
     return $token;
 }
 
-function createPaymentIntent($amount, $currency, $merchant_order_id)
+function createPaymentIntent($amount, $currency, $merchant_order_id, $course_name)
 {
     $token = getAirwallexToken();
 
@@ -103,8 +103,11 @@ function createPaymentIntent($amount, $currency, $merchant_order_id)
         "currency" => $currency,
         "merchant_order_id" => $merchant_order_id,
         "request_id" => uniqid("ReqID_"),
-        "descriptor" => "Airwallex - Test Descriptor", //todo change this
-        "return_url" => "https://www.airwallex.com"  //todo change this
+        "descriptor" => "WeTalk Airwallex Payment",
+        "return_url" => "https://www.wetalk.com",
+        "metadata" => [
+            "course_name" => $course_name,
+        ]
     ]);
 
     //201 response checking is done in create-payment-intent.php
