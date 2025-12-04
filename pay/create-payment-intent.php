@@ -8,9 +8,8 @@ if (!isset($_SESSION)) {
 <?php
 header("Content-Type: application/json");
 
-require_once __DIR__ . "/airwallex_functions.php";
+require_once __DIR__ . "/airwallex-functions.php";
 
-//Fetch price of given config
 include "../connections/dbname.php";
 
 // Read JSON from frontend
@@ -18,7 +17,7 @@ $input = json_decode(file_get_contents("php://input"), true);
 
 $course_name = $input["course_name"] ?? null;
 $currency = $input["currency"] ?? null;
-$order_id = $input["merchant_order_id"] ?? uniqid("OrderID_"); //constructed like this to handle custom order ID's in the future
+$order_id = $input["merchant_order_id"] ?? uniqid("WeTalkOrder_"); //constructed like this to handle custom order ID's in the future
 
 if (!$course_name || !$currency) {
     echo json_encode([
@@ -41,7 +40,7 @@ $row = $result->fetch_assoc();
 $amount = $row['price'];
 
 try {
-    $res = createPaymentIntent($amount, $currency, $order_id);
+    $res = createPaymentIntent($amount, $currency, $order_id, $course_name);
 
     if ($res["status"] === 201) {
         echo json_encode([
