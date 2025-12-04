@@ -11,12 +11,11 @@ selected.addEventListener("click", () => {
 document.querySelectorAll(".currency-option").forEach(option => {
     option.addEventListener("click", () => {
         const code = option.dataset.code;
-        const name = option.dataset.name;
         const flag = option.dataset.flag;
 
         // Update visible display
         selected.querySelector(".flag").src = "assets/" + flag;
-        selected.querySelector(".code").innerText = code;
+        selected.querySelector(".code").textContent = code;
 
         // Update hidden input
         hiddenInput.value = code;
