@@ -1,7 +1,4 @@
 <?php
-//For payment link usage
-//header("Location: https://pay.airwallex.com/sghd5fu44rjz");
-//exit;
 if (!isset($_SESSION)) {
     session_start();
     ob_start();
@@ -15,7 +12,6 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
 }
 
 include "../includes/menu_bar_reset.php";
-$menu_bar4 = "active";
 
 $_SESSION['active_page'] = 'pay';
 
@@ -67,7 +63,7 @@ include "../connections/dbname.php";
             <input type="email" id="email" name="email" required
                 style="width:100%; padding:10px; margin:8px 0 16px; border-radius:6px; border:1px solid #ccc;">
 
-            <label for="contactNumber">Contact Number</label>
+            <!-- <label for="contactNumber">Contact Number</label>
             <div style="display:flex; gap:10px; margin:8px 0 0;">
                 <select id="regionCode" name="regionCode" required class="form-select">
                     <option value="+63">🇵🇭 +63</option>
@@ -76,9 +72,60 @@ include "../connections/dbname.php";
                     <option value="+852">🇭🇰 +852</option>
                     <option value="+86">🇨🇳 +86</option>
                 </select>
-                <input type="text" id="contactNumber" name="contactNumber" required placeholder="9xxxxxxxxx"
+                <input type="text" id="contactNumber" name="contactNumber" required
                     style="flex:1; padding:10px; border-radius:6px; border:1px solid #ccc;">
+            </div> -->
+
+            <div class="mobile-wrapper">
+                <label for="mobileCodeSelector">Mobile Number</label>
+                <div style="display:flex; gap:10px; margin:8px 0 0;">
+                    <div id="mobileCodeSelector" class="mobile-select">
+                        <div class="mobile-selected">
+                            <img src="assets/ph.svg" class="flag">
+                            <span class="code">+63</span>
+                        </div>
+
+                        <div class="mobile-dropdown">
+                            <div class="mobile-option" data-code="+63" data-name="Philippines" data-flag="ph.svg">
+                                <img src="assets/ph.svg" class="flag">
+                                <span class="code">+63</span>
+                                <span class="name">Philippines</span>
+                            </div>
+
+                            <div class="mobile-option" data-code="+65" data-name="Singapore" data-flag="sg.svg">
+                                <img src="assets/sg.svg" class="flag">
+                                <span class="code">+65</span>
+                                <span class="name">Singapore</span>
+                            </div>
+
+                            <!-- <div class="mobile-option" data-code="+60" data-name="Malaysia" data-flag="my.svg">
+                                <img src="assets/my.svg" class="flag">
+                                <span class="code">+60</span>
+                                <span class="name">Malaysia</span>
+                            </div>
+
+                            <div class="mobile-option" data-code="+852" data-name="Hong Kong" data-flag="hk.svg">
+                                <img src="assets/hk.svg" class="flag">
+                                <span class="code">+852</span>
+                                <span class="name">Hong Kong</span>
+                            </div> -->
+
+                            <div class="mobile-option" data-code="+86" data-name="China" data-flag="cn.svg">
+                                <img src="assets/cn.svg" class="flag">
+                                <span class="code">+86</span>
+                                <span class="name">China</span>
+                            </div>
+                        </div>
+
+                        <!-- Hidden field for form submission -->
+                        <input type="hidden" id="mobileCodeInput" name="mobile" value="+63">
+                    </div>
+
+                    <input type="text" id="mobileNumber" name="mobileNumber"
+                        style="flex:1; padding:10px; border-radius:6px; border:1px solid #ccc; margin:0;">
+                </div>
             </div>
+
 
             <label for="courseSelection">Course Selection</label>
             <select id="courseSelection" name="courseSelection" required class="form-select" style="width:100%; 
@@ -134,15 +181,15 @@ include "../connections/dbname.php";
             <div style="margin: 16px 0;">
                 <label style="align-items:center; gap:10px;">
                     <input type="checkbox" id="agreeTerms" required />
-                    <span>I have read and agree to the WeTalk Payment Policy</span>
+                    <span>I have read and agree to the <a style="text-decoration: underline !important"
+                            href="../privacy" target="_blank" rel="noopener noreferrer">WeTalk Payment Policy
+                        </a></span>
                 </label>
             </div>
 
             <button id="hpp">Pay Now</button>
         </form>
     </div>
-
-    <?php include "../includes/booking.php" ?>
 
     <?php include "../includes/address.php" ?>
 
@@ -189,7 +236,7 @@ include "../connections/dbname.php";
                     currency,
                     intent_id,
                     client_secret,
-                    successUrl: 'https://wetalk.com/testpay/success.php', // Must be HTTPS sites
+                    successUrl: 'https://wetalk.com/testpay/success.php', // Must be an HTTPS site todo change in prod
                     appearance: {
                         mode: 'light',
                         variables: {
@@ -218,6 +265,7 @@ include "../connections/dbname.php";
         })();
     </script>
     <script src="scripts/pay.js"></script>
+    <script src="scripts/mobile-selector.js"></script>
     <script src="scripts/currency-selector.js"></script>
 </body>
 
