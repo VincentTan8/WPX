@@ -1,16 +1,8 @@
-/**
- * style.css
- * Airwallex Payment Demo - Static HTML.  Created by Josie Ku.
- *
- * This file provides styling to the demo site.  This is not required for the integration.
- */
-
-/* Base styles and variables */
 :root {
     --primary-color: #f2b33d;
     --primary-deep-color: #d49725;
     --error-color: #ffebee;
-    --success-color: #90ee90;
+    --success-color: #006d00;
     --border-radius: 8px;
     --spacing-sm: 15px;
     --spacing-md: 25px;
@@ -88,6 +80,10 @@ a:hover {
     background-color: #f8f8f8;
 }
 
+.payment-info {
+    justify-items: flex-start;
+}
+
 /* Success and Error messages */
 #success,
 #error {
@@ -158,12 +154,6 @@ a:hover {
     object-fit: cover;
 }
 
-.currency-selected .arrow {
-    margin-left: auto;
-    font-size: 0.9rem;
-    opacity: 0.7;
-}
-
 .currency-dropdown {
     display: none;
     position: absolute;
@@ -175,6 +165,8 @@ a:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
     padding: 8px 0;
     z-index: 999;
+    max-height: 280px;
+    overflow-y: auto;
 }
 
 .currency-option {
@@ -188,7 +180,6 @@ a:hover {
 
 .currency-option:hover {
     background: #ede7ff;
-    /* Light purple, like screenshot */
 }
 
 .currency-option .flag {
@@ -201,12 +192,113 @@ a:hover {
     font-size: 0.95rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .container {
-        padding: var(--spacing-sm);
-    }
+.mobile-wrapper {
+    margin: 8px 0 16px;
+}
 
+.mobile-select {
+    min-width: 125px;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 12px;
+    cursor: pointer;
+    background: white;
+    background-image: url("assets/dropdown.svg");
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
+}
+
+.mobile-selected {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.05rem;
+}
+
+.mobile-selected .flag {
+    width: 22px;
+    height: 15px;
+    object-fit: cover;
+}
+
+.mobile-dropdown {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    min-width: 220px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    padding: 8px 0;
+    z-index: 999;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.mobile-option {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background 0.15s;
+    gap: 10px;
+}
+
+.mobile-option:hover {
+    background: #ede7ff;
+}
+
+.mobile-option .flag {
+    width: 24px;
+    height: 16px;
+}
+
+.mobile-option .name {
+    opacity: 0.7;
+    font-size: 0.95rem;
+}
+
+.success-order,
+.success-course,
+.success-paid {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.success-status {
+    color: var(--primary-color);
+    font-size: 35px;
+    margin-bottom: var(--spacing-lg);
+    font-family: 'Poppins', serif;
+    font-weight: 500;
+}
+
+.success-status #paymentStatusSubtitle {
+    font-weight: 300;
+    font-size: 25px;
+    color: #555;
+}
+
+.status-pending {
+    color: #ffc107;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 6px;
+}
+
+.status-failed {
+    color: #dc3545;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 6px;
+}
+
+@media (max-width: 768px) {
     h1 {
         font-size: 2rem;
     }
