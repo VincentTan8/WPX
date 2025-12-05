@@ -50,9 +50,9 @@ $bodyContent = "
             <br>
             <span>Singapore: +65 9758 - 2288</span>
             <br>
-            <span>Philippines: +63 9171 – 6816 - 80</span>
+            <span>Philippines: +63 9171 - 6816 - 80</span>
             <br>
-            <span>China: +86 1816 – 5370 - 116</span>
+            <span>China: +86 1816 - 5370 - 116</span>
     
 
     <br><br>
