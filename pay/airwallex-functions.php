@@ -87,7 +87,7 @@ function getAirwallexToken()
     return $token;
 }
 
-function createPaymentIntent($amount, $currency, $merchant_order_id, $course_name)
+function createPaymentIntent($amount, $currency, $merchant_order_id, $course_name, $email, $full_name, $mobile_number)
 {
     $token = getAirwallexToken();
 
@@ -107,6 +107,9 @@ function createPaymentIntent($amount, $currency, $merchant_order_id, $course_nam
         "return_url" => "https://www.wetalk.com",
         "metadata" => [
             "course_name" => $course_name,
+            "email" => $email,
+            "full_name" => $full_name,
+            "mobile_number" => $mobile_number
         ]
     ]);
 
