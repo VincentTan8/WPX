@@ -97,6 +97,11 @@ include "../connections/dbname.php";
                 const status = data.body.status;
                 const orderID = data.body.merchant_order_id;
                 const coursePaid = data.body.metadata?.course_name ?? 'N/A';
+                const email = data.body.metadata?.email;
+                const fullName = data.body.metadata?.full_name;
+                const mobileNumber = data.body.metadata?.mobile_number;
+
+                //todo insert data to our own db for recording payment with product purchase (through backend)
 
                 // document.getElementById('amountToPay').textContent = `${currency} ${toPay}`;
                 document.getElementById('coursePaid').textContent = `${coursePaid}`;
@@ -130,6 +135,21 @@ include "../connections/dbname.php";
                         statusSpan.className = 'status-failed';
                         statusSubSpan.textContent = 'Please try again';
                 }
+
+                //Send email to recipient using fetch call
+                await fetch('send-email.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        amount,
+                        currency,
+                        orderID,
+                        coursePaid,
+                        email,
+                        fullName,
+                        mobileNumber
+                    })
+                });
             } else {
                 console.error("Error:", data.error);
                 document.getElementById('amountPaid').textContent = '-';
