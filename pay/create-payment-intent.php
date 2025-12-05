@@ -17,6 +17,9 @@ $input = json_decode(file_get_contents("php://input"), true);
 
 $course_name = $input["course_name"] ?? null;
 $currency = $input["currency"] ?? null;
+$email = $input["email"] ?? null;
+$full_name = $input["full_name"] ?? null;
+$mobile_number = $input["mobile_number"] ?? null;
 $order_id = $input["merchant_order_id"] ?? uniqid("WeTalkOrder_"); //constructed like this to handle custom order ID's in the future
 
 if (!$course_name || !$currency) {
@@ -40,7 +43,7 @@ $row = $result->fetch_assoc();
 $amount = $row['price'];
 
 try {
-    $res = createPaymentIntent($amount, $currency, $order_id, $course_name);
+    $res = createPaymentIntent($amount, $currency, $order_id, $course_name, $email, $full_name, $mobile_number);
 
     if ($res["status"] === 201) {
         echo json_encode([
