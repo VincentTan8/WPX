@@ -118,10 +118,10 @@ include "../connections/dbname.php";
                         </div>
 
                         <!-- Hidden field for form submission -->
-                        <input type="hidden" id="mobileCodeInput" name="mobile" value="+63">
+                        <input type="hidden" id="mobileCodeInput" name="mobileRegion" value="+63">
                     </div>
 
-                    <!-- todo sanitize leading zeroes -->
+                    <!-- consider sanitizing leading zeroes instead of not allowing them -->
                     <input type="tel" autocomplete="tel-national" pattern="[1-9][0-9]{7,12}" id="mobileNumber"
                         name="mobileNumber" required
                         style="flex:1; padding:10px; border-radius:6px; border:1px solid #ccc; margin:0;">
@@ -200,15 +200,18 @@ include "../connections/dbname.php";
 
     <script async>
         (async () => {
-            async function createPayment(course_name, currency) {
+            async function createPayment(course_name, currency, email, full_name, mobile_number) {
                 const res = await fetch('create-payment-intent.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        course_name,
                         //possibly add same parameters for fetching price such as group Setup
                         //make it optional since this could be used for seasonal courses
+                        course_name,
                         currency,
+                        email,
+                        full_name,
+                        mobile_number
                     })
                 });
 
@@ -249,19 +252,20 @@ include "../connections/dbname.php";
                     logoUrl: "https://wetalk.com/resources/img/logo.png",
                     // shopper_email: ,
                     // shopper_name: ,
+                    // shopper_phone: ,
                 });
             }
 
             document.getElementById('checkoutForm').addEventListener('submit', async function (e) {
                 e.preventDefault();
-                const form = e.target;
-                const formData = new FormData(form);
 
                 const course_name = document.getElementById("courseSelection").value;
                 const currency = document.getElementById("currencyInput").value;
-                const { intent, client_secret } = await createPayment(course_name, currency);
-
-                //insert data to our own db down the line when payment intent is created
+                const email = document.getElementById("email").value;
+                const full_name = document.getElementById("fullName").value;
+                const mobile_number = document.getElementById("mobileCodeInput").value +
+                    document.getElementById("mobileNumber").value;
+                const { intent, client_secret } = await createPayment(course_name, currency, email, full_name, mobile_number);
 
                 if (mode === 'payment') {
                     redirectHppForCheckout(currency, intent, client_secret);
