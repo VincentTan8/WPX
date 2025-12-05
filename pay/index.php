@@ -52,7 +52,7 @@ include "../connections/dbname.php";
 
 <body>
     <div class="payment-form-body position-relative" data-spy="scroll" data-target=".navbar" data-offset="90">
-        <h1>WeTalk Unified Payment Page</h1>
+        <h1>Fee Payment</h1>
 
         <form id="checkoutForm" style="max-width: 500px; margin-bottom: 2rem;">
             <label for="fullName">Full Name</label>
@@ -121,7 +121,9 @@ include "../connections/dbname.php";
                         <input type="hidden" id="mobileCodeInput" name="mobile" value="+63">
                     </div>
 
-                    <input type="text" id="mobileNumber" name="mobileNumber"
+                    <!-- todo sanitize leading zeroes -->
+                    <input type="tel" autocomplete="tel-national" pattern="[1-9][0-9]{7,12}" id="mobileNumber"
+                        name="mobileNumber" required
                         style="flex:1; padding:10px; border-radius:6px; border:1px solid #ccc; margin:0;">
                 </div>
             </div>
@@ -187,7 +189,7 @@ include "../connections/dbname.php";
                 </label>
             </div>
 
-            <button id="hpp">Pay Now</button>
+            <button type="submit" id="hpp">Pay Now</button>
         </form>
     </div>
 
@@ -223,7 +225,6 @@ include "../connections/dbname.php";
                 }
             }
             const mode = 'payment';
-
             const { payments } = await window.AirwallexComponentsSDK.init({
                 env: 'demo', // Setup which Airwallex env('staging' | 'demo' | 'prod') to integrate with
                 enabledElements: ['payments'],
@@ -251,12 +252,16 @@ include "../connections/dbname.php";
                 });
             }
 
-            document.getElementById('hpp').addEventListener('click', async () => {
-                //Call createPayment after selecting course package and currency, and filling out fields
+            document.getElementById('checkoutForm').addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const form = e.target;
+                const formData = new FormData(form);
+
                 const course_name = document.getElementById("courseSelection").value;
                 const currency = document.getElementById("currencyInput").value;
                 const { intent, client_secret } = await createPayment(course_name, currency);
 
+                //insert data to our own db down the line when payment intent is created
 
                 if (mode === 'payment') {
                     redirectHppForCheckout(currency, intent, client_secret);
