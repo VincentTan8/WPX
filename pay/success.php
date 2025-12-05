@@ -60,7 +60,7 @@ include "../connections/dbname.php";
             <p class="success-status">
                 <span id="paymentStatus">Loading...</span>
                 <br><br>
-                <span id="paymentStatusSubtitle">Thank you for your purchase.</span>
+                <span id="paymentStatusSubtitle">Thank you - your payment has been processed.</span>
             </p>
             <p class="success-order">Order ID:
                 <span id="orderID">Loading...</span>
@@ -72,14 +72,8 @@ include "../connections/dbname.php";
                 <span id="amountPaid">Loading...</span>
             </p>
 
-            <!-- <p style="margin-top: 70px; margin-bottom: 10px">Need Assistance?</p>
-            <strong>Please Contact Support</strong>
-            <br>
-            <span>Singapore: +65 9758 - 2288</span>
-            <br>
-            <span>Philippines: +63 9171 – 6816 - 80</span>
-            <br>
-            <span>China: +86 1816 – 5370 - 116</span> -->
+            <p style="margin-top: 70px; margin-bottom: 10px">For assistance, please contact <strong>WeTalk
+                    Support</strong>. Details below.</p>
         </div>
     </div>
 
