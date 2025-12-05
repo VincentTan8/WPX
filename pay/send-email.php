@@ -45,6 +45,15 @@ $subject = "Payment Confirmation";
 $bodyContent = "
     <p>Your payment of <strong>$currency $amount</strong> for <strong>$course_name</strong> has been processed.</p>
     <p>Your Order ID is <strong>$order_id</strong></p>
+    <p style='margin-top: 20px; margin-bottom: 10px'>Need Assistance?</p>
+            <strong>Please Contact Support</strong>
+            <br>
+            <span>Singapore: +65 9758 - 2288</span>
+            <br>
+            <span>Philippines: +63 9171 – 6816 - 80</span>
+            <br>
+            <span>China: +86 1816 – 5370 - 116</span>
+    
 
     <br><br>
 ";
