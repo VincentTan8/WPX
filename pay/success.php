@@ -12,11 +12,18 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
 }
 
 //Handle Intent
-//https://wetalk.com/testpay/success.php?id=int_hkdmkkjbkhdin0qs1vi&type=SUCCESS_URL
+//https://wetalk.com/testpay/success.php?id=int_hkdm49fnlhdkptuafyy&type=SUCCESS_URL
 if (!isset($_GET['id'])) {
     die('No payment intent ID provided.');
 }
 $intent_id = $_GET['id'];
+
+//temporary workaround
+$toSend = false;
+if (!isset($_SESSION['email_sent']) || $_SESSION['email_sent'] != $intent_id) {
+    $_SESSION['email_sent'] = $intent_id;
+    $toSend = true;
+}
 
 include "../includes/menu_bar_reset.php";
 
@@ -56,7 +63,7 @@ include "../connections/dbname.php";
 <body>
     <div class="payment-form-body position-relative" data-spy="scroll" data-target=".navbar" data-offset="90">
         <!-- <h1>WeTalk Unified Payment Page</h1> -->
-        <div class="payment-info">
+        <!-- <div class="payment-info">
             <p class="success-status">
                 <span id="paymentStatus">Loading...</span>
                 <br><br>
@@ -74,6 +81,22 @@ include "../connections/dbname.php";
 
             <p style="margin-top: 70px; margin-bottom: 10px">For assistance, please contact <strong>WeTalk
                     Support</strong>. Details below.</p>
+        </div> -->
+        <div class="receipt-card">
+            <img src="assets/payment-icon.svg" alt="Success Icon" class="success-icon">
+
+            <h2 class="title">Payment Successful!</h2>
+            <p class="subtitle">Your payment has been processed.</p>
+
+            <div class="details">
+                <p><strong>Order ID:</strong> <span id="orderID">Loading...</span></p>
+                <p><strong>Course:</strong> <span id="coursePaid"></span></p>
+                <p><strong>Amount Paid:</strong> <span id="amountPaid"></span></p>
+            </div>
+
+            <p class="support-text">
+                For assistance, please contact WeTalk Support. Details below.
+            </p>
         </div>
     </div>
 
@@ -108,48 +131,52 @@ include "../connections/dbname.php";
                 document.getElementById('amountPaid').textContent = `${currency} ${amount}`;
                 document.getElementById('orderID').textContent = `${orderID}`;
 
-                const statusSpan = document.getElementById('paymentStatus');
-                const statusSubSpan = document.getElementById('paymentStatusSubtitle');
-                switch (status) {
-                    case 'SUCCEEDED':
-                        statusSpan.textContent = 'Payment Successful!';
-                        break;
-                    case 'PENDING':
-                    case 'PENDING_REVIEW':
-                        statusSpan.textContent = 'Payment Pending';
-                        statusSpan.className = 'status-pending';
-                        statusSubSpan.textContent = 'Please refresh the page later';
-                        break;
-                    case 'CANCELLED':
-                        statusSpan.textContent = 'Payment Cancelled';
-                        statusSpan.className = 'status-failed';
-                        statusSubSpan.textContent = 'Cancellation Successful';
-                        break;
-                    case 'REQUIRES_PAYMENT_METHOD':
-                        statusSpan.textContent = 'Payment Failed';
-                        statusSpan.className = 'status-failed';
-                        statusSubSpan.textContent = 'Please try again';
-                        break;
-                    default:
-                        statusSpan.textContent = status;
-                        statusSpan.className = 'status-failed';
-                        statusSubSpan.textContent = 'Please try again';
-                }
+                // const statusSpan = document.getElementById('paymentStatus');
+                // const statusSubSpan = document.getElementById('paymentStatusSubtitle');
+                // switch (status) {
+                //     case 'SUCCEEDED':
+                //         statusSpan.textContent = 'Payment Successful!';
+                //         break;
+                //     case 'PENDING':
+                //     case 'PENDING_REVIEW':
+                //         statusSpan.textContent = 'Payment Pending';
+                //         statusSpan.className = 'status-pending';
+                //         statusSubSpan.textContent = 'Please refresh the page later';
+                //         break;
+                //     case 'CANCELLED':
+                //         statusSpan.textContent = 'Payment Cancelled';
+                //         statusSpan.className = 'status-failed';
+                //         statusSubSpan.textContent = 'Cancellation Successful';
+                //         break;
+                //     case 'REQUIRES_PAYMENT_METHOD':
+                //         statusSpan.textContent = 'Payment Failed';
+                //         statusSpan.className = 'status-failed';
+                //         statusSubSpan.textContent = 'Please try again';
+                //         break;
+                //     default:
+                //         statusSpan.textContent = status;
+                //         statusSpan.className = 'status-failed';
+                //         statusSubSpan.textContent = 'Please try again';
+                // }
 
+                const toSend = <?php echo json_encode($toSend); ?>;
                 //Send email to recipient using fetch call
-                await fetch('send-email.php', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        amount,
-                        currency,
-                        orderID,
-                        coursePaid,
-                        email,
-                        fullName,
-                        mobileNumber
-                    })
-                });
+                //todo move this to a webhook
+                if (status === 'SUCCEEDED' && toSend) {
+                    await fetch('send-email.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            amount,
+                            currency,
+                            orderID,
+                            coursePaid,
+                            email,
+                            fullName,
+                            mobileNumber
+                        })
+                    });
+                }
             } else {
                 console.error("Error:", data.error);
                 document.getElementById('amountPaid').textContent = '-';
