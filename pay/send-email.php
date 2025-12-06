@@ -40,11 +40,14 @@ $mail->setFrom('no-reply@wetalk.com', 'WeTalk Educational Corp');
 $mail->addReplyTo('no-reply@wetalk.com', 'WeTalk Educational Corp');
 $mail->addAddress($email);
 $mail->isHTML(true);
-$subject = "Payment Confirmation";
+$subject = "WeTalk - Payment Successful";
 
 $bodyContent = "
-    <p>Your payment of <strong>$currency $amount</strong> for <strong>$course_name</strong> has been processed.</p>
-    <p>Your Order ID is <strong>$order_id</strong></p>
+    <p>Thank you for your payment, $full_name</p>
+    <p>Order ID: <strong>$order_id</strong></p>
+    <p>Course: <strong>$course_name</strong></p>
+    <p>Amount Paid: <strong>$currency $amount</strong></p>
+    
     <p style='margin-top: 20px; margin-bottom: 10px'>Need Assistance?</p>
             <strong>Please Contact Support</strong>
             <br>
