@@ -1,8 +1,6 @@
 :root {
     --primary-color: #f2b33d;
     --primary-deep-color: #d49725;
-    --error-color: #ffebee;
-    --success-color: #006d00;
     --border-radius: 8px;
     --spacing-sm: 15px;
     --spacing-md: 25px;
@@ -80,33 +78,9 @@ a:hover {
     background-color: #f8f8f8;
 }
 
-.payment-info {
+/* .payment-info {
     justify-items: flex-start;
-}
-
-/* Success and Error messages */
-#success,
-#error {
-    padding: var(--spacing-sm);
-    border-radius: var(--border-radius);
-    max-width: 400px;
-    display: none;
-}
-
-#success {
-    background: var(--success-color);
-}
-
-#error {
-    background: var(--error-color);
-}
-
-.error-message {
-    background: var(--error-color);
-    padding: var(--spacing-sm);
-    border-radius: var(--border-radius);
-    margin: var(--spacing-sm) 0;
-}
+} */
 
 .form-select {
     padding: 10px;
@@ -261,16 +235,16 @@ a:hover {
     font-size: 0.95rem;
 }
 
-.success-order,
+/* .success-order,
 .success-course,
 .success-paid {
     font-size: 1.1rem;
     margin-bottom: 1rem;
     color: #555;
     font-weight: 500;
-}
+} */
 
-.success-status {
+/* .success-status {
     color: var(--primary-color);
     font-size: 35px;
     margin-bottom: var(--spacing-lg);
@@ -282,9 +256,9 @@ a:hover {
     font-weight: 300;
     font-size: 25px;
     color: #555;
-}
+} */
 
-.status-pending {
+/* .status-pending {
     color: #ffc107;
     font-weight: bold;
     display: inline-block;
@@ -296,7 +270,55 @@ a:hover {
     font-weight: bold;
     display: inline-block;
     border-radius: 6px;
+} */
+
+/* Start of receipt css */
+.receipt-card {
+    width: 560px;
+    background-image: url('assets/receipt-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 70px 60px;
+    text-align: center;
 }
+
+.success-icon {
+    width: 90px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.title {
+    font-family: 'Poppins', serif;
+    color: #ffb100;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.details {
+    text-align: left;
+    margin: 0 auto 30px;
+    width: fit-content;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.support-text {
+    font-size: 11px;
+    color: #777;
+    margin-top: 40px;
+}
+
+/* End of receipt css */
 
 @media (max-width: 768px) {
     h1 {
