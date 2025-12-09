@@ -110,21 +110,16 @@
         form label,
         form input {
             font-size: 14px;
-            /* Adjust font size for labels and inputs */
         }
 
         form input {
             width: 100%;
-            /* Ensure inputs are full-width */
         }
 
         button {
             font-size: 16px;
-            /* Adjust button size */
             padding: 10px;
-            /* Adjust button padding */
-            width: 100%;
-            /* Ensure button is full-width */
+            /* width: 100%; this was causin horizontal scrolling so I commented it out*/
         }
     }
 
@@ -311,8 +306,6 @@
                 <a href="<?php echo BASE_URL; ?>privacy/" target="_blank"> 隐私协议 </a>。
             </p>
 
-
-
             <input readonly style="color: #007bff; font-weight:bold" type="text" name="course" id="course">
 
             <input type="text" name="first_name" placeholder="Given Name 名" required>
@@ -320,21 +313,15 @@
             <input type="email" name="email" placeholder="Email 电子邮件地址" required>
             <input type="text" name="contact" placeholder="Contact Number 电话号码" required>
 
-
-
-
-
             <hr>
-            <textarea name="message" type="text" placeholder="Message 信息
-
-"></textarea>
+            <textarea name="message" type="text" placeholder="Message 信息"></textarea>
 
             <!-- <input type="password" placeholder="Password"  >
                  <input type="password" placeholder="Confirm Password"  > -->
 
 
             <button type="submit" style="background-color: #FEA500;"><b>SUBMIT 提交</b></button>
-            <!-- <p style="color:#767E90; font-size:13px; line-height:20px">Have an account already? <a href="<?php echo BASE_URL; ?>signin/">Log-in</a> </p> -->
+            <!-- <p style="color:#767E90; font-size:13px; line-height:20px">Have an account already? <a href="<?//php echo BASE_URL; ?>signin/">Log-in</a> </p> -->
         </form>
     </div>
 </div>
