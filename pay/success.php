@@ -124,8 +124,6 @@ include "../connections/dbname.php";
                 const fullName = data.body.metadata?.full_name;
                 const mobileNumber = data.body.metadata?.mobile_number;
 
-                //todo insert data to our own db for recording payment with product purchase (through backend)
-
                 // document.getElementById('amountToPay').textContent = `${currency} ${toPay}`;
                 document.getElementById('coursePaid').textContent = `${coursePaid}`;
                 document.getElementById('amountPaid').textContent = `${currency} ${amount}`;
@@ -160,22 +158,39 @@ include "../connections/dbname.php";
                 // }
 
                 const toSend = <?php echo json_encode($toSend); ?>;
-                //Send email to recipient using fetch call
                 //todo move this to a webhook
-                if (status === 'SUCCEEDED' && toSend) {
-                    await fetch('send-email.php', {
+                if (toSend) {
+                    //toSend is intended to fetch update-record and not send-email just yet
+                    await fetch('update-record.php', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
-                            amount,
-                            currency,
-                            orderID,
+                            intent_id,
                             coursePaid,
-                            email,
+                            currency,
+                            amount,
                             fullName,
-                            mobileNumber
+                            email,
+                            mobileNumber,
+                            orderID,
+                            status
                         })
                     });
+                    if (status === 'SUCCEEDED') {
+                        await fetch('send-email.php', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                amount,
+                                currency,
+                                orderID,
+                                coursePaid,
+                                email,
+                                fullName,
+                                mobileNumber
+                            })
+                        });
+                    }
                 }
             } else {
                 console.error("Error:", data.error);
