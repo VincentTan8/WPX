@@ -324,4 +324,28 @@ a:hover {
     h1 {
         font-size: 2rem;
     }
+
+    .receipt-card {
+        width: 100%;
+        padding: 40px 20px;
+        background-image: none;
+    }
+
+    .success-icon {
+        width: 70px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .details {
+        font-size: 14px;
+    }
 }
