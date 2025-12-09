@@ -42,21 +42,19 @@ $mail->addAddress($email);
 $mail->isHTML(true);
 $subject = "WeTalk - Payment Successful";
 
-$bodyContent = "
+$bodyContent = "<div style='font-size: 16px'>
     <p>Thank you for your payment, $full_name</p>
-    <p>Order ID: <strong>$order_id</strong></p>
-    <p>Course: <strong>$course_name</strong></p>
-    <p>Amount Paid: <strong>$currency $amount</strong></p>
+    <p style='margin-left: 15px'><strong>Order ID:</strong> $order_id</p>
+    <p style='margin-left: 15px'><strong>Course:</strong> $course_name</p>
+    <p style='margin-left: 15px'><strong>Amount Paid:</strong> $currency $amount</p>
     
-    <p style='margin-top: 20px; margin-bottom: 10px'>Need Assistance?</p>
-            <strong>Please Contact Support</strong>
-            <br>
-            <span>Singapore: +65 9758 - 2288</span>
-            <br>
-            <span>Philippines: +63 9171 - 6816 - 80</span>
-            <br>
-            <span>China: +86 1816 - 5370 - 116</span>
-    
+    <p style='margin-top: 20px; margin-bottom: 10px'>For assistance, please contact WeTalk Support. Details below.</p>
+    <span>Singapore: +65 9758 - 2288</span>
+    <br>
+    <span>Philippines: +63 9171 - 6816 - 80</span>
+    <br>
+    <span>China: +86 1816 - 5370 - 116</span>
+    </div>
 
     <br><br>
 ";
