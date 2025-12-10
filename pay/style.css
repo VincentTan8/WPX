@@ -320,7 +320,7 @@ a:hover {
 
 /* End of receipt css */
 
-@media (max-width: 768px) {
+@media (max-width: 678px) {
     h1 {
         font-size: 2rem;
     }
@@ -328,7 +328,10 @@ a:hover {
     .receipt-card {
         width: 100%;
         padding: 40px 20px;
-        background-image: none;
+        background-image: url('assets/receipt-bg-mobile.png');
+        background-size: 100% 100%;
+        background-position: top;
+        background-repeat: no-repeat;
     }
 
     .success-icon {
