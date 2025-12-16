@@ -6,7 +6,7 @@ function addGuest() {
 
     wrapper.className = `guestEntry`;
     wrapper.innerHTML = `
-        <input type="text" name="guests[]" required>
+        <input type="text" name="guests[]">
         <button type="button" onclick="this.parentNode.remove()">x</button>
     `;
 
