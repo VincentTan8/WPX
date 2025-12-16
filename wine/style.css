@@ -25,7 +25,7 @@ h1 {
 
 p {
     margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 14px;
 }
 
 /* Button Styling */
@@ -68,10 +68,9 @@ a:hover {
 .wine-main-body {
     display: flex;
     min-height: 100vh;
-    margin: 0;
+    margin: 0 200px;
     margin-top: 165px;
     color: #222;
-    background-color: #f5f5f5;
 }
 
 .details-left {
