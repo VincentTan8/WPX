@@ -17,7 +17,8 @@ $hide_panda = (
     strpos($_SERVER['PHP_SELF'], '/tour/') !== false ||
     strpos($_SERVER['PHP_SELF'], '/promo/chess/') !== false ||
     strpos($_SERVER['PHP_SELF'], '/pay/') !== false ||
-    strpos($_SERVER['PHP_SELF'], '/testpay/') !== false
+    strpos($_SERVER['PHP_SELF'], '/testpay/') !== false ||
+    strpos($_SERVER['PHP_SELF'], '/wine/') !== false
 );
 ?>
 
