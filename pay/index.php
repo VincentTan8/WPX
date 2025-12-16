@@ -182,10 +182,11 @@ include "../connections/dbname.php";
             <!-- Terms Checkbox -->
             <div style="margin: 16px 0;">
                 <label style="align-items:center; gap:10px;">
-                    <input type="checkbox" id="agreeTerms" required />
-                    <span>I have read and agree to the <a style="text-decoration: underline !important"
-                            href="../privacy" target="_blank" rel="noopener noreferrer">WeTalk Payment Policy
-                        </a></span>
+                    <span>
+                        <input type="checkbox" id="agreeTerms" style="margin: 0" required />
+                        I have read and agree to the <a style="text-decoration: underline !important" href="../privacy"
+                            target="_blank" rel="noopener noreferrer">WeTalk Payment Policy</a>
+                    </span>
                 </label>
             </div>
 
