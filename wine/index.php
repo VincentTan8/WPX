@@ -53,10 +53,12 @@ include "../connections/dbname.php";
 <body>
     <div class="wine-main-body position-relative" data-spy="scroll" data-target=".navbar" data-offset="90">
         <div class="details-left">
-            <!-- <div class="brand">
-                <img src="https://wetalk.com/resources/img/logo.png" alt="WeTalk Logo">
-                <span>Wetalk Education Pte Ltd</span>
-            </div> -->
+            <div class="brand">
+                <!-- <img src="https://wetalk.com/resources/img/logo.png" alt="WeTalk Logo"> -->
+                <p>
+                    Harmony Unbound: The Wisdom of the Vine
+                <p>
+            </div>
 
             <p>
                 Join us for an intimate evening where wine appreciation, Chinese calligraphy,
@@ -225,6 +227,8 @@ include "../connections/dbname.php";
                 const full_name = document.getElementById("fullName").value;
                 const mobile_number = document.getElementById("mobileNumber").value;
                 const referred_by = document.getElementById("referredBy").value;
+                const kid_number = document.getElementById("kidNumber").value;
+                const dietary = document.getElementById("dietary").value;
 
                 const guestInputs = document.querySelectorAll('input[name="guests[]"]');
                 const guests = [...guestInputs]
@@ -242,6 +246,16 @@ include "../connections/dbname.php";
                         intent_id: intent,
                         guests,
                         referred_by
+                    })
+                });
+                //save other info that are not recorded in the payment records
+                await fetch('record-other-info.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        intent_id: intent,
+                        kid_number,
+                        dietary
                     })
                 });
 
