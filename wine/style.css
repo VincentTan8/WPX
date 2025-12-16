@@ -90,16 +90,16 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 20px;
 }
 
 .brand img {
     height: 28px;
 }
 
-.brand span {
-    font-size: 14px;
-    color: #666;
+.brand p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #181414;
 }
 
 .event-info {
