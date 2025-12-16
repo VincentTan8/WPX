@@ -172,7 +172,78 @@ a:hover {
     transition: all 0.2s ease;
 }
 
+/* START added for success page chuchu */
+.payment-form-body {
+    padding: 2rem;
+    max-width: 100%;
+    margin-top: 165px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: #f8f9fa; */
+    color: #2d3748;
+    line-height: 1.6;
+    justify-items: center;
+    background-color: #f8f8f8;
+}
+
+.receipt-card {
+    width: 560px;
+    background-image: url('assets/receipt-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 70px 60px;
+    text-align: center;
+}
+
+.success-icon {
+    width: 90px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.title {
+    font-family: 'Poppins', serif;
+    color: #ffb100;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.details {
+    text-align: left;
+    margin: 0 auto 30px;
+    width: fit-content;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.support-text {
+    font-size: 11px;
+    color: #777;
+    margin-top: 40px;
+}
+
+/* END for success page chuchu */
+
+@media (max-width: 1335px) {
+    .wine-main-body {
+        margin: 150px 90px 0;
+    }
+}
+
 @media (max-width: 1024px) {
+    .wine-main-body {
+        margin: 150px 20px 0;
+    }
+
     .details-left {
         width: 50%;
     }
@@ -181,6 +252,8 @@ a:hover {
 @media (max-width: 768px) {
     .wine-main-body {
         flex-direction: column;
+        margin: 0;
+        margin-top: 100px;
     }
 
     .details-left {
@@ -192,5 +265,34 @@ a:hover {
     .form-right {
         min-height: 200px;
         padding: 30px 20px;
+    }
+}
+
+@media (max-width: 678px) {
+    .receipt-card {
+        width: 100%;
+        padding: 40px 20px;
+        background-image: url('assets/receipt-bg-mobile.png');
+        background-size: 100% 100%;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+
+    .success-icon {
+        width: 70px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .details {
+        font-size: 14px;
     }
 }
