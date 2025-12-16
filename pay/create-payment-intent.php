@@ -21,6 +21,7 @@ $email = $input["email"] ?? null;
 $full_name = $input["full_name"] ?? null;
 $mobile_number = $input["mobile_number"] ?? null;
 $order_id = $input["merchant_order_id"] ?? uniqid("WeTalkOrder_"); //constructed like this to handle custom order ID's in the future
+$guest_num = $input["guest_num"] ?? 0;
 
 if (!$course_name || !$currency) {
     echo json_encode([
@@ -40,7 +41,9 @@ $stmt->bind_param("ss", $currency, $course_name);
 $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_assoc();
-$amount = $row['price'];
+
+//for courses like the Wine Page
+$amount = $row['price'] * ($guest_num + 1);
 
 try {
     $res = createPaymentIntent($amount, $currency, $order_id, $course_name, $email, $full_name, $mobile_number);
