@@ -14,21 +14,25 @@ include "../connections/dbname.php";
 $input = json_decode(file_get_contents("php://input"), true);
 
 $intent_id = $input["intent_id"] ?? null;
-$guests = $input["guests"] ?? null;
+$guests = $input["guests"] ?? [];
 $referred_by = $input["referred_by"] ?? null;
 $order_id = $input["orderID"] ?? null;
 
 $tablename = $database . ".`wt_wine_guest`";
 
 if (!$order_id) {
-    $sql = "INSERT INTO $tablename (`intent_id`, `full_name`, `referred_by`) 
-            VALUES (?, ?, ?);";
+    $sql = "INSERT INTO $tablename (`intent_id`, `full_name`, `email`, `mobile_number`, `referred_by`) 
+            VALUES (?, ?, ?, ?, ?);";
     $stmt = $conn->prepare($sql);
 
     foreach ($guests as $guest) {
-        $stmt->bind_param("sss", $intent_id, $guest, $referred_by);
+        $name = trim($guest['name'] ?? '');
+        $email = trim($guest['email'] ?? '');
+        $mobile = trim($guest['mobile'] ?? '');
+
+        $stmt->bind_param("sssss", $intent_id, $name, $email, $mobile, $referred_by);
         if (!$stmt->execute()) {
-            echo "Guest [$guest] not saved";
+            echo "Guest [" . $guest['name'] . "] not saved";
         }
     }
 
