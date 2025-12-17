@@ -145,31 +145,35 @@ a:hover {
     border: 1px solid #ccc;
 }
 
-#guestInput {
-    margin-bottom: 20px;
-}
-
 .guestEntry {
     display: flex;
+    flex-direction: column;
     gap: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .guestEntry input {
     margin: 0;
 }
 
-.guestEntry button {
+.guestBtn {
     background-color: var(--primary-color);
     color: white;
     border: none;
     min-width: 48px;
+    width: 100%;
     padding: 2px 14px;
     border-radius: 6px;
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
+}
+
+.guestBtn:focus,
+.guestBtn:active {
+    outline: none;
+    color: white;
 }
 
 /* START added for success page chuchu */
