@@ -22,7 +22,7 @@ $tablename = $database . ".`wt_wine_other_info`";
 $sql = "INSERT INTO $tablename (`intent_id`, `kid_number`, `dietary`) 
             VALUES (?, ?, ?);";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("sis", $intent_id, $kid_number, $dietary);
+$stmt->bind_param("sss", $intent_id, $kid_number, $dietary);
 if (!$stmt->execute()) {
     echo "Info [$intent_id] not saved";
 }
