@@ -104,19 +104,17 @@ include "../connections/dbname.php";
                 <label for="mobileNumber">Mobile Number</label>
                 <input type="tel" inputmode="tel" id="mobileNumber" name="mobileNumber" required>
 
-                <label for="kidNumber">How many kids are you bringing?</label>
-                <input type="number" step="1" min="0" id="kidNumber" name="kidNumber" required>
+                <label for="kidNumber">How many kids are you bringing? Please specify the age</label>
+                <input type="text" id="kidNumber" name="kidNumber" required>
 
                 <label for="dietary">Dietary Restrictions (if any)</label>
                 <input type="text" id="dietary" name="dietary">
 
                 <label for="guests">Additional Guests (if any)</label>
                 <div id="guestInput">
-                    <div class="guestEntry">
-                        <input type="text" name="guests[]" />
-                        <button type="button" id="addGuest">+</button>
-                    </div>
+                    <div class="guestEntry"></div>
                 </div>
+                <button type="button" id="addGuestBtn" class="guestBtn" style="margin-bottom: 20px;">+</button>
 
                 <label for="referredBy">Referred By (if applicable)</label>
                 <input type="text" id="referredBy" name="referredBy">
@@ -191,13 +189,13 @@ include "../connections/dbname.php";
             }
             const mode = 'payment';
             const { payments } = await window.AirwallexComponentsSDK.init({
-                env: 'demo', // Setup which Airwallex env('staging' | 'demo' | 'prod') to integrate with
+                env: 'prod', // Setup which Airwallex env('staging' | 'demo' | 'prod') to integrate with
                 enabledElements: ['payments'],
             })
 
             const redirectHppForCheckout = (currency, intent_id, client_secret) => {
                 payments.redirectToCheckout({
-                    env: 'demo',  //todo change when going to prod
+                    env: 'prod',  //todo change when going to prod
                     mode: 'payment',
                     currency,
                     intent_id,
@@ -230,10 +228,24 @@ include "../connections/dbname.php";
                 const kid_number = document.getElementById("kidNumber").value;
                 const dietary = document.getElementById("dietary").value;
 
-                const guestInputs = document.querySelectorAll('input[name="guests[]"]');
-                const guests = [...guestInputs]
-                    .map(input => input.value.trim())
+                const guestEntries = document.querySelectorAll('#guestInput .guestEntry');
+                const guests = [...guestEntries]
+                    .map(entry => {
+                        const name = entry.querySelector('input[name*="[name]"]')?.value.trim();
+                        const email = entry.querySelector('input[name*="[email]"]')?.value.trim();
+                        const mobile = entry.querySelector('input[name*="[mobile]"]')?.value.trim();
+                        // ignore empty rows
+                        if (!name && !email && !mobile)
+                            return null;
+
+                        return {
+                            name,
+                            email,
+                            mobile
+                        };
+                    })
                     .filter(Boolean);
+
                 const guest_num = guests.length;
 
                 const { intent, client_secret } = await createPayment(course_name, currency, email, full_name, mobile_number, guest_num);
