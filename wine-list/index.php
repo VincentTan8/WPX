@@ -52,22 +52,15 @@ $stmt->close();
 $totalPages = ceil($totalRows / $limit);
 
 // Fetch paginated records
-$sql = "
-    SELECT
-    pr.*,
-    wg.full_name AS guest_name,
-    wg.referred_by,
-    woi.kid_number,
-    woi.dietary
+$idSql = "
+    SELECT pr.intent_id
     FROM wt_payment_records pr
-    LEFT JOIN wt_wine_guest wg ON wg.intent_id = pr.intent_id
-    LEFT JOIN wt_wine_other_info woi ON woi.intent_id = pr.intent_id
     $searchSql
-    ORDER BY pr.intent_id DESC
+    ORDER BY pr.id DESC
     LIMIT ? OFFSET ?
 ";
 
-$stmt = $conn->prepare($sql);
+$stmt = $conn->prepare($idSql);
 if ($search) {
     $bindTypes = $types . "ii";
     $bindValues = array_merge($params, [$limit, $offset]);
@@ -75,6 +68,37 @@ if ($search) {
 } else {
     $stmt->bind_param("ii", $limit, $offset);
 }
+$stmt->execute();
+$stmt->bind_result($intent_id);
+
+$ids = [];
+while ($stmt->fetch()) {
+    $ids[] = $intent_id;
+}
+$stmt->close();
+
+$placeholders = implode(',', array_fill(0, count($ids), '?'));
+
+$sql = "
+    SELECT
+        pr.*,
+        wg.full_name AS guest_name,
+        wg.email AS guest_email,
+        wg.mobile_number AS guest_mobile,
+        wg.referred_by,
+        woi.kid_number,
+        woi.dietary
+    FROM wt_payment_records pr
+    LEFT JOIN wt_wine_guest wg ON wg.intent_id = pr.intent_id
+    LEFT JOIN wt_wine_other_info woi ON woi.intent_id = pr.intent_id
+    WHERE pr.intent_id IN ($placeholders)
+    ORDER BY pr.id DESC
+";
+
+$stmt = $conn->prepare($sql);
+$types = str_repeat('s', count($ids));
+$stmt->bind_param($types, ...$ids);
+
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -95,7 +119,8 @@ while ($row = $result->fetch_assoc()) {
     if ($row['guest_name']) {
         $data[$id]['guests'][] = [
             'name' => $row['guest_name'],
-            'referred_by' => $row['referred_by']
+            'email' => $row['guest_email'],
+            'mobile' => $row['guest_mobile']
         ];
     }
 }
@@ -120,9 +145,9 @@ while ($row = $result->fetch_assoc()) {
                 <tr>
                     <th>Order ID</th>
                     <th>Name</th>
-                    <th>Course</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
                     <th>Amount</th>
-                    <th>Status</th>
                     <th></th>
                 </tr>
             </thead>
@@ -132,32 +157,31 @@ while ($row = $result->fetch_assoc()) {
                     <tr>
                         <td class="custom-td"><?= $p['order_id'] ?></td>
                         <td class="custom-td"><?= htmlspecialchars($p['full_name']) ?></td>
-                        <td class="custom-td"><?= htmlspecialchars($p['course_name']) ?></td>
+                        <td class="custom-td"><?= htmlspecialchars($p['email']) ?></td>
+                        <td class="custom-td"><?= $p['mobile_number'] ?></td>
                         <td class="custom-td"><?= $p['currency'] ?>     <?= number_format($p['amount'], 2) ?></td>
-                        <td class="custom-td"><?= $p['status'] ?></td>
                         <td class="custom-td"><button onclick="toggle('<?= $p['intent_id'] ?>')">View</button></td>
                     </tr>
 
                     <tr class="details" id="<?= $p['intent_id'] ?>">
                         <td colspan="6">
-
-                            <strong>Contact</strong><br>
-                            Email: <?= $p['email'] ?><br>
-                            Mobile: <?= $p['mobile_number'] ?><br><br>
-
                             <strong>Guests</strong>
                             <ul>
                                 <?php foreach ($row['guests'] as $g): ?>
-                                    <li><?= htmlspecialchars($g['name']) ?> (Ref: <?= htmlspecialchars($g['referred_by']) ?>)
+                                    <li>
+                                        <?=
+                                            htmlspecialchars($g['name']) . " - " . htmlspecialchars($g['email']) . " - " . htmlspecialchars($g['mobile'])
+                                            ?>
                                     </li>
                                 <?php endforeach;
                                 if (empty($row['guests']))
                                     echo '<li>None</li>'; ?>
                             </ul>
-
+                            <strong>Referred By:</strong><br>
+                            <?= htmlspecialchars($p['referred_by']) ?><br>
                             <strong>Other Info</strong><br>
                             Kids: <?= $row['other']['kid_number'] ?? '-' ?><br>
-                            Dietary: <?= htmlspecialchars($row['other']['dietary'] ?? '-') ?>
+                            Dietary Restriction: <?= htmlspecialchars($row['other']['dietary'] ?? '-') ?>
 
                         </td>
                     </tr>
@@ -174,8 +198,6 @@ while ($row = $result->fetch_assoc()) {
     </div>
 
     <script src="scripts/list.js"></script>
-
-
 
     <div id="page-data" data-page="wine-list" data-lang="<?php echo $lang; ?>"></div> <!-- change to current page -->
 </body>
