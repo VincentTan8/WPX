@@ -131,6 +131,7 @@ while ($row = $result->fetch_assoc()) {
 <html lang="en">
 
 <link rel="stylesheet" href="style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <body>
     <form method="GET" class="search-box">
@@ -155,34 +156,57 @@ while ($row = $result->fetch_assoc()) {
                 <?php foreach ($data as $row):
                     $p = $row['main']; ?>
                     <tr>
-                        <td class="custom-td"><?= $p['order_id'] ?></td>
-                        <td class="custom-td"><?= htmlspecialchars($p['full_name']) ?></td>
-                        <td class="custom-td"><?= htmlspecialchars($p['email']) ?></td>
-                        <td class="custom-td"><?= $p['mobile_number'] ?></td>
-                        <td class="custom-td"><?= $p['currency'] ?>     <?= number_format($p['amount'], 2) ?></td>
+                        <td class="custom-td" data-label="Order ID"><?= $p['order_id'] ?></td>
+                        <td class="custom-td" data-label="Name"><?= htmlspecialchars($p['full_name']) ?></td>
+                        <td class="custom-td" data-label="Email"><?= htmlspecialchars($p['email']) ?></td>
+                        <td class="custom-td" data-label="Mobile"><?= $p['mobile_number'] ?></td>
+                        <td class="custom-td" data-label="Amount"><?= $p['currency'] ?>
+                            <?= number_format($p['amount'], 0) ?>
+                        </td>
                         <td class="custom-td"><button onclick="toggle('<?= $p['intent_id'] ?>')">View</button></td>
                     </tr>
 
                     <tr class="details" id="<?= $p['intent_id'] ?>">
-                        <td colspan="6">
-                            <strong>Guests</strong>
-                            <ul>
-                                <?php foreach ($row['guests'] as $g): ?>
-                                    <li>
-                                        <?=
-                                            htmlspecialchars($g['name']) . " - " . htmlspecialchars($g['email']) . " - " . htmlspecialchars($g['mobile'])
-                                            ?>
-                                    </li>
-                                <?php endforeach;
-                                if (empty($row['guests']))
-                                    echo '<li>None</li>'; ?>
-                            </ul>
-                            <strong>Referred By:</strong><br>
-                            <?= htmlspecialchars($p['referred_by']) ?><br>
-                            <strong>Other Info</strong><br>
-                            Kids: <?= $row['other']['kid_number'] ?? '-' ?><br>
-                            Dietary Restriction: <?= htmlspecialchars($row['other']['dietary'] ?? '-') ?>
+                        <td class="details-td" colspan="6">
+                            <div class="details-card">
+                                <div class="details-section">
+                                    <h4>Guests</h4>
+                                    <ul class="guest-list">
+                                        <?php foreach ($row['guests'] as $g): ?>
+                                            <li>
+                                                <span class="guest-name"><?= htmlspecialchars($g['name']) ?></span>
+                                                <span class="guest-meta">
+                                                    <?= htmlspecialchars($g['email']) ?> • <?= htmlspecialchars($g['mobile']) ?>
+                                                </span>
+                                            </li>
+                                        <?php endforeach;
+                                        if (empty($row['guests']))
+                                            echo '<li class="empty">None</li>'; ?>
+                                    </ul>
+                                </div>
 
+                                <div class="details-grid">
+                                    <div>
+                                        <strong>Transaction Date</strong>
+                                        <p><?= htmlspecialchars($p['transaction_date'] ?: '-') ?></p>
+                                    </div>
+
+                                    <div>
+                                        <strong>Referred By</strong>
+                                        <p><?= htmlspecialchars($p['referred_by'] ?: '-') ?></p>
+                                    </div>
+
+                                    <div>
+                                        <strong>Kids</strong>
+                                        <p><?= $row['other']['kid_number'] ?? '-' ?></p>
+                                    </div>
+
+                                    <div>
+                                        <strong>Dietary Restriction</strong>
+                                        <p><?= htmlspecialchars($row['other']['dietary'] ?? '-') ?></p>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 <?php endforeach; ?>
