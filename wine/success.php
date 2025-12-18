@@ -109,6 +109,8 @@ include "../connections/dbname.php";
     <script async>
         (async () => {
             const intent_id = <?php echo json_encode($intent_id); ?>;
+            //todo Retrieve other info and guest list for email
+
             const res = await fetch(`../resources/payment/retrieve-payment-intent.php?intent_id=${intent_id}`, {
                 headers: { 'Content-Type': 'application/json' },
             });
@@ -124,6 +126,11 @@ include "../connections/dbname.php";
                 const email = data.body.metadata?.email;
                 const fullName = data.body.metadata?.full_name;
                 const mobileNumber = data.body.metadata?.mobile_number;
+
+                const date = new Date()
+                const pad = n => String(n).padStart(2, '0');
+                const dateTime = `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ` +
+                    `${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
 
                 // document.getElementById('amountToPay').textContent = `${currency} ${toPay}`;
                 document.getElementById('coursePaid').textContent = `${coursePaid}`;
@@ -147,7 +154,8 @@ include "../connections/dbname.php";
                             email,
                             mobileNumber,
                             orderID,
-                            status
+                            status,
+                            dateTime
                         })
                     });
                     if (status === 'SUCCEEDED') {

@@ -22,10 +22,11 @@ $email = $input["email"] ?? null;
 $mobile_number = $input["mobileNumber"] ?? null;
 $order_id = $input["orderID"] ?? null;
 $status = $input["status"] ?? null;
+$sqlDatetime = $input["dateTime"] ?? null;
 
 $tablename = $database . ".`wt_payment_records`";
-$sql = "INSERT INTO $tablename (`intent_id`, `course_name`, `currency`, `amount`, `full_name`, `email`, `mobile_number`, `order_id`, `status`) 
-        VALUES ('$intent_id', '$course_name', '$currency', '$amount', '$full_name', '$email', '$mobile_number', '$order_id', '$status');";
+$sql = "INSERT INTO $tablename (`intent_id`, `course_name`, `currency`, `amount`, `full_name`, `email`, `mobile_number`, `order_id`, `status`, `transaction_date`) 
+        VALUES ('$intent_id', '$course_name', '$currency', '$amount', '$full_name', '$email', '$mobile_number', '$order_id', '$status', '$sqlDatetime');";
 
 if (!$conn->query($sql)) {
     echo "Record not saved";
