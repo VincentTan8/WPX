@@ -14,6 +14,7 @@ $language = $_POST['language'];  //_en, _cn, _kr, _jp
 
 
 $news_title = "news_title" . $language;
+$news_title_complete = "news_title_complete" . $language;
 $news_description = "news_description" . $language;
 
 $tablename = $database . ".`wt_news`";
@@ -21,6 +22,7 @@ $tablename = $database . ".`wt_news`";
 $sql = "SELECT `ref_num`, 
             `news_category`, 
             `$news_title` AS `news_title`, 
+             
             `$news_description` AS `news_description`, 
             `date_posted`, 
             `date`, 
@@ -28,7 +30,8 @@ $sql = "SELECT `ref_num`,
             `story_source`, 
             `video_file`, 
             `news_id`, 
-            `news_lang`
+            `news_lang`,
+            `$news_title_complete` AS `news_title_complete`
         FROM $tablename
         WHERE `ref_num` = ?";
 

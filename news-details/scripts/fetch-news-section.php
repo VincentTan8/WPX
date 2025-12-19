@@ -9,13 +9,23 @@ if (!isset($_SESSION)) {
 include "../../connections/dbname.php";
 
 $news_ref_num = $_POST['news_ref_num'];
-$language = $_POST['language'];  //_en, _cn, _kr, _jp
+$language = $_POST['language'];
+
 
 $section_title = "section_title" . $language;
 $section_detail = "section_detail" . $language;
 
+
+$photo_col = ($language === '_cn') ? 'photo_cn' : 'photo';
+
+
 $tablename = $database . ".`wt_news_section`";
-$sql = "SELECT `ref_num`, `$section_title` AS `section_title`,  `$section_detail` AS `section_detail`, `photo`
+
+
+$sql = "SELECT `ref_num`, 
+               `$section_title` AS `section_title`,  
+               `$section_detail` AS `section_detail`, 
+               `$photo_col` AS `photo`
         FROM $tablename
         WHERE `news_ref_num` = ?";
 

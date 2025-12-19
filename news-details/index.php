@@ -3,6 +3,14 @@ if (!isset($_SESSION)) {
   session_start();
   ob_start();
 }
+
+if (!isset($_SESSION['load_ctr'])) {
+  $_SESSION['lang'] = 'CN';
+  $_SESSION['load_ctr'] = 1;
+}
+
+
+
 if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
   $lang = '_cn';
 } else {
@@ -53,14 +61,42 @@ if (mysqli_num_rows($result) === 0) {
     margin-bottom: 1.5rem;
     font-size: 40px;
     font-family: 'Poppins', sans-serif;
+    margin-right: 120px;
+    margin-left: 120px;
 
   }
 
+  .section-detail-text {
+    text-align: left;
+    font-size: 14px;
+    margin-left: 120px;
+    margin-right: 120px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .news-date-posted {
+    text-align: left;
+    margin-top: 0.5rem;
+    font-size: 12px;
+    color: #555;
+    margin-left: 120px;
+  }
 
   @media (max-width: 767px) {
     .news-title {
       font-size: 28px;
+      margin: 0 1rem;
     }
+
+    .section-detail-text {
+      margin: 0 1rem;
+
+    }
+
+    .news-date-posted {
+      margin: 0 1rem;
+    }
+
   }
 </style>
 
@@ -73,10 +109,10 @@ if (mysqli_num_rows($result) === 0) {
   <section class="container" style="margin-top:5rem;">
     <!-- Title -->
 
-    <h1 id="news-title" class="news-title"></h1>
+    <h1 id="news-title-complete" class="news-title"></h1>
 
     <!-- Date posted -->
-    <p id="news-date-posted" style="text-align:left; margin-top:0.5rem; font-size:12px; color:#555;"></p>
+    <p id="news-date-posted" style="" class="news-date-posted"></p>
     <!-- Thumbnail -->
     <!-- <div class="row">
       <div class="col-12">
@@ -112,7 +148,7 @@ if (mysqli_num_rows($result) === 0) {
 
   <?php include "../includes/address.php" ?>
 
-
+  <?php include "../includes/footer.php" ?>
   <!-- Scripts -->
   <script src="../vendor/js/bundle.min.js"></script>
   <script src="../vendor/js/jquery.fancybox.min.js"></script>

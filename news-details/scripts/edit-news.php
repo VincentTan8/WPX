@@ -126,7 +126,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     // Upload image if one is selected
                     if ($file['error'] !== UPLOAD_ERR_NO_FILE) {
-                        uploadImage($conn, $ref_num_array[$i], $tablename, $file, 'photo');
+                        $photo_col = ($lang === '_cn') ? 'photo_cn' : 'photo';
+
+                        uploadImage($conn, $ref_num_array[$i], $tablename, $file, $photo_col);
                     }
                 } else {
                     // New section
@@ -138,7 +140,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $stmt->bind_param("ssss", $new_ref_num, $ref_num, $news_section_array[$i], $news_detail_array[$i]);
                     if ($stmt->execute()) {
                         if ($file['error'] !== UPLOAD_ERR_NO_FILE) {
-                            uploadImage($conn, $new_ref_num, $tablename, $file, 'photo');
+                            $photo_col = ($lang === '_cn') ? 'photo_cn' : 'photo';
+
+                            uploadImage($conn, $new_ref_num, $tablename, $file, $photo_col);
+
                         }
                     } else {
                         $errors[$new_ref_num] = $stmt->error;
