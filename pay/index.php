@@ -169,6 +169,13 @@ include "../connections/dbname.php";
                                 <span class="code">SGD</span>
                                 <span class="name">Singapore Dollar</span>
                             </div>
+
+                            <div class="currency-option" data-code="TWD" data-name="New Taiwan Dollar"
+                                data-flag="tw.svg">
+                                <img src="assets/tw.svg" class="flag">
+                                <span class="code">TWD</span>
+                                <span class="name">New Taiwan Dollar</span>
+                            </div>
                         </div>
 
                         <!-- Hidden field to send value to backend -->
