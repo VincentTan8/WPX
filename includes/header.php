@@ -397,7 +397,7 @@ $hide_panda = (
                                     SGD
                                 </a>
                                 <a class="dropdown-item"
-                                    href="<?php echo BASE_URL; ?>includes/currency.php?currency=RMB">
+                                    href="<?php echo BASE_URL; ?>includes/currency.php?currency=CNY">
                                     CNY
                                 </a>
                                 <a class="dropdown-item"
