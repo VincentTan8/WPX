@@ -17,6 +17,13 @@ $_SESSION['active_page'] = 'pay';
 
 include "../includes/header.php";
 include "../connections/dbname.php";
+
+//for prefilling fields
+$prefill = false;
+if (isset($_GET['course_name'])) {
+    $course_name = $_GET['course_name'];
+    $prefill = true;
+}
 ?>
 
 <!DOCTYPE html>
@@ -206,8 +213,14 @@ include "../connections/dbname.php";
     <?php include "../includes/footer.php"; ?>
     <div id="page-data" data-page="pay" data-lang="<?php echo $lang; ?>"></div>
 
+    <script src="scripts/pay.js"></script>
+    <script src="scripts/mobile-selector.js"></script>
+    <script src="scripts/currency-selector.js"></script>
     <script async>
         (async () => {
+            const prefill = <?php echo $prefill; ?>;
+            const prefill_course_name = <?php echo $course_name; ?>;
+
             async function createPayment(course_name, currency, email, full_name, mobile_number) {
                 const res = await fetch('create-payment-intent.php', {
                     method: 'POST',
@@ -281,9 +294,6 @@ include "../connections/dbname.php";
             });
         })();
     </script>
-    <script src="scripts/pay.js"></script>
-    <script src="scripts/mobile-selector.js"></script>
-    <script src="scripts/currency-selector.js"></script>
 </body>
 
 </html>
