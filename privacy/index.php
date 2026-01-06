@@ -503,49 +503,7 @@ include "../connections/dbname.php";
                 excellent traditional Chinese culture, constructing the dissemination of Chinese culture under the
                 international Chinese language education, and providing Chinese wisdom for the development of the
                 world and the progress of mankind. You are welcome to join us!</p>
-
-            <h4>WeTalk Payment Policy</h4>
-
-            <p><b>Course Fee Payment Policy (All Regions)</b></p>
-
-            <p>a) Payments can be made through the listed payment modes (PayNow, GCash, WeChat Pay, Airwallex, etc.).
-            </p>
-            <p>b) Please provide proof of payment (e.g., transfer receipt or screenshot), where relevant.</p>
-            <p>c) For manual payments, please indicate the student's name in the payment reference. </p>
-            <p>d) Any bank charges or administrative fees incurred through payment modes outside the official listed
-            </p>
-            <p>e) methods will be borne by the customer.</p>
-            <p>f) Course fees must be paid in full before class commencement, unless otherwise arranged.</p>
-            <p>g) Receipts will be issued upon verification of payment.</p>
-
-            <p><b>FAQ: WeTalk Course Fee Payments</b></p>
-
-            <p style="margin: 0">1) What payment modes are available?</p>
-            <p style="margin: 0"><b>Electronic Payment:</b></p>
-            <p style="margin: 0">Credit/debit card (via Airwallex/Stripe), Google Pay, Apple Pay, Alipay, GCash,
-                Kakao Pay, PayPal (if available)</p>
-            <p style="margin: 0"><b>Local Payment Methods:</b></p>
-            <p style="margin: 0">Singapore: PayNow (QR code or UEN)</p>
-            <p style="margin: 0">Philippines: GCash, Bank Transfer, POS, Cash</p>
-            <p>China: WeChat Pay / Alipay (via QR)</p>
-
-            <p style="margin: 0">2) Can I pay using QR code?</p>
-            <p style="margin: 0"><b>Yes</b></p>
-            <p style="margin: 0">SG: PayNow QR</p>
-            <p style="margin: 0">PH: GCash QR</p>
-            <p>CN: WeChat / Alipay QR</p>
-
-            <p style="margin: 0">3) Are there additional charges?</p>
-            <p>Payments made <b>outside the listed methods</b> may incur bank or FX charges, borne by the customer.</p>
-
-            <p style="margin: 0">4) What reference should I include?</p>
-            <p>Please include your <b>child’s full name</b> and (if applicable) <b>invoice number</b>.</p>
-
-            <p style="margin: 0">5) Will I receive a receipt?</p>
-            <p><b>Yes.</b> A digital receipt will be issued once the payment is verified.</p>
-
         </div>
-
     </section>
 
     <?php include "../includes/address.php" ?>
