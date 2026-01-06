@@ -330,7 +330,7 @@
 <!--Footer-->
 <footer class="footer-sec">
     <div class="container">
-        <div class="row" style="align-items:anchor-center; margin-bottom:-13px;">
+        <div class="row" style="align-items:anchor-center;">
             <div class="col-12 col-lg-3 d-none d-lg-block">
                 <div class="footer-logo">
                     <div class="logo-max">
@@ -420,8 +420,8 @@
 
 
             </br>
-            <p class="copyright-para" style="margin-right: 8em;">Copyright &copy; WeTalk International Education Pte.
-                Ltd. 众语国际教育咨询有限公司 2026 <a href="javascript:void(0);" class="grey"></a></p>
+            <p class="copyright-para">Copyright &copy; WeTalk Education Centre Pte Ltd
+                众语国际教育咨询有限公司 2026</p>
 
         </div>
 
