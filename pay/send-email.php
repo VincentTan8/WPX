@@ -1,8 +1,8 @@
 <?php
 if (!isset($_SESSION)) {
-    ini_set('session.gc_maxlifetime', 60 * 60 * 24 * 365);
-    session_start();
-    ob_start();
+  ini_set('session.gc_maxlifetime', 60 * 60 * 24 * 365);
+  session_start();
+  ob_start();
 }
 
 ini_set('display_errors', 1);
@@ -70,7 +70,7 @@ $bodyContent = '
         <!-- Icon -->
         <tr>
           <td style="padding-bottom:25px;">
-            <img src="https://wetalk.com/testpay/assets/payment-icon.png" width="100" alt="Success" style="display:block;margin:auto;">
+            <img src="https://wetalk.com/pay/assets/payment-icon.png" width="100" alt="Success" style="display:block;margin:auto;">
           </td>
         </tr>
 
@@ -128,7 +128,7 @@ $bodyContent = '
 $mail->Subject = $subject;
 $mail->Body = $bodyContent;
 if (!$mail->send()) {
-    echo $mail->ErrorInfo;
+  echo $mail->ErrorInfo;
 }
 $mail->clearAddresses();
 $mail->clearAttachments();
