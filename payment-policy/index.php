@@ -60,10 +60,9 @@ include "../connections/dbname.php";
             <p>b) Please provide proof of payment (e.g., transfer receipt or screenshot), where relevant.</p>
             <p>c) For manual payments, please indicate the student's name in the payment reference. </p>
             <p>d) Any bank charges or administrative fees incurred through payment modes outside the official listed
-            </p>
-            <p>e) methods will be borne by the customer.</p>
-            <p>f) Course fees must be paid in full before class commencement, unless otherwise arranged.</p>
-            <p>g) Receipts will be issued upon verification of payment.</p>
+                methods will be borne by the customer.</p>
+            <p>e) Course fees must be paid in full before class commencement, unless otherwise arranged.</p>
+            <p>f) Receipts will be issued upon verification of payment.</p>
 
             <p><b>FAQ: WeTalk Course Fee Payments</b></p>
 
