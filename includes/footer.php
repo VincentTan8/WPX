@@ -419,7 +419,7 @@
 
             </br>
             <p class="copyright-para" style="margin-right: 8em;">Copyright &copy; WeTalk International Education Pte.
-                Ltd. 众语国际教育咨询有限公司 2025 <a href="javascript:void(0);" class="grey"></a></p>
+                Ltd. 众语国际教育咨询有限公司 2026 <a href="javascript:void(0);" class="grey"></a></p>
 
         </div>
 
