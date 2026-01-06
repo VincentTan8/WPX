@@ -657,7 +657,7 @@
         <div class="currency-options">
             <div class="currency-option"><a style="color: black" href="../includes/currency.php?currency=SGD">SGD</a>
             </div>
-            <div class="currency-option"><a style="color: black" href="../includes/currency.php?currency=RMB">CNY</a>
+            <div class="currency-option"><a style="color: black" href="../includes/currency.php?currency=CNY">CNY</a>
             </div>
             <div class="currency-option"><a style="color: black" href="../includes/currency.php?currency=PHP">PHP</a>
             </div>
