@@ -198,8 +198,8 @@ if (isset($_GET['course_name'])) {
                 <label style="align-items:center; gap:10px;">
                     <span>
                         <input type="checkbox" id="agreeTerms" style="margin: 0" required />
-                        I have read and agree to the <a style="text-decoration: underline !important" href="../privacy"
-                            target="_blank" rel="noopener noreferrer">WeTalk Payment Policy</a>
+                        I have read and agree to the <a style="text-decoration: underline !important"
+                            href="../payment-policy" target="_blank" rel="noopener noreferrer">WeTalk Payment Policy</a>
                     </span>
                 </label>
             </div>
