@@ -12,7 +12,7 @@ if (isset($_SESSION['lang']) and $_SESSION['lang'] == 'CN') {
 }
 
 //Handle Intent
-//https://wetalk.com/testpay/success.php?id=int_hkdm49fnlhdkptuafyy&type=SUCCESS_URL
+//https://wetalk.com/pay/success.php?id=int_hkdm49fnlhdkptuafyy&type=SUCCESS_URL
 if (!isset($_GET['id'])) {
     die('No payment intent ID provided.');
 }
@@ -124,6 +124,11 @@ include "../connections/dbname.php";
                 const fullName = data.body.metadata?.full_name;
                 const mobileNumber = data.body.metadata?.mobile_number;
 
+                const date = new Date()
+                const pad = n => String(n).padStart(2, '0');
+                const dateTime = `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ` +
+                    `${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
+
                 // document.getElementById('amountToPay').textContent = `${currency} ${toPay}`;
                 document.getElementById('coursePaid').textContent = `${coursePaid}`;
                 document.getElementById('amountPaid').textContent = `${currency} ${amount}`;
@@ -173,7 +178,8 @@ include "../connections/dbname.php";
                             email,
                             mobileNumber,
                             orderID,
-                            status
+                            status,
+                            dateTime
                         })
                     });
                     if (status === 'SUCCEEDED') {
