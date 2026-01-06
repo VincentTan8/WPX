@@ -401,7 +401,7 @@
                         <li style="float: right;"><a href="<?php echo BASE_URL; ?>service/" target="_blank">Terms of
                                 Service 服务条款</a></li>
                         <li style="float: right;"><a href="#contact">|</a></li>
-                        <li style="float: right;"><a href="<?php echo BASE_URL; ?>privacy/" target="_blank">Private
+                        <li style="float: right;"><a href="<?php echo BASE_URL; ?>privacy/" target="_blank">Privacy
                                 Policy 隐私协议</a></li>
                     </ul>
 
