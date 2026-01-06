@@ -62,8 +62,12 @@ if (isset($_GET['course_name'])) {
         <h1>Fee Payment</h1>
 
         <form id="checkoutForm" style="max-width: 500px; margin-bottom: 2rem;">
-            <label for="fullName">Full Name</label>
+            <label for="fullName">Student's Full Name</label>
             <input type="text" id="fullName" name="fullName" required
+                style="width:100%; padding:10px; margin:8px 0 16px; border-radius:6px; border:1px solid #ccc;">
+
+            <label for="guardianName">Parent/Guardian Name (if applicable)</label>
+            <input type="text" id="guardianName" name="guardianName"
                 style="width:100%; padding:10px; margin:8px 0 16px; border-radius:6px; border:1px solid #ccc;">
 
             <label for="email">Email Address</label>
@@ -261,7 +265,7 @@ if (isset($_GET['course_name'])) {
                     currency,
                     intent_id,
                     client_secret,
-                    successUrl: 'https://wetalk.com/testpay/success.php', // Must be an HTTPS site todo change in prod
+                    successUrl: 'https://wetalk.com/pay/success.php', // Must be an HTTPS site todo change in prod
                     appearance: {
                         mode: 'light',
                         variables: {
