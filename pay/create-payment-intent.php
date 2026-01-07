@@ -20,6 +20,7 @@ $currency = $input["currency"] ?? null;
 $email = $input["email"] ?? null;
 $full_name = $input["full_name"] ?? null;
 $mobile_number = $input["mobile_number"] ?? null;
+$guardian_name = $input["guardian_name"] ?? null;
 $order_id = $input["merchant_order_id"] ?? uniqid("WeTalkOrder_"); //constructed like this to handle custom order ID's in the future
 $guest_num = $input["guest_num"] ?? 0;
 
@@ -46,7 +47,7 @@ $row = $result->fetch_assoc();
 $amount = $row['price'] * ($guest_num + 1);
 
 try {
-    $res = createPaymentIntent($amount, $currency, $order_id, $course_name, $email, $full_name, $mobile_number);
+    $res = createPaymentIntent($amount, $currency, $order_id, $course_name, $email, $full_name, $mobile_number, $guardian_name);
 
     if ($res["status"] === 201) {
         echo json_encode([
