@@ -87,7 +87,7 @@ function getAirwallexToken()
     return $token;
 }
 
-function createPaymentIntent($amount, $currency, $merchant_order_id, $course_name, $email, $full_name, $mobile_number)
+function createPaymentIntent($amount, $currency, $merchant_order_id, $course_name, $email, $full_name, $mobile_number, $guardian_name)
 {
     $token = getAirwallexToken();
 
@@ -109,7 +109,8 @@ function createPaymentIntent($amount, $currency, $merchant_order_id, $course_nam
             "course_name" => $course_name,
             "email" => $email,
             "full_name" => $full_name,
-            "mobile_number" => $mobile_number
+            "mobile_number" => $mobile_number,
+            "guardian_name" => $guardian_name
         ]
     ]);
 
