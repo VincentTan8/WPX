@@ -21,10 +21,11 @@ include "../connections/dbname.php";
 //for prefilling fields
 $willPrefill = false;
 $course_name = "";
-$currency_code = "";
+$currency_code = "SGD";
 if (isset($_GET['course_name'])) {
     $course_name = $_GET['course_name'];
-    $currency_code = $_GET['currency_code'];
+    if (isset($_GET['currency_code']))
+        $currency_code = $_GET['currency_code'];
     $willPrefill = true;
 }
 ?>
@@ -313,9 +314,9 @@ if (isset($_GET['course_name'])) {
             });
         })();
     </script>
-    <script src="scripts/pay.js"></script>
     <script src="scripts/mobile-selector.js"></script>
     <script src="scripts/currency-selector.js"></script>
+    <script src="scripts/pay.js"></script>
 </body>
 
 </html>
