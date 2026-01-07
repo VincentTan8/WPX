@@ -28,7 +28,10 @@ fetch('scripts/fetch-course-package.php')
 
         if (willPrefill) {
             document.getElementById("courseSelection").value = prefill_course_name;
-            document.getElementById("currencyInput").value = prefill_currency;
+            const option = document.querySelector(
+                `.currency-option[data-code="${prefill_currency}"]`
+            );
+            updateCurrencyOption(option); //in currency-selector.js, make sure option is valid
             updatePrice();
         }
     })
