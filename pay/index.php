@@ -21,8 +21,10 @@ include "../connections/dbname.php";
 //for prefilling fields
 $willPrefill = false;
 $course_name = "";
+$currency_code = "";
 if (isset($_GET['course_name'])) {
     $course_name = $_GET['course_name'];
+    $currency_code = $_GET['currency_code'];
     $willPrefill = true;
 }
 ?>
@@ -232,7 +234,8 @@ if (isset($_GET['course_name'])) {
             //to access in js files
             window.APP = {
                 willPrefill: <?= json_encode($willPrefill) ?>,
-                prefill_course_name: <?= json_encode($course_name) ?>
+                prefill_course_name: <?= json_encode($course_name) ?>,
+                prefill_currency: <?= json_encode($currency_code) ?>
             };
 
             async function createPayment(course_name, currency, email, full_name, mobile_number, guardian_name) {
