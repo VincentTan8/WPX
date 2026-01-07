@@ -123,6 +123,7 @@ include "../connections/dbname.php";
                 const email = data.body.metadata?.email;
                 const fullName = data.body.metadata?.full_name;
                 const mobileNumber = data.body.metadata?.mobile_number;
+                const guardianName = data.body.metadata?.guardian_name;
 
                 const date = new Date()
                 const pad = n => String(n).padStart(2, '0');
@@ -177,6 +178,7 @@ include "../connections/dbname.php";
                             fullName,
                             email,
                             mobileNumber,
+                            guardianName,
                             orderID,
                             status,
                             dateTime
