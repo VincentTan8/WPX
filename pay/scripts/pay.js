@@ -1,16 +1,4 @@
-fetch('scripts/fetch-course-package.php')
-    .then(response => response.json())
-    .then(data => {
-        const select = document.getElementById('courseSelection');
-
-        data.forEach(item => {
-            const opt = document.createElement('option');
-            opt.value = item.course_name;
-            opt.textContent = item.course_name;
-            select.appendChild(opt);
-        });
-    })
-    .catch(err => console.error('Failed to load courses:', err));
+const { willPrefill, prefill_course_name, prefill_currency } = window.APP;
 
 function updatePrice() {
     const course_name = document.getElementById("courseSelection").value;
@@ -25,6 +13,26 @@ function updatePrice() {
         })
         .catch(err => console.error("Price fetch failed:", err));
 }
+
+fetch('scripts/fetch-course-package.php')
+    .then(response => response.json())
+    .then(data => {
+        const select = document.getElementById('courseSelection');
+
+        data.forEach(item => {
+            const opt = document.createElement('option');
+            opt.value = item.course_name;
+            opt.textContent = item.course_name;
+            select.appendChild(opt);
+        });
+
+        if (willPrefill) {
+            document.getElementById("courseSelection").value = prefill_course_name;
+            document.getElementById("currencyInput").value = prefill_currency;
+            updatePrice();
+        }
+    })
+    .catch(err => console.error('Failed to load courses:', err));
 
 // Trigger when course selection changes
 document.getElementById("courseSelection").addEventListener("change", updatePrice);
