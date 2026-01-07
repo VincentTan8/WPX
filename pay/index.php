@@ -96,11 +96,17 @@ if (isset($_GET['course_name'])) {
                 <div style="display:flex; gap:10px; margin:8px 0 0;">
                     <div id="mobileCodeSelector" class="mobile-select">
                         <div class="mobile-selected">
-                            <img src="assets/ph.svg" class="flag">
-                            <span class="code">+63</span>
+                            <img src="assets/sg.svg" class="flag">
+                            <span class="code">+65</span>
                         </div>
 
                         <div class="mobile-dropdown">
+                            <div class="mobile-option" data-code="+1" data-name="US" data-flag="us.svg">
+                                <img src="assets/us.svg" class="flag">
+                                <span class="code">+1</span>
+                                <span class="name">US</span>
+                            </div>
+
                             <div class="mobile-option" data-code="+63" data-name="Philippines" data-flag="ph.svg">
                                 <img src="assets/ph.svg" class="flag">
                                 <span class="code">+63</span>
@@ -113,22 +119,16 @@ if (isset($_GET['course_name'])) {
                                 <span class="name">Singapore</span>
                             </div>
 
-                            <!-- <div class="mobile-option" data-code="+60" data-name="Malaysia" data-flag="my.svg">
-                                <img src="assets/my.svg" class="flag">
-                                <span class="code">+60</span>
-                                <span class="name">Malaysia</span>
-                            </div>
-
-                            <div class="mobile-option" data-code="+852" data-name="Hong Kong" data-flag="hk.svg">
-                                <img src="assets/hk.svg" class="flag">
-                                <span class="code">+852</span>
-                                <span class="name">Hong Kong</span>
-                            </div> -->
-
                             <div class="mobile-option" data-code="+86" data-name="China" data-flag="cn.svg">
                                 <img src="assets/cn.svg" class="flag">
                                 <span class="code">+86</span>
                                 <span class="name">China</span>
+                            </div>
+
+                            <div class="mobile-option" data-code="+1" data-name="Canada" data-flag="ca.svg">
+                                <img src="assets/ca.svg" class="flag">
+                                <span class="code">+1</span>
+                                <span class="name">Canada</span>
                             </div>
                         </div>
 
