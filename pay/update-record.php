@@ -20,13 +20,14 @@ $amount = $input["amount"] ?? null;
 $full_name = $input["fullName"] ?? null;
 $email = $input["email"] ?? null;
 $mobile_number = $input["mobileNumber"] ?? null;
+$guardian_name = $input["guardianName"] ?? null;
 $order_id = $input["orderID"] ?? null;
 $status = $input["status"] ?? null;
 $sqlDatetime = $input["dateTime"] ?? null;
 
 $tablename = $database . ".`wt_payment_records`";
-$sql = "INSERT INTO $tablename (`intent_id`, `course_name`, `currency`, `amount`, `full_name`, `email`, `mobile_number`, `order_id`, `status`, `transaction_date`) 
-        VALUES ('$intent_id', '$course_name', '$currency', '$amount', '$full_name', '$email', '$mobile_number', '$order_id', '$status', '$sqlDatetime');";
+$sql = "INSERT INTO $tablename (`intent_id`, `course_name`, `currency`, `amount`, `full_name`, `email`, `mobile_number`, `guardian_name`, `order_id`, `status`, `transaction_date`) 
+        VALUES ('$intent_id', '$course_name', '$currency', '$amount', '$full_name', '$email', '$mobile_number', '$guardian_name', '$order_id', '$status', '$sqlDatetime');";
 
 if (!$conn->query($sql)) {
     echo "Record not saved";
