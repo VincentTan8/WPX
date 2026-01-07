@@ -19,10 +19,11 @@ include "../includes/header.php";
 include "../connections/dbname.php";
 
 //for prefilling fields
-$prefill = false;
+$willPrefill = false;
+$course_name = "";
 if (isset($_GET['course_name'])) {
     $course_name = $_GET['course_name'];
-    $prefill = true;
+    $willPrefill = true;
 }
 ?>
 
@@ -197,6 +198,15 @@ if (isset($_GET['course_name'])) {
                 </div>
             </div>
 
+            <div style="margin: 16px 0;">
+                <label style="align-items:center; gap:10px;">
+                    <span>
+                        <input type="checkbox" id="agreeTerms" style="margin: 0" required />
+                        I confirm that the above details are accurate and agree to programme policies
+                    </span>
+                </label>
+            </div>
+
             <!-- Terms Checkbox -->
             <div style="margin: 16px 0;">
                 <label style="align-items:center; gap:10px;">
@@ -217,15 +227,15 @@ if (isset($_GET['course_name'])) {
     <?php include "../includes/footer.php"; ?>
     <div id="page-data" data-page="pay" data-lang="<?php echo $lang; ?>"></div>
 
-    <script src="scripts/pay.js"></script>
-    <script src="scripts/mobile-selector.js"></script>
-    <script src="scripts/currency-selector.js"></script>
     <script async>
         (async () => {
-            const prefill = <?php echo $prefill; ?>;
-            const prefill_course_name = <?php echo $course_name; ?>;
+            //to access in js files
+            window.APP = {
+                willPrefill: <?= json_encode($willPrefill) ?>,
+                prefill_course_name: <?= json_encode($course_name) ?>
+            };
 
-            async function createPayment(course_name, currency, email, full_name, mobile_number) {
+            async function createPayment(course_name, currency, email, full_name, mobile_number, guardian_name) {
                 const res = await fetch('create-payment-intent.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -236,7 +246,8 @@ if (isset($_GET['course_name'])) {
                         currency,
                         email,
                         full_name,
-                        mobile_number
+                        mobile_number,
+                        guardian_name
                     })
                 });
 
@@ -290,7 +301,8 @@ if (isset($_GET['course_name'])) {
                 const full_name = document.getElementById("fullName").value;
                 const mobile_number = document.getElementById("mobileCodeInput").value +
                     document.getElementById("mobileNumber").value;
-                const { intent, client_secret } = await createPayment(course_name, currency, email, full_name, mobile_number);
+                const guardian_name = document.getElementById("guardianName").value;
+                const { intent, client_secret } = await createPayment(course_name, currency, email, full_name, mobile_number, guardian_name);
 
                 if (mode === 'payment') {
                     redirectHppForCheckout(currency, intent, client_secret);
@@ -298,6 +310,9 @@ if (isset($_GET['course_name'])) {
             });
         })();
     </script>
+    <script src="scripts/pay.js"></script>
+    <script src="scripts/mobile-selector.js"></script>
+    <script src="scripts/currency-selector.js"></script>
 </body>
 
 </html>
