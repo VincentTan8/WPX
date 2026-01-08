@@ -28,21 +28,25 @@ include "../connections/dbname.php";
 
 ?>
 
+<link rel="stylesheet" href="style.css" />
+
 <body oncontextmenu="return false;" data-spy="scroll" data-target=".navbar" data-offset="90" class="position-relative">
     <!-- Static Hero Section with separated gradient -->
-    <div id="hero-section"
-        style="position: absolute; top:0%; height: 100vh; width: 100%; background-image: url(''); background-size: cover;background-position: center -60px;">
+    <div id="hero-section">
     </div>
 
     <!-- Hero Text Content -->
     <div class="hero-text">
-        <h1 id="hero-title"></h1>
-        <p id="hero-subtitle"></p>
+        <h1 id="hero-title">Taiwan English Programs</h1>
+        <p id="hero-subtitle-1">Our English programmes are designed to support learners at different stages of their
+            language journey.</p>
+        <p id="hero-subtitle-2">Please select a programme below to complete enrolment and payment. Once payment is
+            received, our team will be in touch to confirm schedules and further details.</p>
     </div>
 
     <!-- Begin white container for main content -->
-    <div class="course-tour-wrapper">
-        <?php include "course_introduction.php"; ?>
+    <div class="content-wrapper">
+        <?php include "content.php"; ?>
     </div>
     <!-- End white container -->
     <?php include "../includes/address.php"; ?>
