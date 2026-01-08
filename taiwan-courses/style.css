@@ -29,7 +29,7 @@ p {
 }
 
 /* Button Styling */
-#hpp {
+.taiwan-btn {
     background-color: var(--primary-color);
     color: white;
     border: none;
@@ -42,13 +42,13 @@ p {
     min-width: 120px;
 }
 
-#hpp:hover {
+.taiwan-btn:hover {
     background-color: var(--primary-deep-color);
     transform: translateY(-1px);
     box-shadow: 0 4px 6px rgba(97, 47, 255, 0.1);
 }
 
-#hpp:disabled {
+.taiwan-btn:disabled {
     background-color: #a8a8a8;
     cursor: not-allowed;
     transform: none;
@@ -65,24 +65,14 @@ a:hover {
     text-decoration: underline;
 }
 
-.taiwan-courses-body {
-    padding: 2rem;
-    max-width: 100%;
-    margin-top: 165px;
-    margin-left: auto;
-    margin-right: auto;
-    /* background-color: #f8f9fa; */
-    color: #2d3748;
-    line-height: 1.6;
-    justify-items: center;
-    background-color: #f8f8f8;
-}
-
-.course-tour-wrapper {
-    position: relative;
-    margin-top: 150px;
-    display: flex;
-    justify-content: center;
+#hero-section {
+    position: absolute;
+    top: 0%;
+    height: 1500px;
+    width: 100%;
+    background-image: url('assets/taiwan-courses-bg.png');
+    background-size: cover;
+    background-position: center -60px;
 }
 
 .hero-text {
@@ -92,6 +82,7 @@ a:hover {
     padding-top: 300px;
     padding-left: 20px;
     padding-right: 20px;
+    justify-items: center;
 }
 
 .hero-text h1 {
@@ -99,7 +90,7 @@ a:hover {
     font-weight: 700;
     color: black;
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .hero-text .highlight {
@@ -108,12 +99,31 @@ a:hover {
 
 .hero-text p {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 400;
     color: black;
     font-family: 'Poppins', sans-serif;
+    margin-bottom: 30px;
+    width: 69%;
 }
 
+.content-wrapper {
+    position: relative;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
 
+.rounded-container {
+    border-radius: 20px;
+    background-color: white;
+    max-width: 1659px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 130px;
+    padding-right: 130px;
+    box-sizing: border-box;
+}
 
 @media (max-width: 767px) {
     .course-tour-wrapper {
@@ -131,6 +141,11 @@ a:hover {
 
     .hero-text p {
         font-size: 16px;
+    }
+
+    .tour-content-intro {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
 }
