@@ -51,6 +51,7 @@ p {
     background-color: var(--primary-deep-color);
     transform: translateY(-1px);
     box-shadow: 0 4px 6px rgba(97, 47, 255, 0.1);
+    color: white;
 }
 
 .taiwan-btn:disabled {
@@ -158,6 +159,14 @@ a:hover {
 
 .inner-container p {
     margin-bottom: 0px;
+}
+
+.item {
+    padding: 0 17px;
+}
+
+.gallery-img {
+    border-radius: 15px;
 }
 
 @media (max-width: 767px) {
