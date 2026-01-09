@@ -80,22 +80,29 @@ include "../connections/dbname.php";
 
     <script>
         $(document).ready(function () {
-            $('.slider_extra').slick({
+            $("#item-slider").owlCarousel({
+                items: 3,
                 dots: false,
-                infinite: true,
-                speed: 5000,
-                slidesToShow: 3,
-                slidesToScroll: 1,
+                nav: false,
                 autoplay: true,
-                autoplaySpeed: 2000,
-                adaptiveHeight: true,
-                responsive: [{
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }]
+                smartSpeed: 500,
+                autoplayHoverPause: true,
+                loop: true,
+
+                responsive: {
+                    992: {
+                        items: 3,
+                    },
+                    991: {
+                        items: 2,
+                    },
+                    767: {
+                        items: 1,
+                    },
+                    320: {
+                        items: 1,
+                    },
+                }
             });
         });
     </script>
