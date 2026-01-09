@@ -459,7 +459,7 @@ $(".counter").appear(function () {
     $("#deal-slider").owlCarousel({
         items: 3,
         dots: false,
-        nav: true,
+        nav: false,
         autoplay: true,
         smartSpeed:500,
         autoplayHoverPause:true,
