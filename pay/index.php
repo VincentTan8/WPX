@@ -101,6 +101,12 @@ if (isset($_GET['course_name'])) {
                         </div>
 
                         <div class="mobile-dropdown">
+                            <div class="mobile-option" data-code="+1" data-name="Canada" data-flag="ca.svg">
+                                <img src="assets/ca.svg" class="flag">
+                                <span class="code">+1</span>
+                                <span class="name">Canada</span>
+                            </div>
+
                             <div class="mobile-option" data-code="+1" data-name="US" data-flag="us.svg">
                                 <img src="assets/us.svg" class="flag">
                                 <span class="code">+1</span>
@@ -125,10 +131,10 @@ if (isset($_GET['course_name'])) {
                                 <span class="name">China</span>
                             </div>
 
-                            <div class="mobile-option" data-code="+1" data-name="Canada" data-flag="ca.svg">
-                                <img src="assets/ca.svg" class="flag">
-                                <span class="code">+1</span>
-                                <span class="name">Canada</span>
+                            <div class="mobile-option" data-code="+886" data-name="Taiwan" data-flag="tw.svg">
+                                <img src="assets/tw.svg" class="flag">
+                                <span class="code">+886</span>
+                                <span class="name">Taiwan</span>
                             </div>
                         </div>
 
