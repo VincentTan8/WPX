@@ -65,7 +65,10 @@ $supportText = "For assistance, please contact WeTalk Support. Details below.<br
                 <strong>Philippines:</strong> +63 9171-6816-80<br>
                 <strong>China:</strong> +86 1816-5370-116";
 
-if ($currency === "TWD") {
+if (
+  $course_name === "English Immersion Course" ||
+  $course_name === "Private English Course"
+) {
   $supportText = "Our Team will contact you to arrange class schedules and next steps.<br>
                   If you have any questions, please contact us directly +886227518111<br>";
 }
@@ -76,18 +79,18 @@ $bodyContent = '
     <td align="center">
 
       <!-- Receipt Card -->
-      <table width="560" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;padding:40px 30px;font-family:Arial,Helvetica,sans-serif;text-align:center;">
+      <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;padding:40px 30px;font-family:Arial,Helvetica,sans-serif;text-align:center;">
 
         <!-- Icon -->
         <tr>
-          <td style="padding-bottom:25px;">
+          <td style="padding-bottom:30px;">
             <img src="https://wetalk.com/pay/assets/payment-icon.png" width="100" alt="Success" style="display:block;margin:auto;">
           </td>
         </tr>
 
         <!-- Title -->
         <tr>
-          <td style="font-size:35px;font-weight:bold;color:#ffb100;padding-bottom:6px;">
+          <td style="font-size:35px;font-weight:bold;color:#ffb100;padding-bottom:20px;">
             Payment Successful!
           </td>
         </tr>
@@ -95,7 +98,8 @@ $bodyContent = '
         <!-- Subtitle -->
         <tr>
           <td style="font-size:17px;color:#666;padding-bottom:25px;">
-            Hi ' . $full_name . ', thank you for your purchase.
+            Hi ' . $full_name . ', <br>
+            Thank you for your purchase.
           </td>
         </tr>
 
@@ -121,7 +125,7 @@ $bodyContent = '
 
         <!-- Support Text -->
         <tr>
-          <td style="font-size:15px;color:#777;padding-top:35px;line-height:1.6;">
+          <td style="font-size:17px;color:#777;padding-top:35px;line-height:1.6;">
             ' . $supportText . '
           </td>
         </tr>
