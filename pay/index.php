@@ -100,6 +100,9 @@ if (isset($_GET['course_name'])) {
                             <span class="code">+65</span>
                         </div>
 
+                        <!-- Hidden field for form submission -->
+                        <input type="hidden" id="mobileCodeInput" name="mobileRegion" value="+65">
+
                         <div class="mobile-dropdown">
                             <div class="mobile-option" data-code="+1" data-name="Canada" data-flag="ca.svg">
                                 <img src="assets/ca.svg" class="flag">
@@ -107,10 +110,10 @@ if (isset($_GET['course_name'])) {
                                 <span class="name">Canada</span>
                             </div>
 
-                            <div class="mobile-option" data-code="+1" data-name="US" data-flag="us.svg">
-                                <img src="assets/us.svg" class="flag">
-                                <span class="code">+1</span>
-                                <span class="name">US</span>
+                            <div class="mobile-option" data-code="+86" data-name="China" data-flag="cn.svg">
+                                <img src="assets/cn.svg" class="flag">
+                                <span class="code">+86</span>
+                                <span class="name">China</span>
                             </div>
 
                             <div class="mobile-option" data-code="+63" data-name="Philippines" data-flag="ph.svg">
@@ -125,21 +128,18 @@ if (isset($_GET['course_name'])) {
                                 <span class="name">Singapore</span>
                             </div>
 
-                            <div class="mobile-option" data-code="+86" data-name="China" data-flag="cn.svg">
-                                <img src="assets/cn.svg" class="flag">
-                                <span class="code">+86</span>
-                                <span class="name">China</span>
-                            </div>
-
                             <div class="mobile-option" data-code="+886" data-name="Taiwan" data-flag="tw.svg">
                                 <img src="assets/tw.svg" class="flag">
                                 <span class="code">+886</span>
                                 <span class="name">Taiwan</span>
                             </div>
-                        </div>
 
-                        <!-- Hidden field for form submission -->
-                        <input type="hidden" id="mobileCodeInput" name="mobileRegion" value="+63">
+                            <div class="mobile-option" data-code="+1" data-name="US" data-flag="us.svg">
+                                <img src="assets/us.svg" class="flag">
+                                <span class="code">+1</span>
+                                <span class="name">US</span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- consider sanitizing leading zeroes instead of not allowing them -->
@@ -161,27 +161,24 @@ if (isset($_GET['course_name'])) {
                 <div style="display:flex; gap:10px; margin:8px 0 0;">
                     <div id="currencySelector" class="currency-select">
                         <div class="currency-selected">
-                            <img src="assets/us.svg" class="flag">
-                            <span class="code">USD</span>
+                            <img src="assets/sg.svg" class="flag">
+                            <span class="code">SGD</span>
                         </div>
 
+                        <!-- Hidden field to send value to backend -->
+                        <input type="hidden" id="currencyInput" name="currency" value="SGD">
+
                         <div class="currency-dropdown">
-                            <div class="currency-option" data-code="USD" data-name="US Dollar" data-flag="us.svg">
-                                <img src="assets/us.svg" class="flag">
-                                <span class="code">USD</span>
-                                <span class="name">US Dollar</span>
+                            <div class="currency-option" data-code="CNY" data-name="Chinese Yuan" data-flag="cn.svg">
+                                <img src="assets/cn.svg" class="flag">
+                                <span class="code">CNY</span>
+                                <span class="name">Chinese Yuan</span>
                             </div>
 
                             <div class="currency-option" data-code="PHP" data-name="Philippine Peso" data-flag="ph.svg">
                                 <img src="assets/ph.svg" class="flag">
                                 <span class="code">PHP</span>
                                 <span class="name">Philippine Peso</span>
-                            </div>
-
-                            <div class="currency-option" data-code="CNY" data-name="Chinese Yuan" data-flag="cn.svg">
-                                <img src="assets/cn.svg" class="flag">
-                                <span class="code">CNY</span>
-                                <span class="name">Chinese Yuan</span>
                             </div>
 
                             <div class="currency-option" data-code="SGD" data-name="Singapore Dollar"
@@ -197,10 +194,13 @@ if (isset($_GET['course_name'])) {
                                 <span class="code">TWD</span>
                                 <span class="name">New Taiwan Dollar</span>
                             </div>
-                        </div>
 
-                        <!-- Hidden field to send value to backend -->
-                        <input type="hidden" id="currencyInput" name="currency" value="USD">
+                            <div class="currency-option" data-code="USD" data-name="US Dollar" data-flag="us.svg">
+                                <img src="assets/us.svg" class="flag">
+                                <span class="code">USD</span>
+                                <span class="name">US Dollar</span>
+                            </div>
+                        </div>
                     </div>
                     <input type="text" id="priceDisplay" name="priceDisplay" readonly
                         style="flex:1; padding:10px; border-radius:6px; border:1px solid #ccc; margin: 0">
