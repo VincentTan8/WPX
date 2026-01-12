@@ -71,6 +71,10 @@ a:hover {
     text-decoration: underline;
 }
 
+.mb-30-desktop {
+    margin-bottom: 30px;
+}
+
 #hero-section {
     position: absolute;
     top: 0%;
@@ -108,7 +112,7 @@ a:hover {
     font-weight: 400;
     color: black;
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
     width: 69%;
 }
 
@@ -170,6 +174,14 @@ a:hover {
 }
 
 @media (max-width: 767px) {
+    .mb-30-desktop {
+        margin-bottom: 0;
+    }
+
+    .indent {
+        margin-left: 20px;
+    }
+
     .course-tour-wrapper {
         margin-top: 0;
     }
@@ -185,6 +197,7 @@ a:hover {
 
     .hero-text p {
         font-size: 16px;
+        width: 85%;
     }
 
     .tour-content-intro {
@@ -192,4 +205,15 @@ a:hover {
         padding-right: 20px;
     }
 
+    .inner-container {
+        padding: 0;
+    }
+
+    .rounded-container {
+        padding: 40px 20px;
+    }
+
+    .rounded-container h1 {
+        font-size: 30px;
+    }
 }
