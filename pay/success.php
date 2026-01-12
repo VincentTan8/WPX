@@ -115,7 +115,11 @@ include "../connections/dbname.php";
 
             if (data.success) {
                 const toPay = data.body.amount;
-                const amount = data.body.captured_amount;
+                const captured_amount = data.body.captured_amount;
+                const amount = Number(captured_amount).toLocaleString('en-US', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
                 const currency = data.body.currency;
                 const status = data.body.status;
                 const orderID = data.body.merchant_order_id;
