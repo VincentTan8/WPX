@@ -19,23 +19,23 @@ $url2 = 'https://wetalk.com/pay?' . http_build_query($params);
     <div class="inner-container" style="margin-bottom: 100px;">
         <p class="dark">1. English Immersion Course</p>
 
-        <div class="">
+        <div class="indent">
             <p>Group Class | 25 sessions</p>
             <p>Tuition Fee: TWD 22,250</p>
         </div>
 
-        <div style="margin-bottom: 30px;">
+        <div class="mb-30-desktop">
             <p class="dark">Programme Overview</p>
             <p>The English Immersion Course is designed for learners who want to build confidence and fluency through
                 consistent, real world English use.</p>
         </div>
 
-        <p style="margin-bottom: 30px;">Classes are conducted primarily in English, allowing students to develop natural
+        <p class="mb-30-desktop">Classes are conducted primarily in English, allowing students to develop natural
             listening, speaking, and thinking skills from the first lesson. Through guided discussions, practical
             scenarios, and interactive activities, students strengthen their ability to communicate clearly in everyday,
             academic, and professional contexts.</p>
 
-        <p style="margin-bottom: 30px;">This programme is suitable for learners who wish to move beyond textbook
+        <p class="mb-30-desktop">This programme is suitable for learners who wish to move beyond textbook
             learning and start using English more naturally.</p>
 
         <a class="taiwan-btn" href="<?= htmlspecialchars($url1) ?>">
@@ -53,22 +53,22 @@ $url2 = 'https://wetalk.com/pay?' . http_build_query($params);
     <div class="inner-container" style="margin-bottom: 100px;">
         <p class="dark">2. Private English Course</p>
 
-        <div class="">
+        <div class="indent">
             <p>One to One | 25 hours</p>
             <p>Tuition Fee: TWD 32,400</p>
         </div>
 
-        <div style="margin-bottom: 30px;">
+        <div class="mb-30-desktop">
             <p class="dark">Programme Overview</p>
             <p>The Private English Course offers personalised one to one instruction tailored to each learner's goals,
                 level, and pace.</p>
         </div>
 
-        <p style="margin-bottom: 30px;">Lessons focus on practical communication skills, including speaking, listening,
+        <p class="mb-30-desktop">Lessons focus on practical communication skills, including speaking, listening,
             reading, and writing. Content is customised to support daily conversation, academic needs, or professional
             communication. Learners receive direct feedback and guided practice throughout each session.</p>
 
-        <p style="margin-bottom: 30px;">This programme is ideal for students who prefer individual attention or have
+        <p class="mb-30-desktop">This programme is ideal for students who prefer individual attention or have
             specific learning objectives.</p>
 
         <a class="taiwan-btn" href="<?= htmlspecialchars($url2) ?>">
