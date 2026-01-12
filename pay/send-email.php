@@ -59,6 +59,17 @@ $subject = "WeTalk - Payment Successful";
 //     <br><br>
 // ";
 
+$supportText = "For assistance, please contact WeTalk Support. Details below.<br><br>
+
+                <strong>Singapore:</strong> +65 9758-2288<br>
+                <strong>Philippines:</strong> +63 9171-6816-80<br>
+                <strong>China:</strong> +86 1816-5370-116";
+
+if ($currency === "TWD") {
+  $supportText = "Our Team will contact you to arrange class schedules and next steps.<br>
+                  If you have any questions, please contact us directly +886227518111<br>";
+}
+
 $bodyContent = '
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:30px 0;">
   <tr>
@@ -84,7 +95,7 @@ $bodyContent = '
         <!-- Subtitle -->
         <tr>
           <td style="font-size:17px;color:#666;padding-bottom:25px;">
-            Your payment has been processed.
+            Hi ' . $full_name . ', thank you for your purchase.
           </td>
         </tr>
 
@@ -111,11 +122,7 @@ $bodyContent = '
         <!-- Support Text -->
         <tr>
           <td style="font-size:15px;color:#777;padding-top:35px;line-height:1.6;">
-            For assistance, please contact WeTalk Support. Details below.<br><br>
-
-            <strong>Singapore:</strong> +65 9758-2288<br>
-            <strong>Philippines:</strong> +63 9171-6816-80<br>
-            <strong>China:</strong> +86 1816-5370-116
+            ' . $supportText . '
           </td>
         </tr>
 
