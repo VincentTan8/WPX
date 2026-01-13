@@ -79,7 +79,7 @@ $bodyContent = '
     <td align="center">
 
       <!-- Receipt Card -->
-      <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;padding:40px 30px;font-family:Arial,Helvetica,sans-serif;text-align:center;">
+      <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;padding:40px 20px;font-family:Arial,Helvetica,sans-serif;text-align:center;">
 
         <!-- Icon -->
         <tr>
