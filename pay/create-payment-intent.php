@@ -43,10 +43,14 @@ $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_assoc();
 
-//for courses like the Wine Page
-$amount = $row['price'] * ($guest_num + 1);
-
 try {
+    //guest num is for courses like the Wine Page
+    if ($row) {
+        $amount = $row['price'] * ($guest_num + 1);
+    } else {
+        throw new RuntimeException('Price not available');
+    }
+
     $res = createPaymentIntent($amount, $currency, $order_id, $course_name, $email, $full_name, $mobile_number, $guardian_name);
 
     if ($res["status"] === 201) {
