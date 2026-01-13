@@ -9,13 +9,19 @@ function updatePrice() {
     fetch(`scripts/fetch-currency-price.php?currency=${currency}&course_name=${encodeURIComponent(course_name)}`)
         .then(res => res.json())
         .then(data => {
-            const raw_amount = data.price;
-            const amount = Number(raw_amount).toLocaleString('en-US', {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            });
+            const notAvailable = "N/A"
+            const raw_amount = data.price ?? notAvailable;
+            let amount;
+            if (raw_amount === notAvailable) {
+                amount = raw_amount;
+            } else {
+                amount = Number(raw_amount).toLocaleString('en-US', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
+            }
 
-            document.getElementById("priceDisplay").value = amount ?? "N/A";
+            document.getElementById("priceDisplay").value = amount;
         })
         .catch(err => console.error("Price fetch failed:", err));
 }
