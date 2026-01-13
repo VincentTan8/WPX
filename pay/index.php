@@ -262,7 +262,6 @@ if (isset($_GET['course_name'])) {
                 });
 
                 const data = await res.json();
-                console.log(data);
 
                 if (data.success) {
                     const intent = data.body.id;
@@ -270,7 +269,8 @@ if (isset($_GET['course_name'])) {
 
                     return { intent, client_secret };
                 } else {
-                    console.error("Error:", data.error);
+                    alert("Error: " + data.error);
+                    return { intent: null, client_secret: null };
                 }
             }
             const mode = 'payment';
@@ -314,7 +314,7 @@ if (isset($_GET['course_name'])) {
                 const guardian_name = document.getElementById("guardianName").value;
                 const { intent, client_secret } = await createPayment(course_name, currency, email, full_name, mobile_number, guardian_name);
 
-                if (mode === 'payment') {
+                if (mode === 'payment' && intent && client_secret) {
                     redirectHppForCheckout(currency, intent, client_secret);
                 }
             });
