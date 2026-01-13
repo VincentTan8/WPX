@@ -83,27 +83,34 @@ include "../connections/dbname.php";
             </ul>
 
             <p style="margin-bottom: 5px"><b>3) Course and Program Refunds</b></p>
-            <p style="margin-bottom: 5px"><b>3.1) Before Course Commencement</b></p>
-            <p>If a refund request is submitted <b>before the course or program start date,</b> the customer may be
-                eligible for a <b>full or partial refund</b>, subject to any administrative fees disclosed at the time
-                of purchase.
-            </p>
+            <div style="margin-left: 25px;">
+                <p style="margin-bottom: 5px"><b>3.1) Before Course Commencement</b></p>
+                <p>If a refund request is submitted <b>before the course or program start date,</b> the customer may be
+                    eligible for a <b>full or partial refund</b>, subject to any administrative fees disclosed at the
+                    time
+                    of purchase.
+                </p>
 
-            <p style="margin-bottom: 5px"><b>3.2) After Course Commencement</b></p>
-            <p style="margin-bottom: 5px">Once a course or program has begun:</p>
-            <ul style="margin-bottom: 25px">
-                <li style="list-style: disc; list-style-position: inside">Refunds may be partial and prorated based on:
-                </li>
-                <ul>
-                    <li style="list-style: circle; list-style-position: inside">The number of sessions attended</li>
-                    <li style="list-style: circle; list-style-position: inside">Course materials accessed or downloaded
+                <p style="margin-bottom: 5px"><b>3.2) After Course Commencement</b></p>
+                <p style="margin-bottom: 5px">Once a course or program has begun:</p>
+                <ul style="margin-bottom: 25px">
+                    <li style="list-style: disc; list-style-position: inside">Refunds may be partial and prorated based
+                        on:
                     </li>
-                    <li style="list-style: circle; list-style-position: inside">Time elapsed since course commencement
-                    </li>
+                    <ul>
+                        <li style="list-style: circle; list-style-position: inside">The number of sessions attended</li>
+                        <li style="list-style: circle; list-style-position: inside">Course materials accessed or
+                            downloaded
+                        </li>
+                        <li style="list-style: circle; list-style-position: inside">Time elapsed since course
+                            commencement
+                        </li>
+                    </ul>
+                    <li style="list-style: disc; list-style-position: inside">No refunds will be issued after a
+                        substantial
+                        portion of the course has been completed, as defined in the course-specific terms.</li>
                 </ul>
-                <li style="list-style: disc; list-style-position: inside">No refunds will be issued after a substantial
-                    portion of the course has been completed, as defined in the course-specific terms.</li>
-            </ul>
+            </div>
 
             <p style="margin-bottom: 5px"><b>4) Subscription Services</b></p>
             <p style="margin-bottom: 5px">For subscription-based services:</p>
