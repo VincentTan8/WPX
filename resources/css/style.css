@@ -115,6 +115,14 @@ p {
     line-height: 2rem;
 }
 
+li {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #444444;
+    line-height: 2rem;
+}
+
 /*========================
    General
 =======================*/
