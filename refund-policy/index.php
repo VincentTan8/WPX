@@ -25,6 +25,25 @@ include "../connections/dbname.php";
 
 ?>
 
+<style>
+    .refund-list {
+        list-style: disc;
+        list-style-position: inside
+    }
+
+    .refund-list-circle {
+        list-style: circle;
+        list-style-position: inside
+    }
+
+    .mb-5 {
+        margin-bottom: 5px;
+    }
+
+    .mb-25 {
+        margin-bottom: 25px;
+    }
+</style>
 
 
 <body oncontextmenu="return false;" data-spy="scroll" data-target=".navbar" data-offset="90" class="position-relative">
@@ -57,117 +76,117 @@ include "../connections/dbname.php";
                 and fair policies regarding online payments and refunds. This Refund Policy outlines the terms and
                 conditions under which refunds may be issued for payments made through our online platforms.</p>
 
-            <p style="margin-bottom: 5px"><b>1) Scope of Policy</b></p>
-            <p style="margin-bottom: 5px">This policy applies to all online payments made to WeTalk Education Centre Pte
+            <p class="mb-5"><b>1) Scope of Policy</b></p>
+            <p class="mb-5">This policy applies to all online payments made to WeTalk Education Centre Pte
                 Ltd for educational services, including but not limited to:</p>
-            <ul style="margin-bottom: 25px;">
-                <li style="list-style: disc; list-style-position: inside">Online courses and programs</li>
-                <li style="list-style: disc; list-style-position: inside">Live or recorded classes</li>
-                <li style="list-style: disc; list-style-position: inside">Subscription-based services</li>
-                <li style="list-style: disc; list-style-position: inside">Workshops, seminars, and tutoring sessions
+            <ul class="mb-25">
+                <li class="refund-list">Online courses and programs</li>
+                <li class="refund-list">Live or recorded classes</li>
+                <li class="refund-list">Subscription-based services</li>
+                <li class="refund-list">Workshops, seminars, and tutoring sessions
                 </li>
-                <li style="list-style: disc; list-style-position: inside">Any other digital educational products or
+                <li class="refund-list">Any other digital educational products or
                     services offered by WeTalk</li>
             </ul>
 
-            <p style="margin-bottom: 5px"><b>2) General Refund Eligibility</b></p>
-            <p style="margin-bottom: 5px">Refunds are considered only under the conditions described in this policy. All
+            <p class="mb-5"><b>2) General Refund Eligibility</b></p>
+            <p class="mb-5">Refunds are considered only under the conditions described in this policy. All
                 refund requests must be submitted in writing to WeTalk through the official contact channels listed in
                 Section 8.<br> Unless otherwise stated:
             </p>
-            <ul style="margin-bottom: 25px">
-                <li style="list-style: disc; list-style-position: inside">Refunds are issued to the original payment
+            <ul class="mb-25">
+                <li class="refund-list">Refunds are issued to the original payment
                     method.</li>
-                <li style="list-style: disc; list-style-position: inside">Processing times may vary depending on the
+                <li class="refund-list">Processing times may vary depending on the
                     payment provider or financial institution.</li>
             </ul>
 
-            <p style="margin-bottom: 5px"><b>3) Course and Program Refunds</b></p>
-            <div style="margin-left: 25px;">
-                <p style="margin-bottom: 5px"><b>3.1) Before Course Commencement</b></p>
+            <p class="mb-5"><b>3) Course and Program Refunds</b></p>
+            <div class="mb-25">
+                <p class="mb-5"><b>3.1) Before Course Commencement</b></p>
                 <p>If a refund request is submitted <b>before the course or program start date,</b> the customer may be
                     eligible for a <b>full or partial refund</b>, subject to any administrative fees disclosed at the
                     time
                     of purchase.
                 </p>
 
-                <p style="margin-bottom: 5px"><b>3.2) After Course Commencement</b></p>
-                <p style="margin-bottom: 5px">Once a course or program has begun:</p>
-                <ul style="margin-bottom: 25px">
-                    <li style="list-style: disc; list-style-position: inside">Refunds may be partial and prorated based
+                <p class="mb-5"><b>3.2) After Course Commencement</b></p>
+                <p class="mb-5">Once a course or program has begun:</p>
+                <ul class="mb-25">
+                    <li class="refund-list">Refunds may be partial and prorated based
                         on:
                     </li>
                     <ul>
-                        <li style="list-style: circle; list-style-position: inside">The number of sessions attended</li>
-                        <li style="list-style: circle; list-style-position: inside">Course materials accessed or
+                        <li class="refund-list-circle">The number of sessions attended</li>
+                        <li class="refund-list-circle">Course materials accessed or
                             downloaded
                         </li>
-                        <li style="list-style: circle; list-style-position: inside">Time elapsed since course
+                        <li class="refund-list-circle">Time elapsed since course
                             commencement
                         </li>
                     </ul>
-                    <li style="list-style: disc; list-style-position: inside">No refunds will be issued after a
+                    <li class="refund-list">No refunds will be issued after a
                         substantial
                         portion of the course has been completed, as defined in the course-specific terms.</li>
                 </ul>
             </div>
 
-            <p style="margin-bottom: 5px"><b>4) Subscription Services</b></p>
-            <p style="margin-bottom: 5px">For subscription-based services:</p>
-            <ul style="margin-bottom: 25px">
-                <li style="list-style: disc; list-style-position: inside">Refunds are not provided for partially used
+            <p class="mb-5"><b>4) Subscription Services</b></p>
+            <p class="mb-5">For subscription-based services:</p>
+            <ul class="mb-25">
+                <li class="refund-list">Refunds are not provided for partially used
                     billing periods.</li>
-                <li style="list-style: disc; list-style-position: inside">Customers may cancel their subscription at any
+                <li class="refund-list">Customers may cancel their subscription at any
                     time to prevent future charges.</li>
-                <li style="list-style: disc; list-style-position: inside">Access to subscription content will continue
+                <li class="refund-list">Access to subscription content will continue
                     until the end of the current billing cycle unless otherwise stated.</li>
             </ul>
 
-            <p style="margin-bottom: 5px"><b>5) Non-Refundable Items</b></p>
-            <p style="margin-bottom: 5px">The following are generally <b>non-refundable</b> unless required by
+            <p class="mb-5"><b>5) Non-Refundable Items</b></p>
+            <p class="mb-5">The following are generally <b>non-refundable</b> unless required by
                 applicable law:</p>
-            <ul style="margin-bottom: 25px">
-                <li style="list-style: disc; list-style-position: inside">Downloaded or accessed digital content</li>
-                <li style="list-style: disc; list-style-position: inside">Completed classes or sessions</li>
-                <li style="list-style: disc; list-style-position: inside">Administrative or processing fees</li>
-                <li style="list-style: disc; list-style-position: inside">Promotional or discounted purchases labeled as
+            <ul class="mb-25">
+                <li class="refund-list">Downloaded or accessed digital content</li>
+                <li class="refund-list">Completed classes or sessions</li>
+                <li class="refund-list">Administrative or processing fees</li>
+                <li class="refund-list">Promotional or discounted purchases labeled as
                     “non-refundable”</li>
             </ul>
 
-            <p style="margin-bottom: 5px"><b>6) Service Cancellations by WeTalk</b></p>
-            <p style="margin-bottom: 5px">If WeTalk Education Centre Pte Ltd cancels or is unable to deliver a service
+            <p class="mb-5"><b>6) Service Cancellations by WeTalk</b></p>
+            <p class="mb-5">If WeTalk Education Centre Pte Ltd cancels or is unable to deliver a service
                 due to operational reasons, customers will be entitled to:</p>
-            <ul style="margin-bottom: 25px">
-                <li style="list-style: disc; list-style-position: inside">A full refund, <b>or</b></li>
-                <li style="list-style: disc; list-style-position: inside">A credit toward future services, at the
+            <ul class="mb-25">
+                <li class="refund-list">A full refund, <b>or</b></li>
+                <li class="refund-list">A credit toward future services, at the
                     customer’s discretion unless otherwise required by law.</li>
             </ul>
 
-            <p style="margin-bottom: 5px"><b>7) Chargebacks and Disputes</b></p>
+            <p class="mb-5"><b>7) Chargebacks and Disputes</b></p>
             <p>Customers are encouraged to contact WeTalk directly before initiating a chargeback with their payment
                 provider. Unauthorized or improper chargebacks may result in suspension of access to services and/or
                 account termination.</p>
 
-            <p style="margin-bottom: 5px"><b>8) Refund request Process</b></p>
-            <p style="margin-bottom: 5px">To request a refund, customers must provide:</p>
-            <ul style="margin-bottom: 5px">
-                <li style="list-style: disc; list-style-position: inside">Full name:</li>
-                <li style="list-style: disc; list-style-position: inside">Registered email address:</li>
-                <li style="list-style: disc; list-style-position: inside">Transaction ID or proof of payment:</li>
-                <li style="list-style: disc; list-style-position: inside">Reason for the refund request:</li>
+            <p class="mb-5"><b>8) Refund request Process</b></p>
+            <p class="mb-5">To request a refund, customers must provide:</p>
+            <ul class="mb-5">
+                <li class="refund-list">Full name:</li>
+                <li class="refund-list">Registered email address:</li>
+                <li class="refund-list">Transaction ID or proof of payment:</li>
+                <li class="refund-list">Reason for the refund request:</li>
             </ul>
-            <p style="margin-bottom: 5px"><b>Contact Information:</b></p>
-            <p style="margin-bottom: 5px">Email: service@wetalk.com</p>
-            <p style="margin-bottom: 5px">Phone: +65 9758 2288</p>
-            <p style="margin-bottom: 5px">Address: 402 Orchard Road #02-23/24 Delfi Orchard, Singapore 238876</p>
+            <p class="mb-5"><b>Contact Information:</b></p>
+            <p class="mb-5">Email: service@wetalk.com</p>
+            <p class="mb-5">Phone: +65 9758 2288</p>
+            <p class="mb-5">Address: 402 Orchard Road #02-23/24 Delfi Orchard, Singapore 238876</p>
             <p>WeTalk will review refund requests within <b>2 business days</b> and notify
                 customers of the outcome.</p>
 
-            <p style="margin-bottom: 5px"><b>9) Compliance With Applicable Laws</b></p>
+            <p class="mb-5"><b>9) Compliance With Applicable Laws</b></p>
             <p>This Refund Policy is designed to comply with applicable consumer protection and e-commerce laws. Where
                 local regulations provide additional consumer rights, those rights will prevail.</p>
 
-            <p style="margin-bottom: 5px"><b>10) Policy Modifications</b></p>
+            <p class="mb-5"><b>10) Policy Modifications</b></p>
             <p>WeTalk Education Centre Pte Ltd reserves the right to modify or update this Refund Policy at any time.
                 Changes will be effective upon posting on our website or official platforms.</p>
         </div>
