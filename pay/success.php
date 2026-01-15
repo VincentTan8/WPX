@@ -178,7 +178,7 @@ include "../connections/dbname.php";
                             intent_id,
                             coursePaid,
                             currency,
-                            amount,
+                            amount: captured_amount, //we do not want to store the amount in a custom format
                             fullName,
                             email,
                             mobileNumber,
